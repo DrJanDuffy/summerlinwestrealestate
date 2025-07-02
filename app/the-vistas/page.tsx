@@ -1,6 +1,10 @@
 "use client";
 import styles from "../page.module.css";
 import { useState } from "react";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
 
 export default function TheVistas() {
   const [name, setName] = useState("");
@@ -55,18 +59,49 @@ export default function TheVistas() {
 
   return (
     <div className={styles.page}>
-      <section className={styles.hero}>
-        <h1>The Vistas Community Specialist</h1>
-        <p className={styles.subtitle}>Your hyperlocal expert for The Vistas in Summerlin West</p>
+      <Head>
+        <title>The Vistas Summerlin | Homes, Community & Real Estate Guide</title>
+        <meta name="description" content="Explore The Vistas in Summerlin: community amenities, homes for sale, neighborhood map, and expert real estate insights for buyers and sellers." />
+        <meta property="og:title" content="The Vistas Summerlin | Homes, Community & Real Estate Guide" />
+        <meta property="og:description" content="Explore The Vistas in Summerlin: community amenities, homes for sale, neighborhood map, and expert real estate insights for buyers and sellers." />
+      </Head>
+      <section className={styles.hero} style={{marginBottom: '2rem'}}>
+        <h1>The Vistas in Summerlin</h1>
+        <p className={styles.subtitle}>A premier master-planned neighborhood in Summerlin West</p>
       </section>
-      <section className={styles.credibility}>
-        <h2>Why Choose The Vistas?</h2>
-        <ul>
-          <li>Deep community knowledge</li>
-          <li>Proven results and testimonials</li>
-          <li>Exclusive market insights</li>
+      <LatestMarketInsights />
+      <section style={{marginBottom: '2.5rem'}}>
+        <h2>About The Vistas</h2>
+        <Image src="https://placehold.co/800x300?text=The+Vistas+Park" alt="The Vistas Park in Summerlin" width={800} height={300} style={{width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: '1.5rem'}} />
+        <ul style={{color: '#0A2540', fontSize: '1.08rem', marginLeft: '1rem', listStyle: 'disc inside'}}>
+          <li>Beautiful parks and walking trails</li>
+          <li>Top-rated public and private schools</li>
+          <li>Modern homes with mountain views</li>
+          <li>Minutes from Downtown Summerlin</li>
         </ul>
-        <a href="#lead-capture" className={styles.cta}>Get The Vistas Guide</a>
+      </section>
+      <section style={{marginBottom: '2.5rem', background: '#F7F9FC', borderRadius: '8px', padding: '2rem 1rem'}}>
+        <h2>Homes for Sale in The Vistas</h2>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', maxWidth: '900px', margin: '0 auto'}}>
+          {[1,2,3].map((i) => (
+            <div key={i} style={{borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', background: '#fff'}}>
+              <Image src={`https://placehold.co/400x220?text=Vistas+Home+${i}`} alt={`Home for sale in The Vistas Summerlin ${i}`} width={400} height={220} style={{width: '100%', height: 'auto', display: 'block'}} />
+              <div style={{padding: '1rem'}}>
+                <h3 style={{margin: 0}}>Vistas Home #{i}</h3>
+                <p style={{fontSize: '0.98rem', color: '#0A2540'}}>4 bed &bull; 3 bath &bull; $900,000+</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section style={{marginBottom: '2.5rem', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', padding: '2rem 1rem'}}>
+        <h2>Explore More</h2>
+        <ul style={{color: '#3A8DDE', fontWeight: 600, fontSize: '1.08rem', marginLeft: '1rem', listStyle: 'disc inside'}}>
+          <li><Link href="/market-reports">Summerlin Market Reports</Link></li>
+          <li><Link href="/current-listing">Featured Home for Sale</Link></li>
+          <li><Link href="/about">Meet Your Summerlin Expert</Link></li>
+          <li><Link href="/contact">Contact for a Private Tour</Link></li>
+        </ul>
       </section>
       <section id="lead-capture" className={styles.leadCapture}>
         <h2>Request Your Free Community Guide</h2>

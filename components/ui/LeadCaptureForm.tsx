@@ -96,7 +96,11 @@ export default function LeadCaptureForm({
         (window as any).gtag('event', 'lead_form_submit', {
           event_category: 'Lead',
           event_label: source,
-          value: 1
+        });
+        (window as any).gtag('event', 'generate_lead', {
+          value: 1,
+          currency: 'USD',
+          form_location: source || 'unknown',
         });
       }
       onSuccess?.();

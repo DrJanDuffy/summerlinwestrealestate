@@ -1,57 +1,75 @@
 import React from 'react';
 import Link from 'next/link';
+import LeadCaptureForm from '../ui/LeadCaptureForm';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-primary-400 mb-4">
-              Summerlin West Real Estate
-            </h3>
-            <p className="text-gray-300 mb-4">
-              Your trusted partner for real estate in Summerlin West. We specialize in helping families find their perfect home in this beautiful community.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-primary-400">
-                <span className="sr-only">Facebook</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                </svg>
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-400">
-                <span className="sr-only">Instagram</span>
-                <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/properties" className="text-gray-300 hover:text-primary-400">Properties</Link></li>
-              <li><Link href="/communities" className="text-gray-300 hover:text-primary-400">Communities</Link></li>
-              <li><Link href="/market-report" className="text-gray-300 hover:text-primary-400">Market Report</Link></li>
-              <li><Link href="/about" className="text-gray-300 hover:text-primary-400">About</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>1234 Summerlin Pkwy</li>
-              <li>Las Vegas, NV 89135</li>
-              <li>Phone: (702) 555-1234</li>
-              <li>Email: info@summerlinwest.com</li>
-            </ul>
-          </div>
+    <footer className="bg-white border-t border-gray-100 pt-10 pb-6 px-4 mt-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Company Info */}
+        <div>
+          <h3 className="font-bold text-[#0A2540] mb-2">Summerlin West Real Estate</h3>
+          <div className="text-sm text-gray-700 mb-2">1234 Summerlin Centre Dr<br />Las Vegas, NV 89138</div>
+          <div className="text-sm text-gray-700 mb-2">NV License #1234567</div>
+          <div className="text-sm text-gray-700 mb-2">Brokered by Realty Experts, LLC</div>
+          <div className="text-sm text-gray-700">Phone: <a href="tel:7025551234" className="text-[#3A8DDE]">(702) 555-1234</a></div>
+          <div className="text-sm text-gray-700">Email: <a href="mailto:info@summerlinwestrealestate.com" className="text-[#3A8DDE]">info@summerlinwestrealestate.com</a></div>
         </div>
-        
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 Summerlin West Real Estate. All rights reserved.</p>
+        {/* Quick Links */}
+        <div>
+          <h4 className="font-semibold text-[#0A2540] mb-2">Quick Links</h4>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li><Link href="/" className="hover:text-[#3A8DDE]">Home</Link></li>
+            <li><Link href="/current-listing" className="hover:text-[#3A8DDE]">Vistas Listing</Link></li>
+            <li><Link href="/communities" className="hover:text-[#3A8DDE]">Communities</Link></li>
+            <li><Link href="/market-reports" className="hover:text-[#3A8DDE]">Market Reports</Link></li>
+            <li><Link href="/compare" className="hover:text-[#3A8DDE]">Compare</Link></li>
+            <li><Link href="/about" className="hover:text-[#3A8DDE]">About</Link></li>
+            <li><Link href="/contact" className="hover:text-[#3A8DDE]">Contact</Link></li>
+          </ul>
+        </div>
+        {/* Service Areas */}
+        <div>
+          <h4 className="font-semibold text-[#0A2540] mb-2">Service Areas</h4>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li>Summerlin West</li>
+            <li>The Vistas</li>
+            <li>Stonebridge</li>
+            <li>Redpoint</li>
+            <li>The Cliffs</li>
+            <li>Reverence</li>
+            <li>Downtown Summerlin</li>
+            <li>All Summerlin Villages</li>
+          </ul>
+        </div>
+        {/* Newsletter Signup */}
+        <div>
+          <h4 className="font-semibold text-[#0A2540] mb-2">Newsletter Signup</h4>
+          <LeadCaptureForm 
+            variant="inline"
+            title="Subscribe to Our Newsletter"
+            subtitle="Monthly updates, market trends, and exclusive insights."
+            source="Footer Newsletter"
+          />
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center mt-8 pt-6 border-t border-gray-100 text-xs text-gray-500 gap-2">
+        <div>
+          &copy; {new Date().getFullYear()} Summerlin West Real Estate. All rights reserved. <span className="hidden md:inline">|</span> <span className="block md:inline">Each office independently owned and operated.</span>
+        </div>
+        <div className="flex gap-4 mt-2 md:mt-0">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" className="hover:text-[#3A8DDE]">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" className="hover:text-[#16B286]">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.363 3.678 1.344 2.697 2.325 2.465 3.437 2.406 4.718 2.347 5.999 2.334 6.408 2.334 12c0 5.592.013 6.001.072 7.282.059 1.281.291 2.393 1.272 3.374.981.981 2.093 1.213 3.374 1.272C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.291 3.374-1.272.981-.981 1.213-2.093 1.272-3.374.059-1.281.072-1.69.072-7.282 0-5.592-.013-6.001-.072-7.282-.059-1.281-.291-2.393-1.272-3.374-.981-.981-2.093-1.213-3.374-1.272C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" className="hover:text-[#0A2540]">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.386.574A2.994 2.994 0 0 0 .502 6.186C0 8.072 0 12 0 12s0 3.928.502 5.814a2.994 2.994 0 0 0 2.112 2.112C4.5 20.5 12 20.5 12 20.5s7.5 0 9.386-.574a2.994 2.994 0 0 0 2.112-2.112C24 15.928 24 12 24 12s0-3.928-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+        <div className="text-right text-xs text-gray-400 mt-2 md:mt-0">
+          <span>All information deemed reliable but not guaranteed. Equal Housing Opportunity.</span>
         </div>
       </div>
     </footer>

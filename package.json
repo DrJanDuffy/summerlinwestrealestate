@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.0",
+    "rss-parser": "^3.13.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
