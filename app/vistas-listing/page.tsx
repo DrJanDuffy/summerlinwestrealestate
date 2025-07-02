@@ -1,6 +1,6 @@
+"use client";
 import styles from "../page.module.css";
 import { useState } from "react";
-import axios from "axios";
 
 export default function VistasListing() {
   const [name, setName] = useState("");
@@ -27,7 +27,18 @@ export default function VistasListing() {
     setError("");
     setLoading(true);
     try {
-      await axios.post("/api/lead", { name, email, phone, page: "Vistas Listing" });
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, phone, page: "Vistas Listing" }),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+      
       setSubmitted(true);
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'lead_form_submit', {
