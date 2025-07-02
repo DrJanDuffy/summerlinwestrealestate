@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../page.module.css';
 import Image from 'next/image';
-import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
+const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
 
 export default function Contact() {
   return (

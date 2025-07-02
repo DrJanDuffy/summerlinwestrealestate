@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from "../page.module.css";
-import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
+import dynamic from 'next/dynamic';
+const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
 
 export default function Sold() {
   return (

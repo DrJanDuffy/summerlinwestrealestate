@@ -3,7 +3,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styles from "../page.module.css";
-import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
+const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
 const TestimonialsSection = dynamic(() => import('../../components/ui/TestimonialsSection'), { ssr: false });
 
 export default function About() {
