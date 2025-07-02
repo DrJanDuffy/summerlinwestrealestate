@@ -273,10 +273,9 @@ export default function LeadCaptureForm({
                 render={({ field }) => (
                   <label className={styles['checkbox-label']}>
                     <input
-                      {...field}
+                      {...(({ value, ...rest }) => rest)(field)}
                       type="checkbox"
                       checked={field.value}
-                      onChange={(e) => field.onChange(e.target.checked)}
                       disabled={isSubmitting}
                     />
                     <span className={styles['checkmark']}></span>
