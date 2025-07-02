@@ -261,7 +261,7 @@ a.secondary {
 .leadCapture {
   background: #fff;
   color: #0A2540;
-  padding: 2rem 1rem 2.5rem 1rem;
+  padding: 2rem 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   margin-bottom: 2rem;
@@ -394,5 +394,199 @@ a.secondary {
   .nav > div {
     flex-direction: column;
     gap: 0.7rem;
+  }
+}
+
+.marketAuthority {
+  background: #fff;
+  color: #0A2540;
+  padding: 3rem 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.authorityContent {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.authorityText h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #0A2540;
+}
+
+.expertisePoints {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.expertisePoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.expertisePoint:hover {
+  background: #F7F9FC;
+  border-color: #3A8DDE;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 141, 222, 0.15);
+}
+
+.expertiseIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #3A8DDE;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.expertisePoint:hover .expertiseIcon {
+  background: #16B286;
+  transform: scale(1.1);
+}
+
+.expertisePoint h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #0A2540;
+}
+
+.expertisePoint p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #F7F9FC;
+  border-radius: 8px;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3A8DDE;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.authorityProfile {
+  text-align: center;
+  padding: 2rem;
+  background: #F7F9FC;
+  border-radius: 8px;
+  border: 2px solid #3A8DDE;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  background: #3A8DDE;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(58, 141, 222, 0.3);
+}
+
+.authorityProfile h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #0A2540;
+}
+
+.authorityProfile p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.profileContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.contactItem {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contactItem strong {
+  color: #0A2540;
+}
+
+@media (min-width: 768px) {
+  .authorityContent {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+  
+  .expertisePoints {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .marketAuthority {
+    padding: 4rem 2rem;
+  }
+  
+  .authorityText h2 {
+    font-size: 2.5rem;
+  }
+  
+  .expertisePoint h3 {
+    font-size: 1.2rem;
+  }
+  
+  .statNumber {
+    font-size: 3rem;
   }
 }
