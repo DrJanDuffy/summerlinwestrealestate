@@ -99,9 +99,12 @@ export default function Home() {
         <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(faqJsonLd)}</script>
       </Head>
       {/* Hero Section */}
-      <section className={styles.hero} style={{marginBottom: '2rem'}}>
-        <h1>Summerlin West Real Estate</h1>
-        <p className={styles.subtitle}>Your guide to homes, communities, and market trends in Summerlin</p>
+      <section className={styles.hero} role="banner" style={{marginBottom: '2rem'}}>
+        <div className={styles.heroContent}>
+          <h1>Summerlin West Real Estate</h1>
+          <p className={styles.subtitle}>Your guide to homes, communities, and market trends in Summerlin</p>
+          <a href="/compare" className={styles.cta} aria-label="View Listings">View Listings</a>
+        </div>
       </section>
       <LatestMarketInsights />
       <section style={{marginBottom: '2.5rem'}}>
