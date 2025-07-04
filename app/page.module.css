@@ -419,7 +419,7 @@ a.secondary {
   padding: 0.75rem 1.5rem;
 }
 
-.nav a {
+:global(a) {
   color: #0A2540;
   text-decoration: none;
   font-weight: 500;
@@ -427,12 +427,14 @@ a.secondary {
   transition: color 0.2s;
 }
 
-.nav a:last-child {
-  margin-right: 0;
+:global(a:hover) {
+  color: #3A8DDE;
 }
 
-.nav a:hover {
-  color: #3A8DDE;
+:global(ul) {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
 }
 
 .footer {
@@ -691,12 +693,12 @@ a.secondary {
   margin-bottom: 1rem;
 }
 
-h1, h2, h3 {
+:global(h1), :global(h2), :global(h3) {
   font-weight: 800;
   color: #0A2540;
 }
 
-body, p, li {
+:global(body), :global(p), :global(li) {
   font-size: 1.08rem;
   color: #222;
 }
