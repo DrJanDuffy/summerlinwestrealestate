@@ -226,6 +226,13 @@ export default function RootLayout({
         <script type="application/ld+json" suppressHydrationWarning>
           {JSON.stringify(breadcrumbJsonLd)}
         </script>
+        {/* RealScout Office Listings Widget Styles */}
+        <style jsx global>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
       </head>
       <body className={inter.variable} style={{background: '#F7F9FC', color: '#0A2540', fontFamily: 'Inter, Arial, sans-serif'}}>
         {/* Google Tag Manager (noscript fallback) */}
@@ -265,6 +272,17 @@ export default function RootLayout({
         </nav>
         {children}
         <Footer />
+        {/* RealScout Office Listings Widget - appears on every page */}
+        <section style={{ margin: "3rem 0" }}>
+          <h2 style={{textAlign: "center", color: "#0A2540", fontWeight: 700}}>Current Office Listings</h2>
+          <realscout-office-listings
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+            listing-status="For Sale"
+            property-types="SFR,MF,TC"
+            price-min="500000"
+          ></realscout-office-listings>
+        </section>
       </body>
     </html>
   );
