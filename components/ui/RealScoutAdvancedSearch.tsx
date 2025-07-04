@@ -29,17 +29,23 @@ export default function RealScoutAdvancedSearch({
   const widgetRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Track widget interactions for analytics
+    // Track widget interactions for analytics and handle search event
     if (widgetRef.current) {
       console.log('RealScout Advanced Search widget loaded');
       
-      // Add event listeners for tracking
-      const handleSearch = () => {
+      // Add event listeners for tracking and search
+      const handleSearch = (event: any) => {
+        // Analytics
         if (typeof window !== 'undefined' && (window as any).gtag) {
           (window as any).gtag('event', 'real_scout_search', {
             event_category: 'Search',
             event_label: 'Advanced Search Widget',
           });
+        }
+        // Redirect to results page with filters
+        if (event && event.detail) {
+          const params = new URLSearchParams(event.detail).toString();
+          window.location.href = `/search?${params}`;
         }
       };
 
