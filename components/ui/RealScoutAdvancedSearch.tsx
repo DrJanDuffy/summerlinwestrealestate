@@ -2,6 +2,17 @@
 import { useEffect, useRef } from 'react';
 import styles from './RealScoutAdvancedSearch.module.css';
 
+// TypeScript declaration for custom element
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'realscout-advanced-search': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'agent-encoded-id'?: string;
+      };
+    }
+  }
+}
+
 interface RealScoutAdvancedSearchProps {
   title?: string;
   subtitle?: string;
