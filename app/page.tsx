@@ -6,7 +6,10 @@ import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
 import Link from 'next/link';
 import Image from 'next/image';
 import LatestMarketInsights from '../components/ui/LatestMarketInsights';
-import RealScoutAdvancedSearch from '../components/ui/RealScoutAdvancedSearch';
+import dynamic from 'next/dynamic';
+
+// Dynamically import RealScoutAdvancedSearch for performance
+const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), { ssr: false });
 
 export default function Home() {
   const { isOpen, source, openModal, closeModal } = useLeadCaptureModal();
@@ -106,28 +109,40 @@ export default function Home() {
           <p className={styles.subtitle}>Your guide to homes, communities, and market trends in Summerlin</p>
         </div>
       </section>
-      
-      <RealScoutAdvancedSearch 
-        title="Find Your Dream Home in Summerlin"
-        subtitle="Search by neighborhood, city, school, beds, baths, and price range"
-        variant="hero"
-        showFeatures={true}
-      />
+      {/* Sub-hero: Advanced Search, visually connected and full width */}
+      <div className={styles.subHeroSearchWrapper}>
+        <RealScoutAdvancedSearch 
+          title="Find Your Dream Home in Summerlin"
+          subtitle="Search by neighborhood, city, school, beds, baths, and price range"
+          variant="hero"
+          showFeatures={true}
+        />
+      </div>
       <LatestMarketInsights />
+      {/* Featured Listings: Fix heading/button overlap with flex container */}
       <section style={{marginBottom: '2.5rem'}}>
-        <h2>Featured Listings</h2>
-        <a
-          href="/compare"
-          className={styles.cta}
-          aria-label="View Listings"
-          style={{margin: '1rem auto 2rem auto', display: 'block', maxWidth: 220}}
-        >
-          View Listings
-        </a>
+        <div className={styles.featuredListingsHeader}>
+          <h2>Featured Listings</h2>
+          <a
+            href="/compare"
+            className={styles.cta}
+            aria-label="View Listings"
+          >
+            View Listings
+          </a>
+        </div>
         <div className={styles.featuredListingsGrid}>
           {[1,2,3].map((i) => (
             <div key={i} className={styles.featuredListingCard}>
-              <img src={`https://placehold.co/400x220?text=Home+${i}`} alt={`Summerlin home for sale ${i}`} className={styles.featuredListingImage} />
+              {/* Use Next.js Image for performance and layout shift */}
+              <Image
+                src={`https://placehold.co/400x220?text=Home+${i}`}
+                alt={`Summerlin home for sale ${i}`}
+                width={400}
+                height={220}
+                className={styles.featuredListingImage}
+                priority={i === 1}
+              />
               <div style={{padding: '1rem'}}>
                 <h3 style={{margin: 0}}>Home #{i}</h3>
                 <p style={{fontSize: '0.98rem', color: '#0A2540'}}>4 bed &bull; 3 bath &bull; $900,000+</p>

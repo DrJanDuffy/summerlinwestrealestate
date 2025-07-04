@@ -674,3 +674,36 @@ a.secondary {
   justify-content: center;
   margin-bottom: 1rem;
 }
+
+.subHeroSearchWrapper {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(58, 141, 222, 0.08);
+  border-radius: 0 0 18px 18px;
+  padding: 0 0 2rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.featuredListingsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .subHeroSearchWrapper {
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 1rem;
+  }
+  .featuredListingsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
