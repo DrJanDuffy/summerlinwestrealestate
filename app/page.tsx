@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LatestMarketInsights from '../components/ui/LatestMarketInsights';
 import RealScoutAdvancedSearch from '../components/ui/RealScoutAdvancedSearch';
-import RealScoutListings from '../components/ui/RealScoutListings';
 
 export default function Home() {
   const { isOpen, source, openModal, closeModal } = useLeadCaptureModal();
@@ -288,13 +287,6 @@ export default function Home() {
         onClose={closeModal}
         source={source}
         onSuccess={handleFormSuccess}
-      />
-
-      <RealScoutListings
-        title="Current Market Listings"
-        subtitle="Browse our latest properties in Summerlin West and surrounding areas"
-        variant="full"
-        showFilters={true}
       />
     </div>
   );

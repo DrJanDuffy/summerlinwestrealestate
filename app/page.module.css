@@ -659,10 +659,6 @@ a.secondary {
   }
 }
 
-section {
-  margin-bottom: 3rem;
-}
-
 .featuredListingsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

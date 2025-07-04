@@ -93,30 +93,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        {/* RealScout Advanced Search Widget Script */}
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
           strategy="afterInteractive"
         />
-        
-        {/* RealScout Advanced Search Widget Styles */}
-        <style jsx global>{`
-          realscout-advanced-search {
-            --rs-as-button-text-color: #ffffff;
-            --rs-as-background-color: #ffffff;
-            --rs-as-button-color: #3A8DDE;
-            --rs-as-widget-width: 500px !important;
-            --rs-as-border-radius: 8px;
-            --rs-as-font-family: 'Inter', Arial, sans-serif;
-            --rs-as-input-border-color: #e9ecef;
-            --rs-as-input-focus-border-color: #3A8DDE;
-            --rs-as-label-color: #0A2540;
-            --rs-as-box-shadow: 0 2px 8px rgba(10,37,64,0.08);
-          }
-        `}</style>
-        
         {/* Google Analytics 4 (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HYMN4311JH"
@@ -271,18 +252,22 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
-        <Footer />
         {/* RealScout Office Listings Widget - appears on every page */}
         <section style={{ margin: "3rem 0" }}>
           <h2 style={{textAlign: "center", color: "#0A2540", fontWeight: 700}}>Current Office Listings</h2>
-          <realscout-office-listings
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-            sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
-            listing-status="For Sale"
-            property-types="SFR,MF,TC"
-            price-min="500000"
-          ></realscout-office-listings>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
+                listing-status="For Sale"
+                property-types="SFR,MF,TC"
+                price-min="500000"
+              ></realscout-office-listings>`
+            }}
+          />
         </section>
+        <Footer />
       </body>
     </html>
   );
