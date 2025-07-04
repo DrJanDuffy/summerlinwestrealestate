@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../page.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch';
 const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
 
 const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), { ssr: false });
@@ -99,6 +100,13 @@ export default function MarketReports() {
           <li><Link href="/contact">Contact for a custom market analysis</Link></li>
         </ul>
       </section>
+
+      <RealScoutAdvancedSearch 
+        title="Search Current Market Listings"
+        subtitle="Find properties matching your criteria"
+        variant="page"
+        showFeatures={true}
+      />
     </div>
   );
 } 

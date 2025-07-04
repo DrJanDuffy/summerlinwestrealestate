@@ -93,6 +93,30 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* RealScout Advanced Search Widget Script */}
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
+        
+        {/* RealScout Advanced Search Widget Styles */}
+        <style jsx global>{`
+          realscout-advanced-search {
+            --rs-as-button-text-color: #ffffff;
+            --rs-as-background-color: #ffffff;
+            --rs-as-button-color: #3A8DDE;
+            --rs-as-widget-width: 500px !important;
+            --rs-as-border-radius: 8px;
+            --rs-as-font-family: 'Inter', Arial, sans-serif;
+            --rs-as-input-border-color: #e9ecef;
+            --rs-as-input-focus-border-color: #3A8DDE;
+            --rs-as-label-color: #0A2540;
+            --rs-as-box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+          }
+        `}</style>
+        
         {/* Google Analytics 4 (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HYMN4311JH"
@@ -213,9 +237,20 @@ export default function RootLayout({
           {/* Cookie consent UI goes here. Use a library like Cookiebot, Osano, or your own implementation. */}
         </div>
         {/* Navigation Bar */}
-        <nav className="nav">
-          <div className="container" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-            <Link href="/" style={{fontWeight: 700, fontSize: '1.3rem', color: '#3A8DDE', textDecoration: 'none'}}>Summerlin West Real Estate</Link>
+        <nav
+          style={{
+            position: 'sticky',
+            top: 0,
+            zIndex: 1100,
+            background: '#fff',
+            boxShadow: '0 2px 8px rgba(10,37,64,0.08)',
+            padding: '1rem 0',
+            marginBottom: 0,
+            fontWeight: 700
+          }}
+        >
+          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1200px', margin: '0 auto'}}>
+            <Link href="/" style={{fontWeight: 800, fontSize: '1.3rem', color: '#3A8DDE', textDecoration: 'none'}}>Summerlin West Real Estate</Link>
             <div style={{display: 'flex', gap: '1.5rem', alignItems: 'center'}}>
               <Link href="/current-listing">Vistas Listing</Link>
               <Link href="/communities">Communities</Link>
@@ -224,6 +259,7 @@ export default function RootLayout({
               <Link href="/the-vistas">The Vistas</Link>
               <Link href="/sold">Sold</Link>
               <Link href="/about">About</Link>
+              <a href="#search" style={{color: '#16B286', fontWeight: 700}}>Search Homes</a>
             </div>
           </div>
         </nav>

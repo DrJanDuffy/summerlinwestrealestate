@@ -1,0 +1,143 @@
+.searchSection {
+  background: linear-gradient(135deg, #F7F9FC 0%, #ffffff 100%);
+  padding: 3rem 1rem;
+  margin: 2rem 0;
+}
+
+.searchSection.hero {
+  background: linear-gradient(135deg, #3A8DDE 0%, #16B286 100%);
+  color: #fff;
+  padding: 4rem 1rem;
+}
+
+.searchSection.sidebar {
+  background: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+}
+
+.searchSection.page {
+  background: #F7F9FC;
+  padding: 2rem 1rem;
+}
+
+.searchContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.searchSection.sidebar .searchContainer {
+  max-width: 100%;
+}
+
+.searchHeader {
+  margin-bottom: 2rem;
+}
+
+.searchSection.hero .searchHeader h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(10,37,64,0.08);
+}
+
+.searchSection.hero .searchHeader p {
+  color: #F7F9FC;
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.searchHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0A2540;
+  margin-bottom: 0.5rem;
+}
+
+.searchHeader p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+.widgetContainer {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(10,37,64,0.10);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchSection.sidebar .widgetContainer {
+  padding: 1rem;
+  box-shadow: none;
+  background: transparent;
+}
+
+.searchFeatures {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.searchSection.hero .feature {
+  color: #fff;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0A2540;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.feature svg {
+  color: #16B286;
+  flex-shrink: 0;
+}
+
+.searchSection.hero .feature svg {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .searchSection.hero .searchHeader h2 {
+    font-size: 2rem;
+  }
+  
+  .searchHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .widgetContainer {
+    padding: 1rem;
+  }
+  
+  .searchFeatures {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .feature {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .widgetContainer {
+    padding: 0.5rem;
+  }
+  
+  .searchSection.hero {
+    padding: 2rem 1rem;
+  }
+} 

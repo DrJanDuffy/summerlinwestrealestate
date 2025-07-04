@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from "../page.module.css";
 import dynamic from 'next/dynamic';
+import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch';
 const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
 
 export default function Communities() {
@@ -52,6 +53,19 @@ export default function Communities() {
           <li><Link href="/contact">Contact for Community Tours</Link></li>
         </ul>
       </section>
+      <div style={{display: 'grid', gridTemplateColumns: '1fr 300px', gap: '2rem'}}>
+        <div>
+          {/* Your existing communities content */}
+        </div>
+        <aside>
+          <RealScoutAdvancedSearch 
+            title="Search Properties"
+            subtitle="Find homes in these communities"
+            variant="sidebar"
+            showFeatures={false}
+          />
+        </aside>
+      </div>
     </div>
   );
 } 
