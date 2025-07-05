@@ -9,6 +9,10 @@ declare global {
       'realscout-advanced-search': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
         'agent-encoded-id'?: string;
       };
+      'realscout-simple-search': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'agent-encoded-id'?: string;
+        'aria-label'?: string;
+      };
     }
   }
 }

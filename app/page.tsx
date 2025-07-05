@@ -9,6 +9,7 @@ import LatestMarketInsights from '../components/ui/LatestMarketInsights';
 import dynamic from 'next/dynamic';
 import HomebotWidget from '../components/ui/HomebotWidget';
 import SectionCard from "../components/ui/SectionCard";
+import { Inter } from "next/font/google";
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), { ssr: false });
@@ -17,6 +18,8 @@ type Faq = {
   question: string;
   answer: string;
 };
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { isOpen, source, openModal, closeModal } = useLeadCaptureModal();
