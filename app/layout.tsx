@@ -16,6 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

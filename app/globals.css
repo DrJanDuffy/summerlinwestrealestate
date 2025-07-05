@@ -73,3 +73,10 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+realscout-simple-search {
+  --rs-ss-font-primary-color: #726a6d;
+  --rs-ss-searchbar-border-color: #1d6fbd;
+  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-widget-width: 700px !important;
+}

@@ -707,3 +707,11 @@ a.secondary {
     gap: 0.5rem;
   }
 }
+
+.sectionCard {
+  margin: 2.5rem 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem 1rem;
+}
