@@ -1,9 +1,11 @@
-import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
-import Head from 'next/head';
+"use client";
+
 import styles from '../page.module.css';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
+import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
+import Head from 'next/head';
 
 export default function NewHomesSummerlin() {
   return (
