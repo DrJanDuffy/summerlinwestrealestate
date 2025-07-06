@@ -1,3 +1,4 @@
+"use client";
 import dynamic from 'next/dynamic';
 const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), { ssr: false });
 import Head from 'next/head';
