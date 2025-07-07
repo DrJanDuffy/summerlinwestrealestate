@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Parser from "rss-parser";
+import Image from "next/image";
 import styles from "../../app/page.module.css";
 
 const RSS_FEED_URL =
@@ -12,8 +13,11 @@ export default function LatestMarketInsights() {
   useEffect(() => {
     async function fetchRSS() {
       try {
-        const parser = new Parser();
-        // Use a CORS proxy if needed for client-side fetch
+        const parser = new Parser({
+          customFields: {
+            item: ["media:content", "enclosure"],
+          },
+        });
         const feed = await parser.parseURL(RSS_FEED_URL);
         setRssItems(feed.items.slice(0, 3));
       } catch (err) {
@@ -29,22 +33,38 @@ export default function LatestMarketInsights() {
     <section className={styles.sectionCard}>
       <h2 className={styles.centerTitle}>Latest Market Insights</h2>
       <ul className={styles.insightsList}>
-        {rssItems.map((item, idx) => (
-          <li key={idx} className={styles.insightItem}>
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener"
-              className={styles.insightLink}
-            >
-              {item.title}
-            </a>
-            <div className={styles.insightDate}>
-              {item.pubDate && new Date(item.pubDate).toLocaleDateString()}
-            </div>
-            <div className={styles.insightSnippet}>{item.contentSnippet}</div>
-          </li>
-        ))}
+        {rssItems.map((item, idx) => {
+          // Try to get image from media:content, enclosure, or fallback
+          const imageUrl =
+            (item["media:content"] && item["media:content"].url) ||
+            (item.enclosure && item.enclosure.url) ||
+            "https://placehold.co/120x80?text=News";
+          return (
+            <li key={idx} className={styles.insightItem}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener"
+                className={styles.insightLink}
+              >
+                <Image
+                  src={imageUrl}
+                  alt={item.title}
+                  width={120}
+                  height={80}
+                  className={styles.insightImage}
+                />
+                <div>
+                  <div className={styles.insightTitle}>{item.title}</div>
+                  <div className={styles.insightDate}>
+                    {item.pubDate && new Date(item.pubDate).toLocaleDateString()}
+                  </div>
+                  <div className={styles.insightSnippet}>{item.contentSnippet}</div>
+                </div>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
