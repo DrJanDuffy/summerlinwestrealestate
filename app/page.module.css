@@ -1041,3 +1041,23 @@ a.secondary {
     font-size: 1rem;
   }
 }
+
+.agentPhoto {
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.agentPhoto:hover {
+  transform: scale(1.05);
+}
+
+.communityImage {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.communityImage:hover {
+  transform: scale(1.05);
+}
