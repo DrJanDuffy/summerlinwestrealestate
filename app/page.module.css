@@ -1061,3 +1061,157 @@ a.secondary {
 .communityImage:hover {
   transform: scale(1.05);
 }
+
+.agentInfo {
+  flex: 1;
+}
+
+.agentIntro {
+  color: #0A2540;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.agentHighlights {
+  color: #0A2540;
+  font-size: 1.08rem;
+  margin-left: 1rem;
+  list-style: disc inside;
+}
+
+.agentHighlights li {
+  margin-bottom: 0.5rem;
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.expertiseCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertiseCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.expertiseIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.expertiseCard h3 {
+  color: #0A2540;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.expertiseCard p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.communityContent {
+  flex: 1;
+}
+
+.communityActivities {
+  margin-top: 2rem;
+}
+
+.communityActivities h3 {
+  color: #0A2540;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.testimonialCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-2px);
+}
+
+.testimonialStars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.star {
+  color: #FBBF24;
+  font-size: 1.2rem;
+}
+
+.testimonialText {
+  color: #0A2540;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.testimonialAuthor {
+  color: #16B286;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .expertiseGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .agentPhoto {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .communityImage {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .expertiseCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .testimonialCard {
+    padding: 1.5rem 1rem;
+  }
+}
