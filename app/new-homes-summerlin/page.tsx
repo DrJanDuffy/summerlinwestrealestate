@@ -9,6 +9,8 @@ const LatestMarketInsights = dynamic(
 );
 import LeadCaptureForm from "../../components/ui/LeadCaptureForm";
 import Head from "next/head";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 export default function NewHomesSummerlin() {
   return (
@@ -30,6 +32,9 @@ export default function NewHomesSummerlin() {
           content="Explore new homes in Summerlin Las Vegas. See builder incentives, new construction communities, and the home buying process. Get alerts for new homes!"
         />
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         <section className={styles.hero}>

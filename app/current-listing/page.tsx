@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import LatestMarketInsights from "../../components/ui/LatestMarketInsights";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 export default function CurrentListing() {
   const propertyDetails = [
@@ -82,6 +84,9 @@ export default function CurrentListing() {
           }
         `}</script>
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         {/* Hero Section */}

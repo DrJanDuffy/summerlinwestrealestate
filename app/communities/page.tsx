@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -83,12 +85,30 @@ export default function Communities() {
         />
       </Head>
 
+      <Header />
+      <SummerlinWestOverview />
+
       <div className={styles.mainContent}>
+        {/* Hero Section */}
         <section className={styles.hero}>
           <h1>Summerlin West Communities</h1>
           <p className={styles.subtitle}>
             Discover the best neighborhoods in Summerlin West for your next home
           </p>
+          <div className={styles.heroStats}>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>$850K</span>
+              <span className={styles.heroStatLabel}>Median Price</span>
+            </div>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>312</span>
+              <span className={styles.heroStatLabel}>Active Listings</span>
+            </div>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>14</span>
+              <span className={styles.heroStatLabel}>Avg Days on Market</span>
+            </div>
+          </div>
         </section>
 
         <LatestMarketInsights />

@@ -5,6 +5,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -82,6 +84,8 @@ export default function TheVistas() {
           content="Explore The Vistas in Summerlin: community amenities, homes for sale, neighborhood map, and expert real estate insights for buyers and sellers."
         />
       </Head>
+      <Header />
+      <SummerlinWestOverview />
       <section className={`${styles.hero} ${styles.heroMargin}`}>
         <h1>The Vistas in Summerlin</h1>
         <p className={styles.subtitle}>

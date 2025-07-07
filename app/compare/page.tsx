@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -27,6 +29,8 @@ export default function Compare() {
           content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
         />
       </Head>
+      <Header />
+      <SummerlinWestOverview />
       <section className={`${styles.hero} ${styles.heroMargin}`}>
         <h1>Compare Summerlin Homes</h1>
         <p className={styles.subtitle}>

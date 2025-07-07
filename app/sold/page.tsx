@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -30,6 +32,9 @@ export default function Sold() {
           content="See recently sold homes in Summerlin West. View sale prices, days on market, and market trends for buyers and sellers in Summerlin real estate."
         />
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         <section className={styles.sectionCard}>

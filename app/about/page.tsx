@@ -4,6 +4,8 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import styles from "../page.module.css";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -52,6 +54,9 @@ export default function About() {
           }
         `}</script>
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         <section className={styles.hero}>

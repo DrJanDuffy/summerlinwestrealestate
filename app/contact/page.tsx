@@ -8,6 +8,8 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Image from "next/image";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -62,6 +64,9 @@ export default function Contact() {
           content="Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends."
         />
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         <section className={styles.hero}>

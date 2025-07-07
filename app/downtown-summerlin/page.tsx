@@ -4,6 +4,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -34,6 +36,9 @@ export default function DowntownSummerlin() {
           content="Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report."
         />
       </Head>
+
+      <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         <section className={styles.hero}>

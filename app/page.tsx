@@ -5,7 +5,8 @@ import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Header from "../components/layout/Header";
+import Header from "@/components/layout/Header";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
@@ -127,6 +128,7 @@ export default function Home() {
       </Head>
 
       <Header />
+      <SummerlinWestOverview />
 
       <div className={styles.mainContent}>
         {/* Hero Section */}
