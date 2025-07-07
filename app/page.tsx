@@ -1,18 +1,39 @@
 "use client";
 import Head from "next/head";
 import styles from "./page.module.css";
-import LeadCaptureForm from "../components/ui/LeadCaptureForm";
 import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
 import Link from "next/link";
 import Image from "next/image";
-import LatestMarketInsights from "../components/ui/LatestMarketInsights";
 import dynamic from "next/dynamic";
-import HomebotWidget from "../components/ui/HomebotWidget";
 import Header from "../components/layout/Header";
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
   () => import("../components/ui/RealScoutAdvancedSearch"),
+  { ssr: false },
+);
+
+// Dynamically import LeadCaptureForm for performance
+const LeadCaptureForm = dynamic(
+  () => import("../components/ui/LeadCaptureForm"),
+  { ssr: false },
+);
+
+// Dynamically import HomebotWidget for performance
+const HomebotWidget = dynamic(
+  () => import("../components/ui/HomebotWidget"),
+  { ssr: false },
+);
+
+// Dynamically import LatestMarketInsights for performance
+const LatestMarketInsights = dynamic(
+  () => import("../components/ui/LatestMarketInsights"),
+  { ssr: false },
+);
+
+// Dynamically import RealScoutListings for performance
+const RealScoutListings = dynamic(
+  () => import("../components/ui/RealScoutListings"),
   { ssr: false },
 );
 
@@ -141,62 +162,15 @@ export default function Home() {
           />
         </section>
 
-        {/* Featured Communities */}
+        {/* RealScout Listings Widget */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>
-            Featured Summerlin West Communities
+            Featured Summerlin West Homes
           </h2>
-          <div className={styles.communitiesGrid}>
-            {[
-              {
-                name: "The Vistas",
-                description: "Luxury homes with mountain views",
-                price: "$950K - $2.5M",
-                image: "https://placehold.co/400x220?text=The+Vistas",
-              },
-              {
-                name: "Redpoint",
-                description: "New construction & resort living",
-                price: "$750K - $1.8M",
-                image: "https://placehold.co/400x220?text=Redpoint",
-              },
-              {
-                name: "Stonebridge",
-                description: "Family-friendly with top schools",
-                price: "$650K - $1.2M",
-                image: "https://placehold.co/400x220?text=Stonebridge",
-              },
-              {
-                name: "The Cliffs",
-                description: "Luxury estates & privacy",
-                price: "$1.2M - $3M+",
-                image: "https://placehold.co/400x220?text=The+Cliffs",
-              },
-            ].map((community, index) => (
-              <div key={index} className={styles.communityCard}>
-                <Image
-                  src={community.image}
-                  alt={`${community.name} homes for sale`}
-                  width={400}
-                  height={220}
-                  className={styles.communityImage}
-                />
-                <div className={styles.communityContent}>
-                  <h3 className={styles.communityTitle}>{community.name}</h3>
-                  <p className={styles.communityDescription}>
-                    {community.description}
-                  </p>
-                  <p className={styles.communityPrice}>{community.price}</p>
-                  <Link
-                    href={`/communities#${community.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    className={styles.communityLink}
-                  >
-                    View Homes
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className={styles.widgetSubtitle}>
+            Browse the latest homes for sale in Summerlin West communities
+          </p>
+          <RealScoutListings />
         </section>
 
         {/* Market Overview */}

@@ -4,9 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
-import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
+  { ssr: false },
+);
+const RealScoutAdvancedSearch = dynamic(
+  () => import("../../components/ui/RealScoutAdvancedSearch"),
+  { ssr: false },
+);
+const RealScoutListings = dynamic(
+  () => import("../../components/ui/RealScoutListings"),
   { ssr: false },
 );
 
@@ -96,49 +103,15 @@ export default function Communities() {
           />
         </section>
 
-        {/* Featured Communities */}
+        {/* RealScout Listings Widget */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>
-            Featured Summerlin West Communities
+            Featured Summerlin West Homes
           </h2>
-          <div className={styles.communitiesGrid}>
-            {communities.map((community, index) => (
-              <div key={index} className={styles.communityCard}>
-                <Image
-                  src={community.image}
-                  alt={`${community.name} neighborhood in Summerlin West`}
-                  width={400}
-                  height={220}
-                  className={styles.communityImage}
-                />
-                <div className={styles.communityContent}>
-                  <h3 className={styles.communityTitle}>{community.name}</h3>
-                  <p className={styles.communityDescription}>
-                    {community.description}
-                  </p>
-                  <p className={styles.communityPrice}>
-                    {community.priceRange}
-                  </p>
-                  <div className={styles.communityFeatures}>
-                    {community.features.map((feature, featureIndex) => (
-                      <span
-                        key={featureIndex}
-                        className={styles.communityFeature}
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={`/communities#${community.name.toLowerCase().replace(/\s+/g, "-")}`}
-                    className={styles.communityLink}
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className={styles.widgetSubtitle}>
+            Browse the latest homes for sale in Summerlin West communities
+          </p>
+          <RealScoutListings />
         </section>
 
         {/* Why Summerlin West */}
