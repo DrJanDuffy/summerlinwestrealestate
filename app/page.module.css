@@ -1734,4 +1734,77 @@ a.secondary {
       font-size: 1rem;
     }
   }
+
+  .listingsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .listingCard {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .listingCard:hover {
+    transform: translateY(-2px);
+  }
+
+  .listingImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .listingContent {
+    padding: 1rem;
+  }
+
+  .listingTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0A2540;
+  }
+
+  .listingDetails {
+    font-size: 0.98rem;
+    color: #0A2540;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .successMessage {
+    color: #16B286;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .errorMessage {
+    color: #d32f2f;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .listingsGrid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .listingTitle {
+      font-size: 1rem;
+    }
+
+    .listingDetails {
+      font-size: 0.9rem;
+    }
+  }
 }
