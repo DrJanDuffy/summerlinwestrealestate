@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 import HomebotWidget from '../components/ui/HomebotWidget';
 import SectionCard from "../components/ui/SectionCard";
 import { Inter } from "next/font/google";
+import Header from '../components/ui/Header';
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), { ssr: false });
@@ -82,8 +83,10 @@ export default function Home() {
         <link rel="canonical" href="https://summerlinwestrealestate.com/" />
         {/* ...structured data scripts... */}
       </Head>
-      <header>
-        <SectionCard ariaLabel="Featured Property">
+      <Header />
+      <div className="main-content">
+        {/* HERO: Featured Property */}
+        <section className="sectionCard">
           <h1 style={{color: '#0A2540', marginBottom: 8}}>Del Webb North Ranch</h1>
           <h2 style={{color: '#3A8DDE', margin: 0, fontWeight: 700, fontSize: 22}}>2209 Beauty Vista Avenue</h2>
           <Image
@@ -95,15 +98,15 @@ export default function Home() {
           />
           <p style={{color: '#16B286', fontWeight: 600, fontSize: 18, margin: '8px 0'}}>4 Bed &bull; 3 Bath &bull; 2,400 SqFt &bull; $899,000</p>
           <LeadCaptureForm onSuccess={closeModal} />
-        </SectionCard>
-      </header>
-      <main className={styles.page}>
-        <SectionCard ariaLabel="Home Value Widget">
+        </section>
+        {/* Home Value Widget */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540'}}>What's Your Home Worth?</h2>
           <p style={{color: '#3A8DDE'}}>Get your Del Webb North Ranch home value instantly</p>
           <HomebotWidget />
-        </SectionCard>
-        <SectionCard ariaLabel="Featured Listings">
+        </section>
+        {/* Featured Listings Grid */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb North Ranch Homes for Sale</h2>
           <div className={styles.featuredListingsGrid} style={{justifyContent: 'center'}}>
             {[1,2,3,4,5,6].map((i) => (
@@ -124,8 +127,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </SectionCard>
-        <SectionCard ariaLabel="Local Insights">
+        </section>
+        {/* Local Insights Section */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540', textAlign: 'center'}}>Local Insights: Living in Summerlin West</h2>
           <div style={{display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center'}}>
             <div style={{flex: '1 1 220px', minWidth: 220}}>
@@ -145,15 +149,22 @@ export default function Home() {
               <p>Stay up-to-date with the latest home price trends and market insights.</p>
             </div>
           </div>
-        </SectionCard>
-        <SectionCard ariaLabel="Advanced Home Search">
-          <h2 style={{color: '#0A2540', textAlign: 'center'}}>Advanced Home Search</h2>
+        </section>
+        {/* RealScout Widget */}
+        <section className="realscout-widget-container sectionCard">
+          <h2 style={{ color: "#0A2540", marginBottom: "0.5rem" }}>
+            Find Your Dream Home in Summerlin West
+          </h2>
+          <p style={{ color: "#3A8DDE", marginBottom: "1.5rem" }}>
+            Search by neighborhood, city, or school. Real-time MLS data.
+          </p>
           <realscout-simple-search
             agent-encoded-id="QWdlbnQtMjI1MDUw"
             aria-label="Home search for Summerlin West"
           ></realscout-simple-search>
-        </SectionCard>
-        <SectionCard ariaLabel="Lifestyle/Amenities">
+        </section>
+        {/* Lifestyle/Amenities Section */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb at North Ranch - Your Dream Lifestyle Awaits</h2>
           <ul style={{color: '#0A2540', fontSize: '1.08rem', margin: '1rem auto', maxWidth: 600, listStyle: 'disc inside'}}>
             <li>Gated community with resort-style amenities</li>
@@ -161,27 +172,31 @@ export default function Home() {
             <li>Walking trails and parks nearby</li>
             <li>Low-maintenance living for active adults</li>
           </ul>
-        </SectionCard>
-        <SectionCard ariaLabel="Community/Neighborhood Info">
+        </section>
+        {/* Community/Neighborhood Info */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb North Ranch Private 55+ Active Adult Community in North Las Vegas</h2>
           <p style={{color: '#0A2540', maxWidth: 800, margin: '1rem auto', fontSize: '1.05rem'}}>
             Discover the vibrant lifestyle and amenities of Del Webb North Ranch, a premier 55+ active adult community in North Las Vegas. Enjoy modern homes, social clubs, and a welcoming neighborhood atmosphere.
           </p>
           {/* Placeholder for more detailed community info */}
-        </SectionCard>
-        <SectionCard ariaLabel="Gallery/Virtual Tour">
+        </section>
+        {/* Gallery/Virtual Tour */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540'}}>Gallery & Virtual Tour</h2>
           <div style={{margin: '1.5rem auto', maxWidth: 800, minHeight: 220, background: '#fff', borderRadius: 6, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Gallery/Virtual Tour Placeholder</div>
-        </SectionCard>
-        <SectionCard ariaLabel="Amenities/Features">
+        </section>
+        {/* Amenities/Features List */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540'}}>Amenities</h2>
           <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem', margin: '1.5rem 0'}}>
             {['Clubhouse', 'Pool', 'Fitness Center', 'Walking Trails', 'Parks', 'Social Events'].map((amenity) => (
               <div key={amenity} style={{background: '#F7F9FC', borderRadius: 6, padding: '1rem 2rem', minWidth: 120, boxShadow: '0 2px 8px rgba(0,0,0,0.04)'}}>{amenity}</div>
             ))}
           </div>
-        </SectionCard>
-        <SectionCard ariaLabel="Agent/Contact Info">
+        </section>
+        {/* Agent/Contact Info */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540'}}>Meet Your Summerlin Expert</h2>
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem'}}>
             <Image src="/images/agent-placeholder.jpg" alt="Agent" width={96} height={96} style={{borderRadius: '50%'}} />
@@ -191,13 +206,17 @@ export default function Home() {
               <p style={{margin: 0, color: '#0A2540'}}>Call: (702) 555-1234</p>
             </div>
           </div>
-        </SectionCard>
-        <SectionCard ariaLabel="Mortgage Calculator">
+        </section>
+        {/* Mortgage Calculator */}
+        <section className="sectionCard">
           <h2 style={{color: '#0A2540'}}>Mortgage Calculator</h2>
           <div style={{margin: '1.5rem auto', maxWidth: 600, minHeight: 120, background: '#F7F9FC', borderRadius: 6, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Mortgage Calculator Widget</div>
-        </SectionCard>
-        <LatestMarketInsights />
-      </main>
+        </section>
+        {/* Latest Market Insights */}
+        <section className="sectionCard">
+          <LatestMarketInsights />
+        </section>
+      </div>
     </>
   );
 }
