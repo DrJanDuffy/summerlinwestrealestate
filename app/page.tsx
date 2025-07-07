@@ -1,17 +1,20 @@
 "use client";
-import Head from 'next/head';
+import Head from "next/head";
 import styles from "./page.module.css";
 import LeadCaptureForm from "../components/ui/LeadCaptureForm";
 import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
-import Link from 'next/link';
-import Image from 'next/image';
-import LatestMarketInsights from '../components/ui/LatestMarketInsights';
-import dynamic from 'next/dynamic';
-import HomebotWidget from '../components/ui/HomebotWidget';
-import Header from '../components/layout/Header';
+import Link from "next/link";
+import Image from "next/image";
+import LatestMarketInsights from "../components/ui/LatestMarketInsights";
+import dynamic from "next/dynamic";
+import HomebotWidget from "../components/ui/HomebotWidget";
+import Header from "../components/layout/Header";
 
 // Dynamically import RealScoutAdvancedSearch for performance
-const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), { ssr: false });
+const RealScoutAdvancedSearch = dynamic(
+  () => import("../components/ui/RealScoutAdvancedSearch"),
+  { ssr: false },
+);
 
 type Faq = {
   question: string;
@@ -23,9 +26,9 @@ export default function Home() {
 
   const handleFormSuccess = () => {
     // Track successful submission
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'lead_form_success', {
-        event_category: 'Lead',
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "lead_form_success", {
+        event_category: "Lead",
         event_label: source,
       });
     }
@@ -34,62 +37,84 @@ export default function Home() {
   const faqs: Faq[] = [
     {
       question: "What are the best neighborhoods in Summerlin West?",
-      answer: "Popular Summerlin West neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options."
+      answer:
+        "Popular Summerlin West neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options.",
     },
     {
       question: "What is the average home price in Summerlin West?",
-      answer: "The median home price in Summerlin West is around $850,000, with luxury homes reaching $2M+. Prices vary by neighborhood and property type."
+      answer:
+        "The median home price in Summerlin West is around $850,000, with luxury homes reaching $2M+. Prices vary by neighborhood and property type.",
     },
     {
       question: "Are there new construction homes available in Summerlin West?",
-      answer: "Yes! Summerlin West offers new construction in communities like Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives."
+      answer:
+        "Yes! Summerlin West offers new construction in communities like Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives.",
     },
     {
       question: "How do I schedule a home tour in Summerlin West?",
-      answer: "Contact us via the form or call (702) 555-1234 to schedule a private showing of any Summerlin West property."
+      answer:
+        "Contact us via the form or call (702) 555-1234 to schedule a private showing of any Summerlin West property.",
     },
     {
       question: "What makes Summerlin West special?",
-      answer: "Summerlin West offers master-planned communities, top-rated schools, proximity to Red Rock Canyon, and a family-friendly lifestyle with excellent amenities."
+      answer:
+        "Summerlin West offers master-planned communities, top-rated schools, proximity to Red Rock Canyon, and a family-friendly lifestyle with excellent amenities.",
     },
     {
       question: "How can I get a free Summerlin West market report?",
-      answer: "Fill out the form on this page or visit our Market Reports section to get your free Summerlin West market analysis and neighborhood insights."
-    }
+      answer:
+        "Fill out the form on this page or visit our Market Reports section to get your free Summerlin West market analysis and neighborhood insights.",
+    },
   ];
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+        text: faq.answer,
+      },
+    })),
   };
 
   return (
     <>
       <Head>
-        <title>Summerlin West Homes for Sale | Luxury Real Estate & Communities</title>
-        <meta name="description" content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist." />
-        <meta property="og:title" content="Summerlin West Homes for Sale | Luxury Real Estate & Communities" />
-        <meta property="og:description" content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist." />
+        <title>
+          Summerlin West Homes for Sale | Luxury Real Estate & Communities
+        </title>
+        <meta
+          name="description"
+          content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist."
+        />
+        <meta
+          property="og:title"
+          content="Summerlin West Homes for Sale | Luxury Real Estate & Communities"
+        />
+        <meta
+          property="og:description"
+          content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist."
+        />
         <meta property="og:image" content="/images/og-image.jpg" />
         <link rel="canonical" href="https://summerlinwestrealestate.com/" />
-        <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(faqJsonLd)}</script>
+        <script type="application/ld+json" suppressHydrationWarning>
+          {JSON.stringify(faqJsonLd)}
+        </script>
       </Head>
-      
+
       <Header />
-      
+
       <div className={styles.mainContent}>
         {/* Hero Section */}
         <section className={styles.hero}>
           <h1>Summerlin West Homes for Sale</h1>
-          <p className={styles.subtitle}>Discover luxury living in Las Vegas' most prestigious master-planned community</p>
+          <p className={styles.subtitle}>
+            Discover luxury living in Las Vegas' most prestigious master-planned
+            community
+          </p>
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
               <span className={styles.heroStatNumber}>$850K</span>
@@ -108,7 +133,7 @@ export default function Home() {
 
         {/* Property Search Widget */}
         <section className={styles.sectionCard}>
-          <RealScoutAdvancedSearch 
+          <RealScoutAdvancedSearch
             title="Find Your Dream Home in Summerlin West"
             subtitle="Search by neighborhood, price, or features. Real-time MLS data."
             variant="page"
@@ -118,33 +143,35 @@ export default function Home() {
 
         {/* Featured Communities */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Featured Summerlin West Communities</h2>
+          <h2 className={styles.centerTitle}>
+            Featured Summerlin West Communities
+          </h2>
           <div className={styles.communitiesGrid}>
             {[
               {
                 name: "The Vistas",
                 description: "Luxury homes with mountain views",
                 price: "$950K - $2.5M",
-                image: "https://placehold.co/400x220?text=The+Vistas"
+                image: "https://placehold.co/400x220?text=The+Vistas",
               },
               {
                 name: "Redpoint",
                 description: "New construction & resort living",
                 price: "$750K - $1.8M",
-                image: "https://placehold.co/400x220?text=Redpoint"
+                image: "https://placehold.co/400x220?text=Redpoint",
               },
               {
                 name: "Stonebridge",
                 description: "Family-friendly with top schools",
                 price: "$650K - $1.2M",
-                image: "https://placehold.co/400x220?text=Stonebridge"
+                image: "https://placehold.co/400x220?text=Stonebridge",
               },
               {
                 name: "The Cliffs",
                 description: "Luxury estates & privacy",
                 price: "$1.2M - $3M+",
-                image: "https://placehold.co/400x220?text=The+Cliffs"
-              }
+                image: "https://placehold.co/400x220?text=The+Cliffs",
+              },
             ].map((community, index) => (
               <div key={index} className={styles.communityCard}>
                 <Image
@@ -156,9 +183,14 @@ export default function Home() {
                 />
                 <div className={styles.communityContent}>
                   <h3 className={styles.communityTitle}>{community.name}</h3>
-                  <p className={styles.communityDescription}>{community.description}</p>
+                  <p className={styles.communityDescription}>
+                    {community.description}
+                  </p>
                   <p className={styles.communityPrice}>{community.price}</p>
-                  <Link href={`/communities#${community.name.toLowerCase().replace(/\s+/g, '-')}`} className={styles.communityLink}>
+                  <Link
+                    href={`/communities#${community.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    className={styles.communityLink}
+                  >
                     View Homes
                   </Link>
                 </div>
@@ -197,30 +229,46 @@ export default function Home() {
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🏔️</div>
               <h3>Red Rock Views</h3>
-              <p>Breathtaking mountain views and proximity to Red Rock Canyon National Conservation Area</p>
+              <p>
+                Breathtaking mountain views and proximity to Red Rock Canyon
+                National Conservation Area
+              </p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🎓</div>
               <h3>Top-Rated Schools</h3>
-              <p>Exceptional public and private schools with high academic performance ratings</p>
+              <p>
+                Exceptional public and private schools with high academic
+                performance ratings
+              </p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🏊</div>
               <h3>Resort Amenities</h3>
-              <p>Clubhouses, pools, fitness centers, and social activities in every community</p>
+              <p>
+                Clubhouses, pools, fitness centers, and social activities in
+                every community
+              </p>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIcon}>🛒</div>
               <h3>Shopping & Dining</h3>
-              <p>Downtown Summerlin, Trader Joe's, and fine dining options just minutes away</p>
+              <p>
+                Downtown Summerlin, Trader Joe's, and fine dining options just
+                minutes away
+              </p>
             </div>
           </div>
         </section>
 
         {/* Home Value Widget */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>What's Your Summerlin West Home Worth?</h2>
-          <p className={styles.widgetSubtitle}>Get an instant home value estimate for your Summerlin West property</p>
+          <h2 className={styles.centerTitle}>
+            What's Your Summerlin West Home Worth?
+          </h2>
+          <p className={styles.widgetSubtitle}>
+            Get an instant home value estimate for your Summerlin West property
+          </p>
           <HomebotWidget />
         </section>
 
@@ -231,8 +279,10 @@ export default function Home() {
 
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Ready to Find Your Summerlin West Home?</h2>
-          <LeadCaptureForm 
+          <h2 className={styles.centerTitle}>
+            Ready to Find Your Summerlin West Home?
+          </h2>
+          <LeadCaptureForm
             variant="inline"
             title="Get Your Free Summerlin West Consultation"
             subtitle="Let's discuss your home search and how I can help you find the perfect Summerlin West property."
@@ -258,12 +308,26 @@ export default function Home() {
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Explore More</h2>
           <ul className={styles.resourceLinks}>
-            <li><Link href="/properties">Browse All Summerlin West Homes</Link></li>
-            <li><Link href="/communities">Explore Summerlin West Communities</Link></li>
-            <li><Link href="/market-reports">Get Market Reports</Link></li>
-            <li><Link href="/new-homes-summerlin">New Construction Homes</Link></li>
-            <li><Link href="/about">Meet Your Summerlin West Expert</Link></li>
-            <li><Link href="/contact">Schedule a Consultation</Link></li>
+            <li>
+              <Link href="/properties">Browse All Summerlin West Homes</Link>
+            </li>
+            <li>
+              <Link href="/communities">
+                Explore Summerlin West Communities
+              </Link>
+            </li>
+            <li>
+              <Link href="/market-reports">Get Market Reports</Link>
+            </li>
+            <li>
+              <Link href="/new-homes-summerlin">New Construction Homes</Link>
+            </li>
+            <li>
+              <Link href="/about">Meet Your Summerlin West Expert</Link>
+            </li>
+            <li>
+              <Link href="/contact">Schedule a Consultation</Link>
+            </li>
           </ul>
         </section>
       </div>

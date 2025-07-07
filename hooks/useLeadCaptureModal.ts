@@ -1,10 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from "react";
 
 export function useLeadCaptureModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [source, setSource] = useState('Website');
+  const [source, setSource] = useState("Website");
 
-  const openModal = useCallback((modalSource = 'Website') => {
+  const openModal = useCallback((modalSource = "Website") => {
     setSource(modalSource);
     setIsOpen(true);
   }, []);
@@ -17,6 +17,6 @@ export function useLeadCaptureModal() {
     isOpen,
     source,
     openModal,
-    closeModal
+    closeModal,
   };
-} 
+}

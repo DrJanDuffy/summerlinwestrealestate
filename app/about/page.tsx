@@ -1,20 +1,37 @@
 "use client";
-import Head from 'next/head';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
+import Head from "next/head";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 import styles from "../page.module.css";
-const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
-const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), { ssr: false });
+const LatestMarketInsights = dynamic(
+  () => import("../../components/ui/LatestMarketInsights"),
+  { ssr: false },
+);
+const LeadCaptureForm = dynamic(
+  () => import("../../components/ui/LeadCaptureForm"),
+  { ssr: false },
+);
 
 export default function About() {
   return (
     <div className={styles.page}>
       <Head>
-        <title>About Your Summerlin Real Estate Expert | Summerlin West Real Estate</title>
-        <meta name="description" content="Meet your Summerlin real estate expert. Learn about experience, local knowledge, and commitment to helping buyers and sellers in Summerlin West." />
-        <meta property="og:title" content="About Your Summerlin Real Estate Expert | Summerlin West Real Estate" />
-        <meta property="og:description" content="Meet your Summerlin real estate expert. Learn about experience, local knowledge, and commitment to helping buyers and sellers in Summerlin West." />
+        <title>
+          About Your Summerlin Real Estate Expert | Summerlin West Real Estate
+        </title>
+        <meta
+          name="description"
+          content="Meet your Summerlin real estate expert. Learn about experience, local knowledge, and commitment to helping buyers and sellers in Summerlin West."
+        />
+        <meta
+          property="og:title"
+          content="About Your Summerlin Real Estate Expert | Summerlin West Real Estate"
+        />
+        <meta
+          property="og:description"
+          content="Meet your Summerlin real estate expert. Learn about experience, local knowledge, and commitment to helping buyers and sellers in Summerlin West."
+        />
         <script type="application/ld+json" suppressHydrationWarning>{`
           {
             "@context": "https://schema.org",
@@ -35,30 +52,36 @@ export default function About() {
           }
         `}</script>
       </Head>
-      
+
       <div className={styles.mainContent}>
         <section className={styles.hero}>
           <h1>About Your Summerlin Real Estate Expert</h1>
-          <p className={styles.subtitle}>Local knowledge. Proven results. Personalized service.</p>
+          <p className={styles.subtitle}>
+            Local knowledge. Proven results. Personalized service.
+          </p>
         </section>
-        
+
         <LatestMarketInsights />
 
         {/* Agent Profile Section */}
         <section className={styles.sectionCard}>
           <div className={styles.contentGrid}>
-            <Image 
-              src="https://placehold.co/280x280?text=Agent+Photo" 
-              alt="Summerlin real estate agent photo" 
-              width={280} 
-              height={280} 
+            <Image
+              src="https://placehold.co/280x280?text=Agent+Photo"
+              alt="Summerlin real estate agent photo"
+              width={280}
+              height={280}
               className={styles.agentPhoto}
               priority
             />
             <div className={styles.agentInfo}>
               <h2>Meet Your Agent</h2>
               <p className={styles.agentIntro}>
-                With over 15 years of dedicated experience in Summerlin real estate, I've helped hundreds of families find their perfect homes and achieve their real estate goals. As a local resident and community advocate, I bring deep market knowledge and personal commitment to every transaction.
+                With over 15 years of dedicated experience in Summerlin real
+                estate, I've helped hundreds of families find their perfect
+                homes and achieve their real estate goals. As a local resident
+                and community advocate, I bring deep market knowledge and
+                personal commitment to every transaction.
               </p>
               <ul className={styles.agentHighlights}>
                 <li>15+ years of Summerlin real estate experience</li>
@@ -79,22 +102,37 @@ export default function About() {
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🏠</div>
               <h3>Local Market Knowledge</h3>
-              <p>In-depth understanding of Summerlin neighborhoods, schools, amenities, and market trends that only comes from living and working here for years.</p>
+              <p>
+                In-depth understanding of Summerlin neighborhoods, schools,
+                amenities, and market trends that only comes from living and
+                working here for years.
+              </p>
             </div>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>💼</div>
               <h3>Proven Negotiation Skills</h3>
-              <p>Expert negotiation and marketing strategies that consistently deliver results for both buyers and sellers in competitive markets.</p>
+              <p>
+                Expert negotiation and marketing strategies that consistently
+                deliver results for both buyers and sellers in competitive
+                markets.
+              </p>
             </div>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🤝</div>
               <h3>Trusted by Hundreds</h3>
-              <p>Built lasting relationships with hundreds of local families through honest advice, transparent communication, and exceptional service.</p>
+              <p>
+                Built lasting relationships with hundreds of local families
+                through honest advice, transparent communication, and
+                exceptional service.
+              </p>
             </div>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🎯</div>
               <h3>Goal-Focused Approach</h3>
-              <p>Committed to understanding your unique needs and working tirelessly to achieve your specific real estate objectives.</p>
+              <p>
+                Committed to understanding your unique needs and working
+                tirelessly to achieve your specific real estate objectives.
+              </p>
             </div>
           </div>
         </section>
@@ -105,7 +143,10 @@ export default function About() {
             <div className={styles.communityContent}>
               <h2>Giving Back to Summerlin</h2>
               <p className={styles.contentText}>
-                I believe in supporting the community that has given me so much. From sponsoring local school events to volunteering at neighborhood cleanups and supporting youth sports, I'm committed to making Summerlin West a better place for everyone.
+                I believe in supporting the community that has given me so much.
+                From sponsoring local school events to volunteering at
+                neighborhood cleanups and supporting youth sports, I'm committed
+                to making Summerlin West a better place for everyone.
               </p>
               <div className={styles.communityActivities}>
                 <h3>Community Involvement</h3>
@@ -117,13 +158,13 @@ export default function About() {
                 </ul>
               </div>
             </div>
-            <Image 
-              src="https://placehold.co/240x240?text=Community" 
-              alt="Community involvement in Summerlin West" 
-              width={240} 
-              height={240} 
+            <Image
+              src="https://placehold.co/240x240?text=Community"
+              alt="Community involvement in Summerlin West"
+              width={240}
+              height={240}
               className={styles.communityImage}
-              priority 
+              priority
             />
           </div>
         </section>
@@ -135,32 +176,37 @@ export default function About() {
             {[
               {
                 name: "Sarah M.",
-                review: "Our experience was fantastic! We found our dream home in The Vistas and the process was smooth and stress-free.",
-                rating: 5
+                review:
+                  "Our experience was fantastic! We found our dream home in The Vistas and the process was smooth and stress-free.",
+                rating: 5,
               },
               {
                 name: "James R.",
-                review: "Professional, knowledgeable, and always available. Highly recommend for anyone buying in Summerlin.",
-                rating: 5
+                review:
+                  "Professional, knowledgeable, and always available. Highly recommend for anyone buying in Summerlin.",
+                rating: 5,
               },
               {
                 name: "Linda & Tom",
-                review: "We sold our home above asking price thanks to expert marketing and negotiation. Couldn't be happier!",
-                rating: 5
-              }
+                review:
+                  "We sold our home above asking price thanks to expert marketing and negotiation. Couldn't be happier!",
+                rating: 5,
+              },
             ].map((testimonial, index) => (
               <div key={index} className={styles.testimonialCard}>
                 <div className={styles.testimonialStars}>
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className={styles.star}>
-                      {i < testimonial.rating ? '★' : '☆'}
+                      {i < testimonial.rating ? "★" : "☆"}
                     </span>
                   ))}
                 </div>
                 <blockquote className={styles.testimonialText}>
                   "{testimonial.review}"
                 </blockquote>
-                <cite className={styles.testimonialAuthor}>— {testimonial.name}</cite>
+                <cite className={styles.testimonialAuthor}>
+                  — {testimonial.name}
+                </cite>
               </div>
             ))}
           </div>
@@ -169,7 +215,7 @@ export default function About() {
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Ready to Work Together?</h2>
-          <LeadCaptureForm 
+          <LeadCaptureForm
             variant="inline"
             title="Get Your Free Consultation"
             subtitle="Let's discuss your real estate goals and how I can help you achieve them."
@@ -181,14 +227,24 @@ export default function About() {
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
           <ul className={styles.resourceLinks}>
-            <li><Link href="/market-reports">Summerlin Market Reports</Link></li>
-            <li><Link href="/properties">Browse Current Listings</Link></li>
-            <li><Link href="/current-listing">Featured Home for Sale</Link></li>
-            <li><Link href="/communities">Explore Summerlin Communities</Link></li>
-            <li><Link href="/contact">Contact for a Consultation</Link></li>
+            <li>
+              <Link href="/market-reports">Summerlin Market Reports</Link>
+            </li>
+            <li>
+              <Link href="/properties">Browse Current Listings</Link>
+            </li>
+            <li>
+              <Link href="/current-listing">Featured Home for Sale</Link>
+            </li>
+            <li>
+              <Link href="/communities">Explore Summerlin Communities</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact for a Consultation</Link>
+            </li>
           </ul>
         </section>
       </div>
     </div>
   );
-} 
+}

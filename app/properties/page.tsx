@@ -1,35 +1,58 @@
 "use client";
 
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from '../page.module.css';
-import dynamic from 'next/dynamic';
-const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), { ssr: false });
-const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), { ssr: false });
-const RealScoutAdvancedSearch = dynamic(() => import('../../components/ui/RealScoutAdvancedSearch'), { ssr: false });
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../page.module.css";
+import dynamic from "next/dynamic";
+const LatestMarketInsights = dynamic(
+  () => import("../../components/ui/LatestMarketInsights"),
+  { ssr: false },
+);
+const LeadCaptureForm = dynamic(
+  () => import("../../components/ui/LeadCaptureForm"),
+  { ssr: false },
+);
+const RealScoutAdvancedSearch = dynamic(
+  () => import("../../components/ui/RealScoutAdvancedSearch"),
+  { ssr: false },
+);
 
 export default function Properties() {
   return (
     <div className={styles.page}>
       <Head>
-        <title>Properties for Sale in Summerlin | Summerlin West Real Estate</title>
-        <meta name="description" content="Browse properties for sale in Summerlin West. Find your dream home with detailed listings, photos, and market insights from your local Summerlin real estate expert." />
-        <meta property="og:title" content="Properties for Sale in Summerlin | Summerlin West Real Estate" />
-        <meta property="og:description" content="Browse properties for sale in Summerlin West. Find your dream home with detailed listings, photos, and market insights from your local Summerlin real estate expert." />
+        <title>
+          Properties for Sale in Summerlin | Summerlin West Real Estate
+        </title>
+        <meta
+          name="description"
+          content="Browse properties for sale in Summerlin West. Find your dream home with detailed listings, photos, and market insights from your local Summerlin real estate expert."
+        />
+        <meta
+          property="og:title"
+          content="Properties for Sale in Summerlin | Summerlin West Real Estate"
+        />
+        <meta
+          property="og:description"
+          content="Browse properties for sale in Summerlin West. Find your dream home with detailed listings, photos, and market insights from your local Summerlin real estate expert."
+        />
       </Head>
-      
+
       <div className={styles.mainContent}>
         <section className={styles.hero}>
           <h1>Properties for Sale in Summerlin</h1>
-          <p className={styles.subtitle}>Discover your perfect home in Summerlin West with our curated selection of properties</p>
+          <p className={styles.subtitle}>
+            Discover your perfect home in Summerlin West with our curated
+            selection of properties
+          </p>
         </section>
-        
+
         <LatestMarketInsights />
 
         {/* Property Search Widget */}
         <section className={styles.sectionCard}>
-          <RealScoutAdvancedSearch 
+          <RealScoutAdvancedSearch
             title="Search All Properties"
             subtitle="Find homes that match your criteria in Summerlin"
             variant="page"
@@ -50,7 +73,7 @@ export default function Properties() {
                 baths: 3,
                 sqft: "3,200",
                 image: "https://placehold.co/400x220?text=Luxury+Home+1",
-                status: "Active"
+                status: "Active",
               },
               {
                 id: 2,
@@ -60,7 +83,7 @@ export default function Properties() {
                 baths: 2.5,
                 sqft: "2,400",
                 image: "https://placehold.co/400x220?text=Townhome+2",
-                status: "Active"
+                status: "Active",
               },
               {
                 id: 3,
@@ -70,7 +93,7 @@ export default function Properties() {
                 baths: 3,
                 sqft: "2,800",
                 image: "https://placehold.co/400x220?text=Family+Home+3",
-                status: "Active"
+                status: "Active",
               },
               {
                 id: 4,
@@ -80,7 +103,7 @@ export default function Properties() {
                 baths: 4.5,
                 sqft: "4,500",
                 image: "https://placehold.co/400x220?text=Estate+4",
-                status: "Active"
+                status: "Active",
               },
               {
                 id: 5,
@@ -90,7 +113,7 @@ export default function Properties() {
                 baths: 2,
                 sqft: "2,100",
                 image: "https://placehold.co/400x220?text=Cozy+Home+5",
-                status: "Active"
+                status: "Active",
               },
               {
                 id: 6,
@@ -100,24 +123,27 @@ export default function Properties() {
                 baths: 3.5,
                 sqft: "3,600",
                 image: "https://placehold.co/400x220?text=Contemporary+6",
-                status: "Active"
-              }
+                status: "Active",
+              },
             ].map((property) => (
               <div key={property.id} className={styles.featuredListingCard}>
-                <Image 
-                  src={property.image} 
-                  alt={property.title} 
-                  width={400} 
-                  height={220} 
+                <Image
+                  src={property.image}
+                  alt={property.title}
+                  width={400}
+                  height={220}
                   className={styles.featuredListingImage}
                 />
                 <div className={styles.listingContent}>
                   <h3 className={styles.listingTitle}>{property.title}</h3>
                   <p className={styles.listingPrice}>{property.price}</p>
                   <p className={styles.listingDetails}>
-                    {property.beds} bed &bull; {property.baths} bath &bull; {property.sqft} sqft
+                    {property.beds} bed &bull; {property.baths} bath &bull;{" "}
+                    {property.sqft} sqft
                   </p>
-                  <span className={styles.listingStatus}>{property.status}</span>
+                  <span className={styles.listingStatus}>
+                    {property.status}
+                  </span>
                 </div>
               </div>
             ))}
@@ -149,8 +175,10 @@ export default function Properties() {
 
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Get Notified About New Properties</h2>
-          <LeadCaptureForm 
+          <h2 className={styles.centerTitle}>
+            Get Notified About New Properties
+          </h2>
+          <LeadCaptureForm
             variant="inline"
             title="Property Alert Signup"
             subtitle="Be the first to know about new listings that match your criteria."
@@ -162,14 +190,24 @@ export default function Properties() {
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
           <ul className={styles.resourceLinks}>
-            <li><Link href="/current-listing">View Our Featured Listing</Link></li>
-            <li><Link href="/communities">Browse Summerlin Communities</Link></li>
-            <li><Link href="/market-reports">Get Market Reports</Link></li>
-            <li><Link href="/sold">See Recently Sold Homes</Link></li>
-            <li><Link href="/contact">Contact for Custom Search</Link></li>
+            <li>
+              <Link href="/current-listing">View Our Featured Listing</Link>
+            </li>
+            <li>
+              <Link href="/communities">Browse Summerlin Communities</Link>
+            </li>
+            <li>
+              <Link href="/market-reports">Get Market Reports</Link>
+            </li>
+            <li>
+              <Link href="/sold">See Recently Sold Homes</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact for Custom Search</Link>
+            </li>
           </ul>
         </section>
       </div>
     </div>
   );
-} 
+}

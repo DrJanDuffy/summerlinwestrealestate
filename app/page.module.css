@@ -14,8 +14,8 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
-  background: #F7F9FC;
-  color: #0A2540;
+  background: #f7f9fc;
+  color: #0a2540;
   min-height: 100vh;
   padding: 0;
   margin: 0;
@@ -173,14 +173,14 @@ a.secondary {
 }
 
 .hero {
-  background: linear-gradient(135deg, #3A8DDE 80%, #16B286 100%);
+  background: linear-gradient(135deg, #3a8dde 80%, #16b286 100%);
   color: #fff;
   min-height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 2px 16px rgba(10,37,64,0.10);
+  box-shadow: 0 2px 16px rgba(10, 37, 64, 0.1);
   z-index: 1000;
   position: relative;
   padding: 2.5rem 1.5rem 2rem 1.5rem;
@@ -218,43 +218,53 @@ a.secondary {
   font-weight: 800;
   letter-spacing: -1.5px;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  text-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 .subtitle {
   font-size: 1.25rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
-  color: #F7F9FC;
+  color: #f7f9fc;
   opacity: 0.95;
   animation: fadeInUp 1.5s 0.3s both;
 }
 
 .cta {
-  background: #16B286;
+  background: #16b286;
   color: #fff;
   border-radius: 32px;
   padding: 0.85rem 2.2rem;
   font-size: 1.15rem;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   border: none;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
   cursor: pointer;
   margin-top: 1.2rem;
   text-decoration: none;
   display: inline-block;
   animation: fadeInUp 1.5s 0.6s both;
 }
-.cta:hover, .cta:focus {
+.cta:hover,
+.cta:focus {
   background: #13996f;
-  box-shadow: 0 4px 16px rgba(10,37,64,0.13);
+  box-shadow: 0 4px 16px rgba(10, 37, 64, 0.13);
   transform: translateY(-2px) scale(1.03);
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px);}
-  to { opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 600px) {
@@ -278,9 +288,9 @@ a.secondary {
 
 .credibility {
   background: #fff;
-  color: #0A2540;
+  color: #0a2540;
   padding: 1.5rem 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin: 1.5rem 0;
   border-radius: 8px;
 }
@@ -301,37 +311,37 @@ a.secondary {
 }
 
 .marketCoverage {
-  background: #3A8DDE;
+  background: #3a8dde;
   color: #fff;
   padding: 1.5rem 1rem;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 1.5rem;
 }
 
 .secondaryCta {
   background: #fff;
-  color: #3A8DDE;
+  color: #3a8dde;
   padding: 0.5rem 1.2rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
   margin-top: 1rem;
   display: inline-block;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .secondaryCta:hover {
-  background: #F7F9FC;
+  background: #f7f9fc;
 }
 
 .leadCapture {
   background: #fff;
-  color: #0A2540;
+  color: #0a2540;
   padding: 2rem 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -350,7 +360,7 @@ a.secondary {
 
 .leadCapture input[type="email"] {
   padding: 0.7rem 1rem;
-  border: 1px solid #3A8DDE;
+  border: 1px solid #3a8dde;
   border-radius: 4px;
   font-size: 1rem;
   width: 100%;
@@ -358,7 +368,7 @@ a.secondary {
 }
 
 .leadCapture button {
-  background: #16B286;
+  background: #16b286;
   color: #fff;
   padding: 0.7rem 1.5rem;
   border: none;
@@ -366,7 +376,7 @@ a.secondary {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
 }
 
@@ -378,7 +388,9 @@ a.secondary {
   .hero h1 {
     font-size: 2.7rem;
   }
-  .credibility, .marketCoverage, .leadCapture {
+  .credibility,
+  .marketCoverage,
+  .leadCapture {
     margin-left: auto;
     margin-right: auto;
     max-width: 540px;
@@ -389,26 +401,32 @@ a.secondary {
   .hero h1 {
     font-size: 3rem;
   }
-  .credibility, .marketCoverage, .leadCapture {
+  .credibility,
+  .marketCoverage,
+  .leadCapture {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .credibility, .marketCoverage, .leadCapture {
+  .credibility,
+  .marketCoverage,
+  .leadCapture {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .credibility, .marketCoverage, .leadCapture {
+  .credibility,
+  .marketCoverage,
+  .leadCapture {
     max-width: 1140px;
   }
 }
 
 .nav {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   position: sticky;
   top: 0;
@@ -421,15 +439,15 @@ a.secondary {
 
 .footer {
   background: #fff;
-  color: #0A2540;
+  color: #0a2540;
   text-align: center;
   padding: 2rem 1rem 1rem 1rem;
   margin-top: 2rem;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .footer a {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-decoration: none;
 }
 
@@ -451,9 +469,9 @@ a.secondary {
 
 .marketAuthority {
   background: #fff;
-  color: #0A2540;
+  color: #0a2540;
   padding: 3rem 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin: 2rem 0;
   border-radius: 8px;
 }
@@ -469,7 +487,7 @@ a.secondary {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 .expertisePoints {
@@ -489,8 +507,8 @@ a.secondary {
 }
 
 .expertisePoint:hover {
-  background: #F7F9FC;
-  border-color: #3A8DDE;
+  background: #f7f9fc;
+  border-color: #3a8dde;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(58, 141, 222, 0.15);
 }
@@ -499,7 +517,7 @@ a.secondary {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  background: #3A8DDE;
+  background: #3a8dde;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -509,14 +527,14 @@ a.secondary {
 }
 
 .expertisePoint:hover .expertiseIcon {
-  background: #16B286;
+  background: #16b286;
   transform: scale(1.1);
 }
 
 .expertisePoint h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 .expertisePoint p {
@@ -531,7 +549,7 @@ a.secondary {
   gap: 1.5rem;
   margin-top: 2rem;
   padding: 2rem;
-  background: #F7F9FC;
+  background: #f7f9fc;
   border-radius: 8px;
 }
 
@@ -544,14 +562,14 @@ a.secondary {
 
 .statItem:hover {
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
 .statNumber {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #3A8DDE;
+  color: #3a8dde;
   margin-bottom: 0.5rem;
 }
 
@@ -564,16 +582,16 @@ a.secondary {
 .authorityProfile {
   text-align: center;
   padding: 2rem;
-  background: #F7F9FC;
+  background: #f7f9fc;
   border-radius: 8px;
-  border: 2px solid #3A8DDE;
+  border: 2px solid #3a8dde;
 }
 
 .profileImage {
   width: 120px;
   height: 120px;
   margin: 0 auto 1.5rem;
-  background: #3A8DDE;
+  background: #3a8dde;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -585,7 +603,7 @@ a.secondary {
 .authorityProfile h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 .authorityProfile p {
@@ -607,7 +625,7 @@ a.secondary {
 }
 
 .contactItem strong {
-  color: #0A2540;
+  color: #0a2540;
 }
 
 @media (min-width: 768px) {
@@ -615,11 +633,11 @@ a.secondary {
     grid-template-columns: 2fr 1fr;
     align-items: start;
   }
-  
+
   .expertisePoints {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .statsGrid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -629,15 +647,15 @@ a.secondary {
   .marketAuthority {
     padding: 4rem 2rem;
   }
-  
+
   .authorityText h2 {
     font-size: 2.5rem;
   }
-  
+
   .expertisePoint h3 {
     font-size: 1.2rem;
   }
-  
+
   .statNumber {
     font-size: 3rem;
   }
@@ -654,7 +672,7 @@ a.secondary {
 .featuredListingCard {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -712,7 +730,7 @@ a.secondary {
   margin: 2.5rem 0;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 2rem 1rem;
 }
 
@@ -732,26 +750,28 @@ a.secondary {
 .statCard {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 1.5rem 2rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .statCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .statNumber {
   font-size: 2rem;
   font-weight: 700;
-  color: #3A8DDE;
+  color: #3a8dde;
   margin-bottom: 0.5rem;
 }
 
 .statLabel {
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 500;
   font-size: 0.9rem;
 }
@@ -766,7 +786,7 @@ a.secondary {
 
 .chartImage {
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -780,7 +800,7 @@ a.secondary {
 }
 
 .marketAnalysis {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.08rem;
   max-width: 800px;
   margin: 0 auto;
@@ -797,7 +817,7 @@ a.secondary {
 .analysisSection strong {
   display: block;
   margin-bottom: 0.5rem;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 .analysisSection p {
@@ -807,7 +827,7 @@ a.secondary {
 }
 
 .resourceLinks {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 600;
   font-size: 1.08rem;
   margin-left: 1rem;
@@ -825,7 +845,7 @@ a.secondary {
 }
 
 .resourceLinks a:hover {
-  color: #16B286;
+  color: #16b286;
   text-decoration: underline;
 }
 
@@ -834,20 +854,20 @@ a.secondary {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .statCard {
     padding: 1rem 1.5rem;
   }
-  
+
   .statNumber {
     font-size: 1.5rem;
   }
-  
+
   .chartsGrid {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .chartImage {
     max-width: 100%;
     height: auto;
@@ -858,18 +878,18 @@ a.secondary {
   .statsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .mainContent {
     padding: 0 0.5rem;
   }
-  
+
   .sectionCard {
     padding: 1.5rem 0.75rem;
   }
 }
 
 .contentList {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.08rem;
   margin-left: 1rem;
   list-style: disc inside;
@@ -880,14 +900,14 @@ a.secondary {
 }
 
 .contentText {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.08rem;
   line-height: 1.6;
   margin: 0;
 }
 
 .processList {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.08rem;
   margin-left: 1.5rem;
   list-style: decimal inside;
@@ -909,19 +929,19 @@ a.secondary {
 .listingTitle {
   margin: 0;
   font-size: 1.1rem;
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 600;
 }
 
 .listingDetails {
   font-size: 0.98rem;
-  color: #0A2540;
+  color: #0a2540;
   margin: 0.5rem 0;
 }
 
 .listingDate {
   font-size: 0.92rem;
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 500;
 }
 
@@ -934,7 +954,7 @@ a.secondary {
 
 .contentImage {
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -948,7 +968,7 @@ a.secondary {
     align-items: center;
     text-align: center;
   }
-  
+
   .contentImage {
     max-width: 100%;
     height: auto;
@@ -958,13 +978,13 @@ a.secondary {
 .listingPrice {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #16B286;
+  color: #16b286;
   margin: 0.5rem 0;
 }
 
 .listingStatus {
   font-size: 0.85rem;
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -977,14 +997,14 @@ a.secondary {
 
 .errorCode {
   font-size: 3rem;
-  color: #3A8DDE;
+  color: #3a8dde;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .errorTitle {
   font-size: 1.5rem;
-  color: #0A2540;
+  color: #0a2540;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
@@ -1004,7 +1024,7 @@ a.secondary {
 }
 
 .errorActions .cta {
-  background: #3A8DDE;
+  background: #3a8dde;
   color: #fff;
   padding: 0.75rem 2rem;
   border-radius: 6px;
@@ -1018,25 +1038,25 @@ a.secondary {
 }
 
 .errorActions .secondaryCta {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .errorActions .secondaryCta:hover {
-  color: #16B286;
+  color: #16b286;
 }
 
 @media (max-width: 768px) {
   .errorCode {
     font-size: 2.5rem;
   }
-  
+
   .errorTitle {
     font-size: 1.3rem;
   }
-  
+
   .errorMessage {
     font-size: 1rem;
   }
@@ -1044,7 +1064,7 @@ a.secondary {
 
 .agentPhoto {
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -1054,7 +1074,7 @@ a.secondary {
 
 .communityImage {
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -1067,14 +1087,14 @@ a.secondary {
 }
 
 .agentIntro {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
 .agentHighlights {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.08rem;
   margin-left: 1rem;
   list-style: disc inside;
@@ -1096,13 +1116,15 @@ a.secondary {
   border-radius: 8px;
   padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .expertiseCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .expertiseIcon {
@@ -1111,7 +1133,7 @@ a.secondary {
 }
 
 .expertiseCard h3 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1132,7 +1154,7 @@ a.secondary {
 }
 
 .communityActivities h3 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -1149,7 +1171,7 @@ a.secondary {
   background: #fff;
   border-radius: 8px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -1165,12 +1187,12 @@ a.secondary {
 }
 
 .star {
-  color: #FBBF24;
+  color: #fbbf24;
   font-size: 1.2rem;
 }
 
 .testimonialText {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.1rem;
   line-height: 1.6;
   font-style: italic;
@@ -1179,7 +1201,7 @@ a.secondary {
 }
 
 .testimonialAuthor {
-  color: #16B286;
+  color: #16b286;
   font-weight: 600;
   font-style: normal;
   text-align: center;
@@ -1191,26 +1213,26 @@ a.secondary {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .testimonialsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .agentPhoto {
     width: 220px;
     height: 220px;
   }
-  
+
   .communityImage {
     width: 200px;
     height: 200px;
   }
-  
+
   .expertiseCard {
     padding: 1.5rem 1rem;
   }
-  
+
   .testimonialCard {
     padding: 1.5rem 1rem;
   }
@@ -1258,13 +1280,15 @@ a.secondary {
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .communityCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .communityImage {
@@ -1279,7 +1303,7 @@ a.secondary {
 }
 
 .communityTitle {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.3rem;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
@@ -1293,14 +1317,14 @@ a.secondary {
 }
 
 .communityPrice {
-  color: #16B286;
+  color: #16b286;
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
 }
 
 .communityLink {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
@@ -1308,7 +1332,7 @@ a.secondary {
 }
 
 .communityLink:hover {
-  color: #16B286;
+  color: #16b286;
   text-decoration: underline;
 }
 
@@ -1324,7 +1348,7 @@ a.secondary {
   border-radius: 8px;
   padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -1338,7 +1362,7 @@ a.secondary {
 }
 
 .featureCard h3 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -1351,7 +1375,7 @@ a.secondary {
 }
 
 .widgetSubtitle {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
@@ -1367,11 +1391,11 @@ a.secondary {
   background: #fff;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .faqQuestion {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0 0 0.75rem 0;
@@ -1387,30 +1411,111 @@ a.secondary {
   .heroStats {
     gap: 1rem;
   }
-  
+
   .heroStat {
     padding: 0.75rem 1rem;
   }
-  
+
   .heroStatNumber {
     font-size: 1.5rem;
   }
-  
+
   .communitiesGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .featuresGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .featureCard {
     padding: 1.5rem 1rem;
   }
-  
+
   .communityContent {
     padding: 1rem;
+  }
+
+  .communityFeatures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+  }
+
+  .communityFeature {
+    background: #f7f9fc;
+    color: #0a2540;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #e5e7eb;
+  }
+
+  .comparisonTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .tableHeader {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background: #0a2540;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .tableRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .tableRow:last-child {
+    border-bottom: none;
+  }
+
+  .tableRow:hover {
+    background: #f7f9fc;
+  }
+
+  .tableCell {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .tableHeader .tableCell {
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .comparisonTable {
+      font-size: 0.875rem;
+    }
+
+    .tableHeader,
+    .tableRow {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .tableHeader .tableCell:nth-child(3),
+    .tableHeader .tableCell:nth-child(4),
+    .tableRow .tableCell:nth-child(3),
+    .tableRow .tableCell:nth-child(4) {
+      display: none;
+    }
+
+    .tableCell {
+      padding: 0.75rem;
+    }
   }
 }

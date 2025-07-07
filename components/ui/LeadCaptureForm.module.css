@@ -14,7 +14,7 @@
 
 .form-header h2 {
   font-size: 1.8rem;
-  color: #0A2540;
+  color: #0a2540;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -42,7 +42,7 @@
 
 .form-group label {
   font-weight: 500;
-  color: #0A2540;
+  color: #0a2540;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
@@ -56,14 +56,14 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   background: #fff;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #3A8DDE;
+  border-color: #3a8dde;
   box-shadow: 0 0 0 3px rgba(58, 141, 222, 0.1);
 }
 
@@ -119,12 +119,12 @@
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-  background: #3A8DDE;
-  border-color: #3A8DDE;
+  background: #3a8dde;
+  border-color: #3a8dde;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 6px;
   top: 2px;
@@ -136,7 +136,7 @@
 }
 
 .checkbox-label a {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-decoration: none;
 }
 
@@ -159,7 +159,7 @@
 
 .submit-button {
   width: 100%;
-  background: #16B286;
+  background: #16b286;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -200,8 +200,12 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-footer {
@@ -223,7 +227,7 @@
 .success-icon {
   width: 80px;
   height: 80px;
-  background: #16B286;
+  background: #16b286;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -234,13 +238,19 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .success-message h3 {
-  color: #16B286;
+  color: #16b286;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -292,7 +302,7 @@
 
 .modal-close:hover {
   background: #f8f9fa;
-  color: #0A2540;
+  color: #0a2540;
 }
 
 /* Responsive Design */
@@ -300,15 +310,15 @@
   .form-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .form-group.full-width {
     grid-column: 1 / -1;
   }
-  
+
   .lead-capture-form {
     padding: 3rem;
   }
-  
+
   .form-header h2 {
     font-size: 2rem;
   }
@@ -319,15 +329,15 @@
     padding: 1.5rem;
     margin: 1rem;
   }
-  
+
   .modal-content {
     margin: 1rem;
   }
-  
+
   .form-header h2 {
     font-size: 1.5rem;
   }
-  
+
   .submit-button {
     padding: 0.875rem 1.5rem;
     font-size: 1rem;

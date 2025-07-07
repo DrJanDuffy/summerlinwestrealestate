@@ -6,7 +6,12 @@ type SectionCardProps = React.PropsWithChildren<{
   ariaLabel?: string;
 }>;
 
-const SectionCard = ({ children, className = "", style, ariaLabel }: SectionCardProps) => (
+const SectionCard = ({
+  children,
+  className = "",
+  style,
+  ariaLabel,
+}: SectionCardProps) => (
   <section
     className={`sectionCard ${className}`}
     style={style}
@@ -16,4 +21,4 @@ const SectionCard = ({ children, className = "", style, ariaLabel }: SectionCard
   </section>
 );
 
-export default SectionCard; 
+export default SectionCard;

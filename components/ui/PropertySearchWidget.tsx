@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { useLeadCaptureModal } from '../../hooks/useLeadCaptureModal';
+import React, { useState } from "react";
+import { useLeadCaptureModal } from "../../hooks/useLeadCaptureModal";
 
 const COMMUNITIES = [
-  'The Vistas',
-  'Red Rock',
-  'Stonebridge',
-  'Reverence',
-  'The Cliffs',
-  'Redpoint',
-  'Downtown Summerlin',
+  "The Vistas",
+  "Red Rock",
+  "Stonebridge",
+  "Reverence",
+  "The Cliffs",
+  "Redpoint",
+  "Downtown Summerlin",
 ];
 
 const PROPERTY_TYPES = [
-  { label: 'House', value: 'house' },
-  { label: 'Condo', value: 'condo' },
-  { label: 'Townhome', value: 'townhome' },
+  { label: "House", value: "house" },
+  { label: "Condo", value: "condo" },
+  { label: "Townhome", value: "townhome" },
 ];
 
 const listings = [
@@ -26,43 +26,43 @@ const listings = [
       city: "Las Vegas",
       region: "NV",
       postal: "89138",
-      country: "US"
+      country: "US",
     },
     images: [
       "https://placehold.co/400x300?text=Photo+1",
-      "https://placehold.co/400x300?text=Photo+2"
+      "https://placehold.co/400x300?text=Photo+2",
     ],
-    price: "899000"
+    price: "899000",
   },
   // Add more listings as needed
 ];
 
 const listingsJsonLd = {
   "@context": "https://schema.org",
-  "@graph": listings.map(listing => ({
+  "@graph": listings.map((listing) => ({
     "@type": "Residence",
-    "name": listing.name,
-    "description": listing.description,
-    "address": {
+    name: listing.name,
+    description: listing.description,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": listing.address.street,
-      "addressLocality": listing.address.city,
-      "addressRegion": listing.address.region,
-      "postalCode": listing.address.postal,
-      "addressCountry": listing.address.country
+      streetAddress: listing.address.street,
+      addressLocality: listing.address.city,
+      addressRegion: listing.address.region,
+      postalCode: listing.address.postal,
+      addressCountry: listing.address.country,
     },
-    "image": listing.images,
-    "offers": {
+    image: listing.images,
+    offers: {
       "@type": "Offer",
-      "price": listing.price,
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    }
-  }))
+      price: listing.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+  })),
 };
 
 export default function PropertySearchWidget() {
-  const [community, setCommunity] = useState('');
+  const [community, setCommunity] = useState("");
   const [price, setPrice] = useState([400000, 1200000]);
   const [bedrooms, setBedrooms] = useState(3);
   const [bathrooms, setBathrooms] = useState(2);
@@ -71,42 +71,54 @@ export default function PropertySearchWidget() {
 
   const handleTypeChange = (type: string) => {
     setPropertyTypes((prev) =>
-      prev.includes(type)
-        ? prev.filter((t) => t !== type)
-        : [...prev, type]
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
     );
   };
 
   return (
     <>
-      <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(listingsJsonLd)}</script>
-      <div className="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-        <h2 className="text-xl font-bold text-[#0A2540] mb-4">Find Your Dream Home</h2>
+      <script type="application/ld+json" suppressHydrationWarning>
+        {JSON.stringify(listingsJsonLd)}
+      </script>
+      <div
+        className="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto"
+        style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
+      >
+        <h2 className="text-xl font-bold text-[#0A2540] mb-4">
+          Find Your Dream Home
+        </h2>
         <form
           className="space-y-4"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault();
-            openModal('Property Search'); // Only context/source allowed; prefill not supported in current modal
+            openModal("Property Search"); // Only context/source allowed; prefill not supported in current modal
           }}
         >
           {/* Community Dropdown */}
           <div>
-            <label className="block text-sm font-medium text-[#0A2540] mb-1">Community</label>
+            <label className="block text-sm font-medium text-[#0A2540] mb-1">
+              Community
+            </label>
             <select
               title="Select Community"
               className="w-full border border-gray-200 rounded px-3 py-2 focus:ring-[#3A8DDE] focus:border-[#3A8DDE]"
               value={community}
-              onChange={e => setCommunity(e.target.value)}
+              onChange={(e) => setCommunity(e.target.value)}
             >
               <option value="">Select a community</option>
               {COMMUNITIES.map((c) => (
-                <option key={c} value={c}>{c}</option>
+                <option key={c} value={c}>
+                  {c}
+                </option>
               ))}
             </select>
           </div>
           {/* Price Range Slider */}
           <div>
-            <label className="block text-sm font-medium text-[#0A2540] mb-1">Price Range (${price[0].toLocaleString()} - ${price[1].toLocaleString()})</label>
+            <label className="block text-sm font-medium text-[#0A2540] mb-1">
+              Price Range (${price[0].toLocaleString()} - $
+              {price[1].toLocaleString()})
+            </label>
             <div className="flex items-center gap-2">
               <input
                 type="range"
@@ -114,7 +126,14 @@ export default function PropertySearchWidget() {
                 max={2000000}
                 step={10000}
                 value={price[0]}
-                onChange={e => setPrice([Number(e.target.value), price[1] > Number(e.target.value) ? price[1] : Number(e.target.value)])}
+                onChange={(e) =>
+                  setPrice([
+                    Number(e.target.value),
+                    price[1] > Number(e.target.value)
+                      ? price[1]
+                      : Number(e.target.value),
+                  ])
+                }
                 className="w-1/2 accent-[#3A8DDE]"
                 aria-label="Minimum price"
               />
@@ -124,7 +143,14 @@ export default function PropertySearchWidget() {
                 max={2000000}
                 step={10000}
                 value={price[1]}
-                onChange={e => setPrice([price[0] < Number(e.target.value) ? price[0] : Number(e.target.value), Number(e.target.value)])}
+                onChange={(e) =>
+                  setPrice([
+                    price[0] < Number(e.target.value)
+                      ? price[0]
+                      : Number(e.target.value),
+                    Number(e.target.value),
+                  ])
+                }
                 className="w-1/2 accent-[#3A8DDE]"
                 aria-label="Maximum price"
               />
@@ -132,38 +158,51 @@ export default function PropertySearchWidget() {
           </div>
           {/* Bedrooms Selector */}
           <div>
-            <label className="block text-sm font-medium text-[#0A2540] mb-1">Bedrooms</label>
+            <label className="block text-sm font-medium text-[#0A2540] mb-1">
+              Bedrooms
+            </label>
             <select
               title="Select Bedrooms"
               className="w-full border border-gray-200 rounded px-3 py-2 focus:ring-[#3A8DDE] focus:border-[#3A8DDE]"
               value={bedrooms}
-              onChange={e => setBedrooms(Number(e.target.value))}
+              onChange={(e) => setBedrooms(Number(e.target.value))}
             >
-              {[1,2,3,4,5].map(n => (
-                <option key={n} value={n}>{n}+</option>
+              {[1, 2, 3, 4, 5].map((n) => (
+                <option key={n} value={n}>
+                  {n}+
+                </option>
               ))}
             </select>
           </div>
           {/* Bathrooms Selector */}
           <div>
-            <label className="block text-sm font-medium text-[#0A2540] mb-1">Bathrooms</label>
+            <label className="block text-sm font-medium text-[#0A2540] mb-1">
+              Bathrooms
+            </label>
             <select
               title="Select Bathrooms"
               className="w-full border border-gray-200 rounded px-3 py-2 focus:ring-[#3A8DDE] focus:border-[#3A8DDE]"
               value={bathrooms}
-              onChange={e => setBathrooms(Number(e.target.value))}
+              onChange={(e) => setBathrooms(Number(e.target.value))}
             >
-              {[1,2,3,4].map(n => (
-                <option key={n} value={n}>{n}+</option>
+              {[1, 2, 3, 4].map((n) => (
+                <option key={n} value={n}>
+                  {n}+
+                </option>
               ))}
             </select>
           </div>
           {/* Property Type Checkboxes */}
           <div>
-            <label className="block text-sm font-medium text-[#0A2540] mb-1">Property Type</label>
+            <label className="block text-sm font-medium text-[#0A2540] mb-1">
+              Property Type
+            </label>
             <div className="flex gap-4 flex-wrap">
-              {PROPERTY_TYPES.map(type => (
-                <label key={type.value} className="inline-flex items-center gap-1 text-sm">
+              {PROPERTY_TYPES.map((type) => (
+                <label
+                  key={type.value}
+                  className="inline-flex items-center gap-1 text-sm"
+                >
                   <input
                     type="checkbox"
                     checked={propertyTypes.includes(type.value)}
@@ -186,4 +225,4 @@ export default function PropertySearchWidget() {
       </div>
     </>
   );
-} 
+}
