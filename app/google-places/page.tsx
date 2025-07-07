@@ -233,6 +233,51 @@ function AddressSearch() {
           </div>
         </section>
 
+        {/* Security & API Key Setup */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.luxurySectionTitle}>Security & API Key Setup</h2>
+          <div className={styles.contentGrid}>
+            <div className={styles.contentText}>
+              <h3>Environment Variables</h3>
+              <p>
+                Store your Google Maps API credentials securely using environment variables. 
+                Create a <code>.env.local</code> file in your project root:
+              </p>
+              <pre className={styles.codeBlock}>
+                <code>{`# Google Maps API Configuration
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key_here
+GOOGLE_MAPS_URL_SIGNING_SECRET=your_signing_secret_here
+
+# Other environment variables
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
+              </pre>
+              
+              <h3>URL Signing for Enhanced Security</h3>
+              <p>
+                Use URL signing to protect your API requests and increase your daily quota limit from 25,000 to 100,000 requests per day.
+                Our utility functions handle URL signing automatically for static maps and other signed requests.
+              </p>
+              
+              <h3>API Key Restrictions</h3>
+              <ul className={styles.contentList}>
+                <li>Restrict API key to your domain only</li>
+                <li>Enable only the APIs you need (Places, Geocoding, Static Maps)</li>
+                <li>Set up billing alerts to monitor usage</li>
+                <li>Use URL signing for sensitive requests</li>
+              </ul>
+            </div>
+            <div className={styles.securityImage}>
+              <Image
+                src="https://placehold.co/400x300?text=Security+Setup"
+                alt="Google Maps API Security Setup"
+                width={400}
+                height={300}
+                className={styles.contentImage}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Code Examples */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Code Examples</h2>
