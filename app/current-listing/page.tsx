@@ -6,6 +6,31 @@ import styles from "../page.module.css";
 import LatestMarketInsights from "../../components/ui/LatestMarketInsights";
 
 export default function CurrentListing() {
+  const propertyDetails = [
+    "4 bedrooms, 3 bathrooms, 2,800 sq ft",
+    "Upgraded kitchen, modern flooring, energy-efficient features",
+    "Spacious backyard with mountain views",
+    "Move-in ready with smart home technology",
+  ];
+
+  const communityBenefits = [
+    "Access to top-rated Summerlin schools",
+    "Beautiful parks and walking trails",
+    "Minutes from Downtown Summerlin shopping & dining",
+    "Exclusive community events and amenities",
+    "Low HOA fees",
+  ];
+
+  const marketAnalysis = [
+    "Comparable homes in The Vistas have sold for $875k–$950k in the last 6 months",
+    "Upgraded kitchen, flooring, and energy-efficient features",
+    "Move-in ready with modern finishes",
+    "Low days on market for similar homes (avg. 12 days)",
+    "Expert local pricing strategy based on current demand",
+  ];
+
+  const photoGallery = [1, 2, 3, 4, 5, 6];
+
   return (
     <div className={styles.page}>
       <Head>
@@ -57,179 +82,108 @@ export default function CurrentListing() {
           }
         `}</script>
       </Head>
-      {/* Hero Section */}
-      <section className={styles.hero} style={{ marginBottom: "2rem" }}>
-        <h1>The Vistas Summerlin Home for Sale</h1>
-        <p className={styles.subtitle}>
-          Modern Luxury in the Heart of Summerlin West
-        </p>
-      </section>
-      <LatestMarketInsights />
 
-      {/* Photo Gallery */}
-      <section style={{ marginBottom: "2.5rem" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-          Photo Gallery
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1.5rem",
-            maxWidth: "900px",
-            margin: "0 auto",
-          }}
-        >
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div
-              key={i}
-              style={{
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              }}
-            >
-              <Image
-                src={`https://placehold.co/400x300?text=Photo+${i}`}
-                alt={`The Vistas Summerlin home photo ${i}`}
-                width={400}
-                height={300}
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+      <div className={styles.mainContent}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1>The Vistas Summerlin Home for Sale</h1>
+          <p className={styles.subtitle}>
+            Modern Luxury in the Heart of Summerlin West
+          </p>
+        </section>
 
-      {/* Property Details */}
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          padding: "2rem 1rem",
-        }}
-      >
-        <h2>Property Details</h2>
-        <ul
-          style={{
-            color: "#0A2540",
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
-          <li>4 bedrooms, 3 bathrooms, 2,800 sq ft</li>
-          <li>Upgraded kitchen, modern flooring, energy-efficient features</li>
-          <li>Spacious backyard with mountain views</li>
-          <li>Move-in ready with smart home technology</li>
-        </ul>
-      </section>
+        <LatestMarketInsights />
 
-      {/* Community Benefits */}
-      <section style={{ marginBottom: "2.5rem" }}>
-        <h2>Community Benefits</h2>
-        <ul
-          style={{
-            listStyle: "disc inside",
-            color: "#0A2540",
-            fontSize: "1.05rem",
-            marginLeft: "1rem",
-          }}
-        >
-          <li>Access to top-rated Summerlin schools</li>
-          <li>Beautiful parks and walking trails</li>
-          <li>Minutes from Downtown Summerlin shopping & dining</li>
-          <li>Exclusive community events and amenities</li>
-          <li>Low HOA fees</li>
-        </ul>
-      </section>
+        {/* Photo Gallery */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Photo Gallery</h2>
+          <div className={styles.photoGallery}>
+            {photoGallery.map((i) => (
+              <div key={i} className={styles.photoCard}>
+                <Image
+                  src={`https://placehold.co/400x300?text=Photo+${i}`}
+                  alt={`The Vistas Summerlin home photo ${i}`}
+                  width={400}
+                  height={300}
+                  className={styles.photoImage}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Market Analysis */}
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          padding: "2rem 1rem",
-        }}
-      >
-        <h2>Why This Home is Priced Right</h2>
-        <ul
-          style={{
-            listStyle: "disc inside",
-            color: "#0A2540",
-            fontSize: "1.05rem",
-            marginLeft: "1rem",
-          }}
-        >
-          <li>
-            Comparable homes in The Vistas have sold for $875k–$950k in the last
-            6 months
-          </li>
-          <li>Upgraded kitchen, flooring, and energy-efficient features</li>
-          <li>Move-in ready with modern finishes</li>
-          <li>Low days on market for similar homes (avg. 12 days)</li>
-          <li>Expert local pricing strategy based on current demand</li>
-        </ul>
-      </section>
+        {/* Property Details */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Property Details</h2>
+          <ul className={styles.propertyList}>
+            {propertyDetails.map((detail, index) => (
+              <li key={index} className={styles.propertyItem}>
+                {detail}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Internal Links Section */}
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#F7F9FC",
-          borderRadius: "8px",
-          padding: "2rem 1rem",
-        }}
-      >
-        <h2>Explore More Summerlin Real Estate</h2>
-        <ul
-          style={{
-            color: "#3A8DDE",
-            fontWeight: 600,
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
-          <li>
-            <Link href="/market-reports">See all Summerlin market reports</Link>
-          </li>
-          <li>
-            <Link href="/communities">Explore Summerlin West communities</Link>
-          </li>
-          <li>
-            <Link href="/about">Meet your Summerlin real estate expert</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact for a private showing</Link>
-          </li>
-        </ul>
-      </section>
+        {/* Community Benefits */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Community Benefits</h2>
+          <ul className={styles.benefitsList}>
+            {communityBenefits.map((benefit, index) => (
+              <li key={index} className={styles.benefitItem}>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Contact Form for Private Showings */}
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          padding: "2rem 1rem",
-        }}
-      >
-        <h2 style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-          Request a Private Showing
-        </h2>
-        <LeadCaptureForm
-          variant="inline"
-          title="Request a Private Showing"
-          subtitle="Schedule your exclusive tour of this beautiful Vistas home."
-          source="Current Listing Page"
-        />
-      </section>
+        {/* Market Analysis */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Why This Home is Priced Right</h2>
+          <ul className={styles.analysisList}>
+            {marketAnalysis.map((analysis, index) => (
+              <li key={index} className={styles.analysisItem}>
+                {analysis}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Internal Links Section */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>
+            Explore More Summerlin Real Estate
+          </h2>
+          <ul className={styles.resourceLinks}>
+            <li>
+              <Link href="/market-reports">
+                See all Summerlin market reports
+              </Link>
+            </li>
+            <li>
+              <Link href="/communities">
+                Explore Summerlin West communities
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">Meet your Summerlin real estate expert</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact for a private showing</Link>
+            </li>
+          </ul>
+        </section>
+
+        {/* Contact Form for Private Showings */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Request a Private Showing</h2>
+          <LeadCaptureForm
+            variant="inline"
+            title="Request a Private Showing"
+            subtitle="Schedule your exclusive tour of this beautiful Vistas home."
+            source="Current Listing Page"
+          />
+        </section>
+      </div>
     </div>
   );
 }

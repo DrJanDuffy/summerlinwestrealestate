@@ -1663,4 +1663,75 @@ a.secondary {
       font-size: 1rem;
     }
   }
+
+  .photoGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .photoCard {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .photoCard:hover {
+    transform: translateY(-2px);
+  }
+
+  .photoImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .propertyList {
+    color: #0A2540;
+    font-size: 1.08rem;
+    margin-left: 1rem;
+    list-style: disc inside;
+  }
+
+  .propertyItem {
+    margin-bottom: 0.5rem;
+  }
+
+  .benefitsList {
+    list-style: disc inside;
+    color: #0A2540;
+    font-size: 1.05rem;
+    margin-left: 1rem;
+  }
+
+  .benefitItem {
+    margin-bottom: 0.5rem;
+  }
+
+  .analysisList {
+    list-style: disc inside;
+    color: #0A2540;
+    font-size: 1.05rem;
+    margin-left: 1rem;
+  }
+
+  .analysisItem {
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .photoGallery {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .propertyList,
+    .benefitsList,
+    .analysisList {
+      font-size: 1rem;
+    }
+  }
 }
