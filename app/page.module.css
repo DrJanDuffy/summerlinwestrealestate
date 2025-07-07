@@ -1518,4 +1518,43 @@ a.secondary {
       padding: 0.75rem;
     }
   }
+
+  .insightsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .insightItem {
+    margin-bottom: 1.5rem;
+  }
+
+  .insightItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .insightLink {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #0A2540;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .insightLink:hover {
+    color: #3A8DDE;
+  }
+
+  .insightDate {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .insightSnippet {
+    color: #444;
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
 }

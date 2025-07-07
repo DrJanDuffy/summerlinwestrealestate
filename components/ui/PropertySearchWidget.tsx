@@ -80,10 +80,7 @@ export default function PropertySearchWidget() {
       <script type="application/ld+json" suppressHydrationWarning>
         {JSON.stringify(listingsJsonLd)}
       </script>
-      <div
-        className="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto"
-        style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
-      >
+      <div className="bg-white rounded-lg p-6 max-w-xl mx-auto shadow-lg">
         <h2 className="text-xl font-bold text-[#0A2540] mb-4">
           Find Your Dream Home
         </h2>

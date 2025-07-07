@@ -126,10 +126,7 @@ export default function TestimonialsSection() {
         </div>
         <div className="flex flex-col items-center">
           <div className="relative w-full max-w-xl">
-            <div
-              className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
-              style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
-            >
+            <div className="bg-white rounded-lg p-6 flex flex-col items-center shadow-lg">
               {/* Photo Placeholder */}
               <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mb-3">
                 <svg width="32" height="32" fill="#A0AEC0" viewBox="0 0 24 24">
@@ -147,8 +144,7 @@ export default function TestimonialsSection() {
             {/* Rotator Controls */}
             <button
               aria-label="Previous testimonial"
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition"
-              style={{ zIndex: 2 }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition z-10"
               onClick={() =>
                 setIndex(
                   (i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length,
@@ -168,8 +164,7 @@ export default function TestimonialsSection() {
             </button>
             <button
               aria-label="Next testimonial"
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition"
-              style={{ zIndex: 2 }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition z-10"
               onClick={() => setIndex((i) => (i + 1) % TESTIMONIALS.length)}
             >
               <svg width="18" height="18" fill="#3A8DDE" viewBox="0 0 20 20">
