@@ -1215,3 +1215,202 @@ a.secondary {
     padding: 1.5rem 1rem;
   }
 }
+
+.heroStats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.heroStat {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.heroStatNumber {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.heroStatLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.communitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.communityCard {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.communityCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.communityImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.communityContent {
+  padding: 1.5rem;
+}
+
+.communityTitle {
+  color: #0A2540;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.communityDescription {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.communityPrice {
+  color: #16B286;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.communityLink {
+  color: #3A8DDE;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.communityLink:hover {
+  color: #16B286;
+  text-decoration: underline;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.featureCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-2px);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  color: #0A2540;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.featureCard p {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.widgetSubtitle {
+  color: #3A8DDE;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.faqGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.faqItem {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.faqQuestion {
+  color: #0A2540;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.faqAnswer {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .heroStats {
+    gap: 1rem;
+  }
+  
+  .heroStat {
+    padding: 0.75rem 1rem;
+  }
+  
+  .heroStatNumber {
+    font-size: 1.5rem;
+  }
+  
+  .communitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featureCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .communityContent {
+    padding: 1rem;
+  }
+}

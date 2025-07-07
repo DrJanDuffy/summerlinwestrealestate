@@ -8,8 +8,6 @@ import Image from 'next/image';
 import LatestMarketInsights from '../components/ui/LatestMarketInsights';
 import dynamic from 'next/dynamic';
 import HomebotWidget from '../components/ui/HomebotWidget';
-import SectionCard from "../components/ui/SectionCard";
-import { Inter } from "next/font/google";
 import Header from '../components/layout/Header';
 
 // Dynamically import RealScoutAdvancedSearch for performance
@@ -19,8 +17,6 @@ type Faq = {
   question: string;
   answer: string;
 };
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const { isOpen, source, openModal, closeModal } = useLeadCaptureModal();
@@ -37,26 +33,29 @@ export default function Home() {
 
   const faqs: Faq[] = [
     {
-      question: "How do I schedule a home tour in Summerlin?",
-      answer: "Contact us via the form or call (702) 555-1234 to schedule a private showing."
-    },
-    {
       question: "What are the best neighborhoods in Summerlin West?",
-      answer: "Popular neighborhoods include The Vistas, The Paseos, Stonebridge, and Redpoint."
-    },
-    {
-      question: "How can I get a free market report?",
-      answer: "Fill out the form on this page or visit our Market Reports section to get your free report."
-    },
-    {
-      question: "Are there new construction homes available?",
-      answer: "Yes, Summerlin West offers a variety of new construction communities. Contact us for the latest releases."
+      answer: "Popular Summerlin West neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options."
     },
     {
       question: "What is the average home price in Summerlin West?",
-      answer: "The median home price is around $850,000, but it varies by neighborhood and property type."
+      answer: "The median home price in Summerlin West is around $850,000, with luxury homes reaching $2M+. Prices vary by neighborhood and property type."
     },
-    // Add more FAQs as needed
+    {
+      question: "Are there new construction homes available in Summerlin West?",
+      answer: "Yes! Summerlin West offers new construction in communities like Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives."
+    },
+    {
+      question: "How do I schedule a home tour in Summerlin West?",
+      answer: "Contact us via the form or call (702) 555-1234 to schedule a private showing of any Summerlin West property."
+    },
+    {
+      question: "What makes Summerlin West special?",
+      answer: "Summerlin West offers master-planned communities, top-rated schools, proximity to Red Rock Canyon, and a family-friendly lifestyle with excellent amenities."
+    },
+    {
+      question: "How can I get a free Summerlin West market report?",
+      answer: "Fill out the form on this page or visit our Market Reports section to get your free Summerlin West market analysis and neighborhood insights."
+    }
   ];
 
   const faqJsonLd = {
@@ -75,146 +74,197 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Summerlin West Real Estate | Homes for Sale & Community Guide</title>
-        <meta name="description" content="Find homes for sale in Summerlin West. Explore communities, market trends, and connect with a local real estate expert for your Summerlin home journey." />
-        <meta property="og:title" content="Summerlin West Real Estate | Homes for Sale & Community Guide" />
-        <meta property="og:description" content="Find homes for sale in Summerlin West. Explore communities, market trends, and connect with a local real estate expert for your Summerlin home journey." />
+        <title>Summerlin West Homes for Sale | Luxury Real Estate & Communities</title>
+        <meta name="description" content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist." />
+        <meta property="og:title" content="Summerlin West Homes for Sale | Luxury Real Estate & Communities" />
+        <meta property="og:description" content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist." />
         <meta property="og:image" content="/images/og-image.jpg" />
         <link rel="canonical" href="https://summerlinwestrealestate.com/" />
-        {/* ...structured data scripts... */}
+        <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(faqJsonLd)}</script>
       </Head>
+      
       <Header />
-      <div className="main-content">
-        {/* HERO: Featured Property */}
-        <section className="sectionCard">
-          <h1 style={{color: '#0A2540', marginBottom: 8}}>Del Webb North Ranch</h1>
-          <h2 style={{color: '#3A8DDE', margin: 0, fontWeight: 700, fontSize: 22}}>2209 Beauty Vista Avenue</h2>
-          <Image
-            src="https://placehold.co/1200x420?text=Del+Webb+North+Ranch+2209+Beauty+Vista+Ave"
-            alt="Del Webb North Ranch 2209 Beauty Vista Avenue"
-            fill
-            style={{objectFit: 'cover', borderRadius: 12, zIndex: 1}}
-            priority
+      
+      <div className={styles.mainContent}>
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1>Summerlin West Homes for Sale</h1>
+          <p className={styles.subtitle}>Discover luxury living in Las Vegas' most prestigious master-planned community</p>
+          <div className={styles.heroStats}>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>$850K</span>
+              <span className={styles.heroStatLabel}>Median Price</span>
+            </div>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>312</span>
+              <span className={styles.heroStatLabel}>Active Listings</span>
+            </div>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNumber}>14</span>
+              <span className={styles.heroStatLabel}>Avg Days on Market</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Property Search Widget */}
+        <section className={styles.sectionCard}>
+          <RealScoutAdvancedSearch 
+            title="Find Your Dream Home in Summerlin West"
+            subtitle="Search by neighborhood, price, or features. Real-time MLS data."
+            variant="page"
+            showFeatures={true}
           />
-          <p style={{color: '#16B286', fontWeight: 600, fontSize: 18, margin: '8px 0'}}>4 Bed &bull; 3 Bath &bull; 2,400 SqFt &bull; $899,000</p>
-          <LeadCaptureForm onSuccess={closeModal} />
         </section>
-        {/* Home Value Widget */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540'}}>What's Your Home Worth?</h2>
-          <p style={{color: '#3A8DDE'}}>Get your Del Webb North Ranch home value instantly</p>
-          <HomebotWidget />
-        </section>
-        {/* Featured Listings Grid */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb North Ranch Homes for Sale</h2>
-          <div className={styles.featuredListingsGrid} style={{justifyContent: 'center'}}>
-            {[1,2,3,4,5,6].map((i) => (
-              <div key={i} className={styles.featuredListingCard}>
+
+        {/* Featured Communities */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Featured Summerlin West Communities</h2>
+          <div className={styles.communitiesGrid}>
+            {[
+              {
+                name: "The Vistas",
+                description: "Luxury homes with mountain views",
+                price: "$950K - $2.5M",
+                image: "https://placehold.co/400x220?text=The+Vistas"
+              },
+              {
+                name: "Redpoint",
+                description: "New construction & resort living",
+                price: "$750K - $1.8M",
+                image: "https://placehold.co/400x220?text=Redpoint"
+              },
+              {
+                name: "Stonebridge",
+                description: "Family-friendly with top schools",
+                price: "$650K - $1.2M",
+                image: "https://placehold.co/400x220?text=Stonebridge"
+              },
+              {
+                name: "The Cliffs",
+                description: "Luxury estates & privacy",
+                price: "$1.2M - $3M+",
+                image: "https://placehold.co/400x220?text=The+Cliffs"
+              }
+            ].map((community, index) => (
+              <div key={index} className={styles.communityCard}>
                 <Image
-                  src={`https://placehold.co/400x220?text=Home+${i}`}
-                  alt={`Del Webb North Ranch home for sale ${i}`}
+                  src={community.image}
+                  alt={`${community.name} homes for sale`}
                   width={400}
                   height={220}
-                  className={styles.featuredListingImage}
-                  loading="lazy"
-                  priority={i === 1}
+                  className={styles.communityImage}
                 />
-                <div style={{padding: '1rem'}}>
-                  <h3 style={{margin: 0}}>Home #{i}</h3>
-                  <p style={{fontSize: '0.98rem', color: '#0A2540'}}>4 bed &bull; 3 bath &bull; $900,000+</p>
+                <div className={styles.communityContent}>
+                  <h3 className={styles.communityTitle}>{community.name}</h3>
+                  <p className={styles.communityDescription}>{community.description}</p>
+                  <p className={styles.communityPrice}>{community.price}</p>
+                  <Link href={`/communities#${community.name.toLowerCase().replace(/\s+/g, '-')}`} className={styles.communityLink}>
+                    View Homes
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </section>
-        {/* Local Insights Section */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540', textAlign: 'center'}}>Local Insights: Living in Summerlin West</h2>
-          <div style={{display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center'}}>
-            <div style={{flex: '1 1 220px', minWidth: 220}}>
-              <h3 style={{color: '#3A8DDE'}}>Top-Rated Schools</h3>
-              <p>Explore top public and private schools, including school ratings and boundaries.</p>
+
+        {/* Market Overview */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Summerlin West Market Overview</h2>
+          <div className={styles.statsGrid}>
+            <div className={styles.statCard}>
+              <div className={styles.statNumber}>$850K</div>
+              <div className={styles.statLabel}>Median Home Price</div>
             </div>
-            <div style={{flex: '1 1 220px', minWidth: 220}}>
-              <h3 style={{color: '#16B286'}}>Parks & Recreation</h3>
-              <p>Discover local parks, walking trails, and outdoor activities for all ages.</p>
+            <div className={styles.statCard}>
+              <div className={styles.statNumber}>312</div>
+              <div className={styles.statLabel}>Active Listings</div>
             </div>
-            <div style={{flex: '1 1 220px', minWidth: 220}}>
-              <h3 style={{color: '#0A2540'}}>Dining & Shopping</h3>
-              <p>Find the best restaurants, cafes, and shopping destinations in Summerlin West.</p>
+            <div className={styles.statCard}>
+              <div className={styles.statNumber}>14</div>
+              <div className={styles.statLabel}>Avg Days on Market</div>
             </div>
-            <div style={{flex: '1 1 220px', minWidth: 220}}>
-              <h3 style={{color: '#3A8DDE'}}>Market Trends</h3>
-              <p>Stay up-to-date with the latest home price trends and market insights.</p>
+            <div className={styles.statCard}>
+              <div className={styles.statNumber}>98%</div>
+              <div className={styles.statLabel}>List-to-Sale Ratio</div>
             </div>
           </div>
         </section>
-        {/* RealScout Widget */}
-        <section className="realscout-widget-container sectionCard">
-          <h2 style={{ color: "#0A2540", marginBottom: "0.5rem" }}>
-            Find Your Dream Home in Summerlin West
-          </h2>
-          <p style={{ color: "#3A8DDE", marginBottom: "1.5rem" }}>
-            Search by neighborhood, city, or school. Real-time MLS data.
-          </p>
-          <realscout-simple-search
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-            aria-label="Home search for Summerlin West"
-          ></realscout-simple-search>
+
+        {/* Why Summerlin West */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Why Choose Summerlin West?</h2>
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🏔️</div>
+              <h3>Red Rock Views</h3>
+              <p>Breathtaking mountain views and proximity to Red Rock Canyon National Conservation Area</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🎓</div>
+              <h3>Top-Rated Schools</h3>
+              <p>Exceptional public and private schools with high academic performance ratings</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🏊</div>
+              <h3>Resort Amenities</h3>
+              <p>Clubhouses, pools, fitness centers, and social activities in every community</p>
+            </div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🛒</div>
+              <h3>Shopping & Dining</h3>
+              <p>Downtown Summerlin, Trader Joe's, and fine dining options just minutes away</p>
+            </div>
+          </div>
         </section>
-        {/* Lifestyle/Amenities Section */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb at North Ranch - Your Dream Lifestyle Awaits</h2>
-          <ul style={{color: '#0A2540', fontSize: '1.08rem', margin: '1rem auto', maxWidth: 600, listStyle: 'disc inside'}}>
-            <li>Gated community with resort-style amenities</li>
-            <li>Clubhouse, pool, fitness center, and social events</li>
-            <li>Walking trails and parks nearby</li>
-            <li>Low-maintenance living for active adults</li>
-          </ul>
+
+        {/* Home Value Widget */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>What's Your Summerlin West Home Worth?</h2>
+          <p className={styles.widgetSubtitle}>Get an instant home value estimate for your Summerlin West property</p>
+          <HomebotWidget />
         </section>
-        {/* Community/Neighborhood Info */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540', textAlign: 'center'}}>Del Webb North Ranch Private 55+ Active Adult Community in North Las Vegas</h2>
-          <p style={{color: '#0A2540', maxWidth: 800, margin: '1rem auto', fontSize: '1.05rem'}}>
-            Discover the vibrant lifestyle and amenities of Del Webb North Ranch, a premier 55+ active adult community in North Las Vegas. Enjoy modern homes, social clubs, and a welcoming neighborhood atmosphere.
-          </p>
-          {/* Placeholder for more detailed community info */}
+
+        {/* Latest Market Insights */}
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
         </section>
-        {/* Gallery/Virtual Tour */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540'}}>Gallery & Virtual Tour</h2>
-          <div style={{margin: '1.5rem auto', maxWidth: 800, minHeight: 220, background: '#fff', borderRadius: 6, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Gallery/Virtual Tour Placeholder</div>
+
+        {/* Lead Capture */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Ready to Find Your Summerlin West Home?</h2>
+          <LeadCaptureForm 
+            variant="inline"
+            title="Get Your Free Summerlin West Consultation"
+            subtitle="Let's discuss your home search and how I can help you find the perfect Summerlin West property."
+            source="Homepage"
+            onSuccess={closeModal}
+          />
         </section>
-        {/* Amenities/Features List */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540'}}>Amenities</h2>
-          <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem', margin: '1.5rem 0'}}>
-            {['Clubhouse', 'Pool', 'Fitness Center', 'Walking Trails', 'Parks', 'Social Events'].map((amenity) => (
-              <div key={amenity} style={{background: '#F7F9FC', borderRadius: 6, padding: '1rem 2rem', minWidth: 120, boxShadow: '0 2px 8px rgba(0,0,0,0.04)'}}>{amenity}</div>
+
+        {/* FAQ Section */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Frequently Asked Questions</h2>
+          <div className={styles.faqGrid}>
+            {faqs.map((faq, index) => (
+              <div key={index} className={styles.faqItem}>
+                <h3 className={styles.faqQuestion}>{faq.question}</h3>
+                <p className={styles.faqAnswer}>{faq.answer}</p>
+              </div>
             ))}
           </div>
         </section>
-        {/* Agent/Contact Info */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540'}}>Meet Your Summerlin Expert</h2>
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem'}}>
-            <Image src="/images/agent-placeholder.jpg" alt="Agent" width={96} height={96} style={{borderRadius: '50%'}} />
-            <div>
-              <h3 style={{margin: 0}}>Jane Doe</h3>
-              <p style={{margin: 0, color: '#3A8DDE'}}>Realtor® | Summerlin Specialist</p>
-              <p style={{margin: 0, color: '#0A2540'}}>Call: (702) 555-1234</p>
-            </div>
-          </div>
-        </section>
-        {/* Mortgage Calculator */}
-        <section className="sectionCard">
-          <h2 style={{color: '#0A2540'}}>Mortgage Calculator</h2>
-          <div style={{margin: '1.5rem auto', maxWidth: 600, minHeight: 120, background: '#F7F9FC', borderRadius: 6, boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Mortgage Calculator Widget</div>
-        </section>
-        {/* Latest Market Insights */}
-        <section className="sectionCard">
-          <LatestMarketInsights />
+
+        {/* Quick Links */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Explore More</h2>
+          <ul className={styles.resourceLinks}>
+            <li><Link href="/properties">Browse All Summerlin West Homes</Link></li>
+            <li><Link href="/communities">Explore Summerlin West Communities</Link></li>
+            <li><Link href="/market-reports">Get Market Reports</Link></li>
+            <li><Link href="/new-homes-summerlin">New Construction Homes</Link></li>
+            <li><Link href="/about">Meet Your Summerlin West Expert</Link></li>
+            <li><Link href="/contact">Schedule a Consultation</Link></li>
+          </ul>
         </section>
       </div>
     </>
