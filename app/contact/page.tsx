@@ -145,7 +145,6 @@ export default function Contact() {
                   rel="noopener"
                   aria-label={social.name}
                   className={styles.socialLink}
-                  style={{ color: social.color }}
                 >
                   {social.name}
                 </a>

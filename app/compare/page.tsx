@@ -27,44 +27,28 @@ export default function Compare() {
           content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
         />
       </Head>
-      <section className={styles.hero} style={{ marginBottom: "2rem" }}>
+      <section className={`${styles.hero} ${styles.heroMargin}`}>
         <h1>Compare Summerlin Homes</h1>
         <p className={styles.subtitle}>
           Analyze features, prices, and neighborhoods side by side
         </p>
       </section>
       <LatestMarketInsights />
-      <section style={{ marginBottom: "2.5rem" }}>
+      <section className={styles.sectionCard}>
         <h2>Featured Comparisons</h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1.5rem",
-            maxWidth: "900px",
-            margin: "0 auto",
-          }}
-        >
+        <div className={styles.propertyGrid}>
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              style={{
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                background: "#fff",
-              }}
-            >
+            <div key={i} className={styles.propertyCard}>
               <Image
                 src={`https://placehold.co/400x220?text=Home+${i}`}
                 alt={`Compare Summerlin home ${i}`}
                 width={400}
                 height={220}
-                style={{ width: "100%", height: "auto", display: "block" }}
+                className={styles.propertyImage}
               />
-              <div style={{ padding: "1rem" }}>
-                <h3 style={{ margin: 0 }}>Home #{i}</h3>
-                <p style={{ fontSize: "0.98rem", color: "#0A2540" }}>
+              <div className={styles.propertyInfo}>
+                <h3 className={styles.propertyTitle}>Home #{i}</h3>
+                <p className={styles.propertyDetails}>
                   4 bed &bull; 3 bath &bull; $900,000+
                 </p>
               </div>
@@ -72,48 +56,18 @@ export default function Compare() {
           ))}
         </div>
       </section>
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#F7F9FC",
-          borderRadius: "8px",
-          padding: "2rem 1rem",
-        }}
-      >
+      <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
         <h2>How to Choose the Right Home</h2>
-        <ul
-          style={{
-            color: "#0A2540",
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
+        <ul className={styles.featureList}>
           <li>Compare by price, size, and features</li>
           <li>Evaluate neighborhood amenities and schools</li>
           <li>Consider resale value and market trends</li>
           <li>Get expert advice for your unique needs</li>
         </ul>
       </section>
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          padding: "2rem 1rem",
-        }}
-      >
+      <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
         <h2>Explore More</h2>
-        <ul
-          style={{
-            color: "#3A8DDE",
-            fontWeight: 600,
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
+        <ul className={styles.linkList}>
           <li>
             <Link href="/market-reports">Summerlin Market Reports</Link>
           </li>

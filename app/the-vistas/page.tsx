@@ -82,80 +82,44 @@ export default function TheVistas() {
           content="Explore The Vistas in Summerlin: community amenities, homes for sale, neighborhood map, and expert real estate insights for buyers and sellers."
         />
       </Head>
-      <section className={styles.hero} style={{ marginBottom: "2rem" }}>
+      <section className={`${styles.hero} ${styles.heroMargin}`}>
         <h1>The Vistas in Summerlin</h1>
         <p className={styles.subtitle}>
           A premier master-planned neighborhood in Summerlin West
         </p>
       </section>
       <LatestMarketInsights />
-      <section style={{ marginBottom: "2.5rem" }}>
+      <section className={styles.sectionCard}>
         <h2>About The Vistas</h2>
         <Image
           src="https://placehold.co/800x300?text=The+Vistas+Park"
           alt="The Vistas Park in Summerlin"
           width={800}
           height={300}
-          style={{
-            width: "100%",
-            height: "auto",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            marginBottom: "1.5rem",
-          }}
+          className={styles.featureImage}
         />
-        <ul
-          style={{
-            color: "#0A2540",
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
+        <ul className={styles.featureList}>
           <li>Beautiful parks and walking trails</li>
           <li>Top-rated public and private schools</li>
           <li>Modern homes with mountain views</li>
           <li>Minutes from Downtown Summerlin</li>
         </ul>
       </section>
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#F7F9FC",
-          borderRadius: "8px",
-          padding: "2rem 1rem",
-        }}
-      >
+      <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
         <h2>Homes for Sale in The Vistas</h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1.5rem",
-            maxWidth: "900px",
-            margin: "0 auto",
-          }}
-        >
+        <div className={styles.propertyGrid}>
           {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              style={{
-                borderRadius: "8px",
-                overflow: "hidden",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                background: "#fff",
-              }}
-            >
+            <div key={i} className={styles.propertyCard}>
               <Image
                 src={`https://placehold.co/400x220?text=Vistas+Home+${i}`}
                 alt={`Home for sale in The Vistas Summerlin ${i}`}
                 width={400}
                 height={220}
-                style={{ width: "100%", height: "auto", display: "block" }}
+                className={styles.propertyImage}
               />
-              <div style={{ padding: "1rem" }}>
-                <h3 style={{ margin: 0 }}>Vistas Home #{i}</h3>
-                <p style={{ fontSize: "0.98rem", color: "#0A2540" }}>
+              <div className={styles.propertyInfo}>
+                <h3 className={styles.propertyTitle}>Vistas Home #{i}</h3>
+                <p className={styles.propertyDetails}>
                   4 bed &bull; 3 bath &bull; $900,000+
                 </p>
               </div>
@@ -163,25 +127,9 @@ export default function TheVistas() {
           ))}
         </div>
       </section>
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-          padding: "2rem 1rem",
-        }}
-      >
+      <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
         <h2>Explore More</h2>
-        <ul
-          style={{
-            color: "#3A8DDE",
-            fontWeight: 600,
-            fontSize: "1.08rem",
-            marginLeft: "1rem",
-            listStyle: "disc inside",
-          }}
-        >
+        <ul className={styles.linkList}>
           <li>
             <Link href="/market-reports">Summerlin Market Reports</Link>
           </li>
@@ -199,9 +147,7 @@ export default function TheVistas() {
       <section id="lead-capture" className={styles.leadCapture}>
         <h2>Request Your Free Community Guide</h2>
         {submitted ? (
-          <div
-            style={{ color: "#16B286", fontWeight: 600, fontSize: "1.1rem" }}
-          >
+          <div className={styles.successMessage}>
             Thank you! Your guide is on its way.
           </div>
         ) : (
@@ -234,7 +180,7 @@ export default function TheVistas() {
               {loading ? "Sending..." : "Send Guide"}
             </button>
             {error && (
-              <div style={{ color: "#d32f2f", marginTop: "0.5rem" }}>
+              <div className={styles.errorMessage}>
                 {error}
               </div>
             )}

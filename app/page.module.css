@@ -1807,4 +1807,121 @@ a.secondary {
       font-size: 0.9rem;
     }
   }
+
+  /* Additional classes for the-vistas page */
+  .heroMargin {
+    margin-bottom: 2rem;
+  }
+
+  .lightBackground {
+    background: #F7F9FC;
+  }
+
+  .whiteBackground {
+    background: #fff;
+  }
+
+  .propertyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .propertyCard {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .propertyCard:hover {
+    transform: translateY(-2px);
+  }
+
+  .propertyImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .propertyInfo {
+    padding: 1rem;
+  }
+
+  .propertyTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0A2540;
+  }
+
+  .propertyDetails {
+    font-size: 0.98rem;
+    color: #0A2540;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .linkList {
+    color: #3A8DDE;
+    font-weight: 600;
+    font-size: 1.08rem;
+    margin-left: 1rem;
+    list-style: disc inside;
+  }
+
+  .linkList a {
+    color: #3A8DDE;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .linkList a:hover {
+    color: #16B286;
+    text-decoration: underline;
+  }
+
+  .featureImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+  }
+
+  .featureList {
+    color: #0A2540;
+    font-size: 1.08rem;
+    margin-left: 1rem;
+    list-style: disc inside;
+  }
+
+  .featureList li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .propertyGrid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .propertyTitle {
+      font-size: 1rem;
+    }
+
+    .propertyDetails {
+      font-size: 0.9rem;
+    }
+
+    .linkList {
+      font-size: 1rem;
+    }
+
+    .featureList {
+      font-size: 1rem;
+    }
+  }
 }
