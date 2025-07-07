@@ -38,22 +38,20 @@ export default function DowntownSummerlin() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
-        <section className={styles.hero}>
-          <h1>Downtown Summerlin Real Estate Guide</h1>
-          <p className={styles.subtitle}>
-            Your comprehensive resource for living, shopping, and investing in
-            Downtown Summerlin
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>Downtown Summerlin Real Estate Guide</h1>
+          <p className={styles.luxurySubtitle}>
+            Your comprehensive resource for living, shopping, and investing in Downtown Summerlin
           </p>
         </section>
-
-        <LatestMarketInsights />
-
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
         {/* Shopping Section */}
         <section className={styles.sectionCard}>
-          <h2>Shopping in Downtown Summerlin</h2>
+          <h2 className={styles.luxurySectionTitle}>Shopping in Downtown Summerlin</h2>
           <div className={styles.contentGrid}>
             <Image
               src="https://placehold.co/320x200?text=Shopping"
@@ -73,10 +71,9 @@ export default function DowntownSummerlin() {
             </p>
           </div>
         </section>
-
         {/* Dining Section */}
         <section className={styles.sectionCard}>
-          <h2>Dining in Downtown Summerlin</h2>
+          <h2 className={styles.luxurySectionTitle}>Dining in Downtown Summerlin</h2>
           <div className={styles.contentGrid}>
             <p className={styles.contentText}>
               Experience a culinary adventure with Downtown Summerlin's diverse
@@ -94,10 +91,9 @@ export default function DowntownSummerlin() {
             />
           </div>
         </section>
-
         {/* Entertainment Section */}
         <section className={styles.sectionCard}>
-          <h2>Entertainment & Lifestyle</h2>
+          <h2 className={styles.luxurySectionTitle}>Entertainment & Lifestyle</h2>
           <div className={styles.contentGrid}>
             <Image
               src="https://placehold.co/320x200?text=Entertainment"
@@ -115,10 +111,9 @@ export default function DowntownSummerlin() {
             </p>
           </div>
         </section>
-
         {/* Real Estate Market Section */}
         <section className={styles.sectionCard}>
-          <h2>Downtown Summerlin Real Estate Market</h2>
+          <h2 className={styles.luxurySectionTitle}>Downtown Summerlin Real Estate Market</h2>
           <div className={styles.contentGrid}>
             <div className={styles.contentText}>
               <p>
@@ -145,12 +140,9 @@ export default function DowntownSummerlin() {
             />
           </div>
         </section>
-
         {/* Call to Action */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            Get Your Downtown Summerlin Market Report
-          </h2>
+          <h2 className={styles.luxurySectionTitle}>Get Your Downtown Summerlin Market Report</h2>
           <LeadCaptureForm
             variant="inline"
             title="Request Your Free Downtown Summerlin Market Report"
@@ -158,10 +150,9 @@ export default function DowntownSummerlin() {
             source="Downtown Summerlin Page"
           />
         </section>
-
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
-          <h2>Explore More Summerlin Real Estate Resources</h2>
+          <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate Resources</h2>
           <ul className={styles.resourceLinks}>
             <li>
               <Link href="/market-reports">
@@ -185,7 +176,7 @@ export default function DowntownSummerlin() {
             </li>
           </ul>
         </section>
-      </div>
+      </main>
     </div>
   );
 }

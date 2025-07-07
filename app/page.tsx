@@ -128,15 +128,13 @@ export default function Home() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
         {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1>Summerlin West Homes for Sale</h1>
-          <p className={styles.subtitle}>
-            Discover luxury living in Las Vegas' most prestigious master-planned
-            community
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>Summerlin West Homes for Sale</h1>
+          <p className={styles.luxurySubtitle}>
+            Discover luxury living in Las Vegas' most prestigious master-planned community
           </p>
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
@@ -153,7 +151,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Property Search Widget */}
         <section className={styles.sectionCard}>
           <RealScoutAdvancedSearch
@@ -163,21 +160,17 @@ export default function Home() {
             showFeatures={true}
           />
         </section>
-
         {/* RealScout Listings Widget */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            Featured Summerlin West Homes
-          </h2>
-          <p className={styles.widgetSubtitle}>
+          <h2 className={styles.luxurySectionTitle}>Featured Summerlin West Homes</h2>
+          <p className={styles.luxuryWidgetSubtitle}>
             Browse the latest homes for sale in Summerlin West communities
           </p>
           <RealScoutListings />
         </section>
-
         {/* Market Overview */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Summerlin West Market Overview</h2>
+          <h2 className={styles.luxurySectionTitle}>Summerlin West Market Overview</h2>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
               <div className={styles.statNumber}>$850K</div>
@@ -197,116 +190,32 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Why Summerlin West */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Why Choose Summerlin West?</h2>
-          <div className={styles.featuresGrid}>
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🏔️</div>
-              <h3>Red Rock Views</h3>
-              <p>
-                Breathtaking mountain views and proximity to Red Rock Canyon
-                National Conservation Area
-              </p>
-            </div>
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🎓</div>
-              <h3>Top-Rated Schools</h3>
-              <p>
-                Exceptional public and private schools with high academic
-                performance ratings
-              </p>
-            </div>
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🏊</div>
-              <h3>Resort Amenities</h3>
-              <p>
-                Clubhouses, pools, fitness centers, and social activities in
-                every community
-              </p>
-            </div>
-            <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🛒</div>
-              <h3>Shopping & Dining</h3>
-              <p>
-                Downtown Summerlin, Trader Joe's, and fine dining options just
-                minutes away
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Home Value Widget */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            What's Your Summerlin West Home Worth?
-          </h2>
-          <p className={styles.widgetSubtitle}>
-            Get an instant home value estimate for your Summerlin West property
-          </p>
-          <HomebotWidget />
-        </section>
-
-        {/* Latest Market Insights */}
+        {/* Market Insights */}
         <section className={styles.sectionCard}>
           <LatestMarketInsights />
         </section>
-
-        {/* Lead Capture */}
+        {/* Lead Capture/FAQ/CTA */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            Ready to Find Your Summerlin West Home?
-          </h2>
           <LeadCaptureForm
             variant="inline"
-            title="Get Your Free Summerlin West Consultation"
-            subtitle="Let's discuss your home search and how I can help you find the perfect Summerlin West property."
+            title="Get Your Free Summerlin West Market Report"
+            subtitle="Stay ahead of the market with the latest trends and expert insights."
             source="Homepage"
-            onSuccess={closeModal}
           />
         </section>
-
         {/* FAQ Section */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Frequently Asked Questions</h2>
+          <h2 className={styles.luxurySectionTitle}>Frequently Asked Questions</h2>
           <div className={styles.faqGrid}>
-            {faqs.map((faq, index) => (
-              <div key={index} className={styles.faqItem}>
+            {faqs.map((faq, idx) => (
+              <div key={idx} className={styles.faqCard}>
                 <h3 className={styles.faqQuestion}>{faq.question}</h3>
                 <p className={styles.faqAnswer}>{faq.answer}</p>
               </div>
             ))}
           </div>
         </section>
-
-        {/* Quick Links */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Explore More</h2>
-          <ul className={styles.resourceLinks}>
-            <li>
-              <Link href="/properties">Browse All Summerlin West Homes</Link>
-            </li>
-            <li>
-              <Link href="/communities">
-                Explore Summerlin West Communities
-              </Link>
-            </li>
-            <li>
-              <Link href="/market-reports">Get Market Reports</Link>
-            </li>
-            <li>
-              <Link href="/new-homes-summerlin">New Construction Homes</Link>
-            </li>
-            <li>
-              <Link href="/about">Meet Your Summerlin West Expert</Link>
-            </li>
-            <li>
-              <Link href="/contact">Schedule a Consultation</Link>
-            </li>
-          </ul>
-        </section>
-      </div>
+      </main>
     </>
   );
 }

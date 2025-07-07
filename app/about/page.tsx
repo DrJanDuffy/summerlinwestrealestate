@@ -56,18 +56,17 @@ export default function About() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
-        <section className={styles.hero}>
-          <h1>About Your Summerlin Real Estate Expert</h1>
-          <p className={styles.subtitle}>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>About Your Summerlin Real Estate Expert</h1>
+          <p className={styles.luxurySubtitle}>
             Local knowledge. Proven results. Personalized service.
           </p>
         </section>
-
-        <LatestMarketInsights />
-
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
         {/* Agent Profile Section */}
         <section className={styles.sectionCard}>
           <div className={styles.contentGrid}>
@@ -80,13 +79,9 @@ export default function About() {
               priority
             />
             <div className={styles.agentInfo}>
-              <h2>Meet Your Agent</h2>
+              <h2 className={styles.luxurySectionTitle}>Meet Your Agent</h2>
               <p className={styles.agentIntro}>
-                With over 15 years of dedicated experience in Summerlin real
-                estate, I've helped hundreds of families find their perfect
-                homes and achieve their real estate goals. As a local resident
-                and community advocate, I bring deep market knowledge and
-                personal commitment to every transaction.
+                With over 15 years of dedicated experience in Summerlin real estate, I've helped hundreds of families find their perfect homes and achieve their real estate goals. As a local resident and community advocate, I bring deep market knowledge and personal commitment to every transaction.
               </p>
               <ul className={styles.agentHighlights}>
                 <li>15+ years of Summerlin real estate experience</li>
@@ -99,10 +94,9 @@ export default function About() {
             </div>
           </div>
         </section>
-
         {/* Why Choose Section */}
         <section className={styles.sectionCard}>
-          <h2>Why Work With a Local Expert?</h2>
+          <h2 className={styles.luxurySectionTitle}>Why Work With a Local Expert?</h2>
           <div className={styles.expertiseGrid}>
             <div className={styles.expertiseCard}>
               <div className={styles.expertiseIcon}>🏠</div>
@@ -141,17 +135,13 @@ export default function About() {
             </div>
           </div>
         </section>
-
         {/* Community Involvement */}
         <section className={styles.sectionCard}>
           <div className={styles.contentGrid}>
             <div className={styles.communityContent}>
-              <h2>Giving Back to Summerlin</h2>
+              <h2 className={styles.luxurySectionTitle}>Giving Back to Summerlin</h2>
               <p className={styles.contentText}>
-                I believe in supporting the community that has given me so much.
-                From sponsoring local school events to volunteering at
-                neighborhood cleanups and supporting youth sports, I'm committed
-                to making Summerlin West a better place for everyone.
+                I believe in supporting the community that has given me so much. From sponsoring local school events to volunteering at neighborhood cleanups and supporting youth sports, I'm committed to making Summerlin West a better place for everyone.
               </p>
               <div className={styles.communityActivities}>
                 <h3>Community Involvement</h3>
@@ -173,10 +163,9 @@ export default function About() {
             />
           </div>
         </section>
-
         {/* Client Testimonials */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>What Our Clients Say</h2>
+          <h2 className={styles.luxurySectionTitle}>What Our Clients Say</h2>
           <div className={styles.testimonialsGrid}>
             {[
               {
@@ -216,7 +205,6 @@ export default function About() {
             ))}
           </div>
         </section>
-
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Ready to Work Together?</h2>
@@ -227,7 +215,6 @@ export default function About() {
             source="About Page"
           />
         </section>
-
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
@@ -249,7 +236,7 @@ export default function About() {
             </li>
           </ul>
         </section>
-      </div>
+      </main>
     </div>
   );
 }

@@ -34,22 +34,19 @@ export default function Sold() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
         <section className={styles.sectionCard}>
-          <h1>Recently Sold Homes in Summerlin</h1>
-          <p className={styles.subtitle}>
+          <h1 className={styles.luxuryHeroTitle}>Recently Sold Homes in Summerlin</h1>
+          <p className={styles.luxurySubtitle}>
             Track the latest sales and market activity in Summerlin West
           </p>
         </section>
-
         <section className={styles.sectionCard}>
           <LatestMarketInsights />
         </section>
-
         <section className={styles.sectionCard}>
-          <h2>Sold Listings</h2>
+          <h2 className={styles.luxurySectionTitle}>Sold Listings</h2>
           <div className={styles.featuredListingsGrid}>
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div key={i} className={styles.featuredListingCard}>
@@ -73,9 +70,8 @@ export default function Sold() {
             ))}
           </div>
         </section>
-
         <section className={styles.sectionCard}>
-          <h2>Summerlin Market Trends</h2>
+          <h2 className={styles.luxurySectionTitle}>Summerlin Market Trends</h2>
           <ul className={styles.contentList}>
             <li>Median sale price: $850,000</li>
             <li>Average days on market: 14</li>
@@ -83,25 +79,16 @@ export default function Sold() {
             <li>Low inventory, high demand in Summerlin West</li>
           </ul>
         </section>
-
         <section className={styles.sectionCard}>
-          <h2>Explore More</h2>
+          <h2 className={styles.luxurySectionTitle}>Explore More</h2>
           <ul className={styles.resourceLinks}>
-            <li>
-              <Link href="/market-reports">Summerlin Market Reports</Link>
-            </li>
-            <li>
-              <Link href="/current-listing">Featured Home for Sale</Link>
-            </li>
-            <li>
-              <Link href="/about">Meet Your Summerlin Expert</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact for a Home Value Report</Link>
-            </li>
+            <li><Link href="/market-reports">Summerlin Market Reports</Link></li>
+            <li><Link href="/current-listing">Featured Home for Sale</Link></li>
+            <li><Link href="/about">Meet Your Summerlin Expert</Link></li>
+            <li><Link href="/contact">Contact for a Home Value Report</Link></li>
           </ul>
         </section>
-      </div>
+      </main>
     </div>
   );
 }

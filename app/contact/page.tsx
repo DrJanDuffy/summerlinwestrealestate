@@ -66,21 +66,20 @@ export default function Contact() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
-        <section className={styles.hero}>
-          <h1>Contact a Summerlin Real Estate Expert</h1>
-          <p className={styles.subtitle}>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>Contact a Summerlin Real Estate Expert</h1>
+          <p className={styles.luxurySubtitle}>
             Get in touch for buying, selling, or market questions
           </p>
         </section>
-
-        <LatestMarketInsights />
-
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
         {/* Contact Form Section */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Send a Message</h2>
+          <h2 className={styles.luxurySectionTitle}>Send a Message</h2>
           <LeadCaptureForm
             variant="inline"
             title="Contact a Summerlin Real Estate Expert"
@@ -88,10 +87,9 @@ export default function Contact() {
             source="Contact Page"
           />
         </section>
-
         {/* Quick Links Section */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Quick Links</h2>
+          <h2 className={styles.luxurySectionTitle}>Quick Links</h2>
           <ul className={styles.resourceLinks}>
             <li>
               <Link href="/market-reports">Summerlin Market Reports</Link>
@@ -107,11 +105,10 @@ export default function Contact() {
             </li>
           </ul>
         </section>
-
         {/* Office Location & Contact Info */}
         <section className={styles.contactGrid}>
           <div className={styles.officeInfo}>
-            <h2 className={styles.centerTitle}>Our Office</h2>
+            <h2 className={styles.luxurySectionTitle}>Our Office</h2>
             <Image
               src="https://placehold.co/400x220?text=Office+Location+Map"
               alt="Office Location Map"
@@ -158,7 +155,7 @@ export default function Contact() {
           </div>
 
           <div className={styles.serviceAreas}>
-            <h2 className={styles.centerTitle}>Areas We Serve</h2>
+            <h2 className={styles.luxurySectionTitle}>Areas We Serve</h2>
             <ul className={styles.areasList}>
               {serviceAreas.map((area) => (
                 <li key={area} className={styles.areaItem}>
@@ -172,7 +169,7 @@ export default function Contact() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </div>
   );
 }

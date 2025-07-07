@@ -2139,3 +2139,190 @@ a.secondary {
     }
   }
 }
+
+.luxuryOverviewSection {
+  background: linear-gradient(135deg, #F7F9FC 80%, #f5e9d5 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(10, 37, 64, 0.10), 0 2px 8px rgba(0,0,0,0.08);
+  padding: 3rem 2rem;
+  margin: 3rem auto 2rem auto;
+  max-width: 900px;
+  min-height: 320px;
+  position: relative;
+  z-index: 1;
+}
+
+.luxuryCenterTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0A2540;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.luxurySummary {
+  font-size: 1.25rem;
+  color: #3A8DDE;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.luxuryExpandBtn, .luxuryCollapseBtn {
+  display: block;
+  margin: 0.5rem auto 1.5rem auto;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #0A2540 60%, #bfa76a 100%);
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 2px 8px rgba(186, 161, 84, 0.10);
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.luxuryExpandBtn:hover, .luxuryCollapseBtn:hover {
+  background: linear-gradient(90deg, #bfa76a 60%, #0A2540 100%);
+  box-shadow: 0 4px 16px rgba(186, 161, 84, 0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.luxuryFullOverview {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(58, 141, 222, 0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: #0A2540;
+  font-family: 'Lora', serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  max-height: 700px;
+  overflow-y: auto;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.luxuryFullOverview h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  color: #bfa76a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.luxuryFullOverview ul {
+  margin-bottom: 1.2rem;
+  padding-left: 1.2rem;
+}
+.luxuryFullOverview li {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  color: #0A2540;
+}
+.luxuryFullOverview p {
+  margin-top: 1.2rem;
+  font-size: 1.08rem;
+  color: #3A8DDE;
+}
+
+.luxuryMainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem 1.5rem;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 40px rgba(10,37,64,0.10), 0 2px 8px rgba(0,0,0,0.08);
+  min-height: 100vh;
+}
+
+.luxuryHero {
+  background: linear-gradient(120deg, #F7F9FC 80%, #bfa76a 100%);
+  border-radius: 32px;
+  box-shadow: 0 4px 32px rgba(186,161,84,0.10), 0 2px 8px rgba(0,0,0,0.08);
+  padding: 3.5rem 2rem 2.5rem 2rem;
+  margin: 2.5rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.luxuryHeroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0A2540;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.luxurySubtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.35rem;
+  color: #bfa76a;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.luxurySectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #0A2540;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.luxuryWidgetSubtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: #3A8DDE;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.sectionCard {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 32px rgba(10, 37, 64, 0.10), 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.faqCard {
+  background: #F7F9FC;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(58, 141, 222, 0.08);
+  padding: 1.5rem 1.2rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Lora', serif;
+  color: #0A2540;
+  transition: box-shadow 0.2s;
+}
+.faqCard:hover {
+  box-shadow: 0 4px 16px rgba(186, 161, 84, 0.18);
+}
+
+.faqQuestion {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: #bfa76a;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.faqAnswer {
+  font-size: 1.05rem;
+  color: #0A2540;
+  font-family: 'Lora', serif;
+  line-height: 1.6;
+}

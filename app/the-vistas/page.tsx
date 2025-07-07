@@ -85,112 +85,116 @@ export default function TheVistas() {
         />
       </Head>
       <Header />
-      <SummerlinWestOverview />
-      <section className={`${styles.hero} ${styles.heroMargin}`}>
-        <h1>The Vistas in Summerlin</h1>
-        <p className={styles.subtitle}>
-          A premier master-planned neighborhood in Summerlin West
-        </p>
-      </section>
-      <LatestMarketInsights />
-      <section className={styles.sectionCard}>
-        <h2>About The Vistas</h2>
-        <Image
-          src="https://placehold.co/800x300?text=The+Vistas+Park"
-          alt="The Vistas Park in Summerlin"
-          width={800}
-          height={300}
-          className={styles.featureImage}
-        />
-        <ul className={styles.featureList}>
-          <li>Beautiful parks and walking trails</li>
-          <li>Top-rated public and private schools</li>
-          <li>Modern homes with mountain views</li>
-          <li>Minutes from Downtown Summerlin</li>
-        </ul>
-      </section>
-      <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
-        <h2>Homes for Sale in The Vistas</h2>
-        <div className={styles.propertyGrid}>
-          {[1, 2, 3].map((i) => (
-            <div key={i} className={styles.propertyCard}>
-              <Image
-                src={`https://placehold.co/400x220?text=Vistas+Home+${i}`}
-                alt={`Home for sale in The Vistas Summerlin ${i}`}
-                width={400}
-                height={220}
-                className={styles.propertyImage}
-              />
-              <div className={styles.propertyInfo}>
-                <h3 className={styles.propertyTitle}>Vistas Home #{i}</h3>
-                <p className={styles.propertyDetails}>
-                  4 bed &bull; 3 bath &bull; $900,000+
-                </p>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero} ${styles.heroMargin}`}>
+          <h1 className={styles.luxuryHeroTitle}>The Vistas in Summerlin</h1>
+          <p className={styles.luxurySubtitle}>
+            A premier master-planned neighborhood in Summerlin West
+          </p>
+        </section>
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
+        <section className={styles.sectionCard}>
+          <h2 className={styles.luxurySectionTitle}>About The Vistas</h2>
+          <Image
+            src="https://placehold.co/800x300?text=The+Vistas+Park"
+            alt="The Vistas Park in Summerlin"
+            width={800}
+            height={300}
+            className={styles.featureImage}
+          />
+          <ul className={styles.featureList}>
+            <li>Beautiful parks and walking trails</li>
+            <li>Top-rated public and private schools</li>
+            <li>Modern homes with mountain views</li>
+            <li>Minutes from Downtown Summerlin</li>
+          </ul>
+        </section>
+        <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
+          <h2 className={styles.luxurySectionTitle}>Homes for Sale in The Vistas</h2>
+          <div className={styles.propertyGrid}>
+            {[1, 2, 3].map((i) => (
+              <div key={i} className={styles.propertyCard}>
+                <Image
+                  src={`https://placehold.co/400x220?text=Vistas+Home+${i}`}
+                  alt={`Home for sale in The Vistas Summerlin ${i}`}
+                  width={400}
+                  height={220}
+                  className={styles.propertyImage}
+                />
+                <div className={styles.propertyInfo}>
+                  <h3 className={styles.propertyTitle}>Vistas Home #{i}</h3>
+                  <p className={styles.propertyDetails}>
+                    4 bed &bull; 3 bath &bull; $900,000+
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
-        <h2>Explore More</h2>
-        <ul className={styles.linkList}>
-          <li>
-            <Link href="/market-reports">Summerlin Market Reports</Link>
-          </li>
-          <li>
-            <Link href="/current-listing">Featured Home for Sale</Link>
-          </li>
-          <li>
-            <Link href="/about">Meet Your Summerlin Expert</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact for a Private Tour</Link>
-          </li>
-        </ul>
-      </section>
-      <section id="lead-capture" className={styles.leadCapture}>
-        <h2>Request Your Free Community Guide</h2>
-        {submitted ? (
-          <div className={styles.successMessage}>
-            Thank you! Your guide is on its way.
+            ))}
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} noValidate>
-            <input
-              type="text"
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              disabled={loading}
-            />
-            <input
-              type="email"
-              placeholder="Your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={loading}
-            />
-            <input
-              type="tel"
-              placeholder="Your phone number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              disabled={loading}
-            />
-            <button type="submit" disabled={loading}>
-              {loading ? "Sending..." : "Send Guide"}
-            </button>
-            {error && (
-              <div className={styles.errorMessage}>
-                {error}
-              </div>
-            )}
-          </form>
-        )}
-      </section>
+        </section>
+        <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
+          <h2 className={styles.luxurySectionTitle}>Explore More</h2>
+          <ul className={styles.linkList}>
+            <li>
+              <Link href="/market-reports">Summerlin Market Reports</Link>
+            </li>
+            <li>
+              <Link href="/current-listing">Featured Home for Sale</Link>
+            </li>
+            <li>
+              <Link href="/about">Meet Your Summerlin Expert</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact for a Private Tour</Link>
+            </li>
+          </ul>
+        </section>
+        <section id="lead-capture" className={styles.leadCapture}>
+          <h2 className={styles.luxurySectionTitle}>Request Your Free Community Guide</h2>
+          {submitted ? (
+            <div className={styles.successMessage}>
+              Thank you! Your guide is on its way.
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} noValidate>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                disabled={loading}
+              />
+              <input
+                type="email"
+                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={loading}
+              />
+              <input
+                type="tel"
+                placeholder="Your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                disabled={loading}
+              />
+              <button type="submit" disabled={loading}>
+                {loading ? "Sending..." : "Send Guide"}
+              </button>
+              {error && (
+                <div className={styles.errorMessage}>
+                  {error}
+                </div>
+              )}
+            </form>
+          )}
+        </section>
+      </main>
     </div>
   );
 }

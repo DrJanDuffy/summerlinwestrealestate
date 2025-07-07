@@ -30,62 +30,66 @@ export default function Compare() {
         />
       </Head>
       <Header />
-      <SummerlinWestOverview />
-      <section className={`${styles.hero} ${styles.heroMargin}`}>
-        <h1>Compare Summerlin Homes</h1>
-        <p className={styles.subtitle}>
-          Analyze features, prices, and neighborhoods side by side
-        </p>
-      </section>
-      <LatestMarketInsights />
-      <section className={styles.sectionCard}>
-        <h2>Featured Comparisons</h2>
-        <div className={styles.propertyGrid}>
-          {[1, 2, 3].map((i) => (
-            <div key={i} className={styles.propertyCard}>
-              <Image
-                src={`https://placehold.co/400x220?text=Home+${i}`}
-                alt={`Compare Summerlin home ${i}`}
-                width={400}
-                height={220}
-                className={styles.propertyImage}
-              />
-              <div className={styles.propertyInfo}>
-                <h3 className={styles.propertyTitle}>Home #{i}</h3>
-                <p className={styles.propertyDetails}>
-                  4 bed &bull; 3 bath &bull; $900,000+
-                </p>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero} ${styles.heroMargin}`}>
+          <h1 className={styles.luxuryHeroTitle}>Compare Summerlin Homes</h1>
+          <p className={styles.luxurySubtitle}>
+            Analyze features, prices, and neighborhoods side by side
+          </p>
+        </section>
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
+        <section className={styles.sectionCard}>
+          <h2 className={styles.luxurySectionTitle}>Featured Comparisons</h2>
+          <div className={styles.propertyGrid}>
+            {[1, 2, 3].map((i) => (
+              <div key={i} className={styles.propertyCard}>
+                <Image
+                  src={`https://placehold.co/400x220?text=Home+${i}`}
+                  alt={`Compare Summerlin home ${i}`}
+                  width={400}
+                  height={220}
+                  className={styles.propertyImage}
+                />
+                <div className={styles.propertyInfo}>
+                  <h3 className={styles.propertyTitle}>Home #{i}</h3>
+                  <p className={styles.propertyDetails}>
+                    4 bed &bull; 3 bath &bull; $900,000+
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
-        <h2>How to Choose the Right Home</h2>
-        <ul className={styles.featureList}>
-          <li>Compare by price, size, and features</li>
-          <li>Evaluate neighborhood amenities and schools</li>
-          <li>Consider resale value and market trends</li>
-          <li>Get expert advice for your unique needs</li>
-        </ul>
-      </section>
-      <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
-        <h2>Explore More</h2>
-        <ul className={styles.linkList}>
-          <li>
-            <Link href="/market-reports">Summerlin Market Reports</Link>
-          </li>
-          <li>
-            <Link href="/current-listing">Featured Home for Sale</Link>
-          </li>
-          <li>
-            <Link href="/about">Meet Your Summerlin Expert</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact for Home Advice</Link>
-          </li>
-        </ul>
-      </section>
+            ))}
+          </div>
+        </section>
+        <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
+          <h2 className={styles.luxurySectionTitle}>How to Choose the Right Home</h2>
+          <ul className={styles.featureList}>
+            <li>Compare by price, size, and features</li>
+            <li>Evaluate neighborhood amenities and schools</li>
+            <li>Consider resale value and market trends</li>
+            <li>Get expert advice for your unique needs</li>
+          </ul>
+        </section>
+        <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
+          <h2 className={styles.luxurySectionTitle}>Explore More</h2>
+          <ul className={styles.linkList}>
+            <li>
+              <Link href="/market-reports">Summerlin Market Reports</Link>
+            </li>
+            <li>
+              <Link href="/current-listing">Featured Home for Sale</Link>
+            </li>
+            <li>
+              <Link href="/about">Meet Your Summerlin Expert</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact for Home Advice</Link>
+            </li>
+          </ul>
+        </section>
+      </main>
     </div>
   );
 }

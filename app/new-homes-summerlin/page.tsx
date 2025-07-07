@@ -34,22 +34,20 @@ export default function NewHomesSummerlin() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
-        <section className={styles.hero}>
-          <h1>New Homes in Summerlin Las Vegas</h1>
-          <p className={styles.subtitle}>
-            Your guide to new construction communities, builder incentives, and
-            the new home buying process in Summerlin
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>New Homes in Summerlin Las Vegas</h1>
+          <p className={styles.luxurySubtitle}>
+            Your guide to new construction communities, builder incentives, and the new home buying process in Summerlin
           </p>
         </section>
-
-        <LatestMarketInsights />
-
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
         {/* New Construction Communities */}
         <section className={styles.sectionCard}>
-          <h2>New Construction Communities</h2>
+          <h2 className={styles.luxurySectionTitle}>New Construction Communities</h2>
           <ul className={styles.contentList}>
             <li>Redpoint &amp; Redpoint Square</li>
             <li>Stonebridge</li>
@@ -59,10 +57,9 @@ export default function NewHomesSummerlin() {
             <li>And more—contact us for the latest releases!</li>
           </ul>
         </section>
-
         {/* Builder Information */}
         <section className={styles.sectionCard}>
-          <h2>Top Builders in Summerlin</h2>
+          <h2 className={styles.luxurySectionTitle}>Top Builders in Summerlin</h2>
           <ul className={styles.contentList}>
             <li>Pulte Homes</li>
             <li>Toll Brothers</li>
@@ -72,10 +69,9 @@ export default function NewHomesSummerlin() {
             <li>Tri Pointe Homes</li>
           </ul>
         </section>
-
         {/* Incentives Section */}
         <section className={styles.sectionCard}>
-          <h2>Builder Incentives &amp; Special Offers</h2>
+          <h2 className={styles.luxurySectionTitle}>Builder Incentives & Special Offers</h2>
           <p className={styles.contentText}>
             Many builders in Summerlin offer special incentives for new home
             buyers, including closing cost assistance, design center credits,
@@ -83,10 +79,9 @@ export default function NewHomesSummerlin() {
             latest offers and VIP access to new releases.
           </p>
         </section>
-
         {/* Process Section */}
         <section className={styles.sectionCard}>
-          <h2>The New Home Buying Process</h2>
+          <h2 className={styles.luxurySectionTitle}>The New Home Buying Process</h2>
           <ol className={styles.processList}>
             <li>Consultation: Discuss your needs, budget, and timeline</li>
             <li>
@@ -109,10 +104,9 @@ export default function NewHomesSummerlin() {
             </li>
           </ol>
         </section>
-
         {/* FAQ Section */}
         <section className={styles.sectionCard}>
-          <h2>New Home Buyer FAQ</h2>
+          <h2 className={styles.luxurySectionTitle}>New Home Buyer FAQ</h2>
           <ul className={styles.contentList}>
             <li>How do I get notified about new home releases in Summerlin?</li>
             <li>What incentives are available for new construction buyers?</li>
@@ -120,10 +114,9 @@ export default function NewHomesSummerlin() {
             <li>Can I use my own agent for a new home purchase?</li>
           </ul>
         </section>
-
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
-          <h2>Explore More Summerlin Real Estate Resources</h2>
+          <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate Resources</h2>
           <ul className={styles.resourceLinks}>
             <li>
               <Link href="/market-reports">
@@ -145,12 +138,9 @@ export default function NewHomesSummerlin() {
             </li>
           </ul>
         </section>
-
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            Get Alerts for New Homes in Summerlin
-          </h2>
+          <h2 className={styles.luxurySectionTitle}>Get Alerts for New Homes in Summerlin</h2>
           <LeadCaptureForm
             variant="inline"
             title="Get New Home Alerts"
@@ -158,7 +148,7 @@ export default function NewHomesSummerlin() {
             source="New Homes Summerlin Page"
           />
         </section>
-      </div>
+      </main>
     </div>
   );
 }

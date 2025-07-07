@@ -86,22 +86,20 @@ export default function CurrentListing() {
       </Head>
 
       <Header />
-      <SummerlinWestOverview />
-
-      <div className={styles.mainContent}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1>The Vistas Summerlin Home for Sale</h1>
-          <p className={styles.subtitle}>
+      <main className={styles.luxuryMainContent}>
+        <SummerlinWestOverview />
+        <section className={`${styles.hero} ${styles.luxuryHero}`}>
+          <h1 className={styles.luxuryHeroTitle}>The Vistas Summerlin Home for Sale</h1>
+          <p className={styles.luxurySubtitle}>
             Modern Luxury in the Heart of Summerlin West
           </p>
         </section>
-
-        <LatestMarketInsights />
-
+        <section className={styles.sectionCard}>
+          <LatestMarketInsights />
+        </section>
         {/* Photo Gallery */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Photo Gallery</h2>
+          <h2 className={styles.luxurySectionTitle}>Photo Gallery</h2>
           <div className={styles.photoGallery}>
             {photoGallery.map((i) => (
               <div key={i} className={styles.photoCard}>
@@ -116,10 +114,9 @@ export default function CurrentListing() {
             ))}
           </div>
         </section>
-
         {/* Property Details */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Property Details</h2>
+          <h2 className={styles.luxurySectionTitle}>Property Details</h2>
           <ul className={styles.propertyList}>
             {propertyDetails.map((detail, index) => (
               <li key={index} className={styles.propertyItem}>
@@ -128,10 +125,9 @@ export default function CurrentListing() {
             ))}
           </ul>
         </section>
-
         {/* Community Benefits */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Community Benefits</h2>
+          <h2 className={styles.luxurySectionTitle}>Community Benefits</h2>
           <ul className={styles.benefitsList}>
             {communityBenefits.map((benefit, index) => (
               <li key={index} className={styles.benefitItem}>
@@ -140,10 +136,9 @@ export default function CurrentListing() {
             ))}
           </ul>
         </section>
-
         {/* Market Analysis */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Why This Home is Priced Right</h2>
+          <h2 className={styles.luxurySectionTitle}>Why This Home is Priced Right</h2>
           <ul className={styles.analysisList}>
             {marketAnalysis.map((analysis, index) => (
               <li key={index} className={styles.analysisItem}>
@@ -152,12 +147,9 @@ export default function CurrentListing() {
             ))}
           </ul>
         </section>
-
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>
-            Explore More Summerlin Real Estate
-          </h2>
+          <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate</h2>
           <ul className={styles.resourceLinks}>
             <li>
               <Link href="/market-reports">
@@ -177,10 +169,9 @@ export default function CurrentListing() {
             </li>
           </ul>
         </section>
-
         {/* Contact Form for Private Showings */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Request a Private Showing</h2>
+          <h2 className={styles.luxurySectionTitle}>Request a Private Showing</h2>
           <LeadCaptureForm
             variant="inline"
             title="Request a Private Showing"
@@ -188,7 +179,7 @@ export default function CurrentListing() {
             source="Current Listing Page"
           />
         </section>
-      </div>
+      </main>
     </div>
   );
 }
