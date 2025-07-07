@@ -27,6 +27,22 @@ export default function LatestMarketInsights() {
     fetchRSS();
   }, []);
 
+  function getImageUrl(item: any) {
+    // Handle media:content as array or object
+    let mediaContent = item["media:content"];
+    if (Array.isArray(mediaContent)) {
+      // Find first with url
+      const found = mediaContent.find((mc) => mc.url);
+      if (found) return found.url;
+    } else if (mediaContent && mediaContent.url) {
+      return mediaContent.url;
+    }
+    if (item.enclosure && item.enclosure.url) {
+      return item.enclosure.url;
+    }
+    return "https://placehold.co/120x80?text=News";
+  }
+
   if (rssItems.length === 0) return null;
 
   return (
@@ -34,11 +50,7 @@ export default function LatestMarketInsights() {
       <h2 className={styles.centerTitle}>Latest Market Insights</h2>
       <ul className={styles.insightsList}>
         {rssItems.map((item, idx) => {
-          // Try to get image from media:content, enclosure, or fallback
-          const imageUrl =
-            (item["media:content"] && item["media:content"].url) ||
-            (item.enclosure && item.enclosure.url) ||
-            "https://placehold.co/120x80?text=News";
+          const imageUrl = getImageUrl(item);
           return (
             <li key={idx} className={styles.insightItem}>
               <a
