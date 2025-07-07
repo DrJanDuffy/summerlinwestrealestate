@@ -3,36 +3,23 @@
 import styles from "../page.module.css";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-const LatestMarketInsights = dynamic(
-  () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
-);
-import LeadCaptureForm from "../../components/ui/LeadCaptureForm";
-import Head from "next/head";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+
+// Dynamic imports for client components
+const LatestMarketInsights = dynamic(
+  () => import("../../components/ui/LatestMarketInsights"),
+  { ssr: false }
+);
+
+const LeadCaptureForm = dynamic(
+  () => import("../../components/ui/LeadCaptureForm"),
+  { ssr: false }
+);
 
 export default function NewHomesSummerlin() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>
-          New Homes in Summerlin Las Vegas | Builders, Incentives & Buying Guide
-        </title>
-        <meta
-          name="description"
-          content="Explore new homes in Summerlin Las Vegas. See builder incentives, new construction communities, and the home buying process. Get alerts for new homes!"
-        />
-        <meta
-          property="og:title"
-          content="New Homes in Summerlin Las Vegas | Builders, Incentives & Buying Guide"
-        />
-        <meta
-          property="og:description"
-          content="Explore new homes in Summerlin Las Vegas. See builder incentives, new construction communities, and the home buying process. Get alerts for new homes!"
-        />
-      </Head>
-
       <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
@@ -42,9 +29,11 @@ export default function NewHomesSummerlin() {
             Your guide to new construction communities, builder incentives, and the new home buying process in Summerlin
           </p>
         </section>
+        
         <section className={styles.sectionCard}>
           <LatestMarketInsights />
         </section>
+        
         {/* New Construction Communities */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>New Construction Communities</h2>
@@ -57,6 +46,7 @@ export default function NewHomesSummerlin() {
             <li>And more—contact us for the latest releases!</li>
           </ul>
         </section>
+        
         {/* Builder Information */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Top Builders in Summerlin</h2>
@@ -69,6 +59,7 @@ export default function NewHomesSummerlin() {
             <li>Tri Pointe Homes</li>
           </ul>
         </section>
+        
         {/* Incentives Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Builder Incentives & Special Offers</h2>
@@ -79,6 +70,7 @@ export default function NewHomesSummerlin() {
             latest offers and VIP access to new releases.
           </p>
         </section>
+        
         {/* Process Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>The New Home Buying Process</h2>
@@ -104,6 +96,7 @@ export default function NewHomesSummerlin() {
             </li>
           </ol>
         </section>
+        
         {/* FAQ Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>New Home Buyer FAQ</h2>
@@ -114,6 +107,7 @@ export default function NewHomesSummerlin() {
             <li>Can I use my own agent for a new home purchase?</li>
           </ul>
         </section>
+        
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate Resources</h2>
@@ -138,6 +132,7 @@ export default function NewHomesSummerlin() {
             </li>
           </ul>
         </section>
+        
         {/* Lead Capture */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Get Alerts for New Homes in Summerlin</h2>

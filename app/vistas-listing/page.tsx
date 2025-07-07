@@ -1,68 +1,19 @@
-"use client";
 import styles from "../page.module.css";
-import { useState } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-const LatestMarketInsights = dynamic(
-  () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
-);
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import VistasListingFormClient from "../../components/ui/VistasListingFormClient";
+
+export const metadata = {
+  title: "Vistas Summerlin Home Listings | Summerlin West Real Estate",
+  description: "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
+  openGraph: {
+    title: "Vistas Summerlin Home Listings | Summerlin West Real Estate",
+    description: "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
+  }
+};
 
 export default function VistasListing() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) {
-      setError("Please enter your name.");
-      return;
-    }
-    if (!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-    if (!phone.match(/^[0-9\-\+\(\)\s]{7,}$/)) {
-      setError("Please enter a valid phone number.");
-      return;
-    }
-    setError("");
-    setLoading(true);
-    try {
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, phone, page: "Vistas Listing" }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit");
-      }
-
-      setSubmitted(true);
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "lead_form_submit", {
-          event_category: "Lead",
-          event_label: "Vistas Listing",
-        });
-      }
-    } catch (err: any) {
-      setError(
-        "There was a problem submitting your request. Please try again later.",
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const listings = [
     { id: 1, beds: 4, baths: 3, price: "$900,000+" },
     { id: 2, beds: 4, baths: 3, price: "$925,000+" },
@@ -78,24 +29,6 @@ export default function VistasListing() {
 
   return (
     <div className={styles.page}>
-      <Head>
-        <title>
-          Vistas Summerlin Home Listings | Summerlin West Real Estate
-        </title>
-        <meta
-          name="description"
-          content="Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights."
-        />
-        <meta
-          property="og:title"
-          content="Vistas Summerlin Home Listings | Summerlin West Real Estate"
-        />
-        <meta
-          property="og:description"
-          content="Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights."
-        />
-      </Head>
-
       <div className={styles.mainContent}>
         <section className={styles.hero}>
           <h1>Vistas Summerlin Home Listings</h1>
@@ -104,7 +37,7 @@ export default function VistasListing() {
           </p>
         </section>
 
-        <LatestMarketInsights />
+        <LatestMarketInsightsClient />
 
         {/* Available Listings */}
         <section className={styles.sectionCard}>
@@ -165,42 +98,7 @@ export default function VistasListing() {
         {/* Lead Capture Form */}
         <section id="lead-capture" className={styles.leadCapture}>
           <h2>Interested in this home?</h2>
-          {submitted ? (
-            <div className={styles.successMessage}>
-              Thank you! We'll be in touch soon.
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate>
-              <input
-                type="text"
-                placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <input
-                type="tel"
-                placeholder="Your phone number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <button type="submit" disabled={loading}>
-                {loading ? "Sending..." : "Request Info"}
-              </button>
-              {error && <div className={styles.errorMessage}>{error}</div>}
-            </form>
-          )}
+          <VistasListingFormClient formId="vistas-listing" />
         </section>
       </div>
     </div>

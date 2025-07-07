@@ -1,19 +1,19 @@
-"use client";
-import dynamic from "next/dynamic";
-const LeadCaptureForm = dynamic(
-  () => import("../../components/ui/LeadCaptureForm"),
-  { ssr: false },
-);
-import Head from "next/head";
-import Link from "next/link";
 import styles from "../page.module.css";
-import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
-const LatestMarketInsights = dynamic(
-  () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
-);
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
+
+// Metadata for SEO (replaces Head component)
+export const metadata = {
+  title: "Contact a Summerlin Real Estate Expert | Summerlin West Real Estate",
+  description: "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
+  openGraph: {
+    title: "Contact a Summerlin Real Estate Expert | Summerlin West Real Estate",
+    description: "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
+  }
+};
 
 export default function Contact() {
   const serviceAreas = [
@@ -47,24 +47,6 @@ export default function Contact() {
 
   return (
     <div className={styles.page}>
-      <Head>
-        <title>
-          Contact a Summerlin Real Estate Expert | Summerlin West Real Estate
-        </title>
-        <meta
-          name="description"
-          content="Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends."
-        />
-        <meta
-          property="og:title"
-          content="Contact a Summerlin Real Estate Expert | Summerlin West Real Estate"
-        />
-        <meta
-          property="og:description"
-          content="Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends."
-        />
-      </Head>
-
       <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
@@ -74,19 +56,22 @@ export default function Contact() {
             Get in touch for buying, selling, or market questions
           </p>
         </section>
+        
         <section className={styles.sectionCard}>
-          <LatestMarketInsights />
+          <LatestMarketInsightsClient />
         </section>
+        
         {/* Contact Form Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Send a Message</h2>
-          <LeadCaptureForm
+          <LeadCaptureFormClient
             variant="inline"
             title="Contact a Summerlin Real Estate Expert"
             subtitle="Get personalized help with Summerlin homes, communities, and market trends."
             source="Contact Page"
           />
         </section>
+        
         {/* Quick Links Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Quick Links</h2>
@@ -105,17 +90,18 @@ export default function Contact() {
             </li>
           </ul>
         </section>
+        
         {/* Office Location & Contact Info */}
         <section className={styles.contactGrid}>
           <div className={styles.officeInfo}>
             <h2 className={styles.luxurySectionTitle}>Our Office</h2>
-            <Image
+            <img
               src="https://placehold.co/400x220?text=Office+Location+Map"
               alt="Office Location Map"
               width={400}
               height={220}
               className={styles.officeMap}
-              priority
+              loading="lazy"
             />
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>

@@ -7,9 +7,17 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+
+// Dynamic imports for client components
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
+  { ssr: false }
+);
+
+const VistasLeadForm = dynamic(
+  () => import("../../components/ui/VistasLeadForm"),
+  { ssr: false }
 );
 
 export default function TheVistas() {
@@ -94,7 +102,7 @@ export default function TheVistas() {
           </p>
         </section>
         <section className={styles.sectionCard}>
-          <LatestMarketInsights />
+          <LatestMarketInsightsClient />
         </section>
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>About The Vistas</h2>
@@ -153,46 +161,7 @@ export default function TheVistas() {
         </section>
         <section id="lead-capture" className={styles.leadCapture}>
           <h2 className={styles.luxurySectionTitle}>Request Your Free Community Guide</h2>
-          {submitted ? (
-            <div className={styles.successMessage}>
-              Thank you! Your guide is on its way.
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate>
-              <input
-                type="text"
-                placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <input
-                type="email"
-                placeholder="Your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <input
-                type="tel"
-                placeholder="Your phone number"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                disabled={loading}
-              />
-              <button type="submit" disabled={loading}>
-                {loading ? "Sending..." : "Send Guide"}
-              </button>
-              {error && (
-                <div className={styles.errorMessage}>
-                  {error}
-                </div>
-              )}
-            </form>
-          )}
+          <VistasLeadForm />
         </section>
       </main>
     </div>

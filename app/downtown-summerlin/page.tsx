@@ -1,42 +1,24 @@
-"use client";
-import dynamic from "next/dynamic";
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
-const LatestMarketInsights = dynamic(
-  () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
-);
-const LeadCaptureForm = dynamic(
-  () => import("../../components/ui/LeadCaptureForm"),
-  { ssr: false },
-);
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
+
+// Metadata export (replaces Head component)
+export const metadata = {
+  title: "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
+  description: "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
+  openGraph: {
+    title: "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
+    description: "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
+  }
+};
 
 export default function DowntownSummerlin() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>
-          Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes &
-          Market
-        </title>
-        <meta
-          name="description"
-          content="Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report."
-        />
-        <meta
-          property="og:title"
-          content="Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market"
-        />
-        <meta
-          property="og:description"
-          content="Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report."
-        />
-      </Head>
-
       <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
@@ -46,9 +28,11 @@ export default function DowntownSummerlin() {
             Your comprehensive resource for living, shopping, and investing in Downtown Summerlin
           </p>
         </section>
+        
         <section className={styles.sectionCard}>
-          <LatestMarketInsights />
+          <LatestMarketInsightsClient />
         </section>
+        
         {/* Shopping Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Shopping in Downtown Summerlin</h2>
@@ -71,6 +55,7 @@ export default function DowntownSummerlin() {
             </p>
           </div>
         </section>
+        
         {/* Dining Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Dining in Downtown Summerlin</h2>
@@ -91,6 +76,7 @@ export default function DowntownSummerlin() {
             />
           </div>
         </section>
+        
         {/* Entertainment Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Entertainment & Lifestyle</h2>
@@ -111,6 +97,7 @@ export default function DowntownSummerlin() {
             </p>
           </div>
         </section>
+        
         {/* Real Estate Market Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Downtown Summerlin Real Estate Market</h2>
@@ -140,16 +127,18 @@ export default function DowntownSummerlin() {
             />
           </div>
         </section>
+        
         {/* Call to Action */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Get Your Downtown Summerlin Market Report</h2>
-          <LeadCaptureForm
+          <LeadCaptureFormClient
             variant="inline"
             title="Request Your Free Downtown Summerlin Market Report"
             subtitle="Stay ahead of the market with the latest trends and expert insights."
             source="Downtown Summerlin Page"
           />
         </section>
+        
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate Resources</h2>

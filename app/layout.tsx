@@ -2,15 +2,17 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
+import Script from "next/script";
+import Footer from '../components/layout/Footer';
+import BreadcrumbsClient from '../components/layout/BreadcrumbsClient';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Summerlin West Real Estate | Luxury Homes & Communities",
-    template: "%s | Summerlin West Real Estate"
-  },
-  description: "Discover luxury homes in Summerlin West, Las Vegas' most prestigious master-planned community. Expert real estate guidance, market insights, and premium properties.",
+  metadataBase: new URL("https://summerlinwestrealestate.com"),
+  title: "Summerlin West Real Estate | The Vistas & Communities",
+  description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
   keywords: ["Summerlin West", "Las Vegas real estate", "luxury homes", "master-planned community", "Red Rock Canyon", "The Vistas", "Stonebridge"],
   authors: [{ name: "Summerlin West Real Estate" }],
   creator: "Summerlin West Real Estate",
@@ -20,31 +22,36 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://summerlinwestrealestate.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://summerlinwestrealestate.com',
-    siteName: 'Summerlin West Real Estate',
-    title: 'Summerlin West Real Estate | Luxury Homes & Communities',
-    description: 'Discover luxury homes in Summerlin West, Las Vegas\' most prestigious master-planned community.',
+    title: "Summerlin West Real Estate | The Vistas & Communities",
+    description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
+    url: "https://summerlinwestrealestate.com",
+    siteName: "Summerlin West Real Estate",
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'Summerlin West Real Estate',
+        alt: "Summerlin West Real Estate Hero",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Summerlin West Real Estate | Luxury Homes & Communities',
-    description: 'Discover luxury homes in Summerlin West, Las Vegas\' most prestigious master-planned community.',
-    images: ['/images/og-image.jpg'],
+    card: "summary_large_image",
+    title: "Summerlin West Real Estate | The Vistas & Communities",
+    description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        alt: "Summerlin West Real Estate Hero",
+      },
+    ],
+    site: "@summerlinwestre",
   },
   robots: {
     index: true,

@@ -1,19 +1,12 @@
 "use client";
-import dynamic from "next/dynamic";
-import Head from "next/head";
-import styles from "../page.module.css";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head';
+import styles from '../page.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+import dynamic from 'next/dynamic';
 import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
-const LatestMarketInsights = dynamic(
-  () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
-);
-
-const LeadCaptureForm = dynamic(
-  () => import("../../components/ui/LeadCaptureForm"),
-  { ssr: false },
-);
+const LeadCaptureForm = dynamic(() => import("../../components/ui/LeadCaptureForm"), { ssr: false });
 
 export default function MarketReports() {
   return (
@@ -37,18 +30,12 @@ export default function MarketReports() {
         <link rel="canonical" href="https://summerlinwestrealestate.com/market-reports" />
         <meta name="robots" content="index, follow" />
       </Head>
-
+      <section className={styles.hero} style={{marginBottom: '2rem'}}>
+        <h1>Summerlin Market Reports</h1>
+        <p className={styles.subtitle}>Get the latest insights, trends, and data for the Summerlin real estate market</p>
+      </section>
+      <LatestMarketInsightsClient />
       <div className={styles.mainContent}>
-        <section className={styles.hero}>
-          <h1>Summerlin Market Reports</h1>
-          <p className={styles.subtitle}>
-            Get the latest insights, trends, and data for the Summerlin real
-            estate market
-          </p>
-        </section>
-
-        <LatestMarketInsights />
-
         {/* Current Market Statistics */}
         <section className={styles.sectionCard}>
           <h2>Current Market Statistics</h2>
@@ -58,20 +45,31 @@ export default function MarketReports() {
               <div className={styles.statLabel}>Active Listings</div>
             </div>
             <div className={styles.statCard}>
-              <div className={styles.statNumber}>28</div>
-              <div className={styles.statLabel}>Median Days on Market</div>
+              <div className={styles.statNumber}>14</div>
+              <div className={styles.statLabel}>Avg Days on Market</div>
             </div>
             <div className={styles.statCard}>
-              <div className={styles.statNumber}>$675K</div>
-              <div className={styles.statLabel}>Median Sale Price</div>
+              <div className={styles.statNumber}>$850K</div>
+              <div className={styles.statLabel}>Median Home Price</div>
             </div>
             <div className={styles.statCard}>
-              <div className={styles.statNumber}>97%</div>
+              <div className={styles.statNumber}>98%</div>
               <div className={styles.statLabel}>List-to-Sale Ratio</div>
             </div>
           </div>
         </section>
-
+        {/* FAQ Section */}
+        <section className={styles.sectionCard}>
+          <h2>Frequently Asked Questions</h2>
+          <ul className={styles.resourceLinks}>
+            <li><strong>What are the best neighborhoods in Summerlin West?</strong><br/>Popular neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options.</li>
+            <li><strong>What is the average home price in Summerlin West?</strong><br/>The median home price is around $850,000, with luxury homes reaching $2M+.</li>
+            <li><strong>Are there new construction homes available?</strong><br/>Yes! New construction is available in Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives.</li>
+            <li><strong>How do I schedule a home tour?</strong><br/>Contact us via the form or call to schedule a private showing of any property.</li>
+            <li><strong>What makes Summerlin West special?</strong><br/>Master-planned communities, top-rated schools, Red Rock Canyon access, and a family-friendly lifestyle with excellent amenities.</li>
+            <li><strong>How can I get a free market report?</strong><br/>Fill out the form on this page or visit our Market Reports section for a free analysis and insights.</li>
+          </ul>
+        </section>
         {/* Monthly Market Trends Charts */}
         <section className={styles.sectionCard}>
           <h2>Monthly Market Trends</h2>
@@ -93,7 +91,6 @@ export default function MarketReports() {
             />
           </div>
         </section>
-
         {/* Download Form for Detailed Reports */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>
@@ -104,9 +101,9 @@ export default function MarketReports() {
             title="Download the Full Market Report"
             subtitle="Get a detailed PDF with neighborhood breakdowns, price trends, and expert analysis."
             source="Market Reports Download"
+            formId="download"
           />
         </section>
-
         {/* Market Analysis Sections */}
         <section className={styles.sectionCard}>
           <h2>Summerlin Market Analysis</h2>
@@ -137,7 +134,6 @@ export default function MarketReports() {
             </div>
           </div>
         </section>
-
         {/* Newsletter Signup */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>
@@ -148,9 +144,9 @@ export default function MarketReports() {
             title="Subscribe to the Summerlin Market Newsletter"
             subtitle="Monthly updates, expert insights, and exclusive market data—straight to your inbox."
             source="Market Reports Newsletter"
+            formId="newsletter"
           />
         </section>
-
         {/* Internal Links Section */}
         <section className={styles.sectionCard}>
           <h2>Explore More Summerlin Real Estate Resources</h2>
@@ -173,7 +169,6 @@ export default function MarketReports() {
             </li>
           </ul>
         </section>
-
         <RealScoutAdvancedSearch
           title="Search Current Market Listings"
           subtitle="Find properties matching your criteria"

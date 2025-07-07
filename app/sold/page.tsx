@@ -1,38 +1,21 @@
 "use client";
 
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+
+// Dynamic import for client components
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
-  { ssr: false },
+  { ssr: false }
 );
 
 export default function Sold() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>
-          Recently Sold Homes in Summerlin | Summerlin West Real Estate
-        </title>
-        <meta
-          name="description"
-          content="See recently sold homes in Summerlin West. View sale prices, days on market, and market trends for buyers and sellers in Summerlin real estate."
-        />
-        <meta
-          property="og:title"
-          content="Recently Sold Homes in Summerlin | Summerlin West Real Estate"
-        />
-        <meta
-          property="og:description"
-          content="See recently sold homes in Summerlin West. View sale prices, days on market, and market trends for buyers and sellers in Summerlin real estate."
-        />
-      </Head>
-
       <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
@@ -42,9 +25,11 @@ export default function Sold() {
             Track the latest sales and market activity in Summerlin West
           </p>
         </section>
+        
         <section className={styles.sectionCard}>
           <LatestMarketInsights />
         </section>
+        
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Sold Listings</h2>
           <div className={styles.featuredListingsGrid}>
@@ -70,6 +55,7 @@ export default function Sold() {
             ))}
           </div>
         </section>
+        
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Summerlin Market Trends</h2>
           <ul className={styles.contentList}>
@@ -79,6 +65,7 @@ export default function Sold() {
             <li>Low inventory, high demand in Summerlin West</li>
           </ul>
         </section>
+        
         <section className={styles.sectionCard}>
           <h2 className={styles.luxurySectionTitle}>Explore More</h2>
           <ul className={styles.resourceLinks}>
