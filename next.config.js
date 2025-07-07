@@ -7,6 +7,12 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: [
+      'www.simplifyingthemarket.com',
+      'placehold.co',
+    ],
+  },
 };
 
 module.exports = nextConfig;

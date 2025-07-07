@@ -196,6 +196,40 @@ export default function Communities() {
           </div>
         </section>
 
+        {/* All Communities Grid */}
+        <section className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Explore All Summerlin West Communities</h2>
+          <div className={styles.communitiesGrid}>
+            {communities.map((community, idx) => (
+              <div className={styles.communityCard} key={community.name}>
+                <img
+                  src={community.image}
+                  alt={community.name}
+                  className={styles.communityImage}
+                  width={400}
+                  height={220}
+                  loading="lazy"
+                />
+                <div className={styles.communityContent}>
+                  <h3 className={styles.communityTitle}>{community.name}</h3>
+                  <p className={styles.communityDescription}>{community.description}</p>
+                  <div className={styles.communityPrice}>{community.priceRange}</div>
+                  <div>
+                    {community.features.map((feature) => (
+                      <span
+                        key={feature}
+                        className={styles.featureTag}
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Market Overview */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Summerlin West Market Overview</h2>
