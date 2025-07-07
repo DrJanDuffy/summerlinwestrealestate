@@ -4,37 +4,55 @@ import { posts } from "../../lib/posts";
 export async function GET() {
   const baseUrl = "https://summerlinwestrealestate.com";
   const today = new Date().toISOString().split("T")[0];
-  const urls = [
-    "",
-    "about",
-    "communities",
-    "compare",
-    "sold",
-    "the-vistas",
-    "vistas-listing",
-    "market",
-    "current-listing",
+  
+  // Main pages with proper priorities
+  const mainPages = [
+    { path: "", priority: "1.0", changefreq: "daily" },
+    { path: "about", priority: "0.8", changefreq: "weekly" },
+    { path: "communities", priority: "0.9", changefreq: "weekly" },
+    { path: "market", priority: "0.8", changefreq: "weekly" },
+    { path: "market-reports", priority: "0.8", changefreq: "weekly" },
+    { path: "sold", priority: "0.7", changefreq: "weekly" },
+    { path: "new-homes-summerlin", priority: "0.8", changefreq: "weekly" },
+    { path: "downtown-summerlin", priority: "0.7", changefreq: "monthly" },
+    { path: "the-vistas", priority: "0.8", changefreq: "weekly" },
+    { path: "vistas-listing", priority: "0.7", changefreq: "weekly" },
+    { path: "current-listing", priority: "0.7", changefreq: "weekly" },
+    { path: "compare", priority: "0.6", changefreq: "monthly" },
+    { path: "contact", priority: "0.6", changefreq: "monthly" },
+    { path: "google-places", priority: "0.5", changefreq: "monthly" },
   ];
-  const blogUrls = posts.map((post) => `blog/${post.slug}`);
-  const allUrls = [...urls, ...blogUrls];
+
+  // Blog URLs
+  const blogUrls = posts.map((post) => ({
+    path: `blog/${post.slug}`,
+    priority: "0.6",
+    changefreq: "monthly"
+  }));
+
+  // Combine all URLs
+  const allUrls = [...mainPages, ...blogUrls];
+
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${allUrls
     .map(
-      (path) => `
+      (url) => `
     <url>
-      <loc>${baseUrl}/${path}</loc>
+      <loc>${baseUrl}/${url.path}</loc>
       <lastmod>${today}</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>${path === "" ? "1.0" : "0.8"}</priority>
+      <changefreq>${url.changefreq}</changefreq>
+      <priority>${url.priority}</priority>
     </url>`,
     )
     .join("")}
 </urlset>`;
+
   return new NextResponse(sitemap, {
     status: 200,
     headers: {
       "Content-Type": "application/xml",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }

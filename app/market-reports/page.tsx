@@ -34,6 +34,8 @@ export default function MarketReports() {
           property="og:description"
           content="Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter."
         />
+        <link rel="canonical" href="https://summerlinwestrealestate.com/market-reports" />
+        <meta name="robots" content="index, follow" />
       </Head>
 
       <div className={styles.mainContent}>
