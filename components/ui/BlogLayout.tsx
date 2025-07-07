@@ -104,7 +104,7 @@ export default function BlogLayout({
         )}
       </Head>
       {!isPostPage && (
-        <section className={styles.hero} style={{ marginBottom: "2rem" }}>
+        <section className={`${styles.hero} ${styles.blogHeroMargin}`}>
           <h1>Summerlin West Real Estate Blog</h1>
           <p className={styles.subtitle}>
             Insights, tips, and market news for Summerlin homeowners and buyers
@@ -113,44 +113,25 @@ export default function BlogLayout({
       )}
       {/* Latest Market Insights from RSS */}
       {!isPostPage && rssItems.length > 0 && (
-        <section
-          style={{
-            marginBottom: "2.5rem",
-            background: "#fff",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            padding: "2rem 1rem",
-          }}
-        >
-          <h2 style={{ color: "#3A8DDE", marginBottom: "1rem" }}>
+        <section className={styles.rssSection}>
+          <h2 className={styles.rssTitle}>
             Latest Market Insights
           </h2>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <ul className={styles.rssList}>
             {rssItems.map((item, idx) => (
-              <li key={idx} style={{ marginBottom: "1.5rem" }}>
+              <li key={idx} className={styles.rssItem}>
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "1.1rem",
-                    color: "#0A2540",
-                    textDecoration: "underline",
-                  }}
+                  className={styles.rssLink}
                 >
                   {item.title}
                 </a>
-                <div
-                  style={{
-                    color: "#888",
-                    fontSize: "0.95rem",
-                    marginBottom: "0.5rem",
-                  }}
-                >
+                <div className={styles.rssDate}>
                   {item.pubDate && new Date(item.pubDate).toLocaleDateString()}
                 </div>
-                <div style={{ color: "#444", fontSize: "1.02rem" }}>
+                <div className={styles.rssSnippet}>
                   {item.contentSnippet}
                 </div>
               </li>
@@ -160,97 +141,41 @@ export default function BlogLayout({
       )}
       {/* Article Grid */}
       {!isPostPage && (
-        <section style={{ marginBottom: "2.5rem" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "2rem",
-            }}
-          >
-            {posts.map((post) => (
-              <div
-                key={post.slug}
-                style={{
-                  background: "#fff",
-                  borderRadius: "8px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                  padding: "1.5rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
+        <section className={styles.blogGrid}>
+          {posts.map((post) => (
+            <div key={post.slug} className={styles.blogCard}>
+              {post.image && (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={180}
+                  className={styles.blogImage}
+                />
+              )}
+              <h2 className={styles.blogTitle}>
+                {post.title}
+              </h2>
+              <p className={styles.blogExcerpt}>
+                {post.excerpt}
+              </p>
+              <Link
+                href={`/blog/${post.slug}`}
+                className={`${styles.cta} ${styles.blogReadMore}`}
               >
-                {post.image && (
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={400}
-                    height={180}
-                    style={{
-                      borderRadius: "8px",
-                      marginBottom: "1rem",
-                      width: "100%",
-                      height: 180,
-                      objectFit: "cover",
-                    }}
-                  />
-                )}
-                <h2
-                  style={{
-                    fontSize: "1.3rem",
-                    color: "#3A8DDE",
-                    marginBottom: "0.5rem",
-                  }}
-                >
-                  {post.title}
-                </h2>
-                <p
-                  style={{
-                    color: "#0A2540",
-                    fontSize: "1.05rem",
-                    marginBottom: "1rem",
-                  }}
-                >
-                  {post.excerpt}
-                </p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className={styles.cta}
-                  style={{ alignSelf: "flex-start" }}
-                >
-                  Read More
-                </Link>
-              </div>
-            ))}
-          </div>
+                Read More
+              </Link>
+            </div>
+          ))}
         </section>
       )}
       {/* Individual Blog Post Template */}
       {isPostPage && currentPost && (
-        <article
-          style={{
-            marginBottom: "2.5rem",
-            background: "#fff",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-            padding: "2rem 1rem",
-            maxWidth: 800,
-            margin: "0 auto",
-          }}
-        >
-          <h1
-            style={{ color: "#3A8DDE", fontSize: "2rem", marginBottom: "1rem" }}
-          >
+        <article className={styles.blogPost}>
+          <h1 className={styles.postTitle}>
             {currentPost.title}
           </h1>
-          <div
-            style={{
-              color: "#888",
-              fontSize: "0.95rem",
-              marginBottom: "1.5rem",
-            }}
-          >
+          <div className={styles.postDate}>
             {new Date(currentPost.date).toLocaleDateString()}
           </div>
           {currentPost.image && (
@@ -259,32 +184,22 @@ export default function BlogLayout({
               alt={currentPost.title}
               width={800}
               height={320}
-              style={{
-                borderRadius: "8px",
-                marginBottom: "1.5rem",
-                width: "100%",
-                maxHeight: 320,
-                objectFit: "cover",
-              }}
+              className={styles.postImage}
               priority
             />
           )}
           <div
-            style={{
-              color: "#0A2540",
-              fontSize: "1.08rem",
-              marginBottom: "2rem",
-            }}
+            className={styles.postContent}
             dangerouslySetInnerHTML={{ __html: currentPost.content }}
           />
           {/* Social Sharing Buttons */}
-          <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
+          <div className={styles.socialSharing}>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
               target="_blank"
               rel="noopener"
               aria-label="Share on Facebook"
-              style={{ color: "#3A8DDE" }}
+              className={styles.socialLink}
             >
               Facebook
             </a>
@@ -293,14 +208,14 @@ export default function BlogLayout({
               target="_blank"
               rel="noopener"
               aria-label="Share on Twitter"
-              style={{ color: "#3A8DDE" }}
+              className={styles.socialLink}
             >
               Twitter
             </a>
             <a
               href={`mailto:?subject=${encodeURIComponent(currentPost.title)}&body=${encodeURIComponent(typeof window !== "undefined" ? window.location.href : "")}`}
               aria-label="Share by Email"
-              style={{ color: "#3A8DDE" }}
+              className={styles.socialLink}
             >
               Email
             </a>
@@ -309,36 +224,15 @@ export default function BlogLayout({
       )}
       {/* Related Posts Section */}
       {isPostPage && relatedPosts && relatedPosts.length > 0 && (
-        <section style={{ marginBottom: "2.5rem" }}>
+        <section className={styles.relatedPosts}>
           <h2>Related Posts</h2>
-          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+          <div className={styles.relatedGrid}>
             {relatedPosts.map((post) => (
-              <div
-                key={post.slug}
-                style={{
-                  background: "#F7F9FC",
-                  borderRadius: "8px",
-                  padding: "1rem",
-                  minWidth: 220,
-                  maxWidth: 340,
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "#0A2540",
-                    marginBottom: "0.5rem",
-                  }}
-                >
+              <div key={post.slug} className={styles.relatedCard}>
+                <h3 className={styles.relatedTitle}>
                   {post.title}
                 </h3>
-                <p
-                  style={{
-                    color: "#666",
-                    fontSize: "0.98rem",
-                    marginBottom: "0.5rem",
-                  }}
-                >
+                <p className={styles.relatedExcerpt}>
                   {post.excerpt}
                 </p>
                 <Link
@@ -353,23 +247,9 @@ export default function BlogLayout({
         </section>
       )}
       {/* RSS Feed Info */}
-      <section
-        style={{
-          marginBottom: "2.5rem",
-          background: "#F7F9FC",
-          borderRadius: "8px",
-          padding: "2rem 1rem",
-          textAlign: "center",
-        }}
-      >
+      <section className={styles.rssInfo}>
         <h2>Automate Your Real Estate Insights</h2>
-        <p
-          style={{
-            color: "#0A2540",
-            fontSize: "1.08rem",
-            marginBottom: "1rem",
-          }}
-        >
+        <p className={styles.rssInfoText}>
           Subscribe to our personalized RSS feed for the latest blog posts and
           market updates, or automate your email newsletter with our feed.
         </p>
@@ -377,8 +257,7 @@ export default function BlogLayout({
           href="https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18"
           target="_blank"
           rel="noopener"
-          className={styles.cta}
-          style={{ display: "inline-block", marginTop: "0.5rem" }}
+          className={`${styles.cta} ${styles.rssFeedLink}`}
         >
           View RSS Feed
         </a>
