@@ -21,6 +21,7 @@ interface LeadCaptureFormProps {
   onClose?: () => void;
   isOpen?: boolean;
   source?: string;
+  formId?: string;
 }
 
 const propertyInterests = [
@@ -44,6 +45,7 @@ export default function LeadCaptureForm({
   onClose,
   isOpen = true,
   source = "Website",
+  formId = "main",
 }: LeadCaptureFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -98,11 +100,19 @@ export default function LeadCaptureForm({
         (window as any).gtag("event", "lead_form_submit", {
           event_category: "Lead",
           event_label: source,
+          cd1: (window as any).userType || 'unknown',
+          cd2: 'LeadCaptureForm',
+          cd3: 'submit',
+          cd4: 1,
         });
         (window as any).gtag("event", "generate_lead", {
           value: 1,
           currency: "USD",
           form_location: source || "unknown",
+          cd1: (window as any).userType || 'unknown',
+          cd2: 'LeadCaptureForm',
+          cd3: 'submit',
+          cd4: 1,
         });
       }
       onSuccess?.();
@@ -162,7 +172,7 @@ export default function LeadCaptureForm({
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className={styles["form-grid"]}>
             <div className={styles["form-group"]}>
-              <label htmlFor="name">Full Name *</label>
+              <label htmlFor={`name-${formId}`}>Full Name *</label>
               <Controller
                 name="name"
                 control={control}
@@ -177,22 +187,24 @@ export default function LeadCaptureForm({
                   <input
                     {...field}
                     type="text"
-                    id="name"
+                    id={`name-${formId}`}
                     placeholder="Enter your full name"
                     className={errors.name ? styles.error : ""}
                     disabled={isSubmitting}
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? `name-error-${formId}` : undefined}
                   />
                 )}
               />
               {errors.name && (
-                <span className={styles["error-message"]}>
+                <span id={`name-error-${formId}`} className={styles["error-message"]} role="alert">
                   {errors.name.message}
                 </span>
               )}
             </div>
 
             <div className={styles["form-group"]}>
-              <label htmlFor="email">Email Address *</label>
+              <label htmlFor={`email-${formId}`}>Email Address *</label>
               <Controller
                 name="email"
                 control={control}
@@ -207,22 +219,24 @@ export default function LeadCaptureForm({
                   <input
                     {...field}
                     type="email"
-                    id="email"
+                    id={`email-${formId}`}
                     placeholder="Enter your email address"
                     className={errors.email ? styles.error : ""}
                     disabled={isSubmitting}
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? `email-error-${formId}` : undefined}
                   />
                 )}
               />
               {errors.email && (
-                <span className={styles["error-message"]}>
+                <span id={`email-error-${formId}`} className={styles["error-message"]} role="alert">
                   {errors.email.message}
                 </span>
               )}
             </div>
 
             <div className={styles["form-group"]}>
-              <label htmlFor="phone">Phone Number *</label>
+              <label htmlFor={`phone-${formId}`}>Phone Number *</label>
               <Controller
                 name="phone"
                 control={control}
@@ -237,22 +251,24 @@ export default function LeadCaptureForm({
                   <input
                     {...field}
                     type="tel"
-                    id="phone"
+                    id={`phone-${formId}`}
                     placeholder="Enter your phone number"
                     className={errors.phone ? styles.error : ""}
                     disabled={isSubmitting}
+                    aria-invalid={errors.phone ? 'true' : 'false'}
+                    aria-describedby={errors.phone ? `phone-error-${formId}` : undefined}
                   />
                 )}
               />
               {errors.phone && (
-                <span className={styles["error-message"]}>
+                <span id={`phone-error-${formId}`} className={styles["error-message"]} role="alert">
                   {errors.phone.message}
                 </span>
               )}
             </div>
 
             <div className={styles["form-group"]}>
-              <label htmlFor="propertyInterest">Property Interest *</label>
+              <label htmlFor={`propertyInterest-${formId}`}>Property Interest *</label>
               <Controller
                 name="propertyInterest"
                 control={control}
@@ -260,9 +276,11 @@ export default function LeadCaptureForm({
                 render={({ field }) => (
                   <select
                     {...field}
-                    id="propertyInterest"
+                    id={`propertyInterest-${formId}`}
                     className={errors.propertyInterest ? styles.error : ""}
                     disabled={isSubmitting}
+                    aria-invalid={errors.propertyInterest ? 'true' : 'false'}
+                    aria-describedby={errors.propertyInterest ? `propertyInterest-error-${formId}` : undefined}
                   >
                     {propertyInterests.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -273,27 +291,34 @@ export default function LeadCaptureForm({
                 )}
               />
               {errors.propertyInterest && (
-                <span className={styles["error-message"]}>
+                <span id={`propertyInterest-error-${formId}`} className={styles["error-message"]} role="alert">
                   {errors.propertyInterest.message}
                 </span>
               )}
             </div>
 
             <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
-              <label htmlFor="message">Message (Optional)</label>
+              <label htmlFor={`message-${formId}`}>Message (Optional)</label>
               <Controller
                 name="message"
                 control={control}
                 render={({ field }) => (
                   <textarea
                     {...field}
-                    id="message"
+                    id={`message-${formId}`}
                     rows={4}
                     placeholder="Tell us about your real estate needs..."
                     disabled={isSubmitting}
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? `message-error-${formId}` : undefined}
                   />
                 )}
               />
+              {errors.message && (
+                <span id={`message-error-${formId}`} className={styles["error-message"]} role="alert">
+                  {errors.message.message}
+                </span>
+              )}
             </div>
 
             <div className={`${styles["form-group"]} ${styles["full-width"]}`}>

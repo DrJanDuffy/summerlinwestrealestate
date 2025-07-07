@@ -201,6 +201,7 @@ export default function Home() {
             title="Get Your Free Summerlin West Market Report"
             subtitle="Stay ahead of the market with the latest trends and expert insights."
             source="Homepage"
+            formId="main"
           />
         </section>
         {/* FAQ Section */}
