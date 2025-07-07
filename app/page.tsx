@@ -10,7 +10,7 @@ import dynamic from 'next/dynamic';
 import HomebotWidget from '../components/ui/HomebotWidget';
 import SectionCard from "../components/ui/SectionCard";
 import { Inter } from "next/font/google";
-import Header from '../components/ui/Header';
+import Header from '../components/layout/Header';
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), { ssr: false });
