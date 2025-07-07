@@ -867,3 +867,60 @@ a.secondary {
     padding: 1.5rem 0.75rem;
   }
 }
+
+.contentList {
+  color: #0A2540;
+  font-size: 1.08rem;
+  margin-left: 1rem;
+  list-style: disc inside;
+}
+
+.contentList li {
+  margin-bottom: 0.5rem;
+}
+
+.contentText {
+  color: #0A2540;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.processList {
+  color: #0A2540;
+  font-size: 1.08rem;
+  margin-left: 1.5rem;
+  list-style: decimal inside;
+}
+
+.processList li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.processList li:last-child {
+  margin-bottom: 0;
+}
+
+.listingContent {
+  padding: 1rem;
+}
+
+.listingTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0A2540;
+  font-weight: 600;
+}
+
+.listingDetails {
+  font-size: 0.98rem;
+  color: #0A2540;
+  margin: 0.5rem 0;
+}
+
+.listingDate {
+  font-size: 0.92rem;
+  color: #3A8DDE;
+  font-weight: 500;
+}
