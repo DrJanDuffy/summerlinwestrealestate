@@ -169,252 +169,254 @@ export default function LeadCaptureForm({
           )}
         </motion.div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <div className={styles["form-grid"]}>
-            <div className={styles["form-group"]}>
-              <label htmlFor={`name-${formId}`}>Full Name *</label>
-              <Controller
-                name="name"
-                control={control}
-                rules={{
-                  required: "Name is required",
-                  minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters",
-                  },
-                }}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="text"
-                    id={`name-${formId}`}
-                    placeholder="Enter your full name"
-                    className={errors.name ? styles.error : ""}
-                    disabled={isSubmitting}
-                    aria-invalid={errors.name ? 'true' : 'false'}
-                    aria-describedby={errors.name ? `name-error-${formId}` : undefined}
-                  />
-                )}
-              />
-              {errors.name && (
-                <span id={`name-error-${formId}`} className={styles["error-message"]} role="alert">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
-
-            <div className={styles["form-group"]}>
-              <label htmlFor={`email-${formId}`}>Email Address *</label>
-              <Controller
-                name="email"
-                control={control}
-                rules={{
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "Please enter a valid email address",
-                  },
-                }}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="email"
-                    id={`email-${formId}`}
-                    placeholder="Enter your email address"
-                    className={errors.email ? styles.error : ""}
-                    disabled={isSubmitting}
-                    aria-invalid={errors.email ? 'true' : 'false'}
-                    aria-describedby={errors.email ? `email-error-${formId}` : undefined}
-                  />
-                )}
-              />
-              {errors.email && (
-                <span id={`email-error-${formId}`} className={styles["error-message"]} role="alert">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
-
-            <div className={styles["form-group"]}>
-              <label htmlFor={`phone-${formId}`}>Phone Number *</label>
-              <Controller
-                name="phone"
-                control={control}
-                rules={{
-                  required: "Phone number is required",
-                  pattern: {
-                    value: /^[\+]?[1-9][\d]{0,15}$/,
-                    message: "Please enter a valid phone number",
-                  },
-                }}
-                render={({ field }) => (
-                  <input
-                    {...field}
-                    type="tel"
-                    id={`phone-${formId}`}
-                    placeholder="Enter your phone number"
-                    className={errors.phone ? styles.error : ""}
-                    disabled={isSubmitting}
-                    aria-invalid={errors.phone ? 'true' : 'false'}
-                    aria-describedby={errors.phone ? `phone-error-${formId}` : undefined}
-                  />
-                )}
-              />
-              {errors.phone && (
-                <span id={`phone-error-${formId}`} className={styles["error-message"]} role="alert">
-                  {errors.phone.message}
-                </span>
-              )}
-            </div>
-
-            <div className={styles["form-group"]}>
-              <label htmlFor={`propertyInterest-${formId}`}>Property Interest *</label>
-              <Controller
-                name="propertyInterest"
-                control={control}
-                rules={{ required: "Please select your property interest" }}
-                render={({ field }) => (
-                  <select
-                    {...field}
-                    id={`propertyInterest-${formId}`}
-                    className={errors.propertyInterest ? styles.error : ""}
-                    disabled={isSubmitting}
-                    aria-invalid={errors.propertyInterest ? 'true' : 'false'}
-                    aria-describedby={errors.propertyInterest ? `propertyInterest-error-${formId}` : undefined}
-                  >
-                    {propertyInterests.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                )}
-              />
-              {errors.propertyInterest && (
-                <span id={`propertyInterest-error-${formId}`} className={styles["error-message"]} role="alert">
-                  {errors.propertyInterest.message}
-                </span>
-              )}
-            </div>
-
-            <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
-              <label htmlFor={`message-${formId}`}>Message (Optional)</label>
-              <Controller
-                name="message"
-                control={control}
-                render={({ field }) => (
-                  <textarea
-                    {...field}
-                    id={`message-${formId}`}
-                    rows={4}
-                    placeholder="Tell us about your real estate needs..."
-                    disabled={isSubmitting}
-                    aria-invalid={errors.message ? 'true' : 'false'}
-                    aria-describedby={errors.message ? `message-error-${formId}` : undefined}
-                  />
-                )}
-              />
-              {errors.message && (
-                <span id={`message-error-${formId}`} className={styles["error-message"]} role="alert">
-                  {errors.message.message}
-                </span>
-              )}
-            </div>
-
-            <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
-              <Controller
-                name="privacyConsent"
-                control={control}
-                rules={{ required: "You must agree to our privacy policy" }}
-                render={({ field }) => (
-                  <label className={styles["checkbox-label"]}>
+        <div className="formContainer">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
+            <div className={styles["form-grid"]}>
+              <div className={styles["form-group"]}>
+                <label htmlFor={`name-${formId}`}>Full Name *</label>
+                <Controller
+                  name="name"
+                  control={control}
+                  rules={{
+                    required: "Name is required",
+                    minLength: {
+                      value: 2,
+                      message: "Name must be at least 2 characters",
+                    },
+                  }}
+                  render={({ field }) => (
                     <input
-                      {...(({ value, ...rest }) => rest)(field)}
-                      type="checkbox"
-                      checked={field.value}
+                      {...field}
+                      type="text"
+                      id={`name-${formId}`}
+                      placeholder="Enter your full name"
+                      className={errors.name ? styles.error : ""}
                       disabled={isSubmitting}
+                      {...(errors.name ? { 'aria-invalid': 'true' } : {})}
+                      aria-describedby={errors.name ? `name-error-${formId}` : undefined}
                     />
-                    <span className={styles["checkmark"]}></span>I agree to the{" "}
-                    <a
-                      href="/privacy-policy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and consent to being contacted about real estate services. *
-                  </label>
+                  )}
+                />
+                {errors.name && (
+                  <span id={`name-error-${formId}`} className={styles["error-message"]} role="alert">
+                    {errors.name.message}
+                  </span>
                 )}
-              />
-              {errors.privacyConsent && (
-                <span className={styles["error-message"]}>
-                  {errors.privacyConsent.message}
-                </span>
-              )}
-            </div>
-          </div>
+              </div>
 
-          {submitStatus === "error" && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={styles["error-banner"]}
-            >
-              {errorMessage}
-            </motion.div>
-          )}
+              <div className={styles["form-group"]}>
+                <label htmlFor={`email-${formId}`}>Email Address *</label>
+                <Controller
+                  name="email"
+                  control={control}
+                  rules={{
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Please enter a valid email address",
+                    },
+                  }}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="email"
+                      id={`email-${formId}`}
+                      placeholder="Enter your email address"
+                      className={errors.email ? styles.error : ""}
+                      disabled={isSubmitting}
+                      {...(errors.email ? { 'aria-invalid': 'true' } : {})}
+                      aria-describedby={errors.email ? `email-error-${formId}` : undefined}
+                    />
+                  )}
+                />
+                {errors.email && (
+                  <span id={`email-error-${formId}`} className={styles["error-message"]} role="alert">
+                    {errors.email.message}
+                  </span>
+                )}
+              </div>
 
-          <div className={styles["form-actions"]}>
-            <button
-              type="submit"
-              disabled={isSubmitting || !privacyConsent}
-              className={styles["submit-button"]}
-            >
-              {isSubmitting ? (
-                <span className={styles["loading"]}>
-                  <svg className={styles["spinner"]} viewBox="0 0 24 24">
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                      fill="none"
-                      strokeDasharray="31.416"
-                      strokeDashoffset="31.416"
+              <div className={styles["form-group"]}>
+                <label htmlFor={`phone-${formId}`}>Phone Number *</label>
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{
+                    required: "Phone number is required",
+                    pattern: {
+                      value: /^[\+]?[1-9][\d]{0,15}$/,
+                      message: "Please enter a valid phone number",
+                    },
+                  }}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="tel"
+                      id={`phone-${formId}`}
+                      placeholder="Enter your phone number"
+                      className={errors.phone ? styles.error : ""}
+                      disabled={isSubmitting}
+                      {...(errors.phone ? { 'aria-invalid': 'true' } : {})}
+                      aria-describedby={errors.phone ? `phone-error-${formId}` : undefined}
+                    />
+                  )}
+                />
+                {errors.phone && (
+                  <span id={`phone-error-${formId}`} className={styles["error-message"]} role="alert">
+                    {errors.phone.message}
+                  </span>
+                )}
+              </div>
+
+              <div className={styles["form-group"]}>
+                <label htmlFor={`propertyInterest-${formId}`}>Property Interest *</label>
+                <Controller
+                  name="propertyInterest"
+                  control={control}
+                  rules={{ required: "Please select your property interest" }}
+                  render={({ field }) => (
+                    <select
+                      {...field}
+                      id={`propertyInterest-${formId}`}
+                      className={errors.propertyInterest ? styles.error : ""}
+                      disabled={isSubmitting}
+                      {...(errors.propertyInterest ? { 'aria-invalid': 'true' } : {})}
+                      aria-describedby={errors.propertyInterest ? `propertyInterest-error-${formId}` : undefined}
                     >
-                      <animate
-                        attributeName="stroke-dasharray"
-                        dur="2s"
-                        values="0 31.416;15.708 15.708;0 31.416"
-                        repeatCount="indefinite"
-                      />
-                      <animate
-                        attributeName="stroke-dashoffset"
-                        dur="2s"
-                        values="0;-15.708;-31.416"
-                        repeatCount="indefinite"
-                      />
-                    </circle>
-                  </svg>
-                  Submitting...
-                </span>
-              ) : (
-                "Get Your Free Report"
-              )}
-            </button>
-          </div>
+                      {propertyInterests.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                />
+                {errors.propertyInterest && (
+                  <span id={`propertyInterest-error-${formId}`} className={styles["error-message"]} role="alert">
+                    {errors.propertyInterest.message}
+                  </span>
+                )}
+              </div>
 
-          <div className={styles["form-footer"]}>
-            <p className={styles["privacy-notice"]}>
-              <small>
-                By submitting this form, you agree to receive communications
-                from Summerlin West Real Estate. We respect your privacy and
-                will never share your information with third parties.
-              </small>
-            </p>
-          </div>
-        </form>
+              <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
+                <label htmlFor={`message-${formId}`}>Message (Optional)</label>
+                <Controller
+                  name="message"
+                  control={control}
+                  render={({ field }) => (
+                    <textarea
+                      {...field}
+                      id={`message-${formId}`}
+                      rows={4}
+                      placeholder="Tell us about your real estate needs..."
+                      disabled={isSubmitting}
+                      {...(errors.message ? { 'aria-invalid': 'true' } : {})}
+                      aria-describedby={errors.message ? `message-error-${formId}` : undefined}
+                    />
+                  )}
+                />
+                {errors.message && (
+                  <span id={`message-error-${formId}`} className={styles["error-message"]} role="alert">
+                    {errors.message.message}
+                  </span>
+                )}
+              </div>
+
+              <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
+                <Controller
+                  name="privacyConsent"
+                  control={control}
+                  rules={{ required: "You must agree to our privacy policy" }}
+                  render={({ field }) => (
+                    <label className={styles["checkbox-label"]}>
+                      <input
+                        {...(({ value, ...rest }) => rest)(field)}
+                        type="checkbox"
+                        checked={field.value}
+                        disabled={isSubmitting}
+                      />
+                      <span className={styles["checkmark"]}></span>I agree to the{" "}
+                      <a
+                        href="/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Privacy Policy
+                      </a>{" "}
+                      and consent to being contacted about real estate services. *
+                    </label>
+                  )}
+                />
+                {errors.privacyConsent && (
+                  <span className={styles["error-message"]}>
+                    {errors.privacyConsent.message}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {submitStatus === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={styles["error-banner"]}
+              >
+                {errorMessage}
+              </motion.div>
+            )}
+
+            <div className={styles["form-actions"]}>
+              <button
+                type="submit"
+                disabled={isSubmitting || !privacyConsent}
+                className={styles["submit-button"]}
+              >
+                {isSubmitting ? (
+                  <span className={styles["loading"]}>
+                    <svg className={styles["spinner"]} viewBox="0 0 24 24">
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        fill="none"
+                        strokeDasharray="31.416"
+                        strokeDashoffset="31.416"
+                      >
+                        <animate
+                          attributeName="stroke-dasharray"
+                          dur="2s"
+                          values="0 31.416;15.708 15.708;0 31.416"
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="stroke-dashoffset"
+                          dur="2s"
+                          values="0;-15.708;-31.416"
+                          repeatCount="indefinite"
+                        />
+                      </circle>
+                    </svg>
+                    Submitting...
+                  </span>
+                ) : (
+                  "Get Your Free Report"
+                )}
+              </button>
+            </div>
+
+            <div className={styles["form-footer"]}>
+              <p className={styles["privacy-notice"]}>
+                <small>
+                  By submitting this form, you agree to receive communications
+                  from Summerlin West Real Estate. We respect your privacy and
+                  will never share your information with third parties.
+                </small>
+              </p>
+            </div>
+          </form>
+        </div>
       )}
     </motion.div>
   );

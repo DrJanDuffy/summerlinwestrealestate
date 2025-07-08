@@ -23,27 +23,27 @@ export default function Compare() {
           content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
         />
       </Head>
-      <section className={styles.hero} style={{marginBottom: '2rem'}}>
+      <section className={styles.hero}>
         <h1>Compare Summerlin Homes</h1>
         <p className={styles.subtitle}>Analyze features, prices, and neighborhoods side by side</p>
       </section>
       <LatestMarketInsightsClient />
-      <section style={{marginBottom: '2.5rem'}}>
-        <h2>Featured Comparisons</h2>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', maxWidth: '900px', margin: '0 auto'}}>
+      <section className={styles.sectionCard}>
+        <h2 className={styles.centerTitle}>Featured Comparisons</h2>
+        <div className={styles.comparisonGrid} aria-label="Featured home comparisons">
           {[1,2,3].map((i) => (
-            <div key={i} style={{borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', background: '#fff'}}>
-              <Image src={`https://placehold.co/400x220?text=Home+${i}`} alt={`Compare Summerlin home ${i}`} width={400} height={220} style={{width: '100%', height: 'auto', display: 'block'}} />
-              <div style={{padding: '1rem'}}>
-                <h3 style={{margin: 0}}>Home #{i}</h3>
-                <p style={{fontSize: '0.98rem', color: '#0A2540'}}>4 bed &bull; 3 bath &bull; $900,000+</p>
+            <article key={i} className={styles.comparisonCard}>
+              <Image src={`https://placehold.co/400x220?text=Home+${i}`} alt={`Compare Summerlin home ${i}`} width={400} height={220} className={styles.comparisonImage} />
+              <div className={styles.comparisonContent}>
+                <h3 className={styles.comparisonTitle}>Home #{i}</h3>
+                <p className={styles.comparisonDetails}>4 bed &bull; 3 bath &bull; $900,000+</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
-      <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
-        <h2 className={styles.luxurySectionTitle}>How to Choose the Right Home</h2>
+      <section className={styles.sectionCard}>
+        <h2 className={styles.centerTitle}>How to Choose the Right Home</h2>
         <ul className={styles.featureList}>
           <li>Compare by price, size, and features</li>
           <li>Evaluate neighborhood amenities and schools</li>
@@ -51,9 +51,9 @@ export default function Compare() {
           <li>Get expert advice for your unique needs</li>
         </ul>
       </section>
-      <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
-        <h2 className={styles.luxurySectionTitle}>Explore More</h2>
-        <ul className={styles.linkList}>
+      <section className={styles.sectionCard}>
+        <h2 className={styles.centerTitle}>Explore More</h2>
+        <ul className={styles.linkList} aria-label="Explore more links">
           <li>
             <Link href="/market-reports">Summerlin Market Reports</Link>
           </li>

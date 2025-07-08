@@ -36,10 +36,7 @@ export default function VistasListing() {
             Find your dream home in The Vistas, Summerlin West
           </p>
         </section>
-
         <LatestMarketInsightsClient />
-
-        {/* Available Listings */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Available Listings</h2>
           <div className={styles.listingsGrid}>
@@ -63,8 +60,6 @@ export default function VistasListing() {
             ))}
           </div>
         </section>
-
-        {/* Why Buy in The Vistas */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Why Buy in The Vistas?</h2>
           <ul className={styles.benefitsList}>
@@ -75,8 +70,6 @@ export default function VistasListing() {
             ))}
           </ul>
         </section>
-
-        {/* Explore More */}
         <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Explore More</h2>
           <ul className={styles.resourceLinks}>
@@ -94,8 +87,6 @@ export default function VistasListing() {
             </li>
           </ul>
         </section>
-
-        {/* Lead Capture Form */}
         <section id="lead-capture" className={styles.leadCapture}>
           <h2>Interested in this home?</h2>
           <VistasListingFormClient formId="vistas-listing" />

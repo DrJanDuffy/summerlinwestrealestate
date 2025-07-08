@@ -62,13 +62,13 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
     }
   };
 
-  const nameInvalid = !!error && !name.trim() ? 'true' : 'false';
-  const emailInvalid = !!error && !email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/) ? 'true' : 'false';
-  const phoneInvalid = !!error && !phone.match(/^[0-9\-\+\(\)\s]{7,}$/) ? 'true' : 'false';
+  const isNameInvalid = !!error && !name.trim();
+  const isEmailInvalid = !!error && !email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/);
+  const isPhoneInvalid = !!error && !phone.match(/^[0-9\-\+\(\)\s]{7,}$/);
 
   if (submitted) {
     return (
-      <div className={styles.successMessage} role="status" tabIndex={-1}>
+      <div className="text-success-600 bg-success-50 rounded-xl shadow-md px-6 py-8 text-center font-semibold text-lg" role="status" tabIndex={-1}>
         Thank you! We'll be in touch soon.
       </div>
     );
@@ -78,18 +78,11 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className={styles.leadForm}
+      className="bg-white rounded-2xl shadow-lg p-8 min-h-[240px] flex flex-col gap-6 w-full max-w-xl mx-auto"
       aria-describedby={error ? `${idPrefix}-error` : undefined}
-      style={{
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        background: "#fff",
-        borderRadius: 8,
-        padding: 24,
-        minHeight: 240,
-      }}
     >
-      <div className={styles.formGroup}>
-        <label htmlFor={`${idPrefix}-name`}>Name</label>
+      <div className="form-group">
+        <label htmlFor={`${idPrefix}-name`} className="form-label">Name</label>
         <input
           id={`${idPrefix}-name`}
           type="text"
@@ -98,12 +91,13 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
           onChange={(e) => setName(e.target.value)}
           required
           disabled={loading}
-          aria-invalid={nameInvalid}
+          aria-invalid="true"
           autoComplete="name"
+          className="form-input"
         />
       </div>
-      <div className={styles.formGroup}>
-        <label htmlFor={`${idPrefix}-email`}>Email</label>
+      <div className="form-group">
+        <label htmlFor={`${idPrefix}-email`} className="form-label">Email</label>
         <input
           id={`${idPrefix}-email`}
           type="email"
@@ -112,12 +106,13 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
           onChange={(e) => setEmail(e.target.value)}
           required
           disabled={loading}
-          aria-invalid={emailInvalid}
+          aria-invalid="true"
           autoComplete="email"
+          className="form-input"
         />
       </div>
-      <div className={styles.formGroup}>
-        <label htmlFor={`${idPrefix}-phone`}>Phone</label>
+      <div className="form-group">
+        <label htmlFor={`${idPrefix}-phone`} className="form-label">Phone</label>
         <input
           id={`${idPrefix}-phone`}
           type="tel"
@@ -126,31 +121,24 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
           onChange={(e) => setPhone(e.target.value)}
           required
           disabled={loading}
-          aria-invalid={phoneInvalid}
+          aria-invalid="true"
           autoComplete="tel"
+          className="form-input"
         />
       </div>
       <button
         type="submit"
         disabled={loading}
-        className={styles.submitButton}
-        style={{
-          background: "#3A8DDE",
-          color: "#fff",
-          borderRadius: 4,
-          fontWeight: 600,
-          boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        }}
+        className="btn btn-primary w-full py-3 text-base font-semibold rounded-xl shadow-md transition-colors"
       >
         {loading ? "Sending..." : "Request Info"}
       </button>
       {error && (
         <div
           id={`${idPrefix}-error`}
-          className={styles.errorMessage}
+          className="form-error text-error-600 mt-2 text-sm flex items-center gap-2"
           role="alert"
           aria-live="assertive"
-          style={{ color: "#D32F2F", marginTop: 8 }}
         >
           {error}
         </div>

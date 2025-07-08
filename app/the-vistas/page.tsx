@@ -93,11 +93,11 @@ export default function TheVistas() {
         />
       </Head>
       <Header />
-      <main className={styles.luxuryMainContent}>
+      <main>
         <SummerlinWestOverview />
-        <section className={`${styles.hero} ${styles.luxuryHero} ${styles.heroMargin}`}>
-          <h1 className={styles.luxuryHeroTitle}>The Vistas in Summerlin</h1>
-          <p className={styles.luxurySubtitle}>
+        <section className={styles.hero}>
+          <h1>The Vistas in Summerlin</h1>
+          <p className={styles.subtitle}>
             A premier master-planned neighborhood in Summerlin West
           </p>
         </section>
@@ -105,7 +105,7 @@ export default function TheVistas() {
           <LatestMarketInsightsClient />
         </section>
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>About The Vistas</h2>
+          <h2>About The Vistas</h2>
           <Image
             src="https://placehold.co/800x300?text=The+Vistas+Park"
             alt="The Vistas Park in Summerlin"
@@ -120,8 +120,8 @@ export default function TheVistas() {
             <li>Minutes from Downtown Summerlin</li>
           </ul>
         </section>
-        <section className={`${styles.sectionCard} ${styles.lightBackground}`}>
-          <h2 className={styles.luxurySectionTitle}>Homes for Sale in The Vistas</h2>
+        <section className={styles.sectionCard}>
+          <h2>Homes for Sale in The Vistas</h2>
           <div className={styles.propertyGrid}>
             {[1, 2, 3].map((i) => (
               <div key={i} className={styles.propertyCard}>
@@ -142,8 +142,8 @@ export default function TheVistas() {
             ))}
           </div>
         </section>
-        <section className={`${styles.sectionCard} ${styles.whiteBackground}`}>
-          <h2 className={styles.luxurySectionTitle}>Explore More</h2>
+        <section className={styles.sectionCard}>
+          <h2>Explore More</h2>
           <ul className={styles.linkList}>
             <li>
               <Link href="/market-reports">Summerlin Market Reports</Link>
@@ -160,7 +160,7 @@ export default function TheVistas() {
           </ul>
         </section>
         <section id="lead-capture" className={styles.leadCapture}>
-          <h2 className={styles.luxurySectionTitle}>Request Your Free Community Guide</h2>
+          <h2>Request Your Free Community Guide</h2>
           <VistasLeadForm />
         </section>
       </main>

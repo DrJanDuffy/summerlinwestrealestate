@@ -48,22 +48,19 @@ export default function Contact() {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.luxuryMainContent}>
+      <main>
         <SummerlinWestOverview />
-        <section className={`${styles.hero} ${styles.luxuryHero}`}>
-          <h1 className={styles.luxuryHeroTitle}>Contact a Summerlin Real Estate Expert</h1>
-          <p className={styles.luxurySubtitle}>
+        <section className={styles.hero}>
+          <h1>Contact a Summerlin Real Estate Expert</h1>
+          <p className={styles.subtitle}>
             Get in touch for buying, selling, or market questions
           </p>
         </section>
-        
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Market Insights">
           <LatestMarketInsightsClient />
         </section>
-        
-        {/* Contact Form Section */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Send a Message</h2>
+        <section className={styles.sectionCard} aria-label="Send a Message">
+          <h2>Send a Message</h2>
           <LeadCaptureFormClient
             variant="inline"
             title="Contact a Summerlin Real Estate Expert"
@@ -71,10 +68,8 @@ export default function Contact() {
             source="Contact Page"
           />
         </section>
-        
-        {/* Quick Links Section */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Quick Links</h2>
+        <section className={styles.sectionCard} aria-label="Quick Links">
+          <h2>Quick Links</h2>
           <ul className={styles.resourceLinks}>
             <li>
               <Link href="/market-reports">Summerlin Market Reports</Link>
@@ -90,69 +85,64 @@ export default function Contact() {
             </li>
           </ul>
         </section>
-        
-        {/* Office Location & Contact Info */}
-        <section className={styles.contactGrid}>
-          <div className={styles.officeInfo}>
-            <h2 className={styles.luxurySectionTitle}>Our Office</h2>
-            <img
-              src="https://placehold.co/400x220?text=Office+Location+Map"
-              alt="Office Location Map"
-              width={400}
-              height={220}
-              className={styles.officeMap}
-              loading="lazy"
-            />
-            <div className={styles.contactDetails}>
-              <div className={styles.contactItem}>
-                <strong>Address:</strong> 1234 Summerlin Centre Dr, Las Vegas,
-                NV 89138
-              </div>
-              <div className={styles.contactItem}>
-                <strong>Phone:</strong>{" "}
-                <a href="tel:7025551234" className={styles.contactLink}>
-                  (702) 555-1234
-                </a>
-              </div>
-              <div className={styles.contactItem}>
-                <strong>Email:</strong>{" "}
-                <a
-                  href="mailto:info@summerlinwestrealestate.com"
-                  className={styles.contactLink}
-                >
-                  info@summerlinwestrealestate.com
-                </a>
-              </div>
+        <section className={styles.sectionCard} aria-label="Office & Service Areas">
+          <h2>Our Office</h2>
+          <img
+            src="https://placehold.co/400x220?text=Office+Location+Map"
+            alt="Map showing the office location at 1234 Summerlin Centre Dr, Las Vegas, NV 89138"
+            width={400}
+            height={220}
+            className={styles.officeMap}
+            loading="lazy"
+          />
+          <div className={styles.contactDetails}>
+            <div className={styles.contactItem}>
+              <strong>Address:</strong> 1234 Summerlin Centre Dr, Las Vegas,
+              NV 89138
             </div>
-            <div className={styles.socialLinks}>
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={social.name}
-                  className={styles.socialLink}
-                >
-                  {social.name}
-                </a>
-              ))}
+            <div className={styles.contactItem}>
+              <strong>Phone:</strong>{" "}
+              <a href="tel:7025551234" className={styles.contactLink}>
+                (702) 555-1234
+              </a>
+            </div>
+            <div className={styles.contactItem}>
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:info@summerlinwestrealestate.com"
+                className={styles.contactLink}
+              >
+                info@summerlinwestrealestate.com
+              </a>
             </div>
           </div>
-
-          <div className={styles.serviceAreas}>
-            <h2 className={styles.luxurySectionTitle}>Areas We Serve</h2>
-            <ul className={styles.areasList}>
-              {serviceAreas.map((area) => (
-                <li key={area} className={styles.areaItem}>
-                  {area}
-                </li>
-              ))}
-            </ul>
-            <div className={styles.responseTime}>
-              <strong>Response Time:</strong> We reply to all inquiries within 1
-              business day (often much faster!)
-            </div>
+          <div className={styles.socialLinks}>
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener"
+                aria-label={social.name}
+                className={styles.socialLink}
+              >
+                {social.name}
+              </a>
+            ))}
+          </div>
+        </section>
+        <section className={styles.sectionCard} aria-label="Areas We Serve">
+          <h2>Areas We Serve</h2>
+          <ul className={styles.areasList}>
+            {serviceAreas.map((area) => (
+              <li key={area} className={styles.areaItem}>
+                {area}
+              </li>
+            ))}
+          </ul>
+          <div className={styles.responseTime}>
+            <strong>Response Time:</strong> We reply to all inquiries within 1
+            business day (often much faster!)
           </div>
         </section>
       </main>

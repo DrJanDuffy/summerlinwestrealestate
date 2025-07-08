@@ -54,10 +54,10 @@ export default function About() {
         <p className={styles.subtitle}>Local knowledge. Proven results. Personalized service.</p>
       </section>
       <div className={styles.container}>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Meet Dr. Jan Duffy</h2>
+        <section className={styles.sectionCard} aria-labelledby="about-jan-duffy">
+          <h2 id="about-jan-duffy" className={styles.centerTitle}>Meet Dr. Jan Duffy</h2>
           <div className={styles.agentProfile}>
-            <FaUserTie className={styles.agentIcon} />
+            <FaUserTie className={styles.agentIcon} aria-hidden="true" />
             <div>
               <h3>Dr. Jan Duffy, REALTOR®</h3>
               <p>
@@ -66,17 +66,17 @@ export default function About() {
                 Background in psychology, business, and marketing strategies.<br />
                 Keynote speaker, relocation specialist, and more.
               </p>
-              <div className={styles.badges}>
-                <span className={styles.badge}>Veteran-Owned</span>
-                <span className={styles.badge}>Women-Owned</span>
-                <span className={styles.badge}>LGBTQ+ Friendly</span>
-                <span className={styles.badge}>Se Habla Español</span>
+              <div className={styles.badges} role="list" aria-label="Professional badges">
+                <span className={styles.badge} role="listitem">Veteran-Owned</span>
+                <span className={styles.badge} role="listitem">Women-Owned</span>
+                <span className={styles.badge} role="listitem">LGBTQ+ Friendly</span>
+                <span className={styles.badge} role="listitem">Se Habla Español</span>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Specializations & Services</h2>
+        </section>
+        <section className={styles.sectionCard} aria-labelledby="specializations-services">
+          <h2 id="specializations-services" className={styles.centerTitle}>Specializations & Services</h2>
           <ul className={styles.servicesList}>
             <li>Summerlin Vistas Homes Neighborhoods Specialist</li>
             <li>Luxury real estate transactions</li>
@@ -89,61 +89,65 @@ export default function About() {
             <li>Divorce real estate specialist</li>
             <li>55+ Community Specialist</li>
           </ul>
-        </div>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Summerlin Vistas Neighborhoods Served</h2>
-          <div className={styles.areasGrid}>
-            <span>The Vistas</span>
-            <span>The Paseos</span>
-            <span>Stonebridge</span>
-            <span>Redpoint</span>
-            <span>Redpoint Square</span>
-            <span>Reverence</span>
+        </section>
+        <section className={styles.sectionCard} aria-labelledby="vistas-neighborhoods">
+          <h2 id="vistas-neighborhoods" className={styles.centerTitle}>Summerlin Vistas Neighborhoods Served</h2>
+          <div className={styles.areasGrid} role="list" aria-label="Neighborhoods served">
+            <span role="listitem">The Vistas</span>
+            <span role="listitem">The Paseos</span>
+            <span role="listitem">Stonebridge</span>
+            <span role="listitem">Redpoint</span>
+            <span role="listitem">Redpoint Square</span>
+            <span role="listitem">Reverence</span>
           </div>
-        </div>
-        <div className={styles.newsList}>
-          <div className={styles.newsCard}>
-            <span className={styles.newsBadge}>News</span>
-            <div className={styles.newsContent}>
-              <h3>What You Should Know About Getting a Mortgage Today</h3>
-              <div className={styles.newsDate}>7/7/2025</div>
-              <p>If you've been putting off buying a home because you thought getting approved would be too hard, know this: qualifying for a mortgage is starting to get a bit more achievable, but lending standards are still strong.</p>
-            </div>
+        </section>
+        <section className={styles.sectionCard} aria-label="Latest News">
+          <h2 className={styles.centerTitle}>Latest News</h2>
+          <div className={styles.newsList}>
+            <article className={styles.newsCard} tabIndex={0} aria-labelledby="news-mortgage">
+              <span className={styles.newsBadge}>News</span>
+              <div className={styles.newsContent}>
+                <h3 id="news-mortgage">What You Should Know About Getting a Mortgage Today</h3>
+                <time className={styles.newsDate} dateTime="2025-07-07">7/7/2025</time>
+                <p>If you've been putting off buying a home because you thought getting approved would be too hard, know this: qualifying for a mortgage is starting to get a bit more achievable, but lending standards are still strong.</p>
+              </div>
+            </article>
+            <article className={styles.newsCard} tabIndex={0} aria-labelledby="news-buying-homes">
+              <span className={styles.newsBadge}>News</span>
+              <div className={styles.newsContent}>
+                <h3 id="news-buying-homes">Think No One's Buying Homes Right Now? Think Again.</h3>
+                <time className={styles.newsDate} dateTime="2025-07-03">7/3/2025</time>
+                <p>If you've seen headlines saying home sales are down compared to last year, you might be thinking – is it even a good time to sell?</p>
+              </div>
+            </article>
+            <article className={styles.newsCard} tabIndex={0} aria-labelledby="news-investors">
+              <span className={styles.newsBadge}>News</span>
+              <div className={styles.newsContent}>
+                <h3 id="news-investors">Why Big Investors Aren't a Challenge for Today's Homebuyer</h3>
+                <time className={styles.newsDate} dateTime="2025-07-02">7/2/2025</time>
+                <p>Remember the chatter in the headlines about all the homes big institutional investors were buying? If you were thinking about buying a home yourself, you may have wondered how you'd ever be able to compete with that.</p>
+              </div>
+            </article>
           </div>
-          <div className={styles.newsCard}>
-            <span className={styles.newsBadge}>News</span>
-            <div className={styles.newsContent}>
-              <h3>Think No One's Buying Homes Right Now? Think Again.</h3>
-              <div className={styles.newsDate}>7/3/2025</div>
-              <p>If you've seen headlines saying home sales are down compared to last year, you might be thinking – is it even a good time to sell?</p>
-            </div>
-          </div>
-          <div className={styles.newsCard}>
-            <span className={styles.newsBadge}>News</span>
-            <div className={styles.newsContent}>
-              <h3>Why Big Investors Aren't a Challenge for Today's Homebuyer</h3>
-              <div className={styles.newsDate}>7/2/2025</div>
-              <p>Remember the chatter in the headlines about all the homes big institutional investors were buying? If you were thinking about buying a home yourself, you may have wondered how you'd ever be able to compete with that.</p>
-            </div>
-          </div>
-        </div>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>What Our Clients Say</h2>
+        </section>
+        <section className={styles.sectionCard} aria-labelledby="testimonials">
+          <h2 id="testimonials" className={styles.centerTitle}>What Our Clients Say</h2>
           <p className={styles.sectionSubtitle}>Real stories from real buyers and sellers</p>
           <TestimonialsSectionClient />
-        </div>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Our Office Location</h2>
+        </section>
+        <section className={styles.sectionCard} aria-labelledby="office-location">
+          <h2 id="office-location" className={styles.centerTitle}>Our Office Location</h2>
           <div className={styles.officeCard}>
             <div className={styles.officeInfo}>
-              <FaMapMarkerAlt className={styles.officeIcon} />
+              <FaMapMarkerAlt className={styles.officeIcon} aria-hidden="true" />
               <div>
-                <div className={styles.officeAddress}>11312 Parkside Way<br />Summerlin, Las Vegas, NV 89138</div>
+                <address className={styles.officeAddress}>11312 Parkside Way<br />Summerlin, Las Vegas, NV 89138</address>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=11312+Parkside+Way,+Las+Vegas,+NV+89138"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.directionsBtn}
+                  aria-label="Get directions to our office"
                 >
                   Get Directions
                 </a>
@@ -160,9 +164,9 @@ export default function About() {
               ></iframe>
             </div>
           </div>
-        </div>
-        <section className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
+        </section>
+        <section className={styles.sectionCard} aria-labelledby="featured-listings">
+          <h2 id="featured-listings" className={styles.centerTitle}>Featured Summerlin Listings</h2>
           <LatestMarketInsightsClient />
         </section>
       </div>

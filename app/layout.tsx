@@ -9,6 +9,7 @@ import BreadcrumbsClient from '../components/layout/BreadcrumbsClient';
 import Head from 'next/head';
 import RealScoutWidget from '../components/ui/RealScoutWidget';
 import styles from './page.module.css';
+import Header from '../components/layout/Header';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -92,7 +93,10 @@ export default function RootLayout({
         `}</style>
       </Head>
       <body>
-        {children}
+        <Header />
+        <main>
+          {children}
+        </main>
         <div className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
           <RealScoutWidget priceMin={600000} />

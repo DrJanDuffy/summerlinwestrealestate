@@ -152,7 +152,7 @@ export default function Home() {
           </div>
         </section>
         {/* Property Search Widget */}
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Property Search">
           <RealScoutAdvancedSearch
             title="Find Your Dream Home in Summerlin West"
             subtitle="Search by neighborhood, price, or features. Real-time MLS data."
@@ -161,7 +161,7 @@ export default function Home() {
           />
         </section>
         {/* RealScout Listings Widget */}
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Featured Summerlin West Homes">
           <h2 className={styles.luxurySectionTitle}>Featured Summerlin West Homes</h2>
           <p className={styles.luxuryWidgetSubtitle}>
             Browse the latest homes for sale in Summerlin West communities
@@ -169,7 +169,7 @@ export default function Home() {
           <RealScoutListings />
         </section>
         {/* Market Overview */}
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Market Overview">
           <h2 className={styles.luxurySectionTitle}>Summerlin West Market Overview</h2>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
@@ -191,29 +191,25 @@ export default function Home() {
           </div>
         </section>
         {/* Market Insights */}
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Market Insights">
           <LatestMarketInsights />
         </section>
         {/* Lead Capture/FAQ/CTA */}
-        <section className={styles.sectionCard}>
+        <section className={styles.sectionCard} aria-label="Contact & FAQ">
           <LeadCaptureForm
             variant="inline"
-            title="Get Your Free Summerlin West Market Report"
-            subtitle="Stay ahead of the market with the latest trends and expert insights."
-            source="Homepage"
-            formId="main"
+            onSuccess={handleFormSuccess}
           />
-        </section>
-        {/* FAQ Section */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Frequently Asked Questions</h2>
-          <div className={styles.faqGrid}>
-            {faqs.map((faq, idx) => (
-              <div key={idx} className={styles.faqCard}>
-                <h3 className={styles.faqQuestion}>{faq.question}</h3>
-                <p className={styles.faqAnswer}>{faq.answer}</p>
-              </div>
-            ))}
+          <div className={styles.faqSection}>
+            <h2 className={styles.luxurySectionTitle}>Frequently Asked Questions</h2>
+            <ul className={styles.faqList}>
+              {faqs.map((faq, idx) => (
+                <li key={idx} className={styles.faqItem}>
+                  <h3 className={styles.faqQuestion}>{faq.question}</h3>
+                  <p className={styles.faqAnswer}>{faq.answer}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>

@@ -10,46 +10,94 @@ export default function Communities() {
   const communities = [
     {
       name: "The Vistas",
-      description: "Luxury homes with stunning mountain views",
+      description: "Luxury homes with stunning mountain views and gated communities for ultimate privacy and exclusivity.",
       priceRange: "$950K - $2.5M",
-      features: ["Mountain Views", "Luxury Homes", "Gated Community"],
-      image: "https://placehold.co/400x220?text=The+Vistas",
+      minPrice: 950000,
+      maxPrice: 2500000,
+      features: ["Mountain Views", "Luxury Homes", "Gated Community", "Golf Course"],
+      homeTypes: "Single Family, Custom Estates",
+      image: "https://placehold.co/400x220/1a365d/ffffff?text=The+Vistas",
+      slug: "the-vistas",
+      highlighted: true,
+      yearBuilt: "2018-Present",
+      schools: ["Top-Rated Elementary", "Award-Winning High School"],
+      amenities: ["Private Golf Course", "Community Center", "Walking Trails"]
     },
     {
       name: "The Paseos",
-      description: "Family-friendly neighborhood with top schools",
+      description: "Family-friendly neighborhood with top-rated schools and abundant community amenities.",
       priceRange: "$750K - $1.5M",
-      features: ["Top Schools", "Family-Friendly", "Parks Nearby"],
-      image: "https://placehold.co/400x220?text=The+Paseos",
+      minPrice: 750000,
+      maxPrice: 1500000,
+      features: ["Top Schools", "Family-Friendly", "Parks Nearby", "Community Pool"],
+      homeTypes: "Single Family, Townhomes",
+      image: "https://placehold.co/400x220/2d4a22/ffffff?text=The+Paseos",
+      slug: "the-paseos",
+      highlighted: true,
+      yearBuilt: "2019-Present",
+      schools: ["Highly Rated Elementary", "Prestigious Middle School"],
+      amenities: ["Community Pools", "Playgrounds", "Sports Courts"]
     },
     {
       name: "Stonebridge",
-      description: "Modern homes with resort-style amenities",
+      description: "Modern homes with resort-style amenities, perfectly positioned near Red Rock Canyon.",
       priceRange: "$650K - $1.2M",
-      features: ["Resort Amenities", "New Construction", "Walking Trails"],
-      image: "https://placehold.co/400x220?text=Stonebridge",
+      minPrice: 650000,
+      maxPrice: 1200000,
+      features: ["Resort Amenities", "New Construction", "Walking Trails", "Fitness Center"],
+      homeTypes: "Single Family, Patio Homes",
+      image: "https://placehold.co/400x220/8b4513/ffffff?text=Stonebridge",
+      slug: "stonebridge",
+      highlighted: true,
+      yearBuilt: "2020-Present",
+      schools: ["Top Elementary", "High-Performing Middle School"],
+      amenities: ["Resort Pool", "Fitness Center", "Tennis Courts"]
     },
     {
       name: "Redpoint",
-      description: "New construction with contemporary design",
+      description: "New construction with contemporary design and cutting-edge smart home technology.",
       priceRange: "$750K - $1.8M",
-      features: ["New Construction", "Contemporary", "Builder Incentives"],
-      image: "https://placehold.co/400x220?text=Redpoint",
+      minPrice: 750000,
+      maxPrice: 1800000,
+      features: ["New Construction", "Contemporary", "Builder Incentives", "Smart Homes"],
+      homeTypes: "Single Family, Modern Design",
+      image: "https://placehold.co/400x220/4a5568/ffffff?text=Redpoint",
+      slug: "redpoint",
+      highlighted: false,
+      yearBuilt: "2021-Present",
+      schools: ["Modern Elementary", "STEM-Focused High School"],
+      amenities: ["Modern Clubhouse", "Co-working Spaces", "Dog Parks"]
     },
     {
       name: "Redpoint Square",
-      description: "Urban-style living in Summerlin West",
+      description: "Urban-style living in Summerlin West with walkable access to downtown entertainment.",
       priceRange: "$600K - $1.1M",
-      features: ["Urban Style", "Walkable", "Downtown Access"],
-      image: "https://placehold.co/400x220?text=Redpoint+Square",
+      minPrice: 600000,
+      maxPrice: 1100000,
+      features: ["Urban Style", "Walkable", "Downtown Access", "Transit Friendly"],
+      homeTypes: "Condos, Townhomes, Lofts",
+      image: "https://placehold.co/400x220/2b6cb0/ffffff?text=Redpoint+Square",
+      slug: "redpoint-square",
+      highlighted: false,
+      yearBuilt: "2020-Present",
+      schools: ["Urban Elementary", "Arts-Focused Middle School"],
+      amenities: ["Rooftop Terraces", "Retail Shops", "Cafes"]
     },
     {
       name: "Reverence",
-      description: "Luxury estates with privacy and elegance",
+      description: "Luxury estates with unmatched privacy, elegant architecture, and panoramic city views.",
       priceRange: "$1.2M - $3M+",
-      features: ["Luxury Estates", "Privacy", "Elegant Design"],
-      image: "https://placehold.co/400x220?text=Reverence",
-    },
+      minPrice: 1200000,
+      maxPrice: 3000000,
+      features: ["Luxury Estates", "Privacy", "Elegant Design", "City Views"],
+      homeTypes: "Custom Estates, Luxury Homes",
+      image: "https://placehold.co/400x220/553c9a/ffffff?text=Reverence",
+      slug: "reverence",
+      highlighted: true,
+      yearBuilt: "2017-Present",
+      schools: ["Elite Private School", "International Baccalaureate"],
+      amenities: ["Private Club", "Concierge Services", "Wine Cellar"]
+    }
   ];
 
   return (
@@ -71,7 +119,7 @@ export default function Communities() {
           content="Explore all Summerlin West communities including The Vistas, Redpoint, Stonebridge & more. Find neighborhood guides, amenities, and expert insights for Summerlin real estate."
         />
       </Head>
-      <main className={styles.mainContent} aria-label="Summerlin West Communities">
+      <main>
         <section className={styles.hero}>
           <h1>Summerlin West Communities</h1>
           <p className={styles.subtitle}>Discover the best neighborhoods in Summerlin for your next home</p>
@@ -80,15 +128,30 @@ export default function Communities() {
         <section className={styles.sectionCard} aria-label="Featured Neighborhoods">
           <h2 className={styles.centerTitle}>Featured Neighborhoods</h2>
           <div className={styles.communitiesGrid}>
-            {["The Vistas","The Paseos","Stonebridge","Redpoint","Redpoint Square","Reverence"].map((name) => (
-              <div key={name} className={styles.communityCard}>
-                <Image src={`https://placehold.co/400x220?text=${encodeURIComponent(name)}`} alt={`${name} neighborhood in Summerlin`} width={400} height={220} className={styles.communityImage} />
+            {communities.slice(0, 4).map((community) => (
+              <article key={community.name} className={styles.communityCard}>
+                <Image 
+                  src={community.image} 
+                  alt={`${community.name} neighborhood homes in Summerlin West`} 
+                  width={400} 
+                  height={220} 
+                  className={styles.communityImage}
+                  priority={communities.indexOf(community) < 2}
+                />
                 <div className={styles.communityContent}>
-                  <h3 className={styles.communityTitle}>{name}</h3>
-                  <p className={styles.communityDescription}>Learn more about {name} and see available homes.</p>
-                  <Link href={`/communities#${name.toLowerCase().replace(/\s/g,'-')}`} className={styles.communityLink}>View Details</Link>
+                  <h3 className={styles.communityTitle}>{community.name}</h3>
+                  <p className={styles.communityDescription}>
+                    Learn more about {community.name} and see available homes.
+                  </p>
+                  <Link 
+                    href={`/communities/${community.slug}`} 
+                    className={styles.communityLink}
+                    aria-label={`View details about ${community.name} community`}
+                  >
+                    View Details
+                  </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -96,28 +159,28 @@ export default function Communities() {
           <h2 className={styles.centerTitle}>Why Live in Summerlin West?</h2>
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🎓</div>
+              <div className={styles.featureIcon} aria-hidden="true">🎓</div>
               <h3 className={styles.featureTitle}>Top-Rated Schools</h3>
               <p className={styles.featureDescription}>
                 Exceptional public and private schools with high academic performance and excellent extracurricular programs.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🏞️</div>
+              <div className={styles.featureIcon} aria-hidden="true">🏞️</div>
               <h3 className={styles.featureTitle}>Parks & Recreation</h3>
               <p className={styles.featureDescription}>
                 Access to Red Rock Canyon, walking trails, parks, and outdoor recreation for all ages and interests.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🛒</div>
+              <div className={styles.featureIcon} aria-hidden="true">🛒</div>
               <h3 className={styles.featureTitle}>Modern Amenities</h3>
               <p className={styles.featureDescription}>
                 Shopping at Downtown Summerlin, Trader Joe's, fine dining, and all the conveniences you need.
               </p>
             </div>
             <div className={styles.featureCard}>
-              <div className={styles.featureIcon}>🤝</div>
+              <div className={styles.featureIcon} aria-hidden="true">🤝</div>
               <h3 className={styles.featureTitle}>Strong Community</h3>
               <p className={styles.featureDescription}>
                 Family-friendly neighborhoods with a strong sense of community, safety, and social activities.
@@ -127,7 +190,7 @@ export default function Communities() {
         </section>
         <section className={styles.sectionCard} aria-label="Community Comparison">
           <h2 className={styles.centerTitle}>Community Comparison</h2>
-          <div className={styles.comparisonTable} role="table">
+          <div className={styles.comparisonTable} role="table" aria-label="Community comparison table">
             <div className={styles.tableHeader} role="row">
               <div className={styles.tableCell} role="columnheader">Community</div>
               <div className={styles.tableCell} role="columnheader">Price Range</div>
@@ -135,13 +198,11 @@ export default function Communities() {
               <div className={styles.tableCell} role="columnheader">Special Features</div>
             </div>
             {communities.slice(0, 4).map((community, index) => (
-              <div key={index} className={styles.tableRow} role="row">
-                <div className={styles.tableCell} role="cell">
-                  <strong>{community.name}</strong>
-                </div>
+              <div key={community.name} className={styles.tableRow} role="row">
+                <div className={styles.tableCell} role="cell">{community.name}</div>
                 <div className={styles.tableCell} role="cell">{community.priceRange}</div>
-                <div className={styles.tableCell} role="cell">Single Family</div>
-                <div className={styles.tableCell} role="cell">{community.features[0]}</div>
+                <div className={styles.tableCell} role="cell">{community.homeTypes}</div>
+                <div className={styles.tableCell} role="cell">{community.features.join(", ")}</div>
               </div>
             ))}
           </div>
@@ -150,20 +211,20 @@ export default function Communities() {
           <h2 className={styles.centerTitle}>Explore All Summerlin West Communities</h2>
           <div className={styles.communitiesGrid}>
             {communities.map((community) => (
-              <div className={styles.communityCard} key={community.name}>
-                <img
+              <article className={styles.communityCard} key={community.name}>
+                <Image
                   src={community.image}
-                  alt={community.name}
-                  className={styles.communityImage}
+                  alt={`${community.name} luxury homes and neighborhoods in Summerlin West`}
                   width={400}
                   height={220}
+                  className={styles.communityImage}
                   loading="lazy"
                 />
                 <div className={styles.communityContent}>
                   <h3 className={styles.communityTitle}>{community.name}</h3>
                   <p className={styles.communityDescription}>{community.description}</p>
                   <div className={styles.communityPrice}>{community.priceRange}</div>
-                  <div>
+                  <div className={styles.featuresContainer}>
                     {community.features.map((feature) => (
                       <span
                         key={feature}
@@ -173,8 +234,15 @@ export default function Communities() {
                       </span>
                     ))}
                   </div>
+                  <Link 
+                    href={`/communities/${community.slug}`}
+                    className={styles.communityLink}
+                    aria-label={`Explore ${community.name} homes and listings`}
+                  >
+                    Explore Community
+                  </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
           <div className={styles.realScoutSectionSpacer}>
@@ -204,23 +272,25 @@ export default function Communities() {
         </section>
         <section className={styles.sectionCard} aria-label="Explore More">
           <h2 className={styles.centerTitle}>Explore More</h2>
-          <ul className={styles.resourceLinks}>
-            <li>
-              <Link href="/properties">Browse All Summerlin West Homes</Link>
-            </li>
-            <li>
-              <Link href="/market-reports">Get Market Reports</Link>
-            </li>
-            <li>
-              <Link href="/new-homes-summerlin">New Construction Homes</Link>
-            </li>
-            <li>
-              <Link href="/about">Meet Your Summerlin West Expert</Link>
-            </li>
-            <li>
-              <Link href="/contact">Schedule Community Tours</Link>
-            </li>
-          </ul>
+          <nav aria-label="Additional resources">
+            <ul className={styles.resourceLinks}>
+              <li>
+                <Link href="/properties">Browse All Summerlin West Homes</Link>
+              </li>
+              <li>
+                <Link href="/market-reports">Get Market Reports</Link>
+              </li>
+              <li>
+                <Link href="/new-homes-summerlin">New Construction Homes</Link>
+              </li>
+              <li>
+                <Link href="/about">Meet Your Summerlin West Expert</Link>
+              </li>
+              <li>
+                <Link href="/contact">Schedule Community Tours</Link>
+              </li>
+            </ul>
+          </nav>
         </section>
         <section className={styles.sectionCard} aria-label="Featured Summerlin West Neighborhoods">
           <h2 className={styles.centerTitle}>Featured Summerlin West Neighborhoods</h2>

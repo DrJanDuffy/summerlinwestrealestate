@@ -17,24 +17,22 @@ export default function Sold() {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.luxuryMainContent}>
+      <main>
         <SummerlinWestOverview />
-        <section className={styles.sectionCard}>
-          <h1 className={styles.luxuryHeroTitle}>Recently Sold Homes in Summerlin</h1>
-          <p className={styles.luxurySubtitle}>
+        <section className={styles.hero}>
+          <h1>Recently Sold Homes in Summerlin</h1>
+          <p className={styles.subtitle}>
             Track the latest sales and market activity in Summerlin West
           </p>
         </section>
-        
         <section className={styles.sectionCard}>
           <LatestMarketInsights />
         </section>
-        
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Sold Listings</h2>
-          <div className={styles.featuredListingsGrid}>
+          <h2 className={styles.centerTitle}>Sold Listings</h2>
+          <div className={styles.featuredListingsGrid} aria-label="Recently sold homes list">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className={styles.featuredListingCard}>
+              <article key={i} className={styles.featuredListingCard}>
                 <Image
                   src={`https://placehold.co/400x220?text=Sold+Home+${i}`}
                   alt={`Recently sold home in Summerlin ${i}`}
@@ -51,13 +49,12 @@ export default function Sold() {
                     Closed: {2024 - i}-04-0{i + 1}
                   </span>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
-        
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Summerlin Market Trends</h2>
+          <h2 className={styles.centerTitle}>Summerlin Market Trends</h2>
           <ul className={styles.contentList}>
             <li>Median sale price: $850,000</li>
             <li>Average days on market: 14</li>
@@ -65,10 +62,9 @@ export default function Sold() {
             <li>Low inventory, high demand in Summerlin West</li>
           </ul>
         </section>
-        
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Explore More</h2>
-          <ul className={styles.resourceLinks}>
+          <h2 className={styles.centerTitle}>Explore More</h2>
+          <ul className={styles.resourceLinks} aria-label="Explore more links">
             <li><Link href="/market-reports">Summerlin Market Reports</Link></li>
             <li><Link href="/current-listing">Featured Home for Sale</Link></li>
             <li><Link href="/about">Meet Your Summerlin Expert</Link></li>
