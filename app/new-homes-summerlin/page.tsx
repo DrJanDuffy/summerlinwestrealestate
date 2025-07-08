@@ -3,7 +3,6 @@
 import styles from "../page.module.css";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 // Dynamic imports for client components
@@ -20,7 +19,6 @@ const LeadCaptureForm = dynamic(
 export default function NewHomesSummerlin() {
   return (
     <div className={styles.page}>
-      <Header />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

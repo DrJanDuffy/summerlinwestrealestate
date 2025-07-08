@@ -5,7 +5,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 
@@ -92,7 +91,6 @@ export default function TheVistas() {
           content="Explore The Vistas in Summerlin: community amenities, homes for sale, neighborhood map, and expert real estate insights for buyers and sellers."
         />
       </Head>
-      <Header />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

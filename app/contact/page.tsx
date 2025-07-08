@@ -1,6 +1,5 @@
 import styles from "../page.module.css";
 import Link from "next/link";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
@@ -47,7 +46,6 @@ export default function Contact() {
 
   return (
     <div className={styles.page}>
-      <Header />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 // Dynamic import for client components
@@ -16,7 +15,6 @@ const LatestMarketInsights = dynamic(
 export default function Sold() {
   return (
     <div className={styles.page}>
-      <Header />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

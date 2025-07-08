@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
@@ -173,7 +172,6 @@ function AddressSearch() {
         `}</script>
       </Head>
 
-      <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
         

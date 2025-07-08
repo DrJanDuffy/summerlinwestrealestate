@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
-import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
@@ -19,7 +18,6 @@ export const metadata = {
 export default function DowntownSummerlin() {
   return (
     <div className={styles.page}>
-      <Header />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>
