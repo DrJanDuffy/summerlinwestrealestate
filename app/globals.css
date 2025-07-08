@@ -675,11 +675,13 @@
   .text-balance {
     overflow-wrap: break-word;
     word-break: break-word;
+    /* 'text-wrap' is not supported in Chrome <114, Safari <17.4, Firefox, etc. */
     text-wrap: balance; /* Modern browsers only */
   }
   .text-pretty {
     overflow-wrap: break-word;
     word-break: break-word;
+    /* 'text-wrap' is not supported in Chrome <114, Safari <17.4, Firefox, etc. */
     text-wrap: pretty; /* Modern browsers only */
   }
 
