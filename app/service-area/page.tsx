@@ -196,10 +196,10 @@ export default function ServiceArea() {
         <h2 className={styles.centerTitle}>All Vistas Subdivisions</h2>
         <div className={styles.communitiesGrid}>
           {subdivisions.map((sub, idx) => (
-            <Link href={`/service-area/${sub.slug}`} key={sub.slug} className={styles.communityCard} style={{ textDecoration: 'none', color: 'inherit', position: 'relative', overflow: 'hidden' }}>
+            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={styles.communityCard} style={{ textDecoration: 'none', color: 'inherit', position: 'relative', overflow: 'hidden' }}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src={sub.image || "https://placehold.co/600x300?text=The+Vistas"}
+                  src={(sub as any).image || "https://placehold.co/600x300?text=The+Vistas"}
                   alt={sub.name}
                   className={styles.cardImage}
                   width={600}

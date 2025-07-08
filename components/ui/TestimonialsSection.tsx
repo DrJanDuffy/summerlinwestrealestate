@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 
 const TESTIMONIALS = [
   {
@@ -85,7 +85,8 @@ const testimonials = [
   // Add more testimonials as needed
 ];
 
-const reviewsJsonLd = {
+// Memoize JSON-LD data
+const reviewsJsonLd = useMemo(() => ({
   "@context": "https://schema.org",
   "@graph": testimonials.map((t) => ({
     "@type": "Review",
@@ -97,10 +98,11 @@ const reviewsJsonLd = {
     reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
     reviewBody: t.body,
   })),
-};
+}), []);
 
-export default function TestimonialsSection() {
+const TestimonialsSection = React.memo(function TestimonialsSection() {
   const [index, setIndex] = useState(0);
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % TESTIMONIALS.length);
@@ -108,7 +110,30 @@ export default function TestimonialsSection() {
     return () => clearInterval(timer);
   }, []);
 
-  const testimonial = TESTIMONIALS[index];
+  const testimonial = useMemo(() => TESTIMONIALS[index], [index]);
+  
+  const handlePrevious = useCallback(() => {
+    setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  }, []);
+  
+  const handleNext = useCallback(() => {
+    setIndex((i) => (i + 1) % TESTIMONIALS.length);
+  }, []);
+  
+  // Memoize JSON-LD data
+  const reviewsJsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@graph": testimonials.map((t) => ({
+      "@type": "Review",
+      itemReviewed: {
+        "@type": "RealEstateAgent",
+        name: "Summerlin West Real Estate",
+      },
+      author: { "@type": "Person", name: t.author },
+      reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
+      reviewBody: t.body,
+    })),
+  }), []);
 
   return (
     <>
@@ -145,11 +170,7 @@ export default function TestimonialsSection() {
             <button
               aria-label="Previous testimonial"
               className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition z-10"
-              onClick={() =>
-                setIndex(
-                  (i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length,
-                )
-              }
+              onClick={handlePrevious}
             >
               <svg width="18" height="18" fill="#3A8DDE" viewBox="0 0 20 20">
                 <path
@@ -165,7 +186,7 @@ export default function TestimonialsSection() {
             <button
               aria-label="Next testimonial"
               className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-200 rounded-full p-2 shadow hover:bg-[#F7F9FC] transition z-10"
-              onClick={() => setIndex((i) => (i + 1) % TESTIMONIALS.length)}
+              onClick={handleNext}
             >
               <svg width="18" height="18" fill="#3A8DDE" viewBox="0 0 20 20">
                 <path
@@ -211,4 +232,6 @@ export default function TestimonialsSection() {
       </section>
     </>
   );
-}
+});
+
+export default TestimonialsSection;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -25,6 +25,10 @@ interface BlogLayoutProps {
 const RSS_FEED_URL =
   "https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18";
 
+// Shared cache with LatestMarketInsights
+let rssCache: { data: any[] | null; timestamp: number } = { data: null, timestamp: 0 };
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
 export default function BlogLayout({
   posts,
   currentPost,
@@ -36,9 +40,21 @@ export default function BlogLayout({
   useEffect(() => {
     async function fetchRSS() {
       try {
+        const now = Date.now();
+        
+        // Check cache first
+        if (rssCache.data && (now - rssCache.timestamp) < CACHE_DURATION) {
+          setRssItems(rssCache.data);
+          return;
+        }
+        
         const parser = new Parser();
         const feed = await parser.parseURL(RSS_FEED_URL);
-        setRssItems(feed.items.slice(0, 3));
+        const items = feed.items.slice(0, 3);
+        
+        // Update cache
+        rssCache = { data: items, timestamp: now };
+        setRssItems(items);
       } catch (err) {
         // fallback: do nothing
       }
