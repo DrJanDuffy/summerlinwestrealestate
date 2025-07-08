@@ -45,12 +45,41 @@ export default function About() {
           }
         `}</script>
       </Head>
-      <section className={styles.hero} style={{marginBottom: '2rem'}}>
+      <section className={styles.hero}>
         <h1>About Your Summerlin Real Estate Expert</h1>
         <p className={styles.subtitle}>Local knowledge. Proven results. Personalized service.</p>
       </section>
-      <LatestMarketInsightsClient />
-      <TestimonialsSectionClient />
+      <div className={styles.container}>
+        <div className={styles.newsList}>
+          <div className={styles.newsCard}>
+            <span className={styles.newsBadge}>News</span>
+            <div className={styles.newsContent}>
+              <h3>What You Should Know About Getting a Mortgage Today</h3>
+              <div className={styles.newsDate}>7/7/2025</div>
+              <p>If you've been putting off buying a home because you thought getting approved would be too hard, know this: qualifying for a mortgage is starting to get a bit more achievable, but lending standards are still strong.</p>
+            </div>
+          </div>
+          <div className={styles.newsCard}>
+            <span className={styles.newsBadge}>News</span>
+            <div className={styles.newsContent}>
+              <h3>Think No One's Buying Homes Right Now? Think Again.</h3>
+              <div className={styles.newsDate}>7/3/2025</div>
+              <p>If you've seen headlines saying home sales are down compared to last year, you might be thinking – is it even a good time to sell?</p>
+            </div>
+          </div>
+          <div className={styles.newsCard}>
+            <span className={styles.newsBadge}>News</span>
+            <div className={styles.newsContent}>
+              <h3>Why Big Investors Aren't a Challenge for Today's Homebuyer</h3>
+              <div className={styles.newsDate}>7/2/2025</div>
+              <p>Remember the chatter in the headlines about all the homes big institutional investors were buying? If you were thinking about buying a home yourself, you may have wondered how you'd ever be able to compete with that.</p>
+            </div>
+          </div>
+        </div>
+        <h2 className={styles.centerTitle} style={{marginTop: '3rem'}}>What Our Clients Say</h2>
+        <p style={{textAlign: 'center', color: '#0A2540', marginBottom: '2rem'}}>Real stories from real buyers and sellers</p>
+        <TestimonialsSectionClient />
+      </div>
     </div>
   );
 }
