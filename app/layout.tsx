@@ -6,6 +6,9 @@ import Link from "next/link";
 import Script from "next/script";
 import Footer from '../components/layout/Footer';
 import BreadcrumbsClient from '../components/layout/BreadcrumbsClient';
+import Head from 'next/head';
+import RealScoutWidget from '../components/ui/RealScoutWidget';
+import styles from './page.module.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -76,16 +79,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          crossOrigin="anonymous"
-          async
-        ></script>
-        <link rel="canonical" href="https://summerlinwestrealestate.com" />
-      </head>
-      <body className={inter.className}>{children}</body>
+        />
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: rgb(101, 141, 172);
+            width: 100%;
+          }
+        `}</style>
+      </Head>
+      <body>
+        <div className={styles.sectionCard} style={{ maxWidth: '900px', margin: '2.5rem auto 2.5rem auto', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#fff', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', borderRadius: '16px', padding: '2rem 1rem' }}>
+          <h2 style={{ color: '#0A2540', fontWeight: 700, fontSize: '1.5rem', marginBottom: '1.5rem', textAlign: 'center' }}>Featured Summerlin Listings</h2>
+          <RealScoutWidget priceMin={600000} />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
