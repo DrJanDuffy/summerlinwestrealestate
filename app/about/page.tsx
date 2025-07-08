@@ -151,22 +151,20 @@ export default function About() {
             </div>
             <div className={styles.officeMapWrapper}>
               <iframe
-                title="Office Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.019282073839!2d-115.3454!3d36.1865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c1e2e2e2e2e2%3A0x0!2zMzHCsDExJzExLjQiTiAxMTXCsDIwJzQzLjIiVw!!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
-                width="100%"
-                height="220"
-                style={{ border: 0, borderRadius: '12px', marginTop: '1rem' }}
-                allowFullScreen=""
+                title="Office Location Map - 11312 Parkside Way, Las Vegas, NV 89138"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.123456789!2d-115.34540000000001!3d36.186500000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c1a2b3c4d5e6%3A0x1234567890abcdef!2s11312%20Parkside%20Way%2C%20Las%20Vegas%2C%20NV%2089138!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+                className={styles.officeMap}
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
         </div>
-        <div className={styles.sectionCard} style={{marginTop: '2.5rem'}}>
+        <section className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-          {/* The RealScoutWidget is rendered globally in layout, so this is just a heading for context */}
-        </div>
+          <LatestMarketInsightsClient />
+        </section>
       </div>
     </div>
   );

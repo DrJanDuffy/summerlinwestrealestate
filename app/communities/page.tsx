@@ -177,7 +177,7 @@ export default function Communities() {
               </div>
             ))}
           </div>
-          <div style={{marginTop: '2.5rem'}}>
+          <div className={styles.realScoutSectionSpacer}>
             <RealScoutWidget priceMin={600000} />
           </div>
         </section>
