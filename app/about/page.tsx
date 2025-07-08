@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import TestimonialsSectionClient from '../../components/ui/TestimonialsSectionClient';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaUserTie } from 'react-icons/fa';
 
 export default function About() {
   return (
@@ -54,6 +54,53 @@ export default function About() {
         <p className={styles.subtitle}>Local knowledge. Proven results. Personalized service.</p>
       </section>
       <div className={styles.container}>
+        <div className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Meet Dr. Jan Duffy</h2>
+          <div className={styles.agentProfile}>
+            <FaUserTie className={styles.agentIcon} />
+            <div>
+              <h3>Dr. Jan Duffy, REALTOR®</h3>
+              <p>
+                Licensed Real Estate Agent (License# S.0197614)<br />
+                Berkshire Hathaway HomeServices Nevada Properties<br />
+                Background in psychology, business, and marketing strategies.<br />
+                Keynote speaker, relocation specialist, and more.
+              </p>
+              <div className={styles.badges}>
+                <span className={styles.badge}>Veteran-Owned</span>
+                <span className={styles.badge}>Women-Owned</span>
+                <span className={styles.badge}>LGBTQ+ Friendly</span>
+                <span className={styles.badge}>Se Habla Español</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Specializations & Services</h2>
+          <ul className={styles.servicesList}>
+            <li>Summerlin Vistas Homes Neighborhoods Specialist</li>
+            <li>Luxury real estate transactions</li>
+            <li>First-time home buyer support</li>
+            <li>Foreclosed property deals</li>
+            <li>Las Vegas real estate investment insights</li>
+            <li>New construction sales and consulting</li>
+            <li>Relocation services</li>
+            <li>Expired listing consultant</li>
+            <li>Divorce real estate specialist</li>
+            <li>55+ Community Specialist</li>
+          </ul>
+        </div>
+        <div className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Summerlin Vistas Neighborhoods Served</h2>
+          <div className={styles.areasGrid}>
+            <span>The Vistas</span>
+            <span>The Paseos</span>
+            <span>Stonebridge</span>
+            <span>Redpoint</span>
+            <span>Redpoint Square</span>
+            <span>Reverence</span>
+          </div>
+        </div>
         <div className={styles.newsList}>
           <div className={styles.newsCard}>
             <span className={styles.newsBadge}>News</span>

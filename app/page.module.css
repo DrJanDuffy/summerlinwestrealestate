@@ -2186,3 +2186,72 @@ a.secondary {
     max-width: 100vw;
   }
 }
+
+.agentProfile {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.agentIcon {
+  color: #3A8DDE;
+  font-size: 2.8rem;
+  margin-top: 0.2rem;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.badge {
+  background: #F7F9FC;
+  color: #3A8DDE;
+  border-radius: 6px;
+  padding: 0.3em 0.9em;
+  font-size: 0.98em;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #3A8DDE22;
+}
+.servicesList {
+  list-style: disc inside;
+  color: #0A2540;
+  font-size: 1.08rem;
+  margin: 0 auto;
+  max-width: 700px;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.areasGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.areasGrid span {
+  background: #F7F9FC;
+  color: #0A2540;
+  border-radius: 6px;
+  padding: 0.5em 1.2em;
+  font-weight: 600;
+  font-size: 1.05em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+@media (max-width: 600px) {
+  .agentProfile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .servicesList {
+    font-size: 0.98rem;
+    padding-left: 0.5rem;
+  }
+  .areasGrid {
+    gap: 0.5rem 0.5rem;
+  }
+}
