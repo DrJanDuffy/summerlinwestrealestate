@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import TestimonialsSectionClient from '../../components/ui/TestimonialsSectionClient';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function About() {
   return (
@@ -28,20 +29,23 @@ export default function About() {
         <script type="application/ld+json" suppressHydrationWarning>{`
           {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Summerlin Real Estate Expert",
-            "jobTitle": "Real Estate Agent",
-            "worksFor": {
-              "@type": "RealEstateAgent",
-              "name": "Summerlin West Real Estate"
-            },
+            "@type": "LocalBusiness",
+            "name": "Summerlin West Real Estate",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Summerlin",
+              "streetAddress": "11312 Parkside Way",
+              "addressLocality": "Las Vegas",
               "addressRegion": "NV",
+              "postalCode": "89138",
               "addressCountry": "US"
             },
-            "description": "Local Summerlin real estate expert with 15+ years of experience helping buyers and sellers in Summerlin West."
+            "description": "Local Summerlin real estate expert with 15+ years of experience helping buyers and sellers in Summerlin West.",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 36.1865,
+              "longitude": -115.3432
+            },
+            "url": "https://www.summerlinwestrealestate.com/about"
           }
         `}</script>
       </Head>
@@ -80,6 +84,37 @@ export default function About() {
           <h2 className={styles.centerTitle}>What Our Clients Say</h2>
           <p className={styles.sectionSubtitle}>Real stories from real buyers and sellers</p>
           <TestimonialsSectionClient />
+        </div>
+        <div className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>Our Office Location</h2>
+          <div className={styles.officeCard}>
+            <div className={styles.officeInfo}>
+              <FaMapMarkerAlt className={styles.officeIcon} />
+              <div>
+                <div className={styles.officeAddress}>11312 Parkside Way<br />Summerlin, Las Vegas, NV 89138</div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=11312+Parkside+Way,+Las+Vegas,+NV+89138"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.directionsBtn}
+                >
+                  Get Directions
+                </a>
+              </div>
+            </div>
+            <div className={styles.officeMapWrapper}>
+              <iframe
+                title="Office Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.019282073839!2d-115.3454!3d36.1865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c1e2e2e2e2e2%3A0x0!2zMzHCsDExJzExLjQiTiAxMTXCsDIwJzQzLjIiVw!!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+                width="100%"
+                height="220"
+                style={{ border: 0, borderRadius: '12px', marginTop: '1rem' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
         <div className={styles.sectionCard} style={{marginTop: '2.5rem'}}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
