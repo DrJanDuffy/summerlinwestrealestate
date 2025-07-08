@@ -190,7 +190,7 @@ export default function LeadCaptureForm({
                       type="text"
                       id={`name-${formId}`}
                       placeholder="Enter your full name"
-                      className={errors.name ? styles.error : ""}
+                      className={`${styles.input} ${errors.name ? styles.error : ''}`}
                       disabled={isSubmitting}
                       {...(errors.name ? { 'aria-invalid': 'true' } : {})}
                       aria-describedby={errors.name ? `name-error-${formId}` : undefined}
@@ -222,7 +222,7 @@ export default function LeadCaptureForm({
                       type="email"
                       id={`email-${formId}`}
                       placeholder="Enter your email address"
-                      className={errors.email ? styles.error : ""}
+                      className={`${styles.input} ${errors.email ? styles.error : ''}`}
                       disabled={isSubmitting}
                       {...(errors.email ? { 'aria-invalid': 'true' } : {})}
                       aria-describedby={errors.email ? `email-error-${formId}` : undefined}
@@ -254,7 +254,7 @@ export default function LeadCaptureForm({
                       type="tel"
                       id={`phone-${formId}`}
                       placeholder="Enter your phone number"
-                      className={errors.phone ? styles.error : ""}
+                      className={`${styles.input} ${errors.phone ? styles.error : ''}`}
                       disabled={isSubmitting}
                       {...(errors.phone ? { 'aria-invalid': 'true' } : {})}
                       aria-describedby={errors.phone ? `phone-error-${formId}` : undefined}
@@ -278,7 +278,7 @@ export default function LeadCaptureForm({
                     <select
                       {...field}
                       id={`propertyInterest-${formId}`}
-                      className={errors.propertyInterest ? styles.error : ""}
+                      className={`${styles.select} ${errors.propertyInterest ? styles.error : ''}`}
                       disabled={isSubmitting}
                       {...(errors.propertyInterest ? { 'aria-invalid': 'true' } : {})}
                       aria-describedby={errors.propertyInterest ? `propertyInterest-error-${formId}` : undefined}
@@ -309,6 +309,7 @@ export default function LeadCaptureForm({
                       id={`message-${formId}`}
                       rows={4}
                       placeholder="Tell us about your real estate needs..."
+                      className={styles.textarea}
                       disabled={isSubmitting}
                       {...(errors.message ? { 'aria-invalid': 'true' } : {})}
                       aria-describedby={errors.message ? `message-error-${formId}` : undefined}

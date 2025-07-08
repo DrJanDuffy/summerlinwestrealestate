@@ -342,7 +342,9 @@
 }
 
 /* Add focus-visible outline for accessibility */
-input:focus-visible, textarea:focus-visible, select:focus-visible {
+.input:focus-visible,
+.textarea:focus-visible,
+.select:focus-visible {
   outline: 2px solid #3a8dde;
   outline-offset: 2px;
 }

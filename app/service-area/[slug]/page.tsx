@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import subdivisions from "../subdivisions.json";
