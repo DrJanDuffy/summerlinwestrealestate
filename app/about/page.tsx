@@ -76,9 +76,15 @@ export default function About() {
             </div>
           </div>
         </div>
-        <h2 className={styles.centerTitle} style={{marginTop: '3rem'}}>What Our Clients Say</h2>
-        <p style={{textAlign: 'center', color: '#0A2540', marginBottom: '2rem'}}>Real stories from real buyers and sellers</p>
-        <TestimonialsSectionClient />
+        <div className={styles.sectionCard}>
+          <h2 className={styles.centerTitle}>What Our Clients Say</h2>
+          <p className={styles.sectionSubtitle}>Real stories from real buyers and sellers</p>
+          <TestimonialsSectionClient />
+        </div>
+        <div className={styles.sectionCard} style={{marginTop: '2.5rem'}}>
+          <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
+          {/* The RealScoutWidget is rendered globally in layout, so this is just a heading for context */}
+        </div>
       </div>
     </div>
   );

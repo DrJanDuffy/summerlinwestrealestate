@@ -733,10 +733,11 @@ a.secondary {
   margin: 2.5rem 0;
   padding: 2.5rem 2rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
 }
 
 .mainContent {
@@ -805,7 +806,20 @@ a.secondary {
 
 .centerTitle {
   text-align: center;
-  margin-bottom: 1.5rem;
+  color: #0A2540;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+.centerTitle:after {
+  content: '';
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3A8DDE 80%, #16B286 100%);
+  border-radius: 2px;
 }
 
 .marketAnalysis {
@@ -1715,25 +1729,53 @@ a.secondary {
   border-right: none;
 }
 
-.centerTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  color: #0A2540;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  letter-spacing: 0.5px;
+.sectionSubtitle {
   text-align: center;
-  text-shadow: 0 2px 8px rgba(191,167,106,0.08);
+  color: #0A2540;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.sectionCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(10, 37, 64, 0.08);
+  margin: 2.5rem 0;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.centerTitle {
+  text-align: center;
+  color: #0A2540;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
   position: relative;
 }
 .centerTitle:after {
   content: '';
   display: block;
-  margin: 1.2rem auto 0 auto;
-  width: 80px;
-  height: 4px;
+  margin: 0.5rem auto 0 auto;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3A8DDE 80%, #16B286 100%);
   border-radius: 2px;
-  background: linear-gradient(90deg, #bfa76a 60%, #3A8DDE 100%);
+}
+
+@media (max-width: 600px) {
+  .sectionCard {
+    padding: 1.2rem 0.5rem;
+  }
+  .centerTitle {
+    font-size: 1.3rem;
+  }
 }
 
 .communitiesGrid {
