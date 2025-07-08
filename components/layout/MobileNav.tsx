@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import styles from './MobileNav.module.css';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -29,8 +30,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 400, damping: 40 }}
-          className="fixed inset-0 z-[2000] flex"
-          style={{ background: "rgba(10,37,64,0.7)" }}
+          className={`fixed inset-0 z-[2000] flex ${styles.overlayBg}`}
         >
           {/* Overlay to close menu */}
           <div className="flex-1" onClick={onClose} />
@@ -42,8 +42,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 400, damping: 40 }}
-            className="w-72 max-w-[90vw] h-full bg-white shadow-xl flex flex-col p-6 relative"
-            style={{ borderTopLeftRadius: 16, borderBottomLeftRadius: 16 }}
+            className={`w-72 max-w-[90vw] h-full bg-white shadow-xl flex flex-col p-6 relative ${styles.menuRadius}`}
           >
             {/* Close button */}
             <button
@@ -69,8 +68,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   onClick={onClose}
                   className={`text-lg font-medium py-2 px-3 rounded transition-colors text-[#0A2540] hover:bg-[#F7F9FC] active:bg-[#3A8DDE] ${
                     pathname === link.href ? "bg-[#3A8DDE] text-white" : ""
-                  }`}
-                  style={{ touchAction: "manipulation" }}
+                  } ${styles.touchManipulation}`}
                 >
                   {link.label}
                 </Link>
@@ -80,8 +78,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <div className="flex flex-col gap-3 mb-8">
               <a
                 href="tel:7025551234"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#16B286] text-white rounded font-semibold text-base shadow hover:bg-[#13996e] transition-colors"
-                style={{ touchAction: "manipulation" }}
+                className={`w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#16B286] text-white rounded font-semibold text-base shadow hover:bg-[#13996e] transition-colors ${styles.touchManipulation}`}
               >
                 <svg
                   width="20"
@@ -95,8 +92,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               </a>
               <a
                 href="mailto:info@summerlinwestrealestate.com"
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#3A8DDE] text-white rounded font-semibold text-base shadow hover:bg-[#2563eb] transition-colors"
-                style={{ touchAction: "manipulation" }}
+                className={`w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#3A8DDE] text-white rounded font-semibold text-base shadow hover:bg-[#2563eb] transition-colors ${styles.touchManipulation}`}
               >
                 <svg
                   width="20"
@@ -116,8 +112,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 target="_blank"
                 rel="noopener"
                 aria-label="Facebook"
-                className="hover:text-[#3A8DDE]"
-                style={{ fontSize: 24 }}
+                className={`hover:text-[#3A8DDE] ${styles.iconLarge}`}
               >
                 <svg
                   width="24"
@@ -133,8 +128,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 target="_blank"
                 rel="noopener"
                 aria-label="Instagram"
-                className="hover:text-[#16B286]"
-                style={{ fontSize: 24 }}
+                className={`hover:text-[#16B286] ${styles.iconLarge}`}
               >
                 <svg
                   width="24"
@@ -150,8 +144,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 target="_blank"
                 rel="noopener"
                 aria-label="YouTube"
-                className="hover:text-[#0A2540]"
-                style={{ fontSize: 24 }}
+                className={`hover:text-[#0A2540] ${styles.iconLarge}`}
               >
                 <svg
                   width="24"

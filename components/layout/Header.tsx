@@ -199,9 +199,9 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50"
             role="navigation"
             aria-label="Main menu"
+            className="md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 flex flex-col items-center justify-center"
           >
             <ul className="flex flex-col items-center py-4 space-y-4">
               {navLinks.map((link) => (

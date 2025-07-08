@@ -127,7 +127,6 @@ export default function Home() {
         </script>
       </Head>
 
-      <Header />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
         {/* Hero Section */}
