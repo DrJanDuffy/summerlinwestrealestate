@@ -7,6 +7,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import { useState, useEffect } from "react";
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
@@ -42,6 +43,33 @@ type Faq = {
   question: string;
   answer: string;
 };
+
+function HomeHeroImage() {
+  const [src, setSrc] = useState("/images/og-image.jpg");
+  useEffect(() => {
+    const prompt = "A luxury residential neighborhood in Summerlin West, Las Vegas, with modern homes and Red Rock Canyon views, blue sky, and desert landscaping.";
+    fetch('/api/generate-image', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.base64) setSrc(`data:image/png;base64,${data.base64}`);
+      })
+      .catch(() => setSrc("/images/og-image.jpg"));
+  }, []);
+  return (
+    <Image
+      src={src}
+      alt="Luxury homes in Summerlin West with Red Rock Canyon views"
+      width={600}
+      height={300}
+      style={{ borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', margin: '2rem auto', display: 'block' }}
+      priority
+    />
+  );
+}
 
 export default function Home() {
   const { isOpen, source, openModal, closeModal } = useLeadCaptureModal();
@@ -135,6 +163,8 @@ export default function Home() {
           <p className={styles.luxurySubtitle}>
             Discover luxury living in Las Vegas' most prestigious master-planned community
           </p>
+          {/* AI-generated hero image */}
+          <HomeHeroImage />
           <div className={styles.heroStats}>
             <div className={styles.heroStat}>
               <span className={styles.heroStatNumber}>$850K</span>
@@ -147,6 +177,62 @@ export default function Home() {
             <div className={styles.heroStat}>
               <span className={styles.heroStatNumber}>14</span>
               <span className={styles.heroStatLabel}>Avg Days on Market</span>
+            </div>
+          </div>
+        </section>
+        {/* Map of Summerlin West Section */}
+        <section
+          className={styles.sectionCard}
+          aria-label="Map of Summerlin West"
+          style={{
+            margin: '2rem 0',
+            background: '#fff',
+            borderRadius: 24,
+            boxShadow: '0 4px 24px rgba(10,37,64,0.10)',
+            padding: '0',
+            maxWidth: 900,
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{
+            width: '100%',
+            background: 'linear-gradient(135deg, #3A8DDE 80%, #16B286 100%)',
+            padding: '2rem 1rem 1.2rem 1rem',
+            textAlign: 'center',
+            borderTopLeftRadius: 24,
+            borderTopRightRadius: 24,
+            color: '#fff',
+            boxShadow: '0 2px 8px rgba(10,37,64,0.08)',
+          }}>
+            <h2 style={{ fontWeight: 800, fontSize: '2rem', marginBottom: 8, letterSpacing: '-1px' }}>Map of Summerlin West</h2>
+            <p style={{ color: '#F7F9FC', fontSize: '1.1rem', marginBottom: 0 }}>Explore neighborhoods, listings, and amenities on the interactive map below.</p>
+          </div>
+          <div style={{
+            width: '100%',
+            padding: '2rem',
+            boxSizing: 'border-box',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: '#fff',
+          }}>
+            <div style={{ width: '100%', maxWidth: 800, borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 8px rgba(10,37,64,0.08)' }}>
+              <iframe
+                title="Summerlin West Map"
+                src="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
+                width="100%"
+                height="450"
+                style={{ border: 0, minHeight: 320, width: '100%', display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </section>
