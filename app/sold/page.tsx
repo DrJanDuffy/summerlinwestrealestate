@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import Head from "next/head";
 
 // Dynamic import for client components
 const LatestMarketInsights = dynamic(
@@ -15,6 +16,34 @@ const LatestMarketInsights = dynamic(
 export default function Sold() {
   return (
     <div className={styles.page}>
+      <Head>
+        <title>Recently Sold Homes in Summerlin | Summerlin West Real Estate</title>
+        <meta
+          name="description"
+          content="Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights."
+        />
+        <meta
+          property="og:title"
+          content="Recently Sold Homes in Summerlin | Summerlin West Real Estate"
+        />
+        <meta
+          property="og:description"
+          content="Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights."
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Recently Sold Homes in Summerlin",
+              "description": "Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.",
+              "url": "https://www.summerlinwestrealestate.com/sold"
+            })
+          }}
+        />
+      </Head>
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

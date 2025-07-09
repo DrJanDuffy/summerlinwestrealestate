@@ -50,38 +50,42 @@ export default function CurrentListing() {
           property="og:description"
           content="Tour this stunning home for sale in The Vistas, Summerlin. View photos, property details, market analysis, and schedule a private showing with a Summerlin expert."
         />
-        <script type="application/ld+json" suppressHydrationWarning>{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Residence",
-            "name": "The Vistas Summerlin Home for Sale",
-            "description": "Modern 4 bed, 3 bath home in The Vistas, Summerlin. Upgraded kitchen, smart home tech, mountain views.",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "1234 Vistas Edge Dr",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "postalCode": "89138",
-              "addressCountry": "US"
-            },
-            "image": [
-              "https://placehold.co/400x300?text=Photo+1",
-              "https://placehold.co/400x300?text=Photo+2"
-            ],
-            "numberOfRooms": 8,
-            "floorSize": {
-              "@type": "QuantitativeValue",
-              "value": 2800,
-              "unitCode": "SQF"
-            },
-            "offers": {
-              "@type": "Offer",
-              "price": "899000",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock"
-            }
-          }
-        `}</script>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Residence",
+              "name": "The Vistas Summerlin Home for Sale",
+              "description": "Modern 4 bed, 3 bath home in The Vistas, Summerlin. Upgraded kitchen, smart home tech, mountain views.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1234 Vistas Edge Dr",
+                "addressLocality": "Las Vegas",
+                "addressRegion": "NV",
+                "postalCode": "89138",
+                "addressCountry": "US"
+              },
+              "image": [
+                "https://placehold.co/400x300?text=Photo+1",
+                "https://placehold.co/400x300?text=Photo+2"
+              ],
+              "numberOfRooms": 8,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 2800,
+                "unitCode": "SQF"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "899000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
+            })
+          }}
+        />
       </Head>
 
       <main className={styles.luxuryMainContent}>

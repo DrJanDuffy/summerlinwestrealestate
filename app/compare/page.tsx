@@ -22,6 +22,19 @@ export default function Compare() {
           property="og:description"
           content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
         />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Compare Summerlin Homes",
+              "description": "Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.",
+              "url": "https://www.summerlinwestrealestate.com/compare"
+            })
+          }}
+        />
       </Head>
       <section className={styles.hero}>
         <h1>Compare Summerlin Homes</h1>
