@@ -40,7 +40,7 @@ export default function Sold() {
               "name": "Recently Sold Homes in Summerlin",
               "description": "Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.",
               "url": "https://www.summerlinwestrealestate.com/sold"
-            })
+            }, null, 2)
           }}
         />
       </Head>

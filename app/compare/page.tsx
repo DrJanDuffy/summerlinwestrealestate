@@ -32,7 +32,7 @@ export default function Compare() {
               "name": "Compare Summerlin Homes",
               "description": "Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.",
               "url": "https://www.summerlinwestrealestate.com/compare"
-            })
+            }, null, 2)
           }}
         />
       </Head>

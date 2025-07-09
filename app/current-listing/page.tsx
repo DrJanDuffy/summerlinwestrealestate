@@ -83,7 +83,7 @@ export default function CurrentListing() {
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock"
               }
-            })
+            }, null, 2)
           }}
         />
       </Head>
