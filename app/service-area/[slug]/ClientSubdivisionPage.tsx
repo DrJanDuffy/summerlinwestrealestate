@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css";
-import styles from './client-subdivision.module.css';
+import clientStyles from './client-subdivision.module.css';
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {
@@ -377,7 +377,7 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
               <motion.a
                 key={method.type}
                 href={method.href}
-                className={method.primary ? styles.ctaButton : styles.ctaButtonSecondary}
+                className={method.primary ? styles.ctaButton : clientStyles.ctaButtonSecondary}
                 aria-label={`${method.label}: ${method.number}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -558,7 +558,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
 
       {/* Enhanced Navigation */}
       <motion.div 
-        className={styles.ctaButtonSecondary}
+        className={clientStyles.ctaButtonSecondary}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}

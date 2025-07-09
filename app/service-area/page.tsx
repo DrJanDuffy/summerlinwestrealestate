@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import styles from './service-area.module.css';
+import serviceAreaStyles from './service-area.module.css';
 
 const subdivisions = [
   // Luxury and Gated Communities
@@ -197,27 +197,27 @@ export default function ServiceArea() {
         <h2 className={styles.centerTitle}>All Vistas Subdivisions</h2>
         <div className={styles.communitiesGrid}>
           {subdivisions.map((sub, idx) => (
-            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={styles.linkCard}>
-              <div className={styles.cardImageWrap}>
+            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={serviceAreaStyles.linkCard}>
+              <div className={serviceAreaStyles.cardImageWrap}>
                 <Image
                   src={(sub as any).image || "https://placehold.co/600x300?text=The+Vistas"}
                   alt={sub.name}
-                  className={styles.cardImage}
+                  className={serviceAreaStyles.cardImage}
                   width={600}
                   height={300}
                   loading="lazy"
                 />
-                <div className={styles.cardOverlay}>View Details</div>
+                <div className={serviceAreaStyles.cardOverlay}>View Details</div>
               </div>
-              <div className={styles.communityContent}>
-                <h3 className={styles.communityTitle}>{sub.name}</h3>
-                <div className={styles.communityMeta}>
-                  <span className={styles.featureTag}>{sub.type}</span>
-                  {sub.builder !== "-" && <span className={styles.featureTag}>Builder: {sub.builder}</span>}
-                  {sub.years !== "-" && <span className={styles.featureTag}>Years: {sub.years}</span>}
+              <div className={serviceAreaStyles.communityContent}>
+                <h3 className={serviceAreaStyles.communityTitle}>{sub.name}</h3>
+                <div className={serviceAreaStyles.communityMeta}>
+                  <span className={serviceAreaStyles.featureTag}>{sub.type}</span>
+                  {sub.builder !== "-" && <span className={serviceAreaStyles.featureTag}>Builder: {sub.builder}</span>}
+                  {sub.years !== "-" && <span className={serviceAreaStyles.featureTag}>Years: {sub.years}</span>}
                 </div>
-                <div className={styles.communityDescription}>{sub.features.join(", ")}</div>
-                <div className={styles.communityPrice}>{sub.homeSizes}</div>
+                <div className={serviceAreaStyles.communityDescription}>{sub.features.join(", ")}</div>
+                <div className={serviceAreaStyles.communityPrice}>{sub.homeSizes}</div>
               </div>
             </Link>
           ))}
