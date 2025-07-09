@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from './AboutImage.module.css';
 
 export default function AboutImage({
   src,
@@ -19,8 +20,7 @@ export default function AboutImage({
       alt={alt}
       width={width}
       height={height}
-      className={`rounded-2xl shadow-lg ${className}`}
-      style={{ objectFit: "cover", background: "#fff" }}
+      className={`rounded-2xl shadow-lg ${className} ${styles.image}`}
       loading="lazy"
     />
   );

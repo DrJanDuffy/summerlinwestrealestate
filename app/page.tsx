@@ -1,6 +1,6 @@
 "use client";
 import Head from "next/head";
-import styles from "./page.module.css";
+import styles from '@/styles/pages/home.module.css';
 import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
 import Link from "next/link";
 import Image from "next/image";
@@ -65,7 +65,7 @@ function HomeHeroImage() {
       alt="Luxury homes in Summerlin West with Red Rock Canyon views"
       width={600}
       height={300}
-      style={{ borderRadius: 12, boxShadow: '0 2px 8px rgba(0,0,0,0.08)', margin: '2rem auto', display: 'block' }}
+      className={styles.heroImage}
       priority
     />
   );
@@ -184,51 +184,19 @@ export default function Home() {
         <section
           className={styles.sectionCard}
           aria-label="Map of Summerlin West"
-          style={{
-            margin: '2rem 0',
-            background: '#fff',
-            borderRadius: 24,
-            boxShadow: '0 4px 24px rgba(10,37,64,0.10)',
-            padding: '0',
-            maxWidth: 900,
-            width: '100%',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
         >
-          <div style={{
-            width: '100%',
-            background: 'linear-gradient(135deg, #3A8DDE 80%, #16B286 100%)',
-            padding: '2rem 1rem 1.2rem 1rem',
-            textAlign: 'center',
-            borderTopLeftRadius: 24,
-            borderTopRightRadius: 24,
-            color: '#fff',
-            boxShadow: '0 2px 8px rgba(10,37,64,0.08)',
-          }}>
-            <h2 style={{ fontWeight: 800, fontSize: '2rem', marginBottom: 8, letterSpacing: '-1px' }}>Map of Summerlin West</h2>
-            <p style={{ color: '#F7F9FC', fontSize: '1.1rem', marginBottom: 0 }}>Explore neighborhoods, listings, and amenities on the interactive map below.</p>
+          <div className={styles.sectionCardHeader}>
+            <h2 className={styles.luxurySectionTitle}>Map of Summerlin West</h2>
+            <p className={styles.luxuryWidgetSubtitle}>Explore neighborhoods, listings, and amenities on the interactive map below.</p>
           </div>
-          <div style={{
-            width: '100%',
-            padding: '2rem',
-            boxSizing: 'border-box',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#fff',
-          }}>
-            <div style={{ width: '100%', maxWidth: 800, borderRadius: 16, overflow: 'hidden', boxShadow: '0 2px 8px rgba(10,37,64,0.08)' }}>
+          <div className={styles.sectionCardContent}>
+            <div className={styles.mapContainer}>
               <iframe
                 title="Summerlin West Map"
                 src="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 width="100%"
                 height="450"
-                style={{ border: 0, minHeight: 320, width: '100%', display: 'block' }}
+                className={styles.mapIframe}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

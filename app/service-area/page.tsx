@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
+import styles from './service-area.module.css';
 
 const subdivisions = [
   // Luxury and Gated Communities
@@ -196,7 +197,7 @@ export default function ServiceArea() {
         <h2 className={styles.centerTitle}>All Vistas Subdivisions</h2>
         <div className={styles.communitiesGrid}>
           {subdivisions.map((sub, idx) => (
-            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={styles.communityCard} style={{ textDecoration: 'none', color: 'inherit', position: 'relative', overflow: 'hidden' }}>
+            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={styles.linkCard}>
               <div className={styles.cardImageWrap}>
                 <Image
                   src={(sub as any).image || "https://placehold.co/600x300?text=The+Vistas"}

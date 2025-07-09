@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css";
+import styles from './client-subdivision.module.css';
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {
@@ -198,35 +199,35 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
   );
 }
 
-// Parallax Hero Image Component
-function ParallaxHero({ subdivision, heroImage, imageAlt }: { subdivision: any; heroImage: string; imageAlt: string }) {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  
+// Add SubdivisionImage component
+function SubdivisionImage({ subdivision, heroImage, imageAlt }: { subdivision: any; heroImage: string; imageAlt: string }) {
+  const [src, setSrc] = useState(heroImage);
+  useEffect(() => {
+    // Only generate if using the placeholder
+    if (heroImage.includes('placehold.co')) {
+      const prompt = `A beautiful ${subdivision.type} neighborhood in Summerlin West, Las Vegas, called ${subdivision.name}${subdivision.builder && subdivision.builder !== '-' ? ', built by ' + subdivision.builder : ''}${subdivision.features?.length ? ', featuring ' + subdivision.features.join(', ') : ''}.`;
+      fetch('/api/generate-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.base64) setSrc(`data:image/png;base64,${data.base64}`);
+        })
+        .catch(() => setSrc(heroImage));
+    }
+  }, [subdivision, heroImage]);
   return (
-    <div className={styles.heroMapAnchor}>
-      <motion.div style={{ y }} className={styles.parallaxContainer}>
-        <Image
-          src={heroImage}
-          alt={imageAlt}
-          width={480}
-          height={300}
-          className={styles.heroMapImg}
-          priority
-          sizes="(max-width: 768px) 100vw, 480px"
-        />
-        <div className={styles.imageOverlay}>
-          <motion.div 
-            className={styles.propertyBadge}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            🏆 Premium Location
-          </motion.div>
-        </div>
-      </motion.div>
-    </div>
+    <Image
+      src={src}
+      alt={imageAlt}
+      width={480}
+      height={300}
+      className={styles.heroMapImg}
+      priority
+      sizes="(max-width: 768px) 100vw, 480px"
+    />
   );
 }
 
@@ -557,13 +558,13 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
 
       {/* Enhanced Navigation */}
       <motion.div 
-        style={{textAlign: 'center', margin: '2rem 0'}}
+        className={styles.ctaButtonSecondary}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <Link href="/service-area" className={styles.ctaButtonSecondary}>
+        <Link href="/service-area">
           ← Explore More Communities
         </Link>
       </motion.div>

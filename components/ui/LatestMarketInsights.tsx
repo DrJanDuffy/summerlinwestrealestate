@@ -13,6 +13,7 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 const LatestMarketInsights = React.memo(function LatestMarketInsights() {
   const [rssItems, setRssItems] = useState<any[]>([]);
+  const [aiImages, setAiImages] = useState<{ [title: string]: string }>({});
 
   useEffect(() => {
     async function fetchRSS() {
@@ -43,6 +44,29 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
     fetchRSS();
   }, []);
 
+  // AI image fetch for items with placeholder
+  useEffect(() => {
+    rssItems.forEach((item) => {
+      const title = item.title;
+      const imageUrl = getImageUrl(item);
+      if (imageUrl.includes('placehold.co') && !aiImages[title]) {
+        const prompt = `News headline: ${title}. Real estate, Las Vegas, Summerlin West, modern homes, market insights.`;
+        fetch('/api/generate-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt }),
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.base64) {
+              setAiImages(prev => ({ ...prev, [title]: `data:image/png;base64,${data.base64}` }));
+            }
+          });
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rssItems]);
+
   const getImageUrl = useMemo(() => {
     return (item: any) => {
       // Handle media:content as array or object
@@ -57,9 +81,13 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
       if (item.enclosure && item.enclosure.url) {
         return item.enclosure.url;
       }
+      // If AI image exists for this title, use it
+      if (aiImages[item.title]) {
+        return aiImages[item.title];
+      }
       return "https://placehold.co/120x80?text=News";
     };
-  }, []);
+  }, [aiImages]);
 
   if (rssItems.length === 0) return null;
 

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from './AgentAvatar.module.css';
 
 export default function AgentAvatar({
   src,
@@ -17,13 +18,7 @@ export default function AgentAvatar({
       alt={alt}
       width={size}
       height={size}
-      className="rounded-full mx-auto mb-4"
-      style={{
-        border: `6px solid ${borderColor}`,
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        background: "#fff",
-      }}
-      priority
+      className={`rounded-full mx-auto mb-4 ${styles.imageContainer}`}
     />
   );
 } 

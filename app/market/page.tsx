@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
+import styles from './market.module.css';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 
 export default function Market() {
@@ -30,7 +30,7 @@ export default function Market() {
       <LatestMarketInsightsClient />
       <section className={styles.sectionCard}>
         <h2>Current Market Trends</h2>
-        <Image src="https://placehold.co/800x300?text=Market+Trends" alt="Summerlin real estate market trends graph" width={800} height={300} style={{width: '100%', height: 'auto', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', marginBottom: '1.5rem'}} />
+        <Image src="https://placehold.co/800x300?text=Market+Trends" alt="Summerlin real estate market trends graph" width={800} height={300} className={styles.trendsGraphImage} />
         <ul className={styles.contentList}>
           <li>Median home price: $850,000</li>
           <li>Average days on market: 14</li>

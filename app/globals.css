@@ -972,3 +972,295 @@
     backdrop-filter: none !important;
   }
 }
+
+/* === Text Wrapping Utilities and Fixes === */
+
+.text-balanced {
+  /* Cross-browser text balancing for headlines */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 70ch; /* Optimal reading width */
+}
+
+@supports (text-wrap: balance) {
+  .text-balanced {
+    text-wrap: balance;
+    max-width: none; /* Let text-wrap handle it */
+  }
+}
+
+.text-pretty {
+  /* Cross-browser pretty text for body content */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  max-width: 65ch; /* Optimal reading width */
+}
+
+@supports (text-wrap: pretty) {
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Browser-specific optimizations */
+@supports (-webkit-hyphens: auto) {
+  .text-balanced,
+  .text-pretty {
+    -webkit-hyphens: auto;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .text-balanced,
+  .text-pretty {
+    /* More aggressive word breaking on mobile */
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+.property-title {
+  /* For property listing titles */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+  max-width: 60ch;
+}
+
+@supports (text-wrap: balance) {
+  .property-title {
+    text-wrap: balance;
+    max-width: none;
+  }
+}
+
+.property-description {
+  /* For property descriptions */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+@supports (text-wrap: pretty) {
+  .property-description {
+    text-wrap: pretty;
+  }
+}
+
+.blog-content {
+  /* For blog post content */
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+
+@supports (text-wrap: pretty) {
+  .blog-content {
+    text-wrap: pretty;
+  }
+}
+
+/* Legacy browser support */
+.ie11-text-wrap {
+  /* For Internet Explorer 11 and older browsers */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: manual;
+  hyphens: manual; /* IE doesn't support auto */
+}
+
+/* Print styles - text-wrap not needed */
+@media print {
+  .text-balanced,
+  .text-pretty,
+  .property-title,
+  .property-description,
+  .blog-content {
+    text-wrap: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+    max-width: none;
+  }
+}
+
+/* ===== CSS Compatibility Fixes for text-wrap, hyphenation, and browser-specific issues ===== */
+
+.line-679-class {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+@supports (text-wrap: balance) {
+  .line-679-class {
+    text-wrap: balance;
+  }
+}
+
+.line-685-class {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+@supports (text-wrap: pretty) {
+  .line-685-class {
+    text-wrap: pretty;
+  }
+}
+
+.hyphenation-class {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+@supports (-webkit-hyphens: auto) {
+  .hyphenation-class {
+    -webkit-hyphens: auto;
+  }
+}
+
+.line-1094-class {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+@supports (text-wrap: balance) {
+  .line-1094-class {
+    text-wrap: balance;
+  }
+}
+
+.safe-text-balance {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 70ch;
+}
+@supports (text-wrap: balance) {
+  .safe-text-balance {
+    text-wrap: balance;
+    max-width: none;
+  }
+}
+
+.safe-text-pretty {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+@supports (text-wrap: pretty) {
+  .safe-text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+.safe-hyphenation {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+@supports (-webkit-hyphens: auto) {
+  .safe-hyphenation {
+    -webkit-hyphens: auto;
+  }
+}
+
+.property-title-safe {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.3;
+  max-width: 60ch;
+}
+@supports (text-wrap: balance) {
+  .property-title-safe {
+    text-wrap: balance;
+    max-width: none;
+  }
+}
+
+.property-description-safe {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+@supports (text-wrap: pretty) {
+  .property-description-safe {
+    text-wrap: pretty;
+  }
+}
+
+.blog-content-safe {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+@supports (text-wrap: pretty) {
+  .blog-content-safe {
+    text-wrap: pretty;
+  }
+}
+
+@media (max-width: 768px) {
+  .safe-text-balance,
+  .safe-text-pretty,
+  .property-title-safe,
+  .property-description-safe,
+  .blog-content-safe {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+}
+@media print {
+  .safe-text-balance,
+  .safe-text-pretty,
+  .property-title-safe,
+  .property-description-safe,
+  .blog-content-safe {
+    text-wrap: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+    max-width: none;
+  }
+}
+@media (min-width: 768px) and (min-resolution: 1dppx) {
+  .enhanced-typography {
+    font-feature-settings: "liga" 1, "kern" 1;
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+  }
+}

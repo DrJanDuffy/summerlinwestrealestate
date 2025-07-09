@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from './PropertyImage.module.css';
 
 export default function PropertyImage({
   src,
@@ -19,8 +20,7 @@ export default function PropertyImage({
       alt={alt}
       width={width}
       height={height}
-      className={`rounded-xl shadow-md ${className}`}
-      style={{ objectFit: "cover", background: "#f7f9fc" }}
+      className={`rounded-xl shadow-md ${className} ${styles.image}`}
       loading="lazy"
     />
   );

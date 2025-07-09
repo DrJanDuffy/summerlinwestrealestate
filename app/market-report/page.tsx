@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Head from "next/head";
+import styles from './market-report.module.css';
 
 export default function MarketReportRedirect() {
   const router = useRouter();
@@ -18,17 +19,11 @@ export default function MarketReportRedirect() {
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://summerlinwestrealestate.com/market-reports" />
       </Head>
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        height: '100vh',
-        fontFamily: 'Arial, sans-serif'
-      }}>
-        <div style={{ textAlign: 'center' }}>
+      <div className={styles.redirectContainer}>
+        <div className={styles.redirectContent}>
           <h1>Redirecting...</h1>
           <p>You are being redirected to the market reports page.</p>
-          <p><a href="/market-reports" style={{ color: '#3A8DDE', textDecoration: 'underline' }}>
+          <p><a href="/market-reports" className={styles.redirectLink}>
             Click here if you are not redirected automatically
           </a></p>
         </div>
