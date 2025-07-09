@@ -12,6 +12,6 @@ export interface BlogPost {
 }
 
 export interface BlogLayoutProps {
-  posts?: BlogPost[];
-  children: React.ReactNode;
+  posts: BlogPost[];
+  children?: React.ReactNode;
 } 

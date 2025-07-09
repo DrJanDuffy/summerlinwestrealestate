@@ -45,7 +45,7 @@ type Faq = {
 };
 
 function HomeHeroImage() {
-  const [src, setSrc] = useState("/images/og-image.jpg");
+  const [src, setSrc] = useState("/images/og-image.svg");
   useEffect(() => {
     const prompt = "A luxury residential neighborhood in Summerlin West, Las Vegas, with modern homes and Red Rock Canyon views, blue sky, and desert landscaping.";
     fetch('/api/generate-image', {
@@ -57,7 +57,7 @@ function HomeHeroImage() {
       .then(data => {
         if (data.base64) setSrc(`data:image/png;base64,${data.base64}`);
       })
-      .catch(() => setSrc("/images/og-image.jpg"));
+              .catch(() => setSrc("/images/og-image.svg"));
   }, []);
   return (
     <Image
@@ -148,7 +148,7 @@ export default function Home() {
           property="og:description"
           content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist."
         />
-        <meta property="og:image" content="/images/og-image.jpg" />
+        <meta property="og:image" content="/images/og-image.svg" />
         <link rel="canonical" href="https://summerlinwestrealestate.com/" />
         <script type="application/ld+json" suppressHydrationWarning>
           {JSON.stringify(faqJsonLd)}

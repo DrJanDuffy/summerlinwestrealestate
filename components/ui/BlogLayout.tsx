@@ -11,7 +11,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
+  content?: string;
   date: string;
   image?: string;
   tags?: string[];
@@ -114,7 +114,7 @@ export default function BlogLayout({
                 "name": "Summerlin West Real Estate",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://summerlinwestrealestate.com/og-image.jpg"
+                  "url": "https://summerlinwestrealestate.com/images/og-image.svg"
                 }
               }
             }
@@ -208,7 +208,7 @@ export default function BlogLayout({
           )}
           <div
             className={styles.postContent}
-            dangerouslySetInnerHTML={{ __html: currentPost.content }}
+            dangerouslySetInnerHTML={{ __html: currentPost.content || "" }}
           />
           {/* Social Sharing Buttons */}
           <div className={styles.socialSharing}>

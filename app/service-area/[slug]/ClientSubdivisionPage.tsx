@@ -522,7 +522,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
             homeSizes={subdivision.homeSizes}
           />
         </div>
-        <ParallaxHero 
+        <SubdivisionImage 
           subdivision={subdivision}
           heroImage={heroImage}
           imageAlt={imageAlt}

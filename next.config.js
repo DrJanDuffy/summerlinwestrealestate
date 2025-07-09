@@ -14,7 +14,9 @@ const nextConfig = {
       },
       // Add more domains as needed
     ],
-    domains: ['files.keepingcurrentmatters.com', 'placehold.co'],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 }
 

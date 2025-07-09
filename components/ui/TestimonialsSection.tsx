@@ -85,39 +85,24 @@ const testimonials = [
   // Add more testimonials as needed
 ];
 
-// Memoize JSON-LD data
-const reviewsJsonLd = useMemo(() => ({
-  "@context": "https://schema.org",
-  "@graph": testimonials.map((t) => ({
-    "@type": "Review",
-    itemReviewed: {
-      "@type": "RealEstateAgent",
-      name: "Summerlin West Real Estate",
-    },
-    author: { "@type": "Person", name: t.author },
-    reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
-    reviewBody: t.body,
-  })),
-}), []);
-
 const TestimonialsSection = React.memo(function TestimonialsSection() {
   const [index, setIndex] = useState(0);
   
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((i) => (i + 1) % TESTIMONIALS.length);
+      setIndex((i) => (i + 1) % testimonials.length);
     }, 7000);
     return () => clearInterval(timer);
   }, []);
 
-  const testimonial = useMemo(() => TESTIMONIALS[index], [index]);
+  const testimonial = useMemo(() => testimonials[index], [index]);
   
   const handlePrevious = useCallback(() => {
-    setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+    setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
   }, []);
   
   const handleNext = useCallback(() => {
-    setIndex((i) => (i + 1) % TESTIMONIALS.length);
+    setIndex((i) => (i + 1) % testimonials.length);
   }, []);
   
   // Memoize JSON-LD data
@@ -160,10 +145,10 @@ const TestimonialsSection = React.memo(function TestimonialsSection() {
               </div>
               <StarRating rating={testimonial.rating} />
               <blockquote className="mt-3 text-[#0A2540] text-lg font-medium">
-                "{testimonial.review}"
+                "{testimonial.body}"
               </blockquote>
               <div className="mt-4 text-[#16B286] font-semibold">
-                {testimonial.name}
+                {testimonial.author}
               </div>
             </div>
             {/* Rotator Controls */}

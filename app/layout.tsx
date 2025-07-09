@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Summerlin West Real Estate",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Summerlin West Real Estate Hero",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/og-image.svg",
         alt: "Summerlin West Real Estate Hero",
       },
     ],
@@ -73,6 +73,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -81,10 +86,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-        />
         <style>{`
           realscout-office-listings {
             --rs-listing-divider-color: rgb(101, 141, 172);
@@ -93,6 +94,11 @@ export default function RootLayout({
         `}</style>
       </Head>
       <body>
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
         <Header />
         <main>
           {children}

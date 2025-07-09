@@ -45,6 +45,7 @@ export default function HomebotWidget({
   const scriptRef = useRef<HTMLScriptElement | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const retryCountRef = useRef(0);
+  const retryLoadRef = useRef<() => void>();
 
   const [loadingState, setLoadingState] = useState<LoadingState>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -86,29 +87,6 @@ export default function HomebotWidget({
     }
   }, [apiKey, theme, height, onLoad, handleError]);
 
-  // Define retryLoad as a regular function
-  function retryLoad() {
-    if (retryCountRef.current >= MAX_RETRY_ATTEMPTS) {
-      handleError(`Failed to load after ${MAX_RETRY_ATTEMPTS} attempts`);
-      return;
-    }
-
-    retryCountRef.current++;
-    setLoadingState("retrying");
-    setError(null);
-
-    // Remove failed script
-    if (scriptRef.current && shadowRef.current?.contains(scriptRef.current)) {
-      shadowRef.current.removeChild(scriptRef.current);
-      scriptRef.current = null;
-    }
-
-    // Retry after delay
-    setTimeout(() => {
-      loadScript();
-    }, 1000 * retryCountRef.current); // Exponential backoff
-  }
-
   const loadScript = useCallback(() => {
     if (!shadowRef.current || !containerRef.current) return;
 
@@ -132,7 +110,7 @@ export default function HomebotWidget({
     // Set up timeout
     timeoutRef.current = setTimeout(() => {
       handleError("Script load timeout");
-      retryLoad();
+      retryLoadRef.current && retryLoadRef.current();
     }, SCRIPT_LOAD_TIMEOUT);
 
     // Handle successful load
@@ -149,13 +127,38 @@ export default function HomebotWidget({
     script.onerror = () => {
       clearLoadTimeout();
       handleError("Failed to load Homebot script");
-      retryLoad();
+      retryLoadRef.current && retryLoadRef.current();
     };
 
     // Note: Append to document head instead of shadow DOM
     // Scripts in shadow DOM don't execute in global scope
     document.head.appendChild(script);
   }, [initializeWidget, handleError, clearLoadTimeout]);
+
+  const retryLoad: () => void = useCallback(() => {
+    if (retryCountRef.current >= MAX_RETRY_ATTEMPTS) {
+      handleError(`Failed to load after ${MAX_RETRY_ATTEMPTS} attempts`);
+      return;
+    }
+
+    retryCountRef.current++;
+    setLoadingState("retrying");
+    setError(null);
+
+    // Remove failed script
+    if (scriptRef.current && shadowRef.current?.contains(scriptRef.current)) {
+      shadowRef.current.removeChild(scriptRef.current);
+      scriptRef.current = null;
+    }
+
+    // Retry after delay
+    setTimeout(() => {
+      loadScript();
+    }, 1000 * retryCountRef.current); // Exponential backoff
+  }, [handleError, loadScript]);
+
+  // Assign retryLoad to ref so loadScript can use it
+  retryLoadRef.current = retryLoad;
 
   const setupShadowDOM = useCallback(() => {
     if (!containerRef.current) return;

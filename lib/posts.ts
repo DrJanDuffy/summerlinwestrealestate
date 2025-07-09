@@ -4,6 +4,7 @@ export interface BlogPost {
   excerpt: string;
   date: string;
   image?: string;
+  content?: string; // Added content field
 }
 
 export const posts: BlogPost[] = [
@@ -14,6 +15,7 @@ export const posts: BlogPost[] = [
       "Get the latest insights and trends for the Summerlin real estate market in 2024.",
     date: "2024-05-01",
     image: "https://placehold.co/800x320?text=Market+Update",
+    content: "Full content coming soon.", // Added content
   },
   {
     slug: "best-communities-in-summerlin",
@@ -22,6 +24,7 @@ export const posts: BlogPost[] = [
       "Explore the top neighborhoods and communities in Summerlin for families and professionals.",
     date: "2024-04-15",
     image: "https://placehold.co/800x320?text=Communities",
+    content: "Full content coming soon.", // Added content
   },
   {
     slug: "summerlin-home-buying-tips",
@@ -30,5 +33,6 @@ export const posts: BlogPost[] = [
       "Essential tips for buying a home in Summerlin West, from local experts.",
     date: "2024-03-20",
     image: "https://placehold.co/800x320?text=Home+Buying+Tips",
+    content: "Full content coming soon.", // Added content
   },
 ];

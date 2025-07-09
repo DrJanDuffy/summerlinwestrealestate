@@ -1,8 +1,9 @@
-import { BlogPost, BlogLayoutProps } from '@/types/blog';
+import { BlogPost } from '@/types/blog';
 import Link from "next/link";
 import Image from "next/image";
 import Parser from "rss-parser";
 import styles from './blog.module.css';
+import BlogLayout from '@/components/ui/BlogLayout';
 
 export const dynamic = "force-dynamic";
 
@@ -46,7 +47,7 @@ const LOCAL_EVENTS = [
 ];
 
 function isHyperlocal(post: BlogPost) {
-  const text = `${post.title} ${post.contentSnippet || ''} ${post.content || ''}`.toLowerCase();
+  const text = `${post.title} ${(post as any).contentSnippet || ''} ${post.content || ''}`.toLowerCase();
   return HYPERLOCAL_KEYWORDS.some((kw) => text.includes(kw));
 }
 
@@ -65,26 +66,18 @@ async function fetchRssPosts() {
   return (feed.items || []);
 }
 
-// BlogPost interface
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string; // Make slug always a string
-  excerpt: string; // Make excerpt always a string
-  content: string;
-  image?: string;
-  alt?: string;
-  publishedAt: string;
-  author: string;
-  date: string; // Add date property
-}
-
-// Format function to ensure BlogPost shape
-const formatPost = (post: BlogPost): BlogPost => {
+const formatPost = (post: any): BlogPost => {
   return {
-    ...post,
+    id: post.id || post.guid || post.slug || post.title,
+    title: post.title,
+    slug: post.slug || post.id || post.guid || '',
+    excerpt: post.excerpt || post.contentSnippet || '',
+    content: post.content || '',
+    image: post.image || '',
     alt: post.alt || `Image for ${post.title}`,
-    slug: post.slug || `/blog/${post.id}`,
+    publishedAt: post.publishedAt || post.isoDate || '',
+    author: post.author || '',
+    date: post.date || post.pubDate || '',
   };
 };
 
@@ -97,14 +90,12 @@ const chunkArray = <T,>(arr: T[], chunkSize = 3): T[][] => {
 };
 
 export default async function BlogIndexPage() {
-  const posts = (await fetchRssPosts()).filter(
+  const posts = (await fetchRssPosts()).map(formatPost).filter(
     post => isHyperlocal(post) || true // Show all, but localize generics
   );
   return (
     <div className={styles.container}>
-      <BlogLayout posts={posts.map(formatPost)}>
-        {children}
-      </BlogLayout>
+      <BlogLayout posts={posts} />
     </div>
   );
 } 

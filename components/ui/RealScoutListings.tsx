@@ -28,18 +28,7 @@ export default function RealScoutListings() {
 
   return (
     <>
-      <Head>
-        <script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-        />
-        <style>{`
-          realscout-office-listings {
-            --rs-listing-divider-color: rgb(101, 141, 172);
-            width: 100%;
-          }
-        `}</style>
-      </Head>
+      {/* Remove <Head> <script> and <style> tags, rely on useEffect for script and style injection */}
       <realscout-office-listings
         agent-encoded-id="QWdlbnQtMjI1MDUw"
         sort-order="STATUS_AND_SIGNIFICANT_CHANGE"
