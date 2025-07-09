@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { posts } from "../../lib/posts";
+import subdivisions from "../service-area/subdivisions.json";
 
 export async function GET() {
   const baseUrl = "https://summerlinwestrealestate.com";
@@ -24,6 +25,13 @@ export async function GET() {
     { path: "google-places", priority: "0.5", changefreq: "monthly" },
   ];
 
+  // Dynamic subdivision pages
+  const subdivisionPages = subdivisions.map((sub) => ({
+    path: `service-area/${sub.slug}`,
+    priority: "0.6",
+    changefreq: "monthly"
+  }));
+
   // Blog URLs
   const blogUrls = posts.map((post) => ({
     path: `blog/${post.slug}`,
@@ -32,7 +40,7 @@ export async function GET() {
   }));
 
   // Combine all URLs
-  const allUrls = [...mainPages, ...blogUrls];
+  const allUrls = [...mainPages, ...subdivisionPages, ...blogUrls];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

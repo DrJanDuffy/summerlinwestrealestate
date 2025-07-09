@@ -19,6 +19,7 @@ Allow: /new-homes-summerlin
 Allow: /downtown-summerlin
 Allow: /compare
 Allow: /google-places
+Allow: /service-area/
 
 # Crawl delay (optional)
 Crawl-delay: 1 
