@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
 import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 import { useState, useEffect } from "react";
+import FeaturedHomeSlider, { FeaturedHomeImage } from '@/components/ui/FeaturedHomeSlider';
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
@@ -179,6 +180,37 @@ export default function Home() {
               <span className={styles.heroStatLabel}>Avg Days on Market</span>
             </div>
           </div>
+        </section>
+        {/* Featured Home Section */}
+        <section className={styles.sectionCard}>
+          <div className={styles.sectionCardHeader}>
+            <h2 className={styles.luxurySectionTitle}>Featured Home in Summerlin West</h2>
+            <p className={styles.luxuryWidgetSubtitle}>Tour our handpicked showcase property</p>
+          </div>
+          <FeaturedHomeSlider
+            images={[
+              { src: '/images/featured-home/featured-home-1.jpg', caption: 'Front Exterior' },
+              { src: '/images/featured-home/featured-home-2.jpg', caption: 'Entryway' },
+              { src: '/images/featured-home/featured-home-3.jpg', caption: 'Living Room' },
+              { src: '/images/featured-home/featured-home-4.jpg', caption: 'Kitchen' },
+              { src: '/images/featured-home/featured-home-5.jpg', caption: 'Dining Area' },
+              { src: '/images/featured-home/featured-home-6.jpg', caption: 'Primary Bedroom' },
+              { src: '/images/featured-home/featured-home-7.jpg', caption: 'Primary Bathroom' },
+              { src: '/images/featured-home/featured-home-8.jpg', caption: 'Guest Bedroom' },
+              { src: '/images/featured-home/featured-home-9.jpg', caption: 'Guest Bathroom' },
+              { src: '/images/featured-home/featured-home-10.jpg', caption: 'Loft/Bonus Room' },
+              { src: '/images/featured-home/featured-home-11.jpg', caption: 'Backyard Patio' },
+              { src: '/images/featured-home/featured-home-12.jpg', caption: 'Pool & Spa' },
+              { src: '/images/featured-home/featured-home-13.jpg', caption: 'Outdoor Kitchen' },
+              { src: '/images/featured-home/featured-home-14.jpg', caption: 'Fire Pit Area' },
+              { src: '/images/featured-home/featured-home-15.jpg', caption: 'Garage' },
+              { src: '/images/featured-home/featured-home-16.jpg', caption: 'Laundry Room' },
+              { src: '/images/featured-home/featured-home-17.jpg', caption: 'Community Park' },
+              { src: '/images/featured-home/featured-home-18.jpg', caption: 'Neighborhood View' },
+              { src: '/images/featured-home/featured-home-19.jpg', caption: 'Aerial View' },
+              { src: '/images/featured-home/featured-home-20.jpg', caption: 'Twilight Exterior' },
+            ]}
+          />
         </section>
         {/* Dr. Jan Duffy Callout Section */}
         <section className={`${styles.sectionCard} ${styles.calloutSection}`}>

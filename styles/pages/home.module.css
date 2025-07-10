@@ -40,7 +40,7 @@
 
 .sectionCardContent {
   width: 100%;
-  padding: 2rem;
+  padding: 2.5rem 2rem 2.5rem 2rem;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -54,6 +54,12 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background: #F7F9FC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .heroImage {
@@ -65,7 +71,34 @@
 
 .mapIframe {
   border: 0;
-  min-height: 320px;
+  min-height: 400px;
   width: 100%;
+  max-width: 100%;
   display: block;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.featuredHomeGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.featuredHomeGallery img, .featuredHomeGallery :global(img) {
+  object-fit: cover;
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+}
+
+@media (max-width: 900px) {
+  .featuredHomeGallery img, .featuredHomeGallery :global(img) {
+    width: 100%;
+    height: auto;
+  }
 } 
