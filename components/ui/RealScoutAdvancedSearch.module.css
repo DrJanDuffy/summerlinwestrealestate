@@ -19,7 +19,8 @@
 
 .searchSection.page {
   background: #f7f9fc;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 3rem 1rem;
+  margin: 2.5rem 0 2.5rem 0;
 }
 
 .searchContainer {
@@ -66,18 +67,18 @@
 
 .widgetContainer {
   background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 2px 16px rgba(10, 37, 64, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 24px rgba(10,37,64,0.12);
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.2s;
 }
 
-.searchSection.sidebar .widgetContainer {
-  padding: 1rem;
-  box-shadow: none;
-  background: transparent;
+.widgetContainer:focus-within, .widgetContainer:hover {
+  box-shadow: 0 8px 32px rgba(10,37,64,0.16);
 }
 
 .searchFeatures {

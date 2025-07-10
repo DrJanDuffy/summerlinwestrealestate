@@ -1264,3 +1264,32 @@
     text-rendering: optimizeLegibility;
   }
 }
+
+/* === RealScout Widget Global Styles (moved from CSS module) === */
+realscout-advanced-search input[type="text"],
+realscout-advanced-search input[type="search"],
+realscout-advanced-search select {
+  font-size: 1.15rem !important;
+  padding: 0.85rem 1.2rem !important;
+  border-radius: 8px !important;
+  border: 1px solid #dbeafe !important;
+  margin-bottom: 1rem !important;
+}
+
+realscout-advanced-search button {
+  font-size: 1.15rem !important;
+  padding: 0.85rem 2rem !important;
+  border-radius: 8px !important;
+  background: linear-gradient(90deg, #3A8DDE 60%, #16B286 100%) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(10,37,64,0.10) !important;
+  cursor: pointer !important;
+  transition: background 0.2s, box-shadow 0.2s !important;
+}
+
+realscout-advanced-search button:hover, realscout-advanced-search button:focus {
+  background: linear-gradient(90deg, #16B286 0%, #3A8DDE 100%) !important;
+  box-shadow: 0 4px 16px rgba(10,37,64,0.14) !important;
+}
