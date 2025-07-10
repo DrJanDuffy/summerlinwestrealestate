@@ -99,6 +99,14 @@ export default function TheVistas() {
             A premier master-planned neighborhood in Summerlin West
           </p>
         </section>
+        {/* Dr. Jan Duffy Callout Section */}
+        <section className={styles.sectionCard} style={{marginBottom: '2rem'}}>
+          <h2>Meet Your Summerlin West Real Estate Expert</h2>
+          <p><strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level educator, she brings analytical precision and deep local knowledge to every transaction. Specializing in <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy is your go-to resource for buying or selling in Summerlin West.</p>
+          <p style={{fontWeight: 'bold', fontSize: '1.1em', marginTop: '1em'}}>Ready to make your move in Summerlin West?</p>
+          <p><strong>Contact Dr. Jan Duffy today for your complimentary market consultation and discover your dream home or get top dollar for your property.</strong></p>
+          <p><Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link></p>
+        </section>
         <section className={styles.sectionCard}>
           <LatestMarketInsightsClient />
         </section>
