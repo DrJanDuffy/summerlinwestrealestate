@@ -119,7 +119,7 @@ useEffect(() => {
 
 ### **File Structure**
 
-```
+```bash
 app/
 ├── 404.tsx                    # RealScout redirect 404 page
 └── page.module.css           # Styles (includes redirect styles)
@@ -275,19 +275,19 @@ const track404Redirect = (pathname: string) => {
 - **Conversion tracking** from redirects
 - **User behavior analysis**
 
-### **2. A/B Testing**
+### **2. A/B Testing for 404 Redirects**
 
 - **Different redirect timing**
 - **Alternative messaging**
 - **Different CTA options**
 
-### **3. Personalization**
+### **3. Personalization Opportunities**
 
 - **User-specific redirects** based on previous behavior
 - **Geographic targeting** for local searches
 - **Property type preferences**
 
-## Conclusion
+## Conclusion & Key Takeaways
 
 The RealScout redirect strategy provides an innovative approach to handling 404 errors by converting them into lead generation opportunities. This implementation maintains professional user experience while maximizing business value from error scenarios.
 
