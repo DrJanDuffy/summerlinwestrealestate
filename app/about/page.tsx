@@ -31,6 +31,40 @@ const structuredData = {
 export default function About() {
   return (
     <div className={styles.page}>
+      <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
+        <h1>Dr. Jan Duffy, REALTOR® - Your Summerlin West Real Estate Expert</h1>
+        <p><strong>Helping families discover luxury living at the gateway to Red Rock Canyon since 2015</strong></p>
+        <p>As a dedicated <strong>Summerlin West REALTOR®</strong> and longtime Las Vegas resident, Dr. Jan Duffy brings unparalleled expertise to one of Nevada's most sought-after master-planned communities. With her unique background as both a licensed real estate professional and doctorate-level educator, Dr. Duffy combines analytical precision with deep local market knowledge to deliver exceptional results for <strong>Summerlin West home buyers and sellers</strong>.</p>
+        <h2>Your Summerlin West Market Specialist</h2>
+        <p>Dr. Duffy specializes exclusively in <strong>Summerlin West real estate</strong>, including the prestigious communities of <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>. She understands what makes this area special: the breathtaking <strong>Red Rock Canyon views</strong>, world-class amenities, and the perfect blend of luxury living with outdoor adventure that draws families from across the country to call Summerlin West home.</p>
+        <p><strong>Recent Market Results:</strong></p>
+        <ul>
+          <li>Successfully guided clients through Summerlin West's competitive market where 50% of homes sell within 30 days</li>
+          <li>Expert navigation of the area's premium price points, with median home values reaching $680,000+</li>
+          <li>Specialized knowledge of new construction opportunities from premier builders like KB Homes, Toll Brothers, and Taylor Morrison</li>
+        </ul>
+        <h2>Comprehensive Summerlin West Services</h2>
+        <p><strong>For Home Sellers:</strong></p>
+        <ul>
+          <li>Strategic pricing analysis leveraging Summerlin West's 8.8% year-over-year appreciation</li>
+          <li>Professional staging consultation to highlight Red Rock Canyon views and luxury features</li>
+          <li>Targeted marketing to qualified buyers seeking Summerlin's lifestyle amenities</li>
+          <li>Expert positioning for quick sales in this fast-moving market</li>
+        </ul>
+        <p><strong>For Home Buyers:</strong></p>
+        <ul>
+          <li>Exclusive access to new construction in Grand Park District and Kestrel Commons Village</li>
+          <li>In-depth neighborhood guidance across Summerlin West's distinct villages</li>
+          <li>School district expertise for families prioritizing top-rated Clark County schools</li>
+          <li>Investment analysis for luxury properties and custom home opportunities</li>
+        </ul>
+        <h2>Deep Community Connections</h2>
+        <p>Living in Summerlin West for over a decade, Dr. Duffy knows every trail in the <strong>150-mile trail system</strong>, the best tee times at <strong>TPC Summerlin</strong>, and which neighborhoods offer the most spectacular <strong>Red Rock Canyon sunset views</strong>. She's an active member of the Summerlin community, regularly participating in <strong>Tour de Summerlin</strong> and volunteering at local schools.</p>
+        <p>Dr. Duffy's clients consistently praise her responsiveness, market expertise, and ability to simplify complex transactions. Whether you're relocating from out-of-state, seeking a luxury retirement home, or ready to sell your Summerlin West property, her commitment to excellence ensures a smooth, successful real estate experience.</p>
+        <p><strong>Ready to explore Summerlin West's luxury lifestyle? Contact Dr. Jan Duffy today for your complimentary market consultation and discover why Summerlin West continues to rank among America's top master-planned communities.</strong></p>
+        <hr />
+        <p><em>Dr. Jan Duffy, REALTOR® | Summerlin West Specialist | Licensed in Nevada | Serving The Ridges, Red Rock Country Club, The Vistas, The Paseos, and all Summerlin West communities</em></p>
+      </section>
       <section className={styles.hero}>
         <h1>About Your Summerlin Real Estate Expert</h1>
         <p className={styles.subtitle}>Local knowledge. Proven results. Personalized service.</p>

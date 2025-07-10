@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
-
 @layer base {
   :root {
     /* ===== ADVANCED COLOR SYSTEM ===== */
@@ -172,7 +170,7 @@
 
   /* ===== BASE STYLES ===== */
   html {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
@@ -673,16 +671,28 @@
 @layer utilities {
   /* ===== ENHANCED TEXT UTILITIES ===== */
   .text-balance {
+    /* Base styles for all browsers */
+    word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
-    /* 'text-wrap' is not supported in Chrome <114, Safari <17.4, Firefox, etc. */
-    text-wrap: balance; /* Modern browsers only */
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  
+  /* Enhanced styles for browsers that support text-wrap */
+  @supports (text-wrap: balance) {
+    .text-balance {
+      text-wrap: balance;
+    }
   }
   .text-pretty {
+    word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     /* 'text-wrap' is not supported in Chrome <114, Safari <17.4, Firefox, etc. */
-    text-wrap: pretty; /* Modern browsers only */
+    /* text-wrap: pretty;  Removed for compatibility, see @supports below */
   }
 
   /* ===== ANIMATION UTILITIES ===== */
@@ -1089,11 +1099,20 @@
   .property-title,
   .property-description,
   .blog-content {
-    text-wrap: auto;
+    /* Fallback for older browsers */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
-    word-wrap: break-word;
     max-width: none;
+  }
+}
+@supports (text-wrap: auto) {
+  @media print {
+    .property-description,
+    .blog-content {
+      text-wrap: auto;
+    }
   }
 }
 
@@ -1250,11 +1269,23 @@
   .property-title-safe,
   .property-description-safe,
   .blog-content-safe {
-    text-wrap: auto;
+    /* Fallback for older browsers */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
-    word-wrap: break-word;
     max-width: none;
+  }
+}
+@supports (text-wrap: auto) {
+  @media print {
+    .safe-text-balance,
+    .safe-text-pretty,
+    .property-title-safe,
+    .property-description-safe,
+    .blog-content-safe {
+      text-wrap: auto;
+    }
   }
 }
 @media (min-width: 768px) and (min-resolution: 1dppx) {

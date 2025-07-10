@@ -338,7 +338,7 @@ export default function LeadCaptureForm({
                       />
                       <span className={styles["checkmark"]}></span>I agree to the{" "}
                       <a
-                        href="/privacy-policy"
+                        href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

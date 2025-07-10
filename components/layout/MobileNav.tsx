@@ -105,13 +105,13 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 Email
               </a>
             </div>
-            {/* Social media links */}
+            {/* Property search links */}
             <div className="flex gap-4 justify-center mt-auto">
               <a
-                href="https://facebook.com"
+                href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
                 rel="noopener"
-                aria-label="Facebook"
+                aria-label="Browse Properties"
                 className={`hover:text-[#3A8DDE] ${styles.iconLarge}`}
               >
                 <svg
@@ -124,10 +124,10 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
                 rel="noopener"
-                aria-label="Instagram"
+                aria-label="View Listings"
                 className={`hover:text-[#16B286] ${styles.iconLarge}`}
               >
                 <svg
@@ -140,10 +140,10 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 </svg>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
                 rel="noopener"
-                aria-label="YouTube"
+                aria-label="Search Properties"
                 className={`hover:text-[#0A2540] ${styles.iconLarge}`}
               >
                 <svg

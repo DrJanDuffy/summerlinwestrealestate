@@ -1,69 +1,73 @@
 "use client";
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMemo } from 'react';
 
-const breadcrumbMap = [
-  { path: "/", name: "Home" },
-  { path: "/current-listing", name: "Vistas Listing" },
-  { path: "/communities", name: "Communities" },
-  { path: "/market", name: "Market" },
-  { path: "/market-reports", name: "Market Reports" },
-  { path: "/compare", name: "Compare" },
-  { path: "/the-vistas", name: "The Vistas" },
-  { path: "/sold", name: "Sold" },
-  { path: "/about", name: "About" },
-  { path: "/contact", name: "Contact" },
-  { path: "/new-homes-summerlin", name: "New Homes" },
-  { path: "/downtown-summerlin", name: "Downtown Summerlin" },
-];
-
-function getBreadcrumbList(pathname: string) {
-  const urlBase = "https://summerlinwestrealestate.com";
-  const crumbs = [];
-  let pathAccumulator = "";
-  for (const { path, name } of breadcrumbMap) {
-    if (pathname === path || (path !== "/" && pathname.startsWith(path))) {
-      pathAccumulator = path;
-      crumbs.push({ name, url: urlBase + path });
-      if (pathname === path) break;
-    }
-    if (path === "/") {
-      crumbs.push({ name, url: urlBase + path });
-    }
-  }
-  // Remove duplicates
-  return crumbs.filter((v, i, arr) => arr.findIndex(x => x.url === v.url) === i);
+interface BreadcrumbItem {
+  label: string;
+  href: string;
 }
 
 export default function BreadcrumbsClient() {
-  const pathname = usePathname() || '/';
-  const breadcrumbs = useMemo(() => getBreadcrumbList(pathname), [pathname]);
-  const breadcrumbJsonLd = useMemo(() => {
-    return {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbs.map((crumb, idx) => ({
-        "@type": "ListItem",
-        "position": idx + 1,
-        "name": crumb.name,
-        "item": crumb.url
-      }))
-    };
-  }, [breadcrumbs]);
-
+  const pathname = usePathname();
+  
+  // Generate breadcrumbs based on current path
+  const generateBreadcrumbs = (): BreadcrumbItem[] => {
+    const segments = pathname.split('/').filter(Boolean);
+    const breadcrumbs: BreadcrumbItem[] = [
+      { label: 'Home', href: '/' }
+    ];
+    
+    let currentPath = '';
+    segments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      const label = segment
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      breadcrumbs.push({ label, href: currentPath });
+    });
+    
+    return breadcrumbs;
+  };
+  
+  const breadcrumbs = generateBreadcrumbs();
+  
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      "item": `https://summerlinwestrealestate.com${item.href}`
+    }))
+  };
+  
+  if (breadcrumbs.length <= 1) return null;
+  
   return (
     <>
-      <nav aria-label="Breadcrumb">
-        <ol>
-          {breadcrumbs.map((crumb, idx) => (
-            <li key={crumb.url}>
-              <a href={crumb.url}>{crumb.name}</a>
-              {idx < breadcrumbs.length - 1 && ' / '}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <nav aria-label="Breadcrumb" className="breadcrumb-nav">
+        <ol className="breadcrumb-list">
+          {breadcrumbs.map((item, index) => (
+            <li key={item.href} className="breadcrumb-item">
+              {index === breadcrumbs.length - 1 ? (
+                <span aria-current="page">{item.label}</span>
+              ) : (
+                <>
+                  <Link href={item.href}>{item.label}</Link>
+                  <span aria-hidden="true"> / </span>
+                </>
+              )}
             </li>
           ))}
         </ol>
       </nav>
-      <script type="application/ld+json" suppressHydrationWarning>{JSON.stringify(breadcrumbJsonLd)}</script>
     </>
   );
 } 

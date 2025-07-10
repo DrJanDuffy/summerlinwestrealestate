@@ -83,8 +83,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
+        outfit: ["var(--font-outfit)", "sans-serif"],
+        geist: ["var(--font-geist-sans)", "sans-serif"],
       },
     },
   },

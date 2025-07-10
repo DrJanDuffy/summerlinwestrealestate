@@ -16,18 +16,18 @@ export const metadata = {
 
 const socialLinks = [
   {
-    name: "Facebook",
-    url: "https://facebook.com",
+    name: "Browse Properties",
+    url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
     icon: <FaFacebook />, color: "#3A8DDE",
   },
   {
-    name: "Instagram",
-    url: "https://instagram.com",
+    name: "View Listings",
+    url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
     icon: <FaInstagram />, color: "#16B286",
   },
   {
-    name: "YouTube",
-    url: "https://youtube.com",
+    name: "Search Properties",
+    url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
     icon: <FaYoutube />, color: "#0A2540",
   },
 ];

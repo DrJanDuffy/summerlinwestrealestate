@@ -117,4 +117,13 @@
   font-size: 15px;
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+}
+
+.calloutSection {
+  margin-top: 2rem;
+}
+.calloutHighlight {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 1em;
 } 

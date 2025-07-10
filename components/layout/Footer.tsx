@@ -114,10 +114,10 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex gap-4 mt-2 md:mt-0">
           <a
-            href="https://facebook.com"
+            href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
             target="_blank"
             rel="noopener"
-            aria-label="Facebook"
+            aria-label="Browse Properties"
             className="hover:text-[#3A8DDE]"
           >
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -125,10 +125,10 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="https://instagram.com"
+            href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
             target="_blank"
             rel="noopener"
-            aria-label="Instagram"
+            aria-label="View Listings"
             className="hover:text-[#16B286]"
           >
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -136,10 +136,10 @@ const Footer: React.FC = () => {
             </svg>
           </a>
           <a
-            href="https://youtube.com"
+            href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
             target="_blank"
             rel="noopener"
-            aria-label="YouTube"
+            aria-label="Search Properties"
             className="hover:text-[#0A2540]"
           >
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">

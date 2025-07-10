@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
@@ -11,7 +11,29 @@ import RealScoutWidget from '../components/ui/RealScoutWidget';
 import styles from './page.module.css';
 import Header from '../components/layout/Header';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://summerlinwestrealestate.com"),
@@ -73,6 +95,91 @@ export const metadata: Metadata = {
   },
 };
 
+// Enhanced Schema Markup
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://summerlinwestrealestate.com/#agent",
+      "name": "Dr. Jan Duffy",
+      "jobTitle": "REALTOR®",
+      "description": "Summerlin West real estate specialist with 15+ years of experience",
+      "url": "https://summerlinwestrealestate.com",
+      "telephone": "+1-702-555-1234",
+      "email": "jan@summerlinwestrealestate.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11312 Parkside Way",
+        "addressLocality": "Las Vegas",
+        "addressRegion": "NV",
+        "postalCode": "89138",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.1865,
+        "longitude": -115.3432
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Summerlin West"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Summerlin West Homes for Sale",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "name": "The Vistas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Place",
+              "name": "Stonebridge"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://summerlinwestrealestate.com/#organization",
+      "name": "Summerlin West Real Estate",
+      "url": "https://summerlinwestrealestate.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://summerlinwestrealestate.com/images/logo.png"
+      },
+      "sameAs": [
+        "https://www.facebook.com/summerlinwestrealestate",
+        "https://www.linkedin.com/company/summerlin-west-real-estate"
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://summerlinwestrealestate.com/#place",
+      "name": "Summerlin West",
+      "description": "Luxury master-planned community in Las Vegas with Red Rock Canyon views",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.1865,
+        "longitude": -115.3432
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas",
+        "addressRegion": "NV",
+        "addressCountry": "US"
+      }
+    }
+  ]
+};
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -93,11 +200,15 @@ export default function RootLayout({
           }
         `}</style>
       </Head>
-      <body>
+      <body className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
           strategy="afterInteractive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
         <Header />
         <main className="pt-16">

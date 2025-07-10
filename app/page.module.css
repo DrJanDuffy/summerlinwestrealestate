@@ -1787,3 +1787,147 @@ a.secondary {
     padding: 1rem;
   }
 }
+
+.calloutSection {
+  margin-bottom: 2rem;
+}
+.calloutHighlight {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+/* Enhanced 404 Page Styles */
+.redirectMessage {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #16b286 0%, #3a8dde 100%);
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(22, 178, 134, 0.2);
+}
+
+.redirectMessage h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.redirectMessage p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.suggestions {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(58, 141, 222, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #3a8dde;
+}
+
+.suggestions h3 {
+  margin: 0 0 1rem 0;
+  color: #0a2540;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggestions li {
+  margin-bottom: 0.75rem;
+}
+
+.suggestionLink {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  color: #3a8dde;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #e1e8f0;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.suggestionLink:hover {
+  background: #3a8dde;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(58, 141, 222, 0.2);
+}
+
+.searchSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f7f9fc 0%, #e8f4fd 100%);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.searchSection h3 {
+  margin: 0 0 0.5rem 0;
+  color: #0a2540;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.searchSection p {
+  margin: 0 0 1.5rem 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.searchActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.searchLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  color: #0a2540;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid #e1e8f0;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.searchLink:hover {
+  background: #0a2540;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 37, 64, 0.15);
+}
+
+@media (max-width: 768px) {
+  .suggestions {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+
+  .searchActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .searchLink {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}

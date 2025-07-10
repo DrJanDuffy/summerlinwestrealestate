@@ -63,7 +63,7 @@ function HomeHeroImage() {
   return (
     <Image
       src={src}
-      alt="Luxury homes in Summerlin West with Red Rock Canyon views"
+      alt="Luxury homes in Summerlin West, Las Vegas with Red Rock Canyon mountain views and desert landscaping - Dr. Jan Duffy Real Estate"
       width={600}
       height={300}
       className={styles.heroImage}
@@ -121,41 +121,22 @@ export default function Home() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    "mainEntity": faqs.map((faq) => ({
       "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
+      "name": faq.question,
+      "acceptedAnswer": {
         "@type": "Answer",
-        text: faq.answer,
+        "text": faq.answer,
       },
     })),
   };
 
   return (
     <>
-      <Head>
-        <title>
-          Summerlin West Homes for Sale | Luxury Real Estate & Communities
-        </title>
-        <meta
-          name="description"
-          content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist."
-        />
-        <meta
-          property="og:title"
-          content="Summerlin West Homes for Sale | Luxury Real Estate & Communities"
-        />
-        <meta
-          property="og:description"
-          content="Discover luxury homes for sale in Summerlin West. Explore The Vistas, Redpoint, Stonebridge & more. Get expert guidance from your local Summerlin West real estate specialist."
-        />
-        <meta property="og:image" content="/images/og-image.svg" />
-        <link rel="canonical" href="https://summerlinwestrealestate.com/" />
-        <script type="application/ld+json" suppressHydrationWarning>
-          {JSON.stringify(faqJsonLd)}
-        </script>
-      </Head>
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <main className={styles.luxuryMainContent}>
         <SummerlinWestOverview />
         {/* Hero Section */}
