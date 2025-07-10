@@ -34,6 +34,13 @@ export default function MarketReports() {
         <h1>Summerlin Market Reports</h1>
         <p className={styles.subtitle}>Get the latest insights, trends, and data for the Summerlin real estate market</p>
       </section>
+      {/* Dr. Jan Duffy Callout Section */}
+      <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
+        <h2>Meet Your Summerlin West Real Estate Expert</h2>
+        <p><strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level educator, she brings analytical precision and deep local knowledge to every transaction.</p>
+        <p>Specializing in <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy is your go-to resource for buying or selling in Summerlin West.</p>
+        <p><Link href="/about">Learn more about Dr. Duffy &rarr;</Link></p>
+      </section>
       <LatestMarketInsightsClient />
       <section className={styles.sectionCard}>
         <h2>Current Market Statistics</h2>
