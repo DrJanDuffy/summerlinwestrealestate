@@ -100,7 +100,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Header />
-        <main>
+        <main className="pt-16">
           {children}
         </main>
         <div className={styles.sectionCard}>
