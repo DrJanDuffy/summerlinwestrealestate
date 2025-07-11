@@ -1931,3 +1931,34 @@ a.secondary {
     justify-content: center;
   }
 }
+
+.faqItem {
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faqQuestion {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 0 8px 0;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #0A2540;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+}
+
+.faqQuestion:focus,
+.faqQuestion:hover {
+  color: #3A8DDE;
+}
+
+.faqAnswer {
+  padding: 8px 0 16px 0;
+  color: #3A8DDE;
+  font-size: 0.98rem;
+  transition: max-height 0.3s, opacity 0.3s;
+}

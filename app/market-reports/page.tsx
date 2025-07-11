@@ -6,9 +6,38 @@ import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsights
 import dynamic from 'next/dynamic';
 import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
 import styles from "../page.module.css";
+import { useState } from 'react';
 const LeadCaptureForm = dynamic(() => import("../../components/ui/LeadCaptureForm"), { ssr: false });
 
 export default function MarketReports() {
+  // FAQ accordion state
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const faqs = [
+    {
+      q: 'What are the best neighborhoods in Summerlin West?',
+      a: 'Popular neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options.'
+    },
+    {
+      q: 'What is the average home price in Summerlin West?',
+      a: 'The median home price is around $850,000, with luxury homes reaching $2M+.'
+    },
+    {
+      q: 'Are there new construction homes available?',
+      a: 'Yes! New construction is available in Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives.'
+    },
+    {
+      q: 'How do I schedule a home tour?',
+      a: 'Contact us via the form or call to schedule a private showing of any property.'
+    },
+    {
+      q: 'What makes Summerlin West special?',
+      a: 'Master-planned communities, top-rated schools, Red Rock Canyon access, and a family-friendly lifestyle with excellent amenities.'
+    },
+    {
+      q: 'How can I get a free market report?',
+      a: 'Fill out the form on this page or visit our Market Reports section for a free analysis and insights.'
+    }
+  ];
   return (
     <div className={styles.page}>
       <Head>
@@ -44,54 +73,73 @@ export default function MarketReports() {
       <LatestMarketInsightsClient />
       <section className={styles.sectionCard}>
         <h2>Current Market Statistics</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-          <div className="card p-6 text-center">
-            <div className="text-3xl font-extrabold text-brand-600">312</div>
-            <div className="text-sm text-text-secondary mt-1">Active Listings</div>
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>312</div>
+            <div className={styles.statLabel}>Active Listings</div>
           </div>
-          <div className="card p-6 text-center">
-            <div className="text-3xl font-extrabold text-brand-600">14</div>
-            <div className="text-sm text-text-secondary mt-1">Avg Days on Market</div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>14</div>
+            <div className={styles.statLabel}>Avg Days on Market</div>
           </div>
-          <div className="card p-6 text-center">
-            <div className="text-3xl font-extrabold text-brand-600">$850K</div>
-            <div className="text-sm text-text-secondary mt-1">Median Home Price</div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>$850K</div>
+            <div className={styles.statLabel}>Median Home Price</div>
           </div>
-          <div className="card p-6 text-center">
-            <div className="text-3xl font-extrabold text-brand-600">98%</div>
-            <div className="text-sm text-text-secondary mt-1">List-to-Sale Ratio</div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>98%</div>
+            <div className={styles.statLabel}>List-to-Sale Ratio</div>
           </div>
         </div>
       </section>
       <section className={styles.sectionCard}>
         <h2>Frequently Asked Questions</h2>
-        <ul className={styles.contentList}>
-          <li><strong>What are the best neighborhoods in Summerlin West?</strong><br/>Popular neighborhoods include The Vistas, Redpoint, Stonebridge, The Cliffs, and Reverence. Each offers unique amenities and lifestyle options.</li>
-          <li><strong>What is the average home price in Summerlin West?</strong><br/>The median home price is around $850,000, with luxury homes reaching $2M+.</li>
-          <li><strong>Are there new construction homes available?</strong><br/>Yes! New construction is available in Redpoint, Stonebridge, and The Cliffs. Contact us for the latest releases and builder incentives.</li>
-          <li><strong>How do I schedule a home tour?</strong><br/>Contact us via the form or call to schedule a private showing of any property.</li>
-          <li><strong>What makes Summerlin West special?</strong><br/>Master-planned communities, top-rated schools, Red Rock Canyon access, and a family-friendly lifestyle with excellent amenities.</li>
-          <li><strong>How can I get a free market report?</strong><br/>Fill out the form on this page or visit our Market Reports section for a free analysis and insights.</li>
-        </ul>
+        <div className={styles.contentList}>
+          {faqs.map((faq, i) => (
+            <div key={faq.q} className={styles.faqItem}>
+              <button
+                aria-expanded={openFAQ === i}
+                aria-controls={`faq-panel-${i}`}
+                className={styles.faqQuestion}
+                onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
+              >
+                {faq.q}
+              </button>
+              <div
+                id={`faq-panel-${i}`}
+                hidden={openFAQ !== i}
+                className={styles.faqAnswer}
+              >
+                {faq.a}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       <section className={styles.sectionCard}>
         <h2>Monthly Market Trends</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <Image
-            src="https://placehold.co/400x220?text=Price+Trends"
-            alt="Summerlin home price trends chart"
-            width={400}
-            height={220}
-            className={styles.chartImage}
-            priority
-          />
-          <Image
-            src="https://placehold.co/400x220?text=Inventory+Trends"
-            alt="Summerlin housing inventory trends chart"
-            width={400}
-            height={220}
-            className={styles.chartImage}
-          />
+        <div className={styles.chartsGrid}>
+          <div>
+            <h3 className={styles.centerTitle}>Price Trends</h3>
+            <Image
+              src="https://placehold.co/400x220?text=Price+Trends"
+              alt="Summerlin home price trends chart"
+              width={400}
+              height={220}
+              className={styles.chartImage}
+              priority
+            />
+          </div>
+          <div>
+            <h3 className={styles.centerTitle}>Inventory Trends</h3>
+            <Image
+              src="https://placehold.co/400x220?text=Inventory+Trends"
+              alt="Summerlin housing inventory trends chart"
+              width={400}
+              height={220}
+              className={styles.chartImage}
+            />
+          </div>
         </div>
       </section>
       <section className={styles.sectionCard}>
@@ -106,26 +154,26 @@ export default function MarketReports() {
       </section>
       <section className={styles.sectionCard}>
         <h2>Summerlin Market Analysis</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="card p-6">
-            <strong className="block mb-2">What's driving the market?</strong>
-            <p className="text-text-secondary">
+        <div className={styles.marketAnalysis}>
+          <div className={styles.analysisSection}>
+            <strong>What's driving the market?</strong>
+            <p>
               Low inventory, high demand, and continued migration to Las Vegas
               are keeping prices strong. New construction is helping, but
               resale homes remain in high demand.
             </p>
           </div>
-          <div className="card p-6">
-            <strong className="block mb-2">Which neighborhoods are hottest?</strong>
-            <p className="text-text-secondary">
+          <div className={styles.analysisSection}>
+            <strong>Which neighborhoods are hottest?</strong>
+            <p>
               Redpoint, Stonebridge, and The Cliffs are seeing the fastest
               sales and highest appreciation. Luxury segments in The Ridges
               and Reverence are also performing well.
             </p>
           </div>
-          <div className="card p-6">
-            <strong className="block mb-2">What's the outlook?</strong>
-            <p className="text-text-secondary">
+          <div className={styles.analysisSection}>
+            <strong>What's the outlook?</strong>
+            <p>
               Experts predict continued growth, especially in walkable,
               amenity-rich communities. Mortgage rates and new builder
               incentives will shape the market in the coming months.
