@@ -151,7 +151,9 @@ export default function Communities() {
                     Learn more about {community.name} and see available homes.
                   </p>
                   <Link 
-                    href={`/communities/${community.slug}`} 
+                    href={community.slug === "the-vistas" 
+                      ? "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0" 
+                      : `/communities/${community.slug}`}
                     className={styles.communityLink}
                     aria-label={`View details about ${community.name} community`}
                   >
@@ -242,7 +244,9 @@ export default function Communities() {
                     ))}
                   </div>
                   <Link 
-                    href={`/communities/${community.slug}`}
+                    href={community.slug === "the-vistas" 
+                      ? "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0" 
+                      : `/communities/${community.slug}`}
                     className={styles.communityLink}
                     aria-label={`Explore ${community.name} homes and listings`}
                   >
