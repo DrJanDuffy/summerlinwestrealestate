@@ -106,14 +106,14 @@ const schemaMarkup = {
       "jobTitle": "REALTOR®",
       "description": "Summerlin West real estate specialist with 15+ years of experience",
       "url": "https://summerlinwestrealestate.com",
-      "telephone": "+1-702-555-1234",
+      "telephone": "+1-702-550-0112",
       "email": "jan@summerlinwestrealestate.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "11312 Parkside Way",
+        "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
         "addressLocality": "Las Vegas",
         "addressRegion": "NV",
-        "postalCode": "89138",
+        "postalCode": "89135",
         "addressCountry": "US"
       },
       "geo": {
@@ -185,6 +185,49 @@ export const viewport = {
   initialScale: 1,
 };
 
+function StickyPhoneMenu() {
+  return (
+    <div style={{
+      position: 'fixed',
+      top: '30%',
+      left: 0,
+      zIndex: 2000,
+      background: '#0A2540',
+      color: '#fff',
+      borderRadius: '0 12px 12px 0',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+      minWidth: 180,
+      minHeight: 60,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '16px 12px',
+      fontWeight: 600,
+      fontSize: 16,
+      gap: 8,
+    }} aria-label="Call Summerlin West Real Estate">
+      <span style={{marginBottom: 4}}>Call Us</span>
+      <a href="tel:7025500112" style={{
+        color: '#fff',
+        background: '#16B286',
+        borderRadius: 8,
+        padding: '8px 16px',
+        textDecoration: 'none',
+        fontWeight: 700,
+        fontSize: 18,
+        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+      }}>
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style={{marginRight: 4}}><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" /></svg>
+        (702) 550-0112
+      </a>
+    </div>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -201,6 +244,7 @@ export default function RootLayout({
         `}</style>
       </Head>
       <body className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <StickyPhoneMenu />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"

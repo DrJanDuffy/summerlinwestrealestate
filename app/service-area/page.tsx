@@ -241,7 +241,7 @@ export default function ServiceArea() {
         <div className={styles.ctaContent}>
           <h2>Ready to Tour The Vistas?</h2>
           <p>Contact Dr. Jan Duffy for private showings, market analysis, or exclusive access to off-market properties in Summerlin West.</p>
-          <a href="tel:7028420410" className={styles.ctaButton}>Call (702) 842-0410</a>
+          <a href="tel:7025500112" className={styles.ctaButton}>Call (702) 550-0112</a>
           <a href="mailto:jan@lasvegashomeexpert.com" className={styles.ctaButtonSecondary}>Email Dr. Jan Duffy</a>
           <div className={styles.ctaSocials}>
             <a href="https://www.youtube.com/@DrDuffy" target="_blank" rel="noopener" aria-label="YouTube"><img src="/images/youtube.svg" alt="YouTube" /></a>

@@ -12,9 +12,9 @@ const Footer: React.FC = () => {
             Summerlin West Real Estate
           </h3>
           <div className="text-sm text-gray-700 mb-2">
-            1234 Summerlin Centre Dr
+            1980 Festival Plaza Dr (One Summerlin)
             <br />
-            Las Vegas, NV 89138
+            Las Vegas, NV 89135
           </div>
           <div className="text-sm text-gray-700 mb-2">NV License #1234567</div>
           <div className="text-sm text-gray-700 mb-2">
@@ -22,8 +22,8 @@ const Footer: React.FC = () => {
           </div>
           <div className="text-sm text-gray-700">
             Phone:{" "}
-            <a href="tel:7025551234" className="text-[#3A8DDE]">
-              (702) 555-1234
+            <a href="tel:7025500112" className="text-[#3A8DDE]">
+              (702) 550-0112
             </a>
           </div>
           <div className="text-sm text-gray-700">

@@ -22,10 +22,10 @@ const listings = [
     name: "The Vistas Summerlin Home for Sale",
     description: "Modern 4 bed, 3 bath home in The Vistas, Summerlin.",
     address: {
-      street: "1234 Vistas Edge Dr",
+      street: "1980 Festival Plaza Dr (One Summerlin)",
       city: "Las Vegas",
       region: "NV",
-      postal: "89138",
+      postal: "89135",
       country: "US",
     },
     images: [
@@ -58,6 +58,7 @@ const listingsJsonLd = {
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
+    telephone: "+1-702-550-0112"
   })),
 };
 

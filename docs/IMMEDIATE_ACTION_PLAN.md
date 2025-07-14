@@ -186,17 +186,17 @@ const localBusinessSchema = {
   "image": "/images/dr-jan-duffy-headshot.jpg",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "11312 Parkside Way",
+    "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
     "addressLocality": "Las Vegas",
     "addressRegion": "NV",
-    "postalCode": "89138"
+    "postalCode": "89135"
   },
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 36.1865,
     "longitude": -115.3432
   },
-  "telephone": "+1-702-555-1234",
+  "telephone": "+1-702-550-0112",
   "email": "jan@summerlinwestrealestate.com",
   "url": "https://summerlinwestrealestate.com",
   "areaServed": "Summerlin West, Las Vegas, NV",

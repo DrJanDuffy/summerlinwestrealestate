@@ -84,7 +84,7 @@ export default function Contact() {
           <div className={styles.officeLocationContainer}>
             <iframe
               title="Office Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.123456789!2d-115.34540000000001!3d36.186500000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c1a2b3c4d5e6%3A0x1234567890abcdef!2s1234%20Summerlin%20Centre%20Dr%2C%20Las%20Vegas%2C%20NV%2089138!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.123456789!2d-115.3336!3d36.1540!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c1a2b3c4d5e6%3A0x1234567890abcdef!2s1980%20Festival%20Plaza%20Dr%2C%20Las%20Vegas%2C%20NV%2089135!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
               width={350}
               height={200}
               className={styles.mapIframe}
@@ -95,12 +95,12 @@ export default function Contact() {
             <div className={styles.officeDetails}>
               <div className={styles.officeDetail}>
                 <FaMapMarkerAlt className={styles.icon} />
-                <span className={styles.detailText}>1234 Summerlin Centre Dr, Las Vegas, NV 89138</span>
+                <span className={styles.detailText}>1980 Festival Plaza Dr (One Summerlin), Las Vegas, NV 89135</span>
               </div>
               <div className={styles.officeDetail}>
                 <FaPhone className={styles.icon} />
-                <a href="tel:7025551234" className={styles.detailText}>
-                  (702) 555-1234
+                <a href="tel:7025500112" className={styles.detailText}>
+                  (702) 550-0112
                 </a>
               </div>
               <div className={styles.officeDetail}>

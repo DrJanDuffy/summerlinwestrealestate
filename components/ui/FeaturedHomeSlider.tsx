@@ -8,6 +8,7 @@ import styles from './FeaturedHomeSlider.module.css';
 export type FeaturedHomeImage = {
   src: string;
   caption: string;
+  mat?: boolean;
 };
 
 interface FeaturedHomeSliderProps {
@@ -31,7 +32,7 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
               alt={img.caption}
               width={800}
               height={450}
-              className={styles.slideImage}
+              className={`${styles.slideImage} ${img.mat ? styles.matFrame : ''}`}
               priority={idx === 0}
             />
             <div className={styles.slideCaption}>
@@ -60,7 +61,7 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
                 alt={img.caption}
                 width={400}
                 height={225}
-                className={styles.modalGridImage}
+                className={`${styles.modalGridImage} ${img.mat ? styles.matFrame : ''}`}
               />
               <div className={styles.modalGridCaption}>{img.caption}</div>
             </div>

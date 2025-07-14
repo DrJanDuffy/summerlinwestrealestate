@@ -77,7 +77,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             {/* Quick actions */}
             <div className="flex flex-col gap-3 mb-8">
               <a
-                href="tel:7025551234"
+                href="tel:7025500112"
                 className={`w-full flex items-center justify-center gap-2 py-3 px-4 bg-[#16B286] text-white rounded font-semibold text-base shadow hover:bg-[#13996e] transition-colors ${styles.touchManipulation}`}
               >
                 <svg

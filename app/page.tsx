@@ -104,7 +104,7 @@ export default function Home() {
     {
       question: "How do I schedule a home tour in Summerlin West?",
       answer:
-        "Contact us via the form or call (702) 555-1234 to schedule a private showing of any Summerlin West property.",
+        "Contact us via the form or call (702) 550-0112 to schedule a private showing of any Summerlin West property.",
     },
     {
       question: "What makes Summerlin West special?",
@@ -126,7 +126,7 @@ export default function Home() {
       "name": faq.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": faq.answer,
+        "text": faq.answer.replace('(702) 555-1234', '(702) 550-0112'),
       },
     })),
   };

@@ -61,10 +61,10 @@ export default function CurrentListing() {
               "description": "Modern 4 bed, 3 bath home in The Vistas, Summerlin. Upgraded kitchen, smart home tech, mountain views.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "1234 Vistas Edge Dr",
+                "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
                 "addressLocality": "Las Vegas",
                 "addressRegion": "NV",
-                "postalCode": "89138",
+                "postalCode": "89135",
                 "addressCountry": "US"
               },
               "image": [
@@ -82,7 +82,8 @@ export default function CurrentListing() {
                 "price": "899000",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock"
-              }
+              },
+              "telephone": "+1-702-550-0112"
             }, null, 2)
           }}
         />

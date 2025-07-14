@@ -325,9 +325,9 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
   const contactMethods = [
     {
       type: "phone",
-      href: "tel:7028420410",
+      href: "tel:7025500112",
       label: "Call Now",
-      number: "(702) 842-0410",
+      number: "(702) 550-0112",
       icon: "📞",
       primary: true
     },
@@ -416,7 +416,7 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
       >
         <div className={styles.floatingContent}>
           <span>Interested in {subdivision.name}?</span>
-          <a href="tel:7028420410" className={styles.floatingButton}>
+          <a href="tel:7025500112" className={styles.floatingButton}>
             📞 Call Now
           </a>
         </div>

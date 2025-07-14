@@ -182,7 +182,7 @@ export default function MapsPage() {
           <div className={styles.areaCard}>
             <h3>The Vistas</h3>
             <p>Luxury homes with mountain views and premium amenities</p>
-            <Link href="/the-vistas" className={styles.areaLink}>
+            <Link href="https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0" className={styles.areaLink}>
               Explore Area
             </Link>
           </div>
