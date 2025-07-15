@@ -20,4 +20,4 @@ export const LOGO_IMAGES = {
   main: "/logos/main-logo.svg",
   partner: "/logos/partner-logo.png",
   // Add more logos as needed
-}; 
+};

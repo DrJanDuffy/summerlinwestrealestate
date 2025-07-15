@@ -1,3 +1,13 @@
+.blogContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -5,20 +15,40 @@
 }
 
 .title {
-  font-size: 2.7rem;
+  font-size: var(--h1-size, 2.7rem);
   font-weight: 800;
-  margin-bottom: 24px;
-  color: #0A2540;
+  margin-bottom: var(--heading-margin, 24px);
+  color: #0a2540;
 }
 
 .description {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-size: 1.2rem;
-  margin-bottom: 40px;
+  margin-bottom: var(--p-margin, 40px);
+}
+
+:global(h1) {
+  font-size: var(--h1-size, 2.7rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(h2) {
+  font-size: var(--h2-size, 2rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(h3) {
+  font-size: var(--h3-size, 1.4rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(p) {
+  line-height: var(--line-height, 1.6);
+  margin-bottom: var(--p-margin, 18px);
+}
+:global(section) {
+  margin-bottom: var(--section-margin, 40px);
 }
 
 .link {
-  color: #16B286;
+  color: #16b286;
   text-decoration: underline;
 }
 
@@ -38,7 +68,7 @@
 .article {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -56,18 +86,18 @@
 .articleTitle {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #0A2540;
+  color: #0a2540;
   margin-bottom: 10px;
 }
 
 .introText {
-  color: #16B286;
+  color: #16b286;
   font-weight: 500;
   margin-bottom: 8px;
 }
 
 .featuredNeighborhood {
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -79,19 +109,19 @@
 }
 
 .marketInsight {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 500;
   margin-bottom: 8px;
 }
 
 .localEvent {
-  color: #16B286;
+  color: #16b286;
   font-weight: 500;
   margin-bottom: 18px;
 }
 
 .ctaText {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 500;
   margin-bottom: 18px;
 }
@@ -103,20 +133,20 @@
 }
 
 .date {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-weight: 500;
   font-size: 14px;
 }
 
 .readArticleLink {
   color: #fff;
-  background: #3A8DDE;
+  background: #3a8dde;
   border-radius: 999px;
   padding: 0.5rem 1.2rem;
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 .calloutSection {
@@ -126,4 +156,4 @@
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 1em;
-} 
+}

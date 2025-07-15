@@ -1,5 +1,6 @@
 .imageContainer {
-  border: 6px solid var(--avatar-border-color, #FFD700);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  background: #fff;
-} 
+  width: var(--image-width, 62%);
+}
+.textContainer {
+  width: var(--text-width, 38%);
+}

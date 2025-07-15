@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './AboutImage.module.css';
+import styles from "./AboutImage.module.css";
 
 export default function AboutImage({
   src,
@@ -24,4 +24,4 @@ export default function AboutImage({
       loading="lazy"
     />
   );
-} 
+}

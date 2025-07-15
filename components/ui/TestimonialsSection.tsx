@@ -87,7 +87,7 @@ const testimonials = [
 
 const TestimonialsSection = React.memo(function TestimonialsSection() {
   const [index, setIndex] = useState(0);
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % testimonials.length);
@@ -96,29 +96,36 @@ const TestimonialsSection = React.memo(function TestimonialsSection() {
   }, []);
 
   const testimonial = useMemo(() => testimonials[index], [index]);
-  
+
   const handlePrevious = useCallback(() => {
     setIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
   }, []);
-  
+
   const handleNext = useCallback(() => {
     setIndex((i) => (i + 1) % testimonials.length);
   }, []);
-  
+
   // Memoize JSON-LD data
-  const reviewsJsonLd = useMemo(() => ({
-    "@context": "https://schema.org",
-    "@graph": testimonials.map((t) => ({
-      "@type": "Review",
-      itemReviewed: {
-        "@type": "RealEstateAgent",
-        name: "Summerlin West Real Estate",
-      },
-      author: { "@type": "Person", name: t.author },
-      reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: "5" },
-      reviewBody: t.body,
-    })),
-  }), []);
+  const reviewsJsonLd = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@graph": testimonials.map((t) => ({
+        "@type": "Review",
+        itemReviewed: {
+          "@type": "RealEstateAgent",
+          name: "Summerlin West Real Estate",
+        },
+        author: { "@type": "Person", name: t.author },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: t.rating,
+          bestRating: "5",
+        },
+        reviewBody: t.body,
+      })),
+    }),
+    [],
+  );
 
   return (
     <>

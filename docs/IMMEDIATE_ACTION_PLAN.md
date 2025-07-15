@@ -32,30 +32,30 @@ import { Inter } from "next/font/google";
 const nextConfig = {
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'react-icons']
+    optimizePackageImports: ["framer-motion", "react-icons"],
   },
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'files.keepingcurrentmatters.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "files.keepingcurrentmatters.com",
+        pathname: "/**",
       },
     ],
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
 ```
 
 ### **3. Analytics Setup (30 minutes)**
@@ -90,7 +90,7 @@ const mobileNavItems = [
   { href: "/properties", label: "Homes" },
   { href: "/communities", label: "Communities" },
   { href: "/market", label: "Market" },
-  { href: "/contact", label: "Contact" }
+  { href: "/contact", label: "Contact" },
 ];
 ```
 
@@ -108,7 +108,9 @@ const mobileNavItems = [
 
 ```css
 /* Ensure minimum touch target size */
-button, a, input[type="submit"] {
+button,
+a,
+input[type="submit"] {
   min-height: 44px;
   min-width: 44px;
 }
@@ -132,7 +134,7 @@ button, a, input[type="submit"] {
 // Add floating CTA for mobile
 const FloatingCTA = () => (
   <div className="fixed bottom-4 right-4 z-50 md:hidden">
-    <Link 
+    <Link
       href="/contact"
       className="bg-brand-600 text-white px-6 py-3 rounded-full shadow-lg"
     >
@@ -149,9 +151,9 @@ const FloatingCTA = () => (
 ```typescript
 // Add progressive form fields
 const formSteps = [
-  { fields: ['name', 'email'], title: 'Get Your Market Report' },
-  { fields: ['phone', 'timeline'], title: 'Tell Us More' },
-  { fields: ['budget', 'preferences'], title: 'Property Preferences' }
+  { fields: ["name", "email"], title: "Get Your Market Report" },
+  { fields: ["phone", "timeline"], title: "Tell Us More" },
+  { fields: ["budget", "preferences"], title: "Property Preferences" },
 ];
 ```
 
@@ -182,33 +184,33 @@ Create content plan for next 3 months:
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "name": "Dr. Jan Duffy",
-  "image": "/images/dr-jan-duffy-headshot.jpg",
-  "address": {
+  name: "Dr. Jan Duffy",
+  image: "/images/dr-jan-duffy-headshot.jpg",
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
-    "addressLocality": "Las Vegas",
-    "addressRegion": "NV",
-    "postalCode": "89135"
+    streetAddress: "1980 Festival Plaza Dr (One Summerlin)",
+    addressLocality: "Las Vegas",
+    addressRegion: "NV",
+    postalCode: "89135",
   },
-  "geo": {
+  geo: {
     "@type": "GeoCoordinates",
-    "latitude": 36.1865,
-    "longitude": -115.3432
+    latitude: 36.1865,
+    longitude: -115.3432,
   },
-  "telephone": "+1-702-550-0112",
-  "email": "jan@summerlinwestrealestate.com",
-  "url": "https://summerlinwestrealestate.com",
-  "areaServed": "Summerlin West, Las Vegas, NV",
-  "serviceArea": {
+  telephone: "+1-702-550-0112",
+  email: "jan@summerlinwestrealestate.com",
+  url: "https://summerlinwestrealestate.com",
+  areaServed: "Summerlin West, Las Vegas, NV",
+  serviceArea: {
     "@type": "GeoCircle",
-    "geoMidpoint": {
+    geoMidpoint: {
       "@type": "GeoCoordinates",
-      "latitude": 36.1865,
-      "longitude": -115.3432
+      latitude: 36.1865,
+      longitude: -115.3432,
     },
-    "geoRadius": "5000"
-  }
+    geoRadius: "5000",
+  },
 };
 ```
 
@@ -282,19 +284,19 @@ input:focus {
 ```typescript
 // Add to components
 const trackEvent = (action: string, label: string) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', action, {
-      event_category: 'User Engagement',
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", action, {
+      event_category: "User Engagement",
       event_label: label,
     });
   }
 };
 
 // Track form submissions
-trackEvent('form_submit', 'lead_capture');
+trackEvent("form_submit", "lead_capture");
 
 // Track phone clicks
-trackEvent('phone_click', 'contact');
+trackEvent("phone_click", "contact");
 ```
 
 ### **2. Conversion Tracking (15 minutes)**

@@ -1,38 +1,64 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
+import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import LeadCaptureFormClient from "../../components/ui/LeadCaptureFormClient";
 
 // Metadata export (replaces Head component)
 export const metadata = {
-  title: "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
-  description: "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
+  title:
+    "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
+  description:
+    "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
   openGraph: {
-    title: "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
-    description: "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
-  }
+    title:
+      "Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market",
+    description:
+      "Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.",
+  },
 };
 
 export default function DowntownSummerlin() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles.downtownSummerlinContainer}`}>
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>
           <h1>Downtown Summerlin Real Estate Guide</h1>
           <p className={styles.subtitle}>
-            Your comprehensive resource for living, shopping, and investing in Downtown Summerlin
+            Your comprehensive resource for living, shopping, and investing in
+            Downtown Summerlin
           </p>
         </section>
         {/* Dr. Jan Duffy Callout Section */}
         <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
           <h2>Meet Your Summerlin West Real Estate Expert</h2>
-          <p><strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level educator, she brings analytical precision and deep local knowledge to every transaction. Specializing in <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy is your go-to resource for buying or selling in Summerlin West.</p>
-          <p className={styles.calloutHighlight}>Ready to make your move in Summerlin West?</p>
-          <p><strong>Contact Dr. Jan Duffy today for your complimentary market consultation and discover your dream home or get top dollar for your property.</strong></p>
-          <p><Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link></p>
+          <p>
+            <strong>Dr. Jan Duffy, REALTOR®</strong> has helped families
+            discover luxury living at the gateway to Red Rock Canyon since 2015.
+            As a longtime resident and doctorate-level educator, she brings
+            analytical precision and deep local knowledge to every transaction.
+            Specializing in{" "}
+            <strong>
+              The Ridges, Red Rock Country Club, The Vistas, and The Paseos
+            </strong>
+            , Dr. Duffy is your go-to resource for buying or selling in
+            Summerlin West.
+          </p>
+          <p className={styles.calloutHighlight}>
+            Ready to make your move in Summerlin West?
+          </p>
+          <p>
+            <strong>
+              Contact Dr. Jan Duffy today for your complimentary market
+              consultation and discover your dream home or get top dollar for
+              your property.
+            </strong>
+          </p>
+          <p>
+            <Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link>
+          </p>
         </section>
         <section className={styles.sectionCard}>
           <LatestMarketInsightsClient />

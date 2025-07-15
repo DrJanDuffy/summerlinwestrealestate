@@ -6,11 +6,13 @@ import VistasListingFormClient from "../../components/ui/VistasListingFormClient
 
 export const metadata = {
   title: "Vistas Summerlin Home Listings | Summerlin West Real Estate",
-  description: "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
+  description:
+    "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
   openGraph: {
     title: "Vistas Summerlin Home Listings | Summerlin West Real Estate",
-    description: "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
-  }
+    description:
+      "Browse Vistas Summerlin home listings. See photos, property details, and connect with a Summerlin real estate expert for private tours and market insights.",
+  },
 };
 
 export default function VistasListing() {
@@ -28,7 +30,9 @@ export default function VistasListing() {
   ];
 
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.container}
+    >
       <div className={styles.mainContent}>
         <section className={styles.hero}>
           <h1>Vistas Summerlin Home Listings</h1>
@@ -39,10 +43,31 @@ export default function VistasListing() {
         {/* Dr. Jan Duffy Callout Section */}
         <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
           <h2>Meet Your Summerlin West Real Estate Expert</h2>
-          <p><strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level educator, she brings analytical precision and deep local knowledge to every transaction. Specializing in <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy is your go-to resource for buying or selling in Summerlin West.</p>
-          <p className={styles.calloutHighlight}>Ready to make your move in Summerlin West?</p>
-          <p><strong>Contact Dr. Jan Duffy today for your complimentary market consultation and discover your dream home or get top dollar for your property.</strong></p>
-          <p><Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link></p>
+          <p>
+            <strong>Dr. Jan Duffy, REALTOR®</strong> has helped families
+            discover luxury living at the gateway to Red Rock Canyon since 2015.
+            As a longtime resident and doctorate-level educator, she brings
+            analytical precision and deep local knowledge to every transaction.
+            Specializing in{" "}
+            <strong>
+              The Ridges, Red Rock Country Club, The Vistas, and The Paseos
+            </strong>
+            , Dr. Duffy is your go-to resource for buying or selling in
+            Summerlin West.
+          </p>
+          <p className={styles.calloutHighlight}>
+            Ready to make your move in Summerlin West?
+          </p>
+          <p>
+            <strong>
+              Contact Dr. Jan Duffy today for your complimentary market
+              consultation and discover your dream home or get top dollar for
+              your property.
+            </strong>
+          </p>
+          <p>
+            <Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link>
+          </p>
         </section>
         <LatestMarketInsightsClient />
         <section className={styles.sectionCard}>

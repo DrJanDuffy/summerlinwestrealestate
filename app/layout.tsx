@@ -4,20 +4,20 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
-import Footer from '../components/layout/Footer';
-import BreadcrumbsClient from '../components/layout/BreadcrumbsClient';
-import Head from 'next/head';
-import RealScoutWidget from '../components/ui/RealScoutWidget';
-import styles from './page.module.css';
-import Header from '../components/layout/Header';
+import Footer from "../components/layout/Footer";
+import BreadcrumbsClient from "../components/layout/BreadcrumbsClient";
+import Head from "next/head";
+import RealScoutWidget from "../components/ui/RealScoutWidget";
+import styles from "./page.module.css";
+import Header from "../components/layout/Header";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: "swap",
@@ -38,8 +38,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://summerlinwestrealestate.com"),
   title: "Summerlin West Real Estate | The Vistas & Communities",
-  description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
-  keywords: ["Summerlin West", "Las Vegas real estate", "luxury homes", "master-planned community", "Red Rock Canyon", "The Vistas", "Stonebridge"],
+  description:
+    "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
+  keywords: [
+    "Summerlin West",
+    "Las Vegas real estate",
+    "luxury homes",
+    "master-planned community",
+    "Red Rock Canyon",
+    "The Vistas",
+    "Stonebridge",
+  ],
   authors: [{ name: "Summerlin West Real Estate" }],
   creator: "Summerlin West Real Estate",
   publisher: "Summerlin West Real Estate",
@@ -49,11 +58,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
     title: "Summerlin West Real Estate | The Vistas & Communities",
-    description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
+    description:
+      "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
     url: "https://summerlinwestrealestate.com",
     siteName: "Summerlin West Real Estate",
     images: [
@@ -70,7 +80,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Summerlin West Real Estate | The Vistas & Communities",
-    description: "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
+    description:
+      "Market authority for Summerlin West and The Vistas community. Get listings, market reports, and expert guidance.",
     images: [
       {
         url: "/images/og-image.svg",
@@ -85,13 +96,13 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: "your-google-verification-code",
   },
 };
 
@@ -102,126 +113,108 @@ const schemaMarkup = {
     {
       "@type": "RealEstateAgent",
       "@id": "https://summerlinwestrealestate.com/#agent",
-      "name": "Dr. Jan Duffy",
-      "jobTitle": "REALTOR®",
-      "description": "Summerlin West real estate specialist with 15+ years of experience",
-      "url": "https://summerlinwestrealestate.com",
-      "telephone": "+1-702-550-0112",
-      "email": "jan@summerlinwestrealestate.com",
-      "address": {
+      name: "Dr. Jan Duffy",
+      jobTitle: "REALTOR®",
+      description:
+        "Summerlin West real estate specialist with 15+ years of experience",
+      url: "https://summerlinwestrealestate.com",
+      telephone: "+1-702-550-0112",
+      email: "jan@summerlinwestrealestate.com",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
-        "addressLocality": "Las Vegas",
-        "addressRegion": "NV",
-        "postalCode": "89135",
-        "addressCountry": "US"
+        streetAddress: "1980 Festival Plaza Dr (One Summerlin)",
+        addressLocality: "Las Vegas",
+        addressRegion: "NV",
+        postalCode: "89135",
+        addressCountry: "US",
       },
-      "geo": {
+      geo: {
         "@type": "GeoCoordinates",
-        "latitude": 36.1865,
-        "longitude": -115.3432
+        latitude: 36.1865,
+        longitude: -115.3432,
       },
-      "areaServed": {
+      areaServed: {
         "@type": "Place",
-        "name": "Summerlin West"
+        name: "Summerlin West",
       },
-      "hasOfferCatalog": {
+      hasOfferCatalog: {
         "@type": "OfferCatalog",
-        "name": "Summerlin West Homes for Sale",
-        "itemListElement": [
+        name: "Summerlin West Homes for Sale",
+        itemListElement: [
           {
             "@type": "Offer",
-            "itemOffered": {
+            itemOffered: {
               "@type": "Place",
-              "name": "The Vistas"
-            }
+              name: "The Vistas",
+            },
           },
           {
             "@type": "Offer",
-            "itemOffered": {
+            itemOffered: {
               "@type": "Place",
-              "name": "Stonebridge"
-            }
-          }
-        ]
-      }
+              name: "Stonebridge",
+            },
+          },
+        ],
+      },
     },
     {
       "@type": "Organization",
       "@id": "https://summerlinwestrealestate.com/#organization",
-      "name": "Summerlin West Real Estate",
-      "url": "https://summerlinwestrealestate.com",
-      "logo": {
+      name: "Summerlin West Real Estate",
+      url: "https://summerlinwestrealestate.com",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://summerlinwestrealestate.com/images/logo.png"
+        url: "https://summerlinwestrealestate.com/images/logo.png",
       },
-      "sameAs": [
+      sameAs: [
         "https://www.facebook.com/summerlinwestrealestate",
-        "https://www.linkedin.com/company/summerlin-west-real-estate"
-      ]
+        "https://www.linkedin.com/company/summerlin-west-real-estate",
+      ],
     },
     {
       "@type": "Place",
       "@id": "https://summerlinwestrealestate.com/#place",
-      "name": "Summerlin West",
-      "description": "Luxury master-planned community in Las Vegas with Red Rock Canyon views",
-      "geo": {
+      name: "Summerlin West",
+      description:
+        "Luxury master-planned community in Las Vegas with Red Rock Canyon views",
+      geo: {
         "@type": "GeoCoordinates",
-        "latitude": 36.1865,
-        "longitude": -115.3432
+        latitude: 36.1865,
+        longitude: -115.3432,
       },
-      "address": {
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Las Vegas",
-        "addressRegion": "NV",
-        "addressCountry": "US"
-      }
-    }
-  ]
+        addressLocality: "Las Vegas",
+        addressRegion: "NV",
+        addressCountry: "US",
+      },
+    },
+  ],
 };
 
 export const viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
 };
 
 function StickyPhoneMenu() {
   return (
-    <div style={{
-      position: 'fixed',
-      top: '30%',
-      left: 0,
-      zIndex: 2000,
-      background: '#0A2540',
-      color: '#fff',
-      borderRadius: '0 12px 12px 0',
-      boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-      minWidth: 180,
-      minHeight: 60,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '16px 12px',
-      fontWeight: 600,
-      fontSize: 16,
-      gap: 8,
-    }} aria-label="Call Summerlin West Real Estate">
-      <span style={{marginBottom: 4}}>Call Us</span>
-      <a href="tel:7025500112" style={{
-        color: '#fff',
-        background: '#16B286',
-        borderRadius: 8,
-        padding: '8px 16px',
-        textDecoration: 'none',
-        fontWeight: 700,
-        fontSize: 18,
-        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-        display: 'flex',
-        alignItems: 'center',
-        gap: 8,
-      }}>
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style={{marginRight: 4}}><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" /></svg>
+    <div
+      className={styles.stickyPhoneMenu}
+      aria-label="Call Summerlin West Real Estate"
+    >
+      <span className={styles.stickyPhoneMenuLabel}>Call Us</span>
+      <a href="tel:7025500112" className={styles.stickyPhoneMenuCallButton}>
+        <svg
+          width="20"
+          height="20"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className={styles.stickyPhoneMenuIcon}
+        >
+          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" />
+        </svg>
         (702) 550-0112
       </a>
     </div>
@@ -243,7 +236,9 @@ export default function RootLayout({
           }
         `}</style>
       </Head>
-      <body className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <StickyPhoneMenu />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
@@ -255,9 +250,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
         <Header />
-        <main className="pt-16">
-          {children}
-        </main>
+        <main className="pt-16">{children}</main>
         <div className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
           <RealScoutWidget priceMin={600000} />

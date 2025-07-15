@@ -1,0 +1,8 @@
+.navDesktop {
+  --nav-padding: 12px;
+}
+
+.navLink {
+  padding-left: var(--nav-padding, 12px);
+  padding-right: var(--nav-padding, 12px);
+} 

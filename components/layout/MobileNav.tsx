@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from './MobileNav.module.css';
+import styles from "./MobileNav.module.css";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -14,7 +14,10 @@ const navLinks = [
   { href: "/communities", label: "Communities" },
   { href: "/market", label: "Market" },
   { href: "/compare", label: "Compare" },
-  { href: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0", label: "The Vistas" },
+  {
+    href: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0",
+    label: "The Vistas",
+  },
   { href: "/sold", label: "Sold" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

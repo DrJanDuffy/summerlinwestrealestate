@@ -99,7 +99,13 @@ public/images/
       "title": "Luxury Home Exterior - The Vistas, Summerlin West",
       "caption": "Stunning front exterior of luxury home in The Vistas with Red Rock Canyon mountain views and desert landscaping",
       "geoLocation": "The Vistas, Summerlin West, Las Vegas, NV, USA",
-      "keywords": ["luxury home", "The Vistas", "Summerlin West", "Red Rock Canyon", "exterior"],
+      "keywords": [
+        "luxury home",
+        "The Vistas",
+        "Summerlin West",
+        "Red Rock Canyon",
+        "exterior"
+      ],
       "propertyType": "Single Family Home",
       "priceRange": "$950K - $2.5M"
     }
@@ -117,7 +123,7 @@ import { getImageMetadata, generateAltText } from '@/lib/image-utils';
 function PropertyImage({ filename, category }) {
   const metadata = getImageMetadata(category, filename);
   const altText = generateAltText(filename, category, metadata?.title);
-  
+
   return (
     <img
       src={`/images/${category}/${filename}`}

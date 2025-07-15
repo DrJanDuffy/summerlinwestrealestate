@@ -1,6 +1,6 @@
 "use client";
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface BreadcrumbItem {
   label: string;
@@ -9,43 +9,41 @@ interface BreadcrumbItem {
 
 export default function BreadcrumbsClient() {
   const pathname = usePathname();
-  
+
   // Generate breadcrumbs based on current path
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
-    const segments = pathname.split('/').filter(Boolean);
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: 'Home', href: '/' }
-    ];
-    
-    let currentPath = '';
+    const segments = pathname.split("/").filter(Boolean);
+    const breadcrumbs: BreadcrumbItem[] = [{ label: "Home", href: "/" }];
+
+    let currentPath = "";
     segments.forEach((segment, index) => {
       currentPath += `/${segment}`;
       const label = segment
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
       breadcrumbs.push({ label, href: currentPath });
     });
-    
+
     return breadcrumbs;
   };
-  
+
   const breadcrumbs = generateBreadcrumbs();
-  
+
   // Breadcrumb Schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((item, index) => ({
+    itemListElement: breadcrumbs.map((item, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "name": item.label,
-      "item": `https://summerlinwestrealestate.com${item.href}`
-    }))
+      position: index + 1,
+      name: item.label,
+      item: `https://summerlinwestrealestate.com${item.href}`,
+    })),
   };
-  
+
   if (breadcrumbs.length <= 1) return null;
-  
+
   return (
     <>
       <script
@@ -70,4 +68,4 @@ export default function BreadcrumbsClient() {
       </nav>
     </>
   );
-} 
+}

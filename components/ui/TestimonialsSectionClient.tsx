@@ -1,7 +1,9 @@
 "use client";
-import dynamic from 'next/dynamic';
-const TestimonialsSection = dynamic(() => import('./TestimonialsSection'), { ssr: false });
+import dynamic from "next/dynamic";
+const TestimonialsSection = dynamic(() => import("./TestimonialsSection"), {
+  ssr: false,
+});
 
 export default function TestimonialsSectionClient(props: any) {
   return <TestimonialsSection {...props} />;
-} 
+}

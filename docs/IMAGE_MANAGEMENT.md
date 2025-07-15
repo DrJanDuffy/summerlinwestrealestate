@@ -87,24 +87,24 @@ node scripts/manage-images.js add-metadata featured-homes new-home.jpg
 The `lib/image-utils.ts` file provides utility functions:
 
 ```typescript
-import { 
-  getImageMetadata, 
-  generateAltText, 
+import {
+  getImageMetadata,
+  generateAltText,
   getFeaturedHomeImages,
-  searchImagesByKeyword 
-} from '@/lib/image-utils';
+  searchImagesByKeyword,
+} from "@/lib/image-utils";
 
 // Get metadata for an image
-const metadata = getImageMetadata('featured-homes', 'featured-home-1.jpg');
+const metadata = getImageMetadata("featured-homes", "featured-home-1.jpg");
 
 // Generate alt text
-const altText = generateAltText('featured-home-1.jpg', 'featured-homes');
+const altText = generateAltText("featured-home-1.jpg", "featured-homes");
 
 // Get all featured home images
 const featuredHomes = getFeaturedHomeImages();
 
 // Search images
-const results = searchImagesByKeyword('kitchen');
+const results = searchImagesByKeyword("kitchen");
 ```
 
 ## SEO Best Practices
@@ -260,13 +260,11 @@ node scripts/manage-images.js validate
    ```
 
 2. **Image Not Appearing in Sitemap**
-
    - Check file extension is supported
    - Verify image is in correct directory
    - Ensure metadata exists
 
 3. **SEO Issues**
-
    - Review title and caption length
    - Check keyword relevance
    - Verify alt text quality
@@ -294,7 +292,7 @@ import { getImageMetadata, generateAltText } from '@/lib/image-utils';
 function PropertyImage({ filename, category, className }) {
   const metadata = getImageMetadata(category, filename);
   const altText = generateAltText(filename, category, metadata?.title);
-  
+
   return (
     <img
       src={`/images/${category}/${filename}`}
@@ -313,7 +311,7 @@ import { getFeaturedHomeImages } from '@/lib/image-utils';
 
 function FeaturedHomeSlider() {
   const featuredHomes = getFeaturedHomeImages();
-  
+
   return (
     <div className="featured-homes-slider">
       {featuredHomes.map((home, index) => (

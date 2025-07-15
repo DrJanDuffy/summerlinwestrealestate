@@ -58,13 +58,16 @@ export default function HomebotWidget({
     }
   }, []);
 
-  const handleError = useCallback((errorMessage: string, originalError?: Error) => {
-    const error = new Error(errorMessage);
-    setError(errorMessage);
-    setLoadingState("error");
-    onError?.(originalError || error);
-    console.error("[HomebotWidget]", errorMessage, originalError);
-  }, [onError]);
+  const handleError = useCallback(
+    (errorMessage: string, originalError?: Error) => {
+      const error = new Error(errorMessage);
+      setError(errorMessage);
+      setLoadingState("error");
+      onError?.(originalError || error);
+      console.error("[HomebotWidget]", errorMessage, originalError);
+    },
+    [onError],
+  );
 
   const initializeWidget = useCallback(() => {
     if (!shadowRef.current) return;
@@ -93,7 +96,9 @@ export default function HomebotWidget({
     const shadow = shadowRef.current;
 
     // Check if script already exists and is working
-    const existingScript = shadow.querySelector(`script[src="${HOMEBOT_SCRIPT_SRC}"]`);
+    const existingScript = shadow.querySelector(
+      `script[src="${HOMEBOT_SCRIPT_SRC}"]`,
+    );
     if (existingScript && window.Homebot) {
       initializeWidget();
       return;
@@ -106,7 +111,7 @@ export default function HomebotWidget({
     script.src = HOMEBOT_SCRIPT_SRC;
     script.async = true;
     script.crossOrigin = "anonymous";
-    
+
     // Set up timeout
     timeoutRef.current = setTimeout(() => {
       handleError("Script load timeout");
@@ -277,12 +282,12 @@ export default function HomebotWidget({
     // Cleanup
     return () => {
       clearLoadTimeout();
-      
+
       // Remove script from document head if we added it
       if (scriptRef.current && document.head.contains(scriptRef.current)) {
         document.head.removeChild(scriptRef.current);
       }
-      
+
       // Reset retry counter
       retryCountRef.current = 0;
     };
@@ -318,9 +323,9 @@ export default function HomebotWidget({
           retryLoad();
         }
       };
-      
+
       mount.addEventListener("retry", retryHandler);
-      
+
       return () => {
         mount.removeEventListener("retry", retryHandler);
       };

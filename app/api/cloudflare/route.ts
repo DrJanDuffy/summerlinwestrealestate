@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   if (!apiToken) {
     return NextResponse.json(
       { error: "Cloudflare API token not configured" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 
@@ -18,14 +18,14 @@ export async function GET(req: NextRequest) {
           Authorization: `Bearer ${apiToken}`,
           "Content-Type": "application/json",
         },
-      },
+      }
     );
 
     const data = await response.json();
 
     if (!response.ok) {
       throw new Error(
-        `Cloudflare API error: ${data.errors?.[0]?.message || "Unknown error"}`,
+        `Cloudflare API error: ${data.errors?.[0]?.message || "Unknown error"}`
       );
     }
 
@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
     console.error("Cloudflare API Error:", error);
     return NextResponse.json(
       { error: "Failed to verify Cloudflare token" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

@@ -8,7 +8,10 @@ const RSS_FEED_URL =
   "https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18";
 
 // Cache for RSS data
-let rssCache: { data: any[] | null; timestamp: number } = { data: null, timestamp: 0 };
+let rssCache: { data: any[] | null; timestamp: number } = {
+  data: null,
+  timestamp: 0,
+};
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 const LatestMarketInsights = React.memo(function LatestMarketInsights() {
@@ -19,13 +22,13 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
     async function fetchRSS() {
       try {
         const now = Date.now();
-        
+
         // Check cache first
-        if (rssCache.data && (now - rssCache.timestamp) < CACHE_DURATION) {
+        if (rssCache.data && now - rssCache.timestamp < CACHE_DURATION) {
           setRssItems(rssCache.data);
           return;
         }
-        
+
         const parser = new Parser({
           customFields: {
             item: ["media:content", "enclosure"],
@@ -33,7 +36,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
         });
         const feed = await parser.parseURL(RSS_FEED_URL);
         const items = feed.items.slice(0, 3);
-        
+
         // Update cache
         rssCache = { data: items, timestamp: now };
         setRssItems(items);
@@ -49,17 +52,20 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
     rssItems.forEach((item) => {
       const title = item.title;
       const imageUrl = getImageUrl(item);
-      if (imageUrl.includes('placehold.co') && !aiImages[title]) {
+      if (imageUrl.includes("placehold.co") && !aiImages[title]) {
         const prompt = `News headline: ${title}. Real estate, Las Vegas, Summerlin West, modern homes, market insights.`;
-        fetch('/api/generate-image', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+        fetch("/api/generate-image", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt }),
         })
-          .then(res => res.json())
-          .then(data => {
+          .then((res) => res.json())
+          .then((data) => {
             if (data.base64) {
-              setAiImages(prev => ({ ...prev, [title]: `data:image/png;base64,${data.base64}` }));
+              setAiImages((prev) => ({
+                ...prev,
+                [title]: `data:image/png;base64,${data.base64}`,
+              }));
             }
           });
       }
@@ -115,9 +121,12 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
                 <div>
                   <div className={styles.insightTitle}>{item.title}</div>
                   <div className={styles.insightDate}>
-                    {item.pubDate && new Date(item.pubDate).toLocaleDateString()}
+                    {item.pubDate &&
+                      new Date(item.pubDate).toLocaleDateString()}
                   </div>
-                  <div className={styles.insightSnippet}>{item.contentSnippet}</div>
+                  <div className={styles.insightSnippet}>
+                    {item.contentSnippet}
+                  </div>
                 </div>
               </a>
             </li>

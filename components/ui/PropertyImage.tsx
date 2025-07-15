@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './PropertyImage.module.css';
+import styles from "./PropertyImage.module.css";
 
 export default function PropertyImage({
   src,
@@ -15,13 +15,17 @@ export default function PropertyImage({
   className?: string;
 }) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      className={`rounded-xl shadow-md ${className} ${styles.image}`}
-      loading="lazy"
-    />
+    <div
+      className={styles.imageContainer}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={`rounded-xl shadow-md ${className} ${styles.image}`}
+        loading="lazy"
+      />
+    </div>
   );
-} 
+}

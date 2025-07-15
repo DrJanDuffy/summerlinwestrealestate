@@ -1,4 +1,11 @@
 .page {
+  --h1-size: 44px;
+  --h2-size: 26px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 42px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
@@ -732,7 +739,7 @@ a.secondary {
   padding: 1.25rem 1rem;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 .sectionCard:last-child {
@@ -740,13 +747,10 @@ a.secondary {
 }
 
 .mainContent {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  padding: 0 1rem;
+  width: var(--main-content-width, 62%);
+}
+.sidebar {
+  width: var(--sidebar-width, 38%);
 }
 
 .statsGrid {
@@ -812,7 +816,7 @@ a.secondary {
   position: relative;
 }
 .centerTitle:after {
-  content: '';
+  content: "";
   display: block;
   width: 48px;
   height: 3px;
@@ -976,13 +980,13 @@ a.secondary {
 }
 
 .contentText {
-  font-family: 'Lora', serif;
-  color: #0A2540;
+  font-family: "Lora", serif;
+  color: #0a2540;
   line-height: 1.6;
 }
 
 .contentText h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.3rem;
   color: #bfa76a;
   font-weight: 700;
@@ -999,16 +1003,16 @@ a.secondary {
 }
 
 .contentText code {
-  background: #F7F9FC;
-  color: #0A2540;
+  background: #f7f9fc;
+  color: #0a2540;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 0.9rem;
 }
 
 .contentText pre {
-  background: #0A2540;
+  background: #0a2540;
   border-radius: 8px;
   padding: 1.5rem;
   overflow-x: auto;
@@ -1040,7 +1044,7 @@ a.secondary {
 }
 
 .contentList li {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
@@ -1060,11 +1064,11 @@ a.secondary {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .contentText h3 {
     font-size: 1.2rem;
   }
-  
+
   .contentText p {
     font-size: 1rem;
   }
@@ -1439,12 +1443,14 @@ a.secondary {
 }
 
 .featureCard {
-  background: linear-gradient(135deg, #F7F9FC 80%, #f5e9d5 100%);
+  background: linear-gradient(135deg, #f7f9fc 80%, #f5e9d5 100%);
   border-radius: 20px;
   padding: 2rem 1.5rem;
   box-shadow: 0 4px 24px rgba(10, 37, 64, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-  font-family: 'Lora', serif;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  font-family: "Lora", serif;
 }
 .featureCard:hover {
   transform: translateY(-4px);
@@ -1458,16 +1464,16 @@ a.secondary {
 }
 
 .featureTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.4rem;
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 700;
   margin-bottom: 0.8rem;
   text-align: center;
 }
 
 .featureDescription {
-  color: #3A8DDE;
+  color: #3a8dde;
   font-size: 1.05rem;
   margin-bottom: 1.2rem;
   text-align: center;
@@ -1479,7 +1485,7 @@ a.secondary {
   padding: 0;
 }
 .featureBenefits li {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
   padding-left: 1.2rem;
@@ -1515,7 +1521,7 @@ a.secondary {
 }
 
 .stepNumber {
-  background: linear-gradient(135deg, #0A2540 60%, #bfa76a 100%);
+  background: linear-gradient(135deg, #0a2540 60%, #bfa76a 100%);
   color: white;
   width: 3rem;
   height: 3rem;
@@ -1523,7 +1529,7 @@ a.secondary {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   font-weight: 700;
   flex-shrink: 0;
@@ -1534,16 +1540,16 @@ a.secondary {
 }
 
 .stepTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.3rem;
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .stepDescription {
-  color: #0A2540;
-  font-family: 'Lora', serif;
+  color: #0a2540;
+  font-family: "Lora", serif;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -1556,14 +1562,14 @@ a.secondary {
 }
 
 .codeCard {
-  background: #0A2540;
+  background: #0a2540;
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(10, 37, 64, 0.15);
 }
 
 .codeTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   color: #bfa76a;
   font-weight: 700;
@@ -1575,7 +1581,7 @@ a.secondary {
   border-radius: 8px;
   padding: 1.5rem;
   overflow-x: auto;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 0.9rem;
   line-height: 1.5;
   color: #e8f4fd;
@@ -1589,7 +1595,7 @@ a.secondary {
 }
 
 .benefitCard {
-  background: #F7F9FC;
+  background: #f7f9fc;
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(58, 141, 222, 0.08);
@@ -1600,16 +1606,16 @@ a.secondary {
 }
 
 .benefitCard h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
 .benefitCard p {
-  color: #0A2540;
-  font-family: 'Lora', serif;
+  color: #0a2540;
+  font-family: "Lora", serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -1625,10 +1631,12 @@ a.secondary {
   background: linear-gradient(135deg, #fff 80%, #f5e9d5 100%);
   border-radius: 20px;
   padding: 2rem 1.5rem;
-  box-shadow: 0 4px 24px rgba(10, 37, 64, 0.10);
+  box-shadow: 0 4px 24px rgba(10, 37, 64, 0.1);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  font-family: 'Lora', serif;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  font-family: "Lora", serif;
 }
 .pricingCard:hover {
   transform: translateY(-4px);
@@ -1636,15 +1644,15 @@ a.secondary {
 }
 
 .pricingCard h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.4rem;
-  color: #0A2540;
+  color: #0a2540;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .price {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   color: #bfa76a;
   font-weight: 800;
@@ -1657,7 +1665,7 @@ a.secondary {
   text-align: left;
 }
 .pricingCard li {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1rem;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
@@ -1686,14 +1694,14 @@ a.secondary {
 .tableHeader {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 3fr;
-  background: linear-gradient(90deg, #3A8DDE 80%, #bfa76a 100%);
+  background: linear-gradient(90deg, #3a8dde 80%, #bfa76a 100%);
   color: #fff;
   font-weight: 700;
   font-size: 1.15rem;
   padding: 1.5rem 2.5rem;
   border-bottom: 1px solid #e5e7eb;
   letter-spacing: 0.5px;
-  text-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  text-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 .tableRow {
@@ -1702,7 +1710,7 @@ a.secondary {
   border-bottom: 1px solid #f0f4f8;
   background: #f7f9fc;
   transition: background 0.2s;
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 .tableRow:nth-child(even) {
@@ -1717,7 +1725,7 @@ a.secondary {
 .tableCell {
   padding: 1.3rem 2.5rem;
   font-size: 1.05rem;
-  color: #0A2540;
+  color: #0a2540;
   display: flex;
   align-items: center;
   border-right: 1px solid #f0f4f8;
@@ -1730,7 +1738,7 @@ a.secondary {
 
 .sectionSubtitle {
   text-align: center;
-  color: #0A2540;
+  color: #0a2540;
   margin-bottom: 2rem;
   font-size: 1.1rem;
   opacity: 0.85;
@@ -1748,10 +1756,11 @@ a.secondary {
   justify-items: center;
 }
 
-.newsCard, .officeCard {
+.newsCard,
+.officeCard {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   padding: 1.25rem 1.5rem;
   margin-bottom: 1rem;
 }
@@ -1771,7 +1780,7 @@ a.secondary {
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 600px) {
@@ -1783,7 +1792,8 @@ a.secondary {
     grid-template-columns: 1fr 1fr;
     font-size: 1rem;
   }
-  .newsCard, .officeCard {
+  .newsCard,
+  .officeCard {
     padding: 1rem;
   }
 }
@@ -1945,7 +1955,7 @@ a.secondary {
   background: none;
   border: none;
   font-size: 1rem;
-  color: #0A2540;
+  color: #0a2540;
   cursor: pointer;
   outline: none;
   transition: color 0.2s;
@@ -1953,12 +1963,105 @@ a.secondary {
 
 .faqQuestion:focus,
 .faqQuestion:hover {
-  color: #3A8DDE;
+  color: #3a8dde;
 }
 
 .faqAnswer {
   padding: 8px 0 16px 0;
-  color: #3A8DDE;
+  color: #3a8dde;
   font-size: 0.98rem;
-  transition: max-height 0.3s, opacity 0.3s;
+  transition:
+    max-height 0.3s,
+    opacity 0.3s;
+}
+
+.stickyPhoneMenu {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 2000;
+  background: #0a2540;
+  color: #fff;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  font-weight: 600;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.stickyPhoneMenuCallButton {
+  color: #fff;
+  background: #16b286;
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.stickyPhoneMenuLabel {
+  margin-bottom: 4px;
+}
+
+.stickyPhoneMenuIcon {
+  margin-right: 4px;
+}
+
+@media (max-width: 600px) {
+  .stickyPhoneMenu {
+    min-width: 120px;
+    font-size: 14px;
+    padding: 10px 6px;
+  }
+  .stickyPhoneMenuCallButton {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}
+
+.aboutContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+
+.communitiesContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+
+.downtownSummerlinContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+
+.container {
+  --main-content-width: 62%;
+  --sidebar-width: 38%;
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import dynamic from "next/dynamic";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -24,19 +24,20 @@ export default function GooglePlaces() {
         "Reduces form errors and improves user experience",
         "Supports international addresses",
         "Customizable styling to match your brand",
-        "Mobile-optimized for touch devices"
-      ]
+        "Mobile-optimized for touch devices",
+      ],
     },
     {
       title: "Place Details",
-      description: "Rich location information including photos, reviews, and contact details",
+      description:
+        "Rich location information including photos, reviews, and contact details",
       icon: "📍",
       benefits: [
         "Comprehensive property and neighborhood data",
         "High-quality photos and virtual tours",
         "User reviews and ratings",
-        "Business hours and contact information"
-      ]
+        "Business hours and contact information",
+      ],
     },
     {
       title: "Geocoding",
@@ -46,8 +47,8 @@ export default function GooglePlaces() {
         "Precise location mapping for properties",
         "Distance calculations and route planning",
         "Neighborhood boundary detection",
-        "Integration with mapping services"
-      ]
+        "Integration with mapping services",
+      ],
     },
     {
       title: "Nearby Search",
@@ -57,32 +58,36 @@ export default function GooglePlaces() {
         "School district information",
         "Shopping and dining options",
         "Healthcare facilities and services",
-        "Transportation and commute times"
-      ]
-    }
+        "Transportation and commute times",
+      ],
+    },
   ];
 
   const implementationSteps = [
     {
       step: 1,
       title: "API Key Setup",
-      description: "Obtain and configure your Google Places API key with proper restrictions and billing setup."
+      description:
+        "Obtain and configure your Google Places API key with proper restrictions and billing setup.",
     },
     {
       step: 2,
       title: "Component Integration",
-      description: "Integrate Google Places components into your real estate search forms and property pages."
+      description:
+        "Integrate Google Places components into your real estate search forms and property pages.",
     },
     {
       step: 3,
       title: "Customization",
-      description: "Style components to match your luxury real estate brand with custom CSS and theming."
+      description:
+        "Style components to match your luxury real estate brand with custom CSS and theming.",
     },
     {
       step: 4,
       title: "Testing & Optimization",
-      description: "Test across devices and optimize for performance and user experience."
-    }
+      description:
+        "Test across devices and optimize for performance and user experience.",
+    },
   ];
 
   const codeExamples = [
@@ -108,7 +113,7 @@ function AddressSearch() {
       />
     </Autocomplete>
   );
-}`
+}`,
     },
     {
       title: "Place Details Display",
@@ -139,8 +144,8 @@ function AddressSearch() {
       )}
     </div>
   );
-}`
-    }
+}`,
+    },
   ];
 
   return (
@@ -172,13 +177,16 @@ function AddressSearch() {
         `}</script>
       </Head>
 
-      <main className={styles.luxuryMainContent}>
+      <main className={`${styles.luxuryMainContent} ${styles.googlePlacesContainer}`}>
         <SummerlinWestOverview />
-        
+
         <section className={`${styles.hero} ${styles.luxuryHero}`}>
-          <h1 className={styles.luxuryHeroTitle}>Google Places UI Kit for Real Estate</h1>
+          <h1 className={styles.luxuryHeroTitle}>
+            Google Places UI Kit for Real Estate
+          </h1>
           <p className={styles.luxurySubtitle}>
-            Enhance your real estate website with powerful location services and intelligent search capabilities
+            Enhance your real estate website with powerful location services and
+            intelligent search capabilities
           </p>
         </section>
 
@@ -188,11 +196,15 @@ function AddressSearch() {
 
         {/* Overview Section */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Why Google Places for Real Estate?</h2>
+          <h2 className={styles.luxurySectionTitle}>
+            Why Google Places for Real Estate?
+          </h2>
           <p className={styles.contentText}>
-            Google Places API provides powerful tools to enhance your real estate website with intelligent location services, 
-            autocomplete search, and rich property information. From address validation to neighborhood insights, 
-            Google Places helps create a seamless and professional user experience for luxury real estate clients.
+            Google Places API provides powerful tools to enhance your real
+            estate website with intelligent location services, autocomplete
+            search, and rich property information. From address validation to
+            neighborhood insights, Google Places helps create a seamless and
+            professional user experience for luxury real estate clients.
           </p>
         </section>
 
@@ -204,7 +216,9 @@ function AddressSearch() {
               <div key={index} className={styles.featureCard}>
                 <div className={styles.featureIcon}>{feature.icon}</div>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>{feature.description}</p>
+                <p className={styles.featureDescription}>
+                  {feature.description}
+                </p>
                 <ul className={styles.featureBenefits}>
                   {feature.benefits.map((benefit, idx) => (
                     <li key={idx}>{benefit}</li>
@@ -233,13 +247,16 @@ function AddressSearch() {
 
         {/* Security & API Key Setup */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Security & API Key Setup</h2>
+          <h2 className={styles.luxurySectionTitle}>
+            Security & API Key Setup
+          </h2>
           <div className={styles.contentGrid}>
             <div className={styles.contentText}>
               <h3>Environment Variables</h3>
               <p>
-                Store your Google Maps API credentials securely using environment variables. 
-                Create a <code>.env.local</code> file in your project root:
+                Store your Google Maps API credentials securely using
+                environment variables. Create a <code>.env.local</code> file in
+                your project root:
               </p>
               <pre className={styles.codeBlock}>
                 <code>{`# Google Maps API Configuration
@@ -249,17 +266,21 @@ GOOGLE_MAPS_URL_SIGNING_SECRET=your_signing_secret_here
 # Other environment variables
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
               </pre>
-              
+
               <h3>URL Signing for Enhanced Security</h3>
               <p>
-                Use URL signing to protect your API requests and increase your daily quota limit from 25,000 to 100,000 requests per day.
-                Our utility functions handle URL signing automatically for static maps and other signed requests.
+                Use URL signing to protect your API requests and increase your
+                daily quota limit from 25,000 to 100,000 requests per day. Our
+                utility functions handle URL signing automatically for static
+                maps and other signed requests.
               </p>
-              
+
               <h3>API Key Restrictions</h3>
               <ul className={styles.contentList}>
                 <li>Restrict API key to your domain only</li>
-                <li>Enable only the APIs you need (Places, Geocoding, Static Maps)</li>
+                <li>
+                  Enable only the APIs you need (Places, Geocoding, Static Maps)
+                </li>
                 <li>Set up billing alerts to monitor usage</li>
                 <li>Use URL signing for sensitive requests</li>
               </ul>
@@ -293,23 +314,37 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
 
         {/* Integration Benefits */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Real Estate Integration Benefits</h2>
+          <h2 className={styles.luxurySectionTitle}>
+            Real Estate Integration Benefits
+          </h2>
           <div className={styles.benefitsGrid}>
             <div className={styles.benefitCard}>
               <h3>Enhanced Search Experience</h3>
-              <p>Provide intelligent address suggestions and reduce form abandonment with autocomplete functionality.</p>
+              <p>
+                Provide intelligent address suggestions and reduce form
+                abandonment with autocomplete functionality.
+              </p>
             </div>
             <div className={styles.benefitCard}>
               <h3>Rich Property Information</h3>
-              <p>Display comprehensive property details, photos, and neighborhood information from Google's extensive database.</p>
+              <p>
+                Display comprehensive property details, photos, and neighborhood
+                information from Google's extensive database.
+              </p>
             </div>
             <div className={styles.benefitCard}>
               <h3>Mobile Optimization</h3>
-              <p>Ensure seamless experience across all devices with responsive design and touch-friendly interfaces.</p>
+              <p>
+                Ensure seamless experience across all devices with responsive
+                design and touch-friendly interfaces.
+              </p>
             </div>
             <div className={styles.benefitCard}>
               <h3>SEO & Performance</h3>
-              <p>Improve search engine visibility and page load times with optimized Google Places integration.</p>
+              <p>
+                Improve search engine visibility and page load times with
+                optimized Google Places integration.
+              </p>
             </div>
           </div>
         </section>
@@ -355,7 +390,9 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
 
         {/* Contact Form */}
         <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Get Started with Google Places Integration</h2>
+          <h2 className={styles.luxurySectionTitle}>
+            Get Started with Google Places Integration
+          </h2>
           <LeadCaptureForm
             variant="inline"
             title="Request Google Places Integration"
@@ -372,7 +409,9 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
               <Link href="/market-reports">Summerlin Market Reports</Link>
             </li>
             <li>
-              <Link href="/communities">Explore Summerlin West Communities</Link>
+              <Link href="/communities">
+                Explore Summerlin West Communities
+              </Link>
             </li>
             <li>
               <Link href="/current-listing">View Featured Properties</Link>
@@ -385,4 +424,4 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
       </main>
     </div>
   );
-} 
+}

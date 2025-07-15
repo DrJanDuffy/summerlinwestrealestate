@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styles from './page.module.css';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function MapsPage() {
-  const [activeTab, setActiveTab] = useState('property-search');
+  const [activeTab, setActiveTab] = useState("property-search");
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,9 @@ export default function MapsPage() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+    >
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
@@ -32,26 +34,26 @@ export default function MapsPage() {
       <section className={styles.tabNavigation}>
         <div className={styles.tabContainer}>
           <button
-            className={`${styles.tab} ${activeTab === 'property-search' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('property-search')}
+            className={`${styles.tab} ${activeTab === "property-search" ? styles.activeTab : ""}`}
+            onClick={() => setActiveTab("property-search")}
           >
             Property Search
           </button>
           <button
-            className={`${styles.tab} ${activeTab === 'neighborhoods' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('neighborhoods')}
+            className={`${styles.tab} ${activeTab === "neighborhoods" ? styles.activeTab : ""}`}
+            onClick={() => setActiveTab("neighborhoods")}
           >
             Neighborhoods
           </button>
           <button
-            className={`${styles.tab} ${activeTab === 'market-analysis' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('market-analysis')}
+            className={`${styles.tab} ${activeTab === "market-analysis" ? styles.activeTab : ""}`}
+            onClick={() => setActiveTab("market-analysis")}
           >
             Market Analysis
           </button>
           <button
-            className={`${styles.tab} ${activeTab === 'schools' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('schools')}
+            className={`${styles.tab} ${activeTab === "schools" ? styles.activeTab : ""}`}
+            onClick={() => setActiveTab("schools")}
           >
             Schools & Amenities
           </button>
@@ -91,15 +93,25 @@ export default function MapsPage() {
             <h4>Search Filters</h4>
             <div className={styles.filterOptions}>
               <label className={styles.filterOption}>
-                <input type="checkbox" defaultChecked aria-label="Show properties for sale" />
+                <input
+                  type="checkbox"
+                  defaultChecked
+                  aria-label="Show properties for sale"
+                />
                 <span>For Sale</span>
               </label>
               <label className={styles.filterOption}>
-                <input type="checkbox" aria-label="Show recently sold properties" />
+                <input
+                  type="checkbox"
+                  aria-label="Show recently sold properties"
+                />
                 <span>Recently Sold</span>
               </label>
               <label className={styles.filterOption}>
-                <input type="checkbox" aria-label="Show new construction properties" />
+                <input
+                  type="checkbox"
+                  aria-label="Show new construction properties"
+                />
                 <span>New Construction</span>
               </label>
             </div>
@@ -127,7 +139,10 @@ export default function MapsPage() {
 
           <div className={styles.controlGroup}>
             <h4>Property Type</h4>
-            <select className={styles.propertySelect} aria-label="Select property type">
+            <select
+              className={styles.propertySelect}
+              aria-label="Select property type"
+            >
               <option>All Types</option>
               <option>Single Family</option>
               <option>Townhouse</option>
@@ -149,9 +164,7 @@ export default function MapsPage() {
                 placeholder="Enter address, neighborhood, or zip code"
                 className={styles.searchInput}
               />
-              <button className={styles.searchButton}>
-                Search Properties
-              </button>
+              <button className={styles.searchButton}>Search Properties</button>
             </div>
             <div className={styles.searchOptions}>
               <Link href="/market" className={styles.searchLink}>
@@ -182,7 +195,10 @@ export default function MapsPage() {
           <div className={styles.areaCard}>
             <h3>The Vistas</h3>
             <p>Luxury homes with mountain views and premium amenities</p>
-            <Link href="https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0" className={styles.areaLink}>
+            <Link
+              href="https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0"
+              className={styles.areaLink}
+            >
               Explore Area
             </Link>
           </div>
@@ -222,7 +238,10 @@ export default function MapsPage() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
           <h2>Ready to Find Your Dream Home?</h2>
-          <p>Our expert agents are here to help you navigate the Summerlin West market</p>
+          <p>
+            Our expert agents are here to help you navigate the Summerlin West
+            market
+          </p>
           <div className={styles.ctaButtons}>
             <Link href="/contact" className={styles.ctaButton}>
               Contact an Agent
@@ -235,4 +254,4 @@ export default function MapsPage() {
       </section>
     </div>
   );
-} 
+}

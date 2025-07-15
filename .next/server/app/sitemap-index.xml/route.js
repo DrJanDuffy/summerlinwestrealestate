@@ -1,0 +1,11 @@
+(()=>{var e={};e.id=296,e.ids=[296],e.modules={3295:e=>{"use strict";e.exports=require("next/dist/server/app-render/after-task-async-storage.external.js")},10846:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},29294:e=>{"use strict";e.exports=require("next/dist/server/app-render/work-async-storage.external.js")},44870:e=>{"use strict";e.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},63033:e=>{"use strict";e.exports=require("next/dist/server/app-render/work-unit-async-storage.external.js")},78335:()=>{},90900:(e,t,s)=>{"use strict";s.r(t),s.d(t,{patchFetch:()=>x,routeModule:()=>m,serverHooks:()=>d,workAsyncStorage:()=>u,workUnitAsyncStorage:()=>l});var r={};s.r(r),s.d(r,{GET:()=>p});var a=s(96559),i=s(48088),n=s(37719),o=s(32190);async function p(){let e="https://summerlinwestrealestate.com",t=new Date().toISOString().split("T")[0],s=`<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${e}/sitemap.xml</loc>
+    <lastmod>${t}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${e}/sitemap-images.xml</loc>
+    <lastmod>${t}</lastmod>
+  </sitemap>
+</sitemapindex>`;return new o.NextResponse(s,{status:200,headers:{"Content-Type":"application/xml","Cache-Control":"public, max-age=3600, s-maxage=3600"}})}let m=new a.AppRouteRouteModule({definition:{kind:i.RouteKind.APP_ROUTE,page:"/sitemap-index.xml/route",pathname:"/sitemap-index.xml",filename:"route",bundlePath:"app/sitemap-index.xml/route"},resolvedPagePath:"C:\\Users\\geneb\\OneDrive\\Documents\\GitHub\\summerlinwestrealestate\\summerlinwestrealestate\\app\\sitemap-index.xml\\route.ts",nextConfigOutput:"",userland:r}),{workAsyncStorage:u,workUnitAsyncStorage:l,serverHooks:d}=m;function x(){return(0,n.patchFetch)({workAsyncStorage:u,workUnitAsyncStorage:l})}},96487:()=>{}};var t=require("../../webpack-runtime.js");t.C(e);var s=e=>t(t.s=e),r=t.X(0,[100,199],()=>s(90900));module.exports=r})();

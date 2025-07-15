@@ -6,7 +6,8 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 // RealScout shared search URL
-const REAL_SCOUT_SEARCH_URL = "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
+const REAL_SCOUT_SEARCH_URL =
+  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
 
 export default function NotFound() {
   const pathname = usePathname();
@@ -30,15 +31,17 @@ export default function NotFound() {
             <p className={styles.errorMessage}>
               The page you're looking for doesn't exist, but we can help you find your dream home in Summerlin West!
             </p>
-            
+
             <div className={styles.redirectMessage}>
               <h3>Redirecting you to our property search...</h3>
-              <p>You'll be automatically redirected to browse our current listings in Summerlin West.</p>
+              <p>
+                You'll be automatically redirected to browse our current listings in Summerlin West.
+              </p>
             </div>
 
             <div className={styles.errorActions}>
-              <Link 
-                href={REAL_SCOUT_SEARCH_URL} 
+              <Link
+                href={REAL_SCOUT_SEARCH_URL}
                 className={styles.cta}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,7 +55,9 @@ export default function NotFound() {
 
             <div className={styles.searchSection}>
               <h3>Looking for something specific?</h3>
-              <p>Contact Dr. Jan Duffy for personalized assistance with your home search.</p>
+              <p>
+                Contact Dr. Jan Duffy for personalized assistance with your home search.
+              </p>
               <div className={styles.searchActions}>
                 <Link href="/contact" className={styles.searchLink}>
                   📞 Contact Dr. Duffy

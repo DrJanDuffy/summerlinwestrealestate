@@ -1,34 +1,48 @@
-import styles from './contact.module.css';
+import styles from "./contact.module.css";
 import Link from "next/link";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaYoutube, FaChevronDown } from 'react-icons/fa';
+import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import LeadCaptureFormClient from "../../components/ui/LeadCaptureFormClient";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaChevronDown,
+} from "react-icons/fa";
 
 export const metadata = {
   title: "Contact a Summerlin Real Estate Expert | Summerlin West Real Estate",
-  description: "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
+  description:
+    "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
   openGraph: {
-    title: "Contact a Summerlin Real Estate Expert | Summerlin West Real Estate",
-    description: "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
-  }
+    title:
+      "Contact a Summerlin Real Estate Expert | Summerlin West Real Estate",
+    description:
+      "Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.",
+  },
 };
 
 const socialLinks = [
   {
     name: "Browse Properties",
     url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
-    icon: <FaFacebook />, color: "#3A8DDE",
+    icon: <FaFacebook />,
+    color: "#3A8DDE",
   },
   {
     name: "View Listings",
     url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
-    icon: <FaInstagram />, color: "#16B286",
+    icon: <FaInstagram />,
+    color: "#16B286",
   },
   {
     name: "Search Properties",
     url: "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy",
-    icon: <FaYoutube />, color: "#0A2540",
+    icon: <FaYoutube />,
+    color: "#0A2540",
   },
 ];
 
@@ -55,14 +69,22 @@ export default function Contact() {
     <div className={styles.page}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <h1 className={styles.heroTitle}>Contact a Summerlin Real Estate Expert</h1>
-        <p className={styles.heroSubtitle}>Get in touch for buying, selling, or market questions</p>
+        <h1 className={styles.heroTitle}>
+          Contact a Summerlin Real Estate Expert
+        </h1>
+        <p className={styles.heroSubtitle}>
+          Get in touch for buying, selling, or market questions
+        </p>
         <a href="#contact-form" className={styles.contactButton}>
           <FaChevronDown /> Contact Form
         </a>
       </section>
       <main className={styles.main}>
-        <section className={styles.sectionCard} aria-label="Send a Message" id="contact-form">
+        <section
+          className={styles.sectionCard}
+          aria-label="Send a Message"
+          id="contact-form"
+        >
           <h2 className={styles.sectionTitle}>Send a Message</h2>
           <LeadCaptureFormClient
             variant="inline"
@@ -74,8 +96,14 @@ export default function Contact() {
         <section className={styles.sectionCard} aria-label="Quick Links">
           <h2 className={styles.sectionTitle}>Quick Links</h2>
           <div className={styles.quickLinksContainer}>
-            {quickLinks.map(link => (
-              <Link key={link.href} href={link.href} className={styles.quickLink}>{link.label}</Link>
+            {quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={styles.quickLink}
+              >
+                {link.label}
+              </Link>
             ))}
           </div>
         </section>
@@ -95,7 +123,9 @@ export default function Contact() {
             <div className={styles.officeDetails}>
               <div className={styles.officeDetail}>
                 <FaMapMarkerAlt className={styles.icon} />
-                <span className={styles.detailText}>1980 Festival Plaza Dr (One Summerlin), Las Vegas, NV 89135</span>
+                <span className={styles.detailText}>
+                  1980 Festival Plaza Dr (One Summerlin), Las Vegas, NV 89135
+                </span>
               </div>
               <div className={styles.officeDetail}>
                 <FaPhone className={styles.icon} />
@@ -105,13 +135,23 @@ export default function Contact() {
               </div>
               <div className={styles.officeDetail}>
                 <FaEnvelope className={styles.icon} />
-                <a href="mailto:info@summerlinwestrealestate.com" className={styles.detailText}>
+                <a
+                  href="mailto:info@summerlinwestrealestate.com"
+                  className={styles.detailText}
+                >
                   info@summerlinwestrealestate.com
                 </a>
               </div>
               <div className={styles.socialLinksContainer}>
-                {socialLinks.map(s => (
-                  <a key={s.name} href={s.url} target="_blank" rel="noopener" aria-label={s.name} className={styles.socialLink}>
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-label={s.name}
+                    className={styles.socialLink}
+                  >
                     {s.icon}
                   </a>
                 ))}
@@ -122,12 +162,15 @@ export default function Contact() {
         <section className={styles.sectionCard} aria-label="Areas We Serve">
           <h2 className={styles.sectionTitle}>Areas We Serve</h2>
           <div className={styles.serviceAreasContainer}>
-            {serviceAreas.map(area => (
-              <span key={area} className={styles.serviceAreaTag}>{area}</span>
+            {serviceAreas.map((area) => (
+              <span key={area} className={styles.serviceAreaTag}>
+                {area}
+              </span>
             ))}
           </div>
           <div className={styles.responseTime}>
-            <strong>Response Time:</strong> We reply to all inquiries within 1 business day (often much faster!)
+            <strong>Response Time:</strong> We reply to all inquiries within 1
+            business day (often much faster!)
           </div>
         </section>
         <section className={styles.sectionCard} aria-label="Market Insights">

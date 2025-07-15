@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     cloudflareToken: cloudflareToken ? "Set (hidden)" : "Not set",
     fubApiKey: fubApiKey ? "Set (hidden)" : "Not set",
     allEnvVars: Object.keys(process.env).filter(
-      (key) => key.includes("CLOUDFLARE") || key.includes("FUB"),
+      (key) => key.includes("CLOUDFLARE") || key.includes("FUB")
     ),
   });
 }

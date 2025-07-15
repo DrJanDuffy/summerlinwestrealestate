@@ -5,15 +5,20 @@ import Head from "next/head";
 export default function RealScoutListings() {
   useEffect(() => {
     // Add the script to the head if it doesn't exist
-    if (!document.querySelector('script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]')) {
+    if (
+      !document.querySelector(
+        'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]',
+      )
+    ) {
       const script = document.createElement("script");
-      script.src = "https://em.realscout.com/widgets/realscout-web-components.umd.js";
+      script.src =
+        "https://em.realscout.com/widgets/realscout-web-components.umd.js";
       script.type = "module";
       document.head.appendChild(script);
     }
 
     // Add the styles if they don't exist
-    if (!document.querySelector('style[data-realscout-styles]')) {
+    if (!document.querySelector("style[data-realscout-styles]")) {
       const style = document.createElement("style");
       style.setAttribute("data-realscout-styles", "true");
       style.textContent = `
@@ -39,4 +44,4 @@ export default function RealScoutListings() {
       />
     </>
   );
-} 
+}

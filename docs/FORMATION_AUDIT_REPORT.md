@@ -3,7 +3,7 @@
 **Date:** January 10, 2025  
 **Auditor:** AI Assistant  
 **Website:** summerlinwestrealestate.com  
-**Framework:** Next.js 15.3.5  
+**Framework:** Next.js 15.3.5
 
 ## Executive Summary
 
@@ -161,7 +161,7 @@ const simplifiedNav = [
   { href: "/communities", label: "Communities" },
   { href: "/market", label: "Market Reports" },
   { href: "/about", label: "About Dr. Duffy" },
-  { href: "/contact", label: "Contact" }
+  { href: "/contact", label: "Contact" },
 ];
 ```
 
@@ -189,7 +189,7 @@ const blogCategories = [
   "Home Buying Guides",
   "Selling Tips",
   "Local Lifestyle",
-  "Investment Insights"
+  "Investment Insights",
 ];
 ```
 
@@ -218,7 +218,7 @@ const emailSequence = [
   "Community Spotlight",
   "Buying/Selling Guide",
   "Market Update",
-  "Personal Consultation Offer"
+  "Personal Consultation Offer",
 ];
 ```
 
@@ -245,12 +245,12 @@ const emailSequence = [
 const nextConfig = {
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['framer-motion', 'react-icons']
+    optimizePackageImports: ["framer-motion", "react-icons"],
   },
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-  }
+  },
 };
 ```
 

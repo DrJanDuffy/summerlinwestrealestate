@@ -45,13 +45,13 @@ npm uninstall @next/font
 import { Inter, Outfit } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: "swap",
@@ -82,7 +82,13 @@ const geistMono = Geist_Mono({
 
 ```css
 html {
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   /* ... other styles */
 }
 ```
@@ -123,12 +129,12 @@ fontFamily: {
 
 ## Font Variables Available
 
-| Variable | Font | Usage |
-|----------|------|-------|
-| `--font-inter` | Inter | Primary body text |
-| `--font-outfit` | Outfit | Alternative sans-serif |
-| `--font-geist-sans` | Geist Sans | Modern sans-serif |
-| `--font-geist-mono` | Geist Mono | Monospace text |
+| Variable            | Font       | Usage                  |
+| ------------------- | ---------- | ---------------------- |
+| `--font-inter`      | Inter      | Primary body text      |
+| `--font-outfit`     | Outfit     | Alternative sans-serif |
+| `--font-geist-sans` | Geist Sans | Modern sans-serif      |
+| `--font-geist-mono` | Geist Mono | Monospace text         |
 
 ## Tailwind Classes Available
 

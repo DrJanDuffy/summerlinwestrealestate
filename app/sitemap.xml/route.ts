@@ -5,7 +5,7 @@ import subdivisions from "../service-area/subdivisions.json";
 export async function GET() {
   const baseUrl = "https://summerlinwestrealestate.com";
   const today = new Date().toISOString().split("T")[0];
-  
+
   // Main pages with proper priorities
   const mainPages = [
     { path: "", priority: "1.0", changefreq: "daily" },
@@ -29,14 +29,14 @@ export async function GET() {
   const subdivisionPages = subdivisions.map((sub) => ({
     path: `service-area/${sub.slug}`,
     priority: "0.6",
-    changefreq: "monthly"
+    changefreq: "monthly",
   }));
 
   // Blog URLs
   const blogUrls = posts.map((post) => ({
     path: `blog/${post.slug}`,
     priority: "0.6",
-    changefreq: "monthly"
+    changefreq: "monthly",
   }));
 
   // Combine all URLs

@@ -19,4 +19,4 @@ export default function RealScoutWidget({
       price-max={priceMax}
     ></realscout-office-listings>
   );
-} 
+}

@@ -100,18 +100,18 @@ export default function LeadCaptureForm({
         (window as any).gtag("event", "lead_form_submit", {
           event_category: "Lead",
           event_label: source,
-          cd1: (window as any).userType || 'unknown',
-          cd2: 'LeadCaptureForm',
-          cd3: 'submit',
+          cd1: (window as any).userType || "unknown",
+          cd2: "LeadCaptureForm",
+          cd3: "submit",
           cd4: 1,
         });
         (window as any).gtag("event", "generate_lead", {
           value: 1,
           currency: "USD",
           form_location: source || "unknown",
-          cd1: (window as any).userType || 'unknown',
-          cd2: 'LeadCaptureForm',
-          cd3: 'submit',
+          cd1: (window as any).userType || "unknown",
+          cd2: "LeadCaptureForm",
+          cd3: "submit",
           cd4: 1,
         });
       }
@@ -190,15 +190,21 @@ export default function LeadCaptureForm({
                       type="text"
                       id={`name-${formId}`}
                       placeholder="Enter your full name"
-                      className={`${styles.input} ${errors.name ? styles.error : ''}`}
+                      className={`${styles.input} ${errors.name ? styles.error : ""}`}
                       disabled={isSubmitting}
-                      {...(errors.name ? { 'aria-invalid': 'true' } : {})}
-                      aria-describedby={errors.name ? `name-error-${formId}` : undefined}
+                      {...(errors.name ? { "aria-invalid": "true" } : {})}
+                      aria-describedby={
+                        errors.name ? `name-error-${formId}` : undefined
+                      }
                     />
                   )}
                 />
                 {errors.name && (
-                  <span id={`name-error-${formId}`} className={styles["error-message"]} role="alert">
+                  <span
+                    id={`name-error-${formId}`}
+                    className={styles["error-message"]}
+                    role="alert"
+                  >
                     {errors.name.message}
                   </span>
                 )}
@@ -222,15 +228,21 @@ export default function LeadCaptureForm({
                       type="email"
                       id={`email-${formId}`}
                       placeholder="Enter your email address"
-                      className={`${styles.input} ${errors.email ? styles.error : ''}`}
+                      className={`${styles.input} ${errors.email ? styles.error : ""}`}
                       disabled={isSubmitting}
-                      {...(errors.email ? { 'aria-invalid': 'true' } : {})}
-                      aria-describedby={errors.email ? `email-error-${formId}` : undefined}
+                      {...(errors.email ? { "aria-invalid": "true" } : {})}
+                      aria-describedby={
+                        errors.email ? `email-error-${formId}` : undefined
+                      }
                     />
                   )}
                 />
                 {errors.email && (
-                  <span id={`email-error-${formId}`} className={styles["error-message"]} role="alert">
+                  <span
+                    id={`email-error-${formId}`}
+                    className={styles["error-message"]}
+                    role="alert"
+                  >
                     {errors.email.message}
                   </span>
                 )}
@@ -254,22 +266,30 @@ export default function LeadCaptureForm({
                       type="tel"
                       id={`phone-${formId}`}
                       placeholder="Enter your phone number"
-                      className={`${styles.input} ${errors.phone ? styles.error : ''}`}
+                      className={`${styles.input} ${errors.phone ? styles.error : ""}`}
                       disabled={isSubmitting}
-                      {...(errors.phone ? { 'aria-invalid': 'true' } : {})}
-                      aria-describedby={errors.phone ? `phone-error-${formId}` : undefined}
+                      {...(errors.phone ? { "aria-invalid": "true" } : {})}
+                      aria-describedby={
+                        errors.phone ? `phone-error-${formId}` : undefined
+                      }
                     />
                   )}
                 />
                 {errors.phone && (
-                  <span id={`phone-error-${formId}`} className={styles["error-message"]} role="alert">
+                  <span
+                    id={`phone-error-${formId}`}
+                    className={styles["error-message"]}
+                    role="alert"
+                  >
                     {errors.phone.message}
                   </span>
                 )}
               </div>
 
               <div className={styles["form-group"]}>
-                <label htmlFor={`propertyInterest-${formId}`}>Property Interest *</label>
+                <label htmlFor={`propertyInterest-${formId}`}>
+                  Property Interest *
+                </label>
                 <Controller
                   name="propertyInterest"
                   control={control}
@@ -278,10 +298,16 @@ export default function LeadCaptureForm({
                     <select
                       {...field}
                       id={`propertyInterest-${formId}`}
-                      className={`${styles.select} ${errors.propertyInterest ? styles.error : ''}`}
+                      className={`${styles.select} ${errors.propertyInterest ? styles.error : ""}`}
                       disabled={isSubmitting}
-                      {...(errors.propertyInterest ? { 'aria-invalid': 'true' } : {})}
-                      aria-describedby={errors.propertyInterest ? `propertyInterest-error-${formId}` : undefined}
+                      {...(errors.propertyInterest
+                        ? { "aria-invalid": "true" }
+                        : {})}
+                      aria-describedby={
+                        errors.propertyInterest
+                          ? `propertyInterest-error-${formId}`
+                          : undefined
+                      }
                     >
                       {propertyInterests.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -292,13 +318,19 @@ export default function LeadCaptureForm({
                   )}
                 />
                 {errors.propertyInterest && (
-                  <span id={`propertyInterest-error-${formId}`} className={styles["error-message"]} role="alert">
+                  <span
+                    id={`propertyInterest-error-${formId}`}
+                    className={styles["error-message"]}
+                    role="alert"
+                  >
                     {errors.propertyInterest.message}
                   </span>
                 )}
               </div>
 
-              <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
+              <div
+                className={`${styles["form-group"]} ${styles["full-width"]}`}
+              >
                 <label htmlFor={`message-${formId}`}>Message (Optional)</label>
                 <Controller
                   name="message"
@@ -311,19 +343,27 @@ export default function LeadCaptureForm({
                       placeholder="Tell us about your real estate needs..."
                       className={styles.textarea}
                       disabled={isSubmitting}
-                      {...(errors.message ? { 'aria-invalid': 'true' } : {})}
-                      aria-describedby={errors.message ? `message-error-${formId}` : undefined}
+                      {...(errors.message ? { "aria-invalid": "true" } : {})}
+                      aria-describedby={
+                        errors.message ? `message-error-${formId}` : undefined
+                      }
                     />
                   )}
                 />
                 {errors.message && (
-                  <span id={`message-error-${formId}`} className={styles["error-message"]} role="alert">
+                  <span
+                    id={`message-error-${formId}`}
+                    className={styles["error-message"]}
+                    role="alert"
+                  >
                     {errors.message.message}
                   </span>
                 )}
               </div>
 
-              <div className={`${styles["form-group"]} ${styles["full-width"]}`}>
+              <div
+                className={`${styles["form-group"]} ${styles["full-width"]}`}
+              >
                 <Controller
                   name="privacyConsent"
                   control={control}
@@ -336,7 +376,8 @@ export default function LeadCaptureForm({
                         checked={field.value}
                         disabled={isSubmitting}
                       />
-                      <span className={styles["checkmark"]}></span>I agree to the{" "}
+                      <span className={styles["checkmark"]}></span>I agree to
+                      the{" "}
                       <a
                         href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                         target="_blank"
@@ -344,7 +385,8 @@ export default function LeadCaptureForm({
                       >
                         Privacy Policy
                       </a>{" "}
-                      and consent to being contacted about real estate services. *
+                      and consent to being contacted about real estate services.
+                      *
                     </label>
                   )}
                 />

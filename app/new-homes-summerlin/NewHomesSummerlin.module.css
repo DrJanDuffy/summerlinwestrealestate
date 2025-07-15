@@ -4,7 +4,7 @@
   color: white;
   padding: 2rem 0;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .headerContainer {
   max-width: 1200px;
@@ -14,7 +14,7 @@
 .headerTitle {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .headerSubtitle {
   font-size: 1.2rem;
@@ -26,7 +26,7 @@
 .introSection {
   background: white;
   padding: 3rem 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .introContainer {
   max-width: 1200px;
@@ -81,13 +81,15 @@
   background: white;
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   border-left: 5px solid #667eea;
 }
 .builderCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 .builderName {
   color: #764ba2;
@@ -200,7 +202,7 @@
 }
 .ctaBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Section */
@@ -214,4 +216,14 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-} 
+}
+
+.newHomesContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}

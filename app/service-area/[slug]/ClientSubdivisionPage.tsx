@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css";
-import clientStyles from './client-subdivision.module.css';
+import clientStyles from "./client-subdivision.module.css";
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {
@@ -14,7 +14,9 @@ function LoadingSkeleton() {
         <div className={styles.skeletonText}></div>
         <div className={styles.skeletonSubtext}></div>
         <div className={styles.skeletonStats}>
-          {[1, 2, 3].map(i => <div key={i} className={styles.skeletonStat}></div>)}
+          {[1, 2, 3].map((i) => (
+            <div key={i} className={styles.skeletonStat}></div>
+          ))}
         </div>
       </div>
     </div>
@@ -22,33 +24,41 @@ function LoadingSkeleton() {
 }
 
 // Interactive Hero Stats with animations
-function HeroStats({ builder, years, homeSizes }: { builder?: string; years?: string; homeSizes?: string }) {
+function HeroStats({
+  builder,
+  years,
+  homeSizes,
+}: {
+  builder?: string;
+  years?: string;
+  homeSizes?: string;
+}) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
   const stats = [
-    { 
-      label: "Builder", 
-      value: builder, 
+    {
+      label: "Builder",
+      value: builder,
       condition: builder && builder !== "-",
       icon: "🏗️",
-      gradient: "from-blue-400 to-purple-600"
+      gradient: "from-blue-400 to-purple-600",
     },
-    { 
-      label: "Years Built", 
-      value: years, 
+    {
+      label: "Years Built",
+      value: years,
       condition: years && years !== "-",
       icon: "📅",
-      gradient: "from-green-400 to-blue-600"
+      gradient: "from-green-400 to-blue-600",
     },
-    { 
-      label: "Home Sizes", 
-      value: homeSizes, 
+    {
+      label: "Home Sizes",
+      value: homeSizes,
       condition: homeSizes && homeSizes !== "-",
       icon: "🏠",
-      gradient: "from-orange-400 to-red-600"
-    }
+      gradient: "from-orange-400 to-red-600",
+    },
   ];
 
   useEffect(() => {
@@ -56,32 +66,35 @@ function HeroStats({ builder, years, homeSizes }: { builder?: string; years?: st
   }, [inView]);
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       className={styles.heroStats}
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, staggerChildren: 0.1 }}
     >
-      {stats.map(({ label, value, condition, icon, gradient }, index) => 
-        condition && (
-          <motion.div 
-            key={label} 
-            className={`${styles.heroStat} ${styles.modernStat}`}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-          >
-            <div className={`${styles.statIcon} bg-gradient-to-r ${gradient}`}>
-              {icon}
-            </div>
-            <div className={styles.statContent}>
-              <span className={styles.statValue}>{value}</span>
-              <span className={styles.statLabel}>{label}</span>
-            </div>
-          </motion.div>
-        )
+      {stats.map(
+        ({ label, value, condition, icon, gradient }, index) =>
+          condition && (
+            <motion.div
+              key={label}
+              className={`${styles.heroStat} ${styles.modernStat}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+            >
+              <div
+                className={`${styles.statIcon} bg-gradient-to-r ${gradient}`}
+              >
+                {icon}
+              </div>
+              <div className={styles.statContent}>
+                <span className={styles.statValue}>{value}</span>
+                <span className={styles.statLabel}>{label}</span>
+              </div>
+            </motion.div>
+          ),
       )}
     </motion.div>
   );
@@ -90,13 +103,13 @@ function HeroStats({ builder, years, homeSizes }: { builder?: string; years?: st
 // Interactive Feature Tags with hover effects
 function FeatureTags({ type, features }: { type: string; features: string[] }) {
   return (
-    <motion.div 
+    <motion.div
       className={styles.communityMeta}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.span 
+      <motion.span
         className={`${styles.featureTag} ${styles.primaryTag}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -104,8 +117,8 @@ function FeatureTags({ type, features }: { type: string; features: string[] }) {
         {type}
       </motion.span>
       {features.map((feature, index) => (
-        <motion.span 
-          key={feature} 
+        <motion.span
+          key={feature}
           className={styles.featureTag}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -123,32 +136,32 @@ function FeatureTags({ type, features }: { type: string; features: string[] }) {
 // Enhanced Social Media Links with share functionality
 function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
   const [copySuccess, setCopySuccess] = useState(false);
-  
+
   const socialLinks = [
-    { 
-      href: "https://www.youtube.com/@DrDuffy", 
-      label: "YouTube", 
+    {
+      href: "https://www.youtube.com/@DrDuffy",
+      label: "YouTube",
       icon: "youtube.svg",
-      color: "#FF0000"
+      color: "#FF0000",
     },
-    { 
-      href: "https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/", 
-      label: "LinkedIn", 
+    {
+      href: "https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/",
+      label: "LinkedIn",
       icon: "linkedin.svg",
-      color: "#0077B5"
+      color: "#0077B5",
     },
-    { 
-      href: "https://www.pinterest.com/DrJanDuffy/", 
-      label: "Pinterest", 
+    {
+      href: "https://www.pinterest.com/DrJanDuffy/",
+      label: "Pinterest",
       icon: "pinterest.svg",
-      color: "#BD081C"
+      color: "#BD081C",
     },
-    { 
-      href: "https://www.facebook.com/RealtorDrJanDuffySummerlin", 
-      label: "Facebook", 
+    {
+      href: "https://www.facebook.com/RealtorDrJanDuffySummerlin",
+      label: "Facebook",
       icon: "facebook.svg",
-      color: "#1877F2"
-    }
+      color: "#1877F2",
+    },
   ];
 
   const handleShare = async () => {
@@ -156,7 +169,7 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
       await navigator.share({
         title: `${subdivisionName} - The Vistas`,
         text: `Check out this amazing subdivision in Summerlin West!`,
-        url: window.location.href
+        url: window.location.href,
       });
     } catch (err) {
       // Fallback to copying URL
@@ -165,7 +178,7 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
         setCopySuccess(true);
         setTimeout(() => setCopySuccess(false), 2000);
       } catch (clipboardErr) {
-        console.log('Share failed');
+        console.log("Share failed");
       }
     }
   };
@@ -181,14 +194,14 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
         {copySuccess ? "✓ Copied!" : "📤 Share"}
       </motion.button>
       {socialLinks.map(({ href, label, icon, color }) => (
-        <motion.a 
+        <motion.a
           key={label}
-          href={href} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label={`Visit Dr. Jan Duffy on ${label}`}
           className={styles.socialLink}
-          style={{ '--hover-color': color } as any}
+          style={{ "--hover-color": color } as any}
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -200,19 +213,27 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
 }
 
 // Add SubdivisionImage component
-function SubdivisionImage({ subdivision, heroImage, imageAlt }: { subdivision: any; heroImage: string; imageAlt: string }) {
+function SubdivisionImage({
+  subdivision,
+  heroImage,
+  imageAlt,
+}: {
+  subdivision: any;
+  heroImage: string;
+  imageAlt: string;
+}) {
   const [src, setSrc] = useState(heroImage);
   useEffect(() => {
     // Only generate if using the placeholder
-    if (heroImage.includes('placehold.co')) {
-      const prompt = `A beautiful ${subdivision.type} neighborhood in Summerlin West, Las Vegas, called ${subdivision.name}${subdivision.builder && subdivision.builder !== '-' ? ', built by ' + subdivision.builder : ''}${subdivision.features?.length ? ', featuring ' + subdivision.features.join(', ') : ''}.`;
-      fetch('/api/generate-image', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+    if (heroImage.includes("placehold.co")) {
+      const prompt = `A beautiful ${subdivision.type} neighborhood in Summerlin West, Las Vegas, called ${subdivision.name}${subdivision.builder && subdivision.builder !== "-" ? ", built by " + subdivision.builder : ""}${subdivision.features?.length ? ", featuring " + subdivision.features.join(", ") : ""}.`;
+      fetch("/api/generate-image", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
       })
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           if (data.base64) setSrc(`data:image/png;base64,${data.base64}`);
         })
         .catch(() => setSrc(heroImage));
@@ -241,37 +262,42 @@ function AmenitiesSection() {
     {
       title: "Recreation & Fitness",
       icon: "🏊‍♂️",
-      description: "Access to Vistas Community Park, sports fields, tennis, and pools",
-      details: "Multiple pools, state-of-the-art fitness center, tennis and basketball courts"
+      description:
+        "Access to Vistas Community Park, sports fields, tennis, and pools",
+      details:
+        "Multiple pools, state-of-the-art fitness center, tennis and basketball courts",
     },
     {
       title: "Shopping & Dining",
       icon: "🛍️",
       description: "Nearby shopping at Vista Commons and Downtown Summerlin",
-      details: "Over 125 stores, restaurants, and entertainment venues within minutes"
+      details:
+        "Over 125 stores, restaurants, and entertainment venues within minutes",
     },
     {
       title: "Education Excellence",
       icon: "🎓",
-      description: "Top-rated schools: Linda Rankin Givens Elementary, Sig Rogich Middle, Palo Verde High",
-      details: "Award-winning schools with excellent test scores and graduation rates"
+      description:
+        "Top-rated schools: Linda Rankin Givens Elementary, Sig Rogich Middle, Palo Verde High",
+      details:
+        "Award-winning schools with excellent test scores and graduation rates",
     },
     {
       title: "Security & Access",
       icon: "🛡️",
       description: "Guard-gated and non-gated options available",
-      details: "24/7 security monitoring with controlled access points"
+      details: "24/7 security monitoring with controlled access points",
     },
     {
       title: "Scenic Views",
       icon: "🌄",
       description: "Stunning views of Red Rock Canyon and the Las Vegas Strip",
-      details: "Panoramic mountain and city views from many home sites"
-    }
+      details: "Panoramic mountain and city views from many home sites",
+    },
   ];
 
   return (
-    <motion.section 
+    <motion.section
       ref={ref}
       className={styles.sectionCard}
       initial={{ opacity: 0 }}
@@ -283,12 +309,14 @@ function AmenitiesSection() {
         {amenities.map((amenity, index) => (
           <motion.div
             key={amenity.title}
-            className={`${styles.amenityCard} ${expandedAmenity === index ? styles.expanded : ''}`}
+            className={`${styles.amenityCard} ${expandedAmenity === index ? styles.expanded : ""}`}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ scale: 1.02 }}
-            onClick={() => setExpandedAmenity(expandedAmenity === index ? null : index)}
+            onClick={() =>
+              setExpandedAmenity(expandedAmenity === index ? null : index)
+            }
           >
             <div className={styles.amenityIcon}>{amenity.icon}</div>
             <h3 className={styles.amenityTitle}>{amenity.title}</h3>
@@ -329,7 +357,7 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
       label: "Call Now",
       number: "(702) 550-0112",
       icon: "📞",
-      primary: true
+      primary: true,
     },
     {
       type: "email",
@@ -337,13 +365,13 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
       label: "Email",
       number: "jan@lasvegashomeexpert.com",
       icon: "📧",
-      primary: false
-    }
+      primary: false,
+    },
   ];
 
   return (
     <>
-      <motion.section 
+      <motion.section
         className={styles.ctaSection}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -363,11 +391,12 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Dr. Jan Duffy offers exclusive access to off-market properties, personalized market analysis, 
-            and VIP showings. Don't miss your dream home in this prestigious community.
+            Dr. Jan Duffy offers exclusive access to off-market properties,
+            personalized market analysis, and VIP showings. Don't miss your
+            dream home in this prestigious community.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className={styles.ctaButtons}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -377,7 +406,11 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
               <motion.a
                 key={method.type}
                 href={method.href}
-                className={method.primary ? styles.ctaButton : clientStyles.ctaButtonSecondary}
+                className={
+                  method.primary
+                    ? styles.ctaButton
+                    : clientStyles.ctaButtonSecondary
+                }
                 aria-label={`${method.label}: ${method.number}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -408,9 +441,9 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
       <motion.div
         className={styles.floatingCTA}
         initial={{ opacity: 0, y: 100 }}
-        animate={{ 
-          opacity: showFloatingCTA ? 1 : 0, 
-          y: showFloatingCTA ? 0 : 100 
+        animate={{
+          opacity: showFloatingCTA ? 1 : 0,
+          y: showFloatingCTA ? 0 : 100,
         }}
         transition={{ duration: 0.3 }}
       >
@@ -439,21 +472,29 @@ interface Subdivision {
 
 // Fix implicit any for sub in generateDescription
 function generateDescription(sub: Subdivision) {
-  const builderText = sub.builder && sub.builder !== "-" 
-    ? `expertly developed by ${sub.builder}` 
-    : "developed by renowned builders";
-  const yearsText = sub.years && sub.years !== "-" ? ` between ${sub.years}` : "";
-  const sizesText = sub.homeSizes && sub.homeSizes !== "-" 
-    ? sub.homeSizes 
-    : "thoughtfully designed sizes";
-  const featuresText = sub.features?.length > 0 
-    ? sub.features.join(", ") 
-    : "premium amenities and exceptional quality";
+  const builderText =
+    sub.builder && sub.builder !== "-"
+      ? `expertly developed by ${sub.builder}`
+      : "developed by renowned builders";
+  const yearsText =
+    sub.years && sub.years !== "-" ? ` between ${sub.years}` : "";
+  const sizesText =
+    sub.homeSizes && sub.homeSizes !== "-"
+      ? sub.homeSizes
+      : "thoughtfully designed sizes";
+  const featuresText =
+    sub.features?.length > 0
+      ? sub.features.join(", ")
+      : "premium amenities and exceptional quality";
 
   return `Discover ${sub.name}, a distinguished ${sub.type.toLowerCase()} neighborhood in The Vistas, ${builderText}${yearsText}. These exceptional homes range from ${sizesText}, featuring ${featuresText}. Experience the pinnacle of Summerlin West luxury living in this exclusive community.`;
 }
 
-export default function ClientSubdivisionPage({ subdivision }: { subdivision: Subdivision }) {
+export default function ClientSubdivisionPage({
+  subdivision,
+}: {
+  subdivision: Subdivision;
+}) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -484,23 +525,24 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
   }
 
   // Generate enhanced content
-  const heroImage = subdivision.image || "https://placehold.co/600x300?text=The+Vistas";
-  const imageAlt = subdivision.image 
+  const heroImage =
+    subdivision.image || "https://placehold.co/600x300?text=The+Vistas";
+  const imageAlt = subdivision.image
     ? `${subdivision.name} neighborhood view showcasing luxury homes and community amenities`
     : `Placeholder image for ${subdivision.name} luxury subdivision`;
 
   return (
     <div className={styles.page}>
       {/* Enhanced Hero Section with Parallax */}
-      <motion.section 
-        className={styles.hero} 
+      <motion.section
+        className={styles.hero}
         role="banner"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <div className={styles.heroContent}>
-          <motion.h1 
+          <motion.h1
             className={styles.heroTitle}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -508,7 +550,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           >
             {subdivision.name}
           </motion.h1>
-          <motion.p 
+          <motion.p
             className={styles.heroSubtitle}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -516,13 +558,13 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           >
             Luxury {subdivision.type} subdivision in The Vistas, Summerlin West
           </motion.p>
-          <HeroStats 
+          <HeroStats
             builder={subdivision.builder}
             years={subdivision.years}
             homeSizes={subdivision.homeSizes}
           />
         </div>
-        <SubdivisionImage 
+        <SubdivisionImage
           subdivision={subdivision}
           heroImage={heroImage}
           imageAlt={imageAlt}
@@ -530,7 +572,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
       </motion.section>
 
       {/* Enhanced Features & Description */}
-      <motion.section 
+      <motion.section
         className={styles.sectionCard}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -538,8 +580,11 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         viewport={{ once: true }}
       >
         <h2 className={styles.centerTitle}>About {subdivision.name}</h2>
-        <FeatureTags type={subdivision.type} features={subdivision.features || []} />
-        <motion.div 
+        <FeatureTags
+          type={subdivision.type}
+          features={subdivision.features || []}
+        />
+        <motion.div
           className={styles.communityDescription}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -557,17 +602,15 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
       <EnhancedCTA subdivision={subdivision} />
 
       {/* Enhanced Navigation */}
-      <motion.div 
+      <motion.div
         className={clientStyles.ctaButtonSecondary}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <Link href="/service-area">
-          ← Explore More Communities
-        </Link>
+        <Link href="/service-area">← Explore More Communities</Link>
       </motion.div>
     </div>
   );
-} 
+}

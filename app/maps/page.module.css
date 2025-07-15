@@ -1,12 +1,19 @@
 /* Maps Page Styles */
 .container {
+  --h1-size: 44px;
+  --h2-size: 26px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 42px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #F7F9FC 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #f7f9fc 0%, #ffffff 100%);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%);
+  background: linear-gradient(135deg, #0a2540 0%, #3a8dde 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -15,7 +22,7 @@
 }
 
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -33,7 +40,7 @@
 }
 
 .heroTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
@@ -50,11 +57,11 @@
 /* Tab Navigation */
 .tabNavigation {
   background: white;
-  border-bottom: 1px solid #E5E7EB;
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .tabContainer {
@@ -71,21 +78,21 @@
   border: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #6B7280;
+  color: #6b7280;
   cursor: pointer;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
 }
 
 .tab:hover {
-  color: #3A8DDE;
-  background: #F8FAFC;
+  color: #3a8dde;
+  background: #f8fafc;
 }
 
 .activeTab {
-  color: #3A8DDE;
-  border-bottom-color: #3A8DDE;
-  background: #F0F7FF;
+  color: #3a8dde;
+  border-bottom-color: #3a8dde;
+  background: #f0f7ff;
 }
 
 /* Map Section */
@@ -97,13 +104,13 @@
   max-width: 1200px;
   margin: 0 auto;
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .mapContainer {
   position: relative;
-  background: #F8FAFC;
-  border-right: 1px solid #E5E7EB;
+  background: #f8fafc;
+  border-right: 1px solid #e5e7eb;
 }
 
 .mapLoading {
@@ -112,22 +119,26 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: #6B7280;
+  color: #6b7280;
 }
 
 .loadingSpinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #E5E7EB;
-  border-top: 3px solid #3A8DDE;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #3a8dde;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .mapContent {
@@ -136,12 +147,17 @@
 
 .mapPlaceholder {
   height: 100%;
-  background: linear-gradient(45deg, #F8FAFC 25%, transparent 25%), 
-              linear-gradient(-45deg, #F8FAFC 25%, transparent 25%), 
-              linear-gradient(45deg, transparent 75%, #F8FAFC 75%), 
-              linear-gradient(-45deg, transparent 75%, #F8FAFC 75%);
+  background:
+    linear-gradient(45deg, #f8fafc 25%, transparent 25%),
+    linear-gradient(-45deg, #f8fafc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f8fafc 75%),
+    linear-gradient(-45deg, transparent 75%, #f8fafc 75%);
   background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,26 +167,26 @@
   background: white;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: 400px;
 }
 
 .mapOverlay h3 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.5rem;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
 .mapOverlay p {
-  color: #6B7280;
+  color: #6b7280;
   margin-bottom: 20px;
 }
 
 .mapOverlay ul {
   text-align: left;
-  color: #6B7280;
+  color: #6b7280;
   line-height: 1.6;
 }
 
@@ -190,7 +206,7 @@
 }
 
 .controlGroup h4 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 15px;
@@ -214,7 +230,7 @@
 .filterOption input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: #3A8DDE;
+  accent-color: #3a8dde;
 }
 
 .priceRange {
@@ -225,7 +241,7 @@
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: #E5E7EB;
+  background: #e5e7eb;
   outline: none;
   -webkit-appearance: none;
 }
@@ -236,7 +252,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #3A8DDE;
+  background: #3a8dde;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(58, 141, 222, 0.3);
 }
@@ -245,7 +261,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #3A8DDE;
+  background: #3a8dde;
   cursor: pointer;
   border: none;
   box-shadow: 0 2px 6px rgba(58, 141, 222, 0.3);
@@ -256,13 +272,13 @@
   justify-content: space-between;
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #6B7280;
+  color: #6b7280;
 }
 
 .propertySelect {
   width: 100%;
   padding: 12px;
-  border: 1px solid #D1D5DB;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
   background: white;
   color: #374151;
@@ -272,7 +288,7 @@
 
 .propertySelect:focus {
   outline: none;
-  border-color: #3A8DDE;
+  border-color: #3a8dde;
   box-shadow: 0 0 0 3px rgba(58, 141, 222, 0.1);
 }
 
@@ -289,18 +305,18 @@
 }
 
 .searchContainer h2 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .searchForm {
-  background: #F8FAFC;
+  background: #f8fafc;
   padding: 40px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .searchRow {
@@ -312,7 +328,7 @@
 .searchInput {
   flex: 1;
   padding: 15px 20px;
-  border: 2px solid #E5E7EB;
+  border: 2px solid #e5e7eb;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -320,13 +336,13 @@
 
 .searchInput:focus {
   outline: none;
-  border-color: #3A8DDE;
+  border-color: #3a8dde;
   box-shadow: 0 0 0 3px rgba(58, 141, 222, 0.1);
 }
 
 .searchButton {
   padding: 15px 30px;
-  background: linear-gradient(135deg, #3A8DDE 0%, #2B6CB0 100%);
+  background: linear-gradient(135deg, #3a8dde 0%, #2b6cb0 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -350,30 +366,30 @@
 }
 
 .searchLink {
-  color: #3A8DDE;
+  color: #3a8dde;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .searchLink:hover {
-  color: #2B6CB0;
+  color: #2b6cb0;
   text-decoration: underline;
 }
 
 /* Featured Areas */
 .featuredAreas {
   padding: 80px 20px;
-  background: #F7F9FC;
+  background: #f7f9fc;
 }
 
 .featuredAreas h2 {
   text-align: center;
-  color: #0A2540;
+  color: #0a2540;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 50px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .areasGrid {
@@ -388,25 +404,25 @@
   background: white;
   padding: 40px 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .areaCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .areaCard h3 {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .areaCard p {
-  color: #6B7280;
+  color: #6b7280;
   margin-bottom: 25px;
   line-height: 1.6;
 }
@@ -414,7 +430,7 @@
 .areaLink {
   display: inline-block;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #3A8DDE 0%, #2B6CB0 100%);
+  background: linear-gradient(135deg, #3a8dde 0%, #2b6cb0 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -435,11 +451,11 @@
 
 .marketInsights h2 {
   text-align: center;
-  color: #0A2540;
+  color: #0a2540;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 50px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .insightsGrid {
@@ -451,21 +467,21 @@
 }
 
 .insightCard {
-  background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 40px 30px;
   border-radius: 16px;
   text-align: center;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
 }
 
 .insightCard:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .insightCard h4 {
-  color: #6B7280;
+  color: #6b7280;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 15px;
@@ -474,14 +490,14 @@
 }
 
 .insightValue {
-  color: #0A2540;
+  color: #0a2540;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .insightChange {
-  color: #16B286;
+  color: #16b286;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -489,7 +505,7 @@
 /* CTA Section */
 .ctaSection {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0A2540 0%, #3A8DDE 100%);
+  background: linear-gradient(135deg, #0a2540 0%, #3a8dde 100%);
   color: white;
   text-align: center;
 }
@@ -503,7 +519,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .ctaContent p {
@@ -523,7 +539,7 @@
   display: inline-block;
   padding: 15px 30px;
   background: white;
-  color: #0A2540;
+  color: #0a2540;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -532,7 +548,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .ctaButtonSecondary {
@@ -549,7 +565,7 @@
 
 .ctaButtonSecondary:hover {
   background: white;
-  color: #0A2540;
+  color: #0a2540;
   transform: translateY(-2px);
 }
 
@@ -558,31 +574,31 @@
   .heroTitle {
     font-size: 2.5rem;
   }
-  
+
   .tabContainer {
     flex-direction: column;
   }
-  
+
   .mapSection {
     grid-template-columns: 1fr;
   }
-  
+
   .mapControls {
     order: -1;
   }
-  
+
   .searchRow {
     flex-direction: column;
   }
-  
+
   .areasGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .insightsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .ctaButtons {
     flex-direction: column;
     align-items: center;
@@ -593,17 +609,17 @@
   .hero {
     padding: 60px 15px;
   }
-  
+
   .heroTitle {
     font-size: 2rem;
   }
-  
+
   .searchForm {
     padding: 30px 20px;
   }
-  
+
   .areaCard,
   .insightCard {
     padding: 30px 20px;
   }
-} 
+}

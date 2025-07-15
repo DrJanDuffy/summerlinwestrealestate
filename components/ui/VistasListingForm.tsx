@@ -68,7 +68,11 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
 
   if (submitted) {
     return (
-      <div className="text-success-600 bg-success-50 rounded-xl shadow-md px-6 py-8 text-center font-semibold text-lg" role="status" tabIndex={-1}>
+      <div
+        className="text-success-600 bg-success-50 rounded-xl shadow-md px-6 py-8 text-center font-semibold text-lg"
+        role="status"
+        tabIndex={-1}
+      >
         Thank you! We'll be in touch soon.
       </div>
     );
@@ -82,7 +86,9 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
       aria-describedby={error ? `${idPrefix}-error` : undefined}
     >
       <div className="form-group">
-        <label htmlFor={`${idPrefix}-name`} className="form-label">Name</label>
+        <label htmlFor={`${idPrefix}-name`} className="form-label">
+          Name
+        </label>
         <input
           id={`${idPrefix}-name`}
           type="text"
@@ -97,7 +103,9 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
         />
       </div>
       <div className="form-group">
-        <label htmlFor={`${idPrefix}-email`} className="form-label">Email</label>
+        <label htmlFor={`${idPrefix}-email`} className="form-label">
+          Email
+        </label>
         <input
           id={`${idPrefix}-email`}
           type="email"
@@ -112,7 +120,9 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
         />
       </div>
       <div className="form-group">
-        <label htmlFor={`${idPrefix}-phone`} className="form-label">Phone</label>
+        <label htmlFor={`${idPrefix}-phone`} className="form-label">
+          Phone
+        </label>
         <input
           id={`${idPrefix}-phone`}
           type="tel"
@@ -145,4 +155,4 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
       )}
     </form>
   );
-} 
+}

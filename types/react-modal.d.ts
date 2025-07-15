@@ -1,5 +1,5 @@
-declare module 'react-modal' {
-  import { ComponentType, ReactNode } from 'react';
+declare module "react-modal" {
+  import { ComponentType, ReactNode } from "react";
 
   export interface ModalProps {
     isOpen: boolean;
@@ -48,4 +48,9 @@ declare module 'react-modal' {
   export default Modal;
 
   export function setAppElement(element: HTMLElement | string): void;
-} 
+}
+
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}

@@ -57,7 +57,7 @@
   transition: all 0.3s ease;
   background: #fff;
   color: #0a2540;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .form-group input:focus,
@@ -88,8 +88,8 @@
 }
 
 .error-message {
-  color: #B00020;
-  background: #F7F9FC;
+  color: #b00020;
+  background: #f7f9fc;
   font-size: 0.98rem;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -175,11 +175,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .submit-button:disabled {
-  background: #A9C6E8;
+  background: #a9c6e8;
   color: #fff;
   cursor: not-allowed;
 }
@@ -358,11 +358,14 @@
   font-weight: 700;
   font-size: 1.1rem;
   border: none;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
+  transition:
+    background 0.2s,
+    color 0.2s;
   cursor: pointer;
 }
-.button:hover, .button:focus-visible {
+.button:hover,
+.button:focus-visible {
   background: #16b286;
   color: #fff;
 }
@@ -371,7 +374,7 @@
 .formContainer {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
 }

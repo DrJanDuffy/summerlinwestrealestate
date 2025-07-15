@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
 import LatestMarketInsights from "../../components/ui/LatestMarketInsights";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
 
 export default function CurrentListing() {
   const propertyDetails = [
@@ -54,135 +54,99 @@ export default function CurrentListing() {
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Residence",
-              "name": "The Vistas Summerlin Home for Sale",
-              "description": "Modern 4 bed, 3 bath home in The Vistas, Summerlin. Upgraded kitchen, smart home tech, mountain views.",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "1980 Festival Plaza Dr (One Summerlin)",
-                "addressLocality": "Las Vegas",
-                "addressRegion": "NV",
-                "postalCode": "89135",
-                "addressCountry": "US"
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "Residence",
+                name: "The Vistas Summerlin Home for Sale",
+                description:
+                  "Modern 4 bed, 3 bath home in The Vistas, Summerlin. Upgraded kitchen, smart home tech, mountain views.",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "1980 Festival Plaza Dr (One Summerlin)",
+                  addressLocality: "Las Vegas",
+                  addressRegion: "NV",
+                  postalCode: "89135",
+                  addressCountry: "US",
+                },
+                image: [
+                  "https://placehold.co/400x300?text=Photo+1",
+                  "https://placehold.co/400x300?text=Photo+2",
+                ],
+                numberOfRooms: 8,
+                floorSize: {
+                  "@type": "QuantitativeValue",
+                  value: 2800,
+                  unitCode: "SQF",
+                },
+                offers: {
+                  "@type": "Offer",
+                  price: "899000",
+                  priceCurrency: "USD",
+                  availability: "https://schema.org/InStock",
+                },
+                telephone: "+1-702-550-0112",
               },
-              "image": [
-                "https://placehold.co/400x300?text=Photo+1",
-                "https://placehold.co/400x300?text=Photo+2"
-              ],
-              "numberOfRooms": 8,
-              "floorSize": {
-                "@type": "QuantitativeValue",
-                "value": 2800,
-                "unitCode": "SQF"
-              },
-              "offers": {
-                "@type": "Offer",
-                "price": "899000",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
-              },
-              "telephone": "+1-702-550-0112"
-            }, null, 2)
+              null,
+              2,
+            ),
           }}
         />
       </Head>
 
-      <main className={styles.luxuryMainContent}>
+      <main className={`${styles.luxuryMainContent} ${styles.currentListingContainer}`}>
         <SummerlinWestOverview />
-        <section className={`${styles.hero} ${styles.luxuryHero}`}>
-          <h1 className={styles.luxuryHeroTitle}>The Vistas Summerlin Home for Sale</h1>
-          <p className={styles.luxurySubtitle}>
-            Modern Luxury in the Heart of Summerlin West
-          </p>
-        </section>
-        <section className={styles.sectionCard}>
-          <LatestMarketInsights />
-        </section>
-        {/* Photo Gallery */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Photo Gallery</h2>
+        <section className={styles.gallerySection}>
+          <h2>Photo Gallery</h2>
           <div className={styles.photoGallery}>
-            {photoGallery.map((i) => (
-              <div key={i} className={styles.photoCard}>
-                <Image
-                  src={`https://placehold.co/400x300?text=Photo+${i}`}
-                  alt={`The Vistas Summerlin home photo ${i}`}
-                  width={400}
-                  height={300}
-                  className={styles.photoImage}
-                />
-              </div>
+            {photoGallery.map((num) => (
+              <Image
+                key={num}
+                src={`https://placehold.co/400x300?text=Photo+${num}`}
+                alt={`Home photo ${num}`}
+                width={400}
+                height={300}
+                className={styles.galleryImage}
+              />
             ))}
           </div>
         </section>
-        {/* Property Details */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Property Details</h2>
-          <ul className={styles.propertyList}>
-            {propertyDetails.map((detail, index) => (
-              <li key={index} className={styles.propertyItem}>
-                {detail}
-              </li>
+        <section className={styles.propertyDetailsSection}>
+          <h2>Property Details</h2>
+          <ul>
+            {propertyDetails.map((detail, idx) => (
+              <li key={idx}>{detail}</li>
             ))}
           </ul>
         </section>
-        {/* Community Benefits */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Community Benefits</h2>
-          <ul className={styles.benefitsList}>
-            {communityBenefits.map((benefit, index) => (
-              <li key={index} className={styles.benefitItem}>
-                {benefit}
-              </li>
+        <section className={styles.communityBenefitsSection}>
+          <h2>Community Benefits</h2>
+          <ul>
+            {communityBenefits.map((benefit, idx) => (
+              <li key={idx}>{benefit}</li>
             ))}
           </ul>
         </section>
-        {/* Market Analysis */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Why This Home is Priced Right</h2>
-          <ul className={styles.analysisList}>
-            {marketAnalysis.map((analysis, index) => (
-              <li key={index} className={styles.analysisItem}>
-                {analysis}
-              </li>
+        <section className={styles.marketAnalysisSection}>
+          <h2>Market Analysis</h2>
+          <ul>
+            {marketAnalysis.map((item, idx) => (
+              <li key={idx}>{item}</li>
             ))}
           </ul>
         </section>
-        {/* Internal Links Section */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Explore More Summerlin Real Estate</h2>
-          <ul className={styles.resourceLinks}>
-            <li>
-              <Link href="/market-reports">
-                See all Summerlin market reports
-              </Link>
-            </li>
-            <li>
-              <Link href="/communities">
-                Explore Summerlin West communities
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">Meet your Summerlin real estate expert</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact for a private showing</Link>
-            </li>
-          </ul>
-        </section>
-        {/* Contact Form for Private Showings */}
-        <section className={styles.sectionCard}>
-          <h2 className={styles.luxurySectionTitle}>Request a Private Showing</h2>
+        <section className={styles.ctaSection}>
+          <h2>Schedule a Private Showing</h2>
           <LeadCaptureForm
             variant="inline"
-            title="Request a Private Showing"
-            subtitle="Schedule your exclusive tour of this beautiful Vistas home."
-            source="Current Listing Page"
+            title="Request a Private Tour"
+            subtitle="Get in touch to schedule a private showing or request more information."
+            source="Current Listing CTA"
+            formId="current-listing"
           />
         </section>
       </main>
+      <LatestMarketInsights />
     </div>
   );
 }

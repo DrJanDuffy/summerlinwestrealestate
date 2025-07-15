@@ -1,8 +1,36 @@
+.homeContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+:global(h1) {
+  font-size: var(--h1-size, 2.7rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(h2) {
+  font-size: var(--h2-size, 2rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(h3) {
+  font-size: var(--h3-size, 1.4rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
+:global(p) {
+  line-height: var(--line-height, 1.6);
+  margin-bottom: var(--p-margin, 18px);
+}
+:global(section) {
+  margin-bottom: var(--section-margin, 40px);
+}
 .sectionCard {
   margin: 2rem 0;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(10,37,64,0.10);
+  box-shadow: 0 4px 24px rgba(10, 37, 64, 0.1);
   padding: 0;
   max-width: 900px;
   width: 100%;
@@ -16,13 +44,13 @@
 
 .sectionCardHeader {
   width: 100%;
-  background: linear-gradient(135deg, #3A8DDE 80%, #16B286 100%);
+  background: linear-gradient(135deg, #3a8dde 80%, #16b286 100%);
   padding: 2rem 1rem 1.2rem 1rem;
   text-align: center;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 .luxurySectionTitle {
@@ -33,7 +61,7 @@
 }
 
 .luxuryWidgetSubtitle {
-  color: #F7F9FC;
+  color: #f7f9fc;
   font-size: 1.1rem;
   margin-bottom: 0;
 }
@@ -53,10 +81,10 @@
   max-width: 800px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   box-sizing: border-box;
   padding: 1.5rem;
-  background: #F7F9FC;
+  background: #f7f9fc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +92,7 @@
 
 .heroImage {
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   margin: 2rem auto;
   display: block;
 }
@@ -88,17 +116,39 @@
   margin: 2rem 0;
 }
 
-.featuredHomeGallery img, .featuredHomeGallery :global(img) {
+.featuredHomeGallery img,
+.featuredHomeGallery :global(img) {
   object-fit: cover;
   border-radius: 12px;
   max-width: 100%;
   height: auto;
-  box-shadow: 0 2px 8px rgba(10,37,64,0.08);
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
 }
 
 @media (max-width: 900px) {
-  .featuredHomeGallery img, .featuredHomeGallery :global(img) {
+  .featuredHomeGallery img,
+  .featuredHomeGallery :global(img) {
     width: 100%;
     height: auto;
   }
-} 
+}
+
+.currentListingContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}
+
+.googlePlacesContainer {
+  --h1-size: 67px;
+  --h2-size: 42px;
+  --h3-size: 26px;
+  --line-height: 1.618;
+  --section-margin: 34px;
+  --p-margin: 13px;
+  --heading-margin: 21px;
+}

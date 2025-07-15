@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-cdimport { readdir } from "fs/promises";
+import { readdir } from "fs/promises";
 import { join } from "path";
 import { readFileSync } from "fs";
 

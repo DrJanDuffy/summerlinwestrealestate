@@ -1,14 +1,16 @@
 "use client";
 import Head from "next/head";
-import styles from '@/styles/pages/home.module.css';
+import styles from "../styles/pages/home.module.css";
 import { useLeadCaptureModal } from "../hooks/useLeadCaptureModal";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import Header from "../components/layout/Header";
+import SummerlinWestOverview from "../components/ui/SummerlinWestOverview";
 import { useState, useEffect } from "react";
-import FeaturedHomeSlider, { FeaturedHomeImage } from '@/components/ui/FeaturedHomeSlider';
+import FeaturedHomeSlider, {
+  FeaturedHomeImage,
+} from "../components/ui/FeaturedHomeSlider";
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
@@ -23,10 +25,9 @@ const LeadCaptureForm = dynamic(
 );
 
 // Dynamically import HomebotWidget for performance
-const HomebotWidget = dynamic(
-  () => import("../components/ui/HomebotWidget"),
-  { ssr: false },
-);
+const HomebotWidget = dynamic(() => import("../components/ui/HomebotWidget"), {
+  ssr: false,
+});
 
 // Dynamically import LatestMarketInsights for performance
 const LatestMarketInsights = dynamic(
@@ -48,17 +49,18 @@ type Faq = {
 function HomeHeroImage() {
   const [src, setSrc] = useState("/images/og-image.svg");
   useEffect(() => {
-    const prompt = "A luxury residential neighborhood in Summerlin West, Las Vegas, with modern homes and Red Rock Canyon views, blue sky, and desert landscaping.";
-    fetch('/api/generate-image', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const prompt =
+      "A luxury residential neighborhood in Summerlin West, Las Vegas, with modern homes and Red Rock Canyon views, blue sky, and desert landscaping.";
+    fetch("/api/generate-image", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt }),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.base64) setSrc(`data:image/png;base64,${data.base64}`);
       })
-              .catch(() => setSrc("/images/og-image.svg"));
+      .catch(() => setSrc("/images/og-image.svg"));
   }, []);
   return (
     <Image
@@ -121,12 +123,12 @@ export default function Home() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqs.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
+      name: faq.question,
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": faq.answer.replace('(702) 555-1234', '(702) 550-0112'),
+        text: faq.answer.replace("(702) 555-1234", "(702) 550-0112"),
       },
     })),
   };
@@ -137,13 +139,16 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <main className={styles.luxuryMainContent}>
+      <main className={`${styles.luxuryMainContent} ${styles.homeContainer}`}>
         <SummerlinWestOverview />
         {/* Hero Section */}
         <section className={`${styles.hero} ${styles.luxuryHero}`}>
-          <h1 className={styles.luxuryHeroTitle}>Summerlin West Homes for Sale</h1>
+          <h1 className={styles.luxuryHeroTitle}>
+            Summerlin West Homes for Sale
+          </h1>
           <p className={styles.luxurySubtitle}>
-            Discover luxury living in Las Vegas' most prestigious master-planned community
+            Discover luxury living in Las Vegas' most prestigious master-planned
+            community
           </p>
           {/* AI-generated hero image */}
           <HomeHeroImage />
@@ -165,40 +170,118 @@ export default function Home() {
         {/* Featured Home Section */}
         <section className={styles.sectionCard}>
           <div className={styles.sectionCardHeader}>
-            <h2 className={styles.luxurySectionTitle}>Featured Home in Summerlin West</h2>
-            <p className={styles.luxuryWidgetSubtitle}>Tour our handpicked showcase property</p>
+            <h2 className={styles.luxurySectionTitle}>
+              Featured Home in Summerlin West
+            </h2>
+            <p className={styles.luxuryWidgetSubtitle}>
+              Tour our handpicked showcase property
+            </p>
           </div>
           <FeaturedHomeSlider
             images={[
-              { src: '/images/featured-home/featured-home-1.jpg', caption: 'Front Exterior' },
-              { src: '/images/featured-home/featured-home-2.jpg', caption: 'Entryway' },
-              { src: '/images/featured-home/featured-home-3.jpg', caption: 'Living Room' },
-              { src: '/images/featured-home/featured-home-4.jpg', caption: 'Kitchen' },
-              { src: '/images/featured-home/featured-home-5.jpg', caption: 'Dining Area' },
-              { src: '/images/featured-home/featured-home-6.jpg', caption: 'Primary Bedroom' },
-              { src: '/images/featured-home/featured-home-7.jpg', caption: 'Primary Bathroom' },
-              { src: '/images/featured-home/featured-home-8.jpg', caption: 'Guest Bedroom' },
-              { src: '/images/featured-home/featured-home-9.jpg', caption: 'Guest Bathroom' },
-              { src: '/images/featured-home/featured-home-10.jpg', caption: 'Loft/Bonus Room' },
-              { src: '/images/featured-home/featured-home-11.jpg', caption: 'Backyard Patio' },
-              { src: '/images/featured-home/featured-home-12.jpg', caption: 'Pool & Spa' },
-              { src: '/images/featured-home/featured-home-13.jpg', caption: 'Outdoor Kitchen' },
-              { src: '/images/featured-home/featured-home-14.jpg', caption: 'Fire Pit Area' },
-              { src: '/images/featured-home/featured-home-15.jpg', caption: 'Garage' },
-              { src: '/images/featured-home/featured-home-16.jpg', caption: 'Laundry Room' },
-              { src: '/images/featured-home/featured-home-17.jpg', caption: 'Community Park' },
-              { src: '/images/featured-home/featured-home-18.jpg', caption: 'Neighborhood View' },
-              { src: '/images/featured-home/featured-home-19.jpg', caption: 'Aerial View' },
-              { src: '/images/featured-home/featured-home-20.jpg', caption: 'Twilight Exterior' },
+              {
+                src: "/images/featured-home/featured-home-1.jpg",
+                caption: "Front Exterior",
+              },
+              {
+                src: "/images/featured-home/featured-home-2.jpg",
+                caption: "Entryway",
+              },
+              {
+                src: "/images/featured-home/featured-home-3.jpg",
+                caption: "Living Room",
+              },
+              {
+                src: "/images/featured-home/featured-home-4.jpg",
+                caption: "Kitchen",
+              },
+              {
+                src: "/images/featured-home/featured-home-5.jpg",
+                caption: "Dining Area",
+              },
+              {
+                src: "/images/featured-home/featured-home-6.jpg",
+                caption: "Primary Bedroom",
+              },
+              {
+                src: "/images/featured-home/featured-home-7.jpg",
+                caption: "Primary Bathroom",
+              },
+              {
+                src: "/images/featured-home/featured-home-8.jpg",
+                caption: "Guest Bedroom",
+              },
+              {
+                src: "/images/featured-home/featured-home-9.jpg",
+                caption: "Guest Bathroom",
+              },
+              {
+                src: "/images/featured-home/featured-home-10.jpg",
+                caption: "Loft/Bonus Room",
+              },
+              {
+                src: "/images/featured-home/featured-home-11.jpg",
+                caption: "Backyard Patio",
+              },
+              {
+                src: "/images/featured-home/featured-home-12.jpg",
+                caption: "Pool & Spa",
+              },
+              {
+                src: "/images/featured-home/featured-home-13.jpg",
+                caption: "Outdoor Kitchen",
+              },
+              {
+                src: "/images/featured-home/featured-home-14.jpg",
+                caption: "Fire Pit Area",
+              },
+              {
+                src: "/images/featured-home/featured-home-15.jpg",
+                caption: "Garage",
+              },
+              {
+                src: "/images/featured-home/featured-home-16.jpg",
+                caption: "Laundry Room",
+              },
+              {
+                src: "/images/featured-home/featured-home-17.jpg",
+                caption: "Community Park",
+              },
+              {
+                src: "/images/featured-home/featured-home-18.jpg",
+                caption: "Neighborhood View",
+              },
+              {
+                src: "/images/featured-home/featured-home-19.jpg",
+                caption: "Aerial View",
+              },
+              {
+                src: "/images/featured-home/featured-home-20.jpg",
+                caption: "Twilight Exterior",
+              },
             ]}
           />
         </section>
         {/* Dr. Jan Duffy Callout Section */}
         <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
           <h2>Meet Your Summerlin West Real Estate Expert</h2>
-          <p><strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level educator, she brings analytical precision and deep local knowledge to every transaction.</p>
-          <p>Specializing in <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy is your go-to resource for buying or selling in Summerlin West.</p>
-          <p><Link href="/about">Learn more about Dr. Duffy &rarr;</Link></p>
+          <p>
+            <strong>Dr. Jan Duffy, REALTOR®</strong> has helped families
+            discover luxury living at the gateway to Red Rock Canyon since 2015.
+            As a longtime resident and doctorate-level educator, she brings
+            analytical precision and deep local knowledge to every transaction.
+          </p>
+          <p>
+            Specializing in{" "}
+            <strong>
+              The Ridges, Red Rock Country Club, The Vistas, and The Paseos
+            </strong>
+            , Dr. Duffy is your go-to resource for buying or selling in
+            Summerlin West.
+          </p>
+          <p>
+            <Link href="/about">Learn more about Dr. Duffy &rarr;</Link>
+          </p>
         </section>
         {/* Map of Summerlin West Section */}
         <section
@@ -207,7 +290,10 @@ export default function Home() {
         >
           <div className={styles.sectionCardHeader}>
             <h2 className={styles.luxurySectionTitle}>Map of Summerlin West</h2>
-            <p className={styles.luxuryWidgetSubtitle}>Explore neighborhoods, listings, and amenities on the interactive map below.</p>
+            <p className={styles.luxuryWidgetSubtitle}>
+              Explore neighborhoods, listings, and amenities on the interactive
+              map below.
+            </p>
           </div>
           <div className={styles.sectionCardContent}>
             <div className={styles.mapContainer}>
@@ -234,8 +320,13 @@ export default function Home() {
           />
         </section>
         {/* RealScout Listings Widget */}
-        <section className={styles.sectionCard} aria-label="Featured Summerlin West Homes">
-          <h2 className={styles.luxurySectionTitle}>Featured Summerlin West Homes</h2>
+        <section
+          className={styles.sectionCard}
+          aria-label="Featured Summerlin West Homes"
+        >
+          <h2 className={styles.luxurySectionTitle}>
+            Featured Summerlin West Homes
+          </h2>
           <p className={styles.luxuryWidgetSubtitle}>
             Browse the latest homes for sale in Summerlin West communities
           </p>
@@ -243,7 +334,9 @@ export default function Home() {
         </section>
         {/* Market Overview */}
         <section className={styles.sectionCard} aria-label="Market Overview">
-          <h2 className={styles.luxurySectionTitle}>Summerlin West Market Overview</h2>
+          <h2 className={styles.luxurySectionTitle}>
+            Summerlin West Market Overview
+          </h2>
           <div className={styles.statsGrid}>
             <div className={styles.statCard}>
               <div className={styles.statNumber}>$850K</div>
@@ -269,12 +362,11 @@ export default function Home() {
         </section>
         {/* Lead Capture/FAQ/CTA */}
         <section className={styles.sectionCard} aria-label="Contact & FAQ">
-          <LeadCaptureForm
-            variant="inline"
-            onSuccess={handleFormSuccess}
-          />
+          <LeadCaptureForm variant="inline" onSuccess={handleFormSuccess} />
           <div className={styles.faqSection}>
-            <h2 className={styles.luxurySectionTitle}>Frequently Asked Questions</h2>
+            <h2 className={styles.luxurySectionTitle}>
+              Frequently Asked Questions
+            </h2>
             <ul className={styles.faqList}>
               {faqs.map((faq, idx) => (
                 <li key={idx} className={styles.faqItem}>

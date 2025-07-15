@@ -7,10 +7,9 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         error: "Cloudflare API token not configured",
-        message:
-          "Please add CLOUDFLARE_API_TOKEN to your environment variables",
+        message: "Please add CLOUDFLARE_API_TOKEN to your environment variables",
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 
@@ -24,7 +23,7 @@ export async function GET(req: NextRequest) {
           Authorization: `Bearer ${apiToken}`,
           "Content-Type": "application/json",
         },
-      },
+      }
     );
 
     const data = await response.json();
@@ -40,7 +39,7 @@ export async function GET(req: NextRequest) {
           details: data.errors?.[0]?.message || "Unknown error",
           fullResponse: data,
         },
-        { status: response.status },
+        { status: response.status }
       );
     }
 
@@ -57,7 +56,7 @@ export async function GET(req: NextRequest) {
         error: "Failed to verify Cloudflare token",
         details: error.message,
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

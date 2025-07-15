@@ -70,7 +70,8 @@ Instead of showing traditional 404 error pages, all 404 errors now redirect user
 #### **Automatic Redirect**
 
 ```typescript
-const REAL_SCOUT_SEARCH_URL = "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
+const REAL_SCOUT_SEARCH_URL =
+  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
 
 useEffect(() => {
   const timer = setTimeout(() => {
@@ -133,7 +134,8 @@ docs/
 #### **1. RealScout Integration**
 
 ```typescript
-const REAL_SCOUT_SEARCH_URL = "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
+const REAL_SCOUT_SEARCH_URL =
+  "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
 ```
 
 #### **2. Redirect Logic**
@@ -224,11 +226,11 @@ useEffect(() => {
 ```typescript
 // Track 404 redirects to RealScout
 const track404Redirect = (pathname: string) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', '404_redirect_to_realscout', {
-      event_category: 'User Experience',
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "404_redirect_to_realscout", {
+      event_category: "User Experience",
       event_label: pathname,
-      value: 1
+      value: 1,
     });
   }
 };

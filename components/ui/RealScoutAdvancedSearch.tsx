@@ -51,9 +51,9 @@ export default function RealScoutAdvancedSearch({
           (window as any).gtag("event", "real_scout_search", {
             event_category: "Search",
             event_label: "Advanced Search Widget",
-            cd1: (window as any).userType || 'unknown',
-            cd2: 'RealScoutAdvancedSearch',
-            cd3: 'search',
+            cd1: (window as any).userType || "unknown",
+            cd2: "RealScoutAdvancedSearch",
+            cd3: "search",
             cd4: 1,
           });
         }
@@ -74,7 +74,9 @@ export default function RealScoutAdvancedSearch({
   }, []);
 
   return (
-    <section className={`${styles.searchSection} ${styles[variant]}`}>
+    <section
+      className={`${styles.searchSection} ${styles[variant]}`}
+    >
       <div className={styles.searchContainer}>
         {(title || subtitle) && (
           <div className={styles.searchHeader}>

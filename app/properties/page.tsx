@@ -20,7 +20,9 @@ const RealScoutAdvancedSearch = dynamic(
 
 export default function Properties() {
   return (
-    <div className={styles.page}>
+    <div
+      className={styles.page}
+    >
       <Head>
         <title>
           Properties for Sale in Summerlin | Summerlin West Real Estate

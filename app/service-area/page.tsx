@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import serviceAreaStyles from './service-area.module.css';
+import serviceAreaStyles from "./service-area.module.css";
 
 const subdivisions = [
   // Luxury and Gated Communities
@@ -161,34 +161,105 @@ const subdivisions = [
     type: "Family",
   },
   // Additional Subdivisions
-  { name: "Canterra", builder: "-", years: "-", homeSizes: "-", features: ["Single-Family"], type: "Additional" },
-  { name: "Capri", builder: "-", years: "-", homeSizes: "-", features: ["Part of The Vistas"], type: "Additional" },
-  { name: "Cara Vella", builder: "-", years: "-", homeSizes: "-", features: ["Residential"], type: "Additional" },
-  { name: "Miraleste", builder: "-", years: "-", homeSizes: "-", features: ["Established"], type: "Additional" },
-  { name: "Sage Hills", builder: "-", years: "-", homeSizes: "-", features: ["Residential"], type: "Additional" },
-  { name: "Santalina", builder: "-", years: "-", homeSizes: "-", features: ["Single-Family"], type: "Additional" },
-  { name: "Solano", builder: "-", years: "-", homeSizes: "-", features: ["Residential"], type: "Additional" },
-  { name: "Sonesta", builder: "-", years: "-", homeSizes: "-", features: ["Neighborhood"], type: "Additional" },
+  {
+    name: "Canterra",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Single-Family"],
+    type: "Additional",
+  },
+  {
+    name: "Capri",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Part of The Vistas"],
+    type: "Additional",
+  },
+  {
+    name: "Cara Vella",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Residential"],
+    type: "Additional",
+  },
+  {
+    name: "Miraleste",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Established"],
+    type: "Additional",
+  },
+  {
+    name: "Sage Hills",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Residential"],
+    type: "Additional",
+  },
+  {
+    name: "Santalina",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Single-Family"],
+    type: "Additional",
+  },
+  {
+    name: "Solano",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Residential"],
+    type: "Additional",
+  },
+  {
+    name: "Sonesta",
+    builder: "-",
+    years: "-",
+    homeSizes: "-",
+    features: ["Neighborhood"],
+    type: "Additional",
+  },
 ];
 
 export default function ServiceArea() {
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles.serviceAreaContainer}`}>
       {/* Hero Section with Map/Visual Anchor */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>The Vistas Service Area</h1>
           <p className={styles.heroSubtitle}>
-            Explore all 26 subdivisions of The Vistas village in Summerlin West—luxury, family, and custom homes by top builders, with world-class amenities and breathtaking views.
+            Explore all 26 subdivisions of The Vistas village in Summerlin
+            West—luxury, family, and custom homes by top builders, with
+            world-class amenities and breathtaking views.
           </p>
           <div className={styles.heroStats}>
-            <div className={styles.heroStat}><span>26</span> Subdivisions</div>
-            <div className={styles.heroStat}><span>$550K–$1M+</span> Price Range</div>
-            <div className={styles.heroStat}><span>1,200–4,400+ sq ft</span> Home Sizes</div>
+            <div className={styles.heroStat}>
+              <span>26</span> Subdivisions
+            </div>
+            <div className={styles.heroStat}>
+              <span>$550K–$1M+</span> Price Range
+            </div>
+            <div className={styles.heroStat}>
+              <span>1,200–4,400+ sq ft</span> Home Sizes
+            </div>
           </div>
         </div>
         <div className={styles.heroMapAnchor}>
-          <Image src="/images/vistas-map.jpg" alt="The Vistas Map" width={480} height={320} priority className={styles.heroMapImg} />
+          <Image
+            src="/images/vistas-map.jpg"
+            alt="The Vistas Map"
+            width={480}
+            height={320}
+            priority
+            className={styles.heroMapImg}
+          />
         </div>
       </section>
 
@@ -197,27 +268,50 @@ export default function ServiceArea() {
         <h2 className={styles.centerTitle}>All Vistas Subdivisions</h2>
         <div className={styles.communitiesGrid}>
           {subdivisions.map((sub, idx) => (
-            <Link href={`/service-area/${(sub as any).slug}`} key={(sub as any).slug} className={serviceAreaStyles.linkCard}>
+            <Link
+              href={`/service-area/${(sub as any).slug}`}
+              key={(sub as any).slug}
+              className={serviceAreaStyles.linkCard}
+            >
               <div className={serviceAreaStyles.cardImageWrap}>
                 <Image
-                  src={(sub as any).image || "https://placehold.co/600x300?text=The+Vistas"}
+                  src={
+                    (sub as any).image ||
+                    "https://placehold.co/600x300?text=The+Vistas"
+                  }
                   alt={sub.name}
                   className={serviceAreaStyles.cardImage}
                   width={600}
                   height={300}
                   loading="lazy"
                 />
-                <div className={serviceAreaStyles.cardOverlay}>View Details</div>
+                <div className={serviceAreaStyles.cardOverlay}>
+                  View Details
+                </div>
               </div>
               <div className={serviceAreaStyles.communityContent}>
                 <h3 className={serviceAreaStyles.communityTitle}>{sub.name}</h3>
                 <div className={serviceAreaStyles.communityMeta}>
-                  <span className={serviceAreaStyles.featureTag}>{sub.type}</span>
-                  {sub.builder !== "-" && <span className={serviceAreaStyles.featureTag}>Builder: {sub.builder}</span>}
-                  {sub.years !== "-" && <span className={serviceAreaStyles.featureTag}>Years: {sub.years}</span>}
+                  <span className={serviceAreaStyles.featureTag}>
+                    {sub.type}
+                  </span>
+                  {sub.builder !== "-" && (
+                    <span className={serviceAreaStyles.featureTag}>
+                      Builder: {sub.builder}
+                    </span>
+                  )}
+                  {sub.years !== "-" && (
+                    <span className={serviceAreaStyles.featureTag}>
+                      Years: {sub.years}
+                    </span>
+                  )}
                 </div>
-                <div className={serviceAreaStyles.communityDescription}>{sub.features.join(", ")}</div>
-                <div className={serviceAreaStyles.communityPrice}>{sub.homeSizes}</div>
+                <div className={serviceAreaStyles.communityDescription}>
+                  {sub.features.join(", ")}
+                </div>
+                <div className={serviceAreaStyles.communityPrice}>
+                  {sub.homeSizes}
+                </div>
               </div>
             </Link>
           ))}
@@ -226,13 +320,31 @@ export default function ServiceArea() {
 
       {/* Amenities Section */}
       <section className={styles.sectionCard}>
-        <h2 className={styles.centerTitle}>Village Amenities & Infrastructure</h2>
+        <h2 className={styles.centerTitle}>
+          Village Amenities & Infrastructure
+        </h2>
         <ul className={styles.amenitiesList}>
-          <li><strong>Parks:</strong> 3 major parks, 48-foot clock towers, 24-acre Vistas Community Park, sports fields, tennis, pool, and children's lagoon.</li>
-          <li><strong>Shopping:</strong> Vista Commons (100,000 sq ft), anchored by Albertsons, banking, fitness, dining.</li>
-          <li><strong>Schools:</strong> Linda Rankin Givens Elementary (in-village), zoned to Sig Rogich Middle & Palo Verde High.</li>
-          <li><strong>Governance:</strong> Summerlin West Community Association (Howard Hughes Corp), sub-HOAs, strict CC&Rs.</li>
-          <li><strong>Views:</strong> Red Rock Canyon to the west, Las Vegas Strip to the east.</li>
+          <li>
+            <strong>Parks:</strong> 3 major parks, 48-foot clock towers, 24-acre
+            Vistas Community Park, sports fields, tennis, pool, and children's
+            lagoon.
+          </li>
+          <li>
+            <strong>Shopping:</strong> Vista Commons (100,000 sq ft), anchored
+            by Albertsons, banking, fitness, dining.
+          </li>
+          <li>
+            <strong>Schools:</strong> Linda Rankin Givens Elementary
+            (in-village), zoned to Sig Rogich Middle & Palo Verde High.
+          </li>
+          <li>
+            <strong>Governance:</strong> Summerlin West Community Association
+            (Howard Hughes Corp), sub-HOAs, strict CC&Rs.
+          </li>
+          <li>
+            <strong>Views:</strong> Red Rock Canyon to the west, Las Vegas Strip
+            to the east.
+          </li>
         </ul>
       </section>
 
@@ -240,17 +352,55 @@ export default function ServiceArea() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
           <h2>Ready to Tour The Vistas?</h2>
-          <p>Contact Dr. Jan Duffy for private showings, market analysis, or exclusive access to off-market properties in Summerlin West.</p>
-          <a href="tel:7025500112" className={styles.ctaButton}>Call (702) 550-0112</a>
-          <a href="mailto:jan@lasvegashomeexpert.com" className={styles.ctaButtonSecondary}>Email Dr. Jan Duffy</a>
+          <p>
+            Contact Dr. Jan Duffy for private showings, market analysis, or
+            exclusive access to off-market properties in Summerlin West.
+          </p>
+          <a href="tel:7025500112" className={styles.ctaButton}>
+            Call (702) 550-0112
+          </a>
+          <a
+            href="mailto:jan@lasvegashomeexpert.com"
+            className={styles.ctaButtonSecondary}
+          >
+            Email Dr. Jan Duffy
+          </a>
           <div className={styles.ctaSocials}>
-            <a href="https://www.youtube.com/@DrDuffy" target="_blank" rel="noopener" aria-label="YouTube"><img src="/images/youtube.svg" alt="YouTube" /></a>
-            <a href="https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="/images/linkedin.svg" alt="LinkedIn" /></a>
-            <a href="https://www.pinterest.com/DrJanDuffy/" target="_blank" rel="noopener" aria-label="Pinterest"><img src="/images/pinterest.svg" alt="Pinterest" /></a>
-            <a href="https://www.facebook.com/RealtorDrJanDuffySummerlin" target="_blank" rel="noopener" aria-label="Facebook"><img src="/images/facebook.svg" alt="Facebook" /></a>
+            <a
+              href="https://www.youtube.com/@DrDuffy"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <img src="/images/youtube.svg" alt="YouTube" />
+            </a>
+            <a
+              href="https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <img src="/images/linkedin.svg" alt="LinkedIn" />
+            </a>
+            <a
+              href="https://www.pinterest.com/DrJanDuffy/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Pinterest"
+            >
+              <img src="/images/pinterest.svg" alt="Pinterest" />
+            </a>
+            <a
+              href="https://www.facebook.com/RealtorDrJanDuffySummerlin"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+            >
+              <img src="/images/facebook.svg" alt="Facebook" />
+            </a>
           </div>
         </div>
       </section>
     </div>
   );
-} 
+}

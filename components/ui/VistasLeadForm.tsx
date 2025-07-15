@@ -93,11 +93,7 @@ export default function VistasLeadForm() {
       <button type="submit" disabled={loading}>
         {loading ? "Sending..." : "Send Guide"}
       </button>
-      {error && (
-        <div className={styles.errorMessage}>
-          {error}
-        </div>
-      )}
+      {error && <div className={styles.errorMessage}>{error}</div>}
     </form>
   );
-} 
+}

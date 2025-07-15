@@ -58,7 +58,7 @@ const listingsJsonLd = {
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
-    telephone: "+1-702-550-0112"
+    telephone: "+1-702-550-0112",
   })),
 };
 

@@ -1,6 +1,6 @@
 import React, { ElementType, forwardRef } from "react";
 
-type SectionCardOwnProps<E extends ElementType = 'section'> = {
+type SectionCardOwnProps<E extends ElementType = "section"> = {
   className?: string;
   style?: React.CSSProperties;
   ariaLabel?: string;
@@ -8,9 +8,20 @@ type SectionCardOwnProps<E extends ElementType = 'section'> = {
   as?: E;
   testId?: string;
   children?: React.ReactNode;
-} & Omit<React.ComponentPropsWithoutRef<E>, 'as' | 'ref' | 'className' | 'style' | 'aria-label' | 'aria-labelledby' | 'data-testid'>;
+} & Omit<
+  React.ComponentPropsWithoutRef<E>,
+  | "as"
+  | "ref"
+  | "className"
+  | "style"
+  | "aria-label"
+  | "aria-labelledby"
+  | "data-testid"
+>;
 
-const SectionCard = forwardRef(function SectionCard<E extends ElementType = 'section'>(
+const SectionCard = forwardRef(function SectionCard<
+  E extends ElementType = "section",
+>(
   {
     children,
     className = "",
@@ -21,9 +32,9 @@ const SectionCard = forwardRef(function SectionCard<E extends ElementType = 'sec
     testId,
     ...restProps
   }: SectionCardOwnProps<E>,
-  ref: React.Ref<any>
+  ref: React.Ref<any>,
 ) {
-  const Component = as || 'section';
+  const Component = as || "section";
   return (
     <Component
       ref={ref}
@@ -37,12 +48,12 @@ const SectionCard = forwardRef(function SectionCard<E extends ElementType = 'sec
       {children}
     </Component>
   );
-}) as <E extends ElementType = 'section'>(
-  props: SectionCardOwnProps<E> & { ref?: React.Ref<any> }
+}) as <E extends ElementType = "section">(
+  props: SectionCardOwnProps<E> & { ref?: React.Ref<any> },
 ) => React.ReactElement | null;
 
 // Fix displayName linter error by casting to any
-(SectionCard as any).displayName = 'SectionCard';
+(SectionCard as any).displayName = "SectionCard";
 
 export default SectionCard;
 

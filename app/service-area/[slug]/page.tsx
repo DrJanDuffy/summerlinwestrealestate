@@ -14,4 +14,4 @@ export default async function SubdivisionPage({ params }: PageProps) {
     return notFound();
   }
   return <ClientSubdivisionPage subdivision={subdivision} />;
-} 
+}

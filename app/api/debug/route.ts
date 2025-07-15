@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
       tokenLength: apiToken ? apiToken.length : 0,
       tokenStart: apiToken ? apiToken.substring(0, 4) + "..." : "none",
       allEnvKeys: Object.keys(process.env).filter((key) =>
-        key.includes("CLOUDFLARE"),
+        key.includes("CLOUDFLARE")
       ),
     });
   } catch (error: any) {
@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
         error: "Debug error",
         message: error.message,
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

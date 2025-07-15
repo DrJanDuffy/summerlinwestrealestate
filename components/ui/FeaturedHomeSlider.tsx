@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { KeenSliderPlugin, useKeenSlider } from 'keen-slider/react';
-import Modal from 'react-modal';
-import Image from 'next/image';
-import 'keen-slider/keen-slider.min.css';
-import styles from './FeaturedHomeSlider.module.css';
+import React, { useState } from "react";
+import { KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
+import Modal from "react-modal";
+import Image from "next/image";
+import "keen-slider/keen-slider.min.css";
+import styles from "./FeaturedHomeSlider.module.css";
 
 export type FeaturedHomeImage = {
   src: string;
@@ -24,50 +24,61 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
 
   return (
     <div>
-      <div ref={sliderRef} className={`keen-slider ${styles.sliderContainer}`}>
+      <div
+        ref={sliderRef}
+        className={`keen-slider ${styles.sliderContainer}`}
+      >
         {images.map((img, idx) => (
-          <div className={`keen-slider__slide ${styles.slide}`} key={img.src}>
+          <div key={idx} className={`keen-slider__slide ${styles.slide}`}>
             <Image
               src={img.src}
               alt={img.caption}
               width={800}
               height={450}
-              className={`${styles.slideImage} ${img.mat ? styles.matFrame : ''}`}
+              className={styles.slideImage}
               priority={idx === 0}
             />
-            <div className={styles.slideCaption}>
-              {img.caption}
-            </div>
+            <div className={styles.slideCaption}>{img.caption}</div>
           </div>
         ))}
       </div>
-      <button onClick={() => setModalOpen(true)} className={styles.viewAllBtn}>
+      <button
+        className={styles.viewAllBtn}
+        type="button"
+        onClick={() => setModalOpen(true)}
+        aria-label="View all featured home photos"
+      >
         View All Photos
       </button>
       <Modal
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}
-        contentLabel="All Featured Home Photos"
         className={styles.modalContent}
         overlayClassName={styles.modalOverlay}
         ariaHideApp={false}
+        contentLabel="All Featured Home Photos"
       >
-        <h2 className={styles.modalTitle}>All Photos</h2>
+        <h2 className={styles.modalTitle}>All Featured Home Photos</h2>
         <div className={styles.modalGrid}>
           {images.map((img, idx) => (
-            <div key={img.src} className={styles.modalGridItem}>
+            <div key={idx} className={styles.modalGridItem}>
               <Image
                 src={img.src}
                 alt={img.caption}
                 width={400}
                 height={225}
-                className={`${styles.modalGridImage} ${img.mat ? styles.matFrame : ''}`}
+                className={styles.modalGridImage}
               />
               <div className={styles.modalGridCaption}>{img.caption}</div>
             </div>
           ))}
         </div>
-        <button onClick={() => setModalOpen(false)} className={styles.closeBtn}>
+        <button
+          className={styles.closeBtn}
+          type="button"
+          onClick={() => setModalOpen(false)}
+          aria-label="Close photo gallery"
+        >
           Close
         </button>
       </Modal>
@@ -75,4 +86,4 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
   );
 };
 
-export default FeaturedHomeSlider; 
+export default FeaturedHomeSlider;

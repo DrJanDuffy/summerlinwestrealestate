@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from './AgentAvatar.module.css';
+import styles from "./AgentAvatar.module.css";
 
 export default function AgentAvatar({
   src,
@@ -21,4 +21,4 @@ export default function AgentAvatar({
       className={`rounded-full mx-auto mb-4 ${styles.imageContainer}`}
     />
   );
-} 
+}
