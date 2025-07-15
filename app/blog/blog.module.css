@@ -27,18 +27,6 @@
   margin-bottom: var(--p-margin, 40px);
 }
 
-:global(h3) {
-  font-size: var(--h3-size, 1.4rem);
-  margin-bottom: var(--heading-margin, 24px);
-}
-:global(p) {
-  line-height: var(--line-height, 1.6);
-  margin-bottom: var(--p-margin, 18px);
-}
-:global(section) {
-  margin-bottom: var(--section-margin, 40px);
-}
-
 .link {
   color: #16b286;
   text-decoration: underline;

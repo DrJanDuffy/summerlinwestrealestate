@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { BlogPost } from "../../types/blog";
+import { BlogPost } from "@/types/blog";
 
 type BlogLayoutProps = {
   posts?: BlogPost[];
