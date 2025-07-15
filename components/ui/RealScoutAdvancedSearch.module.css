@@ -118,10 +118,6 @@
   color: #fff;
 }
 
-:global(h1) {
-  font-size: var(--h1-size, 2.7rem);
-  margin-bottom: var(--heading-margin, 24px);
-}
 :global(h2) {
   font-size: var(--h2-size, 2rem);
   margin-bottom: var(--heading-margin, 24px);
