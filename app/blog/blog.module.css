@@ -27,10 +27,6 @@
   margin-bottom: var(--p-margin, 40px);
 }
 
-:global(h2) {
-  font-size: var(--h2-size, 2rem);
-  margin-bottom: var(--heading-margin, 24px);
-}
 :global(h3) {
   font-size: var(--h3-size, 1.4rem);
   margin-bottom: var(--heading-margin, 24px);

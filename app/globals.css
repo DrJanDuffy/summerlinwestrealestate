@@ -1424,3 +1424,9 @@ realscout-advanced-search button:focus {
 :global(section) {
   margin-bottom: var(--section-margin, 40px);
 }
+
+/* Ensure global h2 styles are present */
+:global(h2) {
+  font-size: var(--h2-size, 2rem);
+  margin-bottom: var(--heading-margin, 24px);
+}
