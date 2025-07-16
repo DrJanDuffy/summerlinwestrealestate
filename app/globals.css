@@ -415,8 +415,7 @@
   }
 
   .card-elevated {
-    box-shadow: var(--shadow-lg);
-    border-color: transparent;
+    @apply shadow-lg border border-gray-200;
   }
 
   .card-hover {

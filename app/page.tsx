@@ -147,7 +147,7 @@ export default function Home() {
             Summerlin West Homes for Sale
           </h1>
           <p className={styles.luxurySubtitle}>
-            Discover luxury living in Las Vegas' most prestigious master-planned
+            Discover luxury living in Las Vegas&apos; most prestigious master-planned
             community
           </p>
           {/* AI-generated hero image */}

@@ -311,7 +311,7 @@ export default function HomebotWidget({
         <div class="error-container">
           <div class="error-title">Unable to Load Widget</div>
           <div class="error-message">${error}</div>
-          <button class="retry-button" onclick="this.dispatchEvent(new CustomEvent('retry', { bubbles: true }))">
+          <button class="retry-button" onclick="this.dispatchEvent(new CustomEvent(&apos;retry&apos;, { bubbles: true }))">
             Retry${retryCountRef.current > 0 ? ` (${retryCountRef.current}/${MAX_RETRY_ATTEMPTS})` : ""}
           </button>
         </div>

@@ -369,7 +369,7 @@ export default function ServiceArea() {
             <a
               href="https://www.youtube.com/@DrDuffy"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="YouTube"
             >
               <img src="/images/youtube.svg" alt="YouTube" />
@@ -377,7 +377,7 @@ export default function ServiceArea() {
             <a
               href="https://www.linkedin.com/showcase/berkshire-hathaway-homeservices-summerlin/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
               <img src="/images/linkedin.svg" alt="LinkedIn" />
@@ -385,7 +385,7 @@ export default function ServiceArea() {
             <a
               href="https://www.pinterest.com/DrJanDuffy/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Pinterest"
             >
               <img src="/images/pinterest.svg" alt="Pinterest" />
@@ -393,7 +393,7 @@ export default function ServiceArea() {
             <a
               href="https://www.facebook.com/RealtorDrJanDuffySummerlin"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Facebook"
             >
               <img src="/images/facebook.svg" alt="Facebook" />

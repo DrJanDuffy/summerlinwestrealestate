@@ -50,7 +50,7 @@ declare module "react-modal" {
   export function setAppElement(element: HTMLElement | string): void;
 }
 
-declare module '*.module.css' {
+declare module '*.module.css&apos; {
   const classes: { [key: string]: string };
   export default classes;
 }

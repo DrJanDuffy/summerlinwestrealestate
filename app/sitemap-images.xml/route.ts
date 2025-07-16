@@ -62,11 +62,11 @@ export async function GET() {
         
         for (const file of files) {
           if (isImageFile(file)) {
-            const imagePath = `${dir.replace('public', '')}/${file}`;
+            const imagePath = `${dir.replace(&apos;public&apos;, '')}/${file}`;
             const fullUrl = `${baseUrl}${imagePath}`;
             
             // Get metadata from JSON file or generate default
-            const category = dir.split('/').pop() || 'unknown';
+            const category = dir.split('/').pop() || &apos;unknown&apos;;
             const imageMetadata = metadata[category]?.[file] || generateDefaultMetadata(file, dir);
             
             imageUrls.push({
@@ -120,7 +120,7 @@ export async function GET() {
 
 // Helper function to check if file is an image
 function isImageFile(filename: string): boolean {
-  const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.bmp', '.tiff'];
+  const imageExtensions = ['.jpg&apos;, '.jpeg&apos;, '.png&apos;, '.gif&apos;, '.webp&apos;, '.svg&apos;, '.bmp&apos;, '.tiff'];
   const extension = filename.toLowerCase().substring(filename.lastIndexOf('.'));
   return imageExtensions.includes(extension);
 }
@@ -141,24 +141,24 @@ function generateDefaultMetadata(filename: string, directory: string): ImageMeta
   let priceRange = "N/A";
   
   // Customize based on directory
-  if (directory.includes('featured-homes')) {
+  if (directory.includes(&apos;featured-homes&apos;)) {
     title = `${capitalizedWords.join(' ')} - Summerlin West Luxury Homes`;
     caption = `Featured luxury home in Summerlin West showcasing ${capitalizedWords.join(' ').toLowerCase()}`;
     propertyType = "Single Family Home";
     priceRange = "$800K - $2.5M";
-  } else if (directory.includes('icons')) {
+  } else if (directory.includes(&apos;icons&apos;)) {
     title = `${capitalizedWords.join(' ')} - Summerlin West Real Estate`;
     caption = `Professional icon representing ${capitalizedWords.join(' ').toLowerCase()} for Summerlin West Real Estate`;
     propertyType = "Branding";
-  } else if (directory.includes('agent-photos')) {
+  } else if (directory.includes(&apos;agent-photos&apos;)) {
     title = `${capitalizedWords.join(' ')} - Summerlin West Real Estate Agent`;
     caption = `Professional photo of ${capitalizedWords.join(' ').toLowerCase()} from Summerlin West Real Estate`;
     propertyType = "Agent";
-  } else if (directory.includes('community-photos')) {
+  } else if (directory.includes(&apos;community-photos&apos;)) {
     title = `${capitalizedWords.join(' ')} - Summerlin West Community`;
     caption = `Beautiful community photo showing ${capitalizedWords.join(' ').toLowerCase()} in Summerlin West`;
     propertyType = "Community";
-  } else if (directory.includes('blog-images')) {
+  } else if (directory.includes(&apos;blog-images&apos;)) {
     title = `${capitalizedWords.join(' ')} - Summerlin West Real Estate Blog`;
     caption = `Blog image featuring ${capitalizedWords.join(' ').toLowerCase()} for Summerlin West Real Estate`;
     propertyType = "Blog";

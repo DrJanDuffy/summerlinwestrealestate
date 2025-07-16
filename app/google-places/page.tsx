@@ -94,13 +94,13 @@ export default function GooglePlaces() {
     {
       title: "Autocomplete Component",
       language: "javascript",
-      code: `import { Autocomplete } from '@googlemaps/react-wrapper';
+      code: `import { Autocomplete } from '@googlemaps/react-wrapper&apos;;
 
 function AddressSearch() {
   return (
     <Autocomplete
       onLoad={autocomplete => {
-        autocomplete.setFields(['address_components', 'geometry']);
+        autocomplete.setFields(['address_components&apos;, &apos;geometry']);
       }}
       onPlaceChanged={() => {
         // Handle place selection
@@ -125,7 +125,7 @@ function AddressSearch() {
     const service = new google.maps.places.PlacesService(map);
     service.getDetails({
       placeId: placeId,
-      fields: ['name', 'formatted_address', 'photos', 'reviews']
+      fields: ['name&apos;, &apos;formatted_address&apos;, &apos;photos&apos;, &apos;reviews']
     }, (result, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         setPlace(result);

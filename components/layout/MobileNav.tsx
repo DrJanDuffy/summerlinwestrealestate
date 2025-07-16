@@ -112,7 +112,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <a
                 href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 aria-label="Browse Properties"
                 className={`hover:text-[#3A8DDE] ${styles.iconLarge}`}
               >
@@ -128,7 +128,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <a
                 href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 aria-label="View Listings"
                 className={`hover:text-[#16B286] ${styles.iconLarge}`}
               >
@@ -144,7 +144,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <a
                 href="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 aria-label="Search Properties"
                 className={`hover:text-[#0A2540] ${styles.iconLarge}`}
               >

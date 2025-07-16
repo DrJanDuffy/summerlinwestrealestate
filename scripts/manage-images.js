@@ -78,7 +78,7 @@ function validateMetadata() {
 
       // Check data types
       if (imageData.keywords && !Array.isArray(imageData.keywords)) {
-        errors.push(`${category}/${filename}: 'keywords' must be an array`);
+        errors.push(`${category}/${filename}: &apos;keywords&apos; must be an array`);
       }
 
       if (imageData.title && imageData.title.length < 10) {

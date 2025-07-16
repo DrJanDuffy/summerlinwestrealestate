@@ -7,7 +7,7 @@ export default function RealScoutListings() {
     // Add the script to the head if it doesn&apos;t exist
     if (
       !document.querySelector(
-        'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]',
+        &apos;script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]',
       )
     ) {
       const script = document.createElement("script");
