@@ -1,9 +1,14 @@
-"use client";
-import dynamic from "next/dynamic";
-const LatestMarketInsights = dynamic(() => import("./LatestMarketInsights"), {
-  ssr: false,
-});
+'use client';
 
-export default function LatestMarketInsightsClient(props: unknown) {
-  return <LatestMarketInsights {...props} />;
-}
+import React from 'react';
+
+const LatestMarketInsightsClient: React.FC = () => {
+  return (
+    <div className="market-insights">
+      <h2>Latest Market Insights</h2>
+      <p>Market insights content goes here</p>
+    </div>
+  );
+};
+
+export default LatestMarketInsightsClient;

@@ -2062,6 +2062,13 @@ a.secondary {
 }
 
 .container {
-  --main-content-width: 62%;
-  --sidebar-width: 38%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

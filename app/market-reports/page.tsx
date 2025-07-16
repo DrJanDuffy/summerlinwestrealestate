@@ -2,10 +2,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
 import dynamic from "next/dynamic";
-import RealScoutAdvancedSearch from "@/components/ui/RealScoutAdvancedSearch";
-import styles from "@/app/page.module.css";
+import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
+import styles from "../page.module.css";
 import { useState } from "react";
 const LeadCaptureForm = dynamic(
   () => import("../../components/ui/LeadCaptureForm"),

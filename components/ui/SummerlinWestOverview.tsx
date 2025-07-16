@@ -1,7 +1,13 @@
 "use client";
-import React from "react";
-import styles from "@/app/page.module.css";
+import React from 'react';
 
-export default function SummerlinWestOverview() {
-  return <div>Summerlin West Overview</div>;
-}
+const SummerlinWestOverview: React.FC = () => {
+  return (
+    <div className="summerlin-west-overview">
+      <h2>Summerlin West Overview</h2>
+      <p>Component content goes here</p>
+    </div>
+  );
+};
+
+export default SummerlinWestOverview;
