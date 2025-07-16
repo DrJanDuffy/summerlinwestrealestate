@@ -7,15 +7,25 @@ import styles from "@/app/page.module.css";
 const RSS_FEED_URL =
   "https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18";
 
+// Define specific types for RSS items
+interface RSSItem {
+  title: string;
+  link: string;
+  pubDate?: string;
+  contentSnippet?: string;
+  "media:content"?: { url: string } | { url: string }[];
+  enclosure?: { url: string };
+}
+
 // Cache for RSS data
-let rssCache: { data: unknown[] | null; timestamp: number } = {
+let rssCache: { data: RSSItem[] | null; timestamp: number } = {
   data: null,
   timestamp: 0,
 };
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 const LatestMarketInsights = React.memo(function LatestMarketInsights() {
-  const [rssItems, setRssItems] = useState<any[]>([]);
+  const [rssItems, setRssItems] = useState<RSSItem[]>([]);
   const [aiImages, setAiImages] = useState<{ [title: string]: string }>({});
 
   useEffect(() => {
@@ -35,7 +45,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
           },
         });
         const feed = await parser.parseURL(RSS_FEED_URL);
-        const items = feed.items.slice(0, 3);
+        const items = feed.items.slice(0, 3) as RSSItem[];
 
         // Update cache
         rssCache = { data: items, timestamp: now };
@@ -60,7 +70,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
           body: JSON.stringify({ prompt }),
         })
           .then((res) => res.json())
-          .then((data) => {
+          .then((data: { base64?: string }) => {
             if (data.base64) {
               setAiImages((prev) => ({
                 ...prev,
@@ -74,7 +84,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
   }, [rssItems]);
 
   const getImageUrl = useMemo(() => {
-    return (item: unknown) => {
+    return (item: RSSItem) => {
       // Handle media:content as array or object
       let mediaContent = item["media:content"];
       if (Array.isArray(mediaContent)) {
@@ -108,7 +118,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
               <a
                 href={item.link}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className={styles.insightLink}
               >
                 <Image
