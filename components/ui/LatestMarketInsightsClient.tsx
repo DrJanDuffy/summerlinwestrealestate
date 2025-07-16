@@ -4,6 +4,6 @@ const LatestMarketInsights = dynamic(() => import("./LatestMarketInsights"), {
   ssr: false,
 });
 
-export default function LatestMarketInsightsClient(props: any) {
+export default function LatestMarketInsightsClient(props: unknown) {
   return <LatestMarketInsights {...props} />;
 }

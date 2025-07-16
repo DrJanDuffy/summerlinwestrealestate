@@ -1,8 +1,8 @@
-import styles from "../page.module.css";
+import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
-import VistasListingFormClient from "../../components/ui/VistasListingFormClient";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import VistasListingFormClient from "@/components/ui/VistasListingFormClient";
 
 export const metadata = {
   title: "Vistas Summerlin Home Listings | Summerlin West Real Estate",

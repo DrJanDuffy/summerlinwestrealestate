@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 // ===== TYPE DEFINITIONS =====
 declare global {
   interface Window {
-    Homebot?: any;
+    Homebot?: unknown;
   }
 }
 
@@ -136,7 +136,7 @@ export default function HomebotWidget({
     };
 
     // Note: Append to document head instead of shadow DOM
-    // Scripts in shadow DOM don't execute in global scope
+    // Scripts in shadow DOM don&apos;t execute in global scope
     document.head.appendChild(script);
   }, [initializeWidget, handleError, clearLoadTimeout]);
 

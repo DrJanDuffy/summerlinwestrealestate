@@ -19,7 +19,7 @@ const TESTIMONIALS = [
   {
     name: "Linda & Tom",
     review:
-      "We sold our home above asking price thanks to expert marketing and negotiation. Couldn't be happier!",
+      "We sold our home above asking price thanks to expert marketing and negotiation. Couldn&apos;t be happier!",
     rating: 5,
     photo: null,
   },

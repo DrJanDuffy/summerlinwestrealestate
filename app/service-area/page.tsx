@@ -326,7 +326,7 @@ export default function ServiceArea() {
         <ul className={styles.amenitiesList}>
           <li>
             <strong>Parks:</strong> 3 major parks, 48-foot clock towers, 24-acre
-            Vistas Community Park, sports fields, tennis, pool, and children's
+            Vistas Community Park, sports fields, tennis, pool, and children&apos;s
             lagoon.
           </li>
           <li>

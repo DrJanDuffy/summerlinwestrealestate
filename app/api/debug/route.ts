@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
         key.includes("CLOUDFLARE")
       ),
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       {
         error: "Debug error",

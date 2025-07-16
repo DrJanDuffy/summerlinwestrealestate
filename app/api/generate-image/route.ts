@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
     const { prompt } = await req.json();
 
-    // Use Perplexity's image generation API directly
+    // Use Perplexity&apos;s image generation API directly
     const response = await fetch("https://api.perplexity.ai/chat/completions", {
       method: "POST",
       headers: {
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     const imageDescription =
       data.choices[0]?.message?.content || "Image generation failed";
 
-    // For now, return a placeholder since Perplexity doesn't generate images directly
+    // For now, return a placeholder since Perplexity doesn&apos;t generate images directly
     // You might want to use a different service for actual image generation
     return NextResponse.json({
       description: imageDescription,

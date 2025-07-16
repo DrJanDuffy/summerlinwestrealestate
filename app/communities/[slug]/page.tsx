@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../page.module.css";
-import type { Metadata } from "next";
 import NeighborhoodHero from "../../../components/ui/NeighborhoodHero";
 
 const communities = [
@@ -129,7 +128,7 @@ const communities = [
   },
 ];
 
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params }: unknown) {
   const community = communities.find((c) => c.slug === params.slug);
   if (!community) {
     return {
@@ -147,7 +146,7 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }: unknown) {
   const { slug } = params;
   const community = communities.find((c) => c.slug === slug);
   if (!community) {

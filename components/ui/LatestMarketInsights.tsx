@@ -2,13 +2,13 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Parser from "rss-parser";
 import Image from "next/image";
-import styles from "../../app/page.module.css";
+import styles from "@/app/page.module.css";
 
 const RSS_FEED_URL =
   "https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18";
 
 // Cache for RSS data
-let rssCache: { data: any[] | null; timestamp: number } = {
+let rssCache: { data: unknown[] | null; timestamp: number } = {
   data: null,
   timestamp: 0,
 };
@@ -74,7 +74,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
   }, [rssItems]);
 
   const getImageUrl = useMemo(() => {
-    return (item: any) => {
+    return (item: unknown) => {
       // Handle media:content as array or object
       let mediaContent = item["media:content"];
       if (Array.isArray(mediaContent)) {

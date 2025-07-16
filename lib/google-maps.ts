@@ -190,7 +190,7 @@ export function createNearbySearchUrl(
 }
 
 // Error handling for API responses
-export function handleGoogleMapsError(response: any): void {
+export function handleGoogleMapsError(response: unknown): void {
   if (response.status === "REQUEST_DENIED") {
     throw new Error(
       "Google Maps API request denied. Check your API key and billing status.",

@@ -2,10 +2,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
 import dynamic from "next/dynamic";
-import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
-import styles from "../page.module.css";
+import RealScoutAdvancedSearch from "@/components/ui/RealScoutAdvancedSearch";
+import styles from "@/app/page.module.css";
 import { useState } from "react";
 const LeadCaptureForm = dynamic(
   () => import("../../components/ui/LeadCaptureForm"),
@@ -179,7 +179,7 @@ export default function MarketReports() {
         <h2>Summerlin Market Analysis</h2>
         <div className={styles.marketAnalysis}>
           <div className={styles.analysisSection}>
-            <strong>What's driving the market?</strong>
+            <strong>What&apos;s driving the market?</strong>
             <p>
               Low inventory, high demand, and continued migration to Las Vegas
               are keeping prices strong. New construction is helping, but resale
@@ -195,7 +195,7 @@ export default function MarketReports() {
             </p>
           </div>
           <div className={styles.analysisSection}>
-            <strong>What's the outlook?</strong>
+            <strong>What&apos;s the outlook?</strong>
             <p>
               Experts predict continued growth, especially in walkable,
               amenity-rich communities. Mortgage rates and new builder

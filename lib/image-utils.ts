@@ -232,7 +232,7 @@ export function getFeaturedHomeImages(): Array<{
  * Validate image metadata structure
  */
 export function validateImageMetadata(
-  metadata: any,
+  metadata: unknown,
 ): metadata is ImageMetadata {
   const requiredFields = [
     "title",

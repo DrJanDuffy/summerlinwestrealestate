@@ -45,7 +45,7 @@ export default function RealScoutAdvancedSearch({
       console.log("RealScout Advanced Search widget loaded");
 
       // Add event listeners for tracking and search
-      const handleSearch = (event: any) => {
+      const handleSearch = (event: unknown) => {
         // Analytics
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag("event", "real_scout_search", {

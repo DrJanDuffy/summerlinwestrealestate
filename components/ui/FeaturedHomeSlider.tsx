@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
+import { useKeenSlider } from "keen-slider/react";
 import Modal from "react-modal";
 import Image from "next/image";
 import "keen-slider/keen-slider.min.css";

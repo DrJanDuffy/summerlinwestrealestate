@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Cloudflare API Error:", error);
     return NextResponse.json(
       { error: "Failed to verify Cloudflare token" },

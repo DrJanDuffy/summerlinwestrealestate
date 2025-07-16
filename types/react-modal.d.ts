@@ -18,8 +18,8 @@ declare module "react-modal" {
     portalClassName?: string;
     overlayRef?: (overlay: HTMLDivElement) => void;
     contentRef?: (content: HTMLDivElement) => void;
-    overlayElement?: (props: any, contentEl: ReactNode) => ReactNode;
-    contentElement?: (props: any, children: ReactNode) => ReactNode;
+    overlayElement?: (props: unknown, contentEl: ReactNode) => ReactNode;
+    contentElement?: (props: unknown, children: ReactNode) => ReactNode;
     parentSelector?: () => HTMLElement;
     role?: string;
     contentLabel?: string;
@@ -31,8 +31,8 @@ declare module "react-modal" {
     overlay?: boolean;
     overlayRef?: (overlay: HTMLDivElement) => void;
     contentRef?: (content: HTMLDivElement) => void;
-    overlayElement?: (props: any, contentEl: ReactNode) => ReactNode;
-    contentElement?: (props: any, children: ReactNode) => ReactNode;
+    overlayElement?: (props: unknown, contentEl: ReactNode) => ReactNode;
+    contentElement?: (props: unknown, children: ReactNode) => ReactNode;
     parentSelector?: () => HTMLElement;
     role?: string;
     contentLabel?: string;

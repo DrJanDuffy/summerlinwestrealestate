@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styles from "../../app/page.module.css";
+import styles from "@/app/page.module.css";
 
 export default function VistasLeadForm() {
   const [name, setName] = useState("");
@@ -47,7 +47,7 @@ export default function VistasLeadForm() {
           event_label: "The Vistas",
         });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(
         "There was a problem submitting your request. Please try again later.",
       );

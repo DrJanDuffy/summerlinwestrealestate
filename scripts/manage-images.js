@@ -257,7 +257,7 @@ function showStats() {
         }
       });
     } catch (error) {
-      // Directory doesn't exist
+      // Directory doesn&apos;t exist
     }
   });
 

@@ -2,9 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
-import TestimonialsSectionClient from "../../components/ui/TestimonialsSectionClient";
+import styles from "@/app/page.module.css";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import TestimonialsSectionClient from "@/components/ui/TestimonialsSectionClient";
 import { FaMapMarkerAlt, FaUserTie } from "react-icons/fa";
 
 const structuredData = {
@@ -41,7 +41,7 @@ export default function About() {
           </strong>
         </p>
         <p>
-          As a dedicated <strong>Summerlin West REALTOR®</strong> and longtime Las Vegas resident, Dr. Jan Duffy brings unparalleled expertise to one of Nevada's most sought-after master-planned communities. With her unique background as both a licensed real estate professional and doctorate-level educator, Dr. Duffy combines analytical precision with deep local market knowledge to deliver exceptional results for <strong>Summerlin West home buyers and sellers</strong>.
+          As a dedicated <strong>Summerlin West REALTOR®</strong> and longtime Las Vegas resident, Dr. Jan Duffy brings unparalleled expertise to one of Nevada&apos;s most sought-after master-planned communities. With her unique background as both a licensed real estate professional and doctorate-level educator, Dr. Duffy combines analytical precision with deep local market knowledge to deliver exceptional results for <strong>Summerlin West home buyers and sellers</strong>.
         </p>
         <h2>Your Summerlin West Market Specialist</h2>
         <p>
@@ -51,35 +51,35 @@ export default function About() {
           <strong>Recent Market Results:</strong>
         </p>
         <ul>
-          <li>Successfully guided clients through Summerlin West's competitive market where 50% of homes sell within 30 days</li>
-          <li>Expert navigation of the area's premium price points, with median home values reaching $680,000+</li>
+          <li>Successfully guided clients through Summerlin West&apos;s competitive market where 50% of homes sell within 30 days</li>
+          <li>Expert navigation of the area&apos;s premium price points, with median home values reaching $680,000+</li>
           <li>Specialized knowledge of new construction opportunities from premier builders like KB Homes, Toll Brothers, and Taylor Morrison</li>
         </ul>
         <h2>Comprehensive Summerlin West Services</h2>
         <p><strong>For Home Sellers:</strong></p>
         <ul>
-          <li>Strategic pricing analysis leveraging Summerlin West's 8.8% year-over-year appreciation</li>
+          <li>Strategic pricing analysis leveraging Summerlin West&apos;s 8.8% year-over-year appreciation</li>
           <li>Professional staging consultation to highlight Red Rock Canyon views and luxury features</li>
-          <li>Targeted marketing to qualified buyers seeking Summerlin's lifestyle amenities</li>
+          <li>Targeted marketing to qualified buyers seeking Summerlin&apos;s lifestyle amenities</li>
           <li>Expert positioning for quick sales in this fast-moving market</li>
         </ul>
         <p><strong>For Home Buyers:</strong></p>
         <ul>
           <li>Exclusive access to new construction in Grand Park District and Kestrel Commons Village</li>
-          <li>In-depth neighborhood guidance across Summerlin West's distinct villages</li>
+          <li>In-depth neighborhood guidance across Summerlin West&apos;s distinct villages</li>
           <li>School district expertise for families prioritizing top-rated Clark County schools</li>
           <li>Investment analysis for luxury properties and custom home opportunities</li>
         </ul>
         <h2>Deep Community Connections</h2>
         <p>
-          Living in Summerlin West for over a decade, Dr. Duffy knows every trail in the <strong>150-mile trail system</strong>, the best tee times at <strong>TPC Summerlin</strong>, and which neighborhoods offer the most spectacular <strong>Red Rock Canyon sunset views</strong>. She's an active member of the Summerlin community, regularly participating in <strong>Tour de Summerlin</strong> and volunteering at local schools.
+          Living in Summerlin West for over a decade, Dr. Duffy knows every trail in the <strong>150-mile trail system</strong>, the best tee times at <strong>TPC Summerlin</strong>, and which neighborhoods offer the most spectacular <strong>Red Rock Canyon sunset views</strong>. She&apos;s an active member of the Summerlin community, regularly participating in <strong>Tour de Summerlin</strong> and volunteering at local schools.
         </p>
         <p>
-          Dr. Duffy's clients consistently praise her responsiveness, market expertise, and ability to simplify complex transactions. Whether you're relocating from out-of-state, seeking a luxury retirement home, or ready to sell your Summerlin West property, her commitment to excellence ensures a smooth, successful real estate experience.
+          Dr. Duffy&apos;s clients consistently praise her responsiveness, market expertise, and ability to simplify complex transactions. Whether you&apos;re relocating from out-of-state, seeking a luxury retirement home, or ready to sell your Summerlin West property, her commitment to excellence ensures a smooth, successful real estate experience.
         </p>
         <p>
           <strong>
-            Ready to explore Summerlin West's luxury lifestyle? Contact Dr. Jan Duffy today for your complimentary market consultation and discover why Summerlin West continues to rank among America's top master-planned communities.
+            Ready to explore Summerlin West&apos;s luxury lifestyle? Contact Dr. Jan Duffy today for your complimentary market consultation and discover why Summerlin West continues to rank among America&apos;s top master-planned communities.
           </strong>
         </p>
         <hr />
@@ -194,7 +194,7 @@ export default function About() {
                   7/7/2025
                 </time>
                 <p>
-                  If you've been putting off buying a home because you thought
+                  If you&apos;ve been putting off buying a home because you thought
                   getting approved would be too hard, know this: qualifying for
                   a mortgage is starting to get a bit more achievable, but
                   lending standards are still strong.
@@ -209,13 +209,13 @@ export default function About() {
               <span className={styles.newsBadge}>News</span>
               <div className={styles.newsContent}>
                 <h3 id="news-buying-homes">
-                  Think No One's Buying Homes Right Now? Think Again.
+                  Think No One&apos;s Buying Homes Right Now? Think Again.
                 </h3>
                 <time className={styles.newsDate} dateTime="2025-07-03">
                   7/3/2025
                 </time>
                 <p>
-                  If you've seen headlines saying home sales are down compared
+                  If you&apos;ve seen headlines saying home sales are down compared
                   to last year, you might be thinking – is it even a good time
                   to sell?
                 </p>
@@ -229,7 +229,7 @@ export default function About() {
               <span className={styles.newsBadge}>News</span>
               <div className={styles.newsContent}>
                 <h3 id="news-investors">
-                  Why Big Investors Aren't a Challenge for Today's Homebuyer
+                  Why Big Investors Aren&apos;t a Challenge for Today&apos;s Homebuyer
                 </h3>
                 <time className={styles.newsDate} dateTime="2025-07-02">
                   7/2/2025
@@ -237,7 +237,7 @@ export default function About() {
                 <p>
                   Remember the chatter in the headlines about all the homes big
                   institutional investors were buying? If you were thinking
-                  about buying a home yourself, you may have wondered how you'd
+                  about buying a home yourself, you may have wondered how you&apos;d
                   ever be able to compete with that.
                 </p>
               </div>

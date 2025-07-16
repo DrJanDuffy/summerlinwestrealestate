@@ -1,12 +1,12 @@
 "use client";
-import styles from "../page.module.css";
+import styles from "@/app/page.module.css";
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
 
 // Dynamic imports for client components
 const LatestMarketInsights = dynamic(
@@ -63,7 +63,7 @@ export default function TheVistas() {
           event_label: "The Vistas",
         });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(
         "There was a problem submitting your request. Please try again later.",
       );

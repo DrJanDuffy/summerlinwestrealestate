@@ -29,13 +29,13 @@ export default function NotFound() {
             <h1 className={styles.errorCode}>404</h1>
             <h2 className={styles.errorTitle}>Page Not Found</h2>
             <p className={styles.errorMessage}>
-              The page you're looking for doesn't exist, but we can help you find your dream home in Summerlin West!
+              The page you&apos;re looking for doesn&apos;t exist, but we can help you find your dream home in Summerlin West!
             </p>
 
             <div className={styles.redirectMessage}>
               <h3>Redirecting you to our property search...</h3>
               <p>
-                You'll be automatically redirected to browse our current listings in Summerlin West.
+                You&apos;ll be automatically redirected to browse our current listings in Summerlin West.
               </p>
             </div>
 

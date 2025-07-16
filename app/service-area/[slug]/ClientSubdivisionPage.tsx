@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, useMemo, useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../page.module.css";
+import styles from "@/app/service-area/page.module.css";
 import clientStyles from "./client-subdivision.module.css";
 
 // Enhanced Loading Skeleton
@@ -218,7 +218,7 @@ function SubdivisionImage({
   heroImage,
   imageAlt,
 }: {
-  subdivision: any;
+  subdivision: unknown;
   heroImage: string;
   imageAlt: string;
 }) {
@@ -339,7 +339,7 @@ function AmenitiesSection() {
 }
 
 // Enhanced CTA with floating action and urgency
-function EnhancedCTA({ subdivision }: { subdivision: any }) {
+function EnhancedCTA({ subdivision }: { subdivision: unknown }) {
   const [showFloatingCTA, setShowFloatingCTA] = useState(false);
   const { scrollY } = useScroll();
 
@@ -392,7 +392,7 @@ function EnhancedCTA({ subdivision }: { subdivision: any }) {
             transition={{ delay: 0.3 }}
           >
             Dr. Jan Duffy offers exclusive access to off-market properties,
-            personalized market analysis, and VIP showings. Don't miss your
+            personalized market analysis, and VIP showings. Don&apos;t miss your
             dream home in this prestigious community.
           </motion.p>
 

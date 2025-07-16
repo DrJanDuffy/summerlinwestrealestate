@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
+import styles from "@/app/page.module.css";
 import dynamic from "next/dynamic";
-import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 import Head from "next/head";
 
 // Dynamic import for client components

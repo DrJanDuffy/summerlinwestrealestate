@@ -4,7 +4,7 @@ import Head from "next/head";
 
 export default function RealScoutListings() {
   useEffect(() => {
-    // Add the script to the head if it doesn't exist
+    // Add the script to the head if it doesn&apos;t exist
     if (
       !document.querySelector(
         'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]',
@@ -17,7 +17,7 @@ export default function RealScoutListings() {
       document.head.appendChild(script);
     }
 
-    // Add the styles if they don't exist
+    // Add the styles if they don&apos;t exist
     if (!document.querySelector("style[data-realscout-styles]")) {
       const style = document.createElement("style");
       style.setAttribute("data-realscout-styles", "true");

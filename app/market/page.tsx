@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./market.module.css";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
 
 export default function Market() {
   return (

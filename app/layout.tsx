@@ -4,12 +4,12 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
-import Footer from "../components/layout/Footer";
-import BreadcrumbsClient from "../components/layout/BreadcrumbsClient";
+import Footer from "@/components/layout/Footer";
+import BreadcrumbsClient from "@/components/layout/BreadcrumbsClient";
 import Head from "next/head";
-import RealScoutWidget from "../components/ui/RealScoutWidget";
+import RealScoutWidget from "@/components/ui/RealScoutWidget";
 import styles from "./page.module.css";
-import Header from "../components/layout/Header";
+import Header from "@/components/layout/Header";
 
 const inter = Inter({
   subsets: ["latin"],

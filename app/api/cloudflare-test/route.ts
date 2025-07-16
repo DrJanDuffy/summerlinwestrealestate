@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
       user: data.result,
       status: response.status,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Cloudflare API Error:", error);
     return NextResponse.json(
       {

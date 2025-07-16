@@ -2,9 +2,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
+import styles from "@/app/page.module.css";
 import dynamic from "next/dynamic";
-import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 const LatestMarketInsights = dynamic(
   () => import("../../components/ui/LatestMarketInsights"),
   { ssr: false },
@@ -329,7 +329,7 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
               <h3>Rich Property Information</h3>
               <p>
                 Display comprehensive property details, photos, and neighborhood
-                information from Google's extensive database.
+                information from Google&apos;s extensive database.
               </p>
             </div>
             <div className={styles.benefitCard}>

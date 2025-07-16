@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
-import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
-import LeadCaptureFormClient from "../../components/ui/LeadCaptureFormClient";
+import styles from "@/app/page.module.css";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import LeadCaptureFormClient from "@/components/ui/LeadCaptureFormClient";
 
 // Metadata export (replaces Head component)
 export const metadata = {
@@ -78,8 +78,8 @@ export default function DowntownSummerlin() {
               Downtown Summerlin is home to over 125 stores, from luxury
               boutiques to popular national brands. Enjoy open-air shopping,
               seasonal events, and a vibrant atmosphere perfect for families and
-              trendsetters alike. Whether you're looking for fashion, home
-              goods, or unique gifts, you'll find it all in this premier Las
+              trendsetters alike. Whether you&apos;re looking for fashion, home
+              goods, or unique gifts, you&apos;ll find it all in this premier Las
               Vegas shopping destination.
             </p>
           </div>
@@ -88,9 +88,9 @@ export default function DowntownSummerlin() {
           <h2>Dining in Downtown Summerlin</h2>
           <div className={styles.contentGrid}>
             <p className={styles.contentText}>
-              Experience a culinary adventure with Downtown Summerlin's diverse
+              Experience a culinary adventure with Downtown Summerlin&apos;s diverse
               dining options. From upscale steakhouses and trendy cafes to
-              family-friendly eateries and quick bites, there's something for
+              family-friendly eateries and quick bites, there&apos;s something for
               every palate. Enjoy al fresco dining, happy hours, and chef-driven
               menus in a lively, walkable environment.
             </p>
@@ -114,7 +114,7 @@ export default function DowntownSummerlin() {
               className={styles.contentImage}
             />
             <p className={styles.contentText}>
-              Downtown Summerlin is more than shopping and dining—it's a
+              Downtown Summerlin is more than shopping and dining—it&apos;s a
               lifestyle hub. Enjoy year-round events, live music, farmers
               markets, and the Las Vegas Ballpark. The area is also home to City
               National Arena, practice facility for the Vegas Golden Knights,
@@ -129,7 +129,7 @@ export default function DowntownSummerlin() {
               <p>
                 The Downtown Summerlin area offers a mix of luxury condos,
                 modern townhomes, and single-family homes. With walkable access
-                to shopping, dining, and entertainment, it's one of the most
+                to shopping, dining, and entertainment, it&apos;s one of the most
                 desirable places to live in Las Vegas. The real estate market
                 here is competitive, with homes selling quickly and strong
                 appreciation trends.

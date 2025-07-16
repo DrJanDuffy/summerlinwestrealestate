@@ -4,6 +4,6 @@ const LeadCaptureForm = dynamic(() => import("./LeadCaptureForm"), {
   ssr: false,
 });
 
-export default function LeadCaptureFormClient(props: any) {
+export default function LeadCaptureFormClient(props: unknown) {
   return <LeadCaptureForm {...props} />;
 }

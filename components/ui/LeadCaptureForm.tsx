@@ -121,7 +121,7 @@ export default function LeadCaptureForm({
           onClose?.();
         }, 3000);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       setSubmitStatus("error");
       setErrorMessage(
         error.message ||
@@ -156,7 +156,7 @@ export default function LeadCaptureForm({
           </div>
           <h3>Thank You!</h3>
           <p>
-            Your request has been submitted successfully. We'll be in touch
+            Your request has been submitted successfully. We&apos;ll be in touch
             within 24 hours.
           </p>
           {variant === "inline" && (

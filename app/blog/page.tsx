@@ -1,9 +1,9 @@
-import { BlogPost } from "../../types/blog";
+import { BlogPost } from "@/types/blog";
 import Link from "next/link";
 import Image from "next/image";
 import Parser from "rss-parser";
 import styles from "./blog.module.css";
-import BlogLayout from "../../components/ui/BlogLayout";
+import BlogLayout from "@/components/ui/BlogLayout";
 
 export const dynamic = "force-dynamic";
 
@@ -41,7 +41,7 @@ const LOCAL_MARKET_INSIGHTS = [
 const LOCAL_EVENTS = [
   "Check out the Summerlin Farmers Market this Saturday at Downtown Summerlin!",
   "Join us for Movies in the Park at The Vistas this Friday night.",
-  "Don't miss the Summerlin Art Festival coming up next month!",
+  "Don&apos;t miss the Summerlin Art Festival coming up next month!",
   "Explore the new trails opening in Stonebridge this weekend.",
   "Sign up for the Summerlin West Community Garage Sale!",
 ];
@@ -53,7 +53,7 @@ function isHyperlocal(post: BlogPost) {
 }
 
 const LOCAL_INTRO =
-  "This update is brought to you by your Summerlin West real estate experts. Here's how this news impacts our local market:";
+  "This update is brought to you by your Summerlin West real estate experts. Here&apos;s how this news impacts our local market:";
 const LOCAL_CTA =
   "If you have questions about how this affects your home or your plans in Summerlin West, contact us for a hyperlocal perspective!";
 
@@ -69,7 +69,7 @@ async function fetchRssPosts() {
   return feed.items || [];
 }
 
-const formatPost = (post: any): BlogPost => {
+const formatPost = (post: unknown): BlogPost => {
   return {
     id: post.id || post.guid || post.slug || post.title,
     title: post.title,

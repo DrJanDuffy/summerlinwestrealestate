@@ -3,7 +3,7 @@
 import styles from "./NewHomesSummerlin.module.css";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import SummerlinWestOverview from "../../components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
 
 // Dynamic imports for client components
 const LatestMarketInsights = dynamic(
@@ -46,10 +46,10 @@ export default function NewHomesSummerlin() {
               </h2>
               <p className={styles.introText}>
                 Discover the ultimate in luxury living with brand-new
-                construction homes in Summerlin West, Las Vegas's most
+                construction homes in Summerlin West, Las Vegas&apos;s most
                 prestigious master-planned community. As your dedicated new
                 construction specialist, Dr. Jan Duffy provides expert guidance
-                through every step of building your dream home with Summerlin's
+                through every step of building your dream home with Summerlin&apos;s
                 premier national builders.
               </p>
               <p className={styles.introText}>
@@ -67,12 +67,12 @@ export default function NewHomesSummerlin() {
         <section className={styles.buildersSection}>
           <div className={styles.buildersContainer}>
             <h2 className={styles.buildersTitle}>
-              Meet Summerlin's Premier Builders
+              Meet Summerlin&apos;s Premier Builders
             </h2>
             <p className={styles.buildersSubtitle}>
-              Summerlin's all-star roster of national homebuilders ensures
+              Summerlin&apos;s all-star roster of national homebuilders ensures
               quality, innovation, and progressive home design while maintaining
-              the community's aesthetic excellence and lasting value.
+              the community&apos;s aesthetic excellence and lasting value.
             </p>
             <div className={styles.buildersGrid}>
               {/* Builder Cards */}
@@ -84,7 +84,7 @@ export default function NewHomesSummerlin() {
                 },
                 {
                   name: "Toll Brothers",
-                  desc: "America's luxury home builder since 1967, Toll Brothers homes perform well above building code standards. Each community is managed with meticulous attention to detail, offering the personalized service of a local builder backed by national resources and an impeccable reputation.",
+                  desc: "America&apos;s luxury home builder since 1967, Toll Brothers homes perform well above building code standards. Each community is managed with meticulous attention to detail, offering the personalized service of a local builder backed by national resources and an impeccable reputation.",
                   link: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049260&for_sale=1&for_rent=0",
                 },
                 {
@@ -99,7 +99,7 @@ export default function NewHomesSummerlin() {
                 },
                 {
                   name: "Pulte Homes",
-                  desc: "Pulte's Life Tested® homes are designed and built for the way you live. With functional design, innovation, and beautiful liveable communities, Pulte offers energy-efficient homebuilding with more customer satisfaction awards than any other homebuilder.",
+                  desc: "Pulte&apos;s Life Tested® homes are designed and built for the way you live. With functional design, innovation, and beautiful liveable communities, Pulte offers energy-efficient homebuilding with more customer satisfaction awards than any other homebuilder.",
                   link: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049260&for_sale=1&for_rent=0",
                 },
                 {
@@ -109,12 +109,12 @@ export default function NewHomesSummerlin() {
                 },
                 {
                   name: "SHAWOOD",
-                  desc: "The flagship brand of Sekisui House, one of the world's largest residential homebuilders. Since 1995, SHAWOOD uses proprietary technology for maximum design flexibility while being stronger, safer, and more sustainable—home, perfected.",
+                  desc: "The flagship brand of Sekisui House, one of the world&apos;s largest residential homebuilders. Since 1995, SHAWOOD uses proprietary technology for maximum design flexibility while being stronger, safer, and more sustainable—home, perfected.",
                   link: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049260&for_sale=1&for_rent=0",
                 },
                 {
                   name: "Tri Pointe Homes",
-                  desc: "In the life-changing business, Tri Pointe designs homes, neighborhoods, and experiences that inspire and uplift. As local specialists on a national scale, they're customer-driven and committed to environmentally responsible practices and enduring craftsmanship.",
+                  desc: "In the life-changing business, Tri Pointe designs homes, neighborhoods, and experiences that inspire and uplift. As local specialists on a national scale, they&apos;re customer-driven and committed to environmentally responsible practices and enduring craftsmanship.",
                   link: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049260&for_sale=1&for_rent=0",
                 },
                 {
@@ -179,7 +179,7 @@ export default function NewHomesSummerlin() {
                 <div className={styles.benefitIcon}>👩‍🎓</div>
                 <h4 className={styles.benefitTitle}>Expert Guidance</h4>
                 <p>
-                  Dr. Jan Duffy's expertise in new construction contracts,
+                  Dr. Jan Duffy&apos;s expertise in new construction contracts,
                   builder negotiations, and Summerlin market knowledge
                 </p>
               </div>

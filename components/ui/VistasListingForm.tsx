@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import styles from "../../app/page.module.css";
+import styles from "@/app/page.module.css";
 
 interface VistasListingFormProps {
   formId?: string;
@@ -53,7 +53,7 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
           event_label: "Vistas Listing",
         });
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(
         "There was a problem submitting your request. Please try again later.",
       );
@@ -73,7 +73,7 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
         role="status"
         tabIndex={-1}
       >
-        Thank you! We'll be in touch soon.
+        Thank you! We&apos;ll be in touch soon.
       </div>
     );
   }

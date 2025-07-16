@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import LeadCaptureForm from "../ui/LeadCaptureForm";
+import LeadCaptureForm from "@/components/ui/LeadCaptureForm";
 
 const Footer: React.FC = () => {
   return (
