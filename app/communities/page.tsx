@@ -3,9 +3,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../page.module.css";
-import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
-import RealScoutWidget from "@/components/ui/RealScoutWidget";
-import NeighborhoodHero from "@/components/ui/NeighborhoodHero";
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
+import RealScoutWidget from "../../components/ui/RealScoutWidget";
+import NeighborhoodHero from "../../components/ui/NeighborhoodHero";
 
 export default function Communities() {
   const communities = [
