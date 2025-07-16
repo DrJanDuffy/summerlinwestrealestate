@@ -1,16 +1,16 @@
 "use client";
 import Head from "next/head";
-import styles from "@/styles/pages/home.module.css";
-import { useLeadCaptureModal } from "@/hooks/useLeadCaptureModal";
+import styles from '../styles/pages/home.module.css';
+import { useLeadCaptureModal } from '../hooks/useLeadCaptureModal';
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import Header from "@/components/layout/Header";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import SummerlinWestOverview from '../components/ui/SummerlinWestOverview';
 import { useState, useEffect } from "react";
 import FeaturedHomeSlider, {
   FeaturedHomeImage,
-} from "@/components/ui/FeaturedHomeSlider";
+} from '../components/ui/FeaturedHomeSlider';
 
 // Dynamically import RealScoutAdvancedSearch for performance
 const RealScoutAdvancedSearch = dynamic(
