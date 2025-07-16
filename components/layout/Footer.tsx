@@ -61,6 +61,11 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
+              <Link href="/hidden-home-equity-tax" className="hover:text-[#3A8DDE]">
+                Hidden Home Equity Tax
+              </Link>
+            </li>
+            <li>
               <Link href="/compare" className="hover:text-[#3A8DDE]">
                 Compare
               </Link>

@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/current-listing", label: "Vistas Listing" },
   { href: "/communities", label: "Communities" },
   { href: "/market", label: "Market" },
+  { href: "/hidden-home-equity-tax", label: "Hidden Home Equity Tax" },
   { href: "/compare", label: "Compare" },
   {
     href: "https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0",

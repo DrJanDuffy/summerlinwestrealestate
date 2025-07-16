@@ -167,6 +167,27 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* HomebotWidget: Check the Value of Your Home */}
+        <section className={styles.sectionCard} aria-label="Check the Value of Your Home">
+          <h2 className={styles.luxurySectionTitle}>Check the Value of Your Home</h2>
+          <p className={styles.luxuryWidgetSubtitle}>
+            Instantly see your home’s estimated value and equity growth in today’s Summerlin West market.
+          </p>
+          <HomebotWidget />
+        </section>
+        {/* Hidden Home Equity Tax Section */}
+        <section className={styles.equityTaxCallout} aria-label="Hidden Home Equity Tax">
+          <h2>
+            <span className={styles.equityIcon} aria-hidden="true">💡</span>
+            Are You Facing a Hidden Home Equity Tax?
+          </h2>
+          <p>
+            Many Summerlin West homeowners could be subject to a significant, often-overlooked tax when selling due to outdated federal laws. Find out if you&apos;re at risk and how to protect your hard-earned equity.
+          </p>
+          <Link href="/hidden-home-equity-tax" className={styles.secondaryCta}>
+            Learn About the Hidden Home Equity Tax
+          </Link>
+        </section>
         {/* Featured Home Section */}
         <section className={styles.sectionCard}>
           <div className={styles.sectionCardHeader}>

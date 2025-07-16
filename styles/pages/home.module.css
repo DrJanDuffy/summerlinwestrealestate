@@ -23,6 +23,61 @@
   align-items: center;
 }
 
+/* Visually distinct callout for Hidden Home Equity Tax */
+.equityTaxCallout {
+  border: 2.5px solid #C8B273;
+  background: linear-gradient(120deg, #fff 80%, #f9f6ef 100%);
+  box-shadow: 0 6px 32px rgba(200, 178, 115, 0.10);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  margin: 2.5rem 0;
+  border-radius: 24px;
+  position: relative;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.equityTaxCallout h2 {
+  color: #0A2540;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.equityTaxCallout .equityIcon {
+  font-size: 2.2rem;
+  color: #C8B273;
+  vertical-align: middle;
+}
+.equityTaxCallout p {
+  color: #0A2540;
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+}
+.equityTaxCallout a {
+  background: #C8B273;
+  color: #0A2540;
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.equityTaxCallout a:hover,
+.equityTaxCallout a:focus {
+  background: #0A2540;
+  color: #C8B273;
+}
+
 .sectionCardHeader {
   width: 100%;
   background: linear-gradient(135deg, #3a8dde 80%, #16b286 100%);
@@ -111,6 +166,43 @@
   .featuredHomeGallery :global(img) {
     width: 100%;
     height: auto;
+  }
+  .sectionCard,
+  .equityTaxCallout {
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 1.5rem 0.5rem;
+  }
+  .sectionCardHeader {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .equityTaxCallout h2 {
+    font-size: 1.3rem;
+  }
+  .equityTaxCallout p {
+    font-size: 1rem;
+  }
+  .equityTaxCallout a {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sectionCard,
+  .equityTaxCallout {
+    padding: 1rem 0.2rem;
+    border-radius: 10px;
+  }
+  .sectionCardHeader {
+    padding: 0.8rem 0.2rem 0.7rem 0.2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .equityTaxCallout h2 {
+    font-size: 1.1rem;
   }
 }
 
