@@ -10,7 +10,7 @@ const REAL_SCOUT_SEARCH_URL =
   "https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy";
 
 export default function NotFound() {
-  const pathname = usePathname();
+  const _pathname = usePathname();
 
   useEffect(() => {
     // Redirect to RealScout search page after a brief delay

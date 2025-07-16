@@ -62,9 +62,9 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
     }
   };
 
-  const isNameInvalid = !!error && !name.trim();
-  const isEmailInvalid = !!error && !email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/);
-  const isPhoneInvalid = !!error && !phone.match(/^[0-9\-\+\(\)\s]{7,}$/);
+  const _isNameInvalid = !!error && !name.trim();
+  const _isEmailInvalid = !!error && !email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/);
+  const _isPhoneInvalid = !!error && !phone.match(/^[0-9\-\+\(\)\s]{7,}$/);
 
   if (submitted) {
     return (

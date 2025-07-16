@@ -2,8 +2,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/app/page.module.css";
-import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import styles from "../page.module.css";
+import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
 
 export default function Compare() {
   return (

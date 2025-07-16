@@ -70,7 +70,7 @@ export default function LeadCaptureForm({
     },
   });
 
-  const privacyConsent = watch("privacyConsent");
+  const _privacyConsent = watch("privacyConsent");
 
   const onSubmit = async (data: LeadFormData) => {
     setIsSubmitting(true);
