@@ -2,9 +2,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../page.module.css";
-import LatestMarketInsightsClient from "../../components/ui/LatestMarketInsightsClient";
-import RealScoutWidget from "../../components/ui/RealScoutWidget";
+import styles from "@/app/page.module.css";
+import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
+import RealScoutWidget from "@/components/ui/RealScoutWidget";
+import NeighborhoodHero from "@/components/ui/NeighborhoodHero";
 
 export default function Communities() {
   const communities = [
@@ -131,6 +132,10 @@ export default function Communities() {
     },
   ];
 
+  const medianPrice = Math.round(
+    communities.reduce((sum, c) => sum + c.minPrice, 0) / communities.length
+  );
+
   return (
     <div className={`${styles.page} ${styles.communitiesContainer}`}>
       <Head>
@@ -143,6 +148,15 @@ export default function Communities() {
         <meta property="og:description" content="Explore all Summerlin West communities including The Vistas, Redpoint, Stonebridge & more. Find neighborhood guides, amenities, and expert insights for Summerlin real estate." />
       </Head>
       <main>
+        <NeighborhoodHero
+          neighborhood={{ name: "Summerlin West" }}
+          marketData={{
+            medianPrice,
+            priceChange: 0,
+            daysOnMarket: 14,
+            marketTrend: "flat"
+          }}
+        />
         <section className={styles.hero}>
           <h1>Summerlin West Communities</h1>
           <p className={styles.subtitle}>Discover the best neighborhoods in Summerlin for your next home</p>

@@ -1,8 +1,9 @@
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../../page.module.css";
+import styles from "@/app/page.module.css";
 import type { Metadata } from "next";
+import NeighborhoodHero from "@/components/ui/NeighborhoodHero";
 
 const communities = [
   {
@@ -157,6 +158,15 @@ export default async function Page({ params }: any) {
   return (
     <div className={styles.page}>
       <main>
+        <NeighborhoodHero 
+          neighborhood={{ name: community.name }}
+          marketData={{
+            medianPrice: community.minPrice,
+            priceChange: 0,
+            daysOnMarket: 14,
+            marketTrend: "flat"
+          }}
+        />
         <section className={styles.sectionCard}>
           <h1>{community.name}</h1>
           <Image
