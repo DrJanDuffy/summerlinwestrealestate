@@ -257,8 +257,8 @@ export default function LeadCaptureForm({
                   rules={{
                     required: "Phone number is required",
                     pattern: {
-                      value: /^[\+]?[1-9][\d]{0,15}$/,
-                      message: "Please enter a valid phone number",
+                      value: /^[\+]?1?[-.\s]?\(?[0-9]{3}\)?[-.\s]?[0-9]{3}[-.\s]?[0-9]{4}$/,
+                      message: "Please enter a valid phone number (e.g., 555-123-4567 or (555) 123-4567)",
                     },
                   }}
                   render={({ field }) => (

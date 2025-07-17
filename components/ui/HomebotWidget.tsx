@@ -301,22 +301,38 @@ export default function HomebotWidget({
     if (!mount) return;
 
     if (loadingState === "loading" || loadingState === "retrying") {
-      mount.innerHTML = `
-        <div class="loading-spinner">
-          <div class="spinner"></div>
-        </div>
-      `;
+      // Clear existing content
+      mount.innerHTML = "";
+      
+      // Create loading spinner safely
+      const loadingDiv = document.createElement("div");
+      loadingDiv.className = "loading-spinner";
+      
+      const spinner = document.createElement("div");
+      spinner.className = "spinner";
+      
+      loadingDiv.appendChild(spinner);
+      mount.appendChild(loadingDiv);
     } else if (loadingState === "error") {
-      mount.innerHTML = `
-        <div class="error-container">
-          <div class="error-title">Unable to Load Widget</div>
-          <div class="error-message">${error}</div>
-          <button class="retry-button" onclick="this.dispatchEvent(new CustomEvent(&apos;retry&apos;, { bubbles: true }))">
-            Retry${retryCountRef.current > 0 ? ` (${retryCountRef.current}/${MAX_RETRY_ATTEMPTS})` : ""}
-          </button>
-        </div>
-      `;
-
+      // Clear existing content
+      mount.innerHTML = "";
+      
+      // Create error container safely
+      const errorContainer = document.createElement("div");
+      errorContainer.className = "error-container";
+      
+      const errorTitle = document.createElement("div");
+      errorTitle.className = "error-title";
+      errorTitle.textContent = "Unable to Load Widget";
+      
+      const errorMessage = document.createElement("div");
+      errorMessage.className = "error-message";
+      errorMessage.textContent = error || "An unknown error occurred";
+      
+      const retryButton = document.createElement("button");
+      retryButton.className = "retry-button";
+      retryButton.textContent = `Retry${retryCountRef.current > 0 ? ` (${retryCountRef.current}/${MAX_RETRY_ATTEMPTS})` : ""}`;
+      
       // Add retry event listener
       const retryHandler = (e: Event) => {
         if ((e as CustomEvent).type === "retry") {
@@ -324,10 +340,15 @@ export default function HomebotWidget({
         }
       };
 
-      mount.addEventListener("retry", retryHandler);
+      retryButton.addEventListener("click", retryHandler);
+      
+      errorContainer.appendChild(errorTitle);
+      errorContainer.appendChild(errorMessage);
+      errorContainer.appendChild(retryButton);
+      mount.appendChild(errorContainer);
 
       return () => {
-        mount.removeEventListener("retry", retryHandler);
+        retryButton.removeEventListener("click", retryHandler);
       };
     }
   }, [loadingState, error, retryLoad]);
