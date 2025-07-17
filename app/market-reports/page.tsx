@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 import RealScoutAdvancedSearch from "../../components/ui/RealScoutAdvancedSearch";
 import styles from "../page.module.css";
 import { useState } from "react";
+import useExpandable from '../../hooks/useExpandable';
 const LeadCaptureForm = dynamic(
   () => import("../../components/ui/LeadCaptureForm"),
   { ssr: false },
@@ -118,25 +119,27 @@ export default function MarketReports() {
       <section className={styles.sectionCard}>
         <h2>Frequently Asked Questions</h2>
         <div className={styles.contentList}>
-          {faqs.map((faq, i) => (
-            <div key={faq.q} className={styles.faqItem}>
-              <button
-                aria-expanded={openFAQ === i}
-                aria-controls={`faq-panel-${i}`}
-                className={styles.faqQuestion}
-                onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
-              >
-                {faq.q}
-              </button>
-              <div
-                id={`faq-panel-${i}`}
-                hidden={openFAQ !== i}
-                className={styles.faqAnswer}
-              >
-                {faq.a}
+          {faqs.map((faq, i) => {
+            const { isExpanded, ariaProps } = useExpandable(false);
+            return (
+              <div key={faq.q} className={styles.faqItem}>
+                <button
+                  {...ariaProps}
+                  aria-controls={`faq-panel-${i}`}
+                  className={styles.faqQuestion}
+                >
+                  {faq.q}
+                </button>
+                <div
+                  id={`faq-panel-${i}`}
+                  hidden={!isExpanded}
+                  className={styles.faqAnswer}
+                >
+                  {faq.a}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
       <section className={styles.sectionCard}>
@@ -235,12 +238,7 @@ export default function MarketReports() {
           </li>
         </ul>
       </section>
-      <RealScoutAdvancedSearch
-        title="Search Current Market Listings"
-        subtitle="Find properties matching your criteria"
-        variant="page"
-        showFeatures={true}
-      />
+      <RealScoutAdvancedSearch />
     </div>
   );
 }
