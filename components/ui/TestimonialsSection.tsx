@@ -152,7 +152,7 @@ const TestimonialsSection = React.memo(function TestimonialsSection() {
               </div>
               <StarRating rating={testimonial.rating} />
               <blockquote className="mt-3 text-[#0A2540] text-lg font-medium">
-                "{testimonial.body}"
+                {`"${testimonial.body}"`}
               </blockquote>
               <div className="mt-4 text-[#16B286] font-semibold">
                 {testimonial.author}

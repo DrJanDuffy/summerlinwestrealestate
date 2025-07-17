@@ -49,7 +49,7 @@ const SectionCard = forwardRef(function SectionCard<
     </Component>
   );
 }) as <E extends ElementType = "section">(
-  props: SectionCardOwnProps<E> & { ref?: React.Ref<any> },
+  props: SectionCardOwnProps<E> & { ref?: React.Ref<HTMLElement> },
 ) => React.ReactElement | null;
 
 // Fix displayName linter error by casting to unknown then to typeof SectionCard
