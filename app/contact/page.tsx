@@ -148,7 +148,7 @@ export default function Contact() {
                     key={s.name}
                     href={s.url}
                     target="_blank"
-                    rel="noopener"
+                    rel="noreferrer"
                     aria-label={s.name}
                     className={styles.socialLink}
                   >
