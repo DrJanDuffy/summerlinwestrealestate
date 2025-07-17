@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useId } from "react";
-import styles from "@/app/page.module.css";
+import styles from '../../app/page.module.css';
 
 interface VistasListingFormProps {
   formId?: string;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLeadCaptureModal } from "@/hooks/useLeadCaptureModal";
+import { useLeadCaptureModal } from "../../hooks/useLeadCaptureModal";
 
 const COMMUNITIES = [
   "The Vistas",

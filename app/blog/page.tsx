@@ -1,9 +1,9 @@
-import { BlogPost } from "@/types/blog";
+import { BlogPost } from "../../types/blog";
 import Link from "next/link";
 import Image from "next/image";
 import Parser from "rss-parser";
 import styles from "./blog.module.css";
-import BlogLayout from "@/components/ui/BlogLayout";
+import BlogLayout from '../../components/ui/BlogLayout';
 
 export const dynamic = "force-dynamic";
 

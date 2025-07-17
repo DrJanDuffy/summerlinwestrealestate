@@ -1,10 +1,10 @@
-import LeadCaptureForm from "@/components/ui/LeadCaptureForm";
+import LeadCaptureForm from "../../components/ui/LeadCaptureForm";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/app/page.module.css";
-import LatestMarketInsights from "@/components/ui/LatestMarketInsights";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
+import styles from '../page.module.css';
+import LatestMarketInsights from "../../components/ui/LatestMarketInsights";
+import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 
 export default function CurrentListing() {
   const propertyDetails = [

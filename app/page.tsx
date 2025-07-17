@@ -5,7 +5,7 @@ import { useLeadCaptureModal } from '../hooks/useLeadCaptureModal';
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Header from "@/components/layout/Header";
+import Header from "../components/layout/Header";
 import SummerlinWestOverview from '../components/ui/SummerlinWestOverview';
 import { useState, useEffect } from "react";
 import FeaturedHomeSlider, {

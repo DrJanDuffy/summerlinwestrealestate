@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import subdivisions from "@/app/service-area/subdivisions.json";
-import styles from "@/app/service-area/page.module.css";
+import subdivisions from "../subdivisions.json";
+import styles from '../page.module.css';
 import ClientSubdivisionPage from "./ClientSubdivisionPage";
 
 interface PageProps {

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/app/page.module.css";
-import SummerlinWestOverview from "@/components/ui/SummerlinWestOverview";
-import LatestMarketInsightsClient from "@/components/ui/LatestMarketInsightsClient";
-import LeadCaptureFormClient from "@/components/ui/LeadCaptureFormClient";
+import styles from '../page.module.css';
+import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+import LeadCaptureFormClient from "../../components/ui/LeadCaptureFormClient";
 
 // Metadata export (replaces Head component)
 export const metadata = {

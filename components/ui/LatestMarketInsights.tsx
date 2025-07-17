@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Parser from "rss-parser";
 import Image from "next/image";
-import styles from "@/app/page.module.css";
+import styles from '../../app/page.module.css';
 
 const RSS_FEED_URL =
   "https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18";

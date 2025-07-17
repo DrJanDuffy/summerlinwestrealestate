@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/app/service-area/page.module.css";
+import styles from '../page.module.css';
 import clientStyles from "./client-subdivision.module.css";
 
 // Enhanced Loading Skeleton

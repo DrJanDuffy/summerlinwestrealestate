@@ -4,10 +4,10 @@ import Head from "next/head";
 
 export default function RealScoutListings() {
   useEffect(() => {
-    // Add the script to the head if it doesn&apos;t exist
+    // Add the script to the head if it doesn't exist
     if (
       !document.querySelector(
-        &apos;script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]',
+        'script[src="https://em.realscout.com/widgets/realscout-web-components.umd.js"]'
       )
     ) {
       const script = document.createElement("script");
@@ -17,8 +17,8 @@ export default function RealScoutListings() {
       document.head.appendChild(script);
     }
 
-    // Add the styles if they don&apos;t exist
-    if (!document.querySelector("style[data-realscout-styles]")) {
+    // Add the styles if they don't exist
+    if (!document.querySelector('style[data-realscout-styles]')) {
       const style = document.createElement("style");
       style.setAttribute("data-realscout-styles", "true");
       style.textContent = `
