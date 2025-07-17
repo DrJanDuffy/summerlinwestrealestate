@@ -135,8 +135,8 @@ function generateDefaultMetadata(filename: string, directory: string): ImageMeta
   
   let title = `${capitalizedWords.join(' ')} - Summerlin West Real Estate`;
   let caption = `High-quality image of ${capitalizedWords.join(' ').toLowerCase()} in Summerlin West, Las Vegas`;
-  let geoLocation = "Summerlin West, Las Vegas, NV, USA";
-  let keywords = [...capitalizedWords, "Summerlin West", "Las Vegas", "real estate"];
+  const geoLocation = "Summerlin West, Las Vegas, NV, USA";
+  const keywords = [...capitalizedWords, "Summerlin West", "Las Vegas", "real estate"];
   let propertyType = "Real Estate";
   let priceRange = "N/A";
   

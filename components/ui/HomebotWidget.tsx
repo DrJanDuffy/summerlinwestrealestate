@@ -277,11 +277,11 @@ export default function HomebotWidget({
   // ===== COMPONENT LIFECYCLE =====
   useEffect(() => {
     setupShadowDOM();
-    loadScript();
+    void loadScript();
 
     // Cleanup
     return () => {
-      clearLoadTimeout();
+      void clearLoadTimeout();
 
       // Remove script from document head if we added it
       if (scriptRef.current && document.head.contains(scriptRef.current)) {

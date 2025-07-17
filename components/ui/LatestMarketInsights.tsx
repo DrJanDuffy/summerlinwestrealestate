@@ -86,7 +86,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
   const getImageUrl = useMemo(() => {
     return (item: RSSItem) => {
       // Handle media:content as array or object
-      let mediaContent = item["media:content"];
+      const mediaContent = item["media:content"];
       if (Array.isArray(mediaContent)) {
         // Find first with url
         const found = mediaContent.find((mc) => mc.url);
