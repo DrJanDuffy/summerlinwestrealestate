@@ -47,8 +47,8 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
       }
 
       setSubmitted(true);
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "lead_form_submit", {
+      if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') {
+        (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "lead_form_submit", {
           event_category: "Lead",
           event_label: "Vistas Listing",
         });

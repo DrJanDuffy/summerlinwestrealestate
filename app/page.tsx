@@ -79,8 +79,8 @@ export default function Home() {
 
   const handleFormSuccess = () => {
     // Track successful submission
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "lead_form_success", {
+    if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function') {
+      (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "lead_form_success", {
         event_category: "Lead",
         event_label: source,
       });

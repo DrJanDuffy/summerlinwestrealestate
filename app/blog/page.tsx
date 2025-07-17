@@ -46,9 +46,9 @@ const LOCAL_EVENTS = [
   "Sign up for the Summerlin West Community Garage Sale!",
 ];
 
-function isHyperlocal(post: BlogPost) {
+function isHyperlocal(post: BlogPost & { contentSnippet?: string; content?: string }) {
   const text =
-    `${post.title} ${(post as any).contentSnippet || ""} ${post.content || ""}`.toLowerCase();
+    `${post.title} ${post.contentSnippet || ""} ${post.content || ""}`.toLowerCase();
   return HYPERLOCAL_KEYWORDS.some((kw) => text.includes(kw));
 }
 

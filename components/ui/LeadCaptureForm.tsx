@@ -96,20 +96,21 @@ export default function LeadCaptureForm({
 
       setSubmitStatus("success");
       reset();
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "lead_form_submit", {
+      if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void; userType?: string }).gtag === 'function') {
+        const win = window as Window & { gtag: (...args: unknown[]) => void; userType?: string };
+        win.gtag("event", "lead_form_submit", {
           event_category: "Lead",
           event_label: source,
-          cd1: (window as any).userType || "unknown",
+          cd1: win.userType || "unknown",
           cd2: "LeadCaptureForm",
           cd3: "submit",
           cd4: 1,
         });
-        (window as any).gtag("event", "generate_lead", {
+        win.gtag("event", "generate_lead", {
           value: 1,
           currency: "USD",
           form_location: source || "unknown",
-          cd1: (window as any).userType || "unknown",
+          cd1: win.userType || "unknown",
           cd2: "LeadCaptureForm",
           cd3: "submit",
           cd4: 1,

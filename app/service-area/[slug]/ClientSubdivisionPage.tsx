@@ -201,7 +201,7 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
           rel="noopener noreferrer"
           aria-label={`Visit Dr. Jan Duffy on ${label}`}
           className={styles.socialLink}
-          style={{ "--hover-color": color } as any}
+          style={{ "--hover-color": color } as React.CSSProperties}
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >
