@@ -142,6 +142,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <SummerlinWestOverview />
+          
           {/* Hero Section */}
           <section className={styles.hero}>
             <h1 className={styles.heroTitle}>
@@ -168,14 +169,16 @@ export default function Home() {
               </div>
             </div>
           </section>
+
           {/* HomebotWidget: Check the Value of Your Home */}
           <section className={styles.section} aria-label="Check the Value of Your Home">
             <h2 className={styles.sectionTitle}>Check the Value of Your Home</h2>
             <p className={styles.heroSubtitle}>
-              Instantly see your home’s estimated value and equity growth in today’s Summerlin West market.
+              Instantly see your home&apos;s estimated value and equity growth in today&apos;s Summerlin West market.
             </p>
             <HomebotWidget />
           </section>
+
           {/* Hidden Home Equity Tax Section */}
           <section className={styles.section} aria-label="Hidden Home Equity Tax">
             <h2 className={styles.sectionTitle}>
@@ -189,11 +192,12 @@ export default function Home() {
               Learn About the Hidden Home Equity Tax
             </Link>
           </section>
+
           {/* Featured Home Section */}
           <section className={styles.section}>
-            <div className={styles.sectionTitle}>
+            <h2 className={styles.sectionTitle}>
               Featured Home in Summerlin West
-            </div>
+            </h2>
             <FeaturedHomeSlider
               images={[
                 {
@@ -279,6 +283,7 @@ export default function Home() {
               ]}
             />
           </section>
+
           {/* Dr. Jan Duffy Callout Section */}
           <section className={`${styles.section} ${styles.calloutSection}`}>
             <h2>Meet Your Summerlin West Real Estate Expert</h2>
@@ -297,30 +302,32 @@ export default function Home() {
               Summerlin West.
             </p>
             <p>
-              <Link href="/about">Learn more about Dr. Duffy &rarr;</Link>
+              <Link href="/about" className="btn btn-outline">
+                Learn more about Dr. Duffy &rarr;
+              </Link>
             </p>
           </section>
+
           {/* Map of Summerlin West Section */}
           <section
             className={styles.section}
             aria-label="Map of Summerlin West"
           >
-            <div className={styles.sectionTitle}>Map of Summerlin West</div>
-            <div className={styles.grid}>
-              <div className={styles.mapContainer}>
-                <iframe
-                  title="Summerlin West Map"
-                  src="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
-                  width="100%"
-                  height="450"
-                  className={styles.mapIframe}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+            <h2 className={styles.sectionTitle}>Map of Summerlin West</h2>
+            <div className={styles.mapContainer}>
+              <iframe
+                title="Summerlin West Map"
+                src="https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay05NTMy"
+                width="100%"
+                height="450"
+                className={styles.mapIframe}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </section>
+
           {/* Property Search Widget */}
           <section className={styles.section} aria-label="Property Search">
             <RealScoutAdvancedSearch
@@ -330,24 +337,26 @@ export default function Home() {
               showFeatures={true}
             />
           </section>
+
           {/* RealScout Listings Widget */}
           <section
             className={styles.section}
             aria-label="Featured Summerlin West Homes"
           >
-            <div className={styles.sectionTitle}>
+            <h2 className={styles.sectionTitle}>
               Featured Summerlin West Homes
-            </div>
+            </h2>
             <p className={styles.heroSubtitle}>
               Browse the latest homes for sale in Summerlin West communities
             </p>
             <RealScoutListings />
           </section>
+
           {/* Market Overview */}
           <section className={styles.section} aria-label="Market Overview">
-            <div className={styles.sectionTitle}>
+            <h2 className={styles.sectionTitle}>
               Summerlin West Market Overview
-            </div>
+            </h2>
             <div className={styles.grid}>
               <div className={styles.statCard}>
                 <div className={styles.statNumber}>$850K</div>
@@ -367,17 +376,19 @@ export default function Home() {
               </div>
             </div>
           </section>
+
           {/* Market Insights */}
           <section className={styles.section} aria-label="Market Insights">
             <LatestMarketInsights />
           </section>
+
           {/* Lead Capture/FAQ/CTA */}
           <section className={styles.section} aria-label="Contact & FAQ">
             <LeadCaptureForm variant="inline" onSuccess={handleFormSuccess} />
             <div className={styles.faqSection}>
-              <div className={styles.sectionTitle}>
+              <h2 className={styles.sectionTitle}>
                 Frequently Asked Questions
-              </div>
+              </h2>
               <ul className={styles.faqList}>
                 {faqs.map((faq, idx) => (
                   <li key={idx} className={styles.faqItem}>

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -255,6 +255,7 @@ export default function RootLayout({
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
           <RealScoutWidget priceMin={600000} />
         </div>
+        <Footer />
       </body>
     </html>
   );
