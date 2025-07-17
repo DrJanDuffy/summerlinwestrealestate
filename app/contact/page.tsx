@@ -1,7 +1,7 @@
 import styles from "./contact.module.css";
 import Link from "next/link";
 import SummerlinWestOverview from '../components/ui/SummerlinWestOverview';
-import LatestMarketInsightsClient from '../components/ui/LatestMarketInsightsClient';
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from "../../components/ui/LeadCaptureFormClient";
 import {
   FaPhone,
