@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import styles from './HiddenHomeEquityTax.module.css';
 
 export const metadata: Metadata = {
   title: 'Are You a Summerlin West Homeowner Facing a Hidden Tax? Find Out Before You Sell.',
@@ -44,14 +43,14 @@ export const metadata: Metadata = {
 
 export default function HiddenHomeEquityTaxPage() {
   return (
-    <section className={styles.container} aria-labelledby="hidden-tax-headline">
+    <section aria-labelledby="hidden-tax-headline">
       <header>
-        <h1 id="hidden-tax-headline" className={styles.headline}>
+        <h1 id="hidden-tax-headline">
           Are You a Summerlin West Homeowner Facing a Hidden Tax? Find Out Before You Sell.
         </h1>
       </header>
       <article>
-        <p className={styles.opening}>
+        <p>
           If you own a home in Summerlin West, you’ve made a smart investment. Over the past decade,
           our community has seen remarkable growth, with property values soaring and neighborhoods
           flourishing. As a homeowner, you’ve likely built substantial equity—an achievement worth
@@ -59,7 +58,7 @@ export default function HiddenHomeEquityTaxPage() {
           could dramatically impact your bottom line, and many long-term residents are unaware of
           it.
         </p>
-        <section className={styles.section}>
+        <section>
           <h2>The Core Problem: An Outdated Tax Law That Could Cost You</h2>
           <p>
             Here’s what every homeowner needs to know: the federal capital gains tax law for home
@@ -74,7 +73,7 @@ export default function HiddenHomeEquityTaxPage() {
             exposed to a significant tax bill—one that was never intended for ordinary families.
           </p>
         </section>
-        <section className={styles.section}>
+        <section>
           <h2>The Local Impact: Why Summerlin West is Uniquely Affected</h2>
           <p>
             This isn’t just a national issue—it’s hitting close to home. According to the National
@@ -89,9 +88,9 @@ export default function HiddenHomeEquityTaxPage() {
             impressive performance outpacing an outdated, stagnant law.
           </p>
         </section>
-        <section className={styles.ctaSection} aria-labelledby="cta-headline">
-          <h2 id="cta-headline" className={styles.ctaHeadline}>
-            Don’t Wait Until It’s Too Late: Get Your Free Equity Analysis
+        <section aria-labelledby="cta-headline">
+          <h2 id="cta-headline">
+            Don't Wait Until It's Too Late: Get Your Free Equity Analysis
           </h2>
           <p>
             <strong>
@@ -107,7 +106,6 @@ export default function HiddenHomeEquityTaxPage() {
           </p>
           <a
             href="/contact"
-            className={styles.ctaButton}
             aria-label="Schedule your confidential home equity tax analysis"
           >
             Click here to schedule your confidential analysis today and protect the equity you’ve
