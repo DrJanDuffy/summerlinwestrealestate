@@ -1,4 +1,6 @@
+'use client';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import {
   FaChevronDown,
   FaEnvelope,
@@ -11,17 +13,6 @@ import {
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
-
-export const metadata = {
-  title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
-  description:
-    'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.',
-  openGraph: {
-    title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
-    description:
-      'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.',
-  },
-};
 
 const socialLinks = [
   {
@@ -63,6 +54,17 @@ const quickLinks = [
 ];
 
 export default function Contact() {
+  // Set page metadata
+  useEffect(() => {
+    document.title = 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.');
+    }
+  }, []);
+
   return (
     <div className={styles.page}>
       {/* Hero Section */}
