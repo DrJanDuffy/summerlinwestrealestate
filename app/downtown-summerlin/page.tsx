@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export const metadata = {
   title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
   description: 'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.',
@@ -36,7 +34,7 @@ export default function DowntownSummerlin() {
             </strong>
           </p>
           <p>
-            <Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link>
+            <a href="/contact">Contact Dr. Jan Duffy &rarr;</a>
           </p>
         </section>
         
@@ -92,7 +90,7 @@ export default function DowntownSummerlin() {
           <h2>Get Your Downtown Summerlin Market Report</h2>
           <p>Contact Dr. Jan Duffy for your free market report and personalized consultation.</p>
           <p>
-            <Link href="/contact">Get Your Free Market Report &rarr;</Link>
+            <a href="/contact">Get Your Free Market Report &rarr;</a>
           </p>
         </section>
         
@@ -100,16 +98,16 @@ export default function DowntownSummerlin() {
           <h2>Explore More Summerlin Real Estate Resources</h2>
           <ul>
             <li>
-              <Link href="/market-reports">See all Summerlin market reports</Link>
+              <a href="/market-reports">See all Summerlin market reports</a>
             </li>
             <li>
-              <Link href="/communities">Explore Summerlin West communities</Link>
+              <a href="/communities">Explore Summerlin West communities</a>
             </li>
             <li>
-              <Link href="/current-listing">View our current listing in The Vistas</Link>
+              <a href="/current-listing">View our current listing in The Vistas</a>
             </li>
             <li>
-              <Link href="/contact">Contact a Summerlin real estate expert</Link>
+              <a href="/contact">Contact a Summerlin real estate expert</a>
             </li>
           </ul>
         </section>
