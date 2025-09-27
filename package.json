@@ -12,10 +12,14 @@
     "biome:format": "biome format --write .",
     "biome:lint": "biome lint .",
     "biome:fix": "biome check --write .",
+    "analyze": "ANALYZE=true next build",
     "prepare": "husky"
   },
   "dependencies": {
     "@ai-sdk/vercel": "^1.0.20",
+    "@ai-sdk/openai": "^1.0.20",
+    "@ai-sdk/anthropic": "^1.0.20",
+    "@ai-sdk/google": "^1.0.20",
     "@linear/sdk": "^60.0.0",
     "@tailwindcss/postcss": "^4.1.13",
     "ai": "^5.0.54",

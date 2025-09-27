@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useId, useState } from 'react';
-import type { CreateIssueInput, LinearIssue } from '@/lib/linear';
+import type { CreateIssueInput, LinearIssue } from '../../lib/linear';
 
 export default function LinearTestPage() {
   const [issues, setIssues] = useState<LinearIssue[]>([]);

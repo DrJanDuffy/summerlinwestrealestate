@@ -1,8 +1,44 @@
 'use client';
-import { FaMapMarkerAlt, FaUserTie } from 'react-icons/fa';
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import TestimonialsSectionClient from '../../components/ui/TestimonialsSectionClient';
+import dynamic from 'next/dynamic';
+import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
 import styles from '../page.module.css';
+
+// Import components with proper client-side only configuration
+const RealScoutMarketInsights = dynamic(
+  () => import('../../components/ui/RealScoutMarketInsights'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+);
+
+const TestimonialsSectionClient = dynamic(
+  () => import('../../components/ui/TestimonialsSectionClient'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+);
+
+const RealScoutLeadCapture = dynamic(
+  () => import('../../components/ui/RealScoutLeadCapture'),
+  { 
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    )
+  }
+);
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -23,7 +59,7 @@ const structuredData = {
     latitude: 36.154,
     longitude: -115.3336,
   },
-    url: 'https://summerlinwestrealestate.com/about',
+  url: 'https://summerlinwestrealestate.com/about',
   telephone: '+1-702-550-0112',
 };
 
@@ -166,7 +202,7 @@ export default function AboutClient() {
             Meet Dr. Jan Duffy: Professional Credentials and Background
           </h2>
           <div className={styles.agentProfile}>
-            <FaUserTie className={styles.agentIcon} aria-hidden="true" />
+            <UserTieIcon />
             <div>
               <h3>Dr. Jan Duffy, REALTOR®</h3>
               <p>
@@ -303,7 +339,7 @@ export default function AboutClient() {
           </p>
           <div className={styles.officeCard}>
             <div className={styles.officeInfo}>
-              <FaMapMarkerAlt className={styles.officeIcon} aria-hidden="true" />
+              <MapMarkerIcon />
               <div>
                 <address className={styles.officeAddress}>
                   1980 Festival Plaza Dr (One Summerlin)
@@ -340,7 +376,14 @@ export default function AboutClient() {
           <p className={styles.heroSubtitle}>
             Explore current market conditions and featured properties in Summerlin West. Dr. Jan Duffy provides up-to-date market analysis and showcases exceptional properties that represent the best of Summerlin West real estate.
           </p>
-          <LatestMarketInsightsClient />
+          <RealScoutMarketInsights 
+            title="Featured Summerlin West Listings and Market Insights"
+            subtitle="Explore current market conditions and featured properties in Summerlin West"
+            variant="full"
+            showCharts={true}
+            showTrends={true}
+            showComparisons={true}
+          />
         </section>
       </div>
       {/* JSON-LD structured data for SEO */}

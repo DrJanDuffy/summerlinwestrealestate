@@ -12,11 +12,15 @@ import styles from './page.module.css';
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), {
   ssr: false,
 });
-const LeadCaptureForm = dynamic(() => import('../components/ui/LeadCaptureForm'), { ssr: false });
+const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCapture'), { ssr: false });
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
   ssr: false,
 });
-const LatestMarketInsights = dynamic(() => import('../components/ui/LatestMarketInsights'), {
+const RealScoutMarketInsights = dynamic(() => import('../components/ui/RealScoutMarketInsights'), {
+  ssr: false,
+});
+
+const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsightsFeed'), {
   ssr: false,
 });
 const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
@@ -68,9 +72,9 @@ export default function HomeClient() {
     // Track successful submission
     if (
       typeof window !== 'undefined' &&
-      typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function'
+      typeof (window as any).gtag === 'function'
     ) {
-      (window as Window & { gtag: (...args: unknown[]) => void }).gtag(
+      (window as any).gtag(
         'event',
         'lead_form_success',
         {
@@ -300,12 +304,14 @@ export default function HomeClient() {
                 Get Dr. Jan Duffy's monthly newsletter with exclusive market updates, new listings,
                 community events, and insider insights sent straight to your email. Our subscribers receive early access to off-market properties, detailed market analysis, and expert tips for buying or selling in Summerlin West. Join over 2,000 local residents and investors who trust Dr. Duffy for the most current and accurate Summerlin West real estate information.
               </p>
-              <LeadCaptureForm
-                variant="newsletter"
+              <RealScoutLeadCapture
+                variant="inline"
                 title="Subscribe to Our Newsletter"
                 subtitle="Monthly updates, market trends, and exclusive insights."
                 source="Homepage Newsletter"
-                onSuccess={handleFormSuccess}
+                showMarketReport={true}
+                showValuation={false}
+                showConsultation={false}
               />
             </div>
           </section>
@@ -382,7 +388,25 @@ export default function HomeClient() {
             <p className={styles.heroSubtitle}>
               Stay ahead of the market with our latest insights and real estate news specifically focused on Summerlin West. Our market analysis covers everything from local price trends and inventory changes to new development announcements and community updates. Dr. Jan Duffy regularly shares her expert perspective on market conditions, helping you understand how national trends impact the Summerlin West real estate market. Whether you're a first-time buyer, seasoned investor, or current homeowner, these insights provide valuable information for your real estate decisions.
             </p>
-            <LatestMarketInsights />
+        <RealScoutMarketInsights
+          title="Summerlin West Market Insights"
+          subtitle="Real-time market data and trends for informed decisions"
+          variant="full"
+          showCharts={true}
+          showTrends={true}
+          showComparisons={true}
+        />
+        
+        {/* Latest Market Insights from Simplifying the Market */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <MarketInsightsFeed 
+              maxArticles={6}
+              showImages={true}
+              title="Latest Market Insights"
+            />
+          </div>
+        </section>
           </section>
           {/* Lead Capture/FAQ/CTA */}
           <section className={styles.section} aria-label="Contact & FAQ">
@@ -390,7 +414,15 @@ export default function HomeClient() {
             <p className={styles.heroSubtitle}>
               Ready to buy or sell in Summerlin West? Dr. Jan Duffy provides personalized, expert guidance tailored to your specific needs and goals. Whether you're a first-time buyer looking for your dream home in The Vistas, an investor seeking opportunities in Stonebridge, or a current homeowner considering selling, Dr. Duffy's deep local knowledge and proven track record ensure you get the best possible outcome. Contact us today for a confidential consultation and discover why hundreds of families trust Dr. Jan Duffy with their Summerlin West real estate transactions.
             </p>
-            <LeadCaptureForm variant="inline" onSuccess={handleFormSuccess} />
+            <RealScoutLeadCapture 
+              variant="inline" 
+              title="Get Expert Guidance"
+              subtitle="Contact Dr. Jan Duffy for personalized real estate consultation"
+              source="Home Page Contact"
+              showMarketReport={true}
+              showValuation={true}
+              showConsultation={true}
+            />
             <div className={styles.faqSection}>
               <h2 className={styles.sectionTitle}>Frequently Asked Questions About Summerlin West Real Estate</h2>
               <p className={styles.heroSubtitle}>

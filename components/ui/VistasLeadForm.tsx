@@ -43,9 +43,9 @@ export default function VistasLeadForm() {
       setSubmitted(true);
       if (
         typeof window !== 'undefined' &&
-        typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === 'function'
+        typeof (window as any).gtag === 'function'
       ) {
-        (window as Window & { gtag: (...args: unknown[]) => void }).gtag(
+        (window as any).gtag(
           'event',
           'lead_form_submit',
           {

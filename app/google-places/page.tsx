@@ -1,18 +1,17 @@
-'use client';
-import { useEffect } from 'react';
+import { Metadata } from 'next';
 import GooglePlacesClient from './GooglePlacesClient';
 
-export default function GooglePlaces() {
-  // Set page metadata
-  useEffect(() => {
-    document.title = 'Google Places UI Kit for Real Estate | Summerlin West Real Estate';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Integrate Google Places API for enhanced real estate search and property discovery. Autocomplete, place details, and location services for luxury real estate websites.');
-    }
-  }, []);
+export const metadata: Metadata = {
+  title: 'Google Places UI Kit for Real Estate | Summerlin West Real Estate',
+  description: 'Integrate Google Places API for enhanced real estate search and property discovery. Autocomplete, place details, and location services for luxury real estate websites.',
+  keywords: 'Google Places API, real estate search, property discovery, autocomplete, location services, Summerlin West',
+  openGraph: {
+    title: 'Google Places UI Kit for Real Estate | Summerlin West Real Estate',
+    description: 'Integrate Google Places API for enhanced real estate search and property discovery.',
+    type: 'website',
+  },
+};
 
+export default function GooglePlaces() {
   return <GooglePlacesClient />;
 }

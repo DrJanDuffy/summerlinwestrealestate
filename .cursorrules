@@ -307,21 +307,72 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Rollbacks**: Implement safe rollback procedures
 - **Security**: Regular security updates and patches
 
+# AI Model Selection Rules - September 2025
+
+## 🚀 BEST AI MODELS AS OF SEPTEMBER 2025
+
+### **Primary Model Recommendations**
+
+#### **1. GPT-5 (OpenAI) - RECOMMENDED FOR DEVELOPMENT**
+- **Release**: August 2025
+- **Strengths**: Enhanced reasoning, multimodal capabilities, superior code generation
+- **Best For**: Component generation, complex problem-solving, real estate content
+- **Context Window**: 128k+ tokens
+- **Use Case**: Primary model for V0 component generation and development tasks
+
+#### **2. Claude 4 Opus (Anthropic) - RECOMMENDED FOR REASONING**
+- **Release**: September 2025
+- **Strengths**: Exceptional reasoning, long-form memory, code generation excellence
+- **Best For**: Complex analysis, market insights, strategic planning
+- **Context Window**: 200k+ tokens
+- **Use Case**: Market analysis, content strategy, complex problem-solving
+
+#### **3. Gemini 2.5 Pro (Google) - RECOMMENDED FOR MULTIMODAL**
+- **Release**: September 2025
+- **Strengths**: Robust multimodal processing, Google ecosystem integration
+- **Best For**: Image analysis, comprehensive data processing, SEO optimization
+- **Context Window**: 1M+ tokens
+- **Use Case**: Image generation, comprehensive market analysis, SEO content
+
+#### **4. Qwen3-Max (Alibaba) - RECOMMENDED FOR ENTERPRISE**
+- **Release**: September 2025
+- **Strengths**: 119 languages, 262k context, enterprise-grade reliability
+- **Best For**: Multilingual content, enterprise applications, scalable processing
+- **Context Window**: 262k tokens
+- **Use Case**: International real estate content, enterprise integrations
+
+### **Model Selection Guidelines**
+
+#### **For Real Estate Development Tasks**
+1. **Component Generation**: GPT-4o (best code generation, Next.js expertise)
+2. **Market Analysis**: Claude 3.5 Sonnet (superior reasoning and analysis)
+3. **SEO Content**: Gemini Pro 1.5 (Google ecosystem, SEO optimization)
+4. **Multilingual**: Llama 3.1 405B (multilingual support, enterprise reliability)
+
+#### **For Specific Use Cases**
+- **Property Listings**: GPT-4o (structured data, real estate expertise)
+- **Market Reports**: Claude 3.5 Sonnet (complex analysis, trend identification)
+- **Image Generation**: DALL-E 3 (high-quality visuals, professional quality)
+- **Lead Capture Forms**: GPT-4o (form optimization, conversion focus)
+- **Community Pages**: Claude 3.5 Sonnet (comprehensive content, local insights)
+
 # V0 AI Integration Rules
 
 ## V0 API Configuration
-- **API Key**: Use V0_API_KEY environment variable for authentication
-- **Model**: Use OpenAI-compatible v0.app Model API for component generation
-- **Base URL**: https://api.v0.app/v1 for all API calls
+- **API Key**: Use OPENROUTER_API_KEY environment variable for authentication
+- **Model**: Use OpenRouter for unified access to multiple AI models
+- **Base URL**: https://openrouter.ai/api/v1 for all API calls
 - **SDK**: Use `ai` and `@ai-sdk/vercel` packages for integration
-- **Validation**: Always validate V0 configuration before making API calls
+- **Validation**: Always validate OpenRouter configuration before making API calls
+- **Fallback**: Use model-specific fallbacks (GPT-4o-mini, Claude-3-Haiku, etc.)
 
 ## V0 Development Workflow
-- **Component Generation**: Use V0 for rapid prototyping of React components
+- **Component Generation**: Use V0 with GPT-5 for rapid prototyping of React components
 - **Real Estate Focus**: Leverage V0 for property cards, listings, forms, and pages
-- **Framework Awareness**: Always specify Next.js framework in V0 prompts
-- **Style Preference**: Use Tailwind CSS for all V0-generated components
+- **Framework Awareness**: Always specify Next.js 15+ framework in V0 prompts
+- **Style Preference**: Use Tailwind CSS 4+ for all V0-generated components
 - **TypeScript**: Include TypeScript types in all V0-generated code
+- **Model Selection**: Prioritize GPT-5 for development, Claude 4 for analysis
 
 ## V0 Prompt Engineering Best Practices
 - **Specific Prompts**: Be detailed about component requirements and functionality
@@ -330,14 +381,95 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Accessibility**: Always request WCAG-compliant, accessible components
 - **Mobile-First**: Specify mobile-responsive design requirements
 - **Performance**: Request optimized components for Core Web Vitals
+- **Model-Specific Prompts**: Tailor prompts to model strengths (GPT-5 for code, Claude 4 for analysis)
+
+## AI Model Performance Optimization
+
+### **Model Selection Matrix**
+
+| Task Type | Primary Model | Secondary Model | Reasoning |
+|-----------|---------------|-----------------|-----------|
+| Component Generation | GPT-5 | Claude 4 Opus | GPT-5 excels at React/Next.js code generation |
+| Market Analysis | Claude 4 Opus | Gemini 2.5 Pro | Claude 4 superior reasoning for complex analysis |
+| SEO Content | Gemini 2.5 Pro | GPT-5 | Google ecosystem integration for SEO |
+| Image Generation | Imagen 4 | Gemini 2.5 Pro | Imagen 4 specialized for high-quality visuals |
+| Multilingual Content | Qwen3-Max | GPT-5 | Qwen3-Max supports 119 languages |
+| Lead Capture Forms | GPT-5 | Claude 4 Opus | GPT-5 optimized for conversion-focused forms |
+| Community Pages | Claude 4 Opus | GPT-5 | Claude 4 better for comprehensive content |
+
+### **Model Configuration Best Practices**
+
+#### **GPT-5 Configuration**
+```typescript
+{
+  model: 'gpt-5',
+  temperature: 0.7, // Balanced creativity and consistency
+  max_tokens: 4000, // Sufficient for component generation
+  top_p: 0.9, // Good balance for code generation
+  frequency_penalty: 0.1, // Reduce repetition
+  presence_penalty: 0.1 // Encourage creativity
+}
+```
+
+#### **Claude 4 Opus Configuration**
+```typescript
+{
+  model: 'claude-4-opus',
+  temperature: 0.3, // Lower for analytical tasks
+  max_tokens: 8000, // Larger context for analysis
+  top_p: 0.8, // More focused responses
+  frequency_penalty: 0.0, // Allow repetition for emphasis
+  presence_penalty: 0.0 // Focus on content quality
+}
+```
+
+#### **Gemini 2.5 Pro Configuration**
+```typescript
+{
+  model: 'gemini-2.5-pro',
+  temperature: 0.5, // Balanced for SEO content
+  max_tokens: 6000, // Good for comprehensive content
+  top_p: 0.85, // SEO-optimized responses
+  frequency_penalty: 0.05, // Minimal repetition
+  presence_penalty: 0.05 // Encourage keyword inclusion
+}
+```
 
 ## V0 Component Generation Guidelines
-- **Property Components**: Generate property cards, listings, galleries, and search filters
-- **Community Pages**: Create neighborhood information, amenities, and local insights
-- **Market Reports**: Generate data visualization and market analysis components
-- **Contact Forms**: Create lead capture forms with proper validation
-- **Navigation**: Generate responsive navigation and breadcrumb components
-- **Hero Sections**: Create compelling hero sections with CTAs
+- **Property Components**: Generate property cards, listings, galleries, and search filters using GPT-5
+- **Community Pages**: Create neighborhood information, amenities, and local insights using Claude 4 Opus
+- **Market Reports**: Generate data visualization and market analysis components using Claude 4 Opus
+- **Contact Forms**: Create lead capture forms with proper validation using GPT-5
+- **Navigation**: Generate responsive navigation and breadcrumb components using GPT-5
+- **Hero Sections**: Create compelling hero sections with CTAs using GPT-5
+- **SEO Content**: Generate SEO-optimized content using Gemini 2.5 Pro
+- **Image Generation**: Create property and community images using Imagen 4
+
+## Model-Specific Implementation Rules
+
+### **GPT-5 Implementation**
+- **Use For**: React components, Next.js pages, TypeScript interfaces, form validation
+- **Prompt Style**: Technical, specific, framework-aware
+- **Output Format**: Clean, production-ready code with proper TypeScript types
+- **Example**: "Generate a responsive property card component using Next.js 15, TypeScript, and Tailwind CSS 4"
+
+### **Claude 4 Opus Implementation**
+- **Use For**: Market analysis, content strategy, complex reasoning, comprehensive content
+- **Prompt Style**: Analytical, detailed, context-rich
+- **Output Format**: Structured analysis, comprehensive content, strategic insights
+- **Example**: "Analyze Summerlin West market trends and create comprehensive community content"
+
+### **Gemini 2.5 Pro Implementation**
+- **Use For**: SEO content, Google ecosystem integration, multimodal processing
+- **Prompt Style**: SEO-focused, keyword-rich, search-optimized
+- **Output Format**: SEO-optimized content, structured data, search-friendly markup
+- **Example**: "Create SEO-optimized content for Summerlin West luxury homes with proper keyword density"
+
+### **Qwen3-Max Implementation**
+- **Use For**: Multilingual content, enterprise applications, international real estate
+- **Prompt Style**: Language-specific, culturally aware, enterprise-focused
+- **Output Format**: Multilingual content, localized real estate information
+- **Example**: "Generate Spanish-language content for Las Vegas luxury real estate market"
 
 ## V0 Code Quality Standards
 - **TypeScript**: All generated components must include proper TypeScript interfaces
@@ -346,6 +478,28 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Error Handling**: Include proper error boundaries and validation
 - **Loading States**: Implement loading and error states for dynamic content
 - **SEO Metadata**: Include proper meta tags and structured data
+- **Model Optimization**: Use appropriate models for specific tasks (GPT-5 for code, Claude 4 for analysis)
+- **Performance**: Optimize for Core Web Vitals with latest model capabilities
+
+## AI Model Performance Optimization
+
+### **Response Time Optimization**
+- **GPT-5**: Use for fast component generation (2-5 seconds)
+- **Claude 4 Opus**: Use for thorough analysis (5-10 seconds)
+- **Gemini 2.5 Pro**: Use for comprehensive content (3-8 seconds)
+- **Qwen3-Max**: Use for multilingual tasks (4-9 seconds)
+
+### **Token Usage Optimization**
+- **Component Generation**: 2000-4000 tokens (GPT-5)
+- **Market Analysis**: 4000-8000 tokens (Claude 4 Opus)
+- **SEO Content**: 3000-6000 tokens (Gemini 2.5 Pro)
+- **Multilingual**: 2000-5000 tokens (Qwen3-Max)
+
+### **Cost Optimization**
+- **Development Tasks**: Use GPT-5 (most cost-effective for code generation)
+- **Analysis Tasks**: Use Claude 4 Opus (best value for complex reasoning)
+- **SEO Tasks**: Use Gemini 2.5 Pro (Google ecosystem integration)
+- **Enterprise Tasks**: Use Qwen3-Max (enterprise-grade reliability)
 
 ## V0 Integration Points
 - **API Routes**: Use `/api/v0/generate-component` for custom component generation
@@ -353,6 +507,34 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Health Checks**: Monitor `/api/v0/health` for API status
 - **Test Interface**: Use `/v0-test` page for testing and experimentation
 - **Utility Functions**: Leverage `lib/v0.ts` for programmatic component generation
+- **Model Selection**: Use appropriate models for specific tasks via API routes
+- **Fallback Strategy**: Implement model fallback for reliability
+
+## Model-Specific Security Considerations
+
+### **GPT-5 Security**
+- **API Key Protection**: Never expose OpenAI API keys in client-side code
+- **Rate Limiting**: Implement proper rate limiting for GPT-5 API calls
+- **Content Validation**: Validate all generated content before rendering
+- **Error Handling**: Don't expose sensitive information in error messages
+
+### **Claude 4 Opus Security**
+- **Anthropic API Security**: Use secure API key management for Claude 4
+- **Content Filtering**: Implement content filtering for market analysis
+- **Data Privacy**: Ensure client data privacy in analysis tasks
+- **Audit Logging**: Log all Claude 4 API interactions for compliance
+
+### **Gemini 2.5 Pro Security**
+- **Google Cloud Security**: Leverage Google Cloud security features
+- **Multimodal Security**: Secure image and text processing pipelines
+- **SEO Data Protection**: Protect SEO strategy and keyword data
+- **Content Sanitization**: Sanitize all generated SEO content
+
+### **Qwen3-Max Security**
+- **Enterprise Security**: Implement enterprise-grade security measures
+- **Multilingual Security**: Secure multilingual content processing
+- **Data Localization**: Ensure data stays within appropriate regions
+- **Compliance**: Meet international data protection requirements
 
 ## V0 Real Estate Specific Rules
 - **Branding**: Maintain Dr. Janet Duffy's professional real estate branding
@@ -361,6 +543,34 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Lead Generation**: Optimize all components for lead capture and conversion
 - **Market Data**: Integrate current market data and trends
 - **Professional Images**: Use high-quality property and community photos
+- **Model Selection**: Use GPT-5 for property components, Claude 4 for market analysis
+- **Content Quality**: Ensure all generated content meets real estate industry standards
+
+## Model-Specific Development Commands
+
+### **GPT-5 Development Commands**
+- **Component Generation**: `generateComponent(prompt, { model: 'gpt-5', framework: 'next' })`
+- **Form Creation**: `generateForm(prompt, { model: 'gpt-5', type: 'lead-capture' })`
+- **Page Generation**: `generatePage(prompt, { model: 'gpt-5', template: 'property-listing' })`
+- **Code Optimization**: `optimizeCode(code, { model: 'gpt-5', focus: 'performance' })`
+
+### **Claude 4 Opus Development Commands**
+- **Market Analysis**: `analyzeMarket(data, { model: 'claude-4-opus', depth: 'comprehensive' })`
+- **Content Strategy**: `createStrategy(requirements, { model: 'claude-4-opus', focus: 'seo' })`
+- **Community Research**: `researchCommunity(location, { model: 'claude-4-opus', scope: 'full' })`
+- **Trend Analysis**: `analyzeTrends(data, { model: 'claude-4-opus', timeframe: 'quarterly' })`
+
+### **Gemini 2.5 Pro Development Commands**
+- **SEO Content**: `generateSEOContent(keywords, { model: 'gemini-2.5-pro', focus: 'local' })`
+- **Image Analysis**: `analyzeImages(images, { model: 'gemini-2.5-pro', type: 'property' })`
+- **Multimodal Content**: `createMultimodalContent(prompt, { model: 'gemini-2.5-pro', format: 'comprehensive' })`
+- **Google Integration**: `integrateGoogle(data, { model: 'gemini-2.5-pro', service: 'maps' })`
+
+### **Qwen3-Max Development Commands**
+- **Multilingual Content**: `generateMultilingual(content, { model: 'qwen3-max', languages: ['es', 'en'] })`
+- **Enterprise Integration**: `integrateEnterprise(systems, { model: 'qwen3-max', scale: 'enterprise' })`
+- **International SEO**: `createInternationalSEO(regions, { model: 'qwen3-max', focus: 'global' })`
+- **Compliance Content**: `generateCompliance(requirements, { model: 'qwen3-max', standards: 'international' })`
 
 ## V0 Performance Optimization
 - **Code Splitting**: Generate components that support Next.js code splitting
@@ -368,6 +578,35 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Lazy Loading**: Implement lazy loading for property galleries and heavy content
 - **Caching**: Generate components that work well with Vercel's caching
 - **Bundle Size**: Monitor and optimize bundle size of generated components
+- **Model Efficiency**: Use appropriate models for performance requirements
+- **Response Caching**: Cache model responses for repeated requests
+- **Streaming**: Implement streaming for large content generation
+
+## Model-Specific Testing & Validation
+
+### **GPT-5 Testing**
+- **Component Testing**: Test all GPT-5 generated components before deployment
+- **Code Quality**: Validate TypeScript types and React patterns
+- **Performance**: Run Lighthouse audits on pages with GPT-5 components
+- **Accessibility**: Test WCAG compliance using automated tools
+
+### **Claude 4 Opus Testing**
+- **Analysis Validation**: Verify market analysis accuracy and completeness
+- **Content Quality**: Test content depth and reasoning quality
+- **Fact Checking**: Validate market data and trends accuracy
+- **Compliance**: Ensure fair housing compliance in all content
+
+### **Gemini 2.5 Pro Testing**
+- **SEO Validation**: Test SEO optimization and keyword density
+- **Image Analysis**: Validate image processing and analysis accuracy
+- **Google Integration**: Test Google Maps and search integration
+- **Multimodal Testing**: Verify text-image content coherence
+
+### **Qwen3-Max Testing**
+- **Multilingual Testing**: Test content quality across multiple languages
+- **Enterprise Testing**: Validate enterprise-grade reliability and security
+- **Compliance Testing**: Ensure international compliance standards
+- **Scalability Testing**: Test performance under enterprise load
 
 ## V0 Testing & Validation
 - **Component Testing**: Test all V0-generated components before deployment
@@ -376,6 +615,34 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Accessibility**: Validate WCAG compliance using automated tools
 - **Performance**: Run Lighthouse audits on pages with V0 components
 - **SEO Validation**: Check meta tags, structured data, and page speed
+- **Model-Specific Testing**: Test components generated by different models
+- **Integration Testing**: Verify model integration and fallback mechanisms
+
+## Model-Specific Error Handling & Monitoring
+
+### **GPT-5 Error Handling**
+- **API Errors**: Handle GPT-5 API failures gracefully with fallback components
+- **Rate Limiting**: Implement proper rate limiting for GPT-5 API calls
+- **Content Validation**: Validate generated code before rendering
+- **Fallback Strategy**: Use GPT-4o as fallback when GPT-5 is unavailable
+
+### **Claude 4 Opus Error Handling**
+- **Analysis Errors**: Handle analysis failures with cached or simplified content
+- **Content Filtering**: Implement content filtering for market analysis
+- **Data Validation**: Validate market data before processing
+- **Fallback Strategy**: Use Claude 3.5 Sonnet as fallback
+
+### **Gemini 2.5 Pro Error Handling**
+- **Multimodal Errors**: Handle image processing failures gracefully
+- **SEO Validation**: Validate SEO content before publishing
+- **Google Integration**: Handle Google API failures with fallback content
+- **Fallback Strategy**: Use Gemini 1.5 Pro as fallback
+
+### **Qwen3-Max Error Handling**
+- **Multilingual Errors**: Handle language processing failures
+- **Enterprise Errors**: Implement enterprise-grade error handling
+- **Compliance Errors**: Handle compliance validation failures
+- **Fallback Strategy**: Use Qwen2.5 as fallback for multilingual tasks
 
 ## V0 Error Handling & Monitoring
 - **API Errors**: Handle V0 API failures gracefully with fallback components
@@ -384,6 +651,30 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Fallbacks**: Provide fallback components when V0 generation fails
 - **User Feedback**: Collect user feedback on V0-generated components
 - **Iteration**: Continuously improve prompts based on generation quality
+- **Model Monitoring**: Monitor performance of different models
+- **Cost Tracking**: Track costs and usage across different models
+
+## Model-Specific Development Commands
+
+### **Quick Model Selection**
+- **For Code**: Use GPT-5 (`model: 'gpt-5'`)
+- **For Analysis**: Use Claude 4 Opus (`model: 'claude-4-opus'`)
+- **For SEO**: Use Gemini 2.5 Pro (`model: 'gemini-2.5-pro'`)
+- **For Multilingual**: Use Qwen3-Max (`model: 'qwen3-max'`)
+
+### **Development Workflow**
+1. **Identify Task Type**: Determine if task is code, analysis, SEO, or multilingual
+2. **Select Model**: Choose appropriate model based on task type
+3. **Configure Parameters**: Set optimal parameters for selected model
+4. **Generate Content**: Execute generation with proper error handling
+5. **Validate Output**: Test and validate generated content
+6. **Deploy**: Deploy validated content to production
+
+### **Model Performance Monitoring**
+- **Response Times**: Track average response times per model
+- **Success Rates**: Monitor success rates and error frequencies
+- **Cost Analysis**: Track costs and optimize usage
+- **Quality Metrics**: Monitor content quality and user satisfaction
 
 ## V0 Security Considerations
 - **API Key Protection**: Never expose V0_API_KEY in client-side code
@@ -392,6 +683,34 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Rate Limiting**: Implement rate limiting to prevent API abuse
 - **Error Messages**: Don't expose sensitive information in error messages
 - **Audit Logs**: Maintain audit logs for all V0 API interactions
+- **Model Security**: Implement model-specific security measures
+- **Data Protection**: Ensure client data protection across all models
+
+## Model-Specific Security Implementation
+
+### **GPT-5 Security**
+- **OpenAI API Security**: Use secure API key management
+- **Content Validation**: Validate all generated code and content
+- **Rate Limiting**: Implement GPT-5 specific rate limiting
+- **Error Handling**: Secure error handling for GPT-5 failures
+
+### **Claude 4 Opus Security**
+- **Anthropic API Security**: Secure Claude 4 API integration
+- **Content Filtering**: Implement content filtering for analysis
+- **Data Privacy**: Ensure market data privacy
+- **Compliance**: Meet real estate industry compliance standards
+
+### **Gemini 2.5 Pro Security**
+- **Google Cloud Security**: Leverage Google Cloud security features
+- **Multimodal Security**: Secure image and text processing
+- **SEO Data Protection**: Protect SEO strategy and keywords
+- **Google Integration**: Secure Google Maps and search integration
+
+### **Qwen3-Max Security**
+- **Enterprise Security**: Implement enterprise-grade security
+- **Multilingual Security**: Secure multilingual content processing
+- **Data Localization**: Ensure data stays within appropriate regions
+- **International Compliance**: Meet international data protection requirements
 
 ## V0 Development Commands
 - **Test Integration**: Visit `/v0-test` to test V0 functionality
@@ -400,3 +719,31 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - **Validate Config**: Use `validateV0Config()` to check API setup
 - **Health Check**: Call `/api/v0/health` to verify API status
 - **Debug Issues**: Check console logs and API responses for debugging
+- **Model Selection**: Use appropriate models for specific tasks
+- **Performance Monitoring**: Monitor model performance and costs
+
+## Model-Specific Development Commands
+
+### **GPT-5 Commands**
+- **Component Generation**: `generateComponent(prompt, { model: 'gpt-5' })`
+- **Form Creation**: `generateForm(prompt, { model: 'gpt-5', type: 'lead-capture' })`
+- **Page Generation**: `generatePage(prompt, { model: 'gpt-5', template: 'property' })`
+- **Code Optimization**: `optimizeCode(code, { model: 'gpt-5' })`
+
+### **Claude 4 Opus Commands**
+- **Market Analysis**: `analyzeMarket(data, { model: 'claude-4-opus' })`
+- **Content Strategy**: `createStrategy(requirements, { model: 'claude-4-opus' })`
+- **Community Research**: `researchCommunity(location, { model: 'claude-4-opus' })`
+- **Trend Analysis**: `analyzeTrends(data, { model: 'claude-4-opus' })`
+
+### **Gemini 2.5 Pro Commands**
+- **SEO Content**: `generateSEOContent(keywords, { model: 'gemini-2.5-pro' })`
+- **Image Analysis**: `analyzeImages(images, { model: 'gemini-2.5-pro' })`
+- **Multimodal Content**: `createMultimodalContent(prompt, { model: 'gemini-2.5-pro' })`
+- **Google Integration**: `integrateGoogle(data, { model: 'gemini-2.5-pro' })`
+
+### **Qwen3-Max Commands**
+- **Multilingual Content**: `generateMultilingual(content, { model: 'qwen3-max' })`
+- **Enterprise Integration**: `integrateEnterprise(systems, { model: 'qwen3-max' })`
+- **International SEO**: `createInternationalSEO(regions, { model: 'qwen3-max' })`
+- **Compliance Content**: `generateCompliance(requirements, { model: 'qwen3-max' })`

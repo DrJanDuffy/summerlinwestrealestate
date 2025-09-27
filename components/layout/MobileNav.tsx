@@ -63,7 +63,6 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={onClose}
                   className={`text-lg font-medium py-2 px-3 rounded transition-colors text-[#0A2540] hover:bg-[#F7F9FC] active:bg-[#3A8DDE] ${
                     _pathname === link.href ? 'bg-[#3A8DDE] text-white' : ''
                   } ${styles.touchManipulation}`}

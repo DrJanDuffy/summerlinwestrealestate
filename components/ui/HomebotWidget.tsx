@@ -45,7 +45,7 @@ export default function HomebotWidget({
   const scriptRef = useRef<HTMLScriptElement | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const retryCountRef = useRef(0);
-  const retryLoadRef = useRef<() => void>();
+  const retryLoadRef = useRef<() => void>(() => {});
 
   const [loadingState, setLoadingState] = useState<LoadingState>('idle');
   const [error, setError] = useState<string | null>(null);
@@ -73,8 +73,8 @@ export default function HomebotWidget({
     if (!shadowRef.current) return;
 
     try {
-      if (window.Homebot) {
-        window.Homebot('#homebot_homeowner', apiKey, {
+      if ((window as any).Homebot) {
+        (window as any).Homebot('#homebot_homeowner', apiKey, {
           theme,
           height,
           autoResize: true,
@@ -97,7 +97,7 @@ export default function HomebotWidget({
 
     // Check if script already exists and is working
     const existingScript = shadow.querySelector(`script[src="${HOMEBOT_SCRIPT_SRC}"]`);
-    if (existingScript && window.Homebot) {
+    if (existingScript && (window as any).Homebot) {
       initializeWidget();
       return;
     }

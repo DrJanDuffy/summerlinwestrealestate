@@ -185,23 +185,23 @@ export function createNearbySearchUrl(
 
 // Error handling for API responses
 export function handleGoogleMapsError(response: unknown): void {
-  if (response.status === 'REQUEST_DENIED') {
+  if ((response as any)?.status === 'REQUEST_DENIED') {
     throw new Error('Google Maps API request denied. Check your API key and billing status.');
   }
 
-  if (response.status === 'OVER_QUERY_LIMIT') {
+  if ((response as any)?.status === 'OVER_QUERY_LIMIT') {
     throw new Error('Google Maps API quota exceeded. Please try again later.');
   }
 
-  if (response.status === 'INVALID_REQUEST') {
+  if ((response as any)?.status === 'INVALID_REQUEST') {
     throw new Error('Invalid Google Maps API request. Check your parameters.');
   }
 
-  if (response.status === 'NOT_FOUND') {
+  if ((response as any)?.status === 'NOT_FOUND') {
     throw new Error('Google Maps API resource not found.');
   }
 
-  if (response.status === 'ZERO_RESULTS') {
+  if ((response as any)?.status === 'ZERO_RESULTS') {
     throw new Error('No results found for the given parameters.');
   }
 }

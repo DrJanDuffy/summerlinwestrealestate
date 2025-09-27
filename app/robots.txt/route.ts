@@ -1,13 +1,17 @@
 import { MetadataRoute } from 'next'
 
-export default function robots(): MetadataRoute.Robots {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/private/', '/admin/'],
+export function GET(): Response {
+  const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://summerlinwestrealestate.com/sitemap.xml`
+
+  return new Response(robotsTxt, {
+    headers: {
+      'Content-Type': 'text/plain',
     },
-    sitemap: 'https://summerlinwestrealestate.com/sitemap.xml',
-  }
+  })
 }
 

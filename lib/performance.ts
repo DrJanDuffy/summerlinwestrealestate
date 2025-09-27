@@ -172,7 +172,7 @@ class PerformanceMonitor {
    * Check if LCP element is an image
    */
   private isImageElement(metric: WebVitalsMetric): boolean {
-    return metric.entries.some((entry) => entry.element && entry.element.tagName === 'IMG');
+    return metric.entries.some((entry) => (entry as any).element && (entry as any).element.tagName === 'IMG');
   }
 
   /**
@@ -181,10 +181,10 @@ class PerformanceMonitor {
   private isMapRelated(metric: WebVitalsMetric): boolean {
     return metric.entries.some(
       (entry) =>
-        entry.element &&
-        (entry.element.classList.contains('map') ||
-          entry.element.id.includes('map') ||
-          entry.element.querySelector('.map'))
+        (entry as any).element &&
+        ((entry as any).element.classList.contains('map') ||
+          (entry as any).element.id.includes('map') ||
+          (entry as any).element.querySelector('.map'))
     );
   }
 

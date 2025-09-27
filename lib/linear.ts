@@ -75,26 +75,26 @@ export class LinearAPI {
         description: issue.description || undefined,
         priority: issue.priority,
         state: {
-          id: issue.state?.id || '',
-          name: issue.state?.name || '',
-          type: issue.state?.type || '',
+          id: (issue.state as any)?.id || '',
+          name: (issue.state as any)?.name || '',
+          type: (issue.state as any)?.type || '',
         },
         team: {
-          id: issue.team?.id || '',
-          name: issue.team?.name || '',
+          id: (issue.team as any)?.id || '',
+          name: (issue.team as any)?.name || '',
         },
         creator: issue.creator
           ? {
-              id: issue.creator.id,
-              name: issue.creator.name,
-              email: issue.creator.email,
+              id: (issue.creator as any).id,
+              name: (issue.creator as any).name,
+              email: (issue.creator as any).email,
             }
           : undefined,
         assignee: issue.assignee
           ? {
-              id: issue.assignee.id,
-              name: issue.assignee.name,
-              email: issue.assignee.email,
+              id: (issue.assignee as any).id,
+              name: (issue.assignee as any).name,
+              email: (issue.assignee as any).email,
             }
           : undefined,
         createdAt: issue.createdAt.toISOString(),
@@ -119,26 +119,26 @@ export class LinearAPI {
         description: issue.description || undefined,
         priority: issue.priority,
         state: {
-          id: issue.state.id,
-          name: issue.state.name,
-          type: issue.state.type,
+          id: (issue.state as any).id,
+          name: (issue.state as any).name,
+          type: (issue.state as any).type,
         },
         team: {
-          id: issue.team.id,
-          name: issue.team.name,
+          id: (issue.team as any).id,
+          name: (issue.team as any).name,
         },
         creator: issue.creator
           ? {
-              id: issue.creator.id,
-              name: issue.creator.name,
-              email: issue.creator.email,
+              id: (issue.creator as any).id,
+              name: (issue.creator as any).name,
+              email: (issue.creator as any).email,
             }
           : undefined,
         assignee: issue.assignee
           ? {
-              id: issue.assignee.id,
-              name: issue.assignee.name,
-              email: issue.assignee.email,
+              id: (issue.assignee as any).id,
+              name: (issue.assignee as any).name,
+              email: (issue.assignee as any).email,
             }
           : undefined,
         createdAt: issue.createdAt.toISOString(),
@@ -163,7 +163,7 @@ export class LinearAPI {
       });
 
       // Fetch the created issue to get all details
-      const issue = await this.client.issue(result.issue?.id || '');
+      const issue = await this.client.issue((result.issue as any)?.id || '');
 
       if (!issue) {
         throw new Error('Failed to fetch created issue');
@@ -175,26 +175,26 @@ export class LinearAPI {
         description: issue.description || undefined,
         priority: issue.priority,
         state: {
-          id: issue.state?.id || '',
-          name: issue.state?.name || '',
-          type: issue.state?.type || '',
+          id: (issue.state as any)?.id || '',
+          name: (issue.state as any)?.name || '',
+          type: (issue.state as any)?.type || '',
         },
         team: {
-          id: issue.team?.id || '',
-          name: issue.team?.name || '',
+          id: (issue.team as any)?.id || '',
+          name: (issue.team as any)?.name || '',
         },
         creator: issue.creator
           ? {
-              id: issue.creator.id,
-              name: issue.creator.name,
-              email: issue.creator.email,
+              id: (issue.creator as any).id,
+              name: (issue.creator as any).name,
+              email: (issue.creator as any).email,
             }
           : undefined,
         assignee: issue.assignee
           ? {
-              id: issue.assignee.id,
-              name: issue.assignee.name,
-              email: issue.assignee.email,
+              id: (issue.assignee as any).id,
+              name: (issue.assignee as any).name,
+              email: (issue.assignee as any).email,
             }
           : undefined,
         createdAt: issue.createdAt.toISOString(),
@@ -218,7 +218,7 @@ export class LinearAPI {
       });
 
       // Fetch the updated issue to get all details
-      const issue = await this.client.issue(result.issue?.id || input.issueId);
+      const issue = await this.client.issue((result.issue as any)?.id || input.issueId);
 
       if (!issue) {
         throw new Error('Failed to fetch updated issue');
@@ -230,26 +230,26 @@ export class LinearAPI {
         description: issue.description || undefined,
         priority: issue.priority,
         state: {
-          id: issue.state?.id || '',
-          name: issue.state?.name || '',
-          type: issue.state?.type || '',
+          id: (issue.state as any)?.id || '',
+          name: (issue.state as any)?.name || '',
+          type: (issue.state as any)?.type || '',
         },
         team: {
-          id: issue.team?.id || '',
-          name: issue.team?.name || '',
+          id: (issue.team as any)?.id || '',
+          name: (issue.team as any)?.name || '',
         },
         creator: issue.creator
           ? {
-              id: issue.creator.id,
-              name: issue.creator.name,
-              email: issue.creator.email,
+              id: (issue.creator as any).id,
+              name: (issue.creator as any).name,
+              email: (issue.creator as any).email,
             }
           : undefined,
         assignee: issue.assignee
           ? {
-              id: issue.assignee.id,
-              name: issue.assignee.name,
-              email: issue.assignee.email,
+              id: (issue.assignee as any).id,
+              name: (issue.assignee as any).name,
+              email: (issue.assignee as any).email,
             }
           : undefined,
         createdAt: issue.createdAt.toISOString(),

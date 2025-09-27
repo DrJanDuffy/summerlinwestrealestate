@@ -1,6 +1,6 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import styles from './LeadCaptureForm.module.css';
 
@@ -24,6 +24,7 @@ interface LeadCaptureFormProps {
   formId?: string;
 }
 
+// Memoized static data to prevent re-creation on every render
 const propertyInterests = [
   { value: '', label: 'Select your interest...' },
   { value: 'buy', label: 'Buy a Home' },
@@ -35,7 +36,7 @@ const propertyInterests = [
   { value: 'consultation', label: 'Free Consultation' },
   { value: 'the-vistas', label: 'The Vistas Community' },
   { value: 'other', label: 'Other' },
-];
+] as const;
 
 export default function LeadCaptureForm({
   variant = 'inline',
@@ -70,7 +71,7 @@ export default function LeadCaptureForm({
 
   const _privacyConsent = watch('privacyConsent');
 
-  const onSubmit = async (data: LeadFormData) => {
+  const onSubmit = useCallback(async (data: LeadFormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
@@ -98,10 +99,9 @@ export default function LeadCaptureForm({
       // Google Analytics tracking
       if (
         typeof window !== 'undefined' &&
-        typeof (window as Window & { gtag?: (...args: unknown[]) => void; userType?: string })
-          .gtag === 'function'
+        typeof (window as any).gtag === 'function'
       ) {
-        const win = window as Window & { gtag: (...args: unknown[]) => void; userType?: string };
+        const win = window as any;
         win.gtag('event', 'lead_form_submit', {
           event_category: 'Lead',
           event_label: source,
@@ -140,12 +140,12 @@ export default function LeadCaptureForm({
     } catch (error: unknown) {
       setSubmitStatus('error');
       setErrorMessage(
-        error.message || 'There was a problem submitting your request. Please try again.'
+        (error as Error).message || 'There was a problem submitting your request. Please try again.'
       );
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [source, formId, onSuccess, onClose, variant]);
 
   const formContent = (
     <motion.div
@@ -174,7 +174,11 @@ export default function LeadCaptureForm({
             Your request has been submitted successfully. We&apos;ll be in touch within 24 hours.
           </p>
           {variant === 'inline' && (
-            <button onClick={() => setSubmitStatus('idle')} className={styles['submit-button']}>
+            <button 
+              onClick={() => setSubmitStatus('idle')} 
+              className={styles['submit-button']}
+              type="button"
+            >
               Submit Another Request
             </button>
           )}
@@ -471,7 +475,12 @@ export default function LeadCaptureForm({
               className={styles['modal-content']}
               onClick={(e) => e.stopPropagation()}
             >
-              <button className={styles['modal-close']} onClick={onClose} aria-label="Close">
+              <button 
+                className={styles['modal-close']} 
+                onClick={onClose} 
+                aria-label="Close"
+                type="button"
+              >
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                 </svg>

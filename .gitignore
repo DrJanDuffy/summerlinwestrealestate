@@ -103,3 +103,4 @@ Thumbs.db
 # Build artifacts
 build/
 dist/
+.vercel
