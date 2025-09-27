@@ -1,25 +1,17 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import styles from '../page.module.css';
 
-// Disable static generation
-export const dynamic = 'force-dynamic';
+export const metadata = {
+  title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
+  description: 'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.',
+  openGraph: {
+    title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
+    description: 'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.',
+  },
+};
 
 export default function DowntownSummerlin() {
-  // Set page metadata
-  useEffect(() => {
-    document.title = 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.');
-    }
-  }, []);
-
-
   return (
     <div className={`${styles.page} ${styles.downtownSummerlinContainer}`}>
       <main>
