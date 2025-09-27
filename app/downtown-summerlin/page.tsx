@@ -2,9 +2,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect } from 'react';
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
-import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
 // Disable static generation
@@ -26,7 +23,6 @@ export default function DowntownSummerlin() {
   return (
     <div className={`${styles.page} ${styles.downtownSummerlinContainer}`}>
       <main>
-        <SummerlinWestOverview />
         <section className={styles.hero}>
           <h1>Downtown Summerlin Real Estate Guide</h1>
           <p className={styles.subtitle}>
@@ -54,9 +50,6 @@ export default function DowntownSummerlin() {
           <p>
             <Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link>
           </p>
-        </section>
-        <section className={styles.sectionCard}>
-          <LatestMarketInsightsClient />
         </section>
         <section className={styles.sectionCard}>
           <h2>Shopping in Downtown Summerlin</h2>
@@ -143,7 +136,10 @@ export default function DowntownSummerlin() {
         </section>
         <section className={styles.sectionCard}>
           <h2>Get Your Downtown Summerlin Market Report</h2>
-          <LeadCaptureFormClient />
+          <p>Contact Dr. Jan Duffy for your free market report and personalized consultation.</p>
+          <p>
+            <Link href="/contact">Get Your Free Market Report &rarr;</Link>
+          </p>
         </section>
         <section className={styles.sectionCard}>
           <h2>Explore More Summerlin Real Estate Resources</h2>
