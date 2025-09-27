@@ -7,6 +7,9 @@ import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
+// Disable static generation
+export const dynamic = 'force-dynamic';
+
 export default function DowntownSummerlin() {
   // Set page metadata
   useEffect(() => {
@@ -18,6 +21,7 @@ export default function DowntownSummerlin() {
       metaDescription.setAttribute('content', 'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.');
     }
   }, []);
+
 
   return (
     <div className={`${styles.page} ${styles.downtownSummerlinContainer}`}>
