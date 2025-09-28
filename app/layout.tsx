@@ -214,9 +214,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <StickyPhoneMenu />
         <Script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          src={process.env.REALSCOUT_SCRIPT_URL || "https://em.realscout.com/widgets/realscout-web-components.umd.js"}
           type="module"
           strategy="lazyOnload"
+          id="realscout-web-components"
         />
         <script
           type="application/ld+json"
