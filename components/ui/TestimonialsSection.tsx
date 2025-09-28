@@ -2,35 +2,35 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 // const _TESTIMONIALS = [
-  {
-    name: 'Sarah M.',
-    review:
-      'Our experience was fantastic! We found our dream home in The Vistas and the process was smooth and stress-free.',
-    rating: 5,
-    photo: null,
-  },
-  {
-    name: 'James R.',
-    review:
-      'Professional, knowledgeable, and always available. Highly recommend for anyone buying in Summerlin.',
-    rating: 5,
-    photo: null,
-  },
-  {
-    name: 'Linda & Tom',
-    review:
-      'We sold our home above asking price thanks to expert marketing and negotiation. Couldn&apos;t be happier!',
-    rating: 5,
-    photo: null,
-  },
-  {
-    name: 'Alex P.',
-    review:
-      'Great local insight and honest advice. The team made us feel like a priority every step of the way.',
-    rating: 4,
-    photo: null,
-  },
-];
+//   {
+//     name: 'Sarah M.',
+//     review:
+//       'Our experience was fantastic! We found our dream home in The Vistas and the process was smooth and stress-free.',
+//     rating: 5,
+//     photo: null,
+//   },
+//   {
+//     name: 'James R.',
+//     review:
+//       'Professional, knowledgeable, and always available. Highly recommend for anyone buying in Summerlin.',
+//     rating: 5,
+//     photo: null,
+//   },
+//   {
+//     name: 'Linda & Tom',
+//     review:
+//       'We sold our home above asking price thanks to expert marketing and negotiation. Couldn&apos;t be happier!',
+//     rating: 5,
+//     photo: null,
+//   },
+//   {
+//     name: 'Alex P.',
+//     review:
+//       'Great local insight and honest advice. The team made us feel like a priority every step of the way.',
+//     rating: 4,
+//     photo: null,
+//   },
+// ];
 
 function StarRating({ rating }: { rating: number }) {
   return (
