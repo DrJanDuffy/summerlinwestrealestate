@@ -17,7 +17,7 @@ const HYPERLOCAL_KEYWORDS = [
   // Add more neighborhoods as needed
 ];
 
-const _NEIGHBORHOODS = [
+// const _NEIGHBORHOODS = [
   'The Vistas',
   'Stonebridge',
   'Redpoint',
@@ -27,7 +27,7 @@ const _NEIGHBORHOODS = [
   'Redpoint Square',
 ];
 
-const _LOCAL_MARKET_INSIGHTS = [
+// const _LOCAL_MARKET_INSIGHTS = [
   'Did you know? Summerlin West homes sell 20% faster than the Las Vegas average!',
   'Fun fact: The Vistas Park hosts free summer concerts for residents.',
   'Stonebridge features some of the newest luxury homes in Summerlin West.',
@@ -37,7 +37,7 @@ const _LOCAL_MARKET_INSIGHTS = [
   'The Paseos features top-rated schools and beautiful parks.',
 ];
 
-const _LOCAL_EVENTS = [
+// const _LOCAL_EVENTS = [
   'Check out the Summerlin Farmers Market this Saturday at Downtown Summerlin!',
   'Join us for Movies in the Park at The Vistas this Friday night.',
   'Don&apos;t miss the Summerlin Art Festival coming up next month!',
@@ -55,7 +55,7 @@ const _LOCAL_INTRO =
 const _LOCAL_CTA =
   'If you have questions about how this affects your home or your plans in Summerlin West, contact us for a hyperlocal perspective!';
 
-function _getRandom(arr: string[]) {
+// function _getRandom(arr: string[]) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 

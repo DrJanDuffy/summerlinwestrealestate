@@ -16,7 +16,7 @@ export default function RealScoutWidgetDebug({
   priceMax = 2000000,
 }: RealScoutWidgetDebugProps) {
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  const [scriptError, setScriptError] = useState<string | null>(null);
+  const [scriptError, _setScriptError] = useState<string | null>(null);
   const [debugInfo, setDebugInfo] = useState<string[]>([]);
 
   const addDebugInfo = (info: string) => {

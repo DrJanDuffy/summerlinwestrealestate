@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState // } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 // ===== TYPE DEFINITIONS =====
-// declare global {
+declare global {
   interface Window {
     Homebot?: unknown;
   }

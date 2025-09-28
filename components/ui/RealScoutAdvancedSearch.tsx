@@ -16,11 +16,11 @@ export default function RealScoutAdvancedSearch({
   title = 'Find Your Dream Home in Summerlin West',
   subtitle = 'Search by neighborhood, price, or features. Real-time MLS data.',
   variant = 'page',
-  showFeatures = true,
+  showFeatures: _showFeatures = true,
   priceMin = 400000,
-  priceMax = 2000000,
+  priceMax: _priceMax = 2000000,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
-  agentId = 'QWdlbnQtMjI1MDUw',
+  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
 }: RealScoutAdvancedSearchProps) {
   useEffect(() => {
     // Load RealScout search widget script

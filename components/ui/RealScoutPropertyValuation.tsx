@@ -17,12 +17,12 @@ export default function RealScoutPropertyValuation({
   title = 'Get Your Free Property Valuation',
   subtitle = "Discover your home's current market value with our advanced analysis",
   variant = 'full',
-  showComparables = true,
-  showMarketAnalysis = true,
-  showInvestmentMetrics = true,
-  agentId = 'QWdlbnQtMjI1MDUw',
-  defaultAddress = '',
-  showLeadCapture = true,
+  showComparables: _showComparables = true,
+  showMarketAnalysis: _showMarketAnalysis = true,
+  showInvestmentMetrics: _showInvestmentMetrics = true,
+  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
+  defaultAddress: _defaultAddress = '',
+  showLeadCapture: _showLeadCapture = true,
 }: RealScoutPropertyValuationProps) {
   useEffect(() => {
     // Load RealScout property valuation widget script

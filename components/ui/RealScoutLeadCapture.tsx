@@ -20,13 +20,13 @@ export default function RealScoutLeadCapture({
   subtitle = 'Stay ahead of the market with our exclusive insights',
   variant = 'inline',
   source = 'Website',
-  community = 'Summerlin West',
+  community: _community = 'Summerlin West',
   propertyType = 'Any',
   priceRange = 'Any',
-  agentId = 'QWdlbnQtMjI1MDUw',
-  showMarketReport = true,
-  showValuation = true,
-  showConsultation = true,
+  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
+  showMarketReport: _showMarketReport = true,
+  showValuation: _showValuation = true,
+  showConsultation: _showConsultation = true,
 }: RealScoutLeadCaptureProps) {
   useEffect(() => {
     // Load RealScout lead capture widget script

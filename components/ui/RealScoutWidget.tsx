@@ -5,9 +5,9 @@ type RealScoutWidgetProps = {
 };
 
 export default function RealScoutWidget({
-  priceMin,
+  priceMin: _priceMin,
   priceMax = 1200000,
-  agentId = 'QWdlbnQtMjI1MDUw',
+  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
 }: RealScoutWidgetProps) {
   return (
     <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-8 text-center">

@@ -68,7 +68,7 @@ function HomeHeroImage() {
 }
 
 export default function HomeClient() {
-  const { source: _source } = useLeadCaptureModal();
+  // const { source: _source } = useLeadCaptureModal();
 
   // const handleFormSuccess = () => {
   //   // Track successful submission

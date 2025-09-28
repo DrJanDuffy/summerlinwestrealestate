@@ -18,11 +18,11 @@ export default function RealScoutMarketInsights({
   title = 'Summerlin West Market Insights',
   subtitle = 'Real-time market data and trends for informed decisions',
   variant = 'full',
-  showCharts = true,
-  showTrends = true,
-  showComparisons = true,
+  showCharts: _showCharts = true,
+  showTrends: _showTrends = true,
+  showComparisons: _showComparisons = true,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
-  agentId = 'QWdlbnQtMjI1MDUw',
+  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
   updateFrequency = 'daily',
 }: RealScoutMarketInsightsProps) {
   useEffect(() => {
