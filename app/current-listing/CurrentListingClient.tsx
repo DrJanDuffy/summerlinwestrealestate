@@ -20,8 +20,7 @@ const RealScoutFeaturedListings = dynamic(
   }
 );
 
-// Disable SSR for this page to prevent prerendering issues
-export const dynamic = 'force-dynamic';
+// SSR handling moved to parent Server Component
 
 export default function CurrentListingClient() {
   // Set page metadata
