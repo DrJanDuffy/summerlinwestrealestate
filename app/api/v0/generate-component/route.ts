@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateComponent } from '../../../lib/v0';
+import { generateComponent } from '../../../../lib/v0';
 
 export async function POST(request: NextRequest) {
   try {
