@@ -16,6 +16,9 @@ const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWid
 const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
   ssr: false,
 });
+const RealScoutFeaturedListings = dynamic(() => import('../components/ui/RealScoutFeaturedListings'), {
+  ssr: false,
+});
 const RealScoutHomeValue = dynamic(() => import('../components/ui/RealScoutHomeValue'), {
   ssr: false,
 });
@@ -292,11 +295,11 @@ export default function ImprovedHomeClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              Exclusive Featured Home in The Vistas
+              Featured Properties for Sale in Summerlin West
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience luxury living at its finest with this stunning featured home in The Vistas community. 
-              This exceptional property showcases the finest in Summerlin West real estate.
+              Discover exceptional properties currently available in Summerlin West. These featured listings 
+              showcase the finest in luxury real estate, updated in real-time from the MLS.
             </p>
           </div>
           
@@ -328,6 +331,11 @@ export default function ImprovedHomeClient() {
               },
             ]}
           />
+          
+          {/* Featured Listings from MLS */}
+          <div className="mt-16">
+            <RealScoutFeaturedListings />
+          </div>
         </div>
       </section>
 
