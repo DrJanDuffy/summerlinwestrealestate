@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 interface RealScoutAdvancedSearchProps {
   title?: string;
@@ -16,20 +17,29 @@ export default function RealScoutAdvancedSearch({
   title = 'Find Your Dream Home in Summerlin West',
   subtitle = 'Search by neighborhood, price, or features. Real-time MLS data.',
   variant = 'page',
-  showFeatures: _showFeatures = true,
+  showFeatures = true,
   priceMin = 400000,
-  priceMax: _priceMax = 2000000,
+  priceMax = 2000000,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
-  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
+  agentId = 'QWdlbnQtMjI1MDUw',
 }: RealScoutAdvancedSearchProps) {
+  const [widgetLoaded, setWidgetLoaded] = useState(false);
+
   useEffect(() => {
-    // Load RealScout search widget script
-    if (!document.querySelector('script[src*="realscout-web-components"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      script.type = 'module';
-      document.head.appendChild(script);
-    }
+    const loadWidget = async () => {
+      try {
+        // Wait for RealScout elements to be defined
+        const elementsLoaded = await waitForRealScoutElements(10000);
+        
+        if (elementsLoaded) {
+          setWidgetLoaded(true);
+        }
+      } catch (error) {
+        console.error('Error loading RealScout advanced search widget:', error);
+      }
+    };
+
+    loadWidget();
 
     // Add custom styling for RealScout components
     if (!document.querySelector('style[data-realscout-search-styles]')) {
