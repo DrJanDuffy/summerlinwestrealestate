@@ -25,6 +25,7 @@ export default function RealScoutYourListings({
       className={`realscout-your-listings-container ${className}`}
     >
       {/* RealScout Your Listings Web Component */}
+      {/* @ts-ignore - RealScout web component */}
       <realscout-your-listings
         agent-encoded-id={agentEncodedId}
         sort-order={sortOrder}
