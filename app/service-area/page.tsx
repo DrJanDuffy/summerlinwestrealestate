@@ -1,6 +1,9 @@
 'use client';
 import styles from '../../styles/pages/service-area.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 const subdivisions = [
   // Luxury and Gated Communities
   {

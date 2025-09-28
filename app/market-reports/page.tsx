@@ -1,16 +1,21 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import MarketReportsClient from './MarketReportsClient';
+
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
 
 // Metadata for market reports page
 export const metadata: Metadata = {
   title: 'Summerlin Market Reports & Trends | Summerlin West Real Estate',
-  description: 'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
+  description:
+    'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
   alternates: {
     canonical: '/market-reports',
   },
   openGraph: {
     title: 'Summerlin Market Reports & Trends | Summerlin West Real Estate',
-    description: 'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
+    description:
+      'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
     url: 'https://summerlinwestrealestate.com/market-reports',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -27,7 +32,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Summerlin Market Reports & Trends | Summerlin West Real Estate',
-    description: 'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
+    description:
+      'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
     images: ['/images/og-image.svg'],
   },
   robots: {

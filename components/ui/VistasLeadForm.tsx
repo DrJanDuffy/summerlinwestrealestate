@@ -41,18 +41,11 @@ export default function VistasLeadForm() {
       }
 
       setSubmitted(true);
-      if (
-        typeof window !== 'undefined' &&
-        typeof (window as any).gtag === 'function'
-      ) {
-        (window as any).gtag(
-          'event',
-          'lead_form_submit',
-          {
-            event_category: 'Lead',
-            event_label: 'The Vistas',
-          }
-        );
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'lead_form_submit', {
+          event_category: 'Lead',
+          event_label: 'The Vistas',
+        });
       }
     } catch (_err: unknown) {
       setError('There was a problem submitting your request. Please try again later.');

@@ -1,0 +1,163 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Summerlin West Real Estate APIs",
+  "dateExported": "2025-09-27T19:35:00.000Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "id": "realscout-apis",
+      "name": "RealScout APIs",
+      "containerId": "",
+      "created": "2025-09-27T19:35:00.000Z",
+      "sortNum": 10000
+    },
+    {
+      "id": "vercel-apis",
+      "name": "Vercel APIs",
+      "containerId": "",
+      "created": "2025-09-27T19:35:00.000Z",
+      "sortNum": 20000
+    },
+    {
+      "id": "v0-apis",
+      "name": "V0 AI APIs",
+      "containerId": "",
+      "created": "2025-09-27T19:35:00.000Z",
+      "sortNum": 30000
+    }
+  ],
+  "requests": [
+    {
+      "id": "realscout-properties",
+      "name": "Get RealScout Properties",
+      "url": "https://api.realscout.com/v1/properties",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2025-09-27T19:35:00.000Z",
+      "modified": "2025-09-27T19:35:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{REALSCOUT_API_KEY}}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "params": [
+        {
+          "name": "location",
+          "value": "Summerlin West, Las Vegas, NV"
+        },
+        {
+          "name": "limit",
+          "value": "50"
+        }
+      ],
+      "tests": [
+        {
+          "type": "status",
+          "value": "200"
+        }
+      ],
+      "containerId": "realscout-apis"
+    },
+    {
+      "id": "vercel-deployment",
+      "name": "Check Vercel Deployment",
+      "url": "https://api.vercel.com/v1/deployments",
+      "method": "GET",
+      "sortNum": 10000,
+      "created": "2025-09-27T19:35:00.000Z",
+      "modified": "2025-09-27T19:35:00.000Z",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{VERCEL_TOKEN}}"
+        }
+      ],
+      "tests": [
+        {
+          "type": "status",
+          "value": "200"
+        }
+      ],
+      "containerId": "vercel-apis"
+    },
+    {
+      "id": "v0-generate-component",
+      "name": "Generate Property Component",
+      "url": "http://localhost:3000/api/v0/generate-component",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2025-09-27T19:35:00.000Z",
+      "modified": "2025-09-27T19:35:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"prompt\": \"Generate a responsive property card component for Summerlin West luxury homes\",\n  \"model\": \"gpt-5\",\n  \"framework\": \"next\",\n  \"style\": \"tailwind\"\n}"
+      },
+      "tests": [
+        {
+          "type": "status",
+          "value": "200"
+        }
+      ],
+      "containerId": "v0-apis"
+    },
+    {
+      "id": "market-insights",
+      "name": "Get Market Insights",
+      "url": "http://localhost:3000/api/market-insights",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2025-09-27T19:35:00.000Z",
+      "modified": "2025-09-27T19:35:00.000Z",
+      "params": [
+        {
+          "name": "location",
+          "value": "Summerlin West"
+        },
+        {
+          "name": "timeframe",
+          "value": "monthly"
+        }
+      ],
+      "tests": [
+        {
+          "type": "status",
+          "value": "200"
+        }
+      ],
+      "containerId": "realscout-apis"
+    }
+  ],
+  "environments": [
+    {
+      "id": "local-dev",
+      "name": "Local Development",
+      "data": [
+        {
+          "name": "REALSCOUT_API_KEY",
+          "value": "your_realscout_api_key_here"
+        },
+        {
+          "name": "VERCEL_TOKEN",
+          "value": "your_vercel_token_here"
+        },
+        {
+          "name": "OPENROUTER_API_KEY",
+          "value": "your_openrouter_api_key_here"
+        }
+      ],
+      "created": "2025-09-27T19:35:00.000Z",
+      "sortNum": 10000
+    }
+  ]
+}

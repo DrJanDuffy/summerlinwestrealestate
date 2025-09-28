@@ -1,15 +1,20 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import AboutClient from './AboutClient';
+
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Meet Dr. Jan Duffy | Top Summerlin REALTOR® with $6B+ Sales | Expert Guide',
-  description: 'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
+  description:
+    'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: 'Meet Dr. Jan Duffy | Top Summerlin REALTOR® with $6B+ Sales | Expert Guide',
-    description: 'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
+    description:
+      'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
     url: 'https://summerlinwestrealestate.com/about',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -26,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Meet Dr. Jan Duffy | Top Summerlin REALTOR® with $6B+ Sales | Expert Guide',
-    description: 'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
+    description:
+      'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience, insider market knowledge. Call (702) 550-0112 for personalized service!',
     images: ['/images/og-image.svg'],
   },
   robots: {

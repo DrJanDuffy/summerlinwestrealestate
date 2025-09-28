@@ -1,35 +1,29 @@
 'use client';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
 // Import LeadCaptureForm with proper client-side only configuration
-const LeadCaptureForm = dynamic(
-  () => import('../../components/ui/LeadCaptureForm'),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-);
+const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 // Import LatestMarketInsights with proper client-side only configuration
-const LatestMarketInsights = dynamic(
-  () => import('../../components/ui/LatestMarketInsights'),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-);
+const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 export default function GooglePlacesClient() {
   const placesFeatures = [

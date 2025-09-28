@@ -26,14 +26,24 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
 
   if (!images || images.length === 0) {
     return (
-      <div className="relative bg-white rounded-lg overflow-hidden h-96 flex items-center justify-center" style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+      <div
+        className="relative bg-white rounded-lg overflow-hidden h-96 flex items-center justify-center"
+        style={{
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        }}
+      >
         <p className="text-gray-500">No images available</p>
       </div>
     );
   }
 
   return (
-    <div className="relative bg-white rounded-lg overflow-hidden" style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+    <div
+      className="relative bg-white rounded-lg overflow-hidden"
+      style={{
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      }}
+    >
       <div className="relative h-96">
         {images.map((imageData, index) => (
           <div
@@ -61,7 +71,10 @@ const FeaturedHomeSlider: React.FC<FeaturedHomeSliderProps> = ({ images }) => {
                   <span>3+ baths</span>
                   <span>2,500+ sq ft</span>
                 </div>
-                <button type="button" className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+                <button
+                  type="button"
+                  className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors"
+                >
                   View Details
                 </button>
               </div>

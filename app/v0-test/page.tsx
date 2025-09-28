@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import styles from './v0-test.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 interface GeneratedComponent {
   component: string;
   metadata: {

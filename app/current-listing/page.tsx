@@ -6,15 +6,21 @@ import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function CurrentListing() {
   // Set page metadata
   useEffect(() => {
     document.title = 'Stunning Vistas Home for Sale | 4BR/3BA Luxury Property | Dr. Jan Duffy';
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Tour this gorgeous 4BR/3BA home in The Vistas! Red Rock Canyon views, 2,800 sq ft, luxury finishes. Dr. Jan Duffy, REALTOR® - $6B+ in sales. Call (702) 550-0112 for private showing!');
+      metaDescription.setAttribute(
+        'content',
+        'Tour this gorgeous 4BR/3BA home in The Vistas! Red Rock Canyon views, 2,800 sq ft, luxury finishes. Dr. Jan Duffy, REALTOR® - $6B+ in sales. Call (702) 550-0112 for private showing!'
+      );
     }
   }, []);
 
@@ -104,7 +110,7 @@ export default function CurrentListing() {
                 '09-DSC03048.jpg',
                 '10-DSC02961.jpg',
                 '11-DSC02991.jpg',
-                '12-DSC02970.jpg'
+                '12-DSC02970.jpg',
               ];
               const imageSrc = `/images/featured-homes/${imageFiles[index % imageFiles.length]}`;
               return (

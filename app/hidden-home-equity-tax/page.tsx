@@ -1,14 +1,20 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Are You a Summerlin West Homeowner Facing a Hidden Tax? Find Out Before You Sell.',
-  description: 'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
+  description:
+    'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
   alternates: {
     canonical: '/hidden-home-equity-tax',
   },
   openGraph: {
     title: 'Are You a Summerlin West Homeowner Facing a Hidden Tax? Find Out Before You Sell.',
-    description: 'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
+    description:
+      'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
     url: 'https://summerlinwestrealestate.com/hidden-home-equity-tax',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -25,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Are You a Summerlin West Homeowner Facing a Hidden Tax? Find Out Before You Sell.',
-    description: 'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
+    description:
+      'Learn about the hidden home equity tax that could impact Summerlin West homeowners. Get a free, no-obligation equity analysis before you sell.',
     images: ['/images/og-image.svg'],
   },
   robots: {
@@ -89,9 +96,7 @@ export default function HiddenHomeEquityTaxPage() {
           </p>
         </section>
         <section aria-labelledby="cta-headline">
-          <h2 id="cta-headline">
-            Don't Wait Until It's Too Late: Get Your Free Equity Analysis
-          </h2>
+          <h2 id="cta-headline">Don't Wait Until It's Too Late: Get Your Free Equity Analysis</h2>
           <p>
             <strong>
               As a specialist in the Summerlin West market, I am offering a Free, No-Obligation Home
@@ -104,13 +109,10 @@ export default function HiddenHomeEquityTaxPage() {
             proceeds and make the smartest financial decision for your sale—without any cost or
             obligation.
           </p>
-          <a
-            href="/contact"
-            aria-label="Schedule your confidential home equity tax analysis"
-          >
-            Click here to schedule your confidential analysis today and protect the equity you’ve
+          <Link href="/contact" aria-label="Schedule your confidential home equity tax analysis">
+            Click here to schedule your confidential analysis today and protect the equity you've
             worked so hard to build.
-          </a>
+          </Link>
         </section>
       </article>
     </section>

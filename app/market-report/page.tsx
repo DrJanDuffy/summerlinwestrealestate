@@ -4,6 +4,9 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import styles from './market-report.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function MarketReportRedirect() {
   const router = useRouter();
 

@@ -1,16 +1,18 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import HomeClient from './HomeClient';
 
 // Metadata for homepage
 export const metadata: Metadata = {
   title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',
-  description: 'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
+  description:
+    'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',
-    description: 'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
+    description:
+      'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
     url: 'https://summerlinwestrealestate.com',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -27,7 +29,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',
-    description: 'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
+    description:
+      'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
     images: ['/images/og-image.svg'],
   },
   robots: {
@@ -42,7 +45,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
 
 export default function Home() {
   return <HomeClient />;

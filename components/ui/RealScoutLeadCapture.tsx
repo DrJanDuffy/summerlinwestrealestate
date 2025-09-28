@@ -16,8 +16,8 @@ interface RealScoutLeadCaptureProps {
 }
 
 export default function RealScoutLeadCapture({
-  title = "Get Your Free Summerlin West Market Report",
-  subtitle = "Stay ahead of the market with our exclusive insights",
+  title = 'Get Your Free Summerlin West Market Report',
+  subtitle = 'Stay ahead of the market with our exclusive insights',
   variant = 'inline',
   source = 'Website',
   community = 'Summerlin West',
@@ -26,9 +26,8 @@ export default function RealScoutLeadCapture({
   agentId = 'QWdlbnQtMjI1MDUw',
   showMarketReport = true,
   showValuation = true,
-  showConsultation = true
+  showConsultation = true,
 }: RealScoutLeadCaptureProps) {
-  
   useEffect(() => {
     // Load RealScout lead capture widget script
     if (!document.querySelector('script[src*="realscout-web-components"]')) {
@@ -162,8 +161,8 @@ export default function RealScoutLeadCapture({
       <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
         <h3 className="text-xl font-semibold text-green-900 mb-2">Get Your Free Market Report</h3>
         <p className="text-green-700 mb-4">RealScout lead capture widget will be integrated here</p>
-        <a 
-          href="/contact" 
+        <a
+          href="/contact"
           className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
         >
           Contact Us

@@ -5,6 +5,9 @@ import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import styles from './market.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function Market() {
   return (
     <div className={styles.page}>

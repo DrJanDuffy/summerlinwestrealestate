@@ -223,7 +223,9 @@ export function validateImageMetadata(metadata: unknown): metadata is ImageMetad
     'priceRange',
   ];
 
-  return requiredFields.every((field) => metadata && typeof (metadata as any)[field] !== 'undefined');
+  return requiredFields.every(
+    (field) => metadata && typeof (metadata as any)[field] !== 'undefined'
+  );
 }
 
 /**

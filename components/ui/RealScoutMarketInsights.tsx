@@ -15,17 +15,16 @@ interface RealScoutMarketInsightsProps {
 }
 
 export default function RealScoutMarketInsights({
-  title = "Summerlin West Market Insights",
-  subtitle = "Real-time market data and trends for informed decisions",
+  title = 'Summerlin West Market Insights',
+  subtitle = 'Real-time market data and trends for informed decisions',
   variant = 'full',
   showCharts = true,
   showTrends = true,
   showComparisons = true,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
   agentId = 'QWdlbnQtMjI1MDUw',
-  updateFrequency = 'daily'
+  updateFrequency = 'daily',
 }: RealScoutMarketInsightsProps) {
-  
   useEffect(() => {
     // Load RealScout market insights widget script
     if (!document.querySelector('script[src*="realscout-web-components"]')) {
@@ -145,25 +144,27 @@ export default function RealScoutMarketInsights({
         <h2 className="text-3xl font-bold text-gray-900 mb-2">{title}</h2>
         <p className="text-lg text-gray-600">{subtitle}</p>
       </div>
-      
+
       {/* RealScout Market Data Widget */}
       <div className="mb-12">
         {/* RealScout Market Insights Widget - Temporarily disabled for build */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-8 text-center">
           <h3 className="text-xl font-semibold text-purple-900 mb-2">Live Market Data</h3>
-          <p className="text-purple-700 mb-4">RealScout market insights widget will be integrated here</p>
-          <a 
-            href="/market-report" 
+          <p className="text-purple-700 mb-4">
+            RealScout market insights widget will be integrated here
+          </p>
+          <a
+            href="/market-report"
             className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
           >
             View Market Report
           </a>
         </div>
       </div>
-      
+
       {/* Simplifying the Market Content Feed */}
       <div className="mt-12">
-        <MarketInsightsFeed 
+        <MarketInsightsFeed
           maxArticles={4}
           showImages={true}
           title="Latest Market Insights from Simplifying the Market"

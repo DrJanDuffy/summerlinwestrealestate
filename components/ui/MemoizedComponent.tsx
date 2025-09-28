@@ -1,5 +1,5 @@
 'use client';
-import { memo, ReactNode } from 'react';
+import { memo, type ReactNode } from 'react';
 
 interface MemoizedComponentProps {
   children: ReactNode;
@@ -11,7 +11,10 @@ interface MemoizedComponentProps {
  * Use this wrapper for components that receive stable props
  */
 export default function MemoizedComponent({ children, name }: MemoizedComponentProps) {
-  return memo(() => <>{children}</>, () => true);
+  return memo(
+    () => <>{children}</>,
+    () => true
+  );
 }
 
 /**
@@ -32,6 +35,6 @@ export function withStableMemo<T extends object>(
   stableProps: (keyof T)[]
 ) {
   return memo(Component, (prevProps, nextProps) => {
-    return stableProps.every(prop => prevProps[prop] === nextProps[prop]);
+    return stableProps.every((prop) => prevProps[prop] === nextProps[prop]);
   });
 }

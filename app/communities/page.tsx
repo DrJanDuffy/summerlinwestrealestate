@@ -7,6 +7,9 @@ import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
 import styles from '../page.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function Communities() {
   const communities = [
     {
@@ -136,7 +139,7 @@ export default function Communities() {
           priceRange: community.priceRange,
           priceCurrency: 'USD',
         },
-        amenityFeature: community.amenities.map(amenity => ({
+        amenityFeature: community.amenities.map((amenity) => ({
           '@type': 'LocationFeatureSpecification',
           name: amenity,
         })),
@@ -373,7 +376,8 @@ export default function Communities() {
         <section className={styles.sectionCard} aria-label="The Vistas Subdivisions">
           <h2 className={styles.centerTitle}>The Vistas Subdivisions</h2>
           <p className={styles.contentText}>
-            Explore the individual subdivisions within The Vistas village, each offering unique amenities and home styles.
+            Explore the individual subdivisions within The Vistas village, each offering unique
+            amenities and home styles.
           </p>
           <div className={styles.communitiesGrid}>
             <div className={styles.communityCard}>
@@ -390,14 +394,15 @@ export default function Communities() {
               <div className={styles.communityContent}>
                 <h3 className={styles.communityTitle}>San Marcos</h3>
                 <p className={styles.communityDescription}>
-                  Established luxury gated community by Kimball Hill Homes with homes from 1,900-2,500 sq ft.
+                  Established luxury gated community by Kimball Hill Homes with homes from
+                  1,900-2,500 sq ft.
                 </p>
                 <Link href="/service-area/san-marcos" className={styles.ctaButton}>
                   Explore San Marcos
                 </Link>
               </div>
             </div>
-            
+
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
@@ -412,7 +417,8 @@ export default function Communities() {
               <div className={styles.communityContent}>
                 <h3 className={styles.communityTitle}>Casa Rosa</h3>
                 <p className={styles.communityDescription}>
-                  Gated mid-range luxury homes by Kimball Hill Homes with 1,800-2,400 sq ft floor plans.
+                  Gated mid-range luxury homes by Kimball Hill Homes with 1,800-2,400 sq ft floor
+                  plans.
                 </p>
                 <Link href="/service-area/casa-rosa" className={styles.ctaButton}>
                   Explore Casa Rosa
@@ -434,7 +440,8 @@ export default function Communities() {
               <div className={styles.communityContent}>
                 <h3 className={styles.communityTitle}>Solano</h3>
                 <p className={styles.communityDescription}>
-                  Residential neighborhood within The Vistas offering single-family homes and community amenities.
+                  Residential neighborhood within The Vistas offering single-family homes and
+                  community amenities.
                 </p>
                 <Link href="/service-area/solano" className={styles.ctaButton}>
                   Explore Solano
@@ -456,7 +463,8 @@ export default function Communities() {
               <div className={styles.communityContent}>
                 <h3 className={styles.communityTitle}>Encanto</h3>
                 <p className={styles.communityDescription}>
-                  Family-friendly community by William Lyon Homes with varied one and two-story home styles.
+                  Family-friendly community by William Lyon Homes with varied one and two-story home
+                  styles.
                 </p>
                 <Link href="/service-area/encanto" className={styles.ctaButton}>
                   Explore Encanto

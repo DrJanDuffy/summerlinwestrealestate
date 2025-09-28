@@ -78,12 +78,17 @@ export default function PropertySearchWidget() {
 
   return (
     <>
-      <script 
-        type="application/ld+json" 
+      <script
+        type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsJsonLd) }}
       />
-      <div className="bg-white rounded-lg p-6 max-w-xl mx-auto" style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+      <div
+        className="bg-white rounded-lg p-6 max-w-xl mx-auto"
+        style={{
+          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        }}
+      >
         <h2 className="text-xl font-bold text-[#0A2540] mb-4">Find Your Dream Home</h2>
         <form
           className="space-y-4"

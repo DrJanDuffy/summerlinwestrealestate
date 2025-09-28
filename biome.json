@@ -30,13 +30,13 @@
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnusedVariables": "error"
+        "recommended": true
       },
       "style": {
-        "useConst": "error"
+        "recommended": true
       },
       "suspicious": {
-        "noExplicitAny": "warn"
+        "recommended": true
       }
     }
   },

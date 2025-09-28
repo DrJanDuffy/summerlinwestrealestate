@@ -13,16 +13,15 @@ interface RealScoutAdvancedSearchProps {
 }
 
 export default function RealScoutAdvancedSearch({
-  title = "Find Your Dream Home in Summerlin West",
-  subtitle = "Search by neighborhood, price, or features. Real-time MLS data.",
+  title = 'Find Your Dream Home in Summerlin West',
+  subtitle = 'Search by neighborhood, price, or features. Real-time MLS data.',
   variant = 'page',
   showFeatures = true,
   priceMin = 400000,
   priceMax = 2000000,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
-  agentId = 'QWdlbnQtMjI1MDUw'
+  agentId = 'QWdlbnQtMjI1MDUw',
 }: RealScoutAdvancedSearchProps) {
-  
   useEffect(() => {
     // Load RealScout search widget script
     if (!document.querySelector('script[src*="realscout-web-components"]')) {
@@ -87,13 +86,13 @@ export default function RealScoutAdvancedSearch({
         <h2 className="text-3xl font-bold text-gray-900 mb-2">{title}</h2>
         <p className="text-lg text-gray-600">{subtitle}</p>
       </div>
-      
+
       {/* RealScout Search Widget - Temporarily disabled for build */}
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
         <h3 className="text-xl font-semibold text-blue-900 mb-2">Advanced Property Search</h3>
         <p className="text-blue-700 mb-4">RealScout search widget will be integrated here</p>
-        <a 
-          href="/properties" 
+        <a
+          href="/properties"
           className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
         >
           Search Properties

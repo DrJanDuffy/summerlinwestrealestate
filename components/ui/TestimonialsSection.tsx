@@ -129,8 +129,8 @@ const TestimonialsSection = React.memo(function TestimonialsSection() {
 
   return (
     <>
-      <script 
-        type="application/ld+json" 
+      <script
+        type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd) }}
       />
@@ -143,7 +143,13 @@ const TestimonialsSection = React.memo(function TestimonialsSection() {
         </div>
         <div className="flex flex-col items-center">
           <div className="relative w-full max-w-xl">
-            <div className="bg-white rounded-lg p-6 flex flex-col items-center" style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}>
+            <div
+              className="bg-white rounded-lg p-6 flex flex-col items-center"
+              style={{
+                boxShadow:
+                  '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              }}
+            >
               {/* Photo Placeholder */}
               <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center mb-3">
                 <svg width="32" height="32" fill="#A0AEC0" viewBox="0 0 24 24">

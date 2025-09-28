@@ -3,6 +3,9 @@
 import { useCallback, useEffect, useId, useState } from 'react';
 import type { CreateIssueInput, LinearIssue } from '../../lib/linear';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function LinearTestPage() {
   const [issues, setIssues] = useState<LinearIssue[]>([]);
   const [loading, setLoading] = useState(false);

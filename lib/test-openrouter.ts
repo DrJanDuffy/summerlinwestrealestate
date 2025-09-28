@@ -22,47 +22,46 @@ export async function testOpenRouterIntegration(): Promise<OpenRouterTestResult>
   try {
     // Check if OpenRouter API key is configured
     const apiKey = process.env.OPENROUTER_API_KEY;
-    
+
     if (!apiKey) {
       return {
         success: false,
         message: 'OpenRouter API key not configured',
-        details: 'Please set OPENROUTER_API_KEY environment variable'
+        details: 'Please set OPENROUTER_API_KEY environment variable',
       };
     }
 
     // Test basic API connectivity
     const response = await fetch('https://openrouter.ai/api/v1/models', {
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json'
-      }
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
     });
 
     if (!response.ok) {
       return {
         success: false,
         message: 'OpenRouter API connection failed',
-        details: `HTTP ${response.status}: ${response.statusText}`
+        details: `HTTP ${response.status}: ${response.statusText}`,
       };
     }
 
     const models = await response.json();
-    
+
     return {
       success: true,
       message: 'OpenRouter integration successful',
       details: {
         modelsAvailable: models.data?.length || 0,
-        apiStatus: 'connected'
-      }
+        apiStatus: 'connected',
+      },
     };
-
   } catch (error) {
     return {
       success: false,
       message: 'OpenRouter test failed',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error',
     };
   }
 }
@@ -78,7 +77,7 @@ export function getRealEstateModels(): RealEstateModel[] {
       description: 'Advanced reasoning and analysis for market reports',
       provider: 'Anthropic',
       pricing: '$3.00/1M input tokens',
-      useCase: 'Market analysis, property descriptions, client communications'
+      useCase: 'Market analysis, property descriptions, client communications',
     },
     {
       id: 'openai/gpt-4o',
@@ -86,15 +85,15 @@ export function getRealEstateModels(): RealEstateModel[] {
       description: 'Multimodal AI for property analysis and content creation',
       provider: 'OpenAI',
       pricing: '$2.50/1M input tokens',
-      useCase: 'Property valuations, listing descriptions, market insights'
+      useCase: 'Property valuations, listing descriptions, market insights',
     },
     {
       id: 'google/gemini-pro-1.5',
       name: 'Gemini Pro 1.5',
-      description: 'Google\'s advanced model for data analysis',
+      description: "Google's advanced model for data analysis",
       provider: 'Google',
       pricing: '$1.25/1M input tokens',
-      useCase: 'Market data analysis, trend identification, reporting'
+      useCase: 'Market data analysis, trend identification, reporting',
     },
     {
       id: 'meta-llama/llama-3.1-405b-instruct',
@@ -102,7 +101,7 @@ export function getRealEstateModels(): RealEstateModel[] {
       description: 'Open-source model for general real estate tasks',
       provider: 'Meta',
       pricing: '$0.59/1M input tokens',
-      useCase: 'Content generation, client responses, market summaries'
+      useCase: 'Content generation, client responses, market summaries',
     },
     {
       id: 'mistralai/mistral-7b-instruct',
@@ -110,8 +109,8 @@ export function getRealEstateModels(): RealEstateModel[] {
       description: 'Fast and efficient for simple real estate tasks',
       provider: 'Mistral AI',
       pricing: '$0.20/1M input tokens',
-      useCase: 'Quick responses, basic analysis, content formatting'
-    }
+      useCase: 'Quick responses, basic analysis, content formatting',
+    },
   ];
 }
 
@@ -124,7 +123,7 @@ export async function generateRealEstateContent(
 ): Promise<{ success: boolean; content?: string; error?: string }> {
   try {
     const apiKey = process.env.OPENROUTER_API_KEY;
-    
+
     if (!apiKey) {
       throw new Error('OpenRouter API key not configured');
     }
@@ -132,26 +131,27 @@ export async function generateRealEstateContent(
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'https://summerlinwestrealestate.com',
-        'X-Title': 'Summerlin West Real Estate'
+        'X-Title': 'Summerlin West Real Estate',
       },
       body: JSON.stringify({
         model,
         messages: [
           {
             role: 'system',
-            content: 'You are a professional real estate assistant specializing in Summerlin West, Las Vegas. Provide accurate, helpful information about properties, market conditions, and real estate services.'
+            content:
+              'You are a professional real estate assistant specializing in Summerlin West, Las Vegas. Provide accurate, helpful information about properties, market conditions, and real estate services.',
           },
           {
             role: 'user',
-            content: prompt
-          }
+            content: prompt,
+          },
         ],
         max_tokens: 1000,
-        temperature: 0.7
-      })
+        temperature: 0.7,
+      }),
     });
 
     if (!response.ok) {
@@ -167,13 +167,12 @@ export async function generateRealEstateContent(
 
     return {
       success: true,
-      content
+      content,
     };
-
   } catch (error) {
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Unknown error'
+      error: error instanceof Error ? error.message : 'Unknown error',
     };
   }
 }

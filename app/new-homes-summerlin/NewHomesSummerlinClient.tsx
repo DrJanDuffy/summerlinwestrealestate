@@ -30,17 +30,20 @@ export default function NewHomesSummerlinClient() {
         {/* Intro Section */}
         <section className={styles.introSection}>
           <div className={styles.introContainer}>
-            <h2>Discover Your Dream Home in Summerlin West's Premier New Construction Communities</h2>
+            <h2>
+              Discover Your Dream Home in Summerlin West's Premier New Construction Communities
+            </h2>
             <p>
-              Summerlin West represents the pinnacle of luxury living in Las Vegas, and new construction
-              homes here offer the perfect blend of modern design, energy efficiency, and prime location.
-              As your dedicated new construction specialist, Dr. Jan Duffy provides exclusive access to
-              the finest builders and communities in the area.
+              Summerlin West represents the pinnacle of luxury living in Las Vegas, and new
+              construction homes here offer the perfect blend of modern design, energy efficiency,
+              and prime location. As your dedicated new construction specialist, Dr. Jan Duffy
+              provides exclusive access to the finest builders and communities in the area.
             </p>
             <p>
-              With over 15 years of experience in Summerlin West real estate, Dr. Duffy understands the
-              unique advantages of new construction: cutting-edge design, energy-efficient features,
-              builder warranties, and the opportunity to customize your home to your exact specifications.
+              With over 15 years of experience in Summerlin West real estate, Dr. Duffy understands
+              the unique advantages of new construction: cutting-edge design, energy-efficient
+              features, builder warranties, and the opportunity to customize your home to your exact
+              specifications.
             </p>
           </div>
         </section>
@@ -52,8 +55,8 @@ export default function NewHomesSummerlinClient() {
             <div className={styles.communityCard}>
               <h3>The Vistas</h3>
               <p>
-                Luxury single-family homes with Red Rock Canyon views. Features include gourmet kitchens,
-                master suites, and outdoor living spaces.
+                Luxury single-family homes with Red Rock Canyon views. Features include gourmet
+                kitchens, master suites, and outdoor living spaces.
               </p>
               <ul>
                 <li>2,500 - 4,000 sq ft homes</li>
@@ -65,7 +68,8 @@ export default function NewHomesSummerlinClient() {
             <div className={styles.communityCard}>
               <h3>Stonebridge</h3>
               <p>
-                Modern townhomes and single-family homes with contemporary design and smart home technology.
+                Modern townhomes and single-family homes with contemporary design and smart home
+                technology.
               </p>
               <ul>
                 <li>1,800 - 3,200 sq ft homes</li>
@@ -96,8 +100,8 @@ export default function NewHomesSummerlinClient() {
             <div className={styles.benefitCard}>
               <h3>Modern Design & Features</h3>
               <p>
-                New homes feature the latest in architectural design, open floor plans, and contemporary
-                finishes that reflect current lifestyle trends.
+                New homes feature the latest in architectural design, open floor plans, and
+                contemporary finishes that reflect current lifestyle trends.
               </p>
             </div>
             <div className={styles.benefitCard}>
@@ -132,8 +136,8 @@ export default function NewHomesSummerlinClient() {
               <div className={styles.stepNumber}>1</div>
               <h3>Community Selection</h3>
               <p>
-                Dr. Duffy will help you explore available communities, understand builder reputations,
-                and find the perfect location for your lifestyle.
+                Dr. Duffy will help you explore available communities, understand builder
+                reputations, and find the perfect location for your lifestyle.
               </p>
             </div>
             <div className={styles.processStep}>
@@ -156,8 +160,8 @@ export default function NewHomesSummerlinClient() {
               <div className={styles.stepNumber}>4</div>
               <h3>Final Walkthrough & Closing</h3>
               <p>
-                Comprehensive final walkthrough, warranty review, and smooth closing process to
-                get you into your new home.
+                Comprehensive final walkthrough, warranty review, and smooth closing process to get
+                you into your new home.
               </p>
             </div>
           </div>
@@ -167,8 +171,8 @@ export default function NewHomesSummerlinClient() {
         <section className={styles.buildersSection}>
           <h2>Exclusive Builder Relationships</h2>
           <p>
-            Dr. Jan Duffy has established strong relationships with Summerlin West's premier builders,
-            providing her clients with exclusive access to:
+            Dr. Jan Duffy has established strong relationships with Summerlin West's premier
+            builders, providing her clients with exclusive access to:
           </p>
           <ul className={styles.builderList}>
             <li>Pre-construction pricing and incentives</li>
@@ -193,15 +197,15 @@ export default function NewHomesSummerlinClient() {
             <div className={styles.insightCard}>
               <h3>Investment Potential</h3>
               <p>
-                New construction homes in Summerlin West have shown consistent appreciation,
-                making them excellent long-term investments.
+                New construction homes in Summerlin West have shown consistent appreciation, making
+                them excellent long-term investments.
               </p>
             </div>
             <div className={styles.insightCard}>
               <h3>Future Development</h3>
               <p>
-                Planned infrastructure improvements and community amenities continue to enhance
-                the value proposition of new construction in the area.
+                Planned infrastructure improvements and community amenities continue to enhance the
+                value proposition of new construction in the area.
               </p>
             </div>
           </div>
@@ -218,7 +222,10 @@ export default function NewHomesSummerlinClient() {
             <a href="tel:7025500112" className={styles.ctaButton}>
               Call (702) 550-0112
             </a>
-            <a href="mailto:DrJanSells@SummerlinWestRealEstate.com" className={styles.ctaButtonSecondary}>
+            <a
+              href="mailto:DrJanSells@SummerlinWestRealEstate.com"
+              className={styles.ctaButtonSecondary}
+            >
               Email Dr. Duffy
             </a>
           </div>

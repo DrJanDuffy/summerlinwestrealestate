@@ -14,7 +14,7 @@ export const v0 = {
   generateText: async (options: { prompt: string; temperature?: number; maxTokens?: number }) => {
     // Placeholder implementation
     return { text: '// Component generation placeholder - implement when needed' };
-  }
+  },
 };
 
 /**
@@ -88,7 +88,12 @@ export async function generateRealEstatePage(
     model?: 'gpt-5' | 'claude-4-opus' | 'gemini-2.5-pro';
   } = {}
 ): Promise<string> {
-  const { location = 'Summerlin West', features = [], seoKeywords = [], model = 'gpt-5' } = requirements;
+  const {
+    location = 'Summerlin West',
+    features = [],
+    seoKeywords = [],
+    model = 'gpt-5',
+  } = requirements;
 
   const systemPrompt = `You are an expert real estate developer specializing in ${pageType} pages for Dr. Janet Duffy's Summerlin West Real Estate business.
 
@@ -131,7 +136,15 @@ Generate only the complete page component code, no explanations.`;
  */
 export async function generateWithBestModel(
   prompt: string,
-  taskType: 'component' | 'analysis' | 'seo' | 'multilingual' | 'image' | 'form' | 'market-report' | 'community-page',
+  taskType:
+    | 'component'
+    | 'analysis'
+    | 'seo'
+    | 'multilingual'
+    | 'image'
+    | 'form'
+    | 'market-report'
+    | 'community-page',
   options: {
     temperature?: number;
     max_tokens?: number;

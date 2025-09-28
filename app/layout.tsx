@@ -199,8 +199,19 @@ export const viewport = {
 function StickyPhoneMenu() {
   const handlePhoneClick = () => {
     // Facebook Pixel tracking for phone clicks
-    if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (action: string, event: string, data?: Record<string, unknown>) => void }).fbq === 'function') {
-      (window as Window & { fbq: (action: string, event: string, data?: Record<string, unknown>) => void }).fbq('track', 'Contact', {
+    if (
+      typeof window !== 'undefined' &&
+      typeof (
+        window as Window & {
+          fbq?: (action: string, event: string, data?: Record<string, unknown>) => void;
+        }
+      ).fbq === 'function'
+    ) {
+      (
+        window as Window & {
+          fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
+        }
+      ).fbq('track', 'Contact', {
         content_name: 'Phone Call',
         content_category: 'Lead Generation',
         value: 75,
@@ -212,8 +223,8 @@ function StickyPhoneMenu() {
   return (
     <div className={styles.stickyPhoneMenu}>
       <span className={styles.stickyPhoneMenuLabel}>Call Us</span>
-      <a 
-        href="tel:7025500112" 
+      <a
+        href="tel:7025500112"
         className={styles.stickyPhoneMenuCallButton}
         onClick={handlePhoneClick}
       >
@@ -273,10 +284,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `}
         </Script>
         <noscript>
-          <img 
-            height="1" 
-            width="1" 
-            style={{display: 'none'}}
+          <img
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
             src="https://www.facebook.com/tr?id=1415682742567480&ev=PageView&noscript=1"
             alt="Facebook Pixel"
           />

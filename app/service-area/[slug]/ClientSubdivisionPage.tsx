@@ -303,7 +303,11 @@ function AmenitiesSection() {
     >
       <h2 className={styles.centerTitle}>Community Amenities and Lifestyle Features</h2>
       <p className={styles.heroSubtitle}>
-        Experience the exceptional amenities and lifestyle features that make The Vistas one of Summerlin West's most sought-after communities. From world-class recreational facilities to convenient shopping and dining options, residents enjoy a comprehensive lifestyle that combines luxury living with practical convenience. These amenities contribute to the strong property values and desirability of homes in The Vistas.
+        Experience the exceptional amenities and lifestyle features that make The Vistas one of
+        Summerlin West's most sought-after communities. From world-class recreational facilities to
+        convenient shopping and dining options, residents enjoy a comprehensive lifestyle that
+        combines luxury living with practical convenience. These amenities contribute to the strong
+        property values and desirability of homes in The Vistas.
       </p>
       <div className={styles.amenitiesGrid}>
         {amenities.map((amenity, index) => (
@@ -390,7 +394,10 @@ function EnhancedCTA({ subdivision }: { subdivision: Subdivision }) {
             transition={{ delay: 0.3 }}
           >
             Dr. Jan Duffy offers exclusive access to off-market properties, personalized market
-            analysis, and VIP showings in {subdivision.name}. With her deep knowledge of The Vistas and Summerlin West real estate market, she can help you find your dream home or sell your current property for maximum value. Don&apos;t miss your opportunity to work with the area's most trusted real estate expert.
+            analysis, and VIP showings in {subdivision.name}. With her deep knowledge of The Vistas
+            and Summerlin West real estate market, she can help you find your dream home or sell
+            your current property for maximum value. Don&apos;t miss your opportunity to work with
+            the area's most trusted real estate expert.
           </motion.p>
 
           <motion.div
@@ -522,13 +529,19 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         <ol className={styles.breadcrumbList}>
           <li className={styles.breadcrumbItem}>
-            <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+            <Link href="/" className={styles.breadcrumbLink}>
+              Home
+            </Link>
           </li>
           <li className={styles.breadcrumbItem}>
-            <Link href="/communities" className={styles.breadcrumbLink}>Communities</Link>
+            <Link href="/communities" className={styles.breadcrumbLink}>
+              Communities
+            </Link>
           </li>
           <li className={styles.breadcrumbItem}>
-            <Link href="/service-area" className={styles.breadcrumbLink}>The Vistas</Link>
+            <Link href="/service-area" className={styles.breadcrumbLink}>
+              The Vistas
+            </Link>
           </li>
           <li className={styles.breadcrumbItem} aria-current="page">
             {subdivision.name}
@@ -559,7 +572,12 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover {subdivision.name}, a distinguished {subdivision.type.toLowerCase()} neighborhood in The Vistas, Summerlin West. This exclusive community offers luxury living with modern amenities, top-rated schools, and convenient access to Red Rock Canyon. Dr. Jan Duffy provides expert guidance for buying or selling homes in {subdivision.name}, with deep knowledge of the local market and community characteristics.
+            Discover {subdivision.name}, a distinguished {subdivision.type.toLowerCase()}{' '}
+            neighborhood in The Vistas, Summerlin West. This exclusive community offers luxury
+            living with modern amenities, top-rated schools, and convenient access to Red Rock
+            Canyon. Dr. Jan Duffy provides expert guidance for buying or selling homes in{' '}
+            {subdivision.name}, with deep knowledge of the local market and community
+            characteristics.
           </motion.p>
           <HeroStats
             builder={subdivision.builder}
@@ -578,9 +596,16 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.centerTitle}>About {subdivision.name}: Community Overview and Lifestyle</h2>
+        <h2 className={styles.centerTitle}>
+          About {subdivision.name}: Community Overview and Lifestyle
+        </h2>
         <p className={styles.heroSubtitle}>
-          {subdivision.name} represents the pinnacle of luxury living in The Vistas, Summerlin West. This exclusive {subdivision.type.toLowerCase()} community offers residents an unparalleled lifestyle with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities. Dr. Jan Duffy's deep knowledge of {subdivision.name} allows her to provide expert guidance for buyers and sellers in this prestigious neighborhood.
+          {subdivision.name} represents the pinnacle of luxury living in The Vistas, Summerlin West.
+          This exclusive {subdivision.type.toLowerCase()} community offers residents an unparalleled
+          lifestyle with modern amenities, stunning architecture, and convenient access to
+          world-class shopping, dining, and recreational facilities. Dr. Jan Duffy's deep knowledge
+          of {subdivision.name} allows her to provide expert guidance for buyers and sellers in this
+          prestigious neighborhood.
         </p>
         <FeatureTags type={subdivision.type} features={subdivision.features || []} />
         <motion.div

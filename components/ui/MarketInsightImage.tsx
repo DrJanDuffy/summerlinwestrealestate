@@ -7,19 +7,23 @@ interface MarketInsightImageProps {
   className?: string;
 }
 
-export default function MarketInsightImage({ title, category, className = '' }: MarketInsightImageProps) {
+export default function MarketInsightImage({
+  title,
+  category,
+  className = '',
+}: MarketInsightImageProps) {
   // Generate a placeholder image URL based on the title and category
   const getImageUrl = (title: string, category: string) => {
     const baseUrl = 'https://images.unsplash.com/photo';
     const categoryMap: Record<string, string> = {
       'Selling Tips': '1600x900/?real-estate,house,selling',
       'Market Analysis': '1600x900/?charts,data,analytics',
-      'Affordability': '1600x900/?money,calculator,finance',
+      Affordability: '1600x900/?money,calculator,finance',
       'New Construction': '1600x900/?construction,building,home',
       'Buying Tips': '1600x900/?home,keys,house',
-      'Market News': '1600x900/?news,newspaper,market'
+      'Market News': '1600x900/?news,newspaper,market',
     };
-    
+
     const imageQuery = categoryMap[category] || '1600x900/?real-estate,house';
     return `${baseUrl}-${imageQuery}`;
   };

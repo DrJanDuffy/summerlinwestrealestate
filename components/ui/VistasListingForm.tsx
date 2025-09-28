@@ -46,18 +46,11 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
       }
 
       setSubmitted(true);
-      if (
-        typeof window !== 'undefined' &&
-        typeof (window as any).gtag === 'function'
-      ) {
-        (window as any).gtag(
-          'event',
-          'lead_form_submit',
-          {
-            event_category: 'Lead',
-            event_label: 'Vistas Listing',
-          }
-        );
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'lead_form_submit', {
+          event_category: 'Lead',
+          event_label: 'Vistas Listing',
+        });
       }
     } catch (_err: unknown) {
       setError('There was a problem submitting your request. Please try again later.');
@@ -87,7 +80,9 @@ export default function VistasListingForm({ formId }: VistasListingFormProps) {
       onSubmit={handleSubmit}
       noValidate
       className="bg-white rounded-2xl p-8 min-h-[240px] flex flex-col gap-6 w-full max-w-xl mx-auto"
-      style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
+      style={{
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      }}
       aria-describedby={error ? `${idPrefix}-error` : undefined}
     >
       <div className="form-group">

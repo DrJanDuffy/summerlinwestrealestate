@@ -1,5 +1,5 @@
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import subdivisions from '../subdivisions.json';
 import ClientSubdivisionPage from './ClientSubdivisionPage';
 
@@ -10,7 +10,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const subdivision = subdivisions.find((s) => s.slug === slug);
-  
+
   if (!subdivision) {
     return {
       title: 'Subdivision Not Found | Summerlin West Real Estate',
@@ -69,28 +69,28 @@ export default async function SubdivisionPage({ params }: PageProps) {
   if (!subdivision) {
     return notFound();
   }
-  
+
   // Generate structured data for better SEO
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ResidentialComplex",
-    "name": `${subdivision.name} - The Vistas`,
-    "description": `Explore ${subdivision.name} in The Vistas, Summerlin West. ${subdivision.type} homes ${subdivision.builder && subdivision.builder !== '-' ? `by ${subdivision.builder}` : ''} with ${subdivision.homeSizes && subdivision.homeSizes !== '-' ? subdivision.homeSizes : 'luxury features'}.`,
-    "url": `https://summerlinwestrealestate.com/service-area/${slug}`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Las Vegas",
-      "addressRegion": "NV",
-      "addressCountry": "US"
+    '@context': 'https://schema.org',
+    '@type': 'ResidentialComplex',
+    name: `${subdivision.name} - The Vistas`,
+    description: `Explore ${subdivision.name} in The Vistas, Summerlin West. ${subdivision.type} homes ${subdivision.builder && subdivision.builder !== '-' ? `by ${subdivision.builder}` : ''} with ${subdivision.homeSizes && subdivision.homeSizes !== '-' ? subdivision.homeSizes : 'luxury features'}.`,
+    url: `https://summerlinwestrealestate.com/service-area/${slug}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Las Vegas',
+      addressRegion: 'NV',
+      addressCountry: 'US',
     },
-    "amenityFeature": subdivision.features.map(feature => ({
-      "@type": "LocationFeatureSpecification",
-      "name": feature
+    amenityFeature: subdivision.features.map((feature) => ({
+      '@type': 'LocationFeatureSpecification',
+      name: feature,
     })),
-    "containedInPlace": {
-      "@type": "City",
-      "name": "Summerlin West"
-    }
+    containedInPlace: {
+      '@type': 'City',
+      name: 'Summerlin West',
+    },
   };
 
   return (

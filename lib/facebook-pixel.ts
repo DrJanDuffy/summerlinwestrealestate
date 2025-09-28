@@ -153,7 +153,11 @@ export const trackCustomEvent = (eventName: string, data: FacebookPixelEvent = {
 };
 
 // Track conversion events
-export const trackConversion = (conversionType: string, value: number, data: FacebookPixelEvent = {}) => {
+export const trackConversion = (
+  conversionType: string,
+  value: number,
+  data: FacebookPixelEvent = {}
+) => {
   if (typeof window !== 'undefined' && window.fbq) {
     window.fbq('track', 'Purchase', {
       content_name: conversionType,

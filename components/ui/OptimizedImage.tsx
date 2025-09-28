@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -41,7 +41,7 @@ export default function OptimizedImage({
 
   if (hasError) {
     return (
-      <div 
+      <div
         className={`bg-gray-200 flex items-center justify-center ${className}`}
         style={{ width, height }}
       >
@@ -53,10 +53,7 @@ export default function OptimizedImage({
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {isLoading && (
-        <div 
-          className="absolute inset-0 bg-gray-200 animate-pulse"
-          style={{ width, height }}
-        />
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" style={{ width, height }} />
       )}
       <Image
         src={src}
@@ -70,9 +67,7 @@ export default function OptimizedImage({
         blurDataURL={blurDataURL}
         onLoad={handleLoad}
         onError={handleError}
-        className={`transition-opacity duration-300 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
-        }`}
+        className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       />
     </div>
   );

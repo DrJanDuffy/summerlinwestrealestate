@@ -67,7 +67,7 @@ export default function Header() {
               className={styles.navItem}
               onMouseEnter={() => link.submenu && handleMouseEnter(link.label)}
               onMouseLeave={handleMouseLeave}
-              role={link.submenu ? "button" : undefined}
+              role={link.submenu ? 'button' : undefined}
               tabIndex={link.submenu ? 0 : undefined}
             >
               {link.external ? (

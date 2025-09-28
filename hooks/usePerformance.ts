@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 interface PerformanceMetrics {
   loadTime: number;
@@ -14,11 +14,14 @@ interface PerformanceMetrics {
 export function usePerformance(componentName: string) {
   const startTime = performance.now();
 
-  const logPerformance = useCallback((metric: string, value: number) => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`[Performance] ${componentName} - ${metric}: ${value.toFixed(2)}ms`);
-    }
-  }, [componentName]);
+  const logPerformance = useCallback(
+    (metric: string, value: number) => {
+      if (process.env.NODE_ENV === 'development') {
+        console.log(`[Performance] ${componentName} - ${metric}: ${value.toFixed(2)}ms`);
+      }
+    },
+    [componentName]
+  );
 
   const measureRender = useCallback(() => {
     const renderTime = performance.now() - startTime;
@@ -26,14 +29,17 @@ export function usePerformance(componentName: string) {
     return renderTime;
   }, [startTime, logPerformance]);
 
-  const measureInteraction = useCallback((interactionName: string) => {
-    return (callback: () => void) => {
-      const start = performance.now();
-      callback();
-      const end = performance.now();
-      logPerformance(`${interactionName} Interaction`, end - start);
-    };
-  }, [logPerformance]);
+  const measureInteraction = useCallback(
+    (interactionName: string) => {
+      return (callback: () => void) => {
+        const start = performance.now();
+        callback();
+        const end = performance.now();
+        logPerformance(`${interactionName} Interaction`, end - start);
+      };
+    },
+    [logPerformance]
+  );
 
   useEffect(() => {
     const loadTime = performance.now() - startTime;
@@ -58,22 +64,25 @@ export function useLazyLoad(options: IntersectionObserverInit = {}) {
     ...options,
   };
 
-  const observe = useCallback((element: HTMLElement | null, callback: () => void) => {
-    if (!element) return;
+  const observe = useCallback(
+    (element: HTMLElement | null, callback: () => void) => {
+      if (!element) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          callback();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            callback();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
 
-    observer.observe(element);
+      observer.observe(element);
 
-    return () => observer.disconnect();
-  }, [observerOptions]);
+      return () => observer.disconnect();
+    },
+    [observerOptions]
+  );
 
   return { observe };
 }

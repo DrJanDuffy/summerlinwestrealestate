@@ -14,7 +14,7 @@ interface RealScoutPropertyValuationProps {
 }
 
 export default function RealScoutPropertyValuation({
-  title = "Get Your Free Property Valuation",
+  title = 'Get Your Free Property Valuation',
   subtitle = "Discover your home's current market value with our advanced analysis",
   variant = 'full',
   showComparables = true,
@@ -22,9 +22,8 @@ export default function RealScoutPropertyValuation({
   showInvestmentMetrics = true,
   agentId = 'QWdlbnQtMjI1MDUw',
   defaultAddress = '',
-  showLeadCapture = true
+  showLeadCapture = true,
 }: RealScoutPropertyValuationProps) {
-  
   useEffect(() => {
     // Load RealScout property valuation widget script
     if (!document.querySelector('script[src*="realscout-web-components"]')) {
@@ -174,9 +173,11 @@ export default function RealScoutPropertyValuation({
       {/* RealScout Property Valuation Widget - Temporarily disabled for build */}
       <div className="bg-teal-50 border border-teal-200 rounded-lg p-8 text-center">
         <h3 className="text-xl font-semibold text-teal-900 mb-2">Property Valuation</h3>
-        <p className="text-teal-700 mb-4">RealScout property valuation widget will be integrated here</p>
-        <a 
-          href="/contact" 
+        <p className="text-teal-700 mb-4">
+          RealScout property valuation widget will be integrated here
+        </p>
+        <a
+          href="/contact"
           className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-medium rounded-lg hover:bg-teal-700 transition-colors"
         >
           Get Valuation

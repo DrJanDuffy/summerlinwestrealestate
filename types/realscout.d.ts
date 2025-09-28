@@ -9,28 +9,28 @@ declare global {
         'show-features'?: boolean;
         'price-min'?: number;
         'price-max'?: number;
-        'communities'?: string;
+        communities?: string;
         'property-types'?: string;
         'sort-order'?: string;
         'results-per-page'?: string;
         'show-map'?: boolean;
         'show-filters'?: boolean;
-        'theme'?: string;
-        'variant'?: string;
+        theme?: string;
+        variant?: string;
         [key: string]: any;
       };
       'realscout-lead-capture-widget': {
         'agent-encoded-id'?: string;
-        'source'?: string;
+        source?: string;
         'show-market-report'?: boolean;
         'show-valuation'?: boolean;
         'show-consultation'?: boolean;
-        'variant'?: string;
+        variant?: string;
         [key: string]: any;
       };
       'realscout-market-insights-widget': {
         'agent-encoded-id'?: string;
-        'variant'?: string;
+        variant?: string;
         'show-charts'?: boolean;
         'show-trends'?: boolean;
         'show-comparisons'?: boolean;
@@ -38,18 +38,18 @@ declare global {
       };
       'realscout-property-valuation-widget': {
         'agent-encoded-id'?: string;
-        'variant'?: string;
+        variant?: string;
         [key: string]: any;
       };
       'realscout-market-insights': {
         'agent-encoded-id'?: string;
-        'title'?: string;
-        'subtitle'?: string;
-        'variant'?: string;
+        title?: string;
+        subtitle?: string;
+        variant?: string;
         'show-charts'?: boolean;
         'show-trends'?: boolean;
         'show-comparisons'?: boolean;
-        'communities'?: string;
+        communities?: string;
         'update-frequency'?: string;
         'data-points'?: string;
         'time-period'?: string;
@@ -58,7 +58,7 @@ declare global {
         'show-neighborhood-comparison'?: string;
         'show-price-distribution'?: string;
         'show-market-velocity'?: string;
-        'theme'?: string;
+        theme?: string;
         'interactive-charts'?: string;
         'export-enabled'?: string;
         'share-enabled'?: string;

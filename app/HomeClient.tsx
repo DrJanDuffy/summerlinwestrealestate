@@ -12,7 +12,9 @@ import styles from './page.module.css';
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), {
   ssr: false,
 });
-const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCapture'), { ssr: false });
+const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCapture'), {
+  ssr: false,
+});
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
   ssr: false,
 });
@@ -70,18 +72,11 @@ export default function HomeClient() {
 
   const handleFormSuccess = () => {
     // Track successful submission
-    if (
-      typeof window !== 'undefined' &&
-      typeof (window as any).gtag === 'function'
-    ) {
-      (window as any).gtag(
-        'event',
-        'lead_form_success',
-        {
-          event_category: 'Lead',
-          event_label: source,
-        }
-      );
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'lead_form_success', {
+        event_category: 'Lead',
+        event_label: source,
+      });
     }
   };
 
@@ -142,9 +137,14 @@ export default function HomeClient() {
           <SummerlinWestOverview />
           {/* Hero Section */}
           <section className={styles.hero}>
-            <h1 className={styles.heroTitle}>Find Your Dream Home in The Vistas, Summerlin West with Dr. Jan Duffy, REALTOR®</h1>
+            <h1 className={styles.heroTitle}>
+              Find Your Dream Home in The Vistas, Summerlin West with Dr. Jan Duffy, REALTOR®
+            </h1>
             <p className={styles.heroSubtitle}>
-              Discover luxury living in Las Vegas&apos; most prestigious master-planned community. Expert guidance from Dr. Jan Duffy, REALTOR® with 15+ years of experience helping families find their perfect home in The Vistas, Stonebridge, Redpoint, and all Summerlin West communities.
+              Discover luxury living in Las Vegas&apos; most prestigious master-planned community.
+              Expert guidance from Dr. Jan Duffy, REALTOR® with 15+ years of experience helping
+              families find their perfect home in The Vistas, Stonebridge, Redpoint, and all
+              Summerlin West communities.
             </p>
             {/* AI-generated hero image */}
             <HomeHeroImage />
@@ -165,9 +165,16 @@ export default function HomeClient() {
           </section>
           {/* HomebotWidget: Check the Value of Your Home */}
           <section className={styles.section} aria-label="Check the Value of Your Home">
-            <h2 className={styles.sectionTitle}>Discover Your Home's Current Market Value in Summerlin West</h2>
+            <h2 className={styles.sectionTitle}>
+              Discover Your Home's Current Market Value in Summerlin West
+            </h2>
             <p className={styles.heroSubtitle}>
-              Get an instant, accurate estimate of your home's value in today's competitive Summerlin West market. Our advanced valuation tool uses real-time MLS data, recent comparable sales, and local market trends to provide you with the most current property assessment. Whether you're considering selling your home in The Vistas, Stonebridge, or any Summerlin West community, understanding your home's value is the first step in making informed real estate decisions.
+              Get an instant, accurate estimate of your home's value in today's competitive
+              Summerlin West market. Our advanced valuation tool uses real-time MLS data, recent
+              comparable sales, and local market trends to provide you with the most current
+              property assessment. Whether you're considering selling your home in The Vistas,
+              Stonebridge, or any Summerlin West community, understanding your home's value is the
+              first step in making informed real estate decisions.
             </p>
             <HomebotWidget />
           </section>
@@ -180,7 +187,13 @@ export default function HomeClient() {
               Protect Your Summerlin West Home Equity from Hidden Tax Implications
             </h2>
             <p className={styles.heroSubtitle}>
-              Many Summerlin West homeowners, especially those in The Vistas and other luxury communities, could be subject to significant tax implications when selling their homes. Due to outdated federal laws and recent market appreciation, homeowners with substantial equity may face unexpected tax burdens. Dr. Jan Duffy provides expert guidance on tax-efficient selling strategies, including 1031 exchanges, primary residence exclusions, and timing considerations that could save you thousands of dollars in taxes.
+              Many Summerlin West homeowners, especially those in The Vistas and other luxury
+              communities, could be subject to significant tax implications when selling their
+              homes. Due to outdated federal laws and recent market appreciation, homeowners with
+              substantial equity may face unexpected tax burdens. Dr. Jan Duffy provides expert
+              guidance on tax-efficient selling strategies, including 1031 exchanges, primary
+              residence exclusions, and timing considerations that could save you thousands of
+              dollars in taxes.
             </p>
             <Link href="/hidden-home-equity-tax" className={styles.card}>
               Learn About the Hidden Home Equity Tax
@@ -188,9 +201,16 @@ export default function HomeClient() {
           </section>
           {/* Featured Home Section */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Exclusive Featured Home in The Vistas, Summerlin West</h2>
+            <h2 className={styles.sectionTitle}>
+              Exclusive Featured Home in The Vistas, Summerlin West
+            </h2>
             <p className={styles.heroSubtitle}>
-              Experience luxury living at its finest with this stunning featured home in The Vistas community. This exceptional property showcases the finest in Summerlin West real estate, featuring modern design, premium finishes, and breathtaking Red Rock Canyon views. Dr. Jan Duffy has personally selected this home to represent the quality and lifestyle that defines The Vistas community, where luxury meets convenience in one of Las Vegas's most sought-after master-planned communities.
+              Experience luxury living at its finest with this stunning featured home in The Vistas
+              community. This exceptional property showcases the finest in Summerlin West real
+              estate, featuring modern design, premium finishes, and breathtaking Red Rock Canyon
+              views. Dr. Jan Duffy has personally selected this home to represent the quality and
+              lifestyle that defines The Vistas community, where luxury meets convenience in one of
+              Las Vegas's most sought-after master-planned communities.
             </p>
             <FeaturedHomeSlider
               images={[
@@ -281,28 +301,42 @@ export default function HomeClient() {
           <section className={`${styles.section} ${styles.calloutSection}`}>
             <h2>Meet Dr. Jan Duffy: Your Trusted Summerlin West Real Estate Expert</h2>
             <p>
-              <strong>Dr. Jan Duffy, REALTOR®</strong> has been helping families discover luxury living at
-              the gateway to Red Rock Canyon since 2015. As a longtime Summerlin West resident and doctorate-level
-              educator, she brings analytical precision and deep local market knowledge to every
-              transaction. With over 15 years of experience in Las Vegas real estate and specialized expertise in Summerlin West communities, Dr. Duffy has successfully guided hundreds of families through their home buying and selling journeys.
+              <strong>Dr. Jan Duffy, REALTOR®</strong> has been helping families discover luxury
+              living at the gateway to Red Rock Canyon since 2015. As a longtime Summerlin West
+              resident and doctorate-level educator, she brings analytical precision and deep local
+              market knowledge to every transaction. With over 15 years of experience in Las Vegas
+              real estate and specialized expertise in Summerlin West communities, Dr. Duffy has
+              successfully guided hundreds of families through their home buying and selling
+              journeys.
             </p>
             <p>
               Specializing exclusively in{' '}
               <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr.
-              Duffy offers unparalleled insight into Summerlin West's luxury real estate market. Her deep understanding of local market trends, community amenities, and investment opportunities makes her the go-to resource for discerning buyers and sellers in Summerlin West.
+              Duffy offers unparalleled insight into Summerlin West's luxury real estate market. Her
+              deep understanding of local market trends, community amenities, and investment
+              opportunities makes her the go-to resource for discerning buyers and sellers in
+              Summerlin West.
             </p>
             <p>
-              <Link href="/about">Learn more about Dr. Duffy's expertise and track record &rarr;</Link>
+              <Link href="/about">
+                Learn more about Dr. Duffy's expertise and track record &rarr;
+              </Link>
             </p>
           </section>
 
           {/* Newsletter Signup Section */}
           <section className={`${styles.section} ${styles.newsletterSection}`}>
             <div className={styles.newsletterContent}>
-              <h2 className={styles.newsletterTitle}>Stay Informed with Dr. Jan Duffy's Exclusive Summerlin West Market Newsletter</h2>
+              <h2 className={styles.newsletterTitle}>
+                Stay Informed with Dr. Jan Duffy's Exclusive Summerlin West Market Newsletter
+              </h2>
               <p className={styles.newsletterSubtitle}>
                 Get Dr. Jan Duffy's monthly newsletter with exclusive market updates, new listings,
-                community events, and insider insights sent straight to your email. Our subscribers receive early access to off-market properties, detailed market analysis, and expert tips for buying or selling in Summerlin West. Join over 2,000 local residents and investors who trust Dr. Duffy for the most current and accurate Summerlin West real estate information.
+                community events, and insider insights sent straight to your email. Our subscribers
+                receive early access to off-market properties, detailed market analysis, and expert
+                tips for buying or selling in Summerlin West. Join over 2,000 local residents and
+                investors who trust Dr. Duffy for the most current and accurate Summerlin West real
+                estate information.
               </p>
               <RealScoutLeadCapture
                 variant="inline"
@@ -317,9 +351,17 @@ export default function HomeClient() {
           </section>
           {/* Map of Summerlin West Section */}
           <section className={styles.section} aria-label="Map of Summerlin West">
-            <h2 className={styles.sectionTitle}>Explore Summerlin West Communities with Our Interactive Property Map</h2>
+            <h2 className={styles.sectionTitle}>
+              Explore Summerlin West Communities with Our Interactive Property Map
+            </h2>
             <p className={styles.heroSubtitle}>
-              Discover the perfect location for your next home with our comprehensive interactive map of Summerlin West. This detailed map showcases all available properties across The Vistas, Stonebridge, Redpoint, and other premier communities. Filter by price range, home size, community amenities, and proximity to top-rated schools, shopping centers, and recreational facilities. Whether you're looking for a luxury home with Red Rock Canyon views or a family-friendly community near excellent schools, our map helps you find the ideal location in Summerlin West.
+              Discover the perfect location for your next home with our comprehensive interactive
+              map of Summerlin West. This detailed map showcases all available properties across The
+              Vistas, Stonebridge, Redpoint, and other premier communities. Filter by price range,
+              home size, community amenities, and proximity to top-rated schools, shopping centers,
+              and recreational facilities. Whether you're looking for a luxury home with Red Rock
+              Canyon views or a family-friendly community near excellent schools, our map helps you
+              find the ideal location in Summerlin West.
             </p>
             <div className={styles.grid}>
               <div className={styles.mapContainer}>
@@ -338,9 +380,16 @@ export default function HomeClient() {
           </section>
           {/* Property Search Widget */}
           <section className={styles.section} aria-label="Property Search">
-            <h2 className={styles.sectionTitle}>Advanced Property Search: Find Your Perfect Home in Summerlin West</h2>
+            <h2 className={styles.sectionTitle}>
+              Advanced Property Search: Find Your Perfect Home in Summerlin West
+            </h2>
             <p className={styles.heroSubtitle}>
-              Use our advanced search tool to find your ideal home in Summerlin West. Search by specific neighborhoods like The Vistas, Stonebridge, or Redpoint, filter by price range, home size, number of bedrooms and bathrooms, and special features like pools, mountain views, or gated communities. Our real-time MLS integration ensures you see the most current listings as soon as they hit the market, giving you a competitive advantage in Summerlin West's fast-moving real estate market.
+              Use our advanced search tool to find your ideal home in Summerlin West. Search by
+              specific neighborhoods like The Vistas, Stonebridge, or Redpoint, filter by price
+              range, home size, number of bedrooms and bathrooms, and special features like pools,
+              mountain views, or gated communities. Our real-time MLS integration ensures you see
+              the most current listings as soon as they hit the market, giving you a competitive
+              advantage in Summerlin West's fast-moving real estate market.
             </p>
             <RealScoutAdvancedSearch
               title="Find Your Dream Home in Summerlin West"
@@ -351,17 +400,33 @@ export default function HomeClient() {
           </section>
           {/* RealScout Listings Widget */}
           <section className={styles.section} aria-label="Featured Summerlin West Homes">
-            <h2 className={styles.sectionTitle}>Featured Luxury Homes for Sale in Summerlin West Communities</h2>
+            <h2 className={styles.sectionTitle}>
+              Featured Luxury Homes for Sale in Summerlin West Communities
+            </h2>
             <p className={styles.heroSubtitle}>
-              Browse our curated selection of the finest homes currently available in Summerlin West. From luxury estates in The Vistas with Red Rock Canyon views to modern family homes in Stonebridge, our featured listings represent the best of Summerlin West real estate. Each property has been personally selected by Dr. Jan Duffy for its exceptional quality, prime location, and investment potential. Whether you're looking for a move-in ready home or a property with renovation potential, our featured listings offer something for every discerning buyer.
+              Browse our curated selection of the finest homes currently available in Summerlin
+              West. From luxury estates in The Vistas with Red Rock Canyon views to modern family
+              homes in Stonebridge, our featured listings represent the best of Summerlin West real
+              estate. Each property has been personally selected by Dr. Jan Duffy for its
+              exceptional quality, prime location, and investment potential. Whether you're looking
+              for a move-in ready home or a property with renovation potential, our featured
+              listings offer something for every discerning buyer.
             </p>
             <RealScoutListings />
           </section>
           {/* Market Overview */}
           <section className={styles.section} aria-label="Market Overview">
-            <h2 className={styles.sectionTitle}>Current Summerlin West Real Estate Market Overview and Trends</h2>
+            <h2 className={styles.sectionTitle}>
+              Current Summerlin West Real Estate Market Overview and Trends
+            </h2>
             <p className={styles.heroSubtitle}>
-              Stay informed about the latest market conditions in Summerlin West with our comprehensive market overview. Our data reflects the most current market trends, including median home prices, inventory levels, average days on market, and list-to-sale ratios. Understanding these key metrics helps you make informed decisions whether you're buying or selling in Summerlin West. The market continues to show strong demand with limited inventory, making it essential to work with an experienced local expert like Dr. Jan Duffy.
+              Stay informed about the latest market conditions in Summerlin West with our
+              comprehensive market overview. Our data reflects the most current market trends,
+              including median home prices, inventory levels, average days on market, and
+              list-to-sale ratios. Understanding these key metrics helps you make informed decisions
+              whether you're buying or selling in Summerlin West. The market continues to show
+              strong demand with limited inventory, making it essential to work with an experienced
+              local expert like Dr. Jan Duffy.
             </p>
             <div className={styles.grid}>
               <div className={styles.statCard}>
@@ -384,38 +449,54 @@ export default function HomeClient() {
           </section>
           {/* Market Insights */}
           <section className={styles.section} aria-label="Market Insights">
-            <h2 className={styles.sectionTitle}>Latest Market Insights and Real Estate News for Summerlin West</h2>
+            <h2 className={styles.sectionTitle}>
+              Latest Market Insights and Real Estate News for Summerlin West
+            </h2>
             <p className={styles.heroSubtitle}>
-              Stay ahead of the market with our latest insights and real estate news specifically focused on Summerlin West. Our market analysis covers everything from local price trends and inventory changes to new development announcements and community updates. Dr. Jan Duffy regularly shares her expert perspective on market conditions, helping you understand how national trends impact the Summerlin West real estate market. Whether you're a first-time buyer, seasoned investor, or current homeowner, these insights provide valuable information for your real estate decisions.
+              Stay ahead of the market with our latest insights and real estate news specifically
+              focused on Summerlin West. Our market analysis covers everything from local price
+              trends and inventory changes to new development announcements and community updates.
+              Dr. Jan Duffy regularly shares her expert perspective on market conditions, helping
+              you understand how national trends impact the Summerlin West real estate market.
+              Whether you're a first-time buyer, seasoned investor, or current homeowner, these
+              insights provide valuable information for your real estate decisions.
             </p>
-        <RealScoutMarketInsights
-          title="Summerlin West Market Insights"
-          subtitle="Real-time market data and trends for informed decisions"
-          variant="full"
-          showCharts={true}
-          showTrends={true}
-          showComparisons={true}
-        />
-        
-        {/* Latest Market Insights from Simplifying the Market */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <MarketInsightsFeed 
-              maxArticles={6}
-              showImages={true}
-              title="Latest Market Insights"
+            <RealScoutMarketInsights
+              title="Summerlin West Market Insights"
+              subtitle="Real-time market data and trends for informed decisions"
+              variant="full"
+              showCharts={true}
+              showTrends={true}
+              showComparisons={true}
             />
-          </div>
-        </section>
+
+            {/* Latest Market Insights from Simplifying the Market */}
+            <section className="py-16 bg-gray-50">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <MarketInsightsFeed
+                  maxArticles={6}
+                  showImages={true}
+                  title="Latest Market Insights"
+                />
+              </div>
+            </section>
           </section>
           {/* Lead Capture/FAQ/CTA */}
           <section className={styles.section} aria-label="Contact & FAQ">
-            <h2 className={styles.sectionTitle}>Get Expert Guidance: Contact Dr. Jan Duffy for Your Summerlin West Real Estate Needs</h2>
+            <h2 className={styles.sectionTitle}>
+              Get Expert Guidance: Contact Dr. Jan Duffy for Your Summerlin West Real Estate Needs
+            </h2>
             <p className={styles.heroSubtitle}>
-              Ready to buy or sell in Summerlin West? Dr. Jan Duffy provides personalized, expert guidance tailored to your specific needs and goals. Whether you're a first-time buyer looking for your dream home in The Vistas, an investor seeking opportunities in Stonebridge, or a current homeowner considering selling, Dr. Duffy's deep local knowledge and proven track record ensure you get the best possible outcome. Contact us today for a confidential consultation and discover why hundreds of families trust Dr. Jan Duffy with their Summerlin West real estate transactions.
+              Ready to buy or sell in Summerlin West? Dr. Jan Duffy provides personalized, expert
+              guidance tailored to your specific needs and goals. Whether you're a first-time buyer
+              looking for your dream home in The Vistas, an investor seeking opportunities in
+              Stonebridge, or a current homeowner considering selling, Dr. Duffy's deep local
+              knowledge and proven track record ensure you get the best possible outcome. Contact us
+              today for a confidential consultation and discover why hundreds of families trust Dr.
+              Jan Duffy with their Summerlin West real estate transactions.
             </p>
-            <RealScoutLeadCapture 
-              variant="inline" 
+            <RealScoutLeadCapture
+              variant="inline"
               title="Get Expert Guidance"
               subtitle="Contact Dr. Jan Duffy for personalized real estate consultation"
               source="Home Page Contact"
@@ -424,9 +505,15 @@ export default function HomeClient() {
               showConsultation={true}
             />
             <div className={styles.faqSection}>
-              <h2 className={styles.sectionTitle}>Frequently Asked Questions About Summerlin West Real Estate</h2>
+              <h2 className={styles.sectionTitle}>
+                Frequently Asked Questions About Summerlin West Real Estate
+              </h2>
               <p className={styles.heroSubtitle}>
-                Get answers to the most common questions about buying, selling, and living in Summerlin West. Dr. Jan Duffy has compiled these FAQs based on years of experience helping clients navigate the Summerlin West real estate market. From market trends and pricing to community amenities and lifestyle, find the information you need to make informed decisions about your Summerlin West real estate journey.
+                Get answers to the most common questions about buying, selling, and living in
+                Summerlin West. Dr. Jan Duffy has compiled these FAQs based on years of experience
+                helping clients navigate the Summerlin West real estate market. From market trends
+                and pricing to community amenities and lifestyle, find the information you need to
+                make informed decisions about your Summerlin West real estate journey.
               </p>
               <ul className={styles.faqList}>
                 {faqs.map((faq, idx) => (
@@ -443,4 +530,3 @@ export default function HomeClient() {
     </>
   );
 }
-

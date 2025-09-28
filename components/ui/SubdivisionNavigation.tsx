@@ -43,21 +43,24 @@ const defaultSubdivisions = [
   { slug: 'santalina', name: 'Santalina', type: 'Additional' },
 ];
 
-export default function SubdivisionNavigation({ 
-  currentSlug, 
-  subdivisions = defaultSubdivisions 
+export default function SubdivisionNavigation({
+  currentSlug,
+  subdivisions = defaultSubdivisions,
 }: SubdivisionNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const listId = useId();
 
   // Group subdivisions by type
-  const groupedSubdivisions = subdivisions.reduce((acc, sub) => {
-    if (!acc[sub.type]) {
-      acc[sub.type] = [];
-    }
-    acc[sub.type].push(sub);
-    return acc;
-  }, {} as Record<string, Subdivision[]>);
+  const groupedSubdivisions = subdivisions.reduce(
+    (acc, sub) => {
+      if (!acc[sub.type]) {
+        acc[sub.type] = [];
+      }
+      acc[sub.type].push(sub);
+      return acc;
+    },
+    {} as Record<string, Subdivision[]>
+  );
 
   const typeOrder = ['Luxury/Gated', 'Premium Non-Gated', 'Family', 'Additional'];
 
@@ -73,16 +76,11 @@ export default function SubdivisionNavigation({
           aria-controls={listId}
         >
           {isOpen ? 'Hide' : 'Show'} All Subdivisions
-          <span className={`${styles.toggleIcon} ${isOpen ? styles.open : ''}`}>
-            ▼
-          </span>
+          <span className={`${styles.toggleIcon} ${isOpen ? styles.open : ''}`}>▼</span>
         </button>
       </div>
 
-      <div 
-        id={listId}
-        className={`${styles.subdivisionList} ${isOpen ? styles.open : ''}`}
-      >
+      <div id={listId} className={`${styles.subdivisionList} ${isOpen ? styles.open : ''}`}>
         {typeOrder.map((type) => {
           const typeSubs = groupedSubdivisions[type];
           if (!typeSubs || typeSubs.length === 0) return null;

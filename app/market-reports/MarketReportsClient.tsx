@@ -16,11 +16,7 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
   const { isExpanded, ariaProps } = useExpandable(false);
   return (
     <div className={styles.faqItem}>
-      <button
-        {...ariaProps}
-        aria-controls={`faq-panel-${index}`}
-        className={styles.faqQuestion}
-      >
+      <button {...ariaProps} aria-controls={`faq-panel-${index}`} className={styles.faqQuestion}>
         {faq.q}
       </button>
       <div id={`faq-panel-${index}`} hidden={!isExpanded} className={styles.faqAnswer}>
@@ -64,7 +60,11 @@ export default function MarketReportsClient() {
       <section className={styles.hero}>
         <h1>Summerlin West Real Estate Market Reports and Trends</h1>
         <p className={styles.subtitle}>
-          Get the latest insights, trends, and data for the Summerlin real estate market. Dr. Jan Duffy provides comprehensive market analysis, neighborhood-specific data, and expert insights to help you make informed decisions about buying or selling in Summerlin West. Our reports cover The Vistas, Stonebridge, Redpoint, and all Summerlin West communities with detailed statistics, price trends, and market predictions.
+          Get the latest insights, trends, and data for the Summerlin real estate market. Dr. Jan
+          Duffy provides comprehensive market analysis, neighborhood-specific data, and expert
+          insights to help you make informed decisions about buying or selling in Summerlin West.
+          Our reports cover The Vistas, Stonebridge, Redpoint, and all Summerlin West communities
+          with detailed statistics, price trends, and market predictions.
         </p>
       </section>
       {/* Dr. Jan Duffy Callout Section */}
@@ -74,12 +74,17 @@ export default function MarketReportsClient() {
           <strong>Dr. Jan Duffy, REALTOR®</strong> has helped families discover luxury living at the
           gateway to Red Rock Canyon since 2015. As a longtime resident and doctorate-level
           educator, she brings analytical precision and deep local knowledge to every transaction.
-          Her comprehensive understanding of Summerlin West market trends, combined with her educational background in psychology and business, allows her to provide exceptional market analysis and personalized service to clients throughout The Vistas, Stonebridge, Redpoint, and all Summerlin West communities.
+          Her comprehensive understanding of Summerlin West market trends, combined with her
+          educational background in psychology and business, allows her to provide exceptional
+          market analysis and personalized service to clients throughout The Vistas, Stonebridge,
+          Redpoint, and all Summerlin West communities.
         </p>
         <p>
           Specializing in{' '}
           <strong>The Ridges, Red Rock Country Club, The Vistas, and The Paseos</strong>, Dr. Duffy
-          is your go-to resource for buying or selling in Summerlin West. Her market reports are based on real-time MLS data, local market conditions, and years of experience helping clients navigate the Summerlin West real estate market successfully.
+          is your go-to resource for buying or selling in Summerlin West. Her market reports are
+          based on real-time MLS data, local market conditions, and years of experience helping
+          clients navigate the Summerlin West real estate market successfully.
         </p>
         <p>
           <Link href="/about">Learn more about Dr. Duffy's expertise and track record &rarr;</Link>
@@ -89,7 +94,12 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Current Summerlin West Market Statistics and Key Performance Indicators</h2>
         <p className={styles.heroSubtitle}>
-          Stay informed about the latest market conditions in Summerlin West with our comprehensive market statistics. These key performance indicators reflect the most current market trends, including inventory levels, pricing, and market velocity. Understanding these metrics helps you make informed decisions whether you're buying or selling in Summerlin West. The market continues to show strong demand with limited inventory, making it essential to work with an experienced local expert like Dr. Jan Duffy.
+          Stay informed about the latest market conditions in Summerlin West with our comprehensive
+          market statistics. These key performance indicators reflect the most current market
+          trends, including inventory levels, pricing, and market velocity. Understanding these
+          metrics helps you make informed decisions whether you're buying or selling in Summerlin
+          West. The market continues to show strong demand with limited inventory, making it
+          essential to work with an experienced local expert like Dr. Jan Duffy.
         </p>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
@@ -113,7 +123,11 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Frequently Asked Questions About Summerlin West Real Estate Market</h2>
         <p className={styles.heroSubtitle}>
-          Get answers to the most common questions about the Summerlin West real estate market. Dr. Jan Duffy has compiled these FAQs based on years of experience helping clients navigate the Summerlin West real estate market. From market trends and pricing to community amenities and lifestyle, find the information you need to make informed decisions about your Summerlin West real estate journey.
+          Get answers to the most common questions about the Summerlin West real estate market. Dr.
+          Jan Duffy has compiled these FAQs based on years of experience helping clients navigate
+          the Summerlin West real estate market. From market trends and pricing to community
+          amenities and lifestyle, find the information you need to make informed decisions about
+          your Summerlin West real estate journey.
         </p>
         <div className={styles.contentList}>
           {faqs.map((faq, i) => (
@@ -124,7 +138,11 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Monthly Market Trends and Data Visualization for Summerlin West</h2>
         <p className={styles.heroSubtitle}>
-          Visualize the latest market trends and data for Summerlin West real estate. Our comprehensive charts and graphs provide clear insights into price trends, inventory levels, and market performance across The Vistas, Stonebridge, Redpoint, and other Summerlin West communities. These visual representations help you understand market dynamics and make data-driven decisions about your real estate investments.
+          Visualize the latest market trends and data for Summerlin West real estate. Our
+          comprehensive charts and graphs provide clear insights into price trends, inventory
+          levels, and market performance across The Vistas, Stonebridge, Redpoint, and other
+          Summerlin West communities. These visual representations help you understand market
+          dynamics and make data-driven decisions about your real estate investments.
         </p>
         <div className={styles.chartsGrid}>
           <div>
@@ -153,7 +171,11 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Download the Complete Summerlin West Market Report and Analysis</h2>
         <p className={styles.heroSubtitle}>
-          Get comprehensive market insights with our detailed Summerlin West market report. This exclusive report includes neighborhood-specific data, price trends, market predictions, and expert analysis from Dr. Jan Duffy. Perfect for investors, homebuyers, and sellers who want to understand the current market conditions and make informed decisions about their Summerlin West real estate investments.
+          Get comprehensive market insights with our detailed Summerlin West market report. This
+          exclusive report includes neighborhood-specific data, price trends, market predictions,
+          and expert analysis from Dr. Jan Duffy. Perfect for investors, homebuyers, and sellers who
+          want to understand the current market conditions and make informed decisions about their
+          Summerlin West real estate investments.
         </p>
         <LeadCaptureForm
           variant="inline"
@@ -166,25 +188,42 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Expert Summerlin West Market Analysis and Insights</h2>
         <p className={styles.heroSubtitle}>
-          Dr. Jan Duffy provides expert analysis of the Summerlin West real estate market, offering insights into market drivers, neighborhood performance, and future outlook. Her comprehensive understanding of local market conditions, combined with years of experience helping clients navigate the Summerlin West real estate market, provides valuable perspective for buyers, sellers, and investors.
+          Dr. Jan Duffy provides expert analysis of the Summerlin West real estate market, offering
+          insights into market drivers, neighborhood performance, and future outlook. Her
+          comprehensive understanding of local market conditions, combined with years of experience
+          helping clients navigate the Summerlin West real estate market, provides valuable
+          perspective for buyers, sellers, and investors.
         </p>
         <div className={styles.marketAnalysis}>
           <div className={styles.analysisSection}>
             <strong>What&apos;s driving the Summerlin West market?</strong>
             <p>
-              Low inventory with only 287 active listings, high demand from out-of-state buyers, and continued migration to Las Vegas are keeping prices strong at a median of $920K. New construction is helping with 45 active projects, but resale homes remain in high demand with an average of 12 days on market. The limited supply combined with strong demand from California, Texas, and Washington buyers is creating competitive bidding situations.
+              Low inventory with only 287 active listings, high demand from out-of-state buyers, and
+              continued migration to Las Vegas are keeping prices strong at a median of $920K. New
+              construction is helping with 45 active projects, but resale homes remain in high
+              demand with an average of 12 days on market. The limited supply combined with strong
+              demand from California, Texas, and Washington buyers is creating competitive bidding
+              situations.
             </p>
           </div>
           <div className={styles.analysisSection}>
             <strong>Which Summerlin West neighborhoods are performing best?</strong>
             <p>
-              Redpoint, Stonebridge, and The Cliffs are seeing the fastest sales and highest appreciation, with luxury segments in The Ridges and Reverence also performing well. The Vistas continues to be a top choice for families due to its proximity to top-rated schools and community amenities. New construction in Grand Park District and Kestrel Commons Village is attracting buyers seeking modern features and builder incentives.
+              Redpoint, Stonebridge, and The Cliffs are seeing the fastest sales and highest
+              appreciation, with luxury segments in The Ridges and Reverence also performing well.
+              The Vistas continues to be a top choice for families due to its proximity to top-rated
+              schools and community amenities. New construction in Grand Park District and Kestrel
+              Commons Village is attracting buyers seeking modern features and builder incentives.
             </p>
           </div>
           <div className={styles.analysisSection}>
             <strong>What&apos;s the outlook for Summerlin West real estate?</strong>
             <p>
-              Experts predict continued growth, especially in walkable, amenity-rich communities like The Vistas and Stonebridge. Mortgage rates and new builder incentives will shape the market in the coming months, but the fundamental demand drivers remain strong. The 8.2% year-over-year appreciation is expected to continue, though at a more moderate pace than the peak growth periods.
+              Experts predict continued growth, especially in walkable, amenity-rich communities
+              like The Vistas and Stonebridge. Mortgage rates and new builder incentives will shape
+              the market in the coming months, but the fundamental demand drivers remain strong. The
+              8.2% year-over-year appreciation is expected to continue, though at a more moderate
+              pace than the peak growth periods.
             </p>
           </div>
         </div>
@@ -192,7 +231,11 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Sign Up for Dr. Jan Duffy's Exclusive Summerlin West Market Newsletter</h2>
         <p className={styles.heroSubtitle}>
-          Stay informed about the latest Summerlin West real estate market trends and opportunities. Dr. Jan Duffy's monthly newsletter provides exclusive market insights, new listing alerts, community updates, and expert analysis that you won't find anywhere else. Join over 2,000 subscribers who trust Dr. Duffy for the most current and accurate Summerlin West real estate information.
+          Stay informed about the latest Summerlin West real estate market trends and opportunities.
+          Dr. Jan Duffy's monthly newsletter provides exclusive market insights, new listing alerts,
+          community updates, and expert analysis that you won't find anywhere else. Join over 2,000
+          subscribers who trust Dr. Duffy for the most current and accurate Summerlin West real
+          estate information.
         </p>
         <LeadCaptureForm
           variant="inline"
@@ -205,7 +248,11 @@ export default function MarketReportsClient() {
       <section className={styles.sectionCard}>
         <h2>Explore More Summerlin West Real Estate Resources and Services</h2>
         <p className={styles.heroSubtitle}>
-          Access additional resources and services to support your Summerlin West real estate journey. From featured listings and community information to expert consultations and market analysis, Dr. Jan Duffy provides comprehensive support for all your real estate needs. Whether you're buying, selling, or investing in Summerlin West, these resources will help you make informed decisions and achieve your real estate goals.
+          Access additional resources and services to support your Summerlin West real estate
+          journey. From featured listings and community information to expert consultations and
+          market analysis, Dr. Jan Duffy provides comprehensive support for all your real estate
+          needs. Whether you're buying, selling, or investing in Summerlin West, these resources
+          will help you make informed decisions and achieve your real estate goals.
         </p>
         <ul className={styles.resourceLinks}>
           <li>

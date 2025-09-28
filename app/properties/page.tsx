@@ -186,7 +186,9 @@ export default function Properties() {
                 placeholder="Enter your email address"
                 className={styles.newsletterInput}
               />
-              <button type="button" className={styles.newsletterButton}>Subscribe</button>
+              <button type="button" className={styles.newsletterButton}>
+                Subscribe
+              </button>
             </div>
           </div>
         </div>

@@ -36,8 +36,8 @@ export default function RealScoutListings() {
       <div className="bg-orange-50 border border-orange-200 rounded-lg p-8 text-center">
         <h3 className="text-xl font-semibold text-orange-900 mb-2">Featured Properties</h3>
         <p className="text-orange-700 mb-4">RealScout listings widget will be integrated here</p>
-        <a 
-          href="/properties" 
+        <a
+          href="/properties"
           className="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition-colors"
         >
           View All Properties

@@ -6,39 +6,36 @@ import styles from '../page.module.css';
 // Import components with proper client-side only configuration
 const RealScoutMarketInsights = dynamic(
   () => import('../../components/ui/RealScoutMarketInsights'),
-  { 
+  {
     ssr: false,
     loading: () => (
       <div className="flex items-center justify-center p-8">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
       </div>
-    )
+    ),
   }
 );
 
 const TestimonialsSectionClient = dynamic(
   () => import('../../components/ui/TestimonialsSectionClient'),
-  { 
+  {
     ssr: false,
     loading: () => (
       <div className="flex items-center justify-center p-8">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
       </div>
-    )
+    ),
   }
 );
 
-const RealScoutLeadCapture = dynamic(
-  () => import('../../components/ui/RealScoutLeadCapture'),
-  { 
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    )
-  }
-);
+const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutLeadCapture'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -67,7 +64,10 @@ export default function AboutClient() {
   return (
     <div className={styles.page}>
       <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
-        <h1>Meet Dr. Jan Duffy: Your Trusted Summerlin West Real Estate Expert with 15+ Years of Experience</h1>
+        <h1>
+          Meet Dr. Jan Duffy: Your Trusted Summerlin West Real Estate Expert with 15+ Years of
+          Experience
+        </h1>
         <p>
           <strong>
             Helping families discover luxury living at the gateway to Red Rock Canyon since 2015
@@ -79,7 +79,10 @@ export default function AboutClient() {
           master-planned communities. With her unique background as both a licensed real estate
           professional and doctorate-level educator, Dr. Duffy combines analytical precision with
           deep local market knowledge to deliver exceptional results for{' '}
-          <strong>Summerlin West home buyers and sellers</strong>. Her comprehensive understanding of the local market, combined with her educational background in psychology and business, allows her to provide personalized service that goes beyond traditional real estate transactions.
+          <strong>Summerlin West home buyers and sellers</strong>. Her comprehensive understanding
+          of the local market, combined with her educational background in psychology and business,
+          allows her to provide personalized service that goes beyond traditional real estate
+          transactions.
         </p>
         <h2>Your Summerlin West Market Specialist and Local Community Expert</h2>
         <p>
@@ -89,29 +92,36 @@ export default function AboutClient() {
           understands what makes this area special: the breathtaking{' '}
           <strong>Red Rock Canyon views</strong>, world-class amenities, and the perfect blend of
           luxury living with outdoor adventure that draws families from across the country to call
-          Summerlin West home. Her deep knowledge of each community's unique characteristics, from the luxury estates in The Ridges to the family-friendly neighborhoods in The Vistas, allows her to match clients with their perfect home and lifestyle.
+          Summerlin West home. Her deep knowledge of each community's unique characteristics, from
+          the luxury estates in The Ridges to the family-friendly neighborhoods in The Vistas,
+          allows her to match clients with their perfect home and lifestyle.
         </p>
         <p>
           <strong>Recent Market Results and Achievements:</strong>
         </p>
         <ul>
           <li>
-            Successfully guided over 200 clients through Summerlin West&apos;s competitive market where 50%
-            of homes sell within 30 days, with an average of 12 days on market for Dr. Duffy's listings
+            Successfully guided over 200 clients through Summerlin West&apos;s competitive market
+            where 50% of homes sell within 30 days, with an average of 12 days on market for Dr.
+            Duffy's listings
           </li>
           <li>
             Expert navigation of the area&apos;s premium price points, with median home values
-            reaching $920,000+ and luxury properties exceeding $2 million in The Ridges and Red Rock Country Club
+            reaching $920,000+ and luxury properties exceeding $2 million in The Ridges and Red Rock
+            Country Club
           </li>
           <li>
             Specialized knowledge of new construction opportunities from premier builders like KB
-            Homes, Toll Brothers, and Taylor Morrison, with exclusive access to pre-construction pricing and incentives
+            Homes, Toll Brothers, and Taylor Morrison, with exclusive access to pre-construction
+            pricing and incentives
           </li>
           <li>
-            Consistently achieves 98% list-to-sale ratio, ensuring clients receive maximum value for their properties
+            Consistently achieves 98% list-to-sale ratio, ensuring clients receive maximum value for
+            their properties
           </li>
           <li>
-            Recognized as a top producer in Summerlin West real estate, with over $50 million in sales volume in 2024
+            Recognized as a top producer in Summerlin West real estate, with over $50 million in
+            sales volume in 2024
           </li>
         </ul>
         <h2>Comprehensive Summerlin West Real Estate Services and Expertise</h2>
@@ -124,36 +134,50 @@ export default function AboutClient() {
             appreciation and current market conditions, ensuring maximum return on investment
           </li>
           <li>
-            Professional staging consultation to highlight Red Rock Canyon views and luxury features,
-            with access to premium staging companies and interior designers
+            Professional staging consultation to highlight Red Rock Canyon views and luxury
+            features, with access to premium staging companies and interior designers
           </li>
           <li>
             Targeted marketing to qualified buyers seeking Summerlin&apos;s lifestyle amenities,
             including international marketing for luxury properties
           </li>
-          <li>Expert positioning for quick sales in this fast-moving market, with average days on market of 12 days</li>
-          <li>Comprehensive market analysis and competitive positioning to ensure your home stands out</li>
-          <li>Negotiation expertise to secure the best possible terms and price for your property</li>
+          <li>
+            Expert positioning for quick sales in this fast-moving market, with average days on
+            market of 12 days
+          </li>
+          <li>
+            Comprehensive market analysis and competitive positioning to ensure your home stands out
+          </li>
+          <li>
+            Negotiation expertise to secure the best possible terms and price for your property
+          </li>
         </ul>
         <p>
           <strong>For Home Buyers:</strong>
         </p>
-          <ul>
-            <li>
-              Exclusive access to new construction in Grand Park District and Kestrel Commons Village,
-              with pre-construction pricing and builder incentives
-            </li>
-            <li>In-depth neighborhood guidance across Summerlin West&apos;s distinct villages,
-                including detailed information about amenities, HOA fees, and community culture</li>
-            <li>
-              School district expertise for families prioritizing top-rated Clark County schools,
-              with detailed information about test scores, programs, and enrollment
-            </li>
-            <li>Investment analysis for luxury properties and custom home opportunities,
-                including ROI projections and market appreciation potential</li>
-            <li>First-time buyer assistance with down payment programs and financing options</li>
-            <li>Relocation services for out-of-state buyers, including area orientation and local connections</li>
-          </ul>
+        <ul>
+          <li>
+            Exclusive access to new construction in Grand Park District and Kestrel Commons Village,
+            with pre-construction pricing and builder incentives
+          </li>
+          <li>
+            In-depth neighborhood guidance across Summerlin West&apos;s distinct villages, including
+            detailed information about amenities, HOA fees, and community culture
+          </li>
+          <li>
+            School district expertise for families prioritizing top-rated Clark County schools, with
+            detailed information about test scores, programs, and enrollment
+          </li>
+          <li>
+            Investment analysis for luxury properties and custom home opportunities, including ROI
+            projections and market appreciation potential
+          </li>
+          <li>First-time buyer assistance with down payment programs and financing options</li>
+          <li>
+            Relocation services for out-of-state buyers, including area orientation and local
+            connections
+          </li>
+        </ul>
         <h2>Deep Community Connections and Local Expertise</h2>
         <p>
           Living in Summerlin West for over a decade, Dr. Duffy knows every trail in the{' '}
@@ -161,9 +185,9 @@ export default function AboutClient() {
           <strong>TPC Summerlin</strong>, and which neighborhoods offer the most spectacular{' '}
           <strong>Red Rock Canyon sunset views</strong>. She&apos;s an active member of the
           Summerlin community, regularly participating in <strong>Tour de Summerlin</strong> and
-          volunteering at local schools. Her involvement in community events, local business networks,
-          and neighborhood associations gives her insider knowledge about upcoming developments,
-          community changes, and local market trends that benefit her clients.
+          volunteering at local schools. Her involvement in community events, local business
+          networks, and neighborhood associations gives her insider knowledge about upcoming
+          developments, community changes, and local market trends that benefit her clients.
         </p>
         <p>
           Dr. Duffy&apos;s clients consistently praise her responsiveness, market expertise, and
@@ -178,9 +202,9 @@ export default function AboutClient() {
           <strong>
             Ready to explore Summerlin West&apos;s luxury lifestyle? Contact Dr. Jan Duffy today for
             your complimentary market consultation and discover why Summerlin West continues to rank
-            among America&apos;s top master-planned communities. With her proven track record,
-            deep local knowledge, and commitment to client success, Dr. Duffy is the ideal partner
-            for your Summerlin West real estate journey.
+            among America&apos;s top master-planned communities. With her proven track record, deep
+            local knowledge, and commitment to client success, Dr. Duffy is the ideal partner for
+            your Summerlin West real estate journey.
           </strong>
         </p>
         <hr />
@@ -215,7 +239,12 @@ export default function AboutClient() {
                 Keynote speaker, relocation specialist, and more.
               </p>
               <p>
-                Dr. Jan Duffy brings a unique combination of academic excellence and real-world experience to her real estate practice. With a doctorate-level education in psychology and extensive business training, she understands both the emotional and practical aspects of buying and selling homes. Her background allows her to provide exceptional service to clients from all walks of life, from first-time buyers to luxury property investors.
+                Dr. Jan Duffy brings a unique combination of academic excellence and real-world
+                experience to her real estate practice. With a doctorate-level education in
+                psychology and extensive business training, she understands both the emotional and
+                practical aspects of buying and selling homes. Her background allows her to provide
+                exceptional service to clients from all walks of life, from first-time buyers to
+                luxury property investors.
               </p>
               <div className={styles.badges} role="list" aria-label="Professional badges">
                 <span className={styles.badge} role="listitem">
@@ -239,7 +268,11 @@ export default function AboutClient() {
             Specializations & Comprehensive Real Estate Services
           </h2>
           <p className={styles.heroSubtitle}>
-            Dr. Jan Duffy offers a comprehensive range of real estate services tailored to meet the diverse needs of Summerlin West clients. Her specialized expertise covers everything from luxury property transactions to first-time buyer assistance, ensuring every client receives personalized, professional service regardless of their real estate goals or experience level.
+            Dr. Jan Duffy offers a comprehensive range of real estate services tailored to meet the
+            diverse needs of Summerlin West clients. Her specialized expertise covers everything
+            from luxury property transactions to first-time buyer assistance, ensuring every client
+            receives personalized, professional service regardless of their real estate goals or
+            experience level.
           </p>
           <ul className={styles.servicesList}>
             <li>Summerlin Vistas Homes Neighborhoods Specialist</li>
@@ -259,7 +292,10 @@ export default function AboutClient() {
             Summerlin Vistas Neighborhoods and Communities Served
           </h2>
           <p className={styles.heroSubtitle}>
-            Dr. Jan Duffy provides expert real estate services across all Summerlin Vistas neighborhoods, each offering unique amenities, architectural styles, and lifestyle options. Her deep knowledge of these communities allows her to match clients with their perfect neighborhood based on their preferences, budget, and lifestyle needs.
+            Dr. Jan Duffy provides expert real estate services across all Summerlin Vistas
+            neighborhoods, each offering unique amenities, architectural styles, and lifestyle
+            options. Her deep knowledge of these communities allows her to match clients with their
+            perfect neighborhood based on their preferences, budget, and lifestyle needs.
           </p>
           <div className={styles.areasGrid} role="list" aria-label="Neighborhoods served">
             <span role="listitem">The Vistas</span>
@@ -273,7 +309,9 @@ export default function AboutClient() {
         <section className={styles.sectionCard} aria-label="Latest News">
           <h2 className={styles.centerTitle}>Latest Real Estate News and Market Updates</h2>
           <p className={styles.heroSubtitle}>
-            Stay informed about the latest developments in the Summerlin West real estate market and broader Las Vegas area. Dr. Jan Duffy regularly shares insights about market trends, new developments, and opportunities that could impact your real estate decisions.
+            Stay informed about the latest developments in the Summerlin West real estate market and
+            broader Las Vegas area. Dr. Jan Duffy regularly shares insights about market trends, new
+            developments, and opportunities that could impact your real estate decisions.
           </p>
           <div className={styles.newsList}>
             <article className={styles.newsCard} aria-labelledby="news-mortgage">
@@ -327,7 +365,11 @@ export default function AboutClient() {
           <h2 id="testimonials" className={styles.centerTitle}>
             What Our Clients Say: Real Testimonials from Summerlin West Buyers and Sellers
           </h2>
-          <p className={styles.sectionSubtitle}>Real stories from real buyers and sellers who have worked with Dr. Jan Duffy. These testimonials reflect the exceptional service, expertise, and results that Dr. Duffy consistently delivers to her clients in Summerlin West and surrounding communities.</p>
+          <p className={styles.sectionSubtitle}>
+            Real stories from real buyers and sellers who have worked with Dr. Jan Duffy. These
+            testimonials reflect the exceptional service, expertise, and results that Dr. Duffy
+            consistently delivers to her clients in Summerlin West and surrounding communities.
+          </p>
           <TestimonialsSectionClient />
         </section>
         <section className={styles.sectionCard} aria-labelledby="office-location">
@@ -335,7 +377,9 @@ export default function AboutClient() {
             Our Office Location and Contact Information
           </h2>
           <p className={styles.heroSubtitle}>
-            Visit Dr. Jan Duffy at her conveniently located office in the heart of Summerlin. Our office is easily accessible from all Summerlin West communities and provides a professional environment for consultations, document signing, and client meetings.
+            Visit Dr. Jan Duffy at her conveniently located office in the heart of Summerlin. Our
+            office is easily accessible from all Summerlin West communities and provides a
+            professional environment for consultations, document signing, and client meetings.
           </p>
           <div className={styles.officeCard}>
             <div className={styles.officeInfo}>
@@ -374,9 +418,11 @@ export default function AboutClient() {
             Featured Summerlin West Listings and Market Insights
           </h2>
           <p className={styles.heroSubtitle}>
-            Explore current market conditions and featured properties in Summerlin West. Dr. Jan Duffy provides up-to-date market analysis and showcases exceptional properties that represent the best of Summerlin West real estate.
+            Explore current market conditions and featured properties in Summerlin West. Dr. Jan
+            Duffy provides up-to-date market analysis and showcases exceptional properties that
+            represent the best of Summerlin West real estate.
           </p>
-          <RealScoutMarketInsights 
+          <RealScoutMarketInsights
             title="Featured Summerlin West Listings and Market Insights"
             subtitle="Explore current market conditions and featured properties in Summerlin West"
             variant="full"

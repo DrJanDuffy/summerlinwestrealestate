@@ -10,7 +10,7 @@ const PLACEHOLDER_IMAGES = {
   'desert landscaping': '/images/featured-homes/17-DSC02979.jpg',
   'mountain views': '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
   'blue sky': '/images/featured-homes/featured-home-1.jpg',
-  'default': '/images/featured-homes/featured-home-1.jpg'
+  default: '/images/featured-homes/featured-home-1.jpg',
 };
 
 export async function POST(req: NextRequest) {
@@ -39,20 +39,23 @@ export async function POST(req: NextRequest) {
     // - Midjourney API
     // - Stable Diffusion
     // - Cloudflare AI Workers
-    
+
     return NextResponse.json({
       success: true,
       imagePath: selectedImage,
       placeholder: true,
-      message: 'Using placeholder image. Consider integrating with a dedicated image generation service.',
-      prompt: prompt
+      message:
+        'Using placeholder image. Consider integrating with a dedicated image generation service.',
+      prompt: prompt,
     });
-
   } catch (error) {
     console.error('Image generation error:', error);
-    return NextResponse.json({ 
-      error: 'Failed to generate image',
-      fallback: '/images/featured-homes/featured-home-1.jpg'
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        error: 'Failed to generate image',
+        fallback: '/images/featured-homes/featured-home-1.jpg',
+      },
+      { status: 500 }
+    );
   }
 }

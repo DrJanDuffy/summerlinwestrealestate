@@ -130,15 +130,9 @@ const nextConfig: NextConfig = {
   // Output configuration for Vercel
   // output: 'standalone', // Disabled for Windows compatibility
 
-
-  // TypeScript configuration
+  // TypeScript configuration - ignore build errors for deployment
   typescript: {
     ignoreBuildErrors: true,
-  },
-
-  // ESLint configuration
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 };
 

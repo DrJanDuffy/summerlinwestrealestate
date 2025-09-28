@@ -21,7 +21,9 @@ export default function AboutImage({
       width={width}
       height={height}
       className={`rounded-2xl ${className} ${styles.image}`}
-      style={{ boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
+      style={{
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      }}
       loading="lazy"
     />
   );

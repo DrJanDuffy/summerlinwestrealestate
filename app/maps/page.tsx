@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+
 export default function MapsPage() {
   const [activeTab, setActiveTab] = useState('property-search');
   const [mapLoaded, setMapLoaded] = useState(false);

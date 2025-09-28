@@ -1,15 +1,17 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import NewHomesSummerlinClient from './NewHomesSummerlinClient';
 
 export const metadata: Metadata = {
   title: 'New Construction Homes in Summerlin West | Dr. Jan Duffy REALTOR®',
-  description: 'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
+  description:
+    'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
   alternates: {
     canonical: '/new-homes-summerlin',
   },
   openGraph: {
     title: 'New Construction Homes in Summerlin West | Dr. Jan Duffy REALTOR®',
-    description: 'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
+    description:
+      'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
     url: 'https://summerlinwestrealestate.com/new-homes-summerlin',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -26,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'New Construction Homes in Summerlin West | Dr. Jan Duffy REALTOR®',
-    description: 'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
+    description:
+      'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
     images: ['/images/og-image.svg'],
   },
   robots: {

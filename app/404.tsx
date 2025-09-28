@@ -26,7 +26,8 @@ export default function NotFound() {
             <div className={styles.redirectMessage}>
               <h3>Find your dream home in Summerlin West</h3>
               <p>
-                Browse our current listings and discover luxury homes in The Vistas and surrounding communities.
+                Browse our current listings and discover luxury homes in The Vistas and surrounding
+                communities.
               </p>
             </div>
 

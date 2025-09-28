@@ -172,7 +172,9 @@ class PerformanceMonitor {
    * Check if LCP element is an image
    */
   private isImageElement(metric: WebVitalsMetric): boolean {
-    return metric.entries.some((entry) => (entry as any).element && (entry as any).element.tagName === 'IMG');
+    return metric.entries.some(
+      (entry) => (entry as any).element && (entry as any).element.tagName === 'IMG'
+    );
   }
 
   /**

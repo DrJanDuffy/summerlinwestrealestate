@@ -1,5 +1,7 @@
 'use client';
-import dynamic from 'next/dynamic';
+
+// Dynamic imports for client components
+import dynamicImport from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,12 +10,18 @@ import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsights
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
-// Dynamic imports for client components
-const _LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
+const _LatestMarketInsights = dynamicImport(
+  () => import('../../components/ui/LatestMarketInsights'),
+  {
+    ssr: false,
+  }
+);
+
+const VistasLeadForm = dynamicImport(() => import('../../components/ui/VistasLeadForm'), {
   ssr: false,
 });
-
-const VistasLeadForm = dynamic(() => import('../../components/ui/VistasLeadForm'), { ssr: false });
 
 export default function TheVistas() {
   const [name, _setName] = useState('');
@@ -53,18 +61,11 @@ export default function TheVistas() {
       }
 
       setSubmitted(true);
-      if (
-        typeof window !== 'undefined' &&
-        typeof (window as any).gtag === 'function'
-      ) {
-        (window as any).gtag(
-          'event',
-          'lead_form_submit',
-          {
-            event_category: 'Lead',
-            event_label: 'The Vistas',
-          }
-        );
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'lead_form_submit', {
+          event_category: 'Lead',
+          event_label: 'The Vistas',
+        });
       }
     } catch (_err: unknown) {
       setError('There was a problem submitting your request. Please try again later.');

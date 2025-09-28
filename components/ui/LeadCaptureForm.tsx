@@ -1,6 +1,6 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState, useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import styles from './LeadCaptureForm.module.css';
 
@@ -71,81 +71,93 @@ export default function LeadCaptureForm({
 
   const _privacyConsent = watch('privacyConsent');
 
-  const onSubmit = useCallback(async (data: LeadFormData) => {
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
+  const onSubmit = useCallback(
+    async (data: LeadFormData) => {
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+      setErrorMessage('');
 
-    try {
-      const response = await fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...data,
-          page: source,
-          timestamp: new Date().toISOString(),
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-
-      setSubmitStatus('success');
-      reset();
-      
-      // Google Analytics tracking
-      if (
-        typeof window !== 'undefined' &&
-        typeof (window as any).gtag === 'function'
-      ) {
-        const win = window as any;
-        win.gtag('event', 'lead_form_submit', {
-          event_category: 'Lead',
-          event_label: source,
-          cd1: win.userType || 'unknown',
-          cd2: 'LeadCaptureForm',
-          cd3: 'submit',
-          cd4: 1,
+      try {
+        const response = await fetch('/api/lead', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...data,
+            page: source,
+            timestamp: new Date().toISOString(),
+          }),
         });
-        win.gtag('event', 'generate_lead', {
-          value: 1,
-          currency: 'USD',
-          form_location: source || 'unknown',
-          cd1: win.userType || 'unknown',
-          cd2: 'LeadCaptureForm',
-          cd3: 'submit',
-          cd4: 1,
-        });
-      }
 
-      // Facebook Pixel tracking
-      if (typeof window !== 'undefined' && typeof (window as Window & { fbq?: (action: string, event: string, data?: Record<string, unknown>) => void }).fbq === 'function') {
-        (window as Window & { fbq: (action: string, event: string, data?: Record<string, unknown>) => void }).fbq('track', 'Lead', {
-          content_name: 'Lead Form Submission',
-          content_category: 'Real Estate',
-          value: 100,
-          currency: 'USD',
-          content_ids: [formId],
-        });
+        if (!response.ok) {
+          throw new Error('Failed to submit form');
+        }
+
+        setSubmitStatus('success');
+        reset();
+
+        // Google Analytics tracking
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          const win = window as any;
+          win.gtag('event', 'lead_form_submit', {
+            event_category: 'Lead',
+            event_label: source,
+            cd1: win.userType || 'unknown',
+            cd2: 'LeadCaptureForm',
+            cd3: 'submit',
+            cd4: 1,
+          });
+          win.gtag('event', 'generate_lead', {
+            value: 1,
+            currency: 'USD',
+            form_location: source || 'unknown',
+            cd1: win.userType || 'unknown',
+            cd2: 'LeadCaptureForm',
+            cd3: 'submit',
+            cd4: 1,
+          });
+        }
+
+        // Facebook Pixel tracking
+        if (
+          typeof window !== 'undefined' &&
+          typeof (
+            window as Window & {
+              fbq?: (action: string, event: string, data?: Record<string, unknown>) => void;
+            }
+          ).fbq === 'function'
+        ) {
+          (
+            window as Window & {
+              fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
+            }
+          ).fbq('track', 'Lead', {
+            content_name: 'Lead Form Submission',
+            content_category: 'Real Estate',
+            value: 100,
+            currency: 'USD',
+            content_ids: [formId],
+          });
+        }
+        onSuccess?.();
+        if (variant === 'modal') {
+          setTimeout(() => {
+            onClose?.();
+          }, 3000);
+        }
+      } catch (error: unknown) {
+        setSubmitStatus('error');
+        setErrorMessage(
+          (error as Error).message ||
+            'There was a problem submitting your request. Please try again.'
+        );
+      } finally {
+        setIsSubmitting(false);
       }
-      onSuccess?.();
-      if (variant === 'modal') {
-        setTimeout(() => {
-          onClose?.();
-        }, 3000);
-      }
-    } catch (error: unknown) {
-      setSubmitStatus('error');
-      setErrorMessage(
-        (error as Error).message || 'There was a problem submitting your request. Please try again.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [source, formId, onSuccess, onClose, variant]);
+    },
+    [source, formId, onSuccess, onClose, variant]
+  );
 
   const formContent = (
     <motion.div
@@ -174,8 +186,8 @@ export default function LeadCaptureForm({
             Your request has been submitted successfully. We&apos;ll be in touch within 24 hours.
           </p>
           {variant === 'inline' && (
-            <button 
-              onClick={() => setSubmitStatus('idle')} 
+            <button
+              onClick={() => setSubmitStatus('idle')}
               className={styles['submit-button']}
               type="button"
             >
@@ -475,9 +487,9 @@ export default function LeadCaptureForm({
               className={styles['modal-content']}
               onClick={(e) => e.stopPropagation()}
             >
-              <button 
-                className={styles['modal-close']} 
-                onClick={onClose} 
+              <button
+                className={styles['modal-close']}
+                onClick={onClose}
                 aria-label="Close"
                 type="button"
               >
