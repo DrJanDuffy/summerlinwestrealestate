@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Head from 'next/head';
+import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import Script from 'next/script';
 import Header from '../components/layout/Header';
 import RealScoutWidget from '../components/ui/RealScoutWidget';
@@ -196,52 +197,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-function StickyPhoneMenu() {
-  const handlePhoneClick = () => {
-    // Facebook Pixel tracking for phone clicks
-    if (
-      typeof window !== 'undefined' &&
-      typeof (
-        window as Window & {
-          fbq?: (action: string, event: string, data?: Record<string, unknown>) => void;
-        }
-      ).fbq === 'function'
-    ) {
-      (
-        window as Window & {
-          fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
-        }
-      ).fbq('track', 'Contact', {
-        content_name: 'Phone Call',
-        content_category: 'Lead Generation',
-        value: 75,
-        currency: 'USD',
-      });
-    }
-  };
-
-  return (
-    <div className={styles.stickyPhoneMenu}>
-      <span className={styles.stickyPhoneMenuLabel}>Call Us</span>
-      <a
-        href="tel:7025500112"
-        className={styles.stickyPhoneMenuCallButton}
-        onClick={handlePhoneClick}
-      >
-        <svg
-          width="20"
-          height="20"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          className={styles.stickyPhoneMenuIcon}
-        >
-          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z" />
-        </svg>
-        (702) 550-0112
-      </a>
-    </div>
-  );
-}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

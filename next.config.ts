@@ -135,7 +135,7 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // ESLint configuration - disabled during build for now
+  // ESLint configuration - completely disabled for deployment
   eslint: {
     ignoreDuringBuilds: true,
   },

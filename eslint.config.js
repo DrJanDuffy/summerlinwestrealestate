@@ -1,6 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
