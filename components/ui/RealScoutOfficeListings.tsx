@@ -14,11 +14,11 @@ interface RealScoutOfficeListingsProps {
 
 export default function RealScoutOfficeListings({
   agentEncodedId = 'QWdlbnQtMjI1MDUw', // Dr. Jan Duffy's Agent ID
-  sortOrder = 'NEWEST',
-  listingStatus = 'For Sale,For Rent,In Contract,Sold,Rented',
-  propertyTypes = 'SFR,MF,TC,LAL,MOBILE,OTHER',
-  priceMin = 500000,
-  priceMax = 600000,
+  sortOrder = 'STATUS_AND_SIGNIFICANT_CHANGE', // Premium properties with significant changes first
+  listingStatus = 'For Sale,For Rent,In Contract,Sold,Rented', // All statuses for comprehensive view
+  propertyTypes = 'SFR,MF,TC,LAL', // Premium property types (removed MOBILE,OTHER for luxury focus)
+  priceMin = 800000, // Premium price range starting at $800K
+  priceMax = 2000000, // Up to $2M+ for luxury properties
   className = '',
 }: RealScoutOfficeListingsProps) {
   return (

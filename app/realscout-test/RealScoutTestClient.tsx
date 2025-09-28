@@ -144,8 +144,8 @@ export default function RealScoutTestClient() {
             RealScout Office Listings Test (Primary Lead Generator)
           </h2>
           <p className="text-gray-600 mb-4">
-            This is the primary lead generator with all variables configured: NEWEST sort, all listing statuses, 
-            all property types, and price range $500K-$600K.
+            This is the primary lead generator with premium variables configured: STATUS_AND_SIGNIFICANT_CHANGE sort (premium properties with significant changes first), all listing statuses, 
+            premium property types (SFR,MF,TC,LAL), and luxury price range $800K-$2M+.
           </p>
           <RealScoutOfficeListings />
         </div>
