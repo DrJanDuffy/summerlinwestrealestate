@@ -1,0 +1,118 @@
+/* Market Stats Component Styles */
+.marketStats {
+  background: white;
+  padding: 60px 0;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.statCard {
+  background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border-left: 5px solid #ff6b35;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.statCard[data-delay="0"] {
+  transition-delay: 0s;
+}
+
+.statCard[data-delay="0.1"] {
+  transition-delay: 0.1s;
+}
+
+.statCard[data-delay="0.2"] {
+  transition-delay: 0.2s;
+}
+
+.statCard[data-delay="0.3"] {
+  transition-delay: 0.3s;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.statLabel {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.trend {
+  font-weight: 600;
+}
+
+.trend.up {
+  color: #28a745;
+}
+
+.trend.down {
+  color: #dc3545;
+}
+
+.trend.neutral {
+  color: #6c757d;
+}
+
+.fadeInUp {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

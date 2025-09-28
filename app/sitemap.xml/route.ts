@@ -15,6 +15,7 @@ export async function GET() {
     { path: 'testimonials', priority: '0.7', changefreq: 'weekly' },
     { path: 'market', priority: '0.8', changefreq: 'weekly' },
     { path: 'market-reports', priority: '0.8', changefreq: 'weekly' },
+    { path: 'home-values', priority: '0.9', changefreq: 'weekly' },
     { path: 'maps', priority: '0.9', changefreq: 'weekly' },
     { path: 'sold', priority: '0.7', changefreq: 'weekly' },
     { path: 'new-homes-summerlin', priority: '0.8', changefreq: 'weekly' },

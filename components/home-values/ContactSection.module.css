@@ -1,0 +1,123 @@
+/* Contact Section Component Styles */
+.contactSection {
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contactContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contactTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.contactSubtitle {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.phoneNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 30px 0;
+  color: #ff6b35;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.agentInfo {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.6s;
+}
+
+.agentName {
+  margin-bottom: 5px;
+}
+
+.agentTitle {
+  margin-bottom: 5px;
+}
+
+.agentCredentials {
+  margin-bottom: 5px;
+}
+
+.licenseNumber {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #ff6b35;
+  color: white;
+  padding: 18px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 0.8s;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+  background: #e55a2b;
+}
+
+.disclaimer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out 1s;
+}
+
+.fadeInUp {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 768px) {
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+  
+  .phoneNumber {
+    font-size: 2rem;
+  }
+  
+  .ctaButton {
+    font-size: 1rem;
+    padding: 15px 30px;
+  }
+}
+

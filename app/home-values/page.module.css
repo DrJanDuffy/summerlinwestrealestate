@@ -1,0 +1,251 @@
+/* Home Values Page Styles */
+.homeValuesPage {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #ff6b35;
+  color: white;
+  padding: 18px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+  background: #e55a2b;
+}
+
+.marketStats {
+  background: white;
+  padding: 60px 0;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.statCard {
+  background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border-left: 5px solid #ff6b35;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.statNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.statLabel {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.marketInsights {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.insightCard {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.insightTitle {
+  font-size: 1.5rem;
+  color: #1a237e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.neighborhoodSpotlight {
+  background: white;
+  padding: 80px 0;
+}
+
+.neighborhoodsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.neighborhoodCard {
+  background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 4px solid #ff6b35;
+  transition: all 0.3s ease;
+}
+
+.neighborhoodCard:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.contactSection {
+  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.contactContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.phoneNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 30px 0;
+  color: #ff6b35;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.trendingUp {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.trendingDown {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .insightsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+  }
+  
+  .phoneNumber {
+    font-size: 2rem;
+  }
+}
+
