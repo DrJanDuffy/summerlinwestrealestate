@@ -18,46 +18,46 @@ const HYPERLOCAL_KEYWORDS = [
 ];
 
 // const _NEIGHBORHOODS = [
-  'The Vistas',
-  'Stonebridge',
-  'Redpoint',
-  'Reverence',
-  'Downtown Summerlin',
-  'The Paseos',
-  'Redpoint Square',
-];
+//   'The Vistas',
+//   'Stonebridge',
+//   'Redpoint',
+//   'Reverence',
+//   'Downtown Summerlin',
+//   'The Paseos',
+//   'Redpoint Square',
+// ];
 
 // const _LOCAL_MARKET_INSIGHTS = [
-  'Did you know? Summerlin West homes sell 20% faster than the Las Vegas average!',
-  'Fun fact: The Vistas Park hosts free summer concerts for residents.',
-  'Stonebridge features some of the newest luxury homes in Summerlin West.',
-  'Redpoint is known for its modern architecture and walkable amenities.',
-  'Reverence offers stunning mountain views and exclusive gated living.',
-  'Downtown Summerlin has over 125 shops and restaurants just minutes away!',
-  'The Paseos features top-rated schools and beautiful parks.',
-];
+//   'Did you know? Summerlin West homes sell 20% faster than the Las Vegas average!',
+//   'Fun fact: The Vistas Park hosts free summer concerts for residents.',
+//   'Stonebridge features some of the newest luxury homes in Summerlin West.',
+//   'Redpoint is known for its modern architecture and walkable amenities.',
+//   'Reverence offers stunning mountain views and exclusive gated living.',
+//   'Downtown Summerlin has over 125 shops and restaurants just minutes away!',
+//   'The Paseos features top-rated schools and beautiful parks.',
+// ];
 
 // const _LOCAL_EVENTS = [
-  'Check out the Summerlin Farmers Market this Saturday at Downtown Summerlin!',
-  'Join us for Movies in the Park at The Vistas this Friday night.',
-  'Don&apos;t miss the Summerlin Art Festival coming up next month!',
-  'Explore the new trails opening in Stonebridge this weekend.',
-  'Sign up for the Summerlin West Community Garage Sale!',
-];
+//   'Check out the Summerlin Farmers Market this Saturday at Downtown Summerlin!',
+//   'Join us for Movies in the Park at The Vistas this Friday night.',
+//   'Don&apos;t miss the Summerlin Art Festival coming up next month!',
+//   'Explore the new trails opening in Stonebridge this weekend.',
+//   'Sign up for the Summerlin West Community Garage Sale!',
+// ];
 
 function isHyperlocal(post: BlogPost & { contentSnippet?: string; content?: string }) {
   const text = `${post.title} ${post.contentSnippet || ''} ${post.content || ''}`.toLowerCase();
   return HYPERLOCAL_KEYWORDS.some((kw) => text.includes(kw));
 }
 
-const _LOCAL_INTRO =
-  'This update is brought to you by your Summerlin West real estate experts. Here&apos;s how this news impacts our local market:';
-const _LOCAL_CTA =
-  'If you have questions about how this affects your home or your plans in Summerlin West, contact us for a hyperlocal perspective!';
+// const _LOCAL_INTRO =
+//   'This update is brought to you by your Summerlin West real estate experts. Here&apos;s how this news impacts our local market:';
+// const _LOCAL_CTA =
+//   'If you have questions about how this affects your home or your plans in Summerlin West, contact us for a hyperlocal perspective!';
 
 // function _getRandom(arr: string[]) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
+//   return arr[Math.floor(Math.random() * arr.length)];
+// }
 
 async function fetchRssPosts() {
   const parser = new Parser();
@@ -83,13 +83,13 @@ const formatPost = (post: unknown): BlogPost => {
   };
 };
 
-const _chunkArray = <T,>(arr: T[], chunkSize = 3): T[][] => {
-  const chunks: T[][] = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-    chunks.push(arr.slice(i, i + chunkSize));
-  }
-  return chunks;
-};
+// const _chunkArray = <T,>(arr: T[], chunkSize = 3): T[][] => {
+//   const chunks: T[][] = [];
+//   for (let i = 0; i < arr.length; i += chunkSize) {
+//     chunks.push(arr.slice(i, i + chunkSize));
+//   }
+//   return chunks;
+// };
 
 export default async function BlogIndexPage() {
   const posts = (await fetchRssPosts()).map(formatPost).filter(
