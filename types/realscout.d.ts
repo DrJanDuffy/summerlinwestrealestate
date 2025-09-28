@@ -47,6 +47,12 @@ declare namespace JSX {
       'show-lead-capture'?: boolean;
       variant?: string;
     };
+    'realscout-your-listings': {
+      'agent-encoded-id'?: string;
+      'sort-order'?: string;
+      'listing-status'?: string;
+      'property-types'?: string;
+    };
   }
 }
 

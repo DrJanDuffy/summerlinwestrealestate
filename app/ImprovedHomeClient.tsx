@@ -13,6 +13,9 @@ const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScout
 const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWidgetEnhanced'), {
   ssr: false,
 });
+const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
+  ssr: false,
+});
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
   ssr: false,
 });
@@ -326,6 +329,23 @@ export default function ImprovedHomeClient() {
               },
             ]}
           />
+        </div>
+      </section>
+
+      {/* RealScout Your Listings */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Current Summerlin West Listings
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Browse all current listings in Summerlin West. Updated in real-time with the latest market data
+              and property information from the MLS.
+            </p>
+          </div>
+
+          <RealScoutYourListings />
         </div>
       </section>
 
