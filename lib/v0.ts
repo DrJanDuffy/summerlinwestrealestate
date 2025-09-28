@@ -1,19 +1,37 @@
 /**
  * V0 API Configuration for AI-powered development
  *
- * This utility provides access to OpenRouter API for generating
+ * This utility provides access to Vercel's V0 API for generating
  * React components and Next.js applications with AI assistance.
- * Updated for September 2025 with latest model capabilities.
- * Uses OpenRouter for unified access to multiple AI models.
+ * Uses the official V0 Model API for component generation.
  *
- * @see https://openrouter.ai/docs
+ * @see https://v0.app/docs/v0-model-api
  */
 
-// Placeholder for V0 API - will be implemented when needed
+import { generateText } from 'ai';
+import { vercel } from '@ai-sdk/vercel';
+
+// V0 API configuration using Vercel's official SDK
 export const v0 = {
-  generateText: async (options: { prompt: string; temperature?: number; maxTokens?: number }) => {
-    // Placeholder implementation
-    return { text: '// Component generation placeholder - implement when needed' };
+  generateText: async (options: { prompt: string; temperature?: number; maxTokens?: number; model?: string }) => {
+    const { prompt, temperature = 0.7, maxTokens = 4000, model = 'v0-1.5-md' } = options;
+    
+    if (!process.env.V0_API_KEY) {
+      throw new Error('V0_API_KEY is not configured');
+    }
+
+    try {
+      const { text } = await generateText({
+        model: vercel(model as any),
+        prompt,
+        temperature,
+      });
+
+      return { text };
+    } catch (error) {
+      console.error('V0 API error:', error);
+      throw new Error(`V0 API error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   },
 };
 
@@ -63,6 +81,7 @@ Generate only the component code, no explanations.`;
       prompt: `${systemPrompt}\n\nUser: ${prompt}`,
       temperature: 0.7,
       maxTokens: 4000,
+      model: model || 'v0-1.5-md',
     });
 
     return result.text || '';
@@ -117,6 +136,7 @@ Generate only the complete page component code, no explanations.`;
       prompt: `${systemPrompt}\n\nUser: Generate a ${pageType} page for ${location}`,
       temperature: 0.7,
       maxTokens: 6000,
+      model: model || 'v0-1.5-md',
     });
 
     return result.text || '';
@@ -170,6 +190,7 @@ Generate only the requested content, no explanations.`;
       prompt: `${systemPrompt}\n\nUser: ${prompt}`,
       temperature: temperature || 0.7,
       maxTokens: max_tokens || 4000,
+      model: model || 'v0-1.5-md',
     });
 
     return result.text || '';
@@ -180,18 +201,18 @@ Generate only the requested content, no explanations.`;
 }
 
 /**
- * Validate OpenRouter API configuration
+ * Validate V0 API configuration
  *
  * @returns boolean - Whether the API is properly configured
  */
 export function validateV0Config(): boolean {
-  if (!process.env.OPENROUTER_API_KEY) {
-    console.error('OPENROUTER_API_KEY is not set in environment variables');
+  if (!process.env.V0_API_KEY) {
+    console.error('V0_API_KEY is not set in environment variables');
     return false;
   }
 
-  if (process.env.OPENROUTER_API_KEY === 'your_api_key_here') {
-    console.error('Please replace the placeholder API key with your actual OpenRouter API key');
+  if (process.env.V0_API_KEY === 'your_api_key_here') {
+    console.error('Please replace the placeholder API key with your actual V0 API key');
     return false;
   }
 
