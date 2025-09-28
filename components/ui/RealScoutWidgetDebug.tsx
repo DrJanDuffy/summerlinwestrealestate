@@ -27,46 +27,22 @@ export default function RealScoutWidgetDebug({
   useEffect(() => {
     addDebugInfo('Component mounted');
     
-    // Check if script is already loaded
-    const existingScript = document.querySelector('script[src*="realscout-web-components"]');
-    if (existingScript) {
-      addDebugInfo('RealScout script already exists');
-      setScriptLoaded(true);
-      return;
-    }
-
-    addDebugInfo('Loading RealScout script...');
+    // RealScout script is already loaded globally in layout.tsx
+    addDebugInfo('RealScout script loaded globally');
+    setScriptLoaded(true);
     
-    const script = document.createElement('script');
-    script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-    script.type = 'module';
-    script.async = true;
-    
-    script.onload = () => {
-      addDebugInfo('RealScout script loaded successfully');
-      setScriptLoaded(true);
+    // Wait a bit for the custom elements to be defined
+    setTimeout(() => {
+      const isDefined = customElements.get('realscout-search-widget') || 
+                       customElements.get('realscout-office-listings') || 
+                       customElements.get('realscout-lead-capture');
       
-      // Wait a bit for the custom elements to be defined
-      setTimeout(() => {
-        const isDefined = customElements.get('realscout-search-widget') || 
-                         customElements.get('realscout-office-listings') || 
-                         customElements.get('realscout-lead-capture');
-        
-        if (isDefined) {
-          addDebugInfo('RealScout custom elements are defined');
-        } else {
-          addDebugInfo('RealScout custom elements are NOT defined');
-        }
-      }, 1000);
-    };
-    
-    script.onerror = (error) => {
-      addDebugInfo(`RealScout script failed to load: ${error}`);
-      setScriptError('Failed to load RealScout script');
-    };
-
-    document.head.appendChild(script);
-    addDebugInfo('Script element added to document head');
+      if (isDefined) {
+        addDebugInfo('RealScout custom elements are defined');
+      } else {
+        addDebugInfo('RealScout custom elements are NOT defined');
+      }
+    }, 1000);
 
     // Add custom styling
     if (!document.querySelector('style[data-realscout-debug-styles]')) {

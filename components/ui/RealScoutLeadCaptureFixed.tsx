@@ -32,35 +32,8 @@ export default function RealScoutLeadCapture({
   const [widgetLoaded, setWidgetLoaded] = useState(false);
 
   useEffect(() => {
-    // Load RealScout lead capture widget script
-    const loadRealScoutWidget = async () => {
-      try {
-        if (!document.querySelector('script[src*="realscout-web-components"]')) {
-          const script = document.createElement('script');
-          script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-          script.type = 'module';
-          script.async = true;
-          
-          script.onload = () => {
-            setWidgetLoaded(true);
-          };
-          
-          script.onerror = () => {
-            console.warn('RealScout lead capture widget failed to load, showing fallback');
-            setWidgetLoaded(false);
-          };
-          
-          document.head.appendChild(script);
-        } else {
-          setWidgetLoaded(true);
-        }
-      } catch (error) {
-        console.warn('Error loading RealScout lead capture widget:', error);
-        setWidgetLoaded(false);
-      }
-    };
-
-    loadRealScoutWidget();
+    // RealScout script is already loaded globally in layout.tsx
+    setWidgetLoaded(true);
 
     // Add custom styling for RealScout lead capture
     if (!document.querySelector('style[data-realscout-lead-styles]')) {

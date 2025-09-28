@@ -23,22 +23,7 @@ export default function RealScoutWidgetSimple({
 
     const loadRealScoutWidget = async () => {
       try {
-        // Check if RealScout script is already loaded
-        const existingScript = document.querySelector('script[src*="realscout-web-components"]');
-        
-        if (!existingScript) {
-          // Load RealScout script
-          const script = document.createElement('script');
-          script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-          script.type = 'module';
-          script.async = true;
-          
-          await new Promise((resolve, reject) => {
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-        }
+        // RealScout script is already loaded globally in layout.tsx
 
         // Wait for custom elements to be defined
         const maxWaitTime = 5000; // 5 seconds
