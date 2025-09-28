@@ -1,6 +1,5 @@
-'use client';
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import {
   FaChevronDown,
   FaEnvelope,
@@ -13,6 +12,27 @@ import {
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
+
+export const metadata: Metadata = {
+  title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
+  description: 'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
+    description: 'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.',
+    url: 'https://summerlinwestrealestate.com/contact',
+    siteName: 'Summerlin West Real Estate',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
+    description: 'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.',
+    images: ['/images/og-image.svg'],
+  },
+};
 
 const socialLinks = [
   {
@@ -54,20 +74,6 @@ const quickLinks = [
 ];
 
 export default function Contact() {
-  // Set page metadata
-  useEffect(() => {
-    document.title = 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate';
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'Contact a Summerlin real estate expert for buying, selling, or market questions. Get personalized help with Summerlin homes, communities, and market trends.'
-      );
-    }
-  }, []);
-
   return (
     <div className={styles.page}>
       {/* Hero Section */}
