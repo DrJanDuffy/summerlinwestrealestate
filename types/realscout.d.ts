@@ -63,6 +63,14 @@ declare global {
       'realscout-simple-search': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
         'agent-encoded-id'?: string;
       }, HTMLElement>;
+      'realscout-office-listings': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+        'agent-encoded-id'?: string;
+        'sort-order'?: string;
+        'listing-status'?: string;
+        'property-types'?: string;
+        'price-min'?: number;
+        'price-max'?: number;
+      }, HTMLElement>;
     }
   }
 }

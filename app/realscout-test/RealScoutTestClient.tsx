@@ -8,6 +8,7 @@ import RealScoutHomeValue from '../../components/ui/RealScoutHomeValue';
 import RealScoutAdvancedSearchWidget from '../../components/ui/RealScoutAdvancedSearchWidget';
 import RealScoutFeaturedListings from '../../components/ui/RealScoutFeaturedListings';
 import RealScoutSimpleSearch from '../../components/ui/RealScoutSimpleSearch';
+import RealScoutOfficeListings from '../../components/ui/RealScoutOfficeListings';
 
 export default function RealScoutTestClient() {
   const checkRealScoutStatus = () => {
@@ -136,6 +137,17 @@ export default function RealScoutTestClient() {
             This component should display a simple search widget using the realscout-simple-search web component.
           </p>
           <RealScoutSimpleSearch />
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            RealScout Office Listings Test (Primary Lead Generator)
+          </h2>
+          <p className="text-gray-600 mb-4">
+            This is the primary lead generator with all variables configured: NEWEST sort, all listing statuses, 
+            all property types, and price range $500K-$600K.
+          </p>
+          <RealScoutOfficeListings />
         </div>
         
         <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
