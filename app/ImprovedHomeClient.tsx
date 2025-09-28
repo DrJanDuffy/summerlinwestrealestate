@@ -7,10 +7,10 @@ import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
 // Dynamically import components for performance
-const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearchFixed'), {
+const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutWidgetTraditional'), {
   ssr: false,
 });
-const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCaptureFixed'), {
+const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWidgetTraditional'), {
   ssr: false,
 });
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
@@ -277,10 +277,10 @@ export default function ImprovedHomeClient() {
           </div>
           
           <RealScoutAdvancedSearch
-            title="Advanced Property Search"
-            subtitle="Search by neighborhood, price, or features. Real-time MLS data."
-            variant="page"
-            showFeatures={true}
+            variant="search"
+            agentId="QWdlbnQtMjI1MDUw"
+            priceMin={400000}
+            priceMax={2000000}
           />
         </div>
       </section>
@@ -343,13 +343,8 @@ export default function ImprovedHomeClient() {
           </div>
           
           <RealScoutLeadCapture
-            variant="inline"
-            title="Get Expert Guidance"
-            subtitle="Contact Dr. Jan Duffy for personalized real estate consultation"
-            source="Improved Homepage Contact"
-            showMarketReport={true}
-            showValuation={true}
-            showConsultation={true}
+            variant="lead-capture"
+            agentId="QWdlbnQtMjI1MDUw"
           />
         </div>
       </section>
