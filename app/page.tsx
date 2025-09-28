@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SimpleHomeTest from './SimpleHomeTest';
+import ImprovedHomeClient from './ImprovedHomeClient';
 
 // Metadata for homepage
 export const metadata: Metadata = {
@@ -47,5 +47,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <SimpleHomeTest />;
+  return <ImprovedHomeClient />;
 }

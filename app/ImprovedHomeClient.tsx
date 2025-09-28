@@ -7,10 +7,10 @@ import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
 // Dynamically import components for performance
-const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearch'), {
+const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearchFixed'), {
   ssr: false,
 });
-const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCapture'), {
+const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCaptureFixed'), {
   ssr: false,
 });
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
