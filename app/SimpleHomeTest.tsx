@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function SimpleHomeTest() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 to-indigo-800">
@@ -11,12 +13,12 @@ export default function SimpleHomeTest() {
               Summerlin West Real Estate
             </div>
             <nav className="space-x-6">
-              <a href="/" className="text-blue-600 hover:text-blue-800 font-medium">
+              <Link href="/" className="text-blue-600 hover:text-blue-800 font-medium">
                 Home
-              </a>
-              <a href="/about" className="text-gray-600 hover:text-gray-900 font-medium">
+              </Link>
+              <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium">
                 About
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
