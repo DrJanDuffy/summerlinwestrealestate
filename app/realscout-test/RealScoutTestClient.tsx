@@ -4,6 +4,7 @@ import RealScoutWidgetDebug from '../../components/ui/RealScoutWidgetDebug';
 import RealScoutWidgetSimple from '../../components/ui/RealScoutWidgetSimple';
 import RealScoutWidgetTraditional from '../../components/ui/RealScoutWidgetTraditional';
 import RealScoutYourListings from '../../components/ui/RealScoutYourListings';
+import RealScoutHomeValue from '../../components/ui/RealScoutHomeValue';
 
 export default function RealScoutTestClient() {
   const checkRealScoutStatus = () => {
@@ -92,6 +93,16 @@ export default function RealScoutTestClient() {
             This component should display all current listings using the realscout-your-listings web component.
           </p>
           <RealScoutYourListings />
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            RealScout Home Value Test
+          </h2>
+          <p className="text-gray-600 mb-4">
+            This component should display the home value widget using the realscout-home-value web component.
+          </p>
+          <RealScoutHomeValue />
         </div>
         
         <div className="mt-8 bg-white rounded-lg shadow-lg p-6">

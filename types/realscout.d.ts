@@ -54,6 +54,9 @@ declare global {
         'listing-status'?: string;
         'property-types'?: string;
       }, HTMLElement>;
+      'realscout-home-value': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+        'agent-encoded-id'?: string;
+      }, HTMLElement>;
     }
   }
 }

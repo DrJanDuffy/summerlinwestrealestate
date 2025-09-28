@@ -16,6 +16,9 @@ const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWid
 const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
   ssr: false,
 });
+const RealScoutHomeValue = dynamic(() => import('../components/ui/RealScoutHomeValue'), {
+  ssr: false,
+});
 const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
   ssr: false,
 });
@@ -227,7 +230,8 @@ export default function ImprovedHomeClient() {
               Our advanced valuation tool uses real-time MLS data and local market trends.
             </p>
           </div>
-          <HomebotWidget />
+          
+          <RealScoutHomeValue />
         </div>
       </section>
 
