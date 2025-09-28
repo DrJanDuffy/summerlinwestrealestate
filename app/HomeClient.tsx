@@ -70,15 +70,15 @@ function HomeHeroImage() {
 export default function HomeClient() {
   const { source } = useLeadCaptureModal();
 
-  const handleFormSuccess = () => {
-    // Track successful submission
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'lead_form_success', {
-        event_category: 'Lead',
-        event_label: source,
-      });
-    }
-  };
+  // const handleFormSuccess = () => {
+  //   // Track successful submission
+  //   if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+  //     (window as any).gtag('event', 'lead_form_success', {
+  //       event_category: 'Lead',
+  //       event_label: source,
+  //     });
+  //   }
+  // };
 
   const faqs: Faq[] = [
     {

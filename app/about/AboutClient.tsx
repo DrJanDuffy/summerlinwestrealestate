@@ -28,14 +28,14 @@ const TestimonialsSectionClient = dynamic(
   }
 );
 
-const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutLeadCapture'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center p-8">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-    </div>
-  ),
-});
+// const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutLeadCapture'), {
+//   ssr: false,
+//   loading: () => (
+//     <div className="flex items-center justify-center p-8">
+//       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+//     </div>
+//   ),
+// });
 
 const structuredData = {
   '@context': 'https://schema.org',
