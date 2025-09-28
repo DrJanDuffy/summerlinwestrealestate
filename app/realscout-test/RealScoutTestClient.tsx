@@ -1,8 +1,8 @@
 'use client';
 
-import RealScoutWidgetDebug from '../../../components/ui/RealScoutWidgetDebug';
-import RealScoutWidgetSimple from '../../../components/ui/RealScoutWidgetSimple';
-import RealScoutWidgetTraditional from '../../../components/ui/RealScoutWidgetTraditional';
+import RealScoutWidgetDebug from '../../components/ui/RealScoutWidgetDebug';
+import RealScoutWidgetSimple from '../../components/ui/RealScoutWidgetSimple';
+import RealScoutWidgetTraditional from '../../components/ui/RealScoutWidgetTraditional';
 
 export default function RealScoutTestClient() {
   const checkRealScoutStatus = () => {
