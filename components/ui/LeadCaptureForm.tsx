@@ -122,17 +122,9 @@ export default function LeadCaptureForm({
         // Facebook Pixel tracking
         if (
           typeof window !== 'undefined' &&
-          typeof (
-            window as Window & {
-              fbq?: (action: string, event: string, data?: Record<string, unknown>) => void;
-            }
-          ).fbq === 'function'
+          typeof (window as any).fbq === 'function'
         ) {
-          (
-            window as Window & {
-              fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
-            }
-          ).fbq('track', 'Lead', {
+          (window as any).fbq('track', 'Lead', {
             content_name: 'Lead Form Submission',
             content_category: 'Real Estate',
             value: 100,

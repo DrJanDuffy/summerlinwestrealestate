@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import FeaturedHomeSlider from '../components/ui/FeaturedHomeSlider';
 import SummerlinWestOverview from '../components/ui/SummerlinWestOverview';
-import { useLeadCaptureModal } from '../hooks/useLeadCaptureModal';
+// import { useLeadCaptureModal } from '../hooks/useLeadCaptureModal';
 import styles from './page.module.css';
 
 // Dynamically import components for performance
