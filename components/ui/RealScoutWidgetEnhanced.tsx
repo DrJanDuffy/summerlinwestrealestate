@@ -60,7 +60,7 @@ export default function RealScoutWidgetEnhanced({
     };
 
     initializeWidget();
-  }, [variant]);
+  }, []);
 
   const renderRealScoutComponent = () => {
     if (!widgetReady) return null;
@@ -99,9 +99,9 @@ export default function RealScoutWidgetEnhanced({
             agent-id={agentId}
             source={source}
             community={community}
-            'show-market-report': true
-            'show-valuation': true
-            'show-consultation': true
+            show-market-report={true}
+            show-valuation={true}
+            show-consultation={true}
           />
         );
       
@@ -136,6 +136,7 @@ export default function RealScoutWidgetEnhanced({
         <div className="max-w-md mx-auto">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Property Search Icon</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
             </svg>
@@ -200,12 +201,14 @@ export default function RealScoutWidgetEnhanced({
         <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
           <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
             <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <title>Error Icon</title>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-lg font-medium text-red-900 mb-2">Widget Loading Error</h3>
           <p className="text-sm text-red-700 mb-4">{error}</p>
           <button
+            type="button"
             onClick={() => window.location.reload()}
             className="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors"
           >
