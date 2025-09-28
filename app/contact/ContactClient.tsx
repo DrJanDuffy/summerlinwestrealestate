@@ -39,6 +39,44 @@ const RealScoutHomeValue = dynamic(
   }
 );
 
+// Import SEO Optimizer
+const RealScoutSEOOptimizer = dynamic(
+  () => import('../../components/ui/RealScoutSEOOptimizer'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+// Import additional RealScout components
+const RealScoutPropertyValuation = dynamic(
+  () => import('../../components/ui/RealScoutPropertyValuation'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutAdvancedSearch = dynamic(
+  () => import('../../components/ui/RealScoutAdvancedSearch'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
 const socialLinks = [
   {
     name: 'Browse Properties',
@@ -120,6 +158,33 @@ export default function ContactClient() {
             <div className={styles.homeValueWidget}>
               <h3 className={styles.widgetTitle}>Discover Your Home's Value</h3>
               <RealScoutHomeValue />
+            </div>
+          </div>
+
+          {/* Additional RealScout Widgets */}
+          <div className={styles.additionalWidgets}>
+            <div className={styles.widgetSection}>
+              <h3 className={styles.widgetTitle}>Get Your Free Property Valuation</h3>
+              <RealScoutPropertyValuation
+                title="Free Property Valuation"
+                subtitle="Get an accurate estimate of your home's worth in today's market"
+                variant="full"
+                showComparables={true}
+                showMarketAnalysis={true}
+                showLeadCapture={true}
+              />
+            </div>
+            
+            <div className={styles.widgetSection}>
+              <h3 className={styles.widgetTitle}>Quick Property Search</h3>
+              <RealScoutAdvancedSearch
+                title="Search Properties While You're Here"
+                subtitle="Find your dream home in Summerlin West"
+                variant="sidebar"
+                showFeatures={true}
+                priceMin={400000}
+                priceMax={2000000}
+              />
             </div>
           </div>
         </section>
@@ -237,6 +302,23 @@ export default function ContactClient() {
             available opportunities.
           </p>
           <LatestMarketInsightsClient />
+        </section>
+
+        {/* SEO Optimized RealScout Widgets */}
+        <section className={styles.sectionCard} aria-label="Complete Real Estate Solutions">
+          <h2 className={styles.sectionTitle}>
+            Complete Real Estate Solutions
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Access all of Dr. Jan Duffy's real estate tools and services in one place. 
+            From property search to market analysis, we provide comprehensive solutions for all your real estate needs.
+          </p>
+          <RealScoutSEOOptimizer
+            pageType="contact"
+            location="Summerlin West, Las Vegas, NV"
+            community="Summerlin West"
+            className="mt-8"
+          />
         </section>
       </main>
     </div>

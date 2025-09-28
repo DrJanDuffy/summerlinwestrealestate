@@ -28,6 +28,44 @@ const RealScoutLeadCapture = dynamic(
   }
 );
 
+// Import SEO Optimizer
+const RealScoutSEOOptimizer = dynamic(
+  () => import('../../components/ui/RealScoutSEOOptimizer'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+// Import additional RealScout components
+const RealScoutPropertyValuation = dynamic(
+  () => import('../../components/ui/RealScoutPropertyValuation'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutMarketInsights = dynamic(
+  () => import('../../components/ui/RealScoutMarketInsights'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
 const TestimonialsSectionClient = dynamic(
   () => import('../../components/ui/TestimonialsSectionClient'),
   {
@@ -442,6 +480,62 @@ export default function AboutClient() {
             agentId="QWdlbnQtMjI1MDUw"
             source="About Page"
             community="Summerlin West"
+          />
+        </section>
+
+        {/* Property Valuation Section */}
+        <section className={styles.sectionCard} aria-labelledby="property-valuation">
+          <h2 id="property-valuation" className={styles.centerTitle}>
+            Get Your Free Property Valuation
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Discover your home's current market value with Dr. Jan Duffy's expert analysis. 
+            Our advanced valuation tool provides accurate estimates based on current market conditions 
+            and comparable sales in your neighborhood.
+          </p>
+          <RealScoutPropertyValuation
+            title="Free Property Valuation"
+            subtitle="Get an accurate estimate of your home's worth in today's market"
+            variant="full"
+            showComparables={true}
+            showMarketAnalysis={true}
+            showLeadCapture={true}
+          />
+        </section>
+
+        {/* Market Insights Section */}
+        <section className={styles.sectionCard} aria-labelledby="market-insights">
+          <h2 id="market-insights" className={styles.centerTitle}>
+            Summerlin West Market Insights
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Stay informed about the latest market trends and conditions in Summerlin West. 
+            Dr. Jan Duffy provides expert analysis of market data, pricing trends, and investment opportunities.
+          </p>
+          <RealScoutMarketInsights
+            title="Current Market Analysis"
+            subtitle="Real-time market data and trends for informed decisions"
+            variant="full"
+            showCharts={true}
+            showTrends={true}
+            showComparisons={true}
+          />
+        </section>
+
+        {/* SEO Optimized RealScout Widgets */}
+        <section className={styles.sectionCard} aria-labelledby="seo-widgets">
+          <h2 id="seo-widgets" className={styles.centerTitle}>
+            Complete Real Estate Solutions
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Access all of Dr. Jan Duffy's real estate tools and services in one place. 
+            From property search to market analysis, we provide comprehensive solutions for all your real estate needs.
+          </p>
+          <RealScoutSEOOptimizer
+            pageType="about"
+            location="Summerlin West, Las Vegas, NV"
+            community="Summerlin West"
+            className="mt-8"
           />
         </section>
       </div>

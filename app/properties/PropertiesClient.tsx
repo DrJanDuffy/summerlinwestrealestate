@@ -29,6 +29,44 @@ const RealScoutAdvancedSearchWidget = dynamic(
   }
 );
 
+// Import SEO Optimizer
+const RealScoutSEOOptimizer = dynamic(
+  () => import('../../components/ui/RealScoutSEOOptimizer'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+// Import additional RealScout components
+const RealScoutLeadCapture = dynamic(
+  () => import('../../components/ui/RealScoutLeadCapture'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutPropertyValuation = dynamic(
+  () => import('../../components/ui/RealScoutPropertyValuation'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
 export default function PropertiesClient() {
   return (
     <div className={styles.container}>
@@ -125,17 +163,45 @@ export default function PropertiesClient() {
             <p className={styles.newsletterSubtitle}>
               Get exclusive access to new luxury properties before they hit the market
             </p>
-            <div className={styles.newsletterForm}>
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className={styles.newsletterInput}
-              />
-              <button type="button" className={styles.newsletterButton}>
-                Subscribe
-              </button>
-            </div>
+            <RealScoutLeadCapture
+              variant="inline"
+              title="Subscribe to Property Alerts"
+              subtitle="Get notified about new luxury properties matching your criteria"
+              source="Properties Page"
+              community="Summerlin West"
+              showMarketReport={true}
+            />
           </div>
+        </div>
+      </section>
+
+      {/* Property Valuation Section */}
+      <section className={styles.marketInsights}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>Get Your Home Valuation</h2>
+          <p className={styles.sectionSubtitle}>
+            Discover your home's current market value with our advanced analysis
+          </p>
+          <RealScoutPropertyValuation
+            title="Free Property Valuation"
+            subtitle="Get an accurate estimate of your home's worth in today's market"
+            variant="full"
+            showComparables={true}
+            showMarketAnalysis={true}
+            showLeadCapture={true}
+          />
+        </div>
+      </section>
+
+      {/* SEO Optimized RealScout Widgets */}
+      <section className={styles.marketInsights}>
+        <div className={styles.sectionContainer}>
+          <RealScoutSEOOptimizer
+            pageType="properties"
+            location="Summerlin West, Las Vegas, NV"
+            community="Summerlin West"
+            className="mt-8"
+          />
         </div>
       </section>
     </div>
