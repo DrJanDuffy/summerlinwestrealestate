@@ -27,7 +27,7 @@ interface ModernHeroSectionProps {
 }
 
 export default function ModernHeroSection({
-  title,
+  title: _title,
   subtitle,
   heroImage,
   stats,

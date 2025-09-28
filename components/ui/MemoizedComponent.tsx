@@ -10,11 +10,17 @@ interface MemoizedComponentProps {
  * Higher-order component for memoizing expensive components
  * Use this wrapper for components that receive stable props
  */
-export default function MemoizedComponent({ children, name }: MemoizedComponentProps) {
-  return memo(
-    () => <>{children}</>,
+export default function MemoizedComponent({ children, name: _name }: MemoizedComponentProps) {
+  const MemoizedChild = memo(
+    function MemoizedChildComponent() {
+      return <>{children}</>;
+    },
     () => true
   );
+  
+  MemoizedChild.displayName = `MemoizedComponent(${_name || 'Anonymous'})`;
+  
+  return <MemoizedChild />;
 }
 
 /**
@@ -22,7 +28,7 @@ export default function MemoizedComponent({ children, name }: MemoizedComponentP
  */
 export function withMemo<T extends object>(
   Component: React.ComponentType<T>,
-  areEqual?: (prevProps: T, nextProps: T) => boolean
+  areEqual?: (_prevProps: T, _nextProps: T) => boolean
 ) {
   return memo(Component, areEqual);
 }
