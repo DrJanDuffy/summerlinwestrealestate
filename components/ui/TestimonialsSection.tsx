@@ -1,7 +1,7 @@
 'use client';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
-const _TESTIMONIALS = [
+// const _TESTIMONIALS = [
   {
     name: 'Sarah M.',
     review:

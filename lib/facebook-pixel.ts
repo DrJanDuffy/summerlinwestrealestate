@@ -1,8 +1,8 @@
 // Facebook Pixel utility functions for real estate tracking
-declare global {
+// declare global {
   interface Window {
     fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
-  }
+  // }
 }
 
 // Facebook Pixel event types for real estate

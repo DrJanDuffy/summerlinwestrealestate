@@ -11,7 +11,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
+// import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
 
 // Import RealScout components

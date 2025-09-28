@@ -14,7 +14,7 @@ type BlogLayoutProps = {
 export default function BlogLayout({
   posts,
   currentPost,
-  relatedPosts,
+  relatedPosts: _relatedPosts,
   isPostPage,
   children,
 }: BlogLayoutProps) {

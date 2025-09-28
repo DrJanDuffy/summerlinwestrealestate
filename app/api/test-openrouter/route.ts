@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { getRealEstateModels, testOpenRouterIntegration } from '../../../lib/test-openrouter';
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
     // Test OpenRouter integration
     const testResult = await testOpenRouterIntegration();

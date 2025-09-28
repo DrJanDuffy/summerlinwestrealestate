@@ -5,7 +5,7 @@ export default function AgentAvatar({
   src,
   alt,
   size = 160,
-  borderColor = '#FFD700',
+  borderColor: _borderColor = '#FFD700',
 }: {
   src: string;
   alt: string;

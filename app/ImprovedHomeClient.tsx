@@ -16,9 +16,9 @@ const RealScoutSimpleSearch = dynamic(() => import('../components/ui/RealScoutSi
 const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWidgetEnhanced'), {
   ssr: false,
 });
-const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
-  ssr: false,
-});
+// const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
+//   ssr: false,
+// });
 const RealScoutOfficeListings = dynamic(() => import('../components/ui/RealScoutOfficeListings'), {
   ssr: false,
 });
@@ -28,9 +28,9 @@ const RealScoutFeaturedListings = dynamic(() => import('../components/ui/RealSco
 const RealScoutHomeValue = dynamic(() => import('../components/ui/RealScoutHomeValue'), {
   ssr: false,
 });
-const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
-  ssr: false,
-});
+// const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
+//   ssr: false,
+// });
 const FeaturedHomeSlider = dynamic(() => import('../components/ui/FeaturedHomeSlider'), {
   ssr: false,
 });
