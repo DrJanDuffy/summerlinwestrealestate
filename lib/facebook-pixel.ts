@@ -1,9 +1,8 @@
 // Facebook Pixel utility functions for real estate tracking
-// // declare global {
-  interface Window {
-    fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
-  // // }
-}
+// Global type declaration commented out to avoid TypeScript conflicts
+// interface Window {
+//   fbq: (action: string, event: string, data?: Record<string, unknown>) => void;
+// }
 
 // Facebook Pixel event types for real estate
 export interface FacebookPixelEvent {
@@ -19,23 +18,23 @@ export interface FacebookPixelEvent {
 
 // Initialize Facebook Pixel (called automatically in layout.tsx)
 export const initFacebookPixel = (pixelId: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('init', pixelId);
-    window.fbq('track', 'PageView');
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('init', pixelId);
+    (window as any).fbq('track', 'PageView');
   }
 };
 
 // Track page views
 export const trackPageView = () => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'PageView');
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'PageView');
   }
 };
 
 // Track lead form submissions
 export const trackLead = (data: FacebookPixelEvent = {}) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Lead', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Lead', {
       content_name: data.content_name || 'Property Inquiry',
       content_category: data.content_category || 'Real Estate',
       value: data.value || 100, // Estimated lead value
@@ -47,8 +46,8 @@ export const trackLead = (data: FacebookPixelEvent = {}) => {
 
 // Track property views
 export const trackPropertyView = (propertyId: string, propertyName: string, value?: number) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'ViewContent', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'ViewContent', {
       content_name: propertyName,
       content_category: 'Property',
       content_ids: [propertyId],
@@ -60,8 +59,8 @@ export const trackPropertyView = (propertyId: string, propertyName: string, valu
 
 // Track property searches
 export const trackPropertySearch = (searchTerm: string, resultsCount: number) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Search', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Search', {
       search_string: searchTerm,
       content_category: 'Property Search',
       num_items: resultsCount,
@@ -71,8 +70,8 @@ export const trackPropertySearch = (searchTerm: string, resultsCount: number) =>
 
 // Track contact form submissions
 export const trackContact = (formType: string = 'Contact Form') => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Contact', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Contact', {
       content_name: formType,
       content_category: 'Lead Generation',
       value: 50, // Estimated contact value
@@ -83,8 +82,8 @@ export const trackContact = (formType: string = 'Contact Form') => {
 
 // Track market report downloads
 export const trackMarketReportDownload = (reportName: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'CompleteRegistration', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'CompleteRegistration', {
       content_name: reportName,
       content_category: 'Market Report',
       value: 25, // Estimated report value
@@ -95,8 +94,8 @@ export const trackMarketReportDownload = (reportName: string) => {
 
 // Track phone number clicks
 export const trackPhoneClick = (_phoneNumber: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Contact', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Contact', {
       content_name: 'Phone Call',
       content_category: 'Lead Generation',
       value: 75, // Estimated phone call value
@@ -107,8 +106,8 @@ export const trackPhoneClick = (_phoneNumber: string) => {
 
 // Track email clicks
 export const trackEmailClick = (_emailAddress: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Contact', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Contact', {
       content_name: 'Email Contact',
       content_category: 'Lead Generation',
       value: 50, // Estimated email value
@@ -119,8 +118,8 @@ export const trackEmailClick = (_emailAddress: string) => {
 
 // Track community page views
 export const trackCommunityView = (communityName: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'ViewContent', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'ViewContent', {
       content_name: communityName,
       content_category: 'Community',
       value: 0,
@@ -131,8 +130,8 @@ export const trackCommunityView = (communityName: string) => {
 
 // Track blog post views
 export const trackBlogView = (postTitle: string, postCategory: string) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'ViewContent', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'ViewContent', {
       content_name: postTitle,
       content_category: postCategory,
       value: 0,
@@ -143,8 +142,8 @@ export const trackBlogView = (postTitle: string, postCategory: string) => {
 
 // Track custom events
 export const trackCustomEvent = (eventName: string, data: FacebookPixelEvent = {}) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', eventName, {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', eventName, {
       content_category: 'Real Estate',
       currency: 'USD',
       ...data,
@@ -158,8 +157,8 @@ export const trackConversion = (
   value: number,
   data: FacebookPixelEvent = {}
 ) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'Purchase', {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Purchase', {
       content_name: conversionType,
       content_category: 'Real Estate Conversion',
       value: value,
@@ -171,7 +170,7 @@ export const trackConversion = (
 
 // Utility to check if Facebook Pixel is loaded
 export const isFacebookPixelLoaded = (): boolean => {
-  return typeof window !== 'undefined' && typeof window.fbq === 'function';
+  return typeof window !== 'undefined' && typeof (window as any).fbq === 'function';
 };
 
 // Real estate specific tracking functions
