@@ -1,71 +1,65 @@
-// Global TypeScript declarations for RealScout custom elements
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'realscout-search-widget': {
-        'agent-encoded-id'?: string;
-        'search-type'?: string;
-        'show-features'?: boolean;
-        'price-min'?: number;
-        'price-max'?: number;
-        communities?: string;
-        'property-types'?: string;
-        'sort-order'?: string;
-        'results-per-page'?: string;
-        'show-map'?: boolean;
-        'show-filters'?: boolean;
-        theme?: string;
-        variant?: string;
-        [key: string]: any;
-      };
-      'realscout-lead-capture-widget': {
-        'agent-encoded-id'?: string;
-        source?: string;
-        'show-market-report'?: boolean;
-        'show-valuation'?: boolean;
-        'show-consultation'?: boolean;
-        variant?: string;
-        [key: string]: any;
-      };
-      'realscout-market-insights-widget': {
-        'agent-encoded-id'?: string;
-        variant?: string;
-        'show-charts'?: boolean;
-        'show-trends'?: boolean;
-        'show-comparisons'?: boolean;
-        [key: string]: any;
-      };
-      'realscout-property-valuation-widget': {
-        'agent-encoded-id'?: string;
-        variant?: string;
-        [key: string]: any;
-      };
-      'realscout-market-insights': {
-        'agent-encoded-id'?: string;
-        title?: string;
-        subtitle?: string;
-        variant?: string;
-        'show-charts'?: boolean;
-        'show-trends'?: boolean;
-        'show-comparisons'?: boolean;
-        communities?: string;
-        'update-frequency'?: string;
-        'data-points'?: string;
-        'time-period'?: string;
-        'show-forecasts'?: string;
-        'show-seasonal-trends'?: string;
-        'show-neighborhood-comparison'?: string;
-        'show-price-distribution'?: string;
-        'show-market-velocity'?: string;
-        theme?: string;
-        'interactive-charts'?: string;
-        'export-enabled'?: string;
-        'share-enabled'?: string;
-        [key: string]: any;
-      };
-    }
+// TypeScript declarations for RealScout web components
+declare namespace JSX {
+  interface IntrinsicElements {
+    'realscout-search-widget': {
+      'agent-id'?: string;
+      'price-min'?: number;
+      'price-max'?: number;
+      location?: string;
+      'show-features'?: boolean;
+      'show-communities'?: boolean;
+      communities?: string;
+      variant?: string;
+    };
+    'realscout-office-listings': {
+      'agent-id'?: string;
+      'price-min'?: number;
+      'price-max'?: number;
+      location?: string;
+    };
+    'realscout-lead-capture': {
+      'agent-id'?: string;
+      source?: string;
+      community?: string;
+      'property-type'?: string;
+      'price-range'?: string;
+      'show-market-report'?: boolean;
+      'show-valuation'?: boolean;
+      'show-consultation'?: boolean;
+      variant?: string;
+    };
+    'realscout-market-insights': {
+      'agent-id'?: string;
+      location?: string;
+      'show-charts'?: boolean;
+      'show-trends'?: boolean;
+      'show-comparisons'?: boolean;
+      communities?: string;
+      variant?: string;
+      'update-frequency'?: string;
+    };
+    'realscout-property-valuation': {
+      'agent-id'?: string;
+      'default-address'?: string;
+      'show-comparables'?: boolean;
+      'show-market-analysis'?: boolean;
+      'show-investment-metrics'?: boolean;
+      'show-lead-capture'?: boolean;
+      variant?: string;
+    };
   }
 }
 
-export {};
+// Global types for RealScout
+declare global {
+  namespace RealScout {
+    interface WidgetConfig {
+      agentId: string;
+      location?: string;
+      priceMin?: number;
+      priceMax?: number;
+      communities?: string[];
+      variant?: string;
+    }
+  }
+}

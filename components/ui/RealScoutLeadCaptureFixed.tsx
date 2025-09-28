@@ -17,8 +17,8 @@ interface RealScoutLeadCaptureProps {
 }
 
 export default function RealScoutLeadCapture({
-  title = 'Get Your Free Summerlin West Market Report',
-  subtitle = 'Stay ahead of the market with our exclusive insights',
+  title: _title = 'Get Your Free Summerlin West Market Report',
+  subtitle: _subtitle = 'Stay ahead of the market with our exclusive insights',
   variant = 'inline',
   source = 'Website',
   community = 'Summerlin West',
@@ -201,6 +201,7 @@ export default function RealScoutLeadCapture({
       {/* RealScout Lead Capture Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
+          // @ts-ignore - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source={source}

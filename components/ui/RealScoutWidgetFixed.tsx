@@ -119,6 +119,7 @@ export default function RealScoutWidget({
     switch (variant) {
       case 'search':
         return (
+          // @ts-ignore - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}
@@ -130,6 +131,7 @@ export default function RealScoutWidget({
         );
       case 'listings':
         return (
+          // @ts-ignore - RealScout web component
           <realscout-office-listings
             agent-id={agentId}
             price-min={priceMin}
@@ -139,6 +141,7 @@ export default function RealScoutWidget({
         );
       case 'lead-capture':
         return (
+          // @ts-ignore - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source="Website"
@@ -149,6 +152,7 @@ export default function RealScoutWidget({
         );
       default:
         return (
+          // @ts-ignore - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}
@@ -164,7 +168,7 @@ export default function RealScoutWidget({
       {renderWidget()}
       
       {/* Fallback content for when RealScout widgets fail to load */}
-      <div className="realscout-fallback" style={{ display: 'none' }}>
+      <div className="realscout-fallback hidden">
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-8 text-center">
           <h3 className="text-xl font-semibold text-indigo-900 mb-2">
             {variant === 'search' && 'Property Search'}

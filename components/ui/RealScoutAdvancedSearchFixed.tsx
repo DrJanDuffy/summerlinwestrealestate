@@ -170,6 +170,7 @@ export default function RealScoutAdvancedSearch({
       {/* RealScout Search Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
+          // @ts-ignore - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}
