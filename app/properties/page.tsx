@@ -1,7 +1,33 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import styles from './Properties.module.css';
+
+// Import RealScout components
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutAdvancedSearchWidget = dynamic(
+  () => import('../../components/ui/RealScoutAdvancedSearchWidget'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: 'Luxury Homes for Sale in Summerlin West | Dr. Jan Duffy REALTOR®',
@@ -29,79 +55,16 @@ export default function Properties() {
         </div>
       </section>
 
-      {/* Properties Overview */}
+      {/* Real-Time Properties from MLS */}
       <section className={styles.propertiesOverview}>
         <div className={styles.sectionContainer}>
-          <h2 className={styles.sectionTitle}>Homes That Inspire</h2>
+          <h2 className={styles.sectionTitle}>Current Luxury Properties in Summerlin West</h2>
           <p className={styles.sectionSubtitle}>
-            From contemporary estates to traditional masterpieces, find your perfect home in
-            Summerlin West
+            Discover real-time listings from the MLS. From contemporary estates to traditional masterpieces, 
+            find your perfect home in Summerlin West with up-to-date inventory and pricing.
           </p>
 
-          <div className={styles.propertyGrid}>
-            <div className={styles.propertyCard}>
-              <div className={styles.propertyImage}>
-                <Image
-                  src="/images/featured-homes/featured-home-1.jpg"
-                  alt="Luxury home in The Vistas with Red Rock Canyon views"
-                  width={400}
-                  height={300}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.propertyContent}>
-                <h3 className={styles.propertyTitle}>The Vistas Estate</h3>
-                <p className={styles.propertyLocation}>The Vistas, Summerlin West</p>
-                <p className={styles.propertyPrice}>$2,500,000</p>
-                <p className={styles.propertyDetails}>5 BD / 6 BA / 4,200 SQFT</p>
-                <Link href="/current-listing" className={styles.propertyLink}>
-                  View Details
-                </Link>
-              </div>
-            </div>
-
-            <div className={styles.propertyCard}>
-              <div className={styles.propertyImage}>
-                <Image
-                  src="/images/featured-homes/02-DSC03093.jpg"
-                  alt="Modern luxury home in Stonebridge community"
-                  width={400}
-                  height={300}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.propertyContent}>
-                <h3 className={styles.propertyTitle}>Stonebridge Modern</h3>
-                <p className={styles.propertyLocation}>Stonebridge, Summerlin West</p>
-                <p className={styles.propertyPrice}>$1,850,000</p>
-                <p className={styles.propertyDetails}>4 BD / 5 BA / 3,800 SQFT</p>
-                <Link href="/current-listing" className={styles.propertyLink}>
-                  View Details
-                </Link>
-              </div>
-            </div>
-
-            <div className={styles.propertyCard}>
-              <div className={styles.propertyImage}>
-                <Image
-                  src="/images/featured-homes/03-DJI_20250707145902_0780_D.jpg"
-                  alt="Traditional estate in Redpoint community"
-                  width={400}
-                  height={300}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.propertyContent}>
-                <h3 className={styles.propertyTitle}>Redpoint Estate</h3>
-                <p className={styles.propertyLocation}>Redpoint, Summerlin West</p>
-                <p className={styles.propertyPrice}>$3,200,000</p>
-                <p className={styles.propertyDetails}>6 BD / 7 BA / 5,100 SQFT</p>
-                <Link href="/current-listing" className={styles.propertyLink}>
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
+          <RealScoutOfficeListings />
         </div>
       </section>
 
@@ -135,14 +98,9 @@ export default function Properties() {
               <p className={styles.searchDescription}>
                 Use our comprehensive search tool to find properties matching your exact criteria
               </p>
-              <a
-                href="https://drjanduffy.realscout.com/homesearch/map?geo_type=neighborhood&geo_id=1049244&for_sale=1&for_rent=0"
-                className={styles.searchButton}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Start Advanced Search
-              </a>
+              <div className={styles.realscoutWidget}>
+                <RealScoutAdvancedSearchWidget />
+              </div>
             </div>
           </div>
         </div>

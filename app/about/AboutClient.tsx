@@ -4,8 +4,20 @@ import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
 import styles from '../page.module.css';
 
 // Import components with proper client-side only configuration
-const RealScoutMarketInsights = dynamic(
-  () => import('../../components/ui/RealScoutMarketInsights'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutLeadCapture = dynamic(
+  () => import('../../components/ui/RealScoutWidgetEnhanced'),
   {
     ssr: false,
     loading: () => (
@@ -27,15 +39,6 @@ const TestimonialsSectionClient = dynamic(
     ),
   }
 );
-
-// const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutLeadCapture'), {
-//   ssr: false,
-//   loading: () => (
-//     <div className="flex items-center justify-center p-8">
-//       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-//     </div>
-//   ),
-// });
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -415,20 +418,30 @@ export default function AboutClient() {
         </section>
         <section className={styles.sectionCard} aria-labelledby="featured-listings">
           <h2 id="featured-listings" className={styles.centerTitle}>
-            Featured Summerlin West Listings and Market Insights
+            Current Premium Properties in Summerlin West
           </h2>
           <p className={styles.heroSubtitle}>
-            Explore current market conditions and featured properties in Summerlin West. Dr. Jan
-            Duffy provides up-to-date market analysis and showcases exceptional properties that
-            represent the best of Summerlin West real estate.
+            Explore Dr. Jan Duffy's current listings and premium properties in Summerlin West. 
+            From luxury estates in The Vistas to modern homes in Stonebridge, discover exceptional 
+            properties that represent the best of Summerlin West real estate.
           </p>
-          <RealScoutMarketInsights
-            title="Featured Summerlin West Listings and Market Insights"
-            subtitle="Explore current market conditions and featured properties in Summerlin West"
-            variant="full"
-            showCharts={true}
-            showTrends={true}
-            showComparisons={true}
+          <RealScoutOfficeListings />
+        </section>
+
+        <section className={styles.sectionCard} aria-labelledby="contact-expert">
+          <h2 id="contact-expert" className={styles.centerTitle}>
+            Ready to Work with Dr. Jan Duffy? Get Your Free Consultation
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Whether you're buying or selling in Summerlin West, Dr. Jan Duffy provides personalized 
+            guidance tailored to your specific needs. Get expert market analysis, property valuation, 
+            and strategic advice from a trusted local expert with 15+ years of experience.
+          </p>
+          <RealScoutLeadCapture
+            variant="lead-capture"
+            agentId="QWdlbnQtMjI1MDUw"
+            source="About Page"
+            community="Summerlin West"
           />
         </section>
       </div>

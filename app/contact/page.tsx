@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import {
   FaChevronDown,
   FaEnvelope,
@@ -12,6 +13,31 @@ import {
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
+
+// Import RealScout components
+const RealScoutLeadCapture = dynamic(
+  () => import('../../components/ui/RealScoutWidgetEnhanced'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
+
+const RealScoutHomeValue = dynamic(
+  () => import('../../components/ui/RealScoutHomeValue'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: 'Contact a Summerlin Real Estate Expert | Summerlin West Real Estate',
@@ -102,7 +128,21 @@ export default function Contact() {
             investment opportunities in Redpoint, Dr. Duffy will provide personalized guidance
             tailored to your specific needs and timeline.
           </p>
-          <LeadCaptureFormClient />
+          <div className={styles.contactWidgets}>
+            <div className={styles.leadCaptureWidget}>
+              <h3 className={styles.widgetTitle}>Get Expert Guidance</h3>
+              <RealScoutLeadCapture
+                variant="lead-capture"
+                agentId="QWdlbnQtMjI1MDUw"
+                source="Contact Page"
+                community="Summerlin West"
+              />
+            </div>
+            <div className={styles.homeValueWidget}>
+              <h3 className={styles.widgetTitle}>Discover Your Home's Value</h3>
+              <RealScoutHomeValue />
+            </div>
+          </div>
         </section>
         <section className={styles.sectionCard} aria-label="Quick Links">
           <h2 className={styles.sectionTitle}>

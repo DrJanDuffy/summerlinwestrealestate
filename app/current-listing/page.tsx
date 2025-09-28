@@ -1,10 +1,24 @@
 'use client';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
 import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
+
+// Import RealScout components
+const RealScoutFeaturedListings = dynamic(
+  () => import('../../components/ui/RealScoutFeaturedListings'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  }
+);
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -159,6 +173,15 @@ export default function CurrentListing() {
             source="Current Listing CTA"
             formId="current-listing"
           />
+        </section>
+
+        <section className={styles.featuredListingsSection}>
+          <h2>More Featured Properties in Summerlin West</h2>
+          <p className={styles.sectionSubtitle}>
+            Explore additional luxury properties currently available in Summerlin West. 
+            Each property is hand-selected to showcase the finest in luxury real estate.
+          </p>
+          <RealScoutFeaturedListings />
         </section>
       </main>
       <LatestMarketInsights />
