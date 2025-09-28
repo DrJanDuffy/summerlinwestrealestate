@@ -7,6 +7,7 @@ import RealScoutYourListings from '../../components/ui/RealScoutYourListings';
 import RealScoutHomeValue from '../../components/ui/RealScoutHomeValue';
 import RealScoutAdvancedSearchWidget from '../../components/ui/RealScoutAdvancedSearchWidget';
 import RealScoutFeaturedListings from '../../components/ui/RealScoutFeaturedListings';
+import RealScoutSimpleSearch from '../../components/ui/RealScoutSimpleSearch';
 
 export default function RealScoutTestClient() {
   const checkRealScoutStatus = () => {
@@ -125,6 +126,16 @@ export default function RealScoutTestClient() {
             This component should display featured listings for sale using the realscout-your-listings web component with specific configuration.
           </p>
           <RealScoutFeaturedListings />
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            RealScout Simple Search Test
+          </h2>
+          <p className="text-gray-600 mb-4">
+            This component should display a simple search widget using the realscout-simple-search web component.
+          </p>
+          <RealScoutSimpleSearch />
         </div>
         
         <div className="mt-8 bg-white rounded-lg shadow-lg p-6">

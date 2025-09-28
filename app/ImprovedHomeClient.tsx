@@ -10,6 +10,9 @@ import ModernStatsSection from '../components/ui/ModernStatsSection';
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearchWidget'), {
   ssr: false,
 });
+const RealScoutSimpleSearch = dynamic(() => import('../components/ui/RealScoutSimpleSearch'), {
+  ssr: false,
+});
 const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWidgetEnhanced'), {
   ssr: false,
 });
@@ -213,6 +216,22 @@ export default function ImprovedHomeClient() {
           href: '/market-report',
         }}
       />
+
+      {/* Quick Search Section */}
+      <section className="py-12 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+              Quick Property Search
+            </h2>
+            <p className="text-lg text-white/90">
+              Start your home search right here. Find properties in Summerlin West with our simple search tool.
+            </p>
+          </div>
+          
+          <RealScoutSimpleSearch />
+        </div>
+      </section>
 
       {/* Summerlin West Overview */}
       <section className="py-16 bg-gray-50">
