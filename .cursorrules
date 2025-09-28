@@ -182,9 +182,10 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 # Build Configuration Rules
 - Always use Vercel CLI for production builds instead of local pnpm build
 - When encountering build commands, suggest using: vercel build or vercel --prod
-- For development, use: vercel dev instead of pnpm dev when possible
+- For development, use: vercel dev --listen 3000 instead of pnpm dev when possible
 - Avoid running pnpm build directly in the terminal
 - If build is necessary locally, use: vercel build --output public
+- Development server runs on http://localhost:3000 with Vercel CLI
 
 # Vercel Build Commands
 - Replace "pnpm build" with "vercel build"
@@ -200,6 +201,117 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - If a build process hangs, immediately cancel and use vercel build
 - Set NODE_OPTIONS='--max-old-space-size=4096' for memory issues
 - Use vercel logs to debug build issues
+
+# Cursor Development Environment Rules - September 2025
+
+## 🚀 INSTALLED CURSOR EXTENSIONS
+The following extensions are installed and optimized for real estate development:
+
+### Essential Extensions (Latest Versions)
+- **Auto Close Tag** (v0.5.15) - `formulahendry.auto-close-tag`
+- **Error Lens** (v3.26.0) - `usernamehw.errorlens` - Shows errors inline
+- **Indent Rainbow** (v8.3.1) - `oderwat.indent-rainbow` - Colorizes indentation
+- **Thunder Client** (v2.37.8) - `rangav.vscode-thunder-client` - API testing
+- **Live Server** (v5.7.9) - `ritwickdey.liveserver` - Local development server
+- **REST Client** (v0.25.1) - `humao.rest-client` - Alternative API testing
+- **Markdown All in One** (v3.6.3) - `yzhang.markdown-all-in-one` - Documentation
+- **Color Highlight** (v2.8.0) - `naumovs.color-highlight` - CSS color visualization
+- **TODO Highlight** (v1.0.5) - `wayou.vscode-todo-highlight` - Task management
+- **Image Preview** (v0.32.2) - `kisstkondoros.vscode-gutter-preview` - Image handling
+
+### Extension Usage Guidelines
+- **Error Lens**: Always check inline errors before committing
+- **Thunder Client**: Use for testing RealScout APIs and V0 endpoints
+- **Live Server**: Alternative to Vercel dev for static file testing
+- **TODO Highlight**: Use for tracking development tasks and improvements
+- **Color Highlight**: Essential for Tailwind CSS development
+
+## 🎯 CUSTOM SLASH COMMANDS
+Use these commands by typing `/` in Cursor's Agent input:
+
+### `/seo-audit [page-url]`
+- Analyzes page titles (50-60 characters)
+- Checks meta descriptions (150-160 characters)
+- Validates image alt text
+- Reviews Core Web Vitals
+- Checks mobile responsiveness
+- Verifies structured data implementation
+- Analyzes keyword density and placement
+- Ensures location keywords (Summerlin West, Las Vegas)
+- Validates property-specific SEO elements
+- Checks for fair housing compliance
+
+### `/property-component [property-type] [features]`
+- Creates responsive property cards
+- Implements proper TypeScript interfaces
+- Adds SEO-optimized metadata
+- Includes accessibility features
+- Optimizes for Core Web Vitals
+- Integrates with RealScout API
+- Property image galleries
+- Price formatting and display
+- Location and neighborhood info
+- Contact forms and lead capture
+- Market data integration
+- Mobile-first responsive design
+
+### `/market-analysis [location] [timeframe]`
+- Analyzes current market trends
+- Generates data-driven insights
+- Creates visual charts and graphs
+- Provides expert commentary
+- Updates market statistics
+- Compares year-over-year data
+- Summerlin West market trends
+- Las Vegas area analysis
+- Property value assessments
+- Inventory and demand analysis
+- Seasonal market patterns
+- Dr. Janet Duffy's expert insights
+
+## 🛠️ CODE QUALITY TOOLS
+
+### Biome Configuration
+- **Linter**: Enabled with comprehensive rules
+- **Formatter**: Enabled with 2-space indentation
+- **Rules**: correctness, style, suspicious, a11y
+- **Auto-fix**: Use `pnpm biome:fix` for automatic fixes
+- **Check**: Use `pnpm biome:check` for validation
+
+### ESLint Configuration
+- **Config**: Modern ESLint config (eslint.config.js)
+- **Rules**: Next.js 15 compatible
+- **Integration**: Works alongside Biome
+- **Commands**: `pnpm lint` for validation
+
+### Error Handling
+- **Error Lens**: Shows inline errors and warnings
+- **Biome**: Provides fixable suggestions
+- **ESLint**: Catches Next.js specific issues
+- **TypeScript**: Strict type checking enabled
+
+## 🔧 DEVELOPMENT WORKFLOW
+
+### API Testing with Thunder Client
+- **Collection**: Summerlin-West-Real-Estate-APIs.json
+- **RealScout APIs**: Property listings, market insights
+- **Vercel APIs**: Deployment status, project info
+- **V0 APIs**: Component generation, AI integration
+- **Environment**: Local development variables configured
+
+### MCP Integration
+- **Linear**: Project management and task tracking
+- **Figma**: Design system integration
+- **GitHub**: Repository management and PRs
+- **Vercel**: Deployment and environment management
+- **BrowserTools**: Web testing and automation
+
+### Development Server
+- **Primary**: `vercel dev --listen 3000` (recommended)
+- **Alternative**: `pnpm dev` (fallback)
+- **URL**: http://localhost:3000
+- **Network**: http://192.168.0.36:3000
+- **Environment**: .env.local loaded
 
 # User Rules - Global Development Preferences
 
@@ -226,6 +338,10 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - Use pnpm for package management
 - Leverage V0 for rapid component prototyping and development
 - Use V0-generated components as starting points for custom development
+- Use custom slash commands for common real estate development tasks
+- Leverage Thunder Client for API testing and validation
+- Check Error Lens for inline error detection before committing
+- Use Biome for automatic code formatting and linting
 
 ## Real Estate Domain Focus
 - Maintain professional branding for Dr. Janet Duffy
@@ -233,6 +349,39 @@ Remember: SEO is a marathon, not a sprint. Focus on creating genuinely helpful c
 - Consider Las Vegas market specifics in all recommendations
 - Ensure compliance with real estate regulations and fair housing laws
 - Focus on user experience for property searches and valuations
+
+## 🆕 LATEST CURSOR FEATURES (September 2025)
+
+### Custom Slash Commands
+- **Usage**: Type `/` in Agent input to access custom commands
+- **SEO Audit**: `/seo-audit` for comprehensive SEO analysis
+- **Component Generation**: `/property-component` for real estate components
+- **Market Analysis**: `/market-analysis` for market insights
+- **Location**: Commands stored in `.cursor/commands/` directory
+
+### Summarization Triggers
+- **Automatic**: Cursor summarizes lengthy conversations when reaching context limit
+- **Manual**: Use `/summarize` command to manually trigger summaries
+- **Benefit**: Better context management for long development sessions
+
+### MCP Resources Support
+- **Linear Integration**: Project management and task tracking
+- **Figma Integration**: Design system and asset management
+- **GitHub Integration**: Repository management and pull requests
+- **Vercel Integration**: Deployment and environment management
+- **BrowserTools**: Web testing and automation capabilities
+
+### Improved Agent Terminal
+- **Stability**: Enhanced reliability for shell commands
+- **SSH Support**: Better SSH experience for remote development
+- **Performance**: Faster command execution and response times
+
+### Development Environment Optimization
+- **Error Lens**: Inline error and warning display
+- **Thunder Client**: Integrated API testing within Cursor
+- **Live Server**: Alternative development server option
+- **Biome Integration**: Fast linting and formatting
+- **ESLint Compatibility**: Next.js 15 compatible configuration
 
 # Project-Specific Rules
 
