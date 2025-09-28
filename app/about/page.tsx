@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import AboutClient from './AboutClient';
+import ModernAboutClient from './ModernAboutClient';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -49,5 +49,5 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
-  return <AboutClient />;
+  return <ModernAboutClient />;
 }

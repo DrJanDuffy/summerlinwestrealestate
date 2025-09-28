@@ -87,16 +87,28 @@ export default function RealScoutAdvancedSearch({
         <p className="text-lg text-gray-600">{subtitle}</p>
       </div>
 
-      {/* RealScout Search Widget - Temporarily disabled for build */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-        <h3 className="text-xl font-semibold text-blue-900 mb-2">Advanced Property Search</h3>
-        <p className="text-blue-700 mb-4">RealScout search widget will be integrated here</p>
-        <a
-          href="/properties"
-          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Search Properties
-        </a>
+      {/* RealScout Search Widget */}
+      <div className="widget-container">
+        {widgetLoaded ? (
+          // @ts-ignore - RealScout web component
+          <realscout-search-widget
+            agent-id={agentId}
+            price-min={priceMin}
+            price-max={priceMax}
+            location="Summerlin West, Las Vegas, NV"
+            show-features={showFeatures}
+            show-communities={true}
+            communities={communities.join(',')}
+            variant={variant}
+          />
+        ) : (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <h3 className="text-xl font-semibold text-blue-900 mb-2">Loading Advanced Search</h3>
+            <p className="text-blue-700 mb-4">Preparing MLS search tools...</p>
+            <p className="text-sm text-blue-600">Powered by RealScout</p>
+          </div>
+        )}
       </div>
     </div>
   );

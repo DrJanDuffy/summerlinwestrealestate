@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 interface RealScoutLeadCaptureProps {
   title?: string;
@@ -16,26 +17,35 @@ interface RealScoutLeadCaptureProps {
 }
 
 export default function RealScoutLeadCapture({
-  title = 'Get Your Free Summerlin West Market Report',
-  subtitle = 'Stay ahead of the market with our exclusive insights',
+  title: _title = 'Get Your Free Summerlin West Market Report',
+  subtitle: _subtitle = 'Stay ahead of the market with our exclusive insights',
   variant = 'inline',
   source = 'Website',
-  community: _community = 'Summerlin West',
+  community = 'Summerlin West',
   propertyType = 'Any',
   priceRange = 'Any',
-  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
-  showMarketReport: _showMarketReport = true,
-  showValuation: _showValuation = true,
-  showConsultation: _showConsultation = true,
+  agentId = 'QWdlbnQtMjI1MDUw',
+  showMarketReport = true,
+  showValuation = true,
+  showConsultation = true,
 }: RealScoutLeadCaptureProps) {
+  const [widgetLoaded, setWidgetLoaded] = useState(false);
+
   useEffect(() => {
-    // Load RealScout lead capture widget script
-    if (!document.querySelector('script[src*="realscout-web-components"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      script.type = 'module';
-      document.head.appendChild(script);
-    }
+    const loadWidget = async () => {
+      try {
+        // Wait for RealScout elements to be defined
+        const elementsLoaded = await waitForRealScoutElements(10000);
+        
+        if (elementsLoaded) {
+          setWidgetLoaded(true);
+        }
+      } catch (error) {
+        console.error('Error loading RealScout lead capture widget:', error);
+      }
+    };
+
+    loadWidget();
 
     // Add custom styling for RealScout lead capture
     if (!document.querySelector('style[data-realscout-lead-styles]')) {
@@ -157,16 +167,29 @@ export default function RealScoutLeadCapture({
 
   return (
     <div className="real-scout-lead-capture">
-      {/* RealScout Lead Capture Widget - Temporarily disabled for build */}
-      <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-        <h3 className="text-xl font-semibold text-green-900 mb-2">Get Your Free Market Report</h3>
-        <p className="text-green-700 mb-4">RealScout lead capture widget will be integrated here</p>
-        <a
-          href="/contact"
-          className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors"
-        >
-          Contact Us
-        </a>
+      {/* RealScout Lead Capture Widget */}
+      <div className="widget-container">
+        {widgetLoaded ? (
+          // @ts-ignore - RealScout web component
+          <realscout-lead-capture
+            agent-id={agentId}
+            source={source}
+            community={community}
+            property-type={propertyType}
+            price-range={priceRange}
+            show-market-report={showMarketReport}
+            show-valuation={showValuation}
+            show-consultation={showConsultation}
+            variant={variant}
+          />
+        ) : (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600 mx-auto mb-4"></div>
+            <h3 className="text-xl font-semibold text-green-900 mb-2">Loading Lead Capture Form</h3>
+            <p className="text-green-700 mb-4">Preparing market report and valuation tools...</p>
+            <p className="text-sm text-green-600">Powered by RealScout</p>
+          </div>
+        )}
       </div>
     </div>
   );

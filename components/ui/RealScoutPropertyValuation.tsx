@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 interface RealScoutPropertyValuationProps {
   title?: string;
@@ -14,24 +15,33 @@ interface RealScoutPropertyValuationProps {
 }
 
 export default function RealScoutPropertyValuation({
-  title = 'Get Your Free Property Valuation',
-  subtitle = "Discover your home's current market value with our advanced analysis",
+  title: _title = 'Get Your Free Property Valuation',
+  subtitle: _subtitle = "Discover your home's current market value with our advanced analysis",
   variant = 'full',
-  showComparables: _showComparables = true,
-  showMarketAnalysis: _showMarketAnalysis = true,
-  showInvestmentMetrics: _showInvestmentMetrics = true,
-  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
-  defaultAddress: _defaultAddress = '',
-  showLeadCapture: _showLeadCapture = true,
+  showComparables = true,
+  showMarketAnalysis = true,
+  showInvestmentMetrics = true,
+  agentId = 'QWdlbnQtMjI1MDUw',
+  defaultAddress = '',
+  showLeadCapture = true,
 }: RealScoutPropertyValuationProps) {
+  const [widgetLoaded, setWidgetLoaded] = useState(false);
+
   useEffect(() => {
-    // Load RealScout property valuation widget script
-    if (!document.querySelector('script[src*="realscout-web-components"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      script.type = 'module';
-      document.head.appendChild(script);
-    }
+    const loadWidget = async () => {
+      try {
+        // Wait for RealScout elements to be defined
+        const elementsLoaded = await waitForRealScoutElements(10000);
+        
+        if (elementsLoaded) {
+          setWidgetLoaded(true);
+        }
+      } catch (error) {
+        console.error('Error loading RealScout property valuation widget:', error);
+      }
+    };
+
+    loadWidget();
 
     // Add custom styling for RealScout property valuation
     if (!document.querySelector('style[data-realscout-valuation-styles]')) {
@@ -170,18 +180,28 @@ export default function RealScoutPropertyValuation({
 
   return (
     <div className="real-scout-property-valuation">
-      {/* RealScout Property Valuation Widget - Temporarily disabled for build */}
-      <div className="bg-teal-50 border border-teal-200 rounded-lg p-8 text-center">
-        <h3 className="text-xl font-semibold text-teal-900 mb-2">Property Valuation</h3>
-        <p className="text-teal-700 mb-4">
-          RealScout property valuation widget will be integrated here
-        </p>
-        <a
-          href="/contact"
-          className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-medium rounded-lg hover:bg-teal-700 transition-colors"
-        >
-          Get Valuation
-        </a>
+      {/* RealScout Property Valuation Widget */}
+      <div className="widget-container">
+        {widgetLoaded ? (
+          // @ts-ignore - RealScout web component
+          <realscout-property-valuation
+            agent-id={agentId}
+            default-address={defaultAddress}
+            show-comparables={showComparables}
+            show-market-analysis={showMarketAnalysis}
+            show-investment-metrics={showInvestmentMetrics}
+            show-lead-capture={showLeadCapture}
+            variant={variant}
+            location="Summerlin West, Las Vegas, NV"
+          />
+        ) : (
+          <div className="bg-teal-50 border border-teal-200 rounded-lg p-8 text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-4"></div>
+            <h3 className="text-xl font-semibold text-teal-900 mb-2">Loading Property Valuation</h3>
+            <p className="text-teal-700 mb-4">Preparing advanced valuation tools...</p>
+            <p className="text-sm text-teal-600">Powered by RealScout</p>
+          </div>
+        )}
       </div>
     </div>
   );

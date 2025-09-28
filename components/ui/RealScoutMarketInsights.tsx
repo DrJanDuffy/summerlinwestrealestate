@@ -1,5 +1,6 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { waitForRealScoutElements } from '../../lib/realscout-config';
 import MarketInsightsFeed from './MarketInsightsFeed';
 
 interface RealScoutMarketInsightsProps {
@@ -18,21 +19,30 @@ export default function RealScoutMarketInsights({
   title = 'Summerlin West Market Insights',
   subtitle = 'Real-time market data and trends for informed decisions',
   variant = 'full',
-  showCharts: _showCharts = true,
-  showTrends: _showTrends = true,
-  showComparisons: _showComparisons = true,
+  showCharts = true,
+  showTrends = true,
+  showComparisons = true,
   communities = ['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence'],
-  agentId: _agentId = 'QWdlbnQtMjI1MDUw',
+  agentId = 'QWdlbnQtMjI1MDUw',
   updateFrequency = 'daily',
 }: RealScoutMarketInsightsProps) {
+  const [widgetLoaded, setWidgetLoaded] = useState(false);
+
   useEffect(() => {
-    // Load RealScout market insights widget script
-    if (!document.querySelector('script[src*="realscout-web-components"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      script.type = 'module';
-      document.head.appendChild(script);
-    }
+    const loadWidget = async () => {
+      try {
+        // Wait for RealScout elements to be defined
+        const elementsLoaded = await waitForRealScoutElements(10000);
+        
+        if (elementsLoaded) {
+          setWidgetLoaded(true);
+        }
+      } catch (error) {
+        console.error('Error loading RealScout market insights widget:', error);
+      }
+    };
+
+    loadWidget();
 
     // Add custom styling for RealScout market insights
     if (!document.querySelector('style[data-realscout-market-styles]')) {
@@ -147,18 +157,28 @@ export default function RealScoutMarketInsights({
 
       {/* RealScout Market Data Widget */}
       <div className="mb-12">
-        {/* RealScout Market Insights Widget - Temporarily disabled for build */}
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-semibold text-purple-900 mb-2">Live Market Data</h3>
-          <p className="text-purple-700 mb-4">
-            RealScout market insights widget will be integrated here
-          </p>
-          <a
-            href="/market-report"
-            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
-          >
-            View Market Report
-          </a>
+        {/* RealScout Market Insights Widget */}
+        <div className="widget-container">
+          {widgetLoaded ? (
+            // @ts-ignore - RealScout web component
+            <realscout-market-insights
+              agent-id={agentId}
+              communities={communities.join(',')}
+              show-charts={showCharts}
+              show-trends={showTrends}
+              show-comparisons={showComparisons}
+              update-frequency={updateFrequency}
+              variant={variant}
+              location="Summerlin West, Las Vegas, NV"
+            />
+          ) : (
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-8 text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600 mx-auto mb-4"></div>
+              <h3 className="text-xl font-semibold text-purple-900 mb-2">Loading Market Data</h3>
+              <p className="text-purple-700 mb-4">Preparing real-time market insights...</p>
+              <p className="text-sm text-purple-600">Powered by RealScout</p>
+            </div>
+          )}
         </div>
       </div>
 

@@ -294,7 +294,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pt-16">{children}</main>
         <div className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-          <RealScoutWidget priceMin={600000} />
+          <RealScoutWidget 
+            priceMin={600000} 
+            variant="office-listings"
+            className="mt-6"
+          />
         </div>
       </body>
     </html>
