@@ -67,8 +67,15 @@ const blogPosts = [
   'summerlin-west-schools-guide'
 ];
 
+interface SitemapUrl {
+  loc: string;
+  lastmod: string;
+  changefreq: string;
+  priority: string;
+}
+
 function generateSitemap() {
-  const urls = [];
+  const urls: SitemapUrl[] = [];
   
   // Add static pages
   staticPages.forEach(page => {
@@ -124,7 +131,7 @@ ${urls.map(url => `  <url>
   return sitemap;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
     const sitemap = generateSitemap();
     
