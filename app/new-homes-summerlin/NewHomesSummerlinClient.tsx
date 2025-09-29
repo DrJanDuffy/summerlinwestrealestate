@@ -211,6 +211,25 @@ export default function NewHomesSummerlinClient() {
           </div>
         </section>
 
+        {/* New Construction Properties */}
+        <section className={styles.ctaSection}>
+          <h2>New Construction Homes in Summerlin West</h2>
+          <p>
+            Explore the latest new construction homes available in Summerlin West. These properties 
+            offer modern design, energy efficiency, and the opportunity to customize your dream home. 
+            From luxury estates to family-friendly communities, find the perfect new construction home.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="600000" 
+            price-max="2000000"
+          />
+        </section>
+
         {/* CTA Section */}
         <section className={styles.ctaSection}>
           <h2>Ready to Build Your Dream Home?</h2>

@@ -628,6 +628,33 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
       {/* Enhanced Contact CTA */}
       <EnhancedCTA subdivision={subdivision} />
 
+      {/* Subdivision Properties */}
+      <motion.section
+        className={styles.sectionCard}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className={styles.centerTitle}>
+          Properties in {subdivision.name}
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Discover homes available in {subdivision.name}. This exclusive community offers 
+          luxury living with modern amenities, stunning architecture, and convenient access 
+          to world-class shopping, dining, and recreational facilities.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-office-listings 
+          agent-encoded-id="QWdlbnQtMjI1MDUw" 
+          sort-order="PRICE_LOW" 
+          listing-status="For Sale" 
+          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+          price-min="700000" 
+          price-max="1800000"
+        />
+      </motion.section>
+
       {/* Enhanced Navigation */}
       <motion.div
         className={clientStyles.ctaButtonSecondary}

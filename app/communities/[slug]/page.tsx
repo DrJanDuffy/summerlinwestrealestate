@@ -172,6 +172,25 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <strong>Features:</strong> {community.features.join(', ')}
             </li>
           </ul>
+          
+          {/* Community Properties */}
+          <section className={styles.sectionCard}>
+            <h2>Properties in {community.name}</h2>
+            <p>
+              Discover homes available in {community.name}. This community offers 
+              {community.description.toLowerCase()} with {community.features.join(', ').toLowerCase()}.
+            </p>
+            {/* @ts-ignore - RealScout web component */}
+            <realscout-office-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw" 
+              sort-order="PRICE_LOW" 
+              listing-status="For Sale" 
+              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              price-min={community.minPrice.toString()} 
+              price-max={community.maxPrice.toString()}
+            />
+          </section>
+
           <Link href="/communities" className={styles.ctaBtn}>
             Back to All Communities
           </Link>

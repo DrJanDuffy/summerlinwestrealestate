@@ -158,6 +158,25 @@ export default function TheVistas() {
             ))}
           </div>
         </section>
+
+        {/* The Vistas Properties */}
+        <section className={styles.sectionCard}>
+          <h2>Luxury Properties in The Vistas</h2>
+          <p>
+            Discover luxury homes available in The Vistas community. These properties offer 
+            stunning Red Rock Canyon views, resort-style amenities, and access to top-rated 
+            schools. The Vistas represents the pinnacle of Summerlin West luxury living.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="800000" 
+            price-max="2500000"
+          />
+        </section>
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
           <ul className={styles.linkList}>

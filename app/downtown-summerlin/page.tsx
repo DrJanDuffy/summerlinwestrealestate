@@ -93,6 +93,25 @@ export default function DowntownSummerlin() {
           </ul>
         </section>
 
+        {/* Downtown Summerlin Properties */}
+        <section>
+          <h2>Properties in Downtown Summerlin</h2>
+          <p>
+            Discover homes available in the Downtown Summerlin area. These properties offer 
+            walkable access to shopping, dining, and entertainment, making them perfect for 
+            those who want to live in the heart of Summerlin's vibrant lifestyle.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="500000" 
+            price-max="1200000"
+          />
+        </section>
+
         <section>
           <h2>Get Your Downtown Summerlin Market Report</h2>
           <p>Contact Dr. Jan Duffy for your free market report and personalized consultation.</p>
