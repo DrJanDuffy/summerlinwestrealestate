@@ -1,0 +1,150 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+/**
+ * V0-Generated Sitemap API Route
+ * Generates dynamic sitemap.xml for SEO optimization
+ */
+
+const baseUrl = 'https://www.summerlinwestrealestate.com';
+
+// Static pages
+const staticPages = [
+  '',
+  '/about',
+  '/properties', 
+  '/communities',
+  '/contact',
+  '/market-reports',
+  '/team',
+  '/testimonials',
+  '/press',
+  '/home-values',
+  '/current-listing',
+  '/new-homes-summerlin',
+  '/downtown-summerlin',
+  '/the-vistas',
+  '/vistas-listing',
+  '/compare',
+  '/sold',
+  '/market',
+  '/market-insights',
+  '/blog',
+  '/service-area',
+  '/google-places',
+  '/hidden-home-equity-tax',
+  '/maps',
+  '/linear-test',
+  '/realscout-test',
+  '/test-tailwind',
+  '/v0-test'
+];
+
+// Dynamic pages - communities
+const communities = [
+  'the-vistas',
+  'stonebridge', 
+  'redpoint',
+  'reverence',
+  'the-cliffs',
+  'red-rock'
+];
+
+// Dynamic pages - subdivisions
+const subdivisions = [
+  'casa-rosa',
+  'encanto',
+  'serenity',
+  'vista-ridge',
+  'sunset-hills',
+  'mountain-view'
+];
+
+// Blog posts (would be dynamic in real implementation)
+const blogPosts = [
+  'summerlin-west-market-update-2024',
+  'luxury-homes-the-vistas-guide',
+  'red-rock-canyon-living',
+  'summerlin-west-schools-guide'
+];
+
+function generateSitemap() {
+  const urls = [];
+  
+  // Add static pages
+  staticPages.forEach(page => {
+    urls.push({
+      loc: `${baseUrl}${page}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: page === '' ? 'daily' : 'weekly',
+      priority: page === '' ? '1.0' : '0.8'
+    });
+  });
+  
+  // Add community pages
+  communities.forEach(community => {
+    urls.push({
+      loc: `${baseUrl}/communities/${community}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'weekly',
+      priority: '0.9'
+    });
+  });
+  
+  // Add subdivision pages
+  subdivisions.forEach(subdivision => {
+    urls.push({
+      loc: `${baseUrl}/service-area/${subdivision}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'weekly',
+      priority: '0.9'
+    });
+  });
+  
+  // Add blog posts
+  blogPosts.forEach(post => {
+    urls.push({
+      loc: `${baseUrl}/blog/${post}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'monthly',
+      priority: '0.7'
+    });
+  });
+  
+  // Generate XML
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${url.lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+  
+  return sitemap;
+}
+
+export async function GET(request: NextRequest) {
+  try {
+    const sitemap = generateSitemap();
+    
+    return new NextResponse(sitemap, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/xml',
+        'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        'X-Cache-Bust': 'v1'
+      }
+    });
+  } catch (error) {
+    console.error('Sitemap generation error:', error);
+    
+    return new NextResponse('Error generating sitemap', {
+      status: 500,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Cache-Control': 'no-cache'
+      }
+    });
+  }
+}
