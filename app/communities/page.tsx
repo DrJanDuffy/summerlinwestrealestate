@@ -21,7 +21,7 @@ export default function Communities() {
       maxPrice: 2500000,
       features: ['Mountain Views', 'Luxury Homes', 'Gated Community', 'Golf Course'],
       homeTypes: 'Single Family, Custom Estates',
-      image: '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'the-vistas',
       highlighted: true,
       yearBuilt: '2018-Present',
@@ -37,7 +37,7 @@ export default function Communities() {
       maxPrice: 1500000,
       features: ['Top Schools', 'Family-Friendly', 'Parks Nearby', 'Community Pool'],
       homeTypes: 'Single Family, Townhomes',
-      image: '/images/featured-homes/19-DSC03027.jpg',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'the-paseos',
       highlighted: true,
       yearBuilt: '2019-Present',
@@ -53,7 +53,7 @@ export default function Communities() {
       maxPrice: 1200000,
       features: ['Resort Amenities', 'New Construction', 'Walking Trails', 'Fitness Center'],
       homeTypes: 'Single Family, Patio Homes',
-      image: '/images/featured-homes/02-DSC03093.jpg',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'stonebridge',
       highlighted: true,
       yearBuilt: '2020-Present',
@@ -69,7 +69,7 @@ export default function Communities() {
       maxPrice: 1800000,
       features: ['New Construction', 'Contemporary', 'Builder Incentives', 'Smart Homes'],
       homeTypes: 'Single Family, Modern Design',
-      image: '/images/featured-homes/17-DSC02979.jpg',
+      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'redpoint',
       highlighted: false,
       yearBuilt: '2021-Present',
@@ -85,7 +85,7 @@ export default function Communities() {
       maxPrice: 1100000,
       features: ['Urban Style', 'Walkable', 'Downtown Access', 'Transit Friendly'],
       homeTypes: 'Condos, Townhomes, Lofts',
-      image: '/images/featured-homes/featured-home-1.jpg',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'redpoint-square',
       highlighted: false,
       yearBuilt: '2020-Present',
@@ -101,7 +101,7 @@ export default function Communities() {
       maxPrice: 3000000,
       features: ['Luxury Estates', 'Privacy', 'Elegant Design', 'City Views'],
       homeTypes: 'Custom Estates, Luxury Homes',
-      image: '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'reverence',
       highlighted: true,
       yearBuilt: '2017-Present',
@@ -383,7 +383,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="/images/featured-homes/19-DSC03027.jpg"
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
                   alt="San Marcos subdivision in The Vistas"
                   width={400}
                   height={200}
@@ -406,7 +406,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="/images/featured-homes/02-DSC03093.jpg"
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Casa Rosa subdivision in The Vistas"
                   width={400}
                   height={200}
@@ -429,7 +429,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="/images/featured-homes/17-DSC02979.jpg"
+                  src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Solano subdivision in The Vistas"
                   width={400}
                   height={200}

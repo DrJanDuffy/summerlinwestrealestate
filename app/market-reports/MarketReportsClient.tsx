@@ -148,7 +148,7 @@ export default function MarketReportsClient() {
           <div>
             <h3 className={styles.centerTitle}>Price Trends</h3>
             <Image
-              src="/images/featured-homes/17-DSC02979.jpg"
+              src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
               alt="Summerlin home price trends chart"
               width={400}
               height={220}
@@ -159,7 +159,7 @@ export default function MarketReportsClient() {
           <div>
             <h3 className={styles.centerTitle}>Inventory Trends</h3>
             <Image
-              src="/images/featured-homes/47-DJI_20250707145846_0779_D.jpg"
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
               alt="Summerlin housing inventory trends chart"
               width={400}
               height={220}

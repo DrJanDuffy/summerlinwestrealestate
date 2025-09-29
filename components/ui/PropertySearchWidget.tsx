@@ -29,8 +29,8 @@ const listings = [
       country: 'US',
     },
     images: [
-      '/images/featured-homes/02-DSC03093.jpg',
-      '/images/featured-homes/19-DSC03027.jpg',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     ],
     price: '899000',
   },

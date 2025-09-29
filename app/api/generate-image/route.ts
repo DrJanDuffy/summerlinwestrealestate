@@ -2,15 +2,15 @@ import { type NextRequest, NextResponse } from 'next/server';
 
 // Static placeholder images for different prompts
 const PLACEHOLDER_IMAGES = {
-  'luxury residential neighborhood': '/images/featured-homes/featured-home-1.jpg',
-  'summerlin west': '/images/featured-homes/19-DSC03027.jpg',
-  'red rock canyon': '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
-  'las vegas': '/images/featured-homes/19-DSC03027.jpg',
-  'modern homes': '/images/featured-homes/02-DSC03093.jpg',
-  'desert landscaping': '/images/featured-homes/17-DSC02979.jpg',
-  'mountain views': '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
-  'blue sky': '/images/featured-homes/featured-home-1.jpg',
-  default: '/images/featured-homes/featured-home-1.jpg',
+  'luxury residential neighborhood': 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'summerlin west': 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'red rock canyon': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'las vegas': 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'modern homes': 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'desert landscaping': 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'mountain views': 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  'blue sky': 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+  default: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
 };
 
 export async function POST(req: NextRequest) {

@@ -518,7 +518,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
   }
 
   // Generate enhanced content
-  const heroImage = subdivision.image || '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg';
+    const heroImage = subdivision.image || 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80';
   const imageAlt = subdivision.image
     ? `${subdivision.name} neighborhood view showcasing luxury homes and community amenities`
     : `${subdivision.name} luxury subdivision in The Vistas, Summerlin West`;

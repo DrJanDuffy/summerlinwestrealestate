@@ -71,7 +71,7 @@ export default function Compare() {
           {[1, 2, 3].map((i) => (
             <article key={i} className={styles.comparisonCard}>
               <Image
-                src={i === 1 ? '/images/featured-homes/02-DSC03093.jpg' : i === 2 ? '/images/featured-homes/19-DSC03027.jpg' : '/images/featured-homes/17-DSC02979.jpg'}
+                src={i === 1 ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : i === 2 ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'}
                 alt={`Compare Summerlin home ${i}`}
                 width={400}
                 height={220}

@@ -125,7 +125,7 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>About The Vistas</h2>
           <Image
-            src="/images/featured-homes/47-DJI_20250707145846_0779_D.jpg"
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
             alt="The Vistas Park in Summerlin with Red Rock Canyon views"
             width={800}
             height={300}
@@ -142,9 +142,9 @@ export default function TheVistas() {
           <h2>Homes for Sale in The Vistas</h2>
           <div className={styles.propertyGrid}>
             {[
-              { id: 1, image: '/images/featured-homes/02-DSC03093.jpg', title: 'Luxury Estate', details: '5 bed • 4 bath • $1,200,000+' },
-              { id: 2, image: '/images/featured-homes/19-DSC03027.jpg', title: 'Modern Home', details: '4 bed • 3 bath • $950,000+' },
-              { id: 3, image: '/images/featured-homes/17-DSC02979.jpg', title: 'Desert Oasis', details: '3 bed • 2 bath • $800,000+' }
+              { id: 1, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Luxury Estate', details: '5 bed • 4 bath • $1,200,000+' },
+              { id: 2, image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Modern Home', details: '4 bed • 3 bath • $950,000+' },
+              { id: 3, image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Desert Oasis', details: '3 bed • 2 bath • $800,000+' }
             ].map((home) => (
               <div key={home.id} className={styles.propertyCard}>
                 <Image
