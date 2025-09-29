@@ -1,6 +1,6 @@
 // Blog posts with RSS feed integration
 import type { BlogPost } from '../types/blog';
-import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem, formatDate } from './rss-parser';
+import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem } from './rss-parser';
 
 export async function getPosts(): Promise<BlogPost[]> {
   try {

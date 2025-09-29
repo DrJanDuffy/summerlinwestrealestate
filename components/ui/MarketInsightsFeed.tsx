@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import MarketInsightImage from './MarketInsightImage';
+// import MarketInsightImage from './MarketInsightImage'; // Removed unused import
 import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem, formatDate } from '../../lib/rss-parser';
 
 interface MarketArticle {
@@ -122,9 +123,11 @@ export default function MarketInsightsFeed({
           >
             {showImages && article.imageUrl && (
               <div className="h-48 w-full relative overflow-hidden">
-                <img
+                <Image
                   src={article.imageUrl}
                   alt={article.title}
+                  width={400}
+                  height={225}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

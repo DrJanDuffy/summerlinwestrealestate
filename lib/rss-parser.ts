@@ -1,4 +1,4 @@
-import { Parser } from 'rss-parser';
+import Parser from 'rss-parser';
 
 export interface RSSFeedItem {
   title: string;
