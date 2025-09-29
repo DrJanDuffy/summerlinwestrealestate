@@ -8,6 +8,8 @@ import Script from 'next/script';
 import Header from '../components/layout/Header';
 import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeListingsWrapper';
 import styles from './page.module.css';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -305,6 +307,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             className="mt-6"
           />
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
