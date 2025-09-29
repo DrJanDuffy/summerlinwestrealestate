@@ -219,11 +219,11 @@ export default function HomeClient() {
                   caption: 'Front Exterior',
                 },
                 {
-                  src: '/images/featured-homes/02-DSC03093.jpg',
+                  src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Entryway',
                 },
                 {
-                  src: '/images/featured-homes/03-DJI_20250707145902_0780_D.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Living Room',
                 },
                 {
@@ -231,11 +231,11 @@ export default function HomeClient() {
                   caption: 'Kitchen',
                 },
                 {
-                  src: '/images/featured-homes/05-DSC03003.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Dining Area',
                 },
                 {
-                  src: '/images/featured-homes/06-DSC03075.jpg',
+                  src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Primary Bedroom',
                 },
                 {
@@ -243,55 +243,55 @@ export default function HomeClient() {
                   caption: 'Primary Bathroom',
                 },
                 {
-                  src: '/images/featured-homes/08-DSC03006.jpg',
+                  src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Guest Bedroom',
                 },
                 {
-                  src: '/images/featured-homes/09-DSC03048.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Guest Bathroom',
                 },
                 {
-                  src: '/images/featured-homes/10-DSC02961.jpg',
+                  src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Loft/Bonus Room',
                 },
                 {
-                  src: '/images/featured-homes/11-DSC02991.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Backyard Patio',
                 },
                 {
-                  src: '/images/featured-homes/12-DSC02970.jpg',
+                  src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Pool & Spa',
                 },
                 {
-                  src: '/images/featured-homes/13-DSC02964.jpg',
+                  src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Outdoor Kitchen',
                 },
                 {
-                  src: '/images/featured-homes/14-DSC02967.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Fire Pit Area',
                 },
                 {
-                  src: '/images/featured-homes/15-DSC02973.jpg',
+                  src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Garage',
                 },
                 {
-                  src: '/images/featured-homes/16-DSC02976.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Laundry Room',
                 },
                 {
-                  src: '/images/featured-homes/17-DSC02979.jpg',
+                  src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Community Park',
                 },
                 {
-                  src: '/images/featured-homes/18-DSC02982.jpg',
+                  src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Neighborhood View',
                 },
                 {
-                  src: '/images/featured-homes/19-DSC03027.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Aerial View',
                 },
                 {
-                  src: '/images/featured-homes/20-DSC03030.jpg',
+                  src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Twilight Exterior',
                 },
               ]}

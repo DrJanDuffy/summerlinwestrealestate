@@ -34,7 +34,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
       }
       
       // Fallback to placeholder
-      return 'https://placehold.co/120x80?text=News';
+      return 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=120&h=80&fit=crop&crop=entropy&auto=format&q=80';
     };
   }, []);
 

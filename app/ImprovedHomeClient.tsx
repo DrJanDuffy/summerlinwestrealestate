@@ -50,8 +50,8 @@ const sampleProperties = [
     lotSize: '0.25 acres',
     images: [
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
-      '/images/featured-homes/02-DSC03093.jpg',
-      '/images/featured-homes/03-DJI_20250707145902_0780_D.jpg',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     ],
     community: 'The Vistas',
     features: ['Mountain Views', 'Gourmet Kitchen', 'Master Suite', 'Pool & Spa'],
@@ -73,8 +73,8 @@ const sampleProperties = [
     lotSize: '0.2 acres',
     images: [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
-      '/images/featured-homes/05-DSC03003.jpg',
-      '/images/featured-homes/06-DSC03075.jpg',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     ],
     community: 'Stonebridge',
     features: ['Golf Course Views', 'Updated Kitchen', 'Hardwood Floors', 'Covered Patio'],
@@ -96,8 +96,8 @@ const sampleProperties = [
     lotSize: '0.3 acres',
     images: [
       'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
-      '/images/featured-homes/08-DSC03006.jpg',
-      '/images/featured-homes/09-DSC03048.jpg',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     ],
     community: 'Redpoint',
     features: ['Custom Built', 'Wine Cellar', 'Home Theater', 'Guest Suite'],
@@ -332,23 +332,23 @@ export default function ImprovedHomeClient() {
                 caption: 'Front Exterior',
               },
               {
-                src: '/images/featured-homes/02-DSC03093.jpg',
+                src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Entryway',
               },
               {
-                src: '/images/featured-homes/03-DJI_20250707145902_0780_D.jpg',
+                src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Living Room',
               },
               {
-                src: '/images/featured-homes/04-DJI_20250707150132_0797_D.jpg',
+                src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Kitchen',
               },
               {
-                src: '/images/featured-homes/05-DSC03003.jpg',
+                src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Dining Area',
               },
               {
-                src: '/images/featured-homes/06-DSC03075.jpg',
+                src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Primary Bedroom',
               },
             ]}

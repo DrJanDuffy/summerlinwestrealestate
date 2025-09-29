@@ -78,21 +78,21 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
       location: 'The Vistas',
       rating: 5,
       text: 'Dr. Duffy made our dream of owning a home in The Vistas a reality. Her knowledge of the area and negotiation skills saved us thousands.',
-      image: '/images/testimonials/chen-family.jpg',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
     {
       name: 'Jennifer Martinez',
       location: 'Stonebridge',
       rating: 5,
       text: 'As first-time buyers, we were nervous about the process. Dr. Duffy guided us every step of the way with patience and expertise.',
-      image: '/images/testimonials/martinez-family.jpg',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
     {
       name: 'David & Lisa Thompson',
       location: 'Redpoint',
       rating: 5,
       text: 'We sold our home above asking price in just 8 days! Dr. Duffy\'s marketing strategy and staging advice were exceptional.',
-      image: '/images/testimonials/thompson-family.jpg',
+      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
   ];
 
@@ -159,7 +159,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
             >
               <div className="relative z-10">
                 <Image
-                  src="/images/jan-duffy-professional.jpg"
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=600&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Dr. Jan Duffy - Summerlin West Real Estate Expert"
                   width={500}
                   height={600}

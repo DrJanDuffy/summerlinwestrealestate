@@ -112,20 +112,20 @@ export default function CurrentListingClient() {
           <div className={styles.photoGallery}>
             {photoGallery.map((num, index) => {
               const imageFiles = [
-                'featured-home-1.jpg',
-                '02-DSC03093.jpg',
-                '03-DJI_20250707145902_0780_D.jpg',
+                'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
-                '05-DSC03003.jpg',
-                '06-DSC03075.jpg',
                 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
-                '08-DSC03006.jpg',
-                '09-DSC03048.jpg',
-                '10-DSC02961.jpg',
-                '11-DSC02991.jpg',
-                '12-DSC02970.jpg',
+                'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
               ];
-              const imageSrc = `/images/featured-homes/${imageFiles[index % imageFiles.length]}`;
+              const imageSrc = imageFiles[index % imageFiles.length];
               return (
                 <Image
                   key={num}

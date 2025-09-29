@@ -46,7 +46,7 @@ export default function MarketInsightsFeed({
             url: item.link,
             date: item.pubDate || '',
             category: getCategoryFromRSSItem(item),
-            imageUrl: getImageUrlFromRSSItem(item) || '/images/market-insights/default.jpg',
+            imageUrl: getImageUrlFromRSSItem(item) || 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=225&fit=crop&crop=entropy&auto=format&q=80',
             content: item.content || item.contentSnippet || '',
           }));
           setArticles(articles);
