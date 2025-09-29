@@ -22,12 +22,11 @@
     "optimize:vercel": "node scripts/v0-vercel-optimization.js"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^1.0.20",
-    "@ai-sdk/google": "^1.0.20",
-    "@ai-sdk/openai": "^1.0.20",
     "@ai-sdk/vercel": "^1.0.20",
     "@linear/sdk": "^60.0.0",
     "@tailwindcss/postcss": "^4.1.13",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "ai": "^5.0.54",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
@@ -57,8 +56,6 @@
     "eslint-config-next": "^15.5.4",
     "husky": "^9.1.7",
     "tsx": "^4.20.6",
-    "typescript": "5.9.2",
-    "@vercel/analytics": "^1.2.0",
-    "@vercel/speed-insights": "^1.0.0"
+    "typescript": "5.9.2"
   }
 }
