@@ -271,6 +271,24 @@ export default function NewHomesSummerlinClient() {
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
         </section>
+
+        {/* Office Listings Widget */}
+        <section className={styles.ctaSection}>
+          <h2>Office Properties in New Construction Areas</h2>
+          <p>
+            Explore office properties and commercial real estate opportunities in new construction areas of Summerlin West. 
+            From professional office spaces to commercial buildings, find the perfect location for your business.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,OTHER" 
+            price-min="500000" 
+            price-max="600000"
+          />
+        </section>
       </main>
     </div>
   );

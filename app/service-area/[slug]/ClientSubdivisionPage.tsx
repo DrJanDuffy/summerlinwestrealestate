@@ -692,6 +692,32 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
       </motion.section>
 
+      {/* Office Listings Widget */}
+      <motion.section
+        className={styles.sectionCard}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className={styles.centerTitle}>
+          Office Properties in {subdivision.name}
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Explore office properties and commercial real estate opportunities in {subdivision.name}. 
+          From professional office spaces to commercial buildings, find the perfect location for your business.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-office-listings 
+          agent-encoded-id="QWdlbnQtMjI1MDUw" 
+          sort-order="PRICE_LOW" 
+          listing-status="For Sale" 
+          property-types=",SFR,OTHER" 
+          price-min="500000" 
+          price-max="600000"
+        />
+      </motion.section>
+
       {/* Enhanced Navigation */}
       <motion.div
         className={clientStyles.ctaButtonSecondary}

@@ -220,6 +220,24 @@ export default function TheVistas() {
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
         </section>
+
+        {/* Office Listings Widget */}
+        <section className={styles.sectionCard}>
+          <h2>Office Properties in The Vistas</h2>
+          <p>
+            Explore office properties and commercial real estate opportunities in The Vistas. 
+            From professional office spaces to commercial buildings, find the perfect location for your business.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,OTHER" 
+            price-min="500000" 
+            price-max="600000"
+          />
+        </section>
       </main>
     </div>
   );

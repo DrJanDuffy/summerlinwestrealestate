@@ -563,6 +563,24 @@ export default function Communities() {
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
         </section>
+
+        {/* Office Listings Widget */}
+        <section className={styles.sectionCard} aria-label="Office Listings">
+          <h2 className={styles.centerTitle}>Office Properties in Summerlin West Communities</h2>
+          <p className={styles.heroSubtitle}>
+            Explore office properties and commercial real estate opportunities in Summerlin West communities. 
+            From professional office spaces to commercial buildings, find the perfect location for your business.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,OTHER" 
+            price-min="500000" 
+            price-max="600000"
+          />
+        </section>
       </main>
     </div>
   );
