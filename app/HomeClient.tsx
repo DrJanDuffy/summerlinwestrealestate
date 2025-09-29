@@ -53,7 +53,7 @@ function HomeHeroImage() {
           setSrc(data.fallback);
         }
       })
-      .catch(() => setSrc('/images/featured-homes/featured-home-1.jpg'));
+      .catch(() => setSrc('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'));
   }, []);
   return (
     <Image
@@ -215,7 +215,7 @@ export default function HomeClient() {
             <FeaturedHomeSlider
               images={[
                 {
-                  src: '/images/featured-homes/featured-home-1.jpg',
+                  src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Front Exterior',
                 },
                 {
@@ -227,7 +227,7 @@ export default function HomeClient() {
                   caption: 'Living Room',
                 },
                 {
-                  src: '/images/featured-homes/04-DJI_20250707150132_0797_D.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Kitchen',
                 },
                 {
@@ -239,7 +239,7 @@ export default function HomeClient() {
                   caption: 'Primary Bedroom',
                 },
                 {
-                  src: '/images/featured-homes/07-DSC03018.jpg',
+                  src: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                   caption: 'Primary Bathroom',
                 },
                 {

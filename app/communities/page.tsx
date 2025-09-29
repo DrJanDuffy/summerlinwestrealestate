@@ -452,7 +452,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="/images/featured-homes/featured-home-1.jpg"
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
                   alt="Encanto subdivision in The Vistas"
                   width={400}
                   height={200}

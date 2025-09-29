@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       {
         error: 'Failed to generate image',
-        fallback: '/images/featured-homes/featured-home-1.jpg',
+        fallback: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       },
       { status: 500 }
     );

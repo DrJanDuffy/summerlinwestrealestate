@@ -49,7 +49,7 @@ const sampleProperties = [
     squareFeet: 3200,
     lotSize: '0.25 acres',
     images: [
-      '/images/featured-homes/featured-home-1.jpg',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       '/images/featured-homes/02-DSC03093.jpg',
       '/images/featured-homes/03-DJI_20250707145902_0780_D.jpg',
     ],
@@ -72,7 +72,7 @@ const sampleProperties = [
     squareFeet: 2800,
     lotSize: '0.2 acres',
     images: [
-      '/images/featured-homes/04-DJI_20250707150132_0797_D.jpg',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       '/images/featured-homes/05-DSC03003.jpg',
       '/images/featured-homes/06-DSC03075.jpg',
     ],
@@ -95,7 +95,7 @@ const sampleProperties = [
     squareFeet: 3800,
     lotSize: '0.3 acres',
     images: [
-      '/images/featured-homes/07-DSC03018.jpg',
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       '/images/featured-homes/08-DSC03006.jpg',
       '/images/featured-homes/09-DSC03048.jpg',
     ],
@@ -134,7 +134,7 @@ export default function ImprovedHomeClient() {
         }
         } catch {
           console.log('Using fallback hero image');
-          setHeroImage('/images/featured-homes/featured-home-1.jpg');
+          setHeroImage('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80');
         }
     };
 
@@ -328,7 +328,7 @@ export default function ImprovedHomeClient() {
           <FeaturedHomeSlider
             images={[
               {
-                src: '/images/featured-homes/featured-home-1.jpg',
+                src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
                 caption: 'Front Exterior',
               },
               {
