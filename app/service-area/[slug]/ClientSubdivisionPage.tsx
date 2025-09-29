@@ -641,7 +641,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         </h2>
         <p className={styles.heroSubtitle}>
           Discover homes available in {subdivision.name}. This {subdivision.type.toLowerCase()} community offers 
-          {subdivision.type === 'Family' ? ' family-friendly living with modern amenities and convenient access to top-rated schools' : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}.
+          {subdivision.name === 'Casa Rosa' ? ' mid-range luxury living with quality construction, modern amenities, and convenient access to The Vistas\' premier facilities' : subdivision.type === 'Family' ? ' family-friendly living with modern amenities and convenient access to top-rated schools' : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-office-listings 
