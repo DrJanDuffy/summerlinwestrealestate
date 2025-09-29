@@ -34,8 +34,13 @@ export default function RealScoutOfficeListings({
         const elementsReady = await waitForRealScoutElements(10000); // 10 second timeout
         
         if (elementsReady) {
+          console.log('RealScout elements loaded successfully');
+          console.log('Agent ID:', agentEncodedId);
+          console.log('Price range:', priceMin, '-', priceMax);
+          console.log('Property types:', propertyTypes);
           setIsLoaded(true);
         } else {
+          console.error('RealScout elements failed to load within timeout');
           setError('RealScout widgets failed to load within timeout');
         }
       } catch (err) {
@@ -45,7 +50,7 @@ export default function RealScoutOfficeListings({
     };
 
     loadWidget();
-  }, []);
+  }, [agentEncodedId, priceMin, priceMax, propertyTypes]);
 
   if (error) {
     return (
@@ -83,16 +88,9 @@ export default function RealScoutOfficeListings({
     <div className={`real-scout-office-listings-container ${className}`}>
       {/* @ts-ignore - RealScout web component */}
       <realscout-office-listings
-        agent-encoded-id={agentEncodedId}
-        sort-order={sortOrder}
-        listing-status={listingStatus}
-        property-types={propertyTypes}
+        agent-id={agentEncodedId}
         price-min={priceMin}
         price-max={priceMax}
-        max-listings={maxListings}
-        show-features={true}
-        show-communities={true}
-        communities="The Vistas,Stonebridge,Redpoint,Reverence"
         location="Summerlin West, Las Vegas, NV"
       />
     </div>
