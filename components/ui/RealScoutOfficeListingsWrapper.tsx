@@ -88,10 +88,13 @@ export default function RealScoutOfficeListings({
     <div className={`real-scout-office-listings-container ${className}`}>
       {/* @ts-ignore - RealScout web component */}
       <realscout-office-listings
-        agent-id={agentEncodedId}
+        agent-encoded-id={agentEncodedId}
+        sort-order={_sortOrder}
+        listing-status={_listingStatus}
+        property-types={_propertyTypes}
         price-min={priceMin}
         price-max={priceMax}
-        location="Summerlin West, Las Vegas, NV"
+        max-listings={_maxListings}
       />
     </div>
   );
