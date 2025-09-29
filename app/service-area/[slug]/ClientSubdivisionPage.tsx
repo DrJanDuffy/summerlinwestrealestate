@@ -640,9 +640,8 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           Properties in {subdivision.name}
         </h2>
         <p className={styles.heroSubtitle}>
-          Discover homes available in {subdivision.name}. This exclusive community offers 
-          luxury living with modern amenities, stunning architecture, and convenient access 
-          to world-class shopping, dining, and recreational facilities.
+          Discover homes available in {subdivision.name}. This {subdivision.type.toLowerCase()} community offers 
+          {subdivision.type === 'Family' ? ' family-friendly living with modern amenities and convenient access to top-rated schools' : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-office-listings 
@@ -650,8 +649,8 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           sort-order="PRICE_LOW" 
           listing-status="For Sale" 
           property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min="700000" 
-          price-max="1800000"
+          price-min={subdivision.type === 'Family' ? '500000' : '700000'} 
+          price-max={subdivision.type === 'Family' ? '1200000' : '1800000'}
         />
       </motion.section>
 
