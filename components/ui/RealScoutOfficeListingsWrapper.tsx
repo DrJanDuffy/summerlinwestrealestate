@@ -16,12 +16,12 @@ interface RealScoutOfficeListingsProps {
 
 export default function RealScoutOfficeListings({
   agentEncodedId = 'QWdlbnQtMjI1MDUw',
-  sortOrder = 'PRICE_LOW',
-  listingStatus = 'For Sale',
-  propertyTypes = ',SFR,MF,TC,LAL,MOBILE,OTHER',
+  sortOrder: _sortOrder = 'PRICE_LOW',
+  listingStatus: _listingStatus = 'For Sale',
+  propertyTypes: _propertyTypes = ',SFR,MF,TC,LAL,MOBILE,OTHER',
   priceMin = '400000',
   priceMax = '2000000',
-  maxListings = 12,
+  maxListings: _maxListings = 12,
   className = '',
 }: RealScoutOfficeListingsProps) {
   const [isLoaded, setIsLoaded] = useState(false);

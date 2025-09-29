@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 import styles from './v0-test.module.css';
 
 // Dynamically import the test widget
-const RealScoutTestWidget = dynamic(() => import('../../components/ui/RealScoutTestWidget'), {
+const RealScoutTestWidget = dynamicImport(() => import('../../components/ui/RealScoutTestWidget'), {
   ssr: false,
 });
 

@@ -32,8 +32,8 @@ export default function RealScoutTestWidget() {
     testWidget();
   }, []);
 
-  const addTestResult = (result: string) => {
-    setTestResults(prev => [...prev, result]);
+  const addTestResult = (_result: string) => {
+    // Function for future use
   };
 
   return (
