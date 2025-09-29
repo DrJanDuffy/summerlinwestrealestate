@@ -2,13 +2,11 @@
 // import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import styles from './Propertie
-import dynamic from 'next/dynamic';
+import styles from './Properties.module.css';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-s.module.css';
 
 // Import RealScout components
 const RealScoutOfficeListings = dynamic(

@@ -5,13 +5,12 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import SubdivisionNavigation from '../../../components/ui/SubdivisionNavigation';
 import styles from '../page.module.css';
-import clientStyles from './client-subdivision.
+import clientStyles from './client-subdivision.module.css';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-module.css';
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {

@@ -1,11 +1,10 @@
 'use client';
-import styles from '../../styles/pages/service-area.
+import styles from '../../styles/pages/service-area.module.css';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-module.css';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

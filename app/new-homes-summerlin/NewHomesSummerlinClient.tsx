@@ -1,13 +1,11 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import styles from './NewHomesSummerlin
-import dynamic from 'next/dynamic';
+import styles from './NewHomesSummerlin.module.css';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-.module.css';
 
 // Dynamic imports for client components
 const _LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
