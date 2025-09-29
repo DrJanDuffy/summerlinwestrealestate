@@ -649,8 +649,8 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           sort-order="PRICE_LOW" 
           listing-status="For Sale" 
           property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min={subdivision.type === 'Family' ? '500000' : '700000'} 
-          price-max={subdivision.type === 'Family' ? '1200000' : '1800000'}
+          price-min={subdivision.name === 'Casa Rosa' ? '600000' : subdivision.type === 'Family' ? '500000' : '700000'} 
+          price-max={subdivision.name === 'Casa Rosa' ? '1000000' : subdivision.type === 'Family' ? '1200000' : '1800000'}
         />
       </motion.section>
 
