@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
-import styles from './page.module.css';
+import styles from '../page.module.css';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {

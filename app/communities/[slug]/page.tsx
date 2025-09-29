@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
@@ -109,7 +108,7 @@ const communities = [
   },
 ];
 
-export default function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const community = communities.find((c) => c.slug === slug);
   if (!community) {
