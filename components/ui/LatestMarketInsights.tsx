@@ -1,109 +1,53 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
-import Parser from 'rss-parser';
+import { fetchRSSFeed, getImageUrlFromRSSItem, formatDate, type RSSFeedItem } from '../../lib/rss-parser';
 import styles from '../../app/page.module.css';
 
-const RSS_FEED_URL =
-  'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
-
-// Define specific types for RSS items
-interface RSSItem {
-  title: string;
-  link: string;
-  pubDate?: string;
-  contentSnippet?: string;
-  'media:content'?: { url: string } | { url: string }[];
-  enclosure?: { url: string };
-}
-
-// Cache for RSS data
-let rssCache: { data: RSSItem[] | null; timestamp: number } = {
-  data: null,
-  timestamp: 0,
-};
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
-
 const LatestMarketInsights = React.memo(function LatestMarketInsights() {
-  const [rssItems, setRssItems] = useState<RSSItem[]>([]);
-  const [aiImages, setAiImages] = useState<{ [title: string]: string }>({});
+  const [rssItems, setRssItems] = useState<RSSFeedItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchRSS() {
       try {
-        const now = Date.now();
-
-        // Check cache first
-        if (rssCache.data && now - rssCache.timestamp < CACHE_DURATION) {
-          setRssItems(rssCache.data);
-          return;
+        setLoading(true);
+        const feed = await fetchRSSFeed();
+        if (feed) {
+          setRssItems(feed.items.slice(0, 3));
         }
-
-        const parser = new Parser({
-          customFields: {
-            item: ['media:content', 'enclosure'],
-          },
-        });
-        const feed = await parser.parseURL(RSS_FEED_URL);
-        const items = feed.items.slice(0, 3) as RSSItem[];
-
-        // Update cache
-        rssCache = { data: items, timestamp: now };
-        setRssItems(items);
-      } catch (_err) {
-        // fallback: do nothing
+      } catch (error) {
+        console.error('Error fetching RSS feed:', error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchRSS();
   }, []);
 
-  // AI image fetch for items with placeholder
-  useEffect(() => {
-    rssItems.forEach((item) => {
-      const title = item.title;
-      const imageUrl = getImageUrl(item);
-      if (imageUrl.includes('placehold.co') && !aiImages[title]) {
-        const prompt = `News headline: ${title}. Real estate, Las Vegas, Summerlin West, modern homes, market insights.`;
-        fetch('/api/generate-image', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ prompt }),
-        })
-          .then((res) => res.json())
-          .then((data: { base64?: string }) => {
-            if (data.base64) {
-              setAiImages((prev) => ({
-                ...prev,
-                [title]: `data:image/png;base64,${data.base64}`,
-              }));
-            }
-          });
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rssItems, aiImages]);
-
   const getImageUrl = useMemo(() => {
-    return (item: RSSItem) => {
-      // Handle media:content as array or object
-      const mediaContent = item['media:content'];
-      if (Array.isArray(mediaContent)) {
-        // Find first with url
-        const found = mediaContent.find((mc) => mc.url);
-        if (found) return found.url;
-      } else if (mediaContent?.url) {
-        return mediaContent.url;
+    return (item: RSSFeedItem) => {
+      // Try to get image from RSS feed first
+      const rssImage = getImageUrlFromRSSItem(item);
+      if (rssImage) {
+        return rssImage;
       }
-      if (item.enclosure?.url) {
-        return item.enclosure.url;
-      }
-      // If AI image exists for this title, use it
-      if (aiImages[item.title]) {
-        return aiImages[item.title];
-      }
+      
+      // Fallback to placeholder
       return 'https://placehold.co/120x80?text=News';
     };
-  }, [aiImages]);
+  }, []);
+
+  if (loading) {
+    return (
+      <section className={styles.sectionCard}>
+        <h2 className={styles.centerTitle}>Latest Market Insights</h2>
+        <div className="flex items-center justify-center p-8">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        </div>
+      </section>
+    );
+  }
 
   if (rssItems.length === 0) return null;
 
@@ -131,7 +75,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
                 <div>
                   <div className={styles.insightTitle}>{item.title}</div>
                   <div className={styles.insightDate}>
-                    {item.pubDate && new Date(item.pubDate).toLocaleDateString()}
+                    {formatDate(item.pubDate)}
                   </div>
                   <div className={styles.insightSnippet}>{item.contentSnippet}</div>
                 </div>

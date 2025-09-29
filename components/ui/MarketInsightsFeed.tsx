@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import MarketInsightImage from './MarketInsightImage';
+import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem, formatDate } from '../../lib/rss-parser';
 
 interface MarketArticle {
   title: string;
@@ -36,72 +37,32 @@ export default function MarketInsightsFeed({
         setLoading(true);
 
         // Fetch RSS feed from Simplifying the Market
-        const response = await fetch('/api/market-insights');
-        if (!response.ok) {
+        const feed = await fetchRSSFeed();
+        if (feed) {
+          const articles = feed.items.slice(0, maxArticles).map(item => ({
+            title: item.title,
+            excerpt: item.contentSnippet || '',
+            url: item.link,
+            date: item.pubDate || '',
+            category: getCategoryFromRSSItem(item),
+            imageUrl: getImageUrlFromRSSItem(item) || '/images/market-insights/default.jpg',
+            content: item.content || item.contentSnippet || '',
+          }));
+          setArticles(articles);
+        } else {
           throw new Error('Failed to fetch market insights');
         }
-
-        const data = await response.json();
-        setArticles(data.articles || []);
       } catch (err) {
         console.error('Error fetching market insights:', err);
         setError('Failed to load market insights');
-
-        // Fallback to static content based on Simplifying the Market feed
-        setArticles([
-          {
-            title:
-              'Downsizing Without Debt: How More Homeowners Are Buying Their Next House in Cash',
-            excerpt:
-              "More than 40% of U.S. owner-occupied homes are mortgage-free – an all-time high. If you've owned your home for a while, you may be able to buy your next house outright.",
-            url: 'https://www.simplifyingthemarket.com/en/2025/09/25/downsizing-without-debt-how-more-homeowners-are-buying-their-next-house-in-cash?a=956758-ef2edda2f940e018328655620ea05f18',
-            date: '2025-09-25',
-            category: 'Selling Tips',
-            imageUrl: '/images/market-insights/downsizing-cash.jpg',
-            content:
-              "If you've been thinking about downsizing to lower your expenses, be closer to family, or just make life easier, here's a trend worth paying attention to: More homeowners are buying their next house outright, without taking on a new mortgage.",
-          },
-          {
-            title: 'Why Buyers and Sellers Face Very Different Conditions Today',
-            excerpt:
-              "There's a new divide in housing right now. In some states, buyers are gaining ground. In others, sellers still have the upper hand. It all depends on where you live.",
-            url: 'https://www.simplifyingthemarket.com/en/2025/09/24/why-buyers-and-sellers-face-very-different-conditions-today?a=956758-ef2edda2f940e018328655620ea05f18',
-            date: '2025-09-24',
-            category: 'Market Analysis',
-            imageUrl: '/images/market-insights/market-divide.jpg',
-            content:
-              "The housing market is experiencing a divide. Conditions vary based on where you live, where you're moving, and if you're buying or selling. Only a local agent truly has the information you need.",
-          },
-          {
-            title: '3 Reasons Affordability Is Showing Signs of Improvement This Fall',
-            excerpt:
-              'The typical monthly mortgage payment has been coming down, and is now about $290 lower than it was just a few months ago. Affordability may finally be showing signs of improvement.',
-            url: 'https://www.simplifyingthemarket.com/en/2025/09/22/3-reasons-affordability-is-showing-signs-of-improvement-this-fall?a=956758-ef2edda2f940e018328655620ea05f18',
-            date: '2025-09-22',
-            category: 'Affordability',
-            imageUrl: '/images/market-insights/affordability-improvement.jpg',
-            content:
-              "For the past couple of years, it's been tough for a lot of homebuyers to make the numbers work. But there's some encouraging news. Affordability may finally be showing signs of improvement this fall.",
-          },
-          {
-            title: 'Builder Incentives Reach 5-Year High',
-            excerpt:
-              "66% of builders offered sales incentives in August. That's the peak so far this year, and the highest percentage we've seen in 5 years. 2 out of every 3 builders are offering something extra.",
-            url: 'https://www.simplifyingthemarket.com/en/2025/09/04/builder-incentives-reach-5-year-high?a=956758-ef2edda2f940e018328655620ea05f18',
-            date: '2025-09-04',
-            category: 'New Construction',
-            imageUrl: '/images/market-insights/builder-incentives.jpg',
-            content:
-              "Even with more homes on the market right now, some buyers are still having a tough time finding the right one at the right price. That's why more buyers are turning to new construction – and finding some of the best deals available today.",
-          },
-        ]);
+        setArticles([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchMarketInsights();
-  }, []);
+  }, [maxArticles]);
 
   const filteredArticles = articles
     .filter(
@@ -159,22 +120,26 @@ export default function MarketInsightsFeed({
             key={index}
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
-            {showImages && (
-              <MarketInsightImage
-                title={article.title}
-                category={article.category}
-                className="h-48 w-full"
-              />
+            {showImages && article.imageUrl && (
+              <div className="h-48 w-full relative overflow-hidden">
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                    {article.category}
+                  </span>
+                </div>
+              </div>
             )}
 
             <div className="p-6">
               <div className="flex items-center text-sm text-gray-500 mb-2">
                 <time dateTime={article.date}>
-                  {new Date(article.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
+                  {formatDate(article.date)}
                 </time>
                 {!showImages && (
                   <span className="ml-2 bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">

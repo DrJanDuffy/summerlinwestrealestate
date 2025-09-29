@@ -125,8 +125,8 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>About The Vistas</h2>
           <Image
-            src="https://placehold.co/800x300?text=The+Vistas+Park"
-            alt="The Vistas Park in Summerlin"
+            src="/images/featured-homes/47-DJI_20250707145846_0779_D.jpg"
+            alt="The Vistas Park in Summerlin with Red Rock Canyon views"
             width={800}
             height={300}
             className={styles.featureImage}
@@ -141,18 +141,22 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>Homes for Sale in The Vistas</h2>
           <div className={styles.propertyGrid}>
-            {[1, 2, 3].map((i) => (
-              <div key={i} className={styles.propertyCard}>
+            {[
+              { id: 1, image: '/images/featured-homes/02-DSC03093.jpg', title: 'Luxury Estate', details: '5 bed • 4 bath • $1,200,000+' },
+              { id: 2, image: '/images/featured-homes/19-DSC03027.jpg', title: 'Modern Home', details: '4 bed • 3 bath • $950,000+' },
+              { id: 3, image: '/images/featured-homes/17-DSC02979.jpg', title: 'Desert Oasis', details: '3 bed • 2 bath • $800,000+' }
+            ].map((home) => (
+              <div key={home.id} className={styles.propertyCard}>
                 <Image
-                  src={`https://placehold.co/400x220?text=Vistas+Home+${i}`}
-                  alt={`Home for sale in The Vistas Summerlin ${i}`}
+                  src={home.image}
+                  alt={`${home.title} for sale in The Vistas Summerlin`}
                   width={400}
                   height={220}
                   className={styles.propertyImage}
                 />
                 <div className={styles.propertyInfo}>
-                  <h3 className={styles.propertyTitle}>Vistas Home #{i}</h3>
-                  <p className={styles.propertyDetails}>4 bed &bull; 3 bath &bull; $900,000+</p>
+                  <h3 className={styles.propertyTitle}>{home.title}</h3>
+                  <p className={styles.propertyDetails}>{home.details}</p>
                 </div>
               </div>
             ))}
