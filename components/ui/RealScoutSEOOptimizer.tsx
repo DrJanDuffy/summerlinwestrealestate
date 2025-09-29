@@ -50,8 +50,8 @@ export default function RealScoutSEOOptimizer({
       name: 'Dr. Jan Duffy',
       description: 'Premier real estate agent specializing in Summerlin West luxury properties',
       url: 'https://summerlinwestrealestate.com',
-      telephone: '+1-702-555-0123',
-      email: 'jan@summerlinwestrealestate.com',
+      telephone: '+1-702-550-0112',
+      email: 'DrJanSells@SummerlinWestRealEstate.com',
       address: {
         '@type': 'PostalAddress',
         streetAddress: '1980 Festival Plaza Dr',

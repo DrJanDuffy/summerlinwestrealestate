@@ -68,8 +68,8 @@ const structuredData = {
   "name": "Dr. Jan Duffy",
   "description": "Top 1% Las Vegas REALTOR® with 20+ years of proven results in luxury real estate",
   "url": "https://summerlinwestrealestate.com",
-  "telephone": "+1-702-222-1964",
-  "email": "jan@summerlinwestrealestate.com",
+  "telephone": "+1-702-550-0112",
+  "email": "DrJanSells@SummerlinWestRealEstate.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Las Vegas",

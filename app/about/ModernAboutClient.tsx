@@ -26,7 +26,7 @@ export default function ModernAboutClient() {
               addressCountry: 'US',
             },
             telephone: '+1-702-550-0112',
-            email: 'jan@summerlinwestrealestate.com',
+            email: 'DrJanSells@SummerlinWestRealEstate.com',
             url: 'https://summerlinwestrealestate.com/about',
             geo: {
               '@type': 'GeoCoordinates',
