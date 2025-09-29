@@ -575,23 +575,23 @@ export default function HomeClient() {
             <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
           </section>
 
-          {/* Office Listings Widget */}
-          <section className={styles.section} aria-label="Office Listings">
+          {/* Additional Property Search Options */}
+          <section className={styles.section} aria-label="Additional Property Search">
             <h2 className={styles.sectionTitle}>
-              Office Listings in Summerlin West
+              Broader Market Options in Summerlin West
             </h2>
             <p className={styles.heroSubtitle}>
-              Explore office properties and commercial real estate opportunities in Summerlin West. 
-              Perfect for businesses looking to establish or relocate their operations.
+              Explore a comprehensive range of residential properties across Summerlin West communities. 
+              From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
             </p>
             {/* @ts-ignore - RealScout web component */}
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
               sort-order="PRICE_LOW" 
               listing-status="For Sale" 
-              property-types=",SFR,OTHER" 
-              price-min="500000" 
-              price-max="600000"
+              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              price-min="400000" 
+              price-max="2000000"
             />
           </section>
         </div>
