@@ -191,6 +191,13 @@ if (fs.existsSync(packageJson)) {
   logResult('performanceOptimization', 'Speed Insights', pkg.dependencies && pkg.dependencies['@vercel/speed-insights']);
 }
 
+// Check for Analytics components in layout
+if (fs.existsSync(layoutFile)) {
+  const layoutContent = fs.readFileSync(layoutFile, 'utf8');
+  logResult('performanceOptimization', 'Analytics Component', layoutContent.includes('Analytics'));
+  logResult('performanceOptimization', 'SpeedInsights Component', layoutContent.includes('SpeedInsights'));
+}
+
 // Check for dynamic imports
 const homeClient = 'app/HomeClient.tsx';
 if (fs.existsSync(homeClient)) {

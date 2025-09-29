@@ -3,12 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import NeighborhoodHero from '../../../components/ui/NeighborhoodHero';
 import styles from '../../page.module.css';
-
-import dynamic from 'next/dynamic';
-
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+import RealScoutOfficeListingsWrapper from '../../../components/ui/RealScoutOfficeListingsWrapper';
 const communities = [
   {
     name: 'The Vistas',
