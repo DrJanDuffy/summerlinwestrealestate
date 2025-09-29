@@ -1,7 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import styles from './v0-test.module.css';
+
+// Dynamically import the test widget
+const RealScoutTestWidget = dynamic(() => import('../../components/ui/RealScoutTestWidget'), {
+  ssr: false,
+});
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -103,6 +109,11 @@ export default function V0TestPage() {
         <p className={styles.subtitle}>
           Test AI-powered component generation for Summerlin West Real Estate
         </p>
+      </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>RealScout Widget Test</h2>
+        <RealScoutTestWidget />
       </div>
 
       <div className={styles.section}>
