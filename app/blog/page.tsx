@@ -121,6 +121,25 @@ export default async function BlogIndexPage() {
           <Link href="/contact">Contact Dr. Jan Duffy &rarr;</Link>
         </p>
       </section>
+
+      {/* Featured Properties from Blog Content */}
+      <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
+        <h2>Featured Properties in Summerlin West</h2>
+        <p>
+          Discover properties mentioned in our latest market insights and community updates. 
+          These featured listings represent the best of Summerlin West real estate, from luxury 
+          estates to family-friendly homes.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-office-listings 
+          agent-encoded-id="QWdlbnQtMjI1MDUw" 
+          sort-order="PRICE_LOW" 
+          listing-status="For Sale" 
+          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+          price-min="650000" 
+          price-max="1600000"
+        />
+      </section>
     </div>
   );
 }

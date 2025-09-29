@@ -320,6 +320,27 @@ export default function ContactClient() {
             className="mt-8"
           />
         </section>
+
+        {/* Entry-Level Properties */}
+        <section className={styles.sectionCard} aria-label="Entry-Level Properties">
+          <h2 className={styles.sectionTitle}>
+            Entry-Level Properties in Summerlin West
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Discover affordable entry-level properties in Summerlin West. Perfect for first-time homebuyers 
+            or those looking to enter the Summerlin West market. These properties offer excellent value 
+            and investment potential.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="500000" 
+            price-max="800000"
+          />
+        </section>
       </main>
     </div>
   );

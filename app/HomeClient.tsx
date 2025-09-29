@@ -414,6 +414,29 @@ export default function HomeClient() {
             </p>
             <RealScoutListings />
           </section>
+
+          {/* RealScout Office Listings Widget */}
+          <section className={styles.section} aria-label="Luxury Summerlin West Properties">
+            <h2 className={styles.sectionTitle}>
+              Premium Luxury Homes in Summerlin West
+            </h2>
+            <p className={styles.heroSubtitle}>
+              Discover the finest luxury properties in Summerlin West. From elegant estates in The Vistas 
+              to sophisticated homes in Stonebridge, these premium listings represent the pinnacle of 
+              Summerlin West real estate. Each property offers exceptional quality, prime location, and 
+              unmatched lifestyle amenities.
+            </p>
+            {/* @ts-ignore - RealScout web component */}
+            <realscout-office-listings 
+              agent-encoded-id="QWdlbnQtMjI1MDUw" 
+              sort-order="PRICE_LOW" 
+              listing-status="For Sale" 
+              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              price-min="800000" 
+              price-max="2000000"
+            />
+          </section>
+
           {/* Market Overview */}
           <section className={styles.section} aria-label="Market Overview">
             <h2 className={styles.sectionTitle}>

@@ -269,6 +269,28 @@ export default function MarketReportsClient() {
           </li>
         </ul>
       </section>
+
+      {/* Investment Properties */}
+      <section className={styles.section} aria-label="Investment Properties">
+        <h2 className={styles.sectionTitle}>
+          Investment Properties in Summerlin West
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Explore investment opportunities in Summerlin West. These properties offer excellent potential 
+          for rental income, appreciation, and long-term wealth building. Perfect for investors looking 
+          to capitalize on Summerlin West's strong market fundamentals.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-office-listings 
+          agent-encoded-id="QWdlbnQtMjI1MDUw" 
+          sort-order="PRICE_LOW" 
+          listing-status="For Sale" 
+          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+          price-min="700000" 
+          price-max="1500000"
+        />
+      </section>
+
       <RealScoutAdvancedSearch />
     </div>
   );

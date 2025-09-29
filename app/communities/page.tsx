@@ -523,6 +523,24 @@ export default function Communities() {
             </li>
           </ul>
         </section>
+
+        {/* Community-Specific Properties */}
+        <section className={styles.sectionCard} aria-label="Properties in Summerlin West Communities">
+          <h2 className={styles.centerTitle}>Properties in Summerlin West Communities</h2>
+          <p className={styles.heroSubtitle}>
+            Discover homes available in The Vistas, Stonebridge, Redpoint, and other premier Summerlin West communities. 
+            Each community offers unique amenities, lifestyle options, and investment opportunities.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="550000" 
+            price-max="1800000"
+          />
+        </section>
       </main>
     </div>
   );

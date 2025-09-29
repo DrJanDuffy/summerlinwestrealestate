@@ -538,6 +538,27 @@ export default function AboutClient() {
             className="mt-8"
           />
         </section>
+
+        {/* Featured Properties by Dr. Jan Duffy */}
+        <section className={styles.sectionCard} aria-labelledby="featured-properties">
+          <h2 id="featured-properties" className={styles.centerTitle}>
+            Featured Properties by Dr. Jan Duffy
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Explore Dr. Jan Duffy's current listings and featured properties in Summerlin West. 
+            These mid-range to luxury homes represent the quality and expertise that Dr. Duffy brings 
+            to every real estate transaction.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="600000" 
+            price-max="1200000"
+          />
+        </section>
       </div>
       {/* JSON-LD structured data for SEO */}
       <script

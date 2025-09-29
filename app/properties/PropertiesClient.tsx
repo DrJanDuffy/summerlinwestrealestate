@@ -204,6 +204,26 @@ export default function PropertiesClient() {
           />
         </div>
       </section>
+
+      {/* Comprehensive Property Listings */}
+      <section className={styles.marketInsights}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>All Summerlin West Properties</h2>
+          <p className={styles.sectionSubtitle}>
+            Browse our complete inventory of Summerlin West properties. From entry-level homes to luxury estates, 
+            find the perfect property that matches your budget and lifestyle requirements.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings 
+            agent-encoded-id="QWdlbnQtMjI1MDUw" 
+            sort-order="PRICE_LOW" 
+            listing-status="For Sale" 
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="400000" 
+            price-max="3000000"
+          />
+        </div>
+      </section>
     </div>
   );
 }
