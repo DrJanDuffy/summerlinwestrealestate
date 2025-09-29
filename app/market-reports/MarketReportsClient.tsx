@@ -304,6 +304,19 @@ export default function MarketReportsClient() {
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
       </section>
 
+      {/* Simple Property Search */}
+      <section className={styles.section} aria-label="Quick Property Search">
+        <h2 className={styles.sectionTitle}>
+          Quick Property Search
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Browse available properties with our simple search tool. 
+          Perfect for quick property browsing while reviewing market reports.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+      </section>
+
       <RealScoutAdvancedSearch />
     </div>
   );

@@ -260,6 +260,17 @@ export default function NewHomesSummerlinClient() {
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
         </section>
+
+        {/* Simple Property Search */}
+        <section className={styles.ctaSection}>
+          <h2>Quick Property Search for New Construction</h2>
+          <p>
+            Browse available new construction homes with our simple search tool. 
+            Perfect for quick property browsing of new homes in Summerlin West.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+        </section>
       </main>
     </div>
   );

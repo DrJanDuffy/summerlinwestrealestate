@@ -237,6 +237,19 @@ export default function PropertiesClient() {
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
         </div>
       </section>
+
+      {/* Simple Property Search */}
+      <section className={styles.marketInsights}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>Quick Property Search</h2>
+          <p className={styles.sectionSubtitle}>
+            Start your property search with our simple, user-friendly search tool. 
+            Perfect for quick browsing of available properties in Summerlin West.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+        </div>
+      </section>
     </div>
   );
 }

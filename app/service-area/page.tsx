@@ -319,6 +319,17 @@ export default function ServiceArea() {
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
       </section>
+
+      {/* Simple Property Search */}
+      <section className={styles.subdivisions}>
+        <h2 className={styles.subdivisionsTitle}>Quick Property Search in The Vistas</h2>
+        <p>
+          Browse available properties in The Vistas subdivisions with our simple search tool. 
+          Perfect for quick property browsing in this premier community.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+      </section>
     </div>
   );
 }

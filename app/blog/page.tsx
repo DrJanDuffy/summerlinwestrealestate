@@ -151,6 +151,17 @@ export default async function BlogIndexPage() {
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
       </section>
+
+      {/* Simple Property Search */}
+      <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
+        <h2>Quick Property Search</h2>
+        <p>
+          Browse available properties with our simple search tool. 
+          Perfect for quick property browsing while reading our blog content.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+      </section>
     </div>
   );
 }
