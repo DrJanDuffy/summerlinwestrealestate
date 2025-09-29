@@ -8,13 +8,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
-import styles fr
+import styles from './page.module.css';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-om '../page.module.css';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
@@ -6,7 +7,7 @@ import styles from '../../page.module.css';
 
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
 const communities = [
@@ -108,26 +109,7 @@ const communities = [
   },
 ];
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const community = communities.find((c) => c.slug === slug);
-  if (!community) {
-    return {
-      title: 'Community Not Found | Summerlin West Real Estate',
-      robots: { index: false, follow: false },
-    };
-  }
-  return {
-    title: `${community.name} | Summerlin West Real Estate`,
-    description: community.description,
-    openGraph: {
-      title: `${community.name} | Summerlin West Real Estate`,
-      description: community.description,
-    },
-  };
-}
-
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const community = communities.find((c) => c.slug === slug);
   if (!community) {

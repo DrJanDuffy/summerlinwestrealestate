@@ -8,7 +8,7 @@ import styles from '../page.module.css';
 import clientStyles from './client-subdivision.module.css';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
 
