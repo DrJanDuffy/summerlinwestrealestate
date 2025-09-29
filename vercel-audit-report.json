@@ -1,0 +1,154 @@
+{
+  "timestamp": "2025-09-29T11:09:52.287Z",
+  "project": "Summerlin West Real Estate",
+  "auditType": "Comprehensive Vercel Setup Audit",
+  "generatedBy": "V0.app",
+  "results": {
+    "vercelConfig": {
+      "framework": "nextjs",
+      "installCommand": "pnpm install",
+      "outputDirectory": ".next",
+      "headers": [
+        {
+          "source": "/(.*)",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "origin-when-cross-origin"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains; preload"
+            }
+          ]
+        },
+        {
+          "source": "/api/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "source": "/((?!api|_next|images|favicon.ico).*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=0, must-revalidate"
+            },
+            {
+              "key": "X-Cache-Bust",
+              "value": "v1"
+            }
+          ]
+        },
+        {
+          "source": "/images/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "/_next/static/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "/favicon.ico",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400"
+            }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/home",
+          "destination": "/",
+          "permanent": true
+        },
+        {
+          "source": "/:path*",
+          "has": [
+            {
+              "type": "host",
+              "value": "summerlinwestrealestate.com"
+            }
+          ],
+          "destination": "https://www.summerlinwestrealestate.com/:path*",
+          "permanent": true
+        }
+      ],
+      "rewrites": [
+        {
+          "source": "/robots.txt",
+          "destination": "/api/robots"
+        },
+        {
+          "source": "/sitemap.xml",
+          "destination": "/api/sitemap"
+        }
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "build": {
+        "env": {
+          "NEXT_TELEMETRY_DISABLED": "1"
+        }
+      }
+    },
+    "deployment": {},
+    "domains": {},
+    "performance": {},
+    "security": {},
+    "build": {},
+    "environment": {},
+    "recommendations": [
+      "Verify domain configuration for summerlinwestrealestate.com",
+      "Configure missing security headers",
+      "Ensure .env.local is in .gitignore",
+      "Use \"vercel build\" as build command",
+      "Configure NEXT_PUBLIC_SITE_URL environment variable",
+      "Configure REALSCOUT_API_KEY environment variable",
+      "Configure V0_API_KEY environment variable"
+    ]
+  },
+  "summary": {
+    "totalChecks": 25,
+    "passed": 0,
+    "warnings": 0,
+    "errors": 0
+  }
+}

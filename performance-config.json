@@ -1,0 +1,53 @@
+{
+  "nextjs": {
+    "experimental": {
+      "optimizePackageImports": true,
+      "turbo": {
+        "rules": {
+          "*.svg": {
+            "loaders": [
+              "@svgr/webpack"
+            ],
+            "as": "*.js"
+          }
+        }
+      }
+    },
+    "images": {
+      "domains": [
+        "images.unsplash.com",
+        "picsum.photos",
+        "em.realscout.com",
+        "files.keepingcurrentmatters.com"
+      ],
+      "formats": [
+        "image/webp",
+        "image/avif"
+      ],
+      "minimumCacheTTL": 60,
+      "dangerouslyAllowSVG": true,
+      "contentSecurityPolicy": "default-src 'self'; script-src 'none'; sandbox;"
+    },
+    "compress": true,
+    "poweredByHeader": false,
+    "generateEtags": false,
+    "onDemandEntries": {
+      "maxInactiveAge": 25000,
+      "pagesBufferLength": 2
+    }
+  },
+  "vercel": {
+    "functions": {
+      "app/api/**/*.ts": {
+        "maxDuration": 30,
+        "memory": 1024
+      }
+    },
+    "edge": true,
+    "regions": [
+      "iad1",
+      "sfo1",
+      "lhr1"
+    ]
+  }
+}

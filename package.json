@@ -13,7 +13,13 @@
     "biome:lint": "biome lint .",
     "biome:fix": "biome check --write .",
     "analyze": "ANALYZE=true next build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "build:vercel": "vercel build",
+    "build:production": "NODE_ENV=production vercel build",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "audit:vercel": "node scripts/v0-vercel-comprehensive-audit.js",
+    "optimize:vercel": "node scripts/v0-vercel-optimization.js"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.0.20",
@@ -51,6 +57,8 @@
     "eslint-config-next": "^15.5.4",
     "husky": "^9.1.7",
     "tsx": "^4.20.6",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "@vercel/analytics": "^1.2.0",
+    "@vercel/speed-insights": "^1.0.0"
   }
 }

@@ -1,0 +1,48 @@
+{
+  "csp": {
+    "directives": {
+      "defaultSrc": [
+        "'self'"
+      ],
+      "scriptSrc": [
+        "'self'",
+        "'unsafe-inline'",
+        "'unsafe-eval'",
+        "https://www.googletagmanager.com",
+        "https://connect.facebook.net",
+        "https://em.realscout.com"
+      ],
+      "styleSrc": [
+        "'self'",
+        "'unsafe-inline'",
+        "https://fonts.googleapis.com"
+      ],
+      "fontSrc": [
+        "'self'",
+        "https://fonts.gstatic.com"
+      ],
+      "imgSrc": [
+        "'self'",
+        "data:",
+        "https:",
+        "blob:"
+      ],
+      "connectSrc": [
+        "'self'",
+        "https://api.realscout.com",
+        "https://www.googletagmanager.com"
+      ],
+      "frameSrc": [
+        "'self'",
+        "https://www.google.com"
+      ]
+    }
+  },
+  "headers": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "Referrer-Policy": "origin-when-cross-origin"
+  }
+}
