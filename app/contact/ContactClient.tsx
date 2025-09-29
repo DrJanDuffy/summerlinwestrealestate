@@ -10,7 +10,13 @@ import {
   FaPhone,
   FaYoutube,
 } from 'react-icons/fa';
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketIns
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+ightsClient';
 // import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
 
@@ -332,14 +338,16 @@ export default function ContactClient() {
             and investment potential.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="500000" 
-            price-max="800000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="500000" 
+              priceMax="800000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
 
         {/* Advanced Property Search */}
@@ -378,14 +386,16 @@ export default function ContactClient() {
             Perfect for businesses looking to establish or relocate their operations.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,OTHER" 
-            price-min="500000" 
-            price-max="600000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,OTHER" 
+              priceMin="500000" 
+              priceMax="600000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
     </div>

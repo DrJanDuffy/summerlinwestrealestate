@@ -5,7 +5,13 @@ import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
-import styles from '../page.module.css';
+import styles from '../page.
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+module.css';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -532,14 +538,16 @@ export default function Communities() {
             Each community offers unique amenities, lifestyle options, and investment opportunities.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="550000" 
-            price-max="1800000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="550000" 
+              priceMax="1800000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
 
         {/* Advanced Property Search */}
@@ -572,14 +580,16 @@ export default function Communities() {
             From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="400000" 
-            price-max="2000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
     </div>

@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
 
@@ -102,14 +108,16 @@ export default function DowntownSummerlin() {
             those who want to live in the heart of Summerlin's vibrant lifestyle.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="500000" 
-            price-max="1200000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="500000" 
+              priceMax="1200000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
 
         <section>
@@ -168,14 +176,16 @@ export default function DowntownSummerlin() {
             From professional office spaces to commercial buildings, find the perfect location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,OTHER" 
-            price-min="500000" 
-            price-max="600000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,OTHER" 
+              priceMin="500000" 
+              priceMax="600000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
     </div>

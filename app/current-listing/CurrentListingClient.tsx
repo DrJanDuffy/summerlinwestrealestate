@@ -5,7 +5,13 @@ import { useEffect } from 'react';
 import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
 import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
-import styles from '../page.module.css';
+import styles from '../page.m
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+odule.css';
 
 // Import RealScout components
 const RealScoutFeaturedListings = dynamic(
@@ -213,14 +219,16 @@ export default function CurrentListingClient() {
             From entry-level homes to luxury estates, discover all available options while viewing our featured listing.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="400000" 
-            price-max="2000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
       <LatestMarketInsights />

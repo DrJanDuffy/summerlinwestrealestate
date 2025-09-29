@@ -5,7 +5,13 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import SubdivisionNavigation from '../../../components/ui/SubdivisionNavigation';
 import styles from '../page.module.css';
-import clientStyles from './client-subdivision.module.css';
+import clientStyles from './client-subdivision.
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+module.css';
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {
@@ -644,14 +650,16 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           {subdivision.name === 'Casa Rosa' ? ' mid-range luxury living with quality construction, modern amenities, and convenient access to The Vistas\' premier facilities' : subdivision.type === 'Family' ? ' family-friendly living with modern amenities and convenient access to top-rated schools' : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="PRICE_LOW" 
-          listing-status="For Sale" 
-          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min={subdivision.name === 'Casa Rosa' ? '600000' : subdivision.type === 'Family' ? '500000' : '700000'} 
-          price-max={subdivision.name === 'Casa Rosa' ? '1000000' : subdivision.type === 'Family' ? '1200000' : '1800000'}
-        />
+        <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
       </motion.section>
 
       {/* Advanced Property Search */}
@@ -708,14 +716,16 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="PRICE_LOW" 
-          listing-status="For Sale" 
-          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min="400000" 
-          price-max="2000000"
-        />
+        <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
       </motion.section>
 
       {/* Enhanced Navigation */}

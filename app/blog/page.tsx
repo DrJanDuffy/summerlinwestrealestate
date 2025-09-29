@@ -4,6 +4,12 @@ import BlogLayout from '../../components/ui/BlogLayout';
 import type { BlogPost } from '../../types/blog';
 import styles from './blog.module.css';
 
+
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
 export const dynamic = 'force-dynamic';
 
 const HYPERLOCAL_KEYWORDS = [
@@ -131,14 +137,16 @@ export default async function BlogIndexPage() {
           estates to family-friendly homes.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="PRICE_LOW" 
-          listing-status="For Sale" 
-          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min="650000" 
-          price-max="1600000"
-        />
+        <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="650000" 
+              priceMax="1600000"
+              maxListings={12}
+              className="mt-6"
+            />
       </section>
 
       {/* Advanced Property Search */}
@@ -171,14 +179,16 @@ export default async function BlogIndexPage() {
           From entry-level homes to luxury estates, discover all available options while reading our latest market insights.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="PRICE_LOW" 
-          listing-status="For Sale" 
-          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min="400000" 
-          price-max="2000000"
-        />
+        <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
       </section>
     </div>
   );

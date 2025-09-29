@@ -8,7 +8,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
-import styles from '../page.module.css';
+import styles fr
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+om '../page.module.css';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -172,14 +178,16 @@ export default function TheVistas() {
             schools. The Vistas represents the pinnacle of Summerlin West luxury living.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="800000" 
-            price-max="2500000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="800000" 
+              priceMax="2500000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
@@ -233,14 +241,16 @@ export default function TheVistas() {
             From professional office spaces to commercial buildings, find the perfect location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,OTHER" 
-            price-min="500000" 
-            price-max="600000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,OTHER" 
+              priceMin="500000" 
+              priceMax="600000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
     </div>

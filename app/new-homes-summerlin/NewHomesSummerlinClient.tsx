@@ -1,7 +1,13 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import styles from './NewHomesSummerlin.module.css';
+import styles from './NewHomesSummerlin
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+.module.css';
 
 // Dynamic imports for client components
 const _LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
@@ -220,14 +226,16 @@ export default function NewHomesSummerlinClient() {
             From luxury estates to family-friendly communities, find the perfect new construction home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="600000" 
-            price-max="2000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="600000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
 
         {/* CTA Section */}
@@ -280,14 +288,16 @@ export default function NewHomesSummerlinClient() {
             From professional office spaces to commercial buildings, find the perfect location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,OTHER" 
-            price-min="500000" 
-            price-max="600000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,OTHER" 
+              priceMin="500000" 
+              priceMax="600000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </main>
     </div>

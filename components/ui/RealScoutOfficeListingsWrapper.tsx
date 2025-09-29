@@ -37,7 +37,7 @@ export default function RealScoutOfficeListings({
           console.log('RealScout elements loaded successfully');
           console.log('Agent ID:', agentEncodedId);
           console.log('Price range:', priceMin, '-', priceMax);
-          console.log('Property types:', propertyTypes);
+          console.log('Property types:', _propertyTypes);
           setIsLoaded(true);
         } else {
           console.error('RealScout elements failed to load within timeout');
@@ -50,7 +50,7 @@ export default function RealScoutOfficeListings({
     };
 
     loadWidget();
-  }, [agentEncodedId, priceMin, priceMax, propertyTypes]);
+  }, [agentEncodedId, priceMin, priceMax]);
 
   if (error) {
     return (

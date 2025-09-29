@@ -2,7 +2,13 @@
 // import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import styles from './Properties.module.css';
+import styles from './Propertie
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+s.module.css';
 
 // Import RealScout components
 const RealScoutOfficeListings = dynamic(
@@ -214,14 +220,16 @@ export default function PropertiesClient() {
             find the perfect property that matches your budget and lifestyle requirements.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="400000" 
-            price-max="3000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="3000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </div>
       </section>
 
@@ -260,14 +268,16 @@ export default function PropertiesClient() {
             From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="400000" 
-            price-max="2000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </div>
       </section>
     </div>

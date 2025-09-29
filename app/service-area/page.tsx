@@ -1,5 +1,11 @@
 'use client';
-import styles from '../../styles/pages/service-area.module.css';
+import styles from '../../styles/pages/service-area.
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+module.css';
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -339,14 +345,16 @@ export default function ServiceArea() {
           From professional office spaces to commercial buildings, find the perfect location for your business.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-office-listings 
-          agent-encoded-id="QWdlbnQtMjI1MDUw" 
-          sort-order="PRICE_LOW" 
-          listing-status="For Sale" 
-          property-types=",SFR,OTHER" 
-          price-min="500000" 
-          price-max="600000"
-        />
+        <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,OTHER" 
+              priceMin="500000" 
+              priceMax="600000"
+              maxListings={12}
+              className="mt-6"
+            />
       </section>
     </div>
   );

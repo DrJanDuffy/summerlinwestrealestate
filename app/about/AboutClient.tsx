@@ -1,7 +1,13 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
-import styles from '../page.module.css';
+import styles from '../page.
+import dynamic from 'next/dynamic';
+
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
+module.css';
 
 // Import components with proper client-side only configuration
 const RealScoutOfficeListings = dynamic(
@@ -550,14 +556,16 @@ export default function AboutClient() {
             to every real estate transaction.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="600000" 
-            price-max="1200000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="600000" 
+              priceMax="1200000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
 
         {/* Advanced Property Search */}
@@ -596,14 +604,16 @@ export default function AboutClient() {
             From entry-level homes to luxury estates, discover all available options with expert guidance.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings 
-            agent-encoded-id="QWdlbnQtMjI1MDUw" 
-            sort-order="PRICE_LOW" 
-            listing-status="For Sale" 
-            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            price-min="400000" 
-            price-max="2000000"
-          />
+          <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
         </section>
       </div>
       {/* JSON-LD structured data for SEO */}
