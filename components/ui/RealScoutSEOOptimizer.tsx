@@ -21,7 +21,7 @@ interface RealScoutSEOOptimizerProps {
 
 export default function RealScoutSEOOptimizer({
   pageType,
-  location = 'Summerlin West, Las Vegas, NV',
+  location: _location = 'Summerlin West, Las Vegas, NV',
   community = 'Summerlin West',
   className = '',
 }: RealScoutSEOOptimizerProps) {
@@ -313,16 +313,16 @@ export default function RealScoutSEOOptimizer({
           <div className={`real-scout-seo-contact ${className}`}>
             {/* Lead Capture */}
             <section className="mb-12" aria-label="Contact Form">
-              <RealScoutLeadCapture
-                variant="full"
-                title="Get Your Free Summerlin West Market Report"
-                subtitle="Stay ahead of the market with our exclusive insights and expert guidance"
-                source="Contact Page"
-                community={community}
-                showMarketReport={true}
-                showValuation={true}
-                showConsultation={true}
-              />
+            <RealScoutLeadCapture
+              variant="inline"
+              title="Get Your Free Summerlin West Market Report"
+              subtitle="Stay ahead of the market with our exclusive insights and expert guidance"
+              source="Contact Page"
+              community={community}
+              showMarketReport={true}
+              showValuation={true}
+              showConsultation={true}
+            />
             </section>
 
             {/* Property Valuation */}
