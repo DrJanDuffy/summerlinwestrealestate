@@ -5,13 +5,11 @@ import { useEffect } from 'react';
 import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
 import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
-import styles from '../page.m
-import dynamic from 'next/dynamic';
+import styles from '../page.module.css';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-odule.css';
 
 // Import RealScout components
 const RealScoutFeaturedListings = dynamic(

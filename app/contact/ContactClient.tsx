@@ -10,13 +10,11 @@ import {
   FaPhone,
   FaYoutube,
 } from 'react-icons/fa';
-import LatestMarketInsightsClient from '../../components/ui/LatestMarketIns
-import dynamic from 'next/dynamic';
+import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-ightsClient';
 // import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
 

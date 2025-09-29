@@ -1,9 +1,9 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import NeighborhoodHero from '../../../components/ui/NeighborhoodHero';
 import styles from '../../page.module.css';
-
 
 import dynamic from 'next/dynamic';
 

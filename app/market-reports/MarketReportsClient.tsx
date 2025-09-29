@@ -6,13 +6,11 @@ import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch';
 import useExpandable from '../../hooks/useExpandable';
-import styles from '../page.
-import dynamic from 'next/dynamic';
+import styles from '../page.module.css';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-module.css';
 
 const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), {
   ssr: false,
