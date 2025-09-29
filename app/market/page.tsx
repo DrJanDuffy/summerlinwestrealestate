@@ -33,7 +33,7 @@ export default function Market() {
       <section className={styles.sectionCard}>
         <h2>Current Market Trends</h2>
         <Image
-          src="https://placehold.co/800x300?text=Market+Trends"
+          src="/images/featured-homes/47-DJI_20250707145846_0779_D.jpg"
           alt="Summerlin real estate market trends graph"
           width={800}
           height={300}

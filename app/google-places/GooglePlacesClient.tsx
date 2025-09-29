@@ -266,7 +266,7 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com`}</code>
             </div>
             <div className={styles.securityImage}>
               <Image
-                src="https://placehold.co/400x300?text=Security+Setup"
+                src="/images/featured-homes/featured-home-1.jpg"
                 alt="Google Maps API Security Setup"
                 width={400}
                 height={300}

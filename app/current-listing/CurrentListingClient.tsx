@@ -77,8 +77,8 @@ export default function CurrentListingClient() {
       addressCountry: 'US',
     },
     image: [
-      'https://placehold.co/400x300?text=Photo+1',
-      'https://placehold.co/400x300?text=Photo+2',
+      '/images/featured-homes/02-DSC03093.jpg',
+      '/images/featured-homes/19-DSC03027.jpg',
     ],
     numberOfRooms: 8,
     floorSize: {

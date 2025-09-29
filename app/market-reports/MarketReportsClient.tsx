@@ -148,7 +148,7 @@ export default function MarketReportsClient() {
           <div>
             <h3 className={styles.centerTitle}>Price Trends</h3>
             <Image
-              src="https://placehold.co/400x220?text=Price+Trends"
+              src="/images/featured-homes/17-DSC02979.jpg"
               alt="Summerlin home price trends chart"
               width={400}
               height={220}
@@ -159,7 +159,7 @@ export default function MarketReportsClient() {
           <div>
             <h3 className={styles.centerTitle}>Inventory Trends</h3>
             <Image
-              src="https://placehold.co/400x220?text=Inventory+Trends"
+              src="/images/featured-homes/47-DJI_20250707145846_0779_D.jpg"
               alt="Summerlin housing inventory trends chart"
               width={400}
               height={220}

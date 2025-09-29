@@ -21,7 +21,7 @@ export default function Communities() {
       maxPrice: 2500000,
       features: ['Mountain Views', 'Luxury Homes', 'Gated Community', 'Golf Course'],
       homeTypes: 'Single Family, Custom Estates',
-      image: 'https://placehold.co/400x220/1a365d/ffffff?text=The+Vistas',
+      image: '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
       slug: 'the-vistas',
       highlighted: true,
       yearBuilt: '2018-Present',
@@ -37,7 +37,7 @@ export default function Communities() {
       maxPrice: 1500000,
       features: ['Top Schools', 'Family-Friendly', 'Parks Nearby', 'Community Pool'],
       homeTypes: 'Single Family, Townhomes',
-      image: 'https://placehold.co/400x220/2d4a22/ffffff?text=The+Paseos',
+      image: '/images/featured-homes/19-DSC03027.jpg',
       slug: 'the-paseos',
       highlighted: true,
       yearBuilt: '2019-Present',
@@ -53,7 +53,7 @@ export default function Communities() {
       maxPrice: 1200000,
       features: ['Resort Amenities', 'New Construction', 'Walking Trails', 'Fitness Center'],
       homeTypes: 'Single Family, Patio Homes',
-      image: 'https://placehold.co/400x220/8b4513/ffffff?text=Stonebridge',
+      image: '/images/featured-homes/02-DSC03093.jpg',
       slug: 'stonebridge',
       highlighted: true,
       yearBuilt: '2020-Present',
@@ -69,7 +69,7 @@ export default function Communities() {
       maxPrice: 1800000,
       features: ['New Construction', 'Contemporary', 'Builder Incentives', 'Smart Homes'],
       homeTypes: 'Single Family, Modern Design',
-      image: 'https://placehold.co/400x220/4a5568/ffffff?text=Redpoint',
+      image: '/images/featured-homes/17-DSC02979.jpg',
       slug: 'redpoint',
       highlighted: false,
       yearBuilt: '2021-Present',
@@ -85,7 +85,7 @@ export default function Communities() {
       maxPrice: 1100000,
       features: ['Urban Style', 'Walkable', 'Downtown Access', 'Transit Friendly'],
       homeTypes: 'Condos, Townhomes, Lofts',
-      image: 'https://placehold.co/400x220/2b6cb0/ffffff?text=Redpoint+Square',
+      image: '/images/featured-homes/featured-home-1.jpg',
       slug: 'redpoint-square',
       highlighted: false,
       yearBuilt: '2020-Present',
@@ -101,7 +101,7 @@ export default function Communities() {
       maxPrice: 3000000,
       features: ['Luxury Estates', 'Privacy', 'Elegant Design', 'City Views'],
       homeTypes: 'Custom Estates, Luxury Homes',
-      image: 'https://placehold.co/400x220/553c9a/ffffff?text=Reverence',
+      image: '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg',
       slug: 'reverence',
       highlighted: true,
       yearBuilt: '2017-Present',
@@ -383,7 +383,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="https://placehold.co/400x200?text=San+Marcos"
+                  src="/images/featured-homes/19-DSC03027.jpg"
                   alt="San Marcos subdivision in The Vistas"
                   width={400}
                   height={200}
@@ -406,7 +406,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="https://placehold.co/400x200?text=Casa+Rosa"
+                  src="/images/featured-homes/02-DSC03093.jpg"
                   alt="Casa Rosa subdivision in The Vistas"
                   width={400}
                   height={200}
@@ -429,7 +429,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="https://placehold.co/400x200?text=Solano"
+                  src="/images/featured-homes/17-DSC02979.jpg"
                   alt="Solano subdivision in The Vistas"
                   width={400}
                   height={200}
@@ -452,7 +452,7 @@ export default function Communities() {
             <div className={styles.communityCard}>
               <div className={styles.cardImageWrap}>
                 <Image
-                  src="https://placehold.co/400x200?text=Encanto"
+                  src="/images/featured-homes/featured-home-1.jpg"
                   alt="Encanto subdivision in The Vistas"
                   width={400}
                   height={200}

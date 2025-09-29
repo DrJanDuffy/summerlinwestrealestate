@@ -221,7 +221,7 @@ function SubdivisionImage({
 }) {
   const [src, setSrc] = useState(heroImage);
   useEffect(() => {
-    // Only generate if using the placeholder
+    // Generate enhanced content for subdivision
     if (heroImage.includes('placehold.co')) {
       const prompt = `A beautiful ${subdivision.type} neighborhood in Summerlin West, Las Vegas, called ${subdivision.name}${subdivision.builder && subdivision.builder !== '-' ? `, built by ${subdivision.builder}` : ''}${subdivision.features?.length ? `, featuring ${subdivision.features.join(', ')}` : ''}.`;
       fetch('/api/generate-image', {
@@ -518,10 +518,10 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
   }
 
   // Generate enhanced content
-  const heroImage = subdivision.image || 'https://placehold.co/600x300?text=The+Vistas';
+  const heroImage = subdivision.image || '/images/featured-homes/47-DJI_20250707145846_0779_D.jpg';
   const imageAlt = subdivision.image
     ? `${subdivision.name} neighborhood view showcasing luxury homes and community amenities`
-    : `Placeholder image for ${subdivision.name} luxury subdivision`;
+    : `${subdivision.name} luxury subdivision in The Vistas, Summerlin West`;
 
   return (
     <div className={styles.page}>
