@@ -6,7 +6,7 @@ import Head from 'next/head';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import Script from 'next/script';
 import Header from '../components/layout/Header';
-import RealScoutWidget from '../components/ui/RealScoutWidget';
+import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeListingsWrapper';
 import styles from './page.module.css';
 
 const inter = Inter({
@@ -294,9 +294,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="pt-16">{children}</main>
         <div className={styles.sectionCard}>
           <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-          <RealScoutWidget 
-            priceMin={600000} 
-            variant="office-listings"
+          <RealScoutOfficeListingsWrapper 
+            agentEncodedId="QWdlbnQtMjI1MDUw" 
+            sortOrder="PRICE_LOW" 
+            listingStatus="For Sale" 
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            priceMin="600000" 
+            priceMax="2000000"
+            maxListings={12}
             className="mt-6"
           />
         </div>

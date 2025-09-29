@@ -28,6 +28,9 @@ const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsights
 const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
   ssr: false,
 });
+const RealScoutOfficeListingsWrapper = dynamic(() => import('../components/ui/RealScoutOfficeListingsWrapper'), {
+  ssr: false,
+});
 
 type Faq = {
   question: string;
@@ -426,14 +429,15 @@ export default function HomeClient() {
               Summerlin West real estate. Each property offers exceptional quality, prime location, and 
               unmatched lifestyle amenities.
             </p>
-            {/* @ts-ignore - RealScout web component */}
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="PRICE_LOW" 
-              listing-status="For Sale" 
-              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              price-min="800000" 
-              price-max="2000000"
+            <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="800000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
             />
           </section>
 
@@ -584,14 +588,15 @@ export default function HomeClient() {
               Explore a comprehensive range of residential properties across Summerlin West communities. 
               From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
             </p>
-            {/* @ts-ignore - RealScout web component */}
-            <realscout-office-listings 
-              agent-encoded-id="QWdlbnQtMjI1MDUw" 
-              sort-order="PRICE_LOW" 
-              listing-status="For Sale" 
-              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              price-min="400000" 
-              price-max="2000000"
+            <RealScoutOfficeListingsWrapper 
+              agentEncodedId="QWdlbnQtMjI1MDUw" 
+              sortOrder="PRICE_LOW" 
+              listingStatus="For Sale" 
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              priceMin="400000" 
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
             />
           </section>
         </div>
