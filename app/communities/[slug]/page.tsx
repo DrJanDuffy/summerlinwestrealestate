@@ -213,21 +213,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
           </section>
 
-          {/* Office Listings Widget */}
+          {/* Additional Property Search Options */}
           <section className={styles.sectionCard}>
-            <h2>Office Properties in {community.name}</h2>
+            <h2>Broader Market Options in {community.name}</h2>
             <p>
-              Explore office properties and commercial real estate opportunities in {community.name}. 
-              From professional office spaces to commercial buildings, find the perfect location for your business.
+              Explore a comprehensive range of residential properties in {community.name} and surrounding Summerlin West communities. 
+              From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
             </p>
             {/* @ts-ignore - RealScout web component */}
             <realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 
               sort-order="PRICE_LOW" 
               listing-status="For Sale" 
-              property-types=",SFR,OTHER" 
-              price-min="500000" 
-              price-max="600000"
+              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+              price-min="400000" 
+              price-max="2000000"
             />
           </section>
 

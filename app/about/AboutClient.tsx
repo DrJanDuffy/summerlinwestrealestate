@@ -586,23 +586,23 @@ export default function AboutClient() {
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
         </section>
 
-        {/* Office Listings Widget */}
-        <section className={styles.sectionCard} aria-labelledby="office-listings">
-          <h2 id="office-listings" className={styles.centerTitle}>
-            Office Properties by Dr. Jan Duffy
+        {/* Additional Property Search Options */}
+        <section className={styles.sectionCard} aria-labelledby="additional-properties">
+          <h2 id="additional-properties" className={styles.centerTitle}>
+            Broader Market Options with Dr. Jan Duffy
           </h2>
           <p className={styles.heroSubtitle}>
-            Explore office properties and commercial real estate opportunities with Dr. Jan Duffy. 
-            From professional office spaces to commercial buildings, find the perfect location for your business.
+            Explore a comprehensive range of residential properties across Summerlin West communities with Dr. Jan Duffy. 
+            From entry-level homes to luxury estates, discover all available options with expert guidance.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-office-listings 
             agent-encoded-id="QWdlbnQtMjI1MDUw" 
             sort-order="PRICE_LOW" 
             listing-status="For Sale" 
-            property-types=",SFR,OTHER" 
-            price-min="500000" 
-            price-max="600000"
+            property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+            price-min="400000" 
+            price-max="2000000"
           />
         </section>
       </div>
