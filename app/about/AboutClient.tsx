@@ -1,13 +1,11 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
-import styles from '../page.
-import dynamic from 'next/dynamic';
+import styles from '../page.module.css';
 
 const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
   ssr: false,
 });
-module.css';
 
 // Import components with proper client-side only configuration
 const RealScoutOfficeListings = dynamic(
