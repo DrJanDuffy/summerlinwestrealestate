@@ -701,11 +701,11 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         viewport={{ once: true }}
       >
         <h2 className={styles.centerTitle}>
-          More Properties Near {subdivision.name}
+          Broader Market Options Near {subdivision.name}
         </h2>
         <p className={styles.heroSubtitle}>
-          Explore additional residential properties in The Vistas and surrounding Summerlin West communities. 
-          Find your perfect home in this premier master-planned community with world-class amenities.
+          Explore a wider range of residential properties in The Vistas and surrounding Summerlin West communities. 
+          From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-office-listings 
@@ -713,8 +713,8 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
           sort-order="PRICE_LOW" 
           listing-status="For Sale" 
           property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-          price-min={subdivision.name === 'Casa Rosa' ? '600000' : subdivision.type === 'Family' ? '500000' : '700000'} 
-          price-max={subdivision.name === 'Casa Rosa' ? '1000000' : subdivision.type === 'Family' ? '1200000' : '1800000'}
+          price-min="400000" 
+          price-max="2000000"
         />
       </motion.section>
 
