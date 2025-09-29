@@ -692,7 +692,7 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
       </motion.section>
 
-      {/* Office Listings Widget */}
+      {/* Additional Property Search Options */}
       <motion.section
         className={styles.sectionCard}
         initial={{ opacity: 0, y: 20 }}
@@ -701,20 +701,20 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         viewport={{ once: true }}
       >
         <h2 className={styles.centerTitle}>
-          Office Properties in {subdivision.name}
+          More Properties Near {subdivision.name}
         </h2>
         <p className={styles.heroSubtitle}>
-          Explore office properties and commercial real estate opportunities in {subdivision.name}. 
-          From professional office spaces to commercial buildings, find the perfect location for your business.
+          Explore additional residential properties in The Vistas and surrounding Summerlin West communities. 
+          Find your perfect home in this premier master-planned community with world-class amenities.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-office-listings 
           agent-encoded-id="QWdlbnQtMjI1MDUw" 
           sort-order="PRICE_LOW" 
           listing-status="For Sale" 
-          property-types=",SFR,OTHER" 
-          price-min="500000" 
-          price-max="600000"
+          property-types=",SFR,MF,TC,LAL,MOBILE,OTHER" 
+          price-min={subdivision.name === 'Casa Rosa' ? '600000' : subdivision.type === 'Family' ? '500000' : '700000'} 
+          price-max={subdivision.name === 'Casa Rosa' ? '1000000' : subdivision.type === 'Family' ? '1200000' : '1800000'}
         />
       </motion.section>
 
