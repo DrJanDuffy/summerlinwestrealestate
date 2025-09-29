@@ -291,6 +291,19 @@ export default function MarketReportsClient() {
         />
       </section>
 
+      {/* Advanced Property Search */}
+      <section className={styles.section} aria-label="Advanced Property Search">
+        <h2 className={styles.sectionTitle}>
+          Advanced Property Search
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Use our advanced search tool to find properties that match the latest market trends. 
+          Filter by price, location, features, and more to discover your perfect investment opportunity.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+      </section>
+
       <RealScoutAdvancedSearch />
     </div>
   );

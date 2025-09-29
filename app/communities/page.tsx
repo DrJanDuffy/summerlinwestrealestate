@@ -541,6 +541,17 @@ export default function Communities() {
             price-max="1800000"
           />
         </section>
+
+        {/* Advanced Property Search */}
+        <section className={styles.sectionCard} aria-label="Advanced Property Search">
+          <h2 className={styles.centerTitle}>Advanced Property Search</h2>
+          <p className={styles.heroSubtitle}>
+            Use our advanced search tool to find properties in your preferred Summerlin West community. 
+            Filter by price, location, features, and more to discover your perfect home.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </main>
     </div>
   );

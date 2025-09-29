@@ -198,6 +198,17 @@ export default function TheVistas() {
           <h2>Request Your Free Community Guide</h2>
           <VistasLeadForm />
         </section>
+
+        {/* Advanced Property Search */}
+        <section className={styles.sectionCard}>
+          <h2>Advanced Property Search in The Vistas</h2>
+          <p>
+            Use our advanced search tool to find luxury properties in The Vistas. 
+            Filter by price, features, and more to discover your perfect home with Red Rock Canyon views.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </main>
     </div>
   );

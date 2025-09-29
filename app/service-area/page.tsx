@@ -308,6 +308,17 @@ export default function ServiceArea() {
           </a>
         </div>
       </section>
+
+      {/* Advanced Property Search */}
+      <section className={styles.subdivisions}>
+        <h2 className={styles.subdivisionsTitle}>Advanced Property Search in The Vistas</h2>
+        <p>
+          Use our advanced search tool to find properties in The Vistas subdivisions. 
+          Filter by price, features, and more to discover your perfect home in this premier community.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+      </section>
     </div>
   );
 }

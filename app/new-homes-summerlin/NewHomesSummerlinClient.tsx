@@ -249,6 +249,17 @@ export default function NewHomesSummerlinClient() {
             </a>
           </div>
         </section>
+
+        {/* Advanced Property Search */}
+        <section className={styles.ctaSection}>
+          <h2>Advanced Property Search for New Construction</h2>
+          <p>
+            Use our advanced search tool to find new construction homes in Summerlin West. 
+            Filter by price, features, builder, and more to discover your perfect new home.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </main>
     </div>
   );

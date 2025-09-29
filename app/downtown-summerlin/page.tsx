@@ -137,6 +137,17 @@ export default function DowntownSummerlin() {
             </li>
           </ul>
         </section>
+
+        {/* Advanced Property Search */}
+        <section>
+          <h2>Advanced Property Search in Downtown Summerlin</h2>
+          <p>
+            Use our advanced search tool to find properties in Downtown Summerlin. 
+            Filter by price, features, and more to discover your perfect home in this walkable community.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </main>
     </div>
   );

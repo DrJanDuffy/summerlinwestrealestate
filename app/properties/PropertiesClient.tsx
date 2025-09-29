@@ -224,6 +224,19 @@ export default function PropertiesClient() {
           />
         </div>
       </section>
+
+      {/* Advanced Property Search */}
+      <section className={styles.marketInsights}>
+        <div className={styles.sectionContainer}>
+          <h2 className={styles.sectionTitle}>Advanced Property Search</h2>
+          <p className={styles.sectionSubtitle}>
+            Use our comprehensive search tool to find properties that match your specific criteria. 
+            Filter by price, location, features, and more to discover your perfect home.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </div>
+      </section>
     </div>
   );
 }

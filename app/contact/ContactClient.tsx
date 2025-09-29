@@ -341,6 +341,19 @@ export default function ContactClient() {
             price-max="800000"
           />
         </section>
+
+        {/* Advanced Property Search */}
+        <section className={styles.sectionCard} aria-label="Advanced Property Search">
+          <h2 className={styles.sectionTitle}>
+            Advanced Property Search
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Start your property search directly from our contact page. Use our advanced search tool 
+            to find homes that match your specific criteria in Summerlin West.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </main>
     </div>
   );

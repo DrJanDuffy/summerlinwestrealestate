@@ -548,6 +548,19 @@ export default function HomeClient() {
               </ul>
             </div>
           </section>
+
+          {/* Advanced Property Search */}
+          <section className={styles.section} aria-label="Advanced Property Search">
+            <h2 className={styles.sectionTitle}>
+              Advanced Property Search in Summerlin West
+            </h2>
+            <p className={styles.heroSubtitle}>
+              Use our advanced search tool to find your perfect home in Summerlin West. Filter by 
+              price, location, features, and more to discover properties that match your exact criteria.
+            </p>
+            {/* @ts-ignore - RealScout web component */}
+            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          </section>
         </div>
       </main>
     </>

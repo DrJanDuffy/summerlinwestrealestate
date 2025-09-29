@@ -654,6 +654,25 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         />
       </motion.section>
 
+      {/* Advanced Property Search */}
+      <motion.section
+        className={styles.sectionCard}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className={styles.centerTitle}>
+          Advanced Property Search in {subdivision.name}
+        </h2>
+        <p className={styles.heroSubtitle}>
+          Use our advanced search tool to find properties specifically in {subdivision.name}. 
+          Filter by price, features, and more to discover your perfect home in this {subdivision.type.toLowerCase()} community.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+      </motion.section>
+
       {/* Enhanced Navigation */}
       <motion.div
         className={clientStyles.ctaButtonSecondary}

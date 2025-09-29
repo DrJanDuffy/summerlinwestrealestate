@@ -191,6 +191,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             />
           </section>
 
+          {/* Advanced Property Search */}
+          <section className={styles.sectionCard}>
+            <h2>Advanced Property Search in {community.name}</h2>
+            <p>
+              Use our advanced search tool to find properties specifically in {community.name}. 
+              Filter by price, features, and more to discover your perfect home in this community.
+            </p>
+            {/* @ts-ignore - RealScout web component */}
+            <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          </section>
+
           <Link href="/communities" className={styles.ctaBtn}>
             Back to All Communities
           </Link>

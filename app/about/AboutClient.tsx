@@ -559,6 +559,19 @@ export default function AboutClient() {
             price-max="1200000"
           />
         </section>
+
+        {/* Advanced Property Search */}
+        <section className={styles.sectionCard} aria-labelledby="advanced-search">
+          <h2 id="advanced-search" className={styles.centerTitle}>
+            Advanced Property Search
+          </h2>
+          <p className={styles.heroSubtitle}>
+            Start your home search with Dr. Jan Duffy's advanced property search tool. 
+            Find properties that match your specific criteria and preferences in Summerlin West.
+          </p>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        </section>
       </div>
       {/* JSON-LD structured data for SEO */}
       <script

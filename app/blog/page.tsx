@@ -140,6 +140,17 @@ export default async function BlogIndexPage() {
           price-max="1600000"
         />
       </section>
+
+      {/* Advanced Property Search */}
+      <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
+        <h2>Advanced Property Search</h2>
+        <p>
+          Use our advanced search tool to find properties mentioned in our blog content. 
+          Filter by price, location, features, and more to discover your perfect home in Summerlin West.
+        </p>
+        {/* @ts-ignore - RealScout web component */}
+        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+      </section>
     </div>
   );
 }
