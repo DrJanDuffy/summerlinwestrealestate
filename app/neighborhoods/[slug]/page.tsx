@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import InternalLinking from '../../../components/ui/InternalLinking';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
