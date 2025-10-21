@@ -118,8 +118,8 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
   }
 
   // Google Analytics 4 Enhanced Ecommerce
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'generate_lead', {
+  if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+    window.gtag('event', 'generate_lead', {
       currency: 'USD',
       value: getConversionValue(fullEvent.event_type),
       lead_type: fullEvent.lead_type,
@@ -134,7 +134,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
     });
 
     // Custom event for detailed tracking
-    gtag('event', 'real_estate_lead', {
+    window.gtag('event', 'real_estate_lead', {
       event_type: fullEvent.event_type,
       lead_type: fullEvent.lead_type,
       lead_source: fullEvent.lead_source,
