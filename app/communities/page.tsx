@@ -6,11 +6,9 @@ import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsights
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
 import styles from '../page.module.css';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

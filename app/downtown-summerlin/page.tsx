@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
 
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
 

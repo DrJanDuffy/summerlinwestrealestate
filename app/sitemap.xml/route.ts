@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const baseUrl = 'https://summerlinwestrealestate.com';
+  const baseUrl = 'https://www.summerlinwestrealestate.com';
   const today = new Date().toISOString().split('T')[0];
 
   // Main pages with proper priorities

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ServiceAreaClient from './ServiceAreaClient';
+import ServiceAreaClient from './page';
 
 export const metadata: Metadata = {
   title: 'The Vistas Service Area | Summerlin West Luxury Communities | Dr. Jan Duffy Real Estate',

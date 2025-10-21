@@ -10,6 +10,7 @@ import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeList
 import styles from './page.module.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { generateComprehensiveSchema } from '../lib/structured-data';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -42,7 +43,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://summerlinwestrealestate.com'),
+  metadataBase: new URL('https://www.summerlinwestrealestate.com'),
   title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',
   description:
     'Find your dream home in Summerlin West with Dr. Jan Duffy, REALTOR®. Expert guidance, luxury properties, and insider market knowledge. Schedule your consultation today!',
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',
     description:
       'Find your dream home in Summerlin West with Dr. Jan Duffy, REALTOR®. Expert guidance, luxury properties, and insider market knowledge. Schedule your consultation today!',
-    url: 'https://summerlinwestrealestate.com',
+    url: 'https://www.summerlinwestrealestate.com',
     siteName: 'Summerlin West Real Estate',
     images: [
       {
@@ -110,89 +111,7 @@ export const metadata: Metadata = {
 };
 
 // Enhanced Schema Markup
-const schemaMarkup = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'RealEstateAgent',
-      '@id': 'https://summerlinwestrealestate.com/#agent',
-      name: 'Dr. Jan Duffy',
-      jobTitle: 'REALTOR®',
-      description: 'Summerlin West real estate specialist with 15+ years of experience',
-      url: 'https://summerlinwestrealestate.com',
-      telephone: '+1-702-550-0112',
-      email: 'DrJanSells@SummerlinWestRealEstate.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '1980 Festival Plaza Dr (One Summerlin)',
-        addressLocality: 'Las Vegas',
-        addressRegion: 'NV',
-        postalCode: '89135',
-        addressCountry: 'US',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 36.1865,
-        longitude: -115.3432,
-      },
-      areaServed: {
-        '@type': 'Place',
-        name: 'Summerlin West',
-      },
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Summerlin West Homes for Sale',
-        itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Place',
-              name: 'The Vistas',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Place',
-              name: 'Stonebridge',
-            },
-          },
-        ],
-      },
-    },
-    {
-      '@type': 'Organization',
-      '@id': 'https://summerlinwestrealestate.com/#organization',
-      name: 'Summerlin West Real Estate',
-      url: 'https://summerlinwestrealestate.com',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://summerlinwestrealestate.com/images/logo.png',
-      },
-      sameAs: [
-        'https://www.facebook.com/summerlinwestrealestate',
-        'https://www.linkedin.com/company/summerlin-west-real-estate',
-      ],
-    },
-    {
-      '@type': 'Place',
-      '@id': 'https://summerlinwestrealestate.com/#place',
-      name: 'Summerlin West',
-      description: 'Luxury master-planned community in Las Vegas with Red Rock Canyon views',
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 36.1865,
-        longitude: -115.3432,
-      },
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Las Vegas',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-    },
-  ],
-};
+const schemaMarkup = generateComprehensiveSchema();
 
 export const viewport = {
   width: 'device-width',
@@ -253,7 +172,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          src="https://www.googletagmanager.com/gtag/js?id=G-X9SYVKNK8H"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -261,9 +180,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID', {
+            gtag('config', 'G-X9SYVKNK8H', {
               page_title: document.title,
               page_location: window.location.href,
+              page_path: window.location.pathname,
+              send_page_view: true
+            });
+            
+            // Enhanced measurement events
+            gtag('event', 'page_view', {
+              page_title: document.title,
+              page_location: window.location.href,
+              page_path: window.location.pathname
             });
           `}
         </Script>

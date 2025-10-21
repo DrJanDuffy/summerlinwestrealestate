@@ -4,10 +4,9 @@ import BlogLayout from '../../components/ui/BlogLayout';
 import type { BlogPost } from '../../types/blog';
 import styles from './blog.module.css';
 
+import dynamicImport from 'next/dynamic';
 
-import dynamic from 'next/dynamic';
-
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
+const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
 export const dynamic = 'force-dynamic';
 
 const HYPERLOCAL_KEYWORDS = [

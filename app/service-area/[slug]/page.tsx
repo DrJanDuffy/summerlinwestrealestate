@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import subdivisions from '../subdivisions.json';
 import ClientSubdivisionPage from './ClientSubdivisionPage';
+import ServiceAreaStructuredData from '../../../components/ui/ServiceAreaStructuredData';
+import { CommunityData } from '../../../lib/structured-data';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -27,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://summerlinwestrealestate.com/service-area/${slug}`,
+      url: `https://www.summerlinwestrealestate.com/service-area/${slug}`,
       siteName: 'Summerlin West Real Estate',
       images: [
         {
@@ -70,36 +72,23 @@ export default async function SubdivisionPage({ params }: PageProps) {
     return notFound();
   }
 
-  // Generate structured data for better SEO
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'ResidentialComplex',
-    name: `${subdivision.name} - The Vistas`,
+  // Generate community data for structured data
+  const communityData: CommunityData = {
+    name: subdivision.name,
     description: `Explore ${subdivision.name} in The Vistas, Summerlin West. ${subdivision.type} homes ${subdivision.builder && subdivision.builder !== '-' ? `by ${subdivision.builder}` : ''} with ${subdivision.homeSizes && subdivision.homeSizes !== '-' ? subdivision.homeSizes : 'luxury features'}.`,
-    url: `https://summerlinwestrealestate.com/service-area/${slug}`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Las Vegas',
-      addressRegion: 'NV',
-      addressCountry: 'US',
-    },
-    amenityFeature: subdivision.features.map((feature) => ({
-      '@type': 'LocationFeatureSpecification',
-      name: feature,
-    })),
-    containedInPlace: {
-      '@type': 'City',
-      name: 'Summerlin West',
+    builder: subdivision.builder && subdivision.builder !== '-' ? subdivision.builder : undefined,
+    yearEstablished: subdivision.years && subdivision.years !== '-' ? subdivision.years : undefined,
+    homeSizes: subdivision.homeSizes || 'Various sizes',
+    features: subdivision.features || [],
+    coordinates: {
+      latitude: 36.1865,
+      longitude: -115.3432,
     },
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <ServiceAreaStructuredData communityData={communityData} />
       <ClientSubdivisionPage subdivision={subdivision} />
     </>
   );
