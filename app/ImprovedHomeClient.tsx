@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
+import InternalLinking from '../components/ui/InternalLinking';
 
 // Dynamically import components for performance
 const RealScoutAdvancedSearch = dynamic(() => import('../components/ui/RealScoutAdvancedSearchWidget'), {
@@ -417,6 +418,19 @@ export default function ImprovedHomeClient() {
           <RealScoutLeadCapture
             variant="lead-capture"
             agentId="QWdlbnQtMjI1MDUw"
+          />
+        </div>
+      </section>
+
+      {/* Internal Linking Section for SEO */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <InternalLinking
+            currentPage=""
+            title="Explore Summerlin West Real Estate"
+            description="Discover comprehensive resources for buying, selling, and investing in Summerlin West luxury real estate. From market insights to community guides, find everything you need to make informed decisions."
+            showFeaturedSnippets={true}
+            maxLinks={6}
           />
         </div>
       </section>

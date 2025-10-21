@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 import RealScoutIntegration from './RealScoutIntegration';
+import InternalLinking from './InternalLinking';
 import {
   FaAward,
   FaMapMarkerAlt,
@@ -548,6 +549,19 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
           >
             <RealScoutIntegration type="listings" />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Internal Linking Section for SEO */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <InternalLinking
+            currentPage="about"
+            title="Explore More Summerlin West Resources"
+            description="Discover additional resources and services to support your real estate journey. From property listings to market insights, find everything you need to make informed decisions in Summerlin West."
+            showFeaturedSnippets={true}
+            maxLinks={6}
+          />
         </div>
       </section>
     </div>

@@ -36,10 +36,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       siteName: 'Summerlin West Real Estate',
       images: [
         {
-          url: post.image,
+          url: post.image || '/images/og-image.svg',
           width: 800,
           height: 400,
-          alt: post.alt,
+          alt: post.alt || post.title,
         },
       ],
       locale: 'en_US',
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: [post.image],
+      images: [post.image || '/images/og-image.svg'],
     },
     alternates: {
       canonical: `/blog/${slug}`,

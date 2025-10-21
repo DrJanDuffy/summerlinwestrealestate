@@ -5,6 +5,7 @@ import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
+import InternalLinking from '../../components/ui/InternalLinking';
 import styles from '../page.module.css';
 import dynamicImport from 'next/dynamic';
 
@@ -587,6 +588,19 @@ export default function Communities() {
               maxListings={12}
               className="mt-6"
             />
+        </section>
+
+        {/* Internal Linking Section for SEO */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <InternalLinking
+              currentPage="communities"
+              title="Explore More Summerlin West Communities"
+              description="Discover additional communities, neighborhoods, and resources to help you find your perfect home in Summerlin West. From market insights to property valuations, access comprehensive real estate information."
+              showFeaturedSnippets={true}
+              maxLinks={6}
+            />
+          </div>
         </section>
       </main>
     </div>
