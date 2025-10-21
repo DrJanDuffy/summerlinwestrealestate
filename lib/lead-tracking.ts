@@ -154,8 +154,8 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
   }
 
   // Facebook Pixel Enhanced Events
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead', {
+  if (typeof window !== 'undefined' && typeof window.fbq !== 'undefined') {
+    window.fbq('track', 'Lead', {
       content_name: fullEvent.page_title,
       content_category: 'Real Estate',
       value: getConversionValue(fullEvent.event_type),
@@ -163,7 +163,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
     });
 
     // Custom event for detailed tracking
-    fbq('trackCustom', 'RealEstateLead', {
+    window.fbq('trackCustom', 'RealEstateLead', {
       event_type: fullEvent.event_type,
       lead_type: fullEvent.lead_type,
       lead_source: fullEvent.lead_source,
