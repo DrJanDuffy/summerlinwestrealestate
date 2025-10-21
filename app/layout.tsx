@@ -11,6 +11,7 @@ import styles from './page.module.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { generateComprehensiveSchema } from '../lib/structured-data';
+import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -133,7 +134,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
       >
-        <StickyPhoneMenu />
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GT-T5656DJ6"
+            height="0" 
+            width="0" 
+            style={{display: 'none', visibility: 'hidden'}}
+          ></iframe>
+        </noscript>
+        
+        <LeadTrackingProvider>
+          <StickyPhoneMenu />
         <Script
           src={process.env.REALSCOUT_SCRIPT_URL || "https://em.realscout.com/widgets/realscout-web-components.umd.js"}
           type="module"
@@ -170,7 +182,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </noscript>
 
-        {/* Google Analytics */}
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GT-T5656DJ6');
+          `}
+        </Script>
+
+        {/* Google Analytics - Enhanced Configuration */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-X9SYVKNK8H"
           strategy="afterInteractive"
@@ -180,18 +203,124 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            
+            // Enhanced dataLayer for GTM and GA4 integration
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              'event': 'gtm.js',
+              'business_type': 'real_estate',
+              'agent_name': 'Dr. Jan Duffy',
+              'market_area': 'Summerlin West',
+              'service_area': 'Las Vegas',
+              'website_type': 'real_estate_agent',
+              'page_category': 'real_estate',
+              'user_type': 'prospect'
+            });
+            
+            // Enhanced GA4 configuration
             gtag('config', 'G-X9SYVKNK8H', {
               page_title: document.title,
               page_location: window.location.href,
               page_path: window.location.pathname,
-              send_page_view: true
+              send_page_view: true,
+              custom_map: {
+                'custom_parameter_1': 'lead_source',
+                'custom_parameter_2': 'property_type',
+                'custom_parameter_3': 'community'
+              },
+              // Enhanced measurement settings
+              enhanced_measurements: {
+                scrolls: true,
+                outbound_clicks: true,
+                site_search: true,
+                video_engagement: true,
+                file_downloads: true,
+                page_changes: true
+              },
+              // Consent mode configuration
+              analytics_storage: 'granted',
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+              functionality_storage: 'granted',
+              personalization_storage: 'granted',
+              security_storage: 'granted',
+              // Cross-domain tracking
+              linker: {
+                domains: ['summerlinwestrealestate.com', 'www.summerlinwestrealestate.com']
+              },
+              // Real estate specific configuration
+              custom_parameters: {
+                business_type: 'real_estate',
+                agent_name: 'Dr. Jan Duffy',
+                market_area: 'Summerlin West',
+                service_area: 'Las Vegas'
+              }
             });
             
-            // Enhanced measurement events
+            // Enhanced measurement events for real estate
             gtag('event', 'page_view', {
               page_title: document.title,
               page_location: window.location.href,
-              page_path: window.location.pathname
+              page_path: window.location.pathname,
+              content_group1: 'Real Estate',
+              content_group2: getContentGroup2(),
+              content_group3: getContentGroup3(),
+              custom_parameter_1: getLeadSource(),
+              custom_parameter_2: getPropertyType(),
+              custom_parameter_3: getCommunity()
+            });
+            
+            // Helper functions for enhanced tracking
+            function getContentGroup2() {
+              const path = window.location.pathname;
+              if (path.includes('/properties') || path.includes('/current-listing')) return 'Property Listings';
+              if (path.includes('/service-area')) return 'Community Pages';
+              if (path.includes('/about')) return 'About Page';
+              if (path.includes('/contact')) return 'Contact Page';
+              if (path.includes('/blog')) return 'Blog';
+              if (path.includes('/market-reports')) return 'Market Reports';
+              return 'General';
+            }
+            
+            function getContentGroup3() {
+              const path = window.location.pathname;
+              if (path.includes('/the-vistas')) return 'The Vistas';
+              if (path.includes('/stonebridge')) return 'Stonebridge';
+              if (path.includes('/redpoint')) return 'Redpoint';
+              if (path.includes('/summerlin')) return 'Summerlin West';
+              return 'Las Vegas';
+            }
+            
+            function getLeadSource() {
+              const urlParams = new URLSearchParams(window.location.search);
+              return urlParams.get('utm_source') || document.referrer || 'direct';
+            }
+            
+            function getPropertyType() {
+              const path = window.location.pathname;
+              if (path.includes('/luxury')) return 'luxury';
+              if (path.includes('/condo')) return 'condo';
+              if (path.includes('/townhome')) return 'townhome';
+              return 'single_family';
+            }
+            
+            function getCommunity() {
+              const path = window.location.pathname;
+              if (path.includes('/the-vistas')) return 'The Vistas';
+              if (path.includes('/stonebridge')) return 'Stonebridge';
+              if (path.includes('/redpoint')) return 'Redpoint';
+              return 'Summerlin West';
+            }
+            
+            // Track real estate specific interactions
+            gtag('event', 'real_estate_engagement', {
+              event_category: 'Real Estate',
+              event_label: 'Page View',
+              value: 1,
+              custom_parameter_1: getLeadSource(),
+              custom_parameter_2: getPropertyType(),
+              custom_parameter_3: getCommunity()
             });
           `}
         </Script>
@@ -235,8 +364,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             className="mt-6"
           />
         </div>
-        <Analytics />
-        <SpeedInsights />
+          <Analytics />
+          <SpeedInsights />
+        </LeadTrackingProvider>
       </body>
     </html>
   );
