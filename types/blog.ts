@@ -9,6 +9,7 @@ export interface BlogPost {
   alt?: string;
   publishedAt?: string;
   author?: string;
+  category?: string;
 }
 
 export interface BlogLayoutProps {
