@@ -33,6 +33,8 @@ const staticPages = [
   '/google-places',
   '/hidden-home-equity-tax',
   '/maps',
+  '/faq',
+  '/local-seo',
   '/linear-test',
   '/realscout-test',
   '/test-tailwind',

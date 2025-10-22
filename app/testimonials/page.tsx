@@ -6,12 +6,53 @@ export const metadata: Metadata = {
   title: 'Client Testimonials | Dr. Jan Duffy Real Estate | Summerlin West',
   description:
     'Read testimonials from satisfied clients of Dr. Jan Duffy, luxury real estate expert in Summerlin West, Las Vegas.',
-  keywords:
-    'Dr. Jan Duffy testimonials, luxury real estate reviews, Summerlin West client feedback, Las Vegas realtor reviews',
+  keywords: [
+    'Dr. Jan Duffy testimonials',
+    'luxury real estate reviews',
+    'Summerlin West client feedback',
+    'Las Vegas realtor reviews',
+    'The Vistas testimonials',
+    'Stonebridge client reviews',
+    'luxury home buyer testimonials',
+    'real estate agent reviews',
+    'Summerlin West success stories',
+    'Dr. Jan Duffy client reviews'
+  ],
+  alternates: {
+    canonical: '/testimonials',
+  },
   openGraph: {
     title: 'Client Testimonials | Dr. Jan Duffy Real Estate | Summerlin West',
     description: 'Read testimonials from satisfied clients of Dr. Jan Duffy.',
+    url: 'https://www.summerlinwestrealestate.com/testimonials',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy Client Testimonials',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client Testimonials | Dr. Jan Duffy Real Estate | Summerlin West',
+    description: 'Read testimonials from satisfied clients of Dr. Jan Duffy.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

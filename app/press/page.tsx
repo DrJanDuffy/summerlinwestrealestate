@@ -6,12 +6,53 @@ export const metadata: Metadata = {
   title: 'Press & Media Coverage | Dr. Jan Duffy Real Estate | Summerlin West',
   description:
     'Read the latest press coverage and media insights from Dr. Jan Duffy, luxury real estate expert in Summerlin West, Las Vegas.',
-  keywords:
-    'Dr. Jan Duffy press, luxury real estate news, Summerlin West media, Las Vegas real estate coverage',
+  keywords: [
+    'Dr. Jan Duffy press',
+    'luxury real estate news',
+    'Summerlin West media',
+    'Las Vegas real estate coverage',
+    'The Vistas press coverage',
+    'luxury real estate expert',
+    'Summerlin West market analysis',
+    'Las Vegas luxury real estate news',
+    'Dr. Jan Duffy media',
+    'real estate press coverage'
+  ],
+  alternates: {
+    canonical: '/press',
+  },
   openGraph: {
     title: 'Press & Media Coverage | Dr. Jan Duffy Real Estate | Summerlin West',
     description: 'Read the latest press coverage and media insights from Dr. Jan Duffy.',
+    url: 'https://www.summerlinwestrealestate.com/press',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy Press Coverage',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Press & Media Coverage | Dr. Jan Duffy Real Estate | Summerlin West',
+    description: 'Read the latest press coverage and media insights from Dr. Jan Duffy.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

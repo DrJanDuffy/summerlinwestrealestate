@@ -27,6 +27,16 @@ Allow: /downtown-summerlin
 Allow: /compare
 Allow: /google-places
 Allow: /service-area/
+Allow: /team
+Allow: /testimonials
+Allow: /press
+Allow: /home-values
+Allow: /market
+Allow: /market-insights
+Allow: /maps
+Allow: /faq
+Allow: /local-seo
+Allow: /blog/
 
 # Crawl delay (optional)
 Crawl-delay: 1`;

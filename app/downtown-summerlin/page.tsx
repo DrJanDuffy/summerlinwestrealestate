@@ -1,20 +1,65 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-
-
 import dynamicImport from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
+
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
   description:
     'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.',
+  keywords: [
+    'Downtown Summerlin real estate',
+    'Summerlin shopping district',
+    'Las Vegas Ballpark area',
+    'Downtown Summerlin homes',
+    'walkable Summerlin community',
+    'Summerlin entertainment district',
+    'Las Vegas luxury condos',
+    'Downtown Summerlin market',
+    'Summerlin West shopping',
+    'Las Vegas walkable community'
+  ],
+  alternates: {
+    canonical: '/downtown-summerlin',
+  },
   openGraph: {
     title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
     description:
       'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends. Find homes for sale and get your free Summerlin market report.',
+    url: 'https://www.summerlinwestrealestate.com/downtown-summerlin',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Downtown Summerlin Real Estate Guide',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
+    description:
+      'Explore Downtown Summerlin: shopping, dining, entertainment, and real estate market trends.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

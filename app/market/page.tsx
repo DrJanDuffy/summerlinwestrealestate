@@ -1,5 +1,4 @@
-'use client';
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
@@ -8,21 +7,65 @@ import styles from './market.module.css';
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
 
+export const metadata: Metadata = {
+  title: 'Summerlin Real Estate Market | Trends & Analysis | Dr. Jan Duffy',
+  description:
+    'Get the latest Summerlin real estate market trends, home values, and expert analysis. Stay informed about Summerlin West housing market conditions.',
+  keywords: [
+    'Summerlin real estate market',
+    'Summerlin West market trends',
+    'Las Vegas housing market',
+    'The Vistas market analysis',
+    'Stonebridge market trends',
+    'luxury real estate market',
+    'Dr. Jan Duffy market insights',
+    'Summerlin West home values',
+    'Las Vegas real estate trends',
+    'Summerlin market conditions'
+  ],
+  alternates: {
+    canonical: '/market',
+  },
+  openGraph: {
+    title: 'Summerlin Real Estate Market | Trends & Analysis | Dr. Jan Duffy',
+    description:
+      'Get the latest Summerlin real estate market trends, home values, and expert analysis. Stay informed about Summerlin West housing market conditions.',
+    url: 'https://www.summerlinwestrealestate.com/market',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Summerlin Real Estate Market Analysis',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Summerlin Real Estate Market | Trends & Analysis | Dr. Jan Duffy',
+    description:
+      'Get the latest Summerlin real estate market trends, home values, and expert analysis.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function Market() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>Summerlin Real Estate Market | Trends & Analysis</title>
-        <meta
-          name="description"
-          content="Get the latest Summerlin real estate market trends, home values, and expert analysis. Stay informed about Summerlin West housing market conditions."
-        />
-        <meta property="og:title" content="Summerlin Real Estate Market | Trends & Analysis" />
-        <meta
-          property="og:description"
-          content="Get the latest Summerlin real estate market trends, home values, and expert analysis. Stay informed about Summerlin West housing market conditions."
-        />
-      </Head>
       <section className={styles.hero}>
         <h1>Summerlin Real Estate Market</h1>
         <p className={styles.subtitle}>

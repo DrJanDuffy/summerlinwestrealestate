@@ -1,0 +1,144 @@
+{
+  "name": "cloudflare-config",
+  "version": "1.0.0",
+  "description": "Cloudflare configuration for Summerlin West Real Estate",
+  "config": {
+    "domain": "summerlinwestrealestate.com",
+    "vercel_project": "prj_6r7qxmHfLVO8B8RR0v49X7qCgTdA",
+    "ssl_mode": "full_strict",
+    "cache_level": "aggressive",
+    "security_level": "medium"
+  },
+  "dns_records": [
+    {
+      "type": "CNAME",
+      "name": "www",
+      "content": "cname.vercel-dns.com",
+      "proxied": true,
+      "ttl": 1
+    },
+    {
+      "type": "CNAME", 
+      "name": "@",
+      "content": "cname.vercel-dns.com",
+      "proxied": true,
+      "ttl": 1
+    }
+  ],
+  "page_rules": [
+    {
+      "url_pattern": "www.summerlinwestrealestate.com/properties/*",
+      "cache_level": "cache_everything",
+      "edge_cache_ttl": 3600,
+      "browser_cache_ttl": 3600
+    },
+    {
+      "url_pattern": "www.summerlinwestrealestate.com/market-reports/*",
+      "cache_level": "cache_everything", 
+      "edge_cache_ttl": 14400,
+      "browser_cache_ttl": 3600
+    },
+    {
+      "url_pattern": "www.summerlinwestrealestate.com/api/*",
+      "cache_level": "bypass"
+    },
+    {
+      "url_pattern": "www.summerlinwestrealestate.com/_next/static/*",
+      "cache_level": "cache_everything",
+      "edge_cache_ttl": 31536000,
+      "browser_cache_ttl": 31536000
+    },
+    {
+      "url_pattern": "www.summerlinwestrealestate.com/images/*",
+      "cache_level": "cache_everything",
+      "edge_cache_ttl": 2592000,
+      "browser_cache_ttl": 2592000
+    }
+  ],
+  "security_settings": {
+    "ssl_tls": {
+      "encryption_mode": "full_strict",
+      "edge_certificates": {
+        "universal_ssl": true,
+        "always_use_https": true,
+        "hsts_enabled": true,
+        "hsts_max_age": 31536000,
+        "hsts_include_subdomains": true,
+        "hsts_preload": true
+      }
+    },
+    "security_level": "medium",
+    "bot_fight_mode": true,
+    "browser_integrity_check": true,
+    "challenge_passage": 1800,
+    "privacy_pass": true
+  },
+  "performance_settings": {
+    "caching": {
+      "browser_cache_ttl": 14400,
+      "development_mode": false
+    },
+    "speed": {
+      "auto_minify": {
+        "css": true,
+        "html": true,
+        "js": true
+      },
+      "brotli": true,
+      "rocket_loader": true,
+      "mirage": true,
+      "polish": "lossless"
+    },
+    "network": {
+      "http2": true,
+      "http3": true,
+      "0rtt": true
+    }
+  },
+  "real_estate_optimizations": {
+    "property_images": {
+      "cache_ttl": 2592000,
+      "optimization": "lossless",
+      "webp_conversion": true
+    },
+    "market_data": {
+      "cache_ttl": 3600,
+      "stale_while_revalidate": 86400
+    },
+    "lead_capture": {
+      "cache_ttl": 0,
+      "security": "high"
+    },
+    "seo_content": {
+      "cache_ttl": 14400,
+      "compression": "brotli"
+    }
+  },
+  "monitoring": {
+    "analytics": {
+      "web_analytics": true,
+      "rum": true,
+      "bot_analytics": true
+    },
+    "alerts": {
+      "uptime": true,
+      "performance": true,
+      "security": true
+    }
+  },
+  "vercel_integration": {
+    "deployment": {
+      "framework": "nextjs",
+      "build_command": "pnpm run build",
+      "output_directory": ".next"
+    },
+    "environment_variables": {
+      "VERCEL_URL": "https://www.summerlinwestrealestate.com",
+      "NEXT_PUBLIC_VERCEL_URL": "https://www.summerlinwestrealestate.com"
+    },
+    "headers": {
+      "x-vercel-id": "preserve",
+      "x-vercel-cache": "preserve"
+    }
+  }
+}

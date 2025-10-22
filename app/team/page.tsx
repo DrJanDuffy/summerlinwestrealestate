@@ -6,12 +6,53 @@ export const metadata: Metadata = {
   title: 'Meet Dr. Jan Duffy | Luxury Real Estate Expert | Summerlin West',
   description:
     'Meet Dr. Jan Duffy, REALTOR® with over $6 billion in luxury real estate sales. Expert guidance for Summerlin West properties.',
-  keywords:
-    'Dr. Jan Duffy, luxury real estate agent, Summerlin West, Las Vegas realtor, luxury homes',
+  keywords: [
+    'Dr. Jan Duffy',
+    'luxury real estate agent',
+    'Summerlin West',
+    'Las Vegas realtor',
+    'luxury homes',
+    'The Vistas specialist',
+    'Red Rock Canyon homes',
+    'Berkshire Hathaway HomeServices',
+    'luxury real estate expert',
+    'Las Vegas REALTOR®'
+  ],
+  alternates: {
+    canonical: '/team',
+  },
   openGraph: {
     title: 'Meet Dr. Jan Duffy | Luxury Real Estate Expert | Summerlin West',
     description: 'Meet Dr. Jan Duffy, REALTOR® with over $6 billion in luxury real estate sales.',
+    url: 'https://www.summerlinwestrealestate.com/team',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Jan Duffy - Luxury Real Estate Expert',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Meet Dr. Jan Duffy | Luxury Real Estate Expert | Summerlin West',
+    description: 'Meet Dr. Jan Duffy, REALTOR® with over $6 billion in luxury real estate sales.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

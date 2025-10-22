@@ -6,13 +6,55 @@ export const metadata: Metadata = {
   title: 'Market Insights & Real Estate News | Summerlin West Real Estate',
   description:
     'Stay informed with the latest market insights, real estate news, and trends affecting Summerlin West. Expert analysis from Dr. Jan Duffy and Simplifying the Market.',
-  keywords:
-    'market insights, real estate news, Summerlin West market trends, housing market analysis, real estate data',
+  keywords: [
+    'market insights',
+    'real estate news',
+    'Summerlin West market trends',
+    'housing market analysis',
+    'real estate data',
+    'Dr. Jan Duffy market insights',
+    'Las Vegas real estate news',
+    'luxury real estate trends',
+    'Summerlin West market data',
+    'real estate market analysis'
+  ],
+  alternates: {
+    canonical: '/market-insights',
+  },
   openGraph: {
     title: 'Market Insights & Real Estate News | Summerlin West Real Estate',
     description:
       'Stay informed with the latest market insights, real estate news, and trends affecting Summerlin West.',
+    url: 'https://www.summerlinwestrealestate.com/market-insights',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Market Insights & Real Estate News',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Market Insights & Real Estate News | Summerlin West Real Estate',
+    description:
+      'Stay informed with the latest market insights, real estate news, and trends affecting Summerlin West.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 

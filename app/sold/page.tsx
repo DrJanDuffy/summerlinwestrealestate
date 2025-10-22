@@ -1,7 +1,5 @@
-'use client';
-
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
@@ -12,42 +10,83 @@ const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMar
   ssr: false,
 });
 
+export const metadata: Metadata = {
+  title: 'Recently Sold Homes in Summerlin | Summerlin West Real Estate',
+  description:
+    'Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.',
+  keywords: [
+    'recently sold homes Summerlin',
+    'Summerlin West sold properties',
+    'Las Vegas luxury home sales',
+    'The Vistas sold homes',
+    'Stonebridge sold properties',
+    'Summerlin market activity',
+    'luxury real estate sales',
+    'Dr. Jan Duffy sold listings',
+    'Summerlin West market trends',
+    'Las Vegas real estate sales'
+  ],
+  alternates: {
+    canonical: '/sold',
+  },
+  openGraph: {
+    title: 'Recently Sold Homes in Summerlin | Summerlin West Real Estate',
+    description:
+      'Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.',
+    url: 'https://www.summerlinwestrealestate.com/sold',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Recently Sold Homes in Summerlin West',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Recently Sold Homes in Summerlin | Summerlin West Real Estate',
+    description:
+      'Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function Sold() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>Recently Sold Homes in Summerlin | Summerlin West Real Estate</title>
-        <meta
-          name="description"
-          content="Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights."
-        />
-        <meta
-          property="og:title"
-          content="Recently Sold Homes in Summerlin | Summerlin West Real Estate"
-        />
-        <meta
-          property="og:description"
-          content="Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights."
-        />
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                '@context': 'https://schema.org',
-                '@type': 'CollectionPage',
-                name: 'Recently Sold Homes in Summerlin',
-                description:
-                  'Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.',
-                url: 'https://summerlinwestrealestate.com/sold',
-              },
-              null,
-              2
-            ),
-          }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              '@context': 'https://schema.org',
+              '@type': 'CollectionPage',
+              name: 'Recently Sold Homes in Summerlin',
+              description:
+                'Track the latest sales and market activity in Summerlin West. View recently sold homes, market trends, and expert insights.',
+              url: 'https://summerlinwestrealestate.com/sold',
+            },
+            null,
+            2
+          ),
+        }}
+      />
       <main>
         <SummerlinWestOverview />
         <section className={styles.hero}>

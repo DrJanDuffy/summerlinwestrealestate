@@ -18,7 +18,9 @@
     "deploy": "vercel --prod",
     "deploy:preview": "vercel",
     "audit:vercel": "node scripts/v0-vercel-comprehensive-audit.js",
-    "optimize:vercel": "node scripts/v0-vercel-optimization.js"
+    "optimize:vercel": "node scripts/v0-vercel-optimization.js",
+    "cloudflare:setup": "node scripts/cloudflare-integration.js",
+    "cloudflare:test": "node scripts/cloudflare-test.js"
   },
   "dependencies": {
     "@ai-sdk/vercel": "^1.0.20",

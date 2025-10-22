@@ -1,43 +1,86 @@
-'use client';
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import styles from '../page.module.css';
 
+export const metadata: Metadata = {
+  title: 'Compare Summerlin Homes | Summerlin West Real Estate',
+  description:
+    'Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.',
+  keywords: [
+    'compare Summerlin homes',
+    'Summerlin West home comparison',
+    'luxury home comparison',
+    'The Vistas vs Stonebridge',
+    'Summerlin West neighborhoods',
+    'home comparison tool',
+    'luxury real estate comparison',
+    'Dr. Jan Duffy home comparison',
+    'Summerlin West communities',
+    'Las Vegas luxury home comparison'
+  ],
+  alternates: {
+    canonical: '/compare',
+  },
+  openGraph: {
+    title: 'Compare Summerlin Homes | Summerlin West Real Estate',
+    description:
+      'Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.',
+    url: 'https://www.summerlinwestrealestate.com/compare',
+    siteName: 'Summerlin West Real Estate',
+    images: [
+      {
+        url: '/images/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Compare Summerlin Homes',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Compare Summerlin Homes | Summerlin West Real Estate',
+    description:
+      'Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.',
+    images: ['/images/og-image.svg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function Compare() {
   return (
     <div className={styles.page}>
-      <Head>
-        <title>Compare Summerlin Homes | Summerlin West Real Estate</title>
-        <meta
-          name="description"
-          content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
-        />
-        <meta property="og:title" content="Compare Summerlin Homes | Summerlin West Real Estate" />
-        <meta
-          property="og:description"
-          content="Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance."
-        />
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                '@context': 'https://schema.org',
-                '@type': 'CollectionPage',
-                name: 'Compare Summerlin Homes',
-                description:
-                  'Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.',
-                url: 'https://summerlinwestrealestate.com/compare',
-              },
-              null,
-              2
-            ),
-          }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              '@context': 'https://schema.org',
+              '@type': 'CollectionPage',
+              name: 'Compare Summerlin Homes',
+              description:
+                'Compare homes for sale in Summerlin West. Analyze features, prices, and neighborhoods to find your perfect Summerlin home with expert guidance.',
+              url: 'https://summerlinwestrealestate.com/compare',
+            },
+            null,
+            2
+          ),
+        }}
+      />
       <section className={styles.hero}>
         <h1>Compare Summerlin Homes</h1>
         <p className={styles.subtitle}>Analyze features, prices, and neighborhoods side by side</p>
