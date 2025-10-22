@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 import { generateComponent } from '../../../../lib/v0';
 
 export async function POST(request: NextRequest) {
@@ -11,17 +11,14 @@ export async function POST(request: NextRequest) {
     }
 
     const component = await generateComponent(prompt, { model });
-    
-    return NextResponse.json({ 
-      success: true, 
+
+    return NextResponse.json({
+      success: true,
       component,
-      model 
+      model,
     });
   } catch (error) {
     console.error('V0 API Error:', error);
-    return NextResponse.json(
-      { error: 'Failed to generate component' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to generate component' }, { status: 500 });
   }
 }

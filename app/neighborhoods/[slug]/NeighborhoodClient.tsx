@@ -4,9 +4,12 @@ import dynamic from 'next/dynamic';
 import InternalLinking from '../../../components/ui/InternalLinking';
 
 // Dynamic imports for better performance
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 interface NeighborhoodClientProps {
   neighborhood: {
@@ -35,9 +38,7 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {neighborhood.name} - Summerlin West
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            {neighborhood.description}
-          </p>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">{neighborhood.description}</p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {neighborhood.features.map((feature, index) => (
               <span key={index} className="bg-white/20 text-white px-4 py-2 rounded-full text-sm">
@@ -45,9 +46,7 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
               </span>
             ))}
           </div>
-          <div className="text-2xl font-bold text-white">
-            {neighborhood.priceRange}
-          </div>
+          <div className="text-2xl font-bold text-white">{neighborhood.priceRange}</div>
         </div>
       </section>
 
@@ -56,12 +55,8 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                About {neighborhood.name}
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                {neighborhood.description}
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">About {neighborhood.name}</h2>
+              <p className="text-lg text-gray-600 mb-6">{neighborhood.description}</p>
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Price Range</h3>
@@ -97,14 +92,20 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Key Features
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Features</h2>
               <ul className="space-y-3">
                 {neighborhood.features.map((feature) => (
                   <li key={feature} className="flex items-center">
-                    <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-green-500 mr-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span className="text-gray-700">{feature}</span>
                   </li>
@@ -112,14 +113,20 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Community Amenities
-              </h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">Community Amenities</h2>
               <ul className="space-y-3">
                 {neighborhood.amenities.map((amenity) => (
                   <li key={amenity} className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <svg
+                      className="w-5 h-5 text-blue-500 mr-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                     <span className="text-gray-700">{amenity}</span>
                   </li>
@@ -133,9 +140,7 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
       {/* Schools */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Nearby Schools
-          </h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Nearby Schools</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {neighborhood.schools.map((school) => (
               <div key={school} className="text-center p-6 bg-gray-50 rounded-lg">

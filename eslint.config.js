@@ -18,13 +18,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: [
-      'node_modules/',
-      '.next/',
-      'dist/',
-      'build/',
-      '*.min.js',
-    ],
+    ignores: ['node_modules/', '.next/', 'dist/', 'build/', '*.min.js'],
   },
 ];
 

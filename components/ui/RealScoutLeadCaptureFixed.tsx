@@ -174,7 +174,7 @@ export default function RealScoutLeadCapture({
       {/* RealScout Lead Capture Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source={source}
@@ -188,7 +188,9 @@ export default function RealScoutLeadCapture({
           />
         ) : (
           <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-green-900 mb-2">Get Your Free Market Report</h3>
+            <h3 className="text-xl font-semibold text-green-900 mb-2">
+              Get Your Free Market Report
+            </h3>
             <p className="text-green-700 mb-4">RealScout lead capture widget is loading...</p>
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600 mx-auto mb-4"></div>
             <p className="text-sm text-green-600">Loading lead capture form</p>

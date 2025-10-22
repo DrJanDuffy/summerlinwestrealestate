@@ -5,19 +5,21 @@
 
 export const REAL_SCOUT_CONFIG = {
   // Script source - can be from Cloudflare Worker or direct
-  SCRIPT_URL: process.env.REALSCOUT_SCRIPT_URL || 'https://em.realscout.com/widgets/realscout-web-components.umd.js',
-  
+  SCRIPT_URL:
+    process.env.REALSCOUT_SCRIPT_URL ||
+    'https://em.realscout.com/widgets/realscout-web-components.umd.js',
+
   // Cloudflare Worker endpoint (if using)
   WORKER_URL: process.env.REALSCOUT_WORKER_URL || null,
-  
+
   // Agent ID for Dr. Jan Duffy
   AGENT_ID: 'QWdlbnQtMjI1MDUw',
-  
+
   // Default locations and settings
   DEFAULT_LOCATION: 'Summerlin West, Las Vegas, NV',
   DEFAULT_PRICE_MIN: 400000,
   DEFAULT_PRICE_MAX: 2000000,
-  
+
   // Widget variants
   VARIANTS: {
     SEARCH: 'search',
@@ -33,7 +35,7 @@ export const REAL_SCOUT_CONFIG = {
  */
 export const isRealScoutLoaded = (): boolean => {
   if (typeof window === 'undefined') return false;
-  
+
   return !!(
     document.querySelector('script[src*="realscout-web-components"]') ||
     customElements.get('realscout-search-widget') ||
@@ -58,18 +60,18 @@ export const waitForRealScoutElements = (timeout = 5000): Promise<boolean> => {
         customElements.get('realscout-office-listings') ||
         customElements.get('realscout-lead-capture')
       );
-      
+
       if (hasElements) {
         resolve(true);
         return;
       }
-      
+
       setTimeout(checkElements, 100);
     };
 
     // Start checking immediately
     checkElements();
-    
+
     // Timeout after specified time
     setTimeout(() => resolve(false), timeout);
   });
@@ -83,7 +85,7 @@ export const getRealScoutScriptSource = (): string => {
   if (REAL_SCOUT_CONFIG.WORKER_URL) {
     return REAL_SCOUT_CONFIG.WORKER_URL;
   }
-  
+
   // Otherwise use the direct script URL
   return REAL_SCOUT_CONFIG.SCRIPT_URL;
 };

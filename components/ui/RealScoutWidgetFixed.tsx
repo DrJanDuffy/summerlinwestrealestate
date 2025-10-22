@@ -119,7 +119,7 @@ export default function RealScoutWidget({
     switch (variant) {
       case 'search':
         return (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}
@@ -131,7 +131,7 @@ export default function RealScoutWidget({
         );
       case 'listings':
         return (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-office-listings
             agent-id={agentId}
             price-min={priceMin}
@@ -141,7 +141,7 @@ export default function RealScoutWidget({
         );
       case 'lead-capture':
         return (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source="Website"
@@ -152,7 +152,7 @@ export default function RealScoutWidget({
         );
       default:
         return (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}
@@ -166,7 +166,7 @@ export default function RealScoutWidget({
   return (
     <div className="real-scout-widget-container">
       {renderWidget()}
-      
+
       {/* Fallback content for when RealScout widgets fail to load */}
       <div className="realscout-fallback hidden">
         <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-8 text-center">
@@ -181,7 +181,13 @@ export default function RealScoutWidget({
             {variant === 'lead-capture' && 'Get expert market insights from Dr. Jan Duffy'}
           </p>
           <a
-            href={variant === 'search' ? '/properties' : variant === 'listings' ? '/properties' : '/contact'}
+            href={
+              variant === 'search'
+                ? '/properties'
+                : variant === 'listings'
+                  ? '/properties'
+                  : '/contact'
+            }
             className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors"
           >
             {variant === 'search' && 'Search Properties'}

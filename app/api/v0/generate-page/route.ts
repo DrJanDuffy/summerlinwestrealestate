@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 import { generateRealEstatePage } from '../../../../lib/v0';
 
 export async function PUT(request: NextRequest) {
@@ -7,10 +7,7 @@ export async function PUT(request: NextRequest) {
     const { pageType, requirements = {} } = body;
 
     if (!pageType) {
-      return NextResponse.json(
-        { error: 'Page type is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Page type is required' }, { status: 400 });
     }
 
     const page = await generateRealEstatePage(
@@ -34,9 +31,6 @@ export async function PUT(request: NextRequest) {
     });
   } catch (error) {
     console.error('Error generating page:', error);
-    return NextResponse.json(
-      { error: 'Failed to generate page' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to generate page' }, { status: 500 });
   }
 }

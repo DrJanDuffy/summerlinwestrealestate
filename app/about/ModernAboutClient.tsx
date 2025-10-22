@@ -6,7 +6,7 @@ export default function ModernAboutClient() {
   return (
     <>
       <ModernAboutPage />
-      
+
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -16,7 +16,8 @@ export default function ModernAboutClient() {
             '@context': 'https://schema.org',
             '@type': 'RealEstateAgent',
             name: 'Dr. Jan Duffy',
-            description: 'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
+            description:
+              'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '1980 Festival Plaza Dr (One Summerlin)',
@@ -59,7 +60,7 @@ export default function ModernAboutClient() {
               'Certified Luxury Home Marketing Specialist',
               'Graduate REALTOR® Institute (GRI)',
               'Certified Residential Specialist (CRS)',
-              'Accredited Buyer\'s Representative (ABR)',
+              "Accredited Buyer's Representative (ABR)",
             ],
             worksFor: {
               '@type': 'RealEstateAgent',

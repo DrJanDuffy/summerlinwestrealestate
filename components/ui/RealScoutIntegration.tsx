@@ -3,31 +3,25 @@
 import dynamic from 'next/dynamic';
 
 // Dynamic imports for RealScout widgets
-const RealScoutOfficeListings = dynamic(
-  () => import('./RealScoutOfficeListings'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        <span className="ml-3 text-gray-600">Loading properties...</span>
-      </div>
-    ),
-  }
-);
+const RealScoutOfficeListings = dynamic(() => import('./RealScoutOfficeListings'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <span className="ml-3 text-gray-600">Loading properties...</span>
+    </div>
+  ),
+});
 
-const RealScoutLeadCapture = dynamic(
-  () => import('./RealScoutWidgetEnhanced'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        <span className="ml-3 text-gray-600">Loading form...</span>
-      </div>
-    ),
-  }
-);
+const RealScoutLeadCapture = dynamic(() => import('./RealScoutWidgetEnhanced'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <span className="ml-3 text-gray-600">Loading form...</span>
+    </div>
+  ),
+});
 
 interface RealScoutIntegrationProps {
   type: 'listings' | 'lead-capture';

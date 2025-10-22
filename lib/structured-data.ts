@@ -76,7 +76,8 @@ export function generateRealEstateAgentSchema(agentData: RealEstateAgentData = d
     '@id': 'https://www.summerlinwestrealestate.com/#agent',
     name: agentData.name,
     jobTitle: 'REALTOR®, Team Leader',
-    description: 'Team Leader of Summerlin West Team at Berkshire Hathaway HomeServices. 15+ years of experience and over $6 billion in sales.',
+    description:
+      'Team Leader of Summerlin West Team at Berkshire Hathaway HomeServices. 15+ years of experience and over $6 billion in sales.',
     url: 'https://www.summerlinwestrealestate.com',
     telephone: agentData.phone,
     email: agentData.email,
@@ -265,7 +266,8 @@ export function generatePlaceSchema() {
     '@type': 'Place',
     '@id': 'https://www.summerlinwestrealestate.com/#place',
     name: 'Summerlin West',
-    description: 'Luxury master-planned community in Las Vegas with Red Rock Canyon views, featuring The Vistas, Stonebridge, and other prestigious neighborhoods',
+    description:
+      'Luxury master-planned community in Las Vegas with Red Rock Canyon views, featuring The Vistas, Stonebridge, and other prestigious neighborhoods',
     geo: {
       '@type': 'GeoCoordinates',
       latitude: 36.1865,
@@ -308,7 +310,8 @@ export function generateWebSiteSchema() {
     '@id': 'https://www.summerlinwestrealestate.com/#website',
     url: 'https://www.summerlinwestrealestate.com',
     name: 'Summerlin West Real Estate',
-    description: 'Luxury homes for sale in Summerlin West, Las Vegas - Expert guidance from Dr. Jan Duffy, REALTOR®',
+    description:
+      'Luxury homes for sale in Summerlin West, Las Vegas - Expert guidance from Dr. Jan Duffy, REALTOR®',
     publisher: {
       '@id': 'https://www.summerlinwestrealestate.com/#organization',
     },
@@ -316,7 +319,8 @@ export function generateWebSiteSchema() {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://www.summerlinwestrealestate.com/properties?search={search_term_string}',
+        urlTemplate:
+          'https://www.summerlinwestrealestate.com/properties?search={search_term_string}',
       },
       'query-input': 'required name=search_term_string',
     },
@@ -391,7 +395,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
       latitude: communityData.coordinates.latitude,
       longitude: communityData.coordinates.longitude,
     },
-    amenityFeature: communityData.features.map(feature => ({
+    amenityFeature: communityData.features.map((feature) => ({
       '@type': 'LocationFeatureSpecification',
       name: feature,
     })),
@@ -443,7 +447,7 @@ export function generateFAQSchema(faqs: Array<{ question: string; answer: string
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -457,12 +461,14 @@ export function generateFAQSchema(faqs: Array<{ question: string; answer: string
 /**
  * Generate Review structured data
  */
-export function generateReviewSchema(reviews: Array<{
-  author: string;
-  rating: number;
-  reviewBody: string;
-  datePublished: string;
-}>) {
+export function generateReviewSchema(
+  reviews: Array<{
+    author: string;
+    rating: number;
+    reviewBody: string;
+    datePublished: string;
+  }>
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'AggregateRating',
@@ -474,7 +480,7 @@ export function generateReviewSchema(reviews: Array<{
     reviewCount: reviews.length,
     bestRating: 5,
     worstRating: 1,
-    review: reviews.map(review => ({
+    review: reviews.map((review) => ({
       '@type': 'Review',
       author: {
         '@type': 'Person',

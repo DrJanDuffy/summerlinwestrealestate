@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { metadata as currentListingMetadata } from './metadata';
 import CurrentListingClient from './CurrentListingClient';
+import { metadata as currentListingMetadata } from './metadata';
 
 export const metadata: Metadata = currentListingMetadata;
 

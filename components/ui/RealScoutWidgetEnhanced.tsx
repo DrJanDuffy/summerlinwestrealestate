@@ -1,8 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { REAL_SCOUT_CONFIG, isRealScoutLoaded, waitForRealScoutElements } from '../../lib/realscout-config';
+import { useEffect, useState } from 'react';
+import {
+  isRealScoutLoaded,
+  REAL_SCOUT_CONFIG,
+  waitForRealScoutElements,
+} from '../../lib/realscout-config';
 
 interface RealScoutWidgetEnhancedProps {
   variant?: 'search' | 'listings' | 'lead-capture' | 'market-insights' | 'property-valuation';
@@ -35,7 +39,7 @@ export default function RealScoutWidgetEnhanced({
     const initializeWidget = async () => {
       try {
         setLoadingState('loading');
-        
+
         // Check if RealScout is already loaded
         if (isRealScoutLoaded()) {
           setWidgetReady(true);
@@ -45,7 +49,7 @@ export default function RealScoutWidgetEnhanced({
 
         // Wait for RealScout elements to be defined (with Cloudflare Worker support)
         const elementsReady = await waitForRealScoutElements(8000); // Extended timeout for Cloudflare Worker
-        
+
         if (elementsReady) {
           setWidgetReady(true);
           setLoadingState('ready');
@@ -77,24 +81,19 @@ export default function RealScoutWidgetEnhanced({
     switch (variant) {
       case 'search':
         return (
-          // @ts-ignore - RealScout web component
-          <realscout-search-widget
-            {...commonProps}
-            communities={`${community}, Las Vegas, NV`}
-          />
+          // @ts-expect-error - RealScout web component
+          <realscout-search-widget {...commonProps} communities={`${community}, Las Vegas, NV`} />
         );
-      
+
       case 'listings':
         return (
-          // @ts-ignore - RealScout web component
-          <realscout-office-listings
-            {...commonProps}
-          />
+          // @ts-expect-error - RealScout web component
+          <realscout-office-listings {...commonProps} />
         );
-      
+
       case 'lead-capture':
         return (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source={source}
@@ -104,25 +103,19 @@ export default function RealScoutWidgetEnhanced({
             show-consultation={true}
           />
         );
-      
+
       case 'market-insights':
         return (
-          // @ts-ignore - RealScout web component
-          <realscout-market-insights
-            agent-id={agentId}
-            community={community}
-          />
+          // @ts-expect-error - RealScout web component
+          <realscout-market-insights agent-id={agentId} community={community} />
         );
-      
+
       case 'property-valuation':
         return (
-          // @ts-ignore - RealScout web component
-          <realscout-property-valuation
-            agent-id={agentId}
-            location={location}
-          />
+          // @ts-expect-error - RealScout web component
+          <realscout-property-valuation agent-id={agentId} location={location} />
         );
-      
+
       default:
         return null;
     }
@@ -135,10 +128,25 @@ export default function RealScoutWidgetEnhanced({
       <div className="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200 rounded-lg p-8 text-center">
         <div className="max-w-md mx-auto">
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <title>Property Search Icon</title>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"
+              />
             </svg>
           </div>
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -200,9 +208,19 @@ export default function RealScoutWidgetEnhanced({
       >
         <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
           <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-            <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6 text-red-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <title>Error Icon</title>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
           </div>
           <h3 className="text-lg font-medium text-red-900 mb-2">Widget Loading Error</h3>

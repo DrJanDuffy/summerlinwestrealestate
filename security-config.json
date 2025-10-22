@@ -1,9 +1,7 @@
 {
   "csp": {
     "directives": {
-      "defaultSrc": [
-        "'self'"
-      ],
+      "defaultSrc": ["'self'"],
       "scriptSrc": [
         "'self'",
         "'unsafe-inline'",
@@ -12,30 +10,11 @@
         "https://connect.facebook.net",
         "https://em.realscout.com"
       ],
-      "styleSrc": [
-        "'self'",
-        "'unsafe-inline'",
-        "https://fonts.googleapis.com"
-      ],
-      "fontSrc": [
-        "'self'",
-        "https://fonts.gstatic.com"
-      ],
-      "imgSrc": [
-        "'self'",
-        "data:",
-        "https:",
-        "blob:"
-      ],
-      "connectSrc": [
-        "'self'",
-        "https://api.realscout.com",
-        "https://www.googletagmanager.com"
-      ],
-      "frameSrc": [
-        "'self'",
-        "https://www.google.com"
-      ]
+      "styleSrc": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      "fontSrc": ["'self'", "https://fonts.gstatic.com"],
+      "imgSrc": ["'self'", "data:", "https:", "blob:"],
+      "connectSrc": ["'self'", "https://api.realscout.com", "https://www.googletagmanager.com"],
+      "frameSrc": ["'self'", "https://www.google.com"]
     }
   },
   "headers": {

@@ -8,14 +8,24 @@
  * @see https://v0.app/docs/v0-model-api
  */
 
-import { generateText } from 'ai';
 import { vercel } from '@ai-sdk/vercel';
+import { generateText } from 'ai';
 
 // V0 API configuration using Vercel's official SDK
 export const v0 = {
-  generateText: async (options: { prompt: string; temperature?: number; maxTokens?: number; model?: string }) => {
-    const { prompt, temperature = 0.7, maxTokens: _maxTokens = 4000, model = 'v0-1.5-md' } = options;
-    
+  generateText: async (options: {
+    prompt: string;
+    temperature?: number;
+    maxTokens?: number;
+    model?: string;
+  }) => {
+    const {
+      prompt,
+      temperature = 0.7,
+      maxTokens: _maxTokens = 4000,
+      model = 'v0-1.5-md',
+    } = options;
+
     if (!process.env.V0_API_KEY) {
       throw new Error('V0_API_KEY is not configured');
     }
@@ -51,7 +61,12 @@ export async function generateComponent(
     model?: string;
   } = {}
 ): Promise<string> {
-  const { framework = 'next', style = 'tailwind', includeTypes: _includeTypes = true, model } = options;
+  const {
+    framework = 'next',
+    style = 'tailwind',
+    includeTypes: _includeTypes = true,
+    model,
+  } = options;
 
   const systemPrompt = `You are an expert React/Next.js developer specializing in real estate websites. 
 Generate clean, modern, accessible React components using ${framework} and ${style}.

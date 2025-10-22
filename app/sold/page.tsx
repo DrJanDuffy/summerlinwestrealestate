@@ -6,9 +6,7 @@ import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
 // Dynamic import for client components
-const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
-  ssr: false,
-});
+const LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'));
 
 export const metadata: Metadata = {
   title: 'Recently Sold Homes in Summerlin | Summerlin West Real Estate',
@@ -24,7 +22,7 @@ export const metadata: Metadata = {
     'luxury real estate sales',
     'Dr. Jan Duffy sold listings',
     'Summerlin West market trends',
-    'Las Vegas real estate sales'
+    'Las Vegas real estate sales',
   ],
   alternates: {
     canonical: '/sold',
@@ -126,7 +124,13 @@ export default function Sold() {
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <article key={i} className={styles.featuredListingCard}>
                 <Image
-                  src={i === 1 ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : i === 2 ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'}
+                  src={
+                    i === 1
+                      ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                      : i === 2
+                        ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                        : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                  }
                   alt={`Recently sold home in Summerlin ${i}`}
                   width={400}
                   height={220}

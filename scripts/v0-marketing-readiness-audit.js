@@ -3,7 +3,7 @@
 /**
  * V0 MARKETING READINESS AUDIT SCRIPT
  * Summerlin West Real Estate Website
- * 
+ *
  * This script performs a comprehensive audit to ensure the website
  * is fully ready for marketing use with working RealScout widgets.
  */
@@ -22,7 +22,7 @@ const colors = {
   blue: '\x1b[34m',
   reset: '\x1b[0m',
   bold: '\x1b[1m',
-  cyan: '\x1b[36m'
+  cyan: '\x1b[36m',
 };
 
 // Marketing readiness criteria
@@ -34,15 +34,17 @@ const marketingCriteria = {
   mobileResponsiveness: { passed: 0, failed: 0, errors: [] },
   leadCapture: { passed: 0, failed: 0, errors: [] },
   contentQuality: { passed: 0, failed: 0, errors: [] },
-  deploymentStatus: { passed: 0, failed: 0, errors: [] }
+  deploymentStatus: { passed: 0, failed: 0, errors: [] },
 };
 
 // Helper function to log results
 function logResult(category, test, passed, message = '') {
   const status = passed ? '✅ PASS' : '❌ FAIL';
   const color = passed ? colors.green : colors.red;
-  console.log(`${color}${status}${colors.reset} [${category}] ${test}${message ? ': ' + message : ''}`);
-  
+  console.log(
+    `${color}${status}${colors.reset} [${category}] ${test}${message ? ': ' + message : ''}`
+  );
+
   if (passed) {
     marketingCriteria[category].passed++;
   } else {
@@ -69,10 +71,10 @@ const criticalFiles = [
   'app/layout.tsx',
   'app/page.tsx',
   'vercel.json',
-  'next.config.ts'
+  'next.config.ts',
 ];
 
-criticalFiles.forEach(file => {
+criticalFiles.forEach((file) => {
   if (fs.existsSync(file)) {
     logResult('buildSuccess', `Critical File: ${file}`, true);
   } else {
@@ -88,7 +90,7 @@ console.log('='.repeat(50));
 const wrapperFile = 'components/ui/RealScoutOfficeListingsWrapper.tsx';
 if (fs.existsSync(wrapperFile)) {
   const wrapperContent = fs.readFileSync(wrapperFile, 'utf8');
-  
+
   // Check for working parameters
   const hasAgentEncodedId = wrapperContent.includes('agent-encoded-id="QWdlbnQtMjI1MDUw"');
   const hasSortOrder = wrapperContent.includes('sort-order');
@@ -96,34 +98,41 @@ if (fs.existsSync(wrapperFile)) {
   const hasPropertyTypes = wrapperContent.includes('property-types');
   const hasPriceMin = wrapperContent.includes('price-min');
   const hasPriceMax = wrapperContent.includes('price-max');
-  
+
   logResult('realscoutFunctionality', 'Agent Encoded ID (QWdlbnQtMjI1MDUw)', hasAgentEncodedId);
   logResult('realscoutFunctionality', 'Sort Order Parameter', hasSortOrder);
   logResult('realscoutFunctionality', 'Listing Status (For Sale)', hasListingStatus);
   logResult('realscoutFunctionality', 'Property Types Parameter', hasPropertyTypes);
   logResult('realscoutFunctionality', 'Price Min Parameter', hasPriceMin);
   logResult('realscoutFunctionality', 'Price Max Parameter', hasPriceMax);
-  
+
   // Check for proper error handling
   const hasErrorHandling = wrapperContent.includes('error') && wrapperContent.includes('setError');
   logResult('realscoutFunctionality', 'Error Handling', hasErrorHandling);
-  
+
   // Check for loading states
-  const hasLoadingStates = wrapperContent.includes('isLoaded') && wrapperContent.includes('setIsLoaded');
+  const hasLoadingStates =
+    wrapperContent.includes('isLoaded') && wrapperContent.includes('setIsLoaded');
   logResult('realscoutFunctionality', 'Loading States', hasLoadingStates);
-  
+
   // Check for console logging for debugging
   const hasConsoleLogging = wrapperContent.includes('console.log');
   logResult('realscoutFunctionality', 'Debug Logging', hasConsoleLogging);
 } else {
-  logResult('realscoutFunctionality', 'Wrapper Component Exists', false, 'RealScoutOfficeListingsWrapper not found');
+  logResult(
+    'realscoutFunctionality',
+    'Wrapper Component Exists',
+    false,
+    'RealScoutOfficeListingsWrapper not found'
+  );
 }
 
 // Check for RealScout script loading
 const layoutFile = 'app/layout.tsx';
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-  const hasRealScoutScript = layoutContent.includes('realscout.com') || layoutContent.includes('RealScout');
+  const hasRealScoutScript =
+    layoutContent.includes('realscout.com') || layoutContent.includes('RealScout');
   logResult('realscoutFunctionality', 'RealScout Script Loading', hasRealScoutScript);
 }
 
@@ -134,8 +143,12 @@ console.log('='.repeat(50));
 // Check for structured data
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-  
-  logResult('seoOptimization', 'Structured Data (JSON-LD)', layoutContent.includes('application/ld+json'));
+
+  logResult(
+    'seoOptimization',
+    'Structured Data (JSON-LD)',
+    layoutContent.includes('application/ld+json')
+  );
   logResult('seoOptimization', 'RealEstateAgent Schema', layoutContent.includes('RealEstateAgent'));
   logResult('seoOptimization', 'Organization Schema', layoutContent.includes('Organization'));
   logResult('seoOptimization', 'Place Schema', layoutContent.includes('Place'));
@@ -159,7 +172,7 @@ if (fs.existsSync(robotsApi)) {
 
 // Check for meta tags in key pages
 const keyPages = ['app/page.tsx', 'app/about/page.tsx', 'app/contact/page.tsx'];
-keyPages.forEach(page => {
+keyPages.forEach((page) => {
   if (fs.existsSync(page)) {
     const content = fs.readFileSync(page, 'utf8');
     const hasTitle = content.includes('title') || content.includes('Title');
@@ -176,26 +189,42 @@ console.log('='.repeat(50));
 const nextConfig = 'next.config.ts';
 if (fs.existsSync(nextConfig)) {
   const config = fs.readFileSync(nextConfig, 'utf8');
-  
+
   logResult('performanceOptimization', 'Image Optimization', config.includes('remotePatterns'));
   logResult('performanceOptimization', 'Compression Enabled', config.includes('compress'));
-  logResult('performanceOptimization', 'Bundle Optimization', config.includes('optimizePackageImports'));
+  logResult(
+    'performanceOptimization',
+    'Bundle Optimization',
+    config.includes('optimizePackageImports')
+  );
 }
 
 // Check for performance monitoring
 const packageJson = 'package.json';
 if (fs.existsSync(packageJson)) {
   const pkg = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
-  
-  logResult('performanceOptimization', 'Vercel Analytics', pkg.dependencies && pkg.dependencies['@vercel/analytics']);
-  logResult('performanceOptimization', 'Speed Insights', pkg.dependencies && pkg.dependencies['@vercel/speed-insights']);
+
+  logResult(
+    'performanceOptimization',
+    'Vercel Analytics',
+    pkg.dependencies && pkg.dependencies['@vercel/analytics']
+  );
+  logResult(
+    'performanceOptimization',
+    'Speed Insights',
+    pkg.dependencies && pkg.dependencies['@vercel/speed-insights']
+  );
 }
 
 // Check for Analytics components in layout
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
   logResult('performanceOptimization', 'Analytics Component', layoutContent.includes('Analytics'));
-  logResult('performanceOptimization', 'SpeedInsights Component', layoutContent.includes('SpeedInsights'));
+  logResult(
+    'performanceOptimization',
+    'SpeedInsights Component',
+    layoutContent.includes('SpeedInsights')
+  );
 }
 
 // Check for dynamic imports
@@ -220,10 +249,17 @@ if (fs.existsSync(tailwindConfig)) {
 // Check for responsive utilities
 if (fs.existsSync(homeClient)) {
   const content = fs.readFileSync(homeClient, 'utf8');
-  
-  logResult('mobileResponsiveness', 'Mobile Classes (sm:, md:, lg:)', 
-    content.includes('sm:') || content.includes('md:') || content.includes('lg:'));
-  logResult('mobileResponsiveness', 'Responsive Grid', content.includes('grid') && content.includes('responsive'));
+
+  logResult(
+    'mobileResponsiveness',
+    'Mobile Classes (sm:, md:, lg:)',
+    content.includes('sm:') || content.includes('md:') || content.includes('lg:')
+  );
+  logResult(
+    'mobileResponsiveness',
+    'Responsive Grid',
+    content.includes('grid') && content.includes('responsive')
+  );
   logResult('mobileResponsiveness', 'Flexbox Layout', content.includes('flex'));
 }
 
@@ -241,10 +277,10 @@ console.log('='.repeat(50));
 const leadCaptureFiles = [
   'components/ui/LeadCaptureForm.tsx',
   'components/ui/RealScoutLeadCapture.tsx',
-  'app/contact/ContactClient.tsx'
+  'app/contact/ContactClient.tsx',
 ];
 
-leadCaptureFiles.forEach(file => {
+leadCaptureFiles.forEach((file) => {
   if (fs.existsSync(file)) {
     const content = fs.readFileSync(file, 'utf8');
     const hasForm = content.includes('<form') || content.includes('Form');
@@ -258,7 +294,8 @@ leadCaptureFiles.forEach(file => {
 // Check for contact information
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-  const hasPhone = layoutContent.includes('702-550-0112') || layoutContent.includes('+1-702-550-0112');
+  const hasPhone =
+    layoutContent.includes('702-550-0112') || layoutContent.includes('+1-702-550-0112');
   const hasEmail = layoutContent.includes('DrJanSells@SummerlinWestRealEstate.com');
   logResult('leadCapture', 'Contact Phone Number', hasPhone);
   logResult('leadCapture', 'Contact Email', hasEmail);
@@ -272,22 +309,31 @@ console.log('='.repeat(50));
 const contentFiles = ['app/page.tsx', 'app/about/page.tsx', 'app/HomeClient.tsx'];
 let placeholderCount = 0;
 
-contentFiles.forEach(file => {
+contentFiles.forEach((file) => {
   if (fs.existsSync(file)) {
     const content = fs.readFileSync(file, 'utf8');
-    if (content.includes('placeholder') || content.includes('Lorem ipsum') || content.includes('TODO')) {
+    if (
+      content.includes('placeholder') ||
+      content.includes('Lorem ipsum') ||
+      content.includes('TODO')
+    ) {
       placeholderCount++;
     }
   }
 });
 
-logResult('contentQuality', 'No Placeholder Content', placeholderCount === 0, 
-  placeholderCount > 0 ? `${placeholderCount} files with placeholders` : '');
+logResult(
+  'contentQuality',
+  'No Placeholder Content',
+  placeholderCount === 0,
+  placeholderCount > 0 ? `${placeholderCount} files with placeholders` : ''
+);
 
 // Check for professional branding
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-  const hasDrJanDuffy = layoutContent.includes('Dr. Jan Duffy') || layoutContent.includes('Dr. Janet Duffy');
+  const hasDrJanDuffy =
+    layoutContent.includes('Dr. Jan Duffy') || layoutContent.includes('Dr. Janet Duffy');
   const hasSummerlinWest = layoutContent.includes('Summerlin West');
   logResult('contentQuality', 'Professional Branding', hasDrJanDuffy && hasSummerlinWest);
 }
@@ -295,7 +341,10 @@ if (fs.existsSync(layoutFile)) {
 // Check for real estate specific content
 if (fs.existsSync(homeClient)) {
   const content = fs.readFileSync(homeClient, 'utf8');
-  const hasRealEstateTerms = content.includes('homes for sale') || content.includes('real estate') || content.includes('properties');
+  const hasRealEstateTerms =
+    content.includes('homes for sale') ||
+    content.includes('real estate') ||
+    content.includes('properties');
   logResult('contentQuality', 'Real Estate Content', hasRealEstateTerms);
 }
 
@@ -307,12 +356,25 @@ console.log('='.repeat(50));
 const vercelConfig = 'vercel.json';
 if (fs.existsSync(vercelConfig)) {
   const config = JSON.parse(fs.readFileSync(vercelConfig, 'utf8'));
-  
+
   logResult('deploymentStatus', 'Vercel Config Exists', true);
-  logResult('deploymentStatus', 'Redirects Configured', config.redirects && config.redirects.length > 0);
+  logResult(
+    'deploymentStatus',
+    'Redirects Configured',
+    config.redirects && config.redirects.length > 0
+  );
   logResult('deploymentStatus', 'Headers Configured', config.headers && config.headers.length > 0);
-  logResult('deploymentStatus', 'Rewrites Configured', config.rewrites && config.rewrites.length > 0);
-  logResult('deploymentStatus', 'Security Headers', config.headers && config.headers.some(h => h.headers.some(header => header.key.includes('Security'))));
+  logResult(
+    'deploymentStatus',
+    'Rewrites Configured',
+    config.rewrites && config.rewrites.length > 0
+  );
+  logResult(
+    'deploymentStatus',
+    'Security Headers',
+    config.headers &&
+      config.headers.some((h) => h.headers.some((header) => header.key.includes('Security')))
+  );
 } else {
   logResult('deploymentStatus', 'Vercel Config Exists', false, 'vercel.json not found');
 }
@@ -338,28 +400,33 @@ console.log('='.repeat(60));
 let totalPassed = 0;
 let totalFailed = 0;
 
-Object.keys(marketingCriteria).forEach(category => {
+Object.keys(marketingCriteria).forEach((category) => {
   const result = marketingCriteria[category];
   totalPassed += result.passed;
   totalFailed += result.failed;
-  
+
   const percentage = Math.round((result.passed / (result.passed + result.failed)) * 100);
   const color = percentage >= 90 ? colors.green : percentage >= 70 ? colors.yellow : colors.red;
-  
-  console.log(`${color}${category.toUpperCase()}: ${result.passed}/${result.passed + result.failed} (${percentage}%)${colors.reset}`);
-  
+
+  console.log(
+    `${color}${category.toUpperCase()}: ${result.passed}/${result.passed + result.failed} (${percentage}%)${colors.reset}`
+  );
+
   if (result.errors.length > 0) {
     console.log(`  ${colors.red}Issues:${colors.reset}`);
-    result.errors.forEach(error => {
+    result.errors.forEach((error) => {
       console.log(`    - ${error}`);
     });
   }
 });
 
 const overallPercentage = Math.round((totalPassed / (totalPassed + totalFailed)) * 100);
-const overallColor = overallPercentage >= 90 ? colors.green : overallPercentage >= 70 ? colors.yellow : colors.red;
+const overallColor =
+  overallPercentage >= 90 ? colors.green : overallPercentage >= 70 ? colors.yellow : colors.red;
 
-console.log(`\n${colors.bold}${overallColor}MARKETING READINESS SCORE: ${totalPassed}/${totalPassed + totalFailed} (${overallPercentage}%)${colors.reset}`);
+console.log(
+  `\n${colors.bold}${overallColor}MARKETING READINESS SCORE: ${totalPassed}/${totalPassed + totalFailed} (${overallPercentage}%)${colors.reset}`
+);
 
 if (overallPercentage >= 90) {
   console.log(`${colors.green}🎉 WEBSITE IS MARKETING READY!${colors.reset}`);
@@ -390,4 +457,6 @@ console.log('8. ✅ Ensure all images load properly');
 console.log('9. ✅ Validate structured data markup');
 console.log('10. ✅ Test RealScout widget functionality');
 
-console.log(`\n${colors.bold}${colors.green}🚀 V0 MARKETING READINESS AUDIT COMPLETE!${colors.reset}`);
+console.log(
+  `\n${colors.bold}${colors.green}🚀 V0 MARKETING READINESS AUDIT COMPLETE!${colors.reset}`
+);

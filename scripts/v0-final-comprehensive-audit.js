@@ -3,7 +3,7 @@
 /**
  * V0 FINAL COMPREHENSIVE AUDIT SCRIPT
  * Summerlin West Real Estate Website
- * 
+ *
  * This script performs a thorough audit of all website functionality
  * to ensure the site is fully operational with working RealScout widgets.
  */
@@ -21,7 +21,7 @@ const colors = {
   yellow: '\x1b[33m',
   blue: '\x1b[34m',
   reset: '\x1b[0m',
-  bold: '\x1b[1m'
+  bold: '\x1b[1m',
 };
 
 // Audit results tracking
@@ -33,15 +33,17 @@ const auditResults = {
   performanceCheck: { passed: 0, failed: 0, errors: [] },
   seoValidation: { passed: 0, failed: 0, errors: [] },
   responsiveDesign: { passed: 0, failed: 0, errors: [] },
-  errorMonitoring: { passed: 0, failed: 0, errors: [] }
+  errorMonitoring: { passed: 0, failed: 0, errors: [] },
 };
 
 // Helper function to log results
 function logResult(category, test, passed, message = '') {
   const status = passed ? '✅ PASS' : '❌ FAIL';
   const color = passed ? colors.green : colors.red;
-  console.log(`${color}${status}${colors.reset} [${category}] ${test}${message ? ': ' + message : ''}`);
-  
+  console.log(
+    `${color}${status}${colors.reset} [${category}] ${test}${message ? ': ' + message : ''}`
+  );
+
   if (passed) {
     auditResults[category].passed++;
   } else {
@@ -77,23 +79,28 @@ const criticalFiles = [
   'app/properties/PropertiesClient.tsx',
   'app/service-area/[slug]/ClientSubdivisionPage.tsx',
   'app/service-area/page.tsx',
-  'components/ui/RealScoutOfficeListingsWrapper.tsx'
+  'components/ui/RealScoutOfficeListingsWrapper.tsx',
 ];
 
-criticalFiles.forEach(file => {
+criticalFiles.forEach((file) => {
   if (fs.existsSync(file)) {
     const content = fs.readFileSync(file, 'utf8');
-    
+
     // Check for unterminated strings
     if (content.includes("import styles from '") && !content.includes(".module.css'")) {
       logResult('syntaxValidation', `Import Check: ${file}`, false, 'Unterminated import string');
     } else {
       logResult('syntaxValidation', `Import Check: ${file}`, true);
     }
-    
+
     // Check for 'use client' with generateMetadata
     if (content.includes("'use client'") && content.includes('generateMetadata')) {
-      logResult('syntaxValidation', `Client Component Check: ${file}`, false, 'generateMetadata in client component');
+      logResult(
+        'syntaxValidation',
+        `Client Component Check: ${file}`,
+        false,
+        'generateMetadata in client component'
+      );
     } else {
       logResult('syntaxValidation', `Client Component Check: ${file}`, true);
     }
@@ -108,7 +115,7 @@ console.log('='.repeat(50));
 const wrapperFile = 'components/ui/RealScoutOfficeListingsWrapper.tsx';
 if (fs.existsSync(wrapperFile)) {
   const wrapperContent = fs.readFileSync(wrapperFile, 'utf8');
-  
+
   // Check for working parameters
   const hasAgentEncodedId = wrapperContent.includes('agent-encoded-id');
   const hasSortOrder = wrapperContent.includes('sort-order');
@@ -116,23 +123,29 @@ if (fs.existsSync(wrapperFile)) {
   const hasPropertyTypes = wrapperContent.includes('property-types');
   const hasPriceMin = wrapperContent.includes('price-min');
   const hasPriceMax = wrapperContent.includes('price-max');
-  
+
   logResult('realscoutWidgets', 'Agent Encoded ID Parameter', hasAgentEncodedId);
   logResult('realscoutWidgets', 'Sort Order Parameter', hasSortOrder);
   logResult('realscoutWidgets', 'Listing Status Parameter', hasListingStatus);
   logResult('realscoutWidgets', 'Property Types Parameter', hasPropertyTypes);
   logResult('realscoutWidgets', 'Price Min Parameter', hasPriceMin);
   logResult('realscoutWidgets', 'Price Max Parameter', hasPriceMax);
-  
+
   // Check for proper error handling
   const hasErrorHandling = wrapperContent.includes('error') && wrapperContent.includes('setError');
   logResult('realscoutWidgets', 'Error Handling', hasErrorHandling);
-  
+
   // Check for loading states
-  const hasLoadingStates = wrapperContent.includes('isLoaded') && wrapperContent.includes('setIsLoaded');
+  const hasLoadingStates =
+    wrapperContent.includes('isLoaded') && wrapperContent.includes('setIsLoaded');
   logResult('realscoutWidgets', 'Loading States', hasLoadingStates);
 } else {
-  logResult('realscoutWidgets', 'Wrapper Component Exists', false, 'RealScoutOfficeListingsWrapper not found');
+  logResult(
+    'realscoutWidgets',
+    'Wrapper Component Exists',
+    false,
+    'RealScoutOfficeListingsWrapper not found'
+  );
 }
 
 // Check for raw HTML elements (should be none)
@@ -142,21 +155,28 @@ const pagesToCheck = [
   'app/layout.tsx',
   'app/properties/PropertiesClient.tsx',
   'app/about/AboutClient.tsx',
-  'app/contact/ContactClient.tsx'
+  'app/contact/ContactClient.tsx',
 ];
 
 let rawHtmlElementsFound = 0;
-pagesToCheck.forEach(page => {
+pagesToCheck.forEach((page) => {
   if (fs.existsSync(page)) {
     const content = fs.readFileSync(page, 'utf8');
-    if (content.includes('<realscout-office-listings') && !content.includes('RealScoutOfficeListingsWrapper')) {
+    if (
+      content.includes('<realscout-office-listings') &&
+      !content.includes('RealScoutOfficeListingsWrapper')
+    ) {
       rawHtmlElementsFound++;
     }
   }
 });
 
-logResult('realscoutWidgets', 'No Raw HTML Elements', rawHtmlElementsFound === 0, 
-  rawHtmlElementsFound > 0 ? `${rawHtmlElementsFound} raw elements found` : '');
+logResult(
+  'realscoutWidgets',
+  'No Raw HTML Elements',
+  rawHtmlElementsFound === 0,
+  rawHtmlElementsFound > 0 ? `${rawHtmlElementsFound} raw elements found` : ''
+);
 
 // 3. BUILD VERIFICATION
 console.log(`\n${colors.bold}${colors.blue}3. BUILD VERIFICATION${colors.reset}`);
@@ -187,11 +207,19 @@ console.log('='.repeat(50));
 const vercelConfig = 'vercel.json';
 if (fs.existsSync(vercelConfig)) {
   const config = JSON.parse(fs.readFileSync(vercelConfig, 'utf8'));
-  
+
   logResult('deploymentStatus', 'Vercel Config Exists', true);
-  logResult('deploymentStatus', 'Redirects Configured', config.redirects && config.redirects.length > 0);
+  logResult(
+    'deploymentStatus',
+    'Redirects Configured',
+    config.redirects && config.redirects.length > 0
+  );
   logResult('deploymentStatus', 'Headers Configured', config.headers && config.headers.length > 0);
-  logResult('deploymentStatus', 'Rewrites Configured', config.rewrites && config.rewrites.length > 0);
+  logResult(
+    'deploymentStatus',
+    'Rewrites Configured',
+    config.rewrites && config.rewrites.length > 0
+  );
 } else {
   logResult('deploymentStatus', 'Vercel Config Exists', false, 'vercel.json not found');
 }
@@ -212,7 +240,7 @@ console.log('='.repeat(50));
 const nextConfig = 'next.config.ts';
 if (fs.existsSync(nextConfig)) {
   const config = fs.readFileSync(nextConfig, 'utf8');
-  
+
   logResult('performanceCheck', 'Image Optimization', config.includes('remotePatterns'));
   logResult('performanceCheck', 'Bundle Analyzer Ready', config.includes('bundleAnalyzer'));
   logResult('performanceCheck', 'Compression Enabled', config.includes('compress'));
@@ -224,9 +252,17 @@ if (fs.existsSync(nextConfig)) {
 const packageJson = 'package.json';
 if (fs.existsSync(packageJson)) {
   const pkg = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
-  
-  logResult('performanceCheck', 'Vercel Analytics', pkg.dependencies && pkg.dependencies['@vercel/analytics']);
-  logResult('performanceCheck', 'Speed Insights', pkg.dependencies && pkg.dependencies['@vercel/speed-insights']);
+
+  logResult(
+    'performanceCheck',
+    'Vercel Analytics',
+    pkg.dependencies && pkg.dependencies['@vercel/analytics']
+  );
+  logResult(
+    'performanceCheck',
+    'Speed Insights',
+    pkg.dependencies && pkg.dependencies['@vercel/speed-insights']
+  );
 }
 
 // 6. SEO VALIDATION
@@ -253,7 +289,7 @@ if (fs.existsSync(robotsApi)) {
 const layoutFile = 'app/layout.tsx';
 if (fs.existsSync(layoutFile)) {
   const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-  
+
   logResult('seoValidation', 'Structured Data', layoutContent.includes('application/ld+json'));
   logResult('seoValidation', 'RealEstateAgent Schema', layoutContent.includes('RealEstateAgent'));
   logResult('seoValidation', 'Organization Schema', layoutContent.includes('Organization'));
@@ -275,9 +311,17 @@ if (fs.existsSync(tailwindConfig)) {
 const homeClient = 'app/HomeClient.tsx';
 if (fs.existsSync(homeClient)) {
   const content = fs.readFileSync(homeClient, 'utf8');
-  
-  logResult('responsiveDesign', 'Mobile Classes', content.includes('md:') || content.includes('lg:'));
-  logResult('responsiveDesign', 'Responsive Grid', content.includes('grid') && content.includes('responsive'));
+
+  logResult(
+    'responsiveDesign',
+    'Mobile Classes',
+    content.includes('md:') || content.includes('lg:')
+  );
+  logResult(
+    'responsiveDesign',
+    'Responsive Grid',
+    content.includes('grid') && content.includes('responsive')
+  );
 }
 
 // 8. ERROR MONITORING
@@ -285,13 +329,9 @@ console.log(`\n${colors.bold}${colors.blue}8. ERROR MONITORING${colors.reset}`);
 console.log('='.repeat(50));
 
 // Check for error boundaries
-const errorBoundaryFiles = [
-  'app/error.tsx',
-  'app/not-found.tsx',
-  'app/404.tsx'
-];
+const errorBoundaryFiles = ['app/error.tsx', 'app/not-found.tsx', 'app/404.tsx'];
 
-errorBoundaryFiles.forEach(file => {
+errorBoundaryFiles.forEach((file) => {
   if (fs.existsSync(file)) {
     logResult('errorMonitoring', `Error Boundary: ${file}`, true);
   } else {
@@ -312,32 +352,39 @@ console.log('='.repeat(60));
 let totalPassed = 0;
 let totalFailed = 0;
 
-Object.keys(auditResults).forEach(category => {
+Object.keys(auditResults).forEach((category) => {
   const result = auditResults[category];
   totalPassed += result.passed;
   totalFailed += result.failed;
-  
+
   const percentage = Math.round((result.passed / (result.passed + result.failed)) * 100);
   const color = percentage >= 80 ? colors.green : percentage >= 60 ? colors.yellow : colors.red;
-  
-  console.log(`${color}${category.toUpperCase()}: ${result.passed}/${result.passed + result.failed} (${percentage}%)${colors.reset}`);
-  
+
+  console.log(
+    `${color}${category.toUpperCase()}: ${result.passed}/${result.passed + result.failed} (${percentage}%)${colors.reset}`
+  );
+
   if (result.errors.length > 0) {
     console.log(`  ${colors.red}Issues:${colors.reset}`);
-    result.errors.forEach(error => {
+    result.errors.forEach((error) => {
       console.log(`    - ${error}`);
     });
   }
 });
 
 const overallPercentage = Math.round((totalPassed / (totalPassed + totalFailed)) * 100);
-const overallColor = overallPercentage >= 80 ? colors.green : overallPercentage >= 60 ? colors.yellow : colors.red;
+const overallColor =
+  overallPercentage >= 80 ? colors.green : overallPercentage >= 60 ? colors.yellow : colors.red;
 
-console.log(`\n${colors.bold}${overallColor}OVERALL SCORE: ${totalPassed}/${totalPassed + totalFailed} (${overallPercentage}%)${colors.reset}`);
+console.log(
+  `\n${colors.bold}${overallColor}OVERALL SCORE: ${totalPassed}/${totalPassed + totalFailed} (${overallPercentage}%)${colors.reset}`
+);
 
 if (overallPercentage >= 80) {
   console.log(`${colors.green}🎉 WEBSITE IS READY FOR PRODUCTION!${colors.reset}`);
-  console.log(`${colors.green}✅ RealScout widgets should be displaying actual listings${colors.reset}`);
+  console.log(
+    `${colors.green}✅ RealScout widgets should be displaying actual listings${colors.reset}`
+  );
   console.log(`${colors.green}✅ All syntax errors have been resolved${colors.reset}`);
   console.log(`${colors.green}✅ Site is fully functional and live${colors.reset}`);
 } else if (overallPercentage >= 60) {

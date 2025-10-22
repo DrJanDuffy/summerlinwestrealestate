@@ -5,7 +5,7 @@ declare global {
     gtag: (...args: any[]) => void;
     fbq: (...args: any[]) => void;
   }
-  
+
   // Global functions
   function gtag(...args: any[]): void;
   function fbq(...args: any[]): void;

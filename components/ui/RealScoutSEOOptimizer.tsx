@@ -1,19 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 // Dynamically import RealScout components for better performance
 const RealScoutWidget = dynamic(() => import('./RealScoutWidget'), { ssr: false });
 const RealScoutAdvancedSearch = dynamic(() => import('./RealScoutAdvancedSearch'), { ssr: false });
 const RealScoutLeadCapture = dynamic(() => import('./RealScoutLeadCapture'), { ssr: false });
-const RealScoutPropertyValuation = dynamic(() => import('./RealScoutPropertyValuation'), { ssr: false });
+const RealScoutPropertyValuation = dynamic(() => import('./RealScoutPropertyValuation'), {
+  ssr: false,
+});
 const RealScoutMarketInsights = dynamic(() => import('./RealScoutMarketInsights'), { ssr: false });
 const RealScoutListings = dynamic(() => import('./RealScoutListings'), { ssr: false });
 
 interface RealScoutSEOOptimizerProps {
-  pageType: 'homepage' | 'properties' | 'communities' | 'about' | 'contact' | 'market-reports' | 'blog';
+  pageType:
+    | 'homepage'
+    | 'properties'
+    | 'communities'
+    | 'about'
+    | 'contact'
+    | 'market-reports'
+    | 'blog';
   location?: string;
   community?: string;
   className?: string;
@@ -58,22 +67,22 @@ export default function RealScoutSEOOptimizer({
         addressLocality: 'Las Vegas',
         addressRegion: 'NV',
         postalCode: '89135',
-        addressCountry: 'US'
+        addressCountry: 'US',
       },
       areaServed: {
         '@type': 'City',
         name: 'Las Vegas',
         containedInPlace: {
           '@type': 'State',
-          name: 'Nevada'
-        }
+          name: 'Nevada',
+        },
       },
       knowsAbout: [
         'Summerlin West Real Estate',
         'Luxury Homes',
         'Property Valuation',
         'Market Analysis',
-        'Real Estate Investment'
+        'Real Estate Investment',
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
@@ -84,27 +93,27 @@ export default function RealScoutSEOOptimizer({
             itemOffered: {
               '@type': 'Service',
               name: 'Property Search',
-              description: 'Advanced MLS search for Summerlin West properties'
-            }
+              description: 'Advanced MLS search for Summerlin West properties',
+            },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Property Valuation',
-              description: 'Free home valuation and market analysis'
-            }
+              description: 'Free home valuation and market analysis',
+            },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Market Insights',
-              description: 'Real-time market data and trends'
-            }
-          }
-        ]
-      }
+              description: 'Real-time market data and trends',
+            },
+          },
+        ],
+      },
     };
 
     const script = document.createElement('script');
@@ -313,16 +322,16 @@ export default function RealScoutSEOOptimizer({
           <div className={`real-scout-seo-contact ${className}`}>
             {/* Lead Capture */}
             <section className="mb-12" aria-label="Contact Form">
-            <RealScoutLeadCapture
-              variant="inline"
-              title="Get Your Free Summerlin West Market Report"
-              subtitle="Stay ahead of the market with our exclusive insights and expert guidance"
-              source="Contact Page"
-              community={community}
-              showMarketReport={true}
-              showValuation={true}
-              showConsultation={true}
-            />
+              <RealScoutLeadCapture
+                variant="inline"
+                title="Get Your Free Summerlin West Market Report"
+                subtitle="Stay ahead of the market with our exclusive insights and expert guidance"
+                source="Contact Page"
+                community={community}
+                showMarketReport={true}
+                showValuation={true}
+                showConsultation={true}
+              />
             </section>
 
             {/* Property Valuation */}
@@ -445,9 +454,5 @@ export default function RealScoutSEOOptimizer({
     );
   }
 
-  return (
-    <div className="real-scout-seo-optimizer">
-      {renderPageSpecificWidgets()}
-    </div>
-  );
+  return <div className="real-scout-seo-optimizer">{renderPageSpecificWidgets()}</div>;
 }

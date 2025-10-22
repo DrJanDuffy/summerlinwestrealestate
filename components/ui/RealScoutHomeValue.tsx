@@ -20,9 +20,7 @@ export default function RealScoutHomeValue({
     >
       {/* RealScout Home Value Web Component */}
       {/* @ts-ignore - RealScout web component */}
-      <realscout-home-value
-        agent-encoded-id={agentEncodedId}
-      />
+      <realscout-home-value agent-encoded-id={agentEncodedId} />
     </motion.div>
   );
 }

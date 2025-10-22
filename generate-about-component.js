@@ -14,14 +14,14 @@ fetch('http://localhost:3000/api/v0/generate-component', {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify({ prompt, model: 'gpt-5' })
+  body: JSON.stringify({ prompt, model: 'gpt-5' }),
 })
-.then(response => response.json())
-.then(data => {
-  console.log('Generated Component:', data);
-  if (data.component) {
-    require('fs').writeFileSync('generated-about-component.tsx', data.component);
-    console.log('Component saved to generated-about-component.tsx');
-  }
-})
-.catch(error => console.error('Error:', error));
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('Generated Component:', data);
+    if (data.component) {
+      require('fs').writeFileSync('generated-about-component.tsx', data.component);
+      console.log('Component saved to generated-about-component.tsx');
+    }
+  })
+  .catch((error) => console.error('Error:', error));

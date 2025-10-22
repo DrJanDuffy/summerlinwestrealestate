@@ -1,9 +1,14 @@
 'use client';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 // import MarketInsightImage from './MarketInsightImage'; // Removed unused import
-import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem, formatDate } from '../../lib/rss-parser';
+import {
+  fetchRSSFeed,
+  formatDate,
+  getCategoryFromRSSItem,
+  getImageUrlFromRSSItem,
+} from '../../lib/rss-parser';
 
 interface MarketArticle {
   title: string;
@@ -40,13 +45,15 @@ export default function MarketInsightsFeed({
         // Fetch RSS feed from Simplifying the Market
         const feed = await fetchRSSFeed();
         if (feed) {
-          const articles = feed.items.slice(0, maxArticles).map(item => ({
+          const articles = feed.items.slice(0, maxArticles).map((item) => ({
             title: item.title,
             excerpt: item.contentSnippet || '',
             url: item.link,
             date: item.pubDate || '',
             category: getCategoryFromRSSItem(item),
-            imageUrl: getImageUrlFromRSSItem(item) || 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=225&fit=crop&crop=entropy&auto=format&q=80',
+            imageUrl:
+              getImageUrlFromRSSItem(item) ||
+              'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=225&fit=crop&crop=entropy&auto=format&q=80',
             content: item.content || item.contentSnippet || '',
           }));
           setArticles(articles);
@@ -141,9 +148,7 @@ export default function MarketInsightsFeed({
 
             <div className="p-6">
               <div className="flex items-center text-sm text-gray-500 mb-2">
-                <time dateTime={article.date}>
-                  {formatDate(article.date)}
-                </time>
+                <time dateTime={article.date}>{formatDate(article.date)}</time>
                 {!showImages && (
                   <span className="ml-2 bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
                     {article.category}

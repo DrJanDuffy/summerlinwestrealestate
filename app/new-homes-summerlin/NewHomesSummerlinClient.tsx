@@ -3,9 +3,12 @@
 import dynamic from 'next/dynamic';
 import styles from './NewHomesSummerlin.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Dynamic imports for client components
 const _LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
@@ -219,21 +222,22 @@ export default function NewHomesSummerlinClient() {
         <section className={styles.ctaSection}>
           <h2>New Construction Homes in Summerlin West</h2>
           <p>
-            Explore the latest new construction homes available in Summerlin West. These properties 
-            offer modern design, energy efficiency, and the opportunity to customize your dream home. 
-            From luxury estates to family-friendly communities, find the perfect new construction home.
+            Explore the latest new construction homes available in Summerlin West. These properties
+            offer modern design, energy efficiency, and the opportunity to customize your dream
+            home. From luxury estates to family-friendly communities, find the perfect new
+            construction home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="600000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="600000"
+            priceMax="2000000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
 
         {/* CTA Section */}
@@ -260,8 +264,8 @@ export default function NewHomesSummerlinClient() {
         <section className={styles.ctaSection}>
           <h2>Advanced Property Search for New Construction</h2>
           <p>
-            Use our advanced search tool to find new construction homes in Summerlin West. 
-            Filter by price, features, builder, and more to discover your perfect new home.
+            Use our advanced search tool to find new construction homes in Summerlin West. Filter by
+            price, features, builder, and more to discover your perfect new home.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -271,8 +275,8 @@ export default function NewHomesSummerlinClient() {
         <section className={styles.ctaSection}>
           <h2>Quick Property Search for New Construction</h2>
           <p>
-            Browse available new construction homes with our simple search tool. 
-            Perfect for quick property browsing of new homes in Summerlin West.
+            Browse available new construction homes with our simple search tool. Perfect for quick
+            property browsing of new homes in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -282,20 +286,21 @@ export default function NewHomesSummerlinClient() {
         <section className={styles.ctaSection}>
           <h2>Office Properties in New Construction Areas</h2>
           <p>
-            Explore office properties and commercial real estate opportunities in new construction areas of Summerlin West. 
-            From professional office spaces to commercial buildings, find the perfect location for your business.
+            Explore office properties and commercial real estate opportunities in new construction
+            areas of Summerlin West. From professional office spaces to commercial buildings, find
+            the perfect location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,OTHER" 
-              priceMin="500000" 
-              priceMax="600000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,OTHER"
+            priceMin="500000"
+            priceMax="600000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
       </main>
     </div>

@@ -36,7 +36,7 @@ export default function RealScoutLeadCapture({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setWidgetLoaded(true);
         }
@@ -170,7 +170,7 @@ export default function RealScoutLeadCapture({
       {/* RealScout Lead Capture Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-lead-capture
             agent-id={agentId}
             source={source}

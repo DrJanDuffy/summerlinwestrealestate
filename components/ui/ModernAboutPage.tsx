@@ -1,30 +1,30 @@
 'use client';
 
-import React, { useState, useRef, useId } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
-import RealScoutIntegration from './RealScoutIntegration';
-import InternalLinking from './InternalLinking';
+import React, { useId, useRef, useState } from 'react';
 import {
   FaAward,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaStar,
-  FaUsers,
-  FaHome,
   FaChartLine,
-  FaHandshake,
-  FaGraduationCap,
-  FaTrophy,
-  FaQuoteLeft,
   FaChevronLeft,
   FaChevronRight,
-  FaInstagram,
+  FaEnvelope,
   FaFacebook,
+  FaGraduationCap,
+  FaHandshake,
+  FaHome,
+  FaInstagram,
   FaLinkedin,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaQuoteLeft,
+  FaStar,
+  FaTrophy,
+  FaUsers,
 } from 'react-icons/fa';
+import InternalLinking from './InternalLinking';
+import RealScoutIntegration from './RealScoutIntegration';
 
 interface ModernAboutPageProps {
   className?: string;
@@ -35,7 +35,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
   const statsRef = useRef(null);
   const testimonialsRef = useRef(null);
   const mapId = useId();
-  
+
   const isStatsInView = useInView(statsRef, { once: true });
   const isTestimonialsInView = useInView(testimonialsRef, { once: true });
 
@@ -79,21 +79,24 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
       location: 'The Vistas',
       rating: 5,
       text: 'Dr. Duffy made our dream of owning a home in The Vistas a reality. Her knowledge of the area and negotiation skills saved us thousands.',
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
     {
       name: 'Jennifer Martinez',
       location: 'Stonebridge',
       rating: 5,
       text: 'As first-time buyers, we were nervous about the process. Dr. Duffy guided us every step of the way with patience and expertise.',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
     {
       name: 'David & Lisa Thompson',
       location: 'Redpoint',
       rating: 5,
-      text: 'We sold our home above asking price in just 8 days! Dr. Duffy\'s marketing strategy and staging advice were exceptional.',
-      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
+      text: "We sold our home above asking price in just 8 days! Dr. Duffy's marketing strategy and staging advice were exceptional.",
+      image:
+        'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=100&h=100&fit=crop&crop=entropy&auto=format&q=80',
     },
   ];
 
@@ -103,7 +106,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
     'Certified Luxury Home Marketing Specialist',
     'Graduate, REALTOR® Institute (GRI)',
     'Certified Residential Specialist (CRS)',
-    'Accredited Buyer\'s Representative (ABR)',
+    "Accredited Buyer's Representative (ABR)",
   ];
 
   return (
@@ -123,7 +126,8 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                 <span className="block text-blue-300">Your Summerlin West Expert</span>
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
-                15+ years of experience helping families discover luxury living at the gateway to Red Rock Canyon
+                15+ years of experience helping families discover luxury living at the gateway to
+                Red Rock Canyon
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
@@ -189,11 +193,10 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Proven Results
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Proven Results</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dr. Jan Duffy's track record speaks for itself with consistent results across all market conditions
+              Dr. Jan Duffy's track record speaks for itself with consistent results across all
+              market conditions
             </p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -246,7 +249,9 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                 className="group"
               >
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 h-full">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${spec.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${spec.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <spec.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{spec.title}</h3>
@@ -272,8 +277,8 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                 Professional Credentials
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Dr. Jan Duffy combines academic excellence with real-world experience, bringing a unique 
-                perspective to real estate that goes beyond traditional transactions.
+                Dr. Jan Duffy combines academic excellence with real-world experience, bringing a
+                unique perspective to real estate that goes beyond traditional transactions.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {achievements.map((achievement, index) => (
@@ -336,9 +341,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              What Clients Say
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Clients Say</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Real stories from real buyers and sellers who have worked with Dr. Jan Duffy
             </p>
@@ -357,14 +360,22 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-                    {testimonials[activeTestimonial].name.split(' ').map(n => n[0]).join('')}
+                    {testimonials[activeTestimonial].name
+                      .split(' ')
+                      .map((n) => n[0])
+                      .join('')}
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">{testimonials[activeTestimonial].name}</div>
+                    <div className="font-bold text-gray-900">
+                      {testimonials[activeTestimonial].name}
+                    </div>
                     <div className="text-gray-600">{testimonials[activeTestimonial].location}</div>
                     <div className="flex mt-1">
                       {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                        <FaStar key={`star-${i}-${activeTestimonial}`} className="w-4 h-4 text-yellow-400" />
+                        <FaStar
+                          key={`star-${i}-${activeTestimonial}`}
+                          className="w-4 h-4 text-yellow-400"
+                        />
                       ))}
                     </div>
                   </div>
@@ -372,7 +383,11 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                 <div className="flex gap-2">
                   <button
                     type="button"
-                    onClick={() => setActiveTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        prev === 0 ? testimonials.length - 1 : prev - 1
+                      )
+                    }
                     className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
                     aria-label="Previous testimonial"
                   >
@@ -380,7 +395,11 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                   </button>
                   <button
                     type="button"
-                    onClick={() => setActiveTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        prev === testimonials.length - 1 ? 0 : prev + 1
+                      )
+                    }
                     className="p-3 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
                     aria-label="Next testimonial"
                   >
@@ -403,9 +422,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Visit Our Office
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Visit Our Office</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Conveniently located in the heart of Summerlin, easily accessible from all communities
             </p>
@@ -425,7 +442,8 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                   <div>
                     <div className="font-semibold">Office Address</div>
                     <div className="text-blue-100">
-                      1980 Festival Plaza Dr (One Summerlin)<br />
+                      1980 Festival Plaza Dr (One Summerlin)
+                      <br />
                       Las Vegas, NV 89135
                     </div>
                   </div>
@@ -448,13 +466,31 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
               <div className="mt-8">
                 <h4 className="font-semibold mb-4">Follow Dr. Jan Duffy</h4>
                 <div className="flex gap-4">
-                  <a href="https://www.facebook.com/summerlinwestrealestate" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors" aria-label="Follow on Facebook">
+                  <a
+                    href="https://www.facebook.com/summerlinwestrealestate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                    aria-label="Follow on Facebook"
+                  >
                     <FaFacebook className="w-5 h-5" />
                   </a>
-                  <a href="https://www.instagram.com/summerlinwestrealestate" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors" aria-label="Follow on Instagram">
+                  <a
+                    href="https://www.instagram.com/summerlinwestrealestate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                    aria-label="Follow on Instagram"
+                  >
                     <FaInstagram className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/in/jan-duffy-realestate" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors" aria-label="Connect on LinkedIn">
+                  <a
+                    href="https://www.linkedin.com/in/jan-duffy-realestate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                    aria-label="Connect on LinkedIn"
+                  >
                     <FaLinkedin className="w-5 h-5" />
                   </a>
                 </div>
@@ -499,7 +535,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
               Get expert guidance tailored to your specific needs with a free consultation
             </p>
           </motion.div>
-          
+
           {/* RealScout Lead Capture Widget Integration Point */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -513,7 +549,8 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                 Get Your Free Market Consultation
               </h3>
               <p className="text-gray-600">
-                Whether you're buying or selling in Summerlin West, get expert market analysis and strategic advice
+                Whether you're buying or selling in Summerlin West, get expert market analysis and
+                strategic advice
               </p>
             </div>
             {/* RealScout Lead Capture Widget */}
@@ -539,7 +576,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
               Explore Dr. Jan Duffy's current listings in Summerlin West
             </p>
           </motion.div>
-          
+
           {/* RealScout Office Listings Widget */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}

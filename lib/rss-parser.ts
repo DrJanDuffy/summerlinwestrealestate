@@ -11,17 +11,19 @@ export interface RSSFeedItem {
     type?: string;
     length?: number;
   };
-  'media:content'?: {
-    url: string;
-    type?: string;
-    width?: number;
-    height?: number;
-  } | Array<{
-    url: string;
-    type?: string;
-    width?: number;
-    height?: number;
-  }>;
+  'media:content'?:
+    | {
+        url: string;
+        type?: string;
+        width?: number;
+        height?: number;
+      }
+    | Array<{
+        url: string;
+        type?: string;
+        width?: number;
+        height?: number;
+      }>;
   categories?: string[];
   guid?: string;
 }
@@ -34,7 +36,8 @@ export interface ParsedRSSFeed {
   lastBuildDate?: string;
 }
 
-const RSS_FEED_URL = 'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
+const RSS_FEED_URL =
+  'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
 
 // Cache for RSS data
 let rssCache: { data: ParsedRSSFeed | null; timestamp: number } = {
@@ -60,13 +63,13 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed | null> {
     });
 
     const feed = await parser.parseURL(RSS_FEED_URL);
-    
+
     const parsedFeed: ParsedRSSFeed = {
       title: feed.title || 'Market Insights',
       description: feed.description || 'Latest real estate market insights',
       link: feed.link || '',
       lastBuildDate: feed.lastBuildDate,
-      items: feed.items.map(item => ({
+      items: feed.items.map((item) => ({
         title: item.title || '',
         link: item.link || '',
         pubDate: item.pubDate,
@@ -81,7 +84,7 @@ export async function fetchRSSFeed(): Promise<ParsedRSSFeed | null> {
 
     // Update cache
     rssCache = { data: parsedFeed, timestamp: now };
-    
+
     return parsedFeed;
   } catch (error) {
     console.error('Error fetching RSS feed:', error);
@@ -99,12 +102,12 @@ export function getImageUrlFromRSSItem(item: RSSFeedItem): string | null {
   } else if (mediaContent?.url) {
     return mediaContent.url;
   }
-  
+
   // Check enclosure
   if (item.enclosure?.url) {
     return item.enclosure.url;
   }
-  
+
   return null;
 }
 
@@ -112,7 +115,7 @@ export function getCategoryFromRSSItem(item: RSSFeedItem): string {
   if (item.categories && item.categories.length > 0) {
     return item.categories[0];
   }
-  
+
   // Try to infer category from title
   const title = item.title.toLowerCase();
   if (title.includes('selling') || title.includes('sell')) {
@@ -128,13 +131,13 @@ export function getCategoryFromRSSItem(item: RSSFeedItem): string {
   } else if (title.includes('news') || title.includes('update')) {
     return 'Market News';
   }
-  
+
   return 'Market Insights';
 }
 
 export function formatDate(dateString?: string): string {
   if (!dateString) return '';
-  
+
   try {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', {

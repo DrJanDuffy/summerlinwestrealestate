@@ -1,17 +1,17 @@
 ﻿import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter, Outfit } from 'next/font/google';
 import './globals.css';
-import { Geist, Geist_Mono } from 'next/font/google';
-import Head from 'next/head';
-import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
-import Script from 'next/script';
-import Header from '../components/layout/Header';
-import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeListingsWrapper';
-import styles from './page.module.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { generateComprehensiveSchema } from '../lib/structured-data';
+import { Geist, Geist_Mono } from 'next/font/google';
+import Head from 'next/head';
+import Script from 'next/script';
+import Header from '../components/layout/Header';
+import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
+import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeListingsWrapper';
+import { generateComprehensiveSchema } from '../lib/structured-data';
+import styles from './page.module.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -119,7 +119,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -136,30 +135,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GT-T5656DJ6"
-            height="0" 
-            width="0" 
-            style={{display: 'none', visibility: 'hidden'}}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        
+
         <LeadTrackingProvider>
           <StickyPhoneMenu />
-        <Script
-          src={process.env.REALSCOUT_SCRIPT_URL || "https://em.realscout.com/widgets/realscout-web-components.umd.js"}
-          type="module"
-          strategy="lazyOnload"
-          id="realscout-web-components"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-        />
+          <Script
+            src={
+              process.env.REALSCOUT_SCRIPT_URL ||
+              'https://em.realscout.com/widgets/realscout-web-components.umd.js'
+            }
+            type="module"
+            strategy="lazyOnload"
+            id="realscout-web-components"
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+          />
 
-        {/* Facebook Pixel */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
+          {/* Facebook Pixel */}
+          <Script id="facebook-pixel" strategy="afterInteractive">
+            {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -171,35 +173,35 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             fbq('init', '1415682742567480');
             fbq('track', 'PageView');
           `}
-        </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1415682742567480&ev=PageView&noscript=1"
-            alt="Facebook Pixel"
-          />
-        </noscript>
+          </Script>
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: 'none' }}
+              src="https://www.facebook.com/tr?id=1415682742567480&ev=PageView&noscript=1"
+              alt="Facebook Pixel"
+            />
+          </noscript>
 
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
+          {/* Google Tag Manager */}
+          <Script id="google-tag-manager" strategy="afterInteractive">
+            {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GT-T5656DJ6');
           `}
-        </Script>
+          </Script>
 
-        {/* Google Analytics - Enhanced Configuration */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-X9SYVKNK8H"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+          {/* Google Analytics - Enhanced Configuration */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-X9SYVKNK8H"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -323,11 +325,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               custom_parameter_3: getCommunity()
             });
           `}
-        </Script>
+          </Script>
 
-        {/* Core Web Vitals Monitoring */}
-        <Script id="web-vitals" strategy="afterInteractive">
-          {`
+          {/* Core Web Vitals Monitoring */}
+          <Script id="web-vitals" strategy="afterInteractive">
+            {`
             function sendToAnalytics(metric) {
               if (typeof gtag !== 'undefined') {
                 gtag('event', metric.name, {
@@ -348,22 +350,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               getTTFB(sendToAnalytics);
             });
           `}
-        </Script>
-        <Header />
-        <main className="pt-16">{children}</main>
-        <div className={styles.sectionCard}>
-          <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-          <RealScoutOfficeListingsWrapper 
-            agentEncodedId="QWdlbnQtMjI1MDUw" 
-            sortOrder="PRICE_LOW" 
-            listingStatus="For Sale" 
-            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-            priceMin="600000" 
-            priceMax="2000000"
-            maxListings={12}
-            className="mt-6"
-          />
-        </div>
+          </Script>
+          <Header />
+          <main className="pt-16">{children}</main>
+          <div className={styles.sectionCard}>
+            <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
+            <RealScoutOfficeListingsWrapper
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="PRICE_LOW"
+              listingStatus="For Sale"
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              priceMin="600000"
+              priceMax="2000000"
+              maxListings={12}
+              className="mt-6"
+            />
+          </div>
           <Analytics />
           <SpeedInsights />
         </LeadTrackingProvider>

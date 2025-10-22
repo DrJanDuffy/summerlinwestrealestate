@@ -1,12 +1,12 @@
 // Blog posts with RSS feed integration
 import type { BlogPost } from '../types/blog';
-import { fetchRSSFeed, getImageUrlFromRSSItem, getCategoryFromRSSItem } from './rss-parser';
-import { staticBlogPosts, additionalBlogPosts } from './static-blog-posts';
+import { fetchRSSFeed, getCategoryFromRSSItem, getImageUrlFromRSSItem } from './rss-parser';
+import { additionalBlogPosts, staticBlogPosts } from './static-blog-posts';
 
 export async function getPosts(): Promise<BlogPost[]> {
   // Always return static blog posts first to ensure they're available
   const allStaticPosts = [...staticBlogPosts, ...additionalBlogPosts];
-  
+
   // Try to add RSS posts if available (but don't let them override static posts)
   try {
     const feed = await fetchRSSFeed();
@@ -17,13 +17,15 @@ export async function getPosts(): Promise<BlogPost[]> {
         title: item.title,
         excerpt: item.contentSnippet || '',
         date: item.pubDate || new Date().toISOString(),
-        image: getImageUrlFromRSSItem(item) || 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=320&fit=crop&crop=entropy&auto=format&q=80',
+        image:
+          getImageUrlFromRSSItem(item) ||
+          'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=320&fit=crop&crop=entropy&auto=format&q=80',
         content: item.content || item.contentSnippet || '',
         alt: `${item.title} image`,
         category: getCategoryFromRSSItem(item),
         url: item.link,
       }));
-      
+
       // Combine static posts with RSS posts, but prioritize static posts
       // This ensures our static posts are always available
       return [...allStaticPosts, ...rssPosts];

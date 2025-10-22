@@ -1,12 +1,13 @@
+import dynamicImport from 'next/dynamic';
 import Link from 'next/link';
 import Parser from 'rss-parser';
 import BlogLayout from '../../components/ui/BlogLayout';
 import type { BlogPost } from '../../types/blog';
 import styles from './blog.module.css';
 
-import dynamicImport from 'next/dynamic';
-
-const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
+const RealScoutOfficeListingsWrapper = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper')
+);
 export const dynamic = 'force-dynamic';
 
 const HYPERLOCAL_KEYWORDS = [
@@ -129,29 +130,29 @@ export default async function BlogIndexPage() {
       <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
         <h2>Featured Properties in Summerlin West</h2>
         <p>
-          Discover properties mentioned in our latest market insights and community updates. 
-          These featured listings represent the best of Summerlin West real estate, from luxury 
-          estates to family-friendly homes.
+          Discover properties mentioned in our latest market insights and community updates. These
+          featured listings represent the best of Summerlin West real estate, from luxury estates to
+          family-friendly homes.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="650000" 
-              priceMax="1600000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="650000"
+          priceMax="1600000"
+          maxListings={12}
+          className="mt-6"
+        />
       </section>
 
       {/* Advanced Property Search */}
       <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
         <h2>Advanced Property Search</h2>
         <p>
-          Use our advanced search tool to find properties mentioned in our blog content. 
-          Filter by price, location, features, and more to discover your perfect home in Summerlin West.
+          Use our advanced search tool to find properties mentioned in our blog content. Filter by
+          price, location, features, and more to discover your perfect home in Summerlin West.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -161,8 +162,8 @@ export default async function BlogIndexPage() {
       <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
         <h2>Quick Property Search</h2>
         <p>
-          Browse available properties with our simple search tool. 
-          Perfect for quick property browsing while reading our blog content.
+          Browse available properties with our simple search tool. Perfect for quick property
+          browsing while reading our blog content.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -172,20 +173,21 @@ export default async function BlogIndexPage() {
       <section className={`${styles.sectionCard} ${styles.calloutSection}`}>
         <h2>Broader Market Options in Summerlin West</h2>
         <p>
-          Explore a comprehensive range of residential properties across Summerlin West communities. 
-          From entry-level homes to luxury estates, discover all available options while reading our latest market insights.
+          Explore a comprehensive range of residential properties across Summerlin West communities.
+          From entry-level homes to luxury estates, discover all available options while reading our
+          latest market insights.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="400000"
+          priceMax="2000000"
+          maxListings={12}
+          className="mt-6"
+        />
       </section>
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
-import { initializeLeadTracking, generateLeadTrackingSchema } from '../../lib/lead-tracking';
 import Script from 'next/script';
+import { useEffect } from 'react';
+import { generateLeadTrackingSchema, initializeLeadTracking } from '../../lib/lead-tracking';
 
 interface LeadTrackingProviderProps {
   children: React.ReactNode;

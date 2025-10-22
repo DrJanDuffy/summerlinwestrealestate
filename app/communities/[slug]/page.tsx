@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import NeighborhoodHero from '../../../components/ui/NeighborhoodHero';
-import styles from '../../page.module.css';
 import RealScoutOfficeListingsWrapper from '../../../components/ui/RealScoutOfficeListingsWrapper';
+import styles from '../../page.module.css';
+
 const communities = [
   {
     name: 'The Vistas',
@@ -14,7 +15,8 @@ const communities = [
     maxPrice: 2500000,
     features: ['Mountain Views', 'Luxury Homes', 'Gated Community', 'Golf Course'],
     homeTypes: 'Single Family, Custom Estates',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'the-vistas',
     highlighted: true,
     yearBuilt: '2018-Present',
@@ -30,7 +32,8 @@ const communities = [
     maxPrice: 1500000,
     features: ['Top Schools', 'Family-Friendly', 'Parks Nearby', 'Community Pool'],
     homeTypes: 'Single Family, Townhomes',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'the-paseos',
     highlighted: true,
     yearBuilt: '2019-Present',
@@ -46,7 +49,8 @@ const communities = [
     maxPrice: 1200000,
     features: ['Resort Amenities', 'New Construction', 'Walking Trails', 'Fitness Center'],
     homeTypes: 'Single Family, Patio Homes',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'stonebridge',
     highlighted: true,
     yearBuilt: '2020-Present',
@@ -62,7 +66,8 @@ const communities = [
     maxPrice: 1800000,
     features: ['New Construction', 'Contemporary', 'Builder Incentives', 'Smart Homes'],
     homeTypes: 'Single Family, Modern Design',
-      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'redpoint',
     highlighted: false,
     yearBuilt: '2021-Present',
@@ -78,7 +83,8 @@ const communities = [
     maxPrice: 1100000,
     features: ['Urban Style', 'Walkable', 'Downtown Access', 'Transit Friendly'],
     homeTypes: 'Condos, Townhomes, Lofts',
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'redpoint-square',
     highlighted: false,
     yearBuilt: '2020-Present',
@@ -94,7 +100,8 @@ const communities = [
     maxPrice: 3000000,
     features: ['Luxury Estates', 'Privacy', 'Elegant Design', 'City Views'],
     homeTypes: 'Custom Estates, Luxury Homes',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
     slug: 'reverence',
     highlighted: true,
     yearBuilt: '2017-Present',
@@ -153,21 +160,22 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <strong>Features:</strong> {community.features.join(', ')}
             </li>
           </ul>
-          
+
           {/* Community Properties */}
           <section className={styles.sectionCard}>
             <h2>Properties in {community.name}</h2>
             <p>
-              Discover homes available in {community.name}. This community offers 
-              {community.description.toLowerCase()} with {community.features.join(', ').toLowerCase()}.
+              Discover homes available in {community.name}. This community offers
+              {community.description.toLowerCase()} with{' '}
+              {community.features.join(', ').toLowerCase()}.
             </p>
             {/* @ts-ignore - RealScout web component */}
-            <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
+            <RealScoutOfficeListingsWrapper
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="PRICE_LOW"
+              listingStatus="For Sale"
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              priceMin="400000"
               priceMax="2000000"
               maxListings={12}
               className="mt-6"
@@ -178,7 +186,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <section className={styles.sectionCard}>
             <h2>Advanced Property Search in {community.name}</h2>
             <p>
-              Use our advanced search tool to find properties specifically in {community.name}. 
+              Use our advanced search tool to find properties specifically in {community.name}.
               Filter by price, features, and more to discover your perfect home in this community.
             </p>
             {/* @ts-ignore - RealScout web component */}
@@ -189,8 +197,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <section className={styles.sectionCard}>
             <h2>Quick Property Search in {community.name}</h2>
             <p>
-              Browse available properties in {community.name} with our simple search tool. 
-              Perfect for quick property browsing in this community.
+              Browse available properties in {community.name} with our simple search tool. Perfect
+              for quick property browsing in this community.
             </p>
             {/* @ts-ignore - RealScout web component */}
             <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -200,16 +208,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <section className={styles.sectionCard}>
             <h2>Broader Market Options in {community.name}</h2>
             <p>
-              Explore a comprehensive range of residential properties in {community.name} and surrounding Summerlin West communities. 
-              From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
+              Explore a comprehensive range of residential properties in {community.name} and
+              surrounding Summerlin West communities. From entry-level homes to luxury estates,
+              discover all available options in this premier master-planned community.
             </p>
             {/* @ts-ignore - RealScout web component */}
-            <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
+            <RealScoutOfficeListingsWrapper
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="PRICE_LOW"
+              listingStatus="For Sale"
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              priceMin="400000"
               priceMax="2000000"
               maxListings={12}
               className="mt-6"

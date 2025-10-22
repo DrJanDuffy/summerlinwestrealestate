@@ -33,7 +33,7 @@ export default function RealScoutMarketInsights({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setWidgetLoaded(true);
         }
@@ -160,7 +160,7 @@ export default function RealScoutMarketInsights({
         {/* RealScout Market Insights Widget */}
         <div className="widget-container">
           {widgetLoaded ? (
-            // @ts-ignore - RealScout web component
+            // @ts-expect-error - RealScout web component
             <realscout-market-insights
               agent-id={agentId}
               communities={communities.join(',')}

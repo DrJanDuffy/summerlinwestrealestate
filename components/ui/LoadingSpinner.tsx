@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import styles from './LoadingSpinner.module.css'
+import styles from './LoadingSpinner.module.css';
 
 interface LoadingSpinnerProps {
-  className?: string
+  className?: string;
 }
 
 export default function LoadingSpinner({ className }: LoadingSpinnerProps) {
@@ -11,6 +11,5 @@ export default function LoadingSpinner({ className }: LoadingSpinnerProps) {
     <div className={`${styles.spinner} ${className || ''}`}>
       <div className={styles.spinnerInner}></div>
     </div>
-  )
+  );
 }
-

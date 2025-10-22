@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'luxury real estate expert',
     'Las Vegas REALTOR®',
     'Summerlin West homes for sale',
-    'real estate team leader'
+    'real estate team leader',
   ],
   alternates: {
     canonical: '/about',
@@ -39,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Meet Dr. Jan Duffy | Top Summerlin REALTOR® with $6B+ Sales',
-    description: 'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience.',
+    description:
+      'Meet Dr. Jan Duffy, your trusted Summerlin West real estate expert! $6B+ in sales, 15+ years experience.',
     images: ['/images/og-image.svg'],
   },
   robots: {

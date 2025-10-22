@@ -1,8 +1,13 @@
 'use client';
 import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
-import { fetchRSSFeed, getImageUrlFromRSSItem, formatDate, type RSSFeedItem } from '../../lib/rss-parser';
 import styles from '../../app/page.module.css';
+import {
+  fetchRSSFeed,
+  formatDate,
+  getImageUrlFromRSSItem,
+  type RSSFeedItem,
+} from '../../lib/rss-parser';
 
 const LatestMarketInsights = React.memo(function LatestMarketInsights() {
   const [rssItems, setRssItems] = useState<RSSFeedItem[]>([]);
@@ -32,7 +37,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
       if (rssImage) {
         return rssImage;
       }
-      
+
       // Fallback to placeholder
       return 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=120&h=80&fit=crop&crop=entropy&auto=format&q=80';
     };
@@ -74,9 +79,7 @@ const LatestMarketInsights = React.memo(function LatestMarketInsights() {
                 />
                 <div>
                   <div className={styles.insightTitle}>{item.title}</div>
-                  <div className={styles.insightDate}>
-                    {formatDate(item.pubDate)}
-                  </div>
+                  <div className={styles.insightDate}>{formatDate(item.pubDate)}</div>
                   <div className={styles.insightSnippet}>{item.contentSnippet}</div>
                 </div>
               </a>

@@ -10,9 +10,12 @@ import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsights
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -146,9 +149,27 @@ export default function TheVistas() {
           <h2>Homes for Sale in The Vistas</h2>
           <div className={styles.propertyGrid}>
             {[
-              { id: 1, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Luxury Estate', details: '5 bed • 4 bath • $1,200,000+' },
-              { id: 2, image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Modern Home', details: '4 bed • 3 bath • $950,000+' },
-              { id: 3, image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80', title: 'Desert Oasis', details: '3 bed • 2 bath • $800,000+' }
+              {
+                id: 1,
+                image:
+                  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                title: 'Luxury Estate',
+                details: '5 bed • 4 bath • $1,200,000+',
+              },
+              {
+                id: 2,
+                image:
+                  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                title: 'Modern Home',
+                details: '4 bed • 3 bath • $950,000+',
+              },
+              {
+                id: 3,
+                image:
+                  'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+                title: 'Desert Oasis',
+                details: '3 bed • 2 bath • $800,000+',
+              },
             ].map((home) => (
               <div key={home.id} className={styles.propertyCard}>
                 <Image
@@ -171,21 +192,21 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>Luxury Properties in The Vistas</h2>
           <p>
-            Discover luxury homes available in The Vistas community. These properties offer 
-            stunning Red Rock Canyon views, resort-style amenities, and access to top-rated 
-            schools. The Vistas represents the pinnacle of Summerlin West luxury living.
+            Discover luxury homes available in The Vistas community. These properties offer stunning
+            Red Rock Canyon views, resort-style amenities, and access to top-rated schools. The
+            Vistas represents the pinnacle of Summerlin West luxury living.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="800000" 
-              priceMax="2500000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="800000"
+            priceMax="2500000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
         <section className={styles.sectionCard}>
           <h2>Explore More</h2>
@@ -213,8 +234,8 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>Advanced Property Search in The Vistas</h2>
           <p>
-            Use our advanced search tool to find luxury properties in The Vistas. 
-            Filter by price, features, and more to discover your perfect home with Red Rock Canyon views.
+            Use our advanced search tool to find luxury properties in The Vistas. Filter by price,
+            features, and more to discover your perfect home with Red Rock Canyon views.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -224,8 +245,8 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>Quick Property Search in The Vistas</h2>
           <p>
-            Browse available luxury properties in The Vistas with our simple search tool. 
-            Perfect for quick property browsing in this premier community.
+            Browse available luxury properties in The Vistas with our simple search tool. Perfect
+            for quick property browsing in this premier community.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -235,20 +256,21 @@ export default function TheVistas() {
         <section className={styles.sectionCard}>
           <h2>Office Properties in The Vistas</h2>
           <p>
-            Explore office properties and commercial real estate opportunities in The Vistas. 
-            From professional office spaces to commercial buildings, find the perfect location for your business.
+            Explore office properties and commercial real estate opportunities in The Vistas. From
+            professional office spaces to commercial buildings, find the perfect location for your
+            business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,OTHER" 
-              priceMin="500000" 
-              priceMax="600000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,OTHER"
+            priceMin="500000"
+            priceMax="600000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
       </main>
     </div>

@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface Property {
   id: string;
@@ -82,17 +82,17 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
           }`}
           onLoad={() => setImageLoaded(true)}
         />
-        
+
         {/* Status Badge */}
-        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(property.status)}`}>
+        <div
+          className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(property.status)}`}
+        >
           {property.status.toUpperCase()}
         </div>
 
         {/* Price Badge */}
         <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-          <div className="text-lg font-bold text-gray-900">
-            {formatPrice(property.price)}
-          </div>
+          <div className="text-lg font-bold text-gray-900">{formatPrice(property.price)}</div>
         </div>
 
         {/* Image Navigation */}
@@ -104,8 +104,19 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
               className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               aria-label="Previous image"
             >
-              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <svg
+                className="w-4 h-4 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </button>
             <button
@@ -114,8 +125,19 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
               className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               aria-label="Next image"
             >
-              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="w-4 h-4 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </button>
           </>
@@ -180,9 +202,7 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
             </span>
           )}
           {property.pool && (
-            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
-              Pool
-            </span>
+            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Pool</span>
           )}
           {property.view && (
             <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">
@@ -211,9 +231,7 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
         </div>
 
         {/* Description */}
-        <p className="text-sm text-gray-600 mb-6 line-clamp-2">
-          {property.description}
-        </p>
+        <p className="text-sm text-gray-600 mb-6 line-clamp-2">{property.description}</p>
 
         {/* Actions */}
         <div className="flex space-x-3">
@@ -223,22 +241,31 @@ export default function ModernPropertyCard({ property, index = 0 }: ModernProper
           >
             View Details
           </Link>
-          <button 
-            type="button" 
-            className="px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-300" 
+          <button
+            type="button"
+            className="px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-300"
             aria-label="Save to favorites"
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            <svg
+              className="w-5 h-5 text-gray-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              />
             </svg>
           </button>
         </div>
 
         {/* MLS ID */}
         <div className="mt-4 pt-4 border-t border-gray-100">
-          <p className="text-xs text-gray-500 text-center">
-            MLS #{property.mlsId}
-          </p>
+          <p className="text-xs text-gray-500 text-center">MLS #{property.mlsId}</p>
         </div>
       </div>
     </motion.div>

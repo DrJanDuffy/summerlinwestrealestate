@@ -20,9 +20,7 @@ export default function RealScoutAdvancedSearchWidget({
     >
       {/* RealScout Advanced Search Web Component */}
       {/* @ts-ignore - RealScout web component */}
-      <realscout-advanced-search
-        agent-encoded-id={agentEncodedId}
-      />
+      <realscout-advanced-search agent-encoded-id={agentEncodedId} />
     </motion.div>
   );
 }

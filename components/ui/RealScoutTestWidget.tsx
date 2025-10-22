@@ -12,19 +12,22 @@ export default function RealScoutTestWidget() {
     const testWidget = async () => {
       try {
         const elementsReady = await waitForRealScoutElements(10000);
-        
+
         if (elementsReady) {
           console.log('RealScout elements loaded successfully');
-          setTestResults(prev => [...prev, '✅ RealScout elements loaded']);
+          setTestResults((prev) => [...prev, '✅ RealScout elements loaded']);
           setIsLoaded(true);
         } else {
           console.error('RealScout elements failed to load');
-          setTestResults(prev => [...prev, '❌ RealScout elements failed to load']);
+          setTestResults((prev) => [...prev, '❌ RealScout elements failed to load']);
           setError('RealScout widgets failed to load within timeout');
         }
       } catch (err) {
         console.error('RealScout widget loading error:', err);
-        setTestResults(prev => [...prev, `❌ Error: ${err instanceof Error ? err.message : 'Unknown error'}`]);
+        setTestResults((prev) => [
+          ...prev,
+          `❌ Error: ${err instanceof Error ? err.message : 'Unknown error'}`,
+        ]);
         setError(err instanceof Error ? err.message : 'Unknown error loading RealScout widgets');
       }
     };
@@ -39,12 +42,14 @@ export default function RealScoutTestWidget() {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-8">
       <h2 className="text-2xl font-bold mb-6">RealScout Widget Test</h2>
-      
+
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-3">Test Results:</h3>
         <div className="bg-gray-50 p-4 rounded">
           {testResults.map((result, index) => (
-            <div key={index} className="text-sm font-mono">{result}</div>
+            <div key={index} className="text-sm font-mono">
+              {result}
+            </div>
           ))}
         </div>
       </div>
@@ -111,9 +116,15 @@ export default function RealScoutTestWidget() {
       )}
 
       <div className="mt-6 text-sm text-gray-600">
-        <p><strong>Agent ID:</strong> QWdlbnQtMjI1MDUw</p>
-        <p><strong>Location:</strong> Summerlin West, Las Vegas, NV</p>
-        <p><strong>Price Range:</strong> $400,000 - $2,000,000</p>
+        <p>
+          <strong>Agent ID:</strong> QWdlbnQtMjI1MDUw
+        </p>
+        <p>
+          <strong>Location:</strong> Summerlin West, Las Vegas, NV
+        </p>
+        <p>
+          <strong>Price Range:</strong> $400,000 - $2,000,000
+        </p>
       </div>
     </div>
   );

@@ -4,7 +4,8 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Monthly Market Reports | Summerlin West Real Estate | Dr. Jan Duffy',
-  description: 'Get detailed monthly market reports for Summerlin West real estate. Expert analysis, trends, and insights from Dr. Jan Duffy, REALTOR® with $6B+ in sales.',
+  description:
+    'Get detailed monthly market reports for Summerlin West real estate. Expert analysis, trends, and insights from Dr. Jan Duffy, REALTOR® with $6B+ in sales.',
   keywords: [
     'Summerlin West market reports',
     'Las Vegas real estate trends',
@@ -15,11 +16,12 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy market reports',
     'Summerlin West statistics',
     'luxury real estate trends',
-    'Las Vegas market analysis'
+    'Las Vegas market analysis',
   ],
   openGraph: {
     title: 'Monthly Market Reports | Summerlin West Real Estate | Dr. Jan Duffy',
-    description: 'Get detailed monthly market reports for Summerlin West real estate. Expert analysis, trends, and insights from Dr. Jan Duffy.',
+    description:
+      'Get detailed monthly market reports for Summerlin West real estate. Expert analysis, trends, and insights from Dr. Jan Duffy.',
     url: 'https://www.summerlinwestrealestate.com/market-reports/monthly-reports',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -43,75 +45,79 @@ export default function MonthlyReports() {
     {
       month: 'October 2025',
       title: 'Fall Market Shows Strong Resilience',
-      summary: 'Summerlin West continues to demonstrate market stability with moderate price appreciation and healthy inventory levels.',
+      summary:
+        'Summerlin West continues to demonstrate market stability with moderate price appreciation and healthy inventory levels.',
       keyMetrics: {
         medianPrice: '$875,000',
         averageDaysOnMarket: '28',
         inventoryLevel: '2.3 months',
-        priceChange: '+3.2%'
+        priceChange: '+3.2%',
       },
       highlights: [
         'Luxury segment shows continued strength',
         'New construction driving inventory growth',
         'Fall season bringing motivated sellers',
-        'Strong demand from out-of-state buyers'
+        'Strong demand from out-of-state buyers',
       ],
-      slug: 'october-2025-fall-market-resilience'
+      slug: 'october-2025-fall-market-resilience',
     },
     {
       month: 'September 2025',
       title: 'Back-to-School Market Momentum',
-      summary: 'September brought renewed activity as families returned from summer travel and focused on real estate decisions.',
+      summary:
+        'September brought renewed activity as families returned from summer travel and focused on real estate decisions.',
       keyMetrics: {
         medianPrice: '$868,000',
         averageDaysOnMarket: '24',
         inventoryLevel: '2.1 months',
-        priceChange: '+2.8%'
+        priceChange: '+2.8%',
       },
       highlights: [
         'Family-focused buying activity increased',
         'School district proximity driving decisions',
         'Luxury properties maintaining premium pricing',
-        'Interest rate stability supporting confidence'
+        'Interest rate stability supporting confidence',
       ],
-      slug: 'september-2025-back-to-school-momentum'
+      slug: 'september-2025-back-to-school-momentum',
     },
     {
       month: 'August 2025',
       title: 'Summer Market Maintains Stability',
-      summary: 'Despite traditional summer slowdown, Summerlin West market showed remarkable consistency and resilience.',
+      summary:
+        'Despite traditional summer slowdown, Summerlin West market showed remarkable consistency and resilience.',
       keyMetrics: {
         medianPrice: '$862,000',
         averageDaysOnMarket: '31',
         inventoryLevel: '2.5 months',
-        priceChange: '+2.5%'
+        priceChange: '+2.5%',
       },
       highlights: [
         'Summer vacation impact minimal',
         'Luxury segment outperformed expectations',
         'Investment property activity increased',
-        'New construction sales remained strong'
+        'New construction sales remained strong',
       ],
-      slug: 'august-2025-summer-market-stability'
+      slug: 'august-2025-summer-market-stability',
     },
     {
       month: 'July 2025',
       title: 'Mid-Summer Market Analysis',
-      summary: 'July data reveals continued market strength with particular emphasis on luxury and new construction segments.',
+      summary:
+        'July data reveals continued market strength with particular emphasis on luxury and new construction segments.',
       keyMetrics: {
         medianPrice: '$858,000',
         averageDaysOnMarket: '26',
         inventoryLevel: '2.2 months',
-        priceChange: '+3.1%'
+        priceChange: '+3.1%',
       },
       highlights: [
         'New construction leading price appreciation',
         'Luxury homes selling above asking',
         'Strong cash buyer presence',
-        'Limited inventory maintaining competition'
+        'Limited inventory maintaining competition',
       ],
-      slug: 'july-2025-mid-summer-analysis'
-    }
+      slug: 'july-2025-mid-summer-analysis',
+    },
   ];
 
   return (
@@ -120,9 +126,9 @@ export default function MonthlyReports() {
       <section className={styles.hero}>
         <h1 className={styles.heroTitle}>Monthly Market Reports</h1>
         <p className={styles.heroDescription}>
-          Stay informed with comprehensive monthly market analysis for Summerlin West real estate. 
-          Get expert insights, trends, and data-driven reports from Dr. Jan Duffy, your local real estate expert 
-          with over $6 billion in sales and deep market knowledge.
+          Stay informed with comprehensive monthly market analysis for Summerlin West real estate.
+          Get expert insights, trends, and data-driven reports from Dr. Jan Duffy, your local real
+          estate expert with over $6 billion in sales and deep market knowledge.
         </p>
       </section>
 
@@ -133,22 +139,24 @@ export default function MonthlyReports() {
           <div className={styles.overviewCard}>
             <h3>Market Status: Strong & Stable</h3>
             <p>
-              Summerlin West continues to demonstrate remarkable market resilience with consistent appreciation, 
-              healthy inventory levels, and strong buyer demand across all price segments.
+              Summerlin West continues to demonstrate remarkable market resilience with consistent
+              appreciation, healthy inventory levels, and strong buyer demand across all price
+              segments.
             </p>
           </div>
           <div className={styles.overviewCard}>
             <h3>Key Trend: Luxury Segment Growth</h3>
             <p>
-              The luxury segment ($1M+) is showing particularly strong performance, with premium properties 
-              maintaining value and attracting high-quality buyers from across the country.
+              The luxury segment ($1M+) is showing particularly strong performance, with premium
+              properties maintaining value and attracting high-quality buyers from across the
+              country.
             </p>
           </div>
           <div className={styles.overviewCard}>
             <h3>Outlook: Continued Stability</h3>
             <p>
-              Market fundamentals remain strong with limited land availability, continued amenity development, 
-              and favorable economic conditions supporting long-term growth.
+              Market fundamentals remain strong with limited land availability, continued amenity
+              development, and favorable economic conditions supporting long-term growth.
             </p>
           </div>
         </div>
@@ -164,9 +172,9 @@ export default function MonthlyReports() {
                 <h3 className={styles.reportMonth}>{report.month}</h3>
                 <h4 className={styles.reportTitle}>{report.title}</h4>
               </div>
-              
+
               <p className={styles.reportSummary}>{report.summary}</p>
-              
+
               <div className={styles.keyMetrics}>
                 <h5>Key Metrics:</h5>
                 <div className={styles.metricsGrid}>
@@ -176,7 +184,9 @@ export default function MonthlyReports() {
                   </div>
                   <div className={styles.metric}>
                     <span className={styles.metricLabel}>Days on Market</span>
-                    <span className={styles.metricValue}>{report.keyMetrics.averageDaysOnMarket}</span>
+                    <span className={styles.metricValue}>
+                      {report.keyMetrics.averageDaysOnMarket}
+                    </span>
                   </div>
                   <div className={styles.metric}>
                     <span className={styles.metricLabel}>Inventory</span>
@@ -199,10 +209,16 @@ export default function MonthlyReports() {
               </div>
 
               <div className={styles.reportActions}>
-                <Link href={`/market-reports/monthly-reports/${report.slug}`} className={styles.readReport}>
+                <Link
+                  href={`/market-reports/monthly-reports/${report.slug}`}
+                  className={styles.readReport}
+                >
                   Read Full Report →
                 </Link>
-                <Link href={`/market-reports/monthly-reports/${report.slug}/download`} className={styles.downloadReport}>
+                <Link
+                  href={`/market-reports/monthly-reports/${report.slug}/download`}
+                  className={styles.downloadReport}
+                >
                   Download PDF
                 </Link>
               </div>
@@ -214,7 +230,7 @@ export default function MonthlyReports() {
       {/* Community-Specific Analysis */}
       <section className={styles.communityAnalysis}>
         <h2 className={styles.sectionTitle}>Community-Specific Market Analysis</h2>
-        
+
         <div className={styles.communityGrid}>
           <div className={styles.communityCard}>
             <h3>The Vistas</h3>
@@ -233,8 +249,8 @@ export default function MonthlyReports() {
               </div>
             </div>
             <p>
-              The Vistas continues to lead the luxury market with strong appreciation and limited inventory. 
-              Red Rock Canyon views and resort-style amenities drive premium pricing.
+              The Vistas continues to lead the luxury market with strong appreciation and limited
+              inventory. Red Rock Canyon views and resort-style amenities drive premium pricing.
             </p>
           </div>
 
@@ -255,8 +271,8 @@ export default function MonthlyReports() {
               </div>
             </div>
             <p>
-              Stonebridge offers excellent value with established amenities and strong community appeal. 
-              Family-friendly features and good schools drive consistent demand.
+              Stonebridge offers excellent value with established amenities and strong community
+              appeal. Family-friendly features and good schools drive consistent demand.
             </p>
           </div>
 
@@ -277,8 +293,8 @@ export default function MonthlyReports() {
               </div>
             </div>
             <p>
-              Redpoint's modern luxury homes are in high demand with quick sales and premium pricing. 
-              Contemporary design and smart home features appeal to discerning buyers.
+              Redpoint's modern luxury homes are in high demand with quick sales and premium
+              pricing. Contemporary design and smart home features appeal to discerning buyers.
             </p>
           </div>
         </div>
@@ -287,32 +303,32 @@ export default function MonthlyReports() {
       {/* Expert Insights */}
       <section className={styles.expertInsights}>
         <h2 className={styles.sectionTitle}>Expert Market Insights from Dr. Jan Duffy</h2>
-        
+
         <div className={styles.insightsGrid}>
           <div className={styles.insightCard}>
             <h3>Market Outlook</h3>
             <p>
-              "Summerlin West continues to demonstrate remarkable resilience in the current market environment. 
-              The combination of limited inventory, strong demand, and world-class amenities creates a perfect 
-              storm for continued appreciation and market stability."
+              "Summerlin West continues to demonstrate remarkable resilience in the current market
+              environment. The combination of limited inventory, strong demand, and world-class
+              amenities creates a perfect storm for continued appreciation and market stability."
             </p>
           </div>
 
           <div className={styles.insightCard}>
             <h3>Buyer Strategy</h3>
             <p>
-              "For buyers, the key is preparation and speed. With inventory levels remaining low and quality 
-              properties selling quickly, having financing pre-approved and being ready to act decisively 
-              is crucial for success."
+              "For buyers, the key is preparation and speed. With inventory levels remaining low and
+              quality properties selling quickly, having financing pre-approved and being ready to
+              act decisively is crucial for success."
             </p>
           </div>
 
           <div className={styles.insightCard}>
             <h3>Seller Opportunities</h3>
             <p>
-              "Sellers are in an excellent position with strong demand and limited competition. The key is 
-              proper pricing from the start and professional presentation to maximize value and minimize 
-              time on market."
+              "Sellers are in an excellent position with strong demand and limited competition. The
+              key is proper pricing from the start and professional presentation to maximize value
+              and minimize time on market."
             </p>
           </div>
         </div>
@@ -322,9 +338,9 @@ export default function MonthlyReports() {
       <section className={styles.cta}>
         <h2 className={styles.ctaTitle}>Get Your Personalized Market Analysis</h2>
         <p className={styles.ctaDescription}>
-          Ready to understand how these market trends affect your specific situation? 
-          Contact Dr. Jan Duffy for a personalized market analysis and expert guidance 
-          tailored to your buying or selling goals.
+          Ready to understand how these market trends affect your specific situation? Contact Dr.
+          Jan Duffy for a personalized market analysis and expert guidance tailored to your buying
+          or selling goals.
         </p>
         <div className={styles.ctaButtons}>
           <Link href="/contact" className={styles.primaryButton}>

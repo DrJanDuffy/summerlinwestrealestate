@@ -4,9 +4,7 @@ export default function TailwindTest() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-md mx-4">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          Tailwind CSS Test
-        </h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Tailwind CSS Test</h1>
         <p className="text-gray-600 mb-6">
           If you can see this styled properly, Tailwind CSS v4 is working correctly.
         </p>

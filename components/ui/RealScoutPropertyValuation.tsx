@@ -32,7 +32,7 @@ export default function RealScoutPropertyValuation({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setWidgetLoaded(true);
         }
@@ -183,7 +183,7 @@ export default function RealScoutPropertyValuation({
       {/* RealScout Property Valuation Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-property-valuation
             agent-id={agentId}
             default-address={defaultAddress}

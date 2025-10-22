@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import { useState, useEffect, useId, useCallback } from 'react'
-import styles from './HomeValuationForm.module.css'
+import { useCallback, useEffect, useId, useState } from 'react';
+import styles from './HomeValuationForm.module.css';
 
 interface PropertyData {
-  address: string
-  propertyType: string
-  bedrooms: number
-  bathrooms: number
-  squareFootage: number
-  yearBuilt: number
-  features: string[]
+  address: string;
+  propertyType: string;
+  bedrooms: number;
+  bathrooms: number;
+  squareFootage: number;
+  yearBuilt: number;
+  features: string[];
 }
 
 interface HomeValuationFormProps {
-  className?: string
+  className?: string;
 }
 
 const propertyTypes = [
@@ -23,8 +23,8 @@ const propertyTypes = [
   'Townhome',
   'Multi-Family',
   'Mobile Home',
-  'Other'
-]
+  'Other',
+];
 
 const specialFeatures = [
   'Swimming Pool',
@@ -40,8 +40,8 @@ const specialFeatures = [
   'Golf Course Views',
   'Corner Lot',
   'Cul-de-sac',
-  'Gated Community'
-]
+  'Gated Community',
+];
 
 export default function HomeValuationForm({ className }: HomeValuationFormProps) {
   const [formData, setFormData] = useState<PropertyData>({
@@ -51,61 +51,61 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
     bathrooms: 0,
     squareFootage: 0,
     yearBuilt: 0,
-    features: []
-  })
+    features: [],
+  });
 
-  const [estimatedValue, setEstimatedValue] = useState<number>(0)
-  const [isCalculating, setIsCalculating] = useState(false)
+  const [estimatedValue, setEstimatedValue] = useState<number>(0);
+  const [isCalculating, setIsCalculating] = useState(false);
 
   // Generate unique IDs for form elements
-  const addressId = useId()
-  const propertyTypeId = useId()
-  const bedroomsId = useId()
-  const bathroomsId = useId()
-  const squareFootageId = useId()
-  const yearBuiltId = useId()
+  const addressId = useId();
+  const propertyTypeId = useId();
+  const bedroomsId = useId();
+  const bathroomsId = useId();
+  const squareFootageId = useId();
+  const yearBuiltId = useId();
 
   const handleInputChange = (field: keyof PropertyData, value: string | number) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: value
-    }))
-  }
+      [field]: value,
+    }));
+  };
 
   const handleFeatureToggle = (feature: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       features: prev.features.includes(feature)
-        ? prev.features.filter(f => f !== feature)
-        : [...prev.features, feature]
-    }))
-  }
+        ? prev.features.filter((f) => f !== feature)
+        : [...prev.features, feature],
+    }));
+  };
 
   const calculateEstimatedValue = useCallback(() => {
-    setIsCalculating(true)
-    
+    setIsCalculating(true);
+
     // Simulate API call delay
     setTimeout(() => {
       // Basic calculation based on Las Vegas market data
-      let baseValue = 0
-      
+      let baseValue = 0;
+
       if (formData.propertyType === 'Single Family Home') {
-        baseValue = formData.squareFootage * 180 // $180/sqft average
+        baseValue = formData.squareFootage * 180; // $180/sqft average
       } else if (formData.propertyType === 'Condo') {
-        baseValue = formData.squareFootage * 160 // $160/sqft average
+        baseValue = formData.squareFootage * 160; // $160/sqft average
       } else if (formData.propertyType === 'Townhome') {
-        baseValue = formData.squareFootage * 170 // $170/sqft average
+        baseValue = formData.squareFootage * 170; // $170/sqft average
       } else {
-        baseValue = formData.squareFootage * 150 // $150/sqft average
+        baseValue = formData.squareFootage * 150; // $150/sqft average
       }
 
       // Adjust for bedrooms/bathrooms
-      baseValue += (formData.bedrooms * 5000) + (formData.bathrooms * 3000)
+      baseValue += formData.bedrooms * 5000 + formData.bathrooms * 3000;
 
       // Adjust for year built (newer = higher value)
-      const currentYear = new Date().getFullYear()
-      const ageAdjustment = (currentYear - formData.yearBuilt) * -200
-      baseValue += ageAdjustment
+      const currentYear = new Date().getFullYear();
+      const ageAdjustment = (currentYear - formData.yearBuilt) * -200;
+      baseValue += ageAdjustment;
 
       // Add feature premiums
       const featurePremiums: { [key: string]: number } = {
@@ -117,37 +117,44 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
         'Granite Countertops': 8000,
         'Stainless Steel Appliances': 5000,
         'Central Air': 8000,
-        'Fireplace': 5000,
+        Fireplace: 5000,
         'Mountain Views': 30000,
         'Golf Course Views': 40000,
         'Corner Lot': 10000,
         'Cul-de-sac': 8000,
-        'Gated Community': 15000
-      }
+        'Gated Community': 15000,
+      };
 
-      formData.features.forEach(feature => {
-        baseValue += featurePremiums[feature] || 0
-      })
+      formData.features.forEach((feature) => {
+        baseValue += featurePremiums[feature] || 0;
+      });
 
-      setEstimatedValue(Math.round(baseValue))
-      setIsCalculating(false)
-    }, 1500)
-  }, [formData.propertyType, formData.squareFootage, formData.bedrooms, formData.bathrooms, formData.yearBuilt, formData.features])
+      setEstimatedValue(Math.round(baseValue));
+      setIsCalculating(false);
+    }, 1500);
+  }, [
+    formData.propertyType,
+    formData.squareFootage,
+    formData.bedrooms,
+    formData.bathrooms,
+    formData.yearBuilt,
+    formData.features,
+  ]);
 
   useEffect(() => {
     if (formData.squareFootage > 0 && formData.propertyType) {
-      calculateEstimatedValue()
+      calculateEstimatedValue();
     }
-  }, [formData.squareFootage, formData.propertyType, calculateEstimatedValue])
+  }, [formData.squareFootage, formData.propertyType, calculateEstimatedValue]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0
-    }).format(amount)
-  }
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
 
   return (
     <div className={`${styles.valuationForm} ${className || ''}`}>
@@ -186,8 +193,10 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
                 required
               >
                 <option value="">Select Property Type</option>
-                {propertyTypes.map(type => (
-                  <option key={type} value={type}>{type}</option>
+                {propertyTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
                 ))}
               </select>
             </div>
@@ -265,7 +274,7 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
             <fieldset>
               <legend className={styles.label}>Special Features</legend>
               <div className={styles.featuresGrid}>
-                {specialFeatures.map(feature => (
+                {specialFeatures.map((feature) => (
                   <label key={feature} className={styles.featureLabel}>
                     <input
                       type="checkbox"
@@ -291,13 +300,14 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
                 )}
               </div>
               <p className={styles.valueDisclaimer}>
-                * This is an estimate based on market data. For a professional valuation, contact Dr. Jan Duffy.
+                * This is an estimate based on market data. For a professional valuation, contact
+                Dr. Jan Duffy.
               </p>
             </div>
           )}
 
-          <a 
-            href="tel:702-222-1964" 
+          <a
+            href="tel:702-222-1964"
             className={styles.ctaButton}
             aria-label="Call Dr. Jan Duffy for professional home valuation"
           >
@@ -306,5 +316,5 @@ export default function HomeValuationForm({ className }: HomeValuationFormProps)
         </form>
       </div>
     </div>
-  )
+  );
 }

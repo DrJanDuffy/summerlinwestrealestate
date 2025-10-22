@@ -20,23 +20,24 @@ export default function RealScoutWidgetDebug({
   const [debugInfo, setDebugInfo] = useState<string[]>([]);
 
   const addDebugInfo = (info: string) => {
-    setDebugInfo(prev => [...prev, `${new Date().toISOString()}: ${info}`]);
+    setDebugInfo((prev) => [...prev, `${new Date().toISOString()}: ${info}`]);
     console.log(`RealScout Debug: ${info}`);
   };
 
   useEffect(() => {
     addDebugInfo('Component mounted');
-    
+
     // RealScout script is already loaded globally in layout.tsx
     addDebugInfo('RealScout script loaded globally');
     setScriptLoaded(true);
-    
+
     // Wait a bit for the custom elements to be defined
     setTimeout(() => {
-      const isDefined = customElements.get('realscout-search-widget') || 
-                       customElements.get('realscout-office-listings') || 
-                       customElements.get('realscout-lead-capture');
-      
+      const isDefined =
+        customElements.get('realscout-search-widget') ||
+        customElements.get('realscout-office-listings') ||
+        customElements.get('realscout-lead-capture');
+
       if (isDefined) {
         addDebugInfo('RealScout custom elements are defined');
       } else {
@@ -105,8 +106,12 @@ export default function RealScoutWidgetDebug({
     if (!scriptLoaded) {
       return (
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-8 text-center">
-          <h3 className="text-xl font-semibold text-yellow-900 mb-2">Loading RealScout Widget...</h3>
-          <p className="text-yellow-700 mb-4">Please wait while we load the RealScout functionality.</p>
+          <h3 className="text-xl font-semibold text-yellow-900 mb-2">
+            Loading RealScout Widget...
+          </h3>
+          <p className="text-yellow-700 mb-4">
+            Please wait while we load the RealScout functionality.
+          </p>
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-600 mx-auto"></div>
         </div>
       );
@@ -179,14 +184,19 @@ export default function RealScoutWidgetDebug({
         <ul>
           <li>Variant: {variant}</li>
           <li>Agent ID: {agentId}</li>
-          <li>Price Range: ${priceMin.toLocaleString()} - ${priceMax.toLocaleString()}</li>
+          <li>
+            Price Range: ${priceMin.toLocaleString()} - ${priceMax.toLocaleString()}
+          </li>
           <li>Script Loaded: {scriptLoaded ? 'Yes' : 'No'}</li>
           <li>Script Error: {scriptError || 'None'}</li>
-          <li>Custom Elements Available: {
-            typeof customElements !== 'undefined' ? 
-            (customElements.get('realscout-search-widget') ? 'Yes' : 'No') : 
-            'Unknown'
-          }</li>
+          <li>
+            Custom Elements Available:{' '}
+            {typeof customElements !== 'undefined'
+              ? customElements.get('realscout-search-widget')
+                ? 'Yes'
+                : 'No'
+              : 'Unknown'}
+          </li>
         </ul>
         <h4>Debug Log:</h4>
         <ul>
@@ -195,7 +205,7 @@ export default function RealScoutWidgetDebug({
           ))}
         </ul>
       </div>
-      
+
       {renderWidget()}
     </div>
   );

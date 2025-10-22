@@ -3,10 +3,12 @@ import BlogLayout from '../../../components/ui/BlogLayout';
 
 export const metadata: Metadata = {
   title: '2026 Housing Market Outlook | Summerlin West Real Estate Blog',
-  description: 'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
+  description:
+    'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
   openGraph: {
     title: '2026 Housing Market Outlook | Summerlin West Real Estate Blog',
-    description: 'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
+    description:
+      'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
     url: 'https://www.summerlinwestrealestate.com/blog/2026-housing-market-outlook',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -23,8 +25,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '2026 Housing Market Outlook | Summerlin West Real Estate Blog',
-    description: 'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
-    images: ['https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80'],
+    description:
+      'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
+    images: [
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    ],
   },
   alternates: {
     canonical: '/blog/2026-housing-market-outlook',
@@ -46,9 +51,11 @@ const blogPost = {
   id: '2026-housing-market-outlook',
   slug: '2026-housing-market-outlook',
   title: '2026 Housing Market Outlook',
-  excerpt: 'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
+  excerpt:
+    'After a couple of years where the housing market felt stuck in neutral, 2026 may be the year things shift back into gear.',
   date: '2025-10-15',
-  image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+  image:
+    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
   content: `
 # 2026 Housing Market Outlook
 

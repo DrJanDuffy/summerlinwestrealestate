@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Summerlin West market analysis',
     'Las Vegas luxury real estate news',
     'Dr. Jan Duffy media',
-    'real estate press coverage'
+    'real estate press coverage',
   ],
   alternates: {
     canonical: '/press',

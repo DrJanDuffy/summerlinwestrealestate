@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Las Vegas real estate news',
     'luxury real estate trends',
     'Summerlin West market data',
-    'real estate market analysis'
+    'real estate market analysis',
   ],
   alternates: {
     canonical: '/market-insights',

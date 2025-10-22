@@ -4,7 +4,12 @@ import { motion } from 'framer-motion';
 
 interface RealScoutYourListingsProps {
   agentEncodedId?: string;
-  sortOrder?: 'STATUS_AND_SIGNIFICANT_CHANGE' | 'PRICE_HIGH_TO_LOW' | 'PRICE_LOW_TO_HIGH' | 'LIST_DATE_NEW_TO_OLD' | 'LIST_DATE_OLD_TO_NEW';
+  sortOrder?:
+    | 'STATUS_AND_SIGNIFICANT_CHANGE'
+    | 'PRICE_HIGH_TO_LOW'
+    | 'PRICE_LOW_TO_HIGH'
+    | 'LIST_DATE_NEW_TO_OLD'
+    | 'LIST_DATE_OLD_TO_NEW';
   listingStatus?: string;
   propertyTypes?: string;
   className?: string;

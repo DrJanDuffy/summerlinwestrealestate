@@ -30,7 +30,7 @@ export default function RealScoutAdvancedSearch({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setWidgetLoaded(true);
         }
@@ -100,7 +100,7 @@ export default function RealScoutAdvancedSearch({
       {/* RealScout Search Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-search-widget
             agent-id={agentId}
             price-min={priceMin}

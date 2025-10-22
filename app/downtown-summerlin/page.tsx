@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamicImport from 'next/dynamic';
+import Link from 'next/link';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
+const RealScoutOfficeListingsWrapper = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper')
+);
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     'Las Vegas luxury condos',
     'Downtown Summerlin market',
     'Summerlin West shopping',
-    'Las Vegas walkable community'
+    'Las Vegas walkable community',
   ],
   alternates: {
     canonical: '/downtown-summerlin',
@@ -146,21 +148,21 @@ export default function DowntownSummerlin() {
         <section>
           <h2>Properties in Downtown Summerlin</h2>
           <p>
-            Discover homes available in the Downtown Summerlin area. These properties offer 
-            walkable access to shopping, dining, and entertainment, making them perfect for 
-            those who want to live in the heart of Summerlin's vibrant lifestyle.
+            Discover homes available in the Downtown Summerlin area. These properties offer walkable
+            access to shopping, dining, and entertainment, making them perfect for those who want to
+            live in the heart of Summerlin's vibrant lifestyle.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="500000" 
-              priceMax="1200000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="500000"
+            priceMax="1200000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
 
         <section>
@@ -193,8 +195,8 @@ export default function DowntownSummerlin() {
         <section>
           <h2>Advanced Property Search in Downtown Summerlin</h2>
           <p>
-            Use our advanced search tool to find properties in Downtown Summerlin. 
-            Filter by price, features, and more to discover your perfect home in this walkable community.
+            Use our advanced search tool to find properties in Downtown Summerlin. Filter by price,
+            features, and more to discover your perfect home in this walkable community.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -204,8 +206,8 @@ export default function DowntownSummerlin() {
         <section>
           <h2>Quick Property Search in Downtown Summerlin</h2>
           <p>
-            Browse available properties in Downtown Summerlin with our simple search tool. 
-            Perfect for quick property browsing in this walkable community.
+            Browse available properties in Downtown Summerlin with our simple search tool. Perfect
+            for quick property browsing in this walkable community.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -215,20 +217,21 @@ export default function DowntownSummerlin() {
         <section>
           <h2>Office Properties in Downtown Summerlin</h2>
           <p>
-            Explore office properties and commercial real estate opportunities in Downtown Summerlin. 
-            From professional office spaces to commercial buildings, find the perfect location for your business.
+            Explore office properties and commercial real estate opportunities in Downtown
+            Summerlin. From professional office spaces to commercial buildings, find the perfect
+            location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,OTHER" 
-              priceMin="500000" 
-              priceMax="600000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,OTHER"
+            priceMin="500000"
+            priceMax="600000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
       </main>
     </div>

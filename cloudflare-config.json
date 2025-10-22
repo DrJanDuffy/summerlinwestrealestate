@@ -18,7 +18,7 @@
       "ttl": 1
     },
     {
-      "type": "CNAME", 
+      "type": "CNAME",
       "name": "@",
       "content": "cname.vercel-dns.com",
       "proxied": true,
@@ -34,7 +34,7 @@
     },
     {
       "url_pattern": "www.summerlinwestrealestate.com/market-reports/*",
-      "cache_level": "cache_everything", 
+      "cache_level": "cache_everything",
       "edge_cache_ttl": 14400,
       "browser_cache_ttl": 3600
     },

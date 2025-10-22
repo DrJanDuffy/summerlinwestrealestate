@@ -1,15 +1,18 @@
 'use client';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import LatestMarketInsights from '../../components/ui/LatestMarketInsights';
 import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Import RealScout components
 const RealScoutFeaturedListings = dynamic(
@@ -181,8 +184,8 @@ export default function CurrentListingClient() {
         <section className={styles.featuredListingsSection}>
           <h2>More Featured Properties in Summerlin West</h2>
           <p className={styles.sectionSubtitle}>
-            Explore additional luxury properties currently available in Summerlin West. 
-            Each property is hand-selected to showcase the finest in luxury real estate.
+            Explore additional luxury properties currently available in Summerlin West. Each
+            property is hand-selected to showcase the finest in luxury real estate.
           </p>
           <RealScoutFeaturedListings />
         </section>
@@ -191,8 +194,8 @@ export default function CurrentListingClient() {
         <section className={styles.featuredListingsSection}>
           <h2>Advanced Property Search</h2>
           <p className={styles.sectionSubtitle}>
-            Use our advanced search tool to find similar luxury properties in Summerlin West. 
-            Filter by price, features, and more to discover your perfect home.
+            Use our advanced search tool to find similar luxury properties in Summerlin West. Filter
+            by price, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -202,8 +205,8 @@ export default function CurrentListingClient() {
         <section className={styles.featuredListingsSection}>
           <h2>Quick Property Search</h2>
           <p className={styles.sectionSubtitle}>
-            Browse available luxury properties with our simple search tool. 
-            Perfect for quick property browsing of similar homes in Summerlin West.
+            Browse available luxury properties with our simple search tool. Perfect for quick
+            property browsing of similar homes in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -213,20 +216,21 @@ export default function CurrentListingClient() {
         <section className={styles.featuredListingsSection}>
           <h2>Broader Market Options in Summerlin West</h2>
           <p className={styles.sectionSubtitle}>
-            Explore a comprehensive range of residential properties across Summerlin West communities. 
-            From entry-level homes to luxury estates, discover all available options while viewing our featured listing.
+            Explore a comprehensive range of residential properties across Summerlin West
+            communities. From entry-level homes to luxury estates, discover all available options
+            while viewing our featured listing.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="400000"
+            priceMax="2000000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
       </main>
       <LatestMarketInsights />

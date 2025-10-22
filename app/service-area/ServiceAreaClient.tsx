@@ -1,10 +1,13 @@
 'use client';
-import styles from '../../styles/pages/service-area.module.css';
 import dynamicImport from 'next/dynamic';
+import styles from '../../styles/pages/service-area.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -237,11 +240,16 @@ export default function ServiceAreaClient() {
     <div className={styles.serviceArea}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>The Vistas Service Area: Premier Luxury Communities in Summerlin West</h1>
+        <h1 className={styles.heroTitle}>
+          The Vistas Service Area: Premier Luxury Communities in Summerlin West
+        </h1>
         <p className={styles.heroDescription}>
-          Discover all 26 exclusive subdivisions within The Vistas village in Summerlin West, Las Vegas. From gated luxury communities to family-friendly neighborhoods, explore world-class amenities, breathtaking Red Rock Canyon views, and homes built by the most prestigious builders in the Las Vegas Valley.
+          Discover all 26 exclusive subdivisions within The Vistas village in Summerlin West, Las
+          Vegas. From gated luxury communities to family-friendly neighborhoods, explore world-class
+          amenities, breathtaking Red Rock Canyon views, and homes built by the most prestigious
+          builders in the Las Vegas Valley.
         </p>
-        
+
         {/* Enhanced Hero Content */}
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
@@ -265,19 +273,35 @@ export default function ServiceAreaClient() {
         <div className={styles.overviewGrid}>
           <div className={styles.overviewCard}>
             <h3>Prime Location & Natural Beauty</h3>
-            <p>The Vistas offers unparalleled access to Red Rock Canyon National Conservation Area, providing residents with over 150 miles of hiking trails, stunning mountain views, and a connection to nature that's rare in urban Las Vegas.</p>
+            <p>
+              The Vistas offers unparalleled access to Red Rock Canyon National Conservation Area,
+              providing residents with over 150 miles of hiking trails, stunning mountain views, and
+              a connection to nature that's rare in urban Las Vegas.
+            </p>
           </div>
           <div className={styles.overviewCard}>
             <h3>World-Class Amenities</h3>
-            <p>From championship golf courses and resort-style pools to state-of-the-art fitness centers and community parks, The Vistas provides amenities that rival luxury resorts while maintaining the comfort of home.</p>
+            <p>
+              From championship golf courses and resort-style pools to state-of-the-art fitness
+              centers and community parks, The Vistas provides amenities that rival luxury resorts
+              while maintaining the comfort of home.
+            </p>
           </div>
           <div className={styles.overviewCard}>
             <h3>Top-Tier Builders</h3>
-            <p>Our communities feature homes built by the most respected builders in Las Vegas, including Toll Brothers, Pulte Homes, Woodside Homes, and many others, ensuring quality construction and modern design.</p>
+            <p>
+              Our communities feature homes built by the most respected builders in Las Vegas,
+              including Toll Brothers, Pulte Homes, Woodside Homes, and many others, ensuring
+              quality construction and modern design.
+            </p>
           </div>
           <div className={styles.overviewCard}>
             <h3>Excellent Schools & Services</h3>
-            <p>The Vistas is served by top-rated schools in the Clark County School District, with easy access to medical facilities, shopping centers, and professional services throughout Summerlin West.</p>
+            <p>
+              The Vistas is served by top-rated schools in the Clark County School District, with
+              easy access to medical facilities, shopping centers, and professional services
+              throughout Summerlin West.
+            </p>
           </div>
         </div>
       </section>
@@ -288,7 +312,11 @@ export default function ServiceAreaClient() {
         <div className={styles.typesGrid}>
           <div className={styles.typeCard}>
             <h3>Gated Luxury Communities</h3>
-            <p>Exclusive gated neighborhoods offering the highest level of privacy, security, and luxury amenities. These communities feature custom and semi-custom homes with premium finishes and larger lot sizes.</p>
+            <p>
+              Exclusive gated neighborhoods offering the highest level of privacy, security, and
+              luxury amenities. These communities feature custom and semi-custom homes with premium
+              finishes and larger lot sizes.
+            </p>
             <ul>
               <li>Paradiso - Custom luxury homes with mountain views</li>
               <li>Palmilla - Gated luxury with resort-style amenities</li>
@@ -298,7 +326,11 @@ export default function ServiceAreaClient() {
           </div>
           <div className={styles.typeCard}>
             <h3>Family-Friendly Neighborhoods</h3>
-            <p>Well-established communities perfect for families, featuring excellent schools, parks, and recreational facilities. These neighborhoods offer a variety of home styles and price points.</p>
+            <p>
+              Well-established communities perfect for families, featuring excellent schools, parks,
+              and recreational facilities. These neighborhoods offer a variety of home styles and
+              price points.
+            </p>
             <ul>
               <li>Kingwood - Established family community</li>
               <li>Solano - Family-friendly with great amenities</li>
@@ -308,7 +340,11 @@ export default function ServiceAreaClient() {
           </div>
           <div className={styles.typeCard}>
             <h3>Premium Non-Gated Communities</h3>
-            <p>High-quality neighborhoods that offer luxury living without the restrictions of gated communities, providing easy access to amenities and services while maintaining privacy and exclusivity.</p>
+            <p>
+              High-quality neighborhoods that offer luxury living without the restrictions of gated
+              communities, providing easy access to amenities and services while maintaining privacy
+              and exclusivity.
+            </p>
             <ul>
               <li>Barrington - Custom luxury homes</li>
               <li>Monterossa - Toll Brothers upscale homes</li>
@@ -323,7 +359,9 @@ export default function ServiceAreaClient() {
       <section className={styles.subdivisions}>
         <h2 className={styles.subdivisionsTitle}>Complete Directory of Vistas Subdivisions</h2>
         <p className={styles.subdivisionsDescription}>
-          Explore all 26 subdivisions within The Vistas village. Each community offers unique features, amenities, and architectural styles, allowing you to find the perfect neighborhood that matches your lifestyle and preferences.
+          Explore all 26 subdivisions within The Vistas village. Each community offers unique
+          features, amenities, and architectural styles, allowing you to find the perfect
+          neighborhood that matches your lifestyle and preferences.
         </p>
         <div className={styles.subdivisionsGrid}>
           {subdivisions.map((sub, _idx) => (
@@ -403,8 +441,8 @@ export default function ServiceAreaClient() {
       <section className={styles.subdivisions}>
         <h2 className={styles.subdivisionsTitle}>Advanced Property Search in The Vistas</h2>
         <p>
-          Use our advanced search tool to find properties in The Vistas subdivisions. 
-          Filter by price, features, and more to discover your perfect home in this premier community.
+          Use our advanced search tool to find properties in The Vistas subdivisions. Filter by
+          price, features, and more to discover your perfect home in this premier community.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -414,7 +452,7 @@ export default function ServiceAreaClient() {
       <section className={styles.subdivisions}>
         <h2 className={styles.subdivisionsTitle}>Quick Property Search in The Vistas</h2>
         <p>
-          Browse available properties in The Vistas subdivisions with our simple search tool. 
+          Browse available properties in The Vistas subdivisions with our simple search tool.
           Perfect for quick property browsing in this premier community.
         </p>
         {/* @ts-ignore - RealScout web component */}
@@ -425,20 +463,21 @@ export default function ServiceAreaClient() {
       <section className={styles.subdivisions}>
         <h2 className={styles.subdivisionsTitle}>Office Properties in The Vistas</h2>
         <p>
-          Explore office properties and commercial real estate opportunities in The Vistas subdivisions. 
-          From professional office spaces to commercial buildings, find the perfect location for your business.
+          Explore office properties and commercial real estate opportunities in The Vistas
+          subdivisions. From professional office spaces to commercial buildings, find the perfect
+          location for your business.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,OTHER" 
-              priceMin="500000" 
-              priceMax="600000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,OTHER"
+          priceMin="500000"
+          priceMax="600000"
+          maxListings={12}
+          className="mt-6"
+        />
       </section>
     </div>
   );

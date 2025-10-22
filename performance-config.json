@@ -5,9 +5,7 @@
       "turbo": {
         "rules": {
           "*.svg": {
-            "loaders": [
-              "@svgr/webpack"
-            ],
+            "loaders": ["@svgr/webpack"],
             "as": "*.js"
           }
         }
@@ -20,10 +18,7 @@
         "em.realscout.com",
         "files.keepingcurrentmatters.com"
       ],
-      "formats": [
-        "image/webp",
-        "image/avif"
-      ],
+      "formats": ["image/webp", "image/avif"],
       "minimumCacheTTL": 60,
       "dangerouslyAllowSVG": true,
       "contentSecurityPolicy": "default-src 'self'; script-src 'none'; sandbox;"
@@ -44,10 +39,6 @@
       }
     },
     "edge": true,
-    "regions": [
-      "iad1",
-      "sfo1",
-      "lhr1"
-    ]
+    "regions": ["iad1", "sfo1", "lhr1"]
   }
 }

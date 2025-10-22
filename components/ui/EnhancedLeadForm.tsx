@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { trackFormSubmission, trackPhoneClick, trackEmailClick } from '../../lib/lead-tracking';
+import { trackEmailClick, trackFormSubmission, trackPhoneClick } from '../../lib/lead-tracking';
 
 interface LeadFormData {
   name: string;
@@ -26,14 +26,14 @@ interface EnhancedLeadFormProps {
 }
 
 export default function EnhancedLeadForm({
-  title = "Get Your Free Real Estate Consultation",
-  subtitle = "Connect with Dr. Jan Duffy for expert guidance on Summerlin West real estate",
+  title = 'Get Your Free Real Estate Consultation',
+  subtitle = 'Connect with Dr. Jan Duffy for expert guidance on Summerlin West real estate',
   showPropertyFields = true,
   showPriceRange = true,
   showCommunitySelection = true,
   formType = 'general',
   propertyId,
-  community
+  community,
 }: EnhancedLeadFormProps) {
   const [formData, setFormData] = useState<LeadFormData>({
     name: '',
@@ -43,17 +43,19 @@ export default function EnhancedLeadForm({
     propertyType: 'single_family',
     priceRange: '600000-1000000',
     community: community || '',
-    intent: 'buy'
+    intent: 'buy',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -72,28 +74,27 @@ export default function EnhancedLeadForm({
       });
 
       // Simulate form submission (replace with actual API call)
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       setIsSubmitted(true);
-      
+
       // Track successful submission
       trackFormSubmission('form_success', {
         ...formData,
         property_id: propertyId,
         form_type: formType,
-        submission_status: 'success'
+        submission_status: 'success',
       });
-
     } catch (error) {
       console.error('Form submission error:', error);
-      
+
       // Track failed submission
       trackFormSubmission('form_error', {
         ...formData,
         property_id: propertyId,
         form_type: formType,
         submission_status: 'error',
-        error_message: error instanceof Error ? error.message : 'Unknown error'
+        error_message: error instanceof Error ? error.message : 'Unknown error',
       });
     } finally {
       setIsSubmitting(false);
@@ -112,7 +113,12 @@ export default function EnhancedLeadForm({
     return (
       <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-8 h-8 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -121,15 +127,15 @@ export default function EnhancedLeadForm({
           Your message has been sent successfully. Dr. Jan Duffy will contact you within 24 hours.
         </p>
         <div className="flex justify-center space-x-4">
-          <a 
-            href="tel:+17025500112" 
+          <a
+            href="tel:+17025500112"
             onClick={() => handlePhoneClick('+17025500112')}
             className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
           >
             Call (702) 550-0112
           </a>
-          <a 
-            href="mailto:DrJanSells@SummerlinWestRealEstate.com" 
+          <a
+            href="mailto:DrJanSells@SummerlinWestRealEstate.com"
             onClick={() => handleEmailClick('DrJanSells@SummerlinWestRealEstate.com')}
             className="bg-green-100 text-green-800 px-4 py-2 rounded-lg hover:bg-green-200 transition-colors"
           >
@@ -218,7 +224,10 @@ export default function EnhancedLeadForm({
 
           {showPropertyFields && (
             <div>
-              <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="propertyType"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Property Type
               </label>
               <select
@@ -309,15 +318,15 @@ export default function EnhancedLeadForm({
         <div className="text-center text-sm text-gray-500">
           <p>By submitting this form, you agree to be contacted by Dr. Jan Duffy's team.</p>
           <div className="mt-2 flex justify-center space-x-4">
-            <a 
-              href="tel:+17025500112" 
+            <a
+              href="tel:+17025500112"
               onClick={() => handlePhoneClick('+17025500112')}
               className="text-blue-600 hover:text-blue-800 font-medium"
             >
               Call (702) 550-0112
             </a>
-            <a 
-              href="mailto:DrJanSells@SummerlinWestRealEstate.com" 
+            <a
+              href="mailto:DrJanSells@SummerlinWestRealEstate.com"
               onClick={() => handleEmailClick('DrJanSells@SummerlinWestRealEstate.com')}
               className="text-blue-600 hover:text-blue-800 font-medium"
             >

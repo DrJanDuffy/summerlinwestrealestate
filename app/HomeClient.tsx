@@ -28,9 +28,12 @@ const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsights
 const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
   ssr: false,
 });
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 type Faq = {
   question: string;
@@ -56,7 +59,11 @@ function HomeHeroImage() {
           setSrc(data.fallback);
         }
       })
-      .catch(() => setSrc('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'));
+      .catch(() =>
+        setSrc(
+          'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+        )
+      );
   }, []);
   return (
     <Image
@@ -420,21 +427,19 @@ export default function HomeClient() {
 
           {/* RealScout Office Listings Widget */}
           <section className={styles.section} aria-label="Luxury Summerlin West Properties">
-            <h2 className={styles.sectionTitle}>
-              Premium Luxury Homes in Summerlin West
-            </h2>
+            <h2 className={styles.sectionTitle}>Premium Luxury Homes in Summerlin West</h2>
             <p className={styles.heroSubtitle}>
-              Discover the finest luxury properties in Summerlin West. From elegant estates in The Vistas 
-              to sophisticated homes in Stonebridge, these premium listings represent the pinnacle of 
-              Summerlin West real estate. Each property offers exceptional quality, prime location, and 
-              unmatched lifestyle amenities.
+              Discover the finest luxury properties in Summerlin West. From elegant estates in The
+              Vistas to sophisticated homes in Stonebridge, these premium listings represent the
+              pinnacle of Summerlin West real estate. Each property offers exceptional quality,
+              prime location, and unmatched lifestyle amenities.
             </p>
-            <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="800000" 
+            <RealScoutOfficeListingsWrapper
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="PRICE_LOW"
+              listingStatus="For Sale"
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              priceMin="800000"
               priceMax="2000000"
               maxListings={12}
               className="mt-6"
@@ -555,12 +560,11 @@ export default function HomeClient() {
 
           {/* Advanced Property Search */}
           <section className={styles.section} aria-label="Advanced Property Search">
-            <h2 className={styles.sectionTitle}>
-              Advanced Property Search in Summerlin West
-            </h2>
+            <h2 className={styles.sectionTitle}>Advanced Property Search in Summerlin West</h2>
             <p className={styles.heroSubtitle}>
-              Use our advanced search tool to find your perfect home in Summerlin West. Filter by 
-              price, location, features, and more to discover properties that match your exact criteria.
+              Use our advanced search tool to find your perfect home in Summerlin West. Filter by
+              price, location, features, and more to discover properties that match your exact
+              criteria.
             </p>
             {/* @ts-ignore - RealScout web component */}
             <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -568,11 +572,9 @@ export default function HomeClient() {
 
           {/* Simple Property Search */}
           <section className={styles.section} aria-label="Quick Property Search">
-            <h2 className={styles.sectionTitle}>
-              Quick Property Search
-            </h2>
+            <h2 className={styles.sectionTitle}>Quick Property Search</h2>
             <p className={styles.heroSubtitle}>
-              Get started with our simple search tool to quickly find properties in Summerlin West. 
+              Get started with our simple search tool to quickly find properties in Summerlin West.
               Perfect for browsing available homes without complex filters.
             </p>
             {/* @ts-ignore - RealScout web component */}
@@ -581,19 +583,18 @@ export default function HomeClient() {
 
           {/* Additional Property Search Options */}
           <section className={styles.section} aria-label="Additional Property Search">
-            <h2 className={styles.sectionTitle}>
-              Broader Market Options in Summerlin West
-            </h2>
+            <h2 className={styles.sectionTitle}>Broader Market Options in Summerlin West</h2>
             <p className={styles.heroSubtitle}>
-              Explore a comprehensive range of residential properties across Summerlin West communities. 
-              From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
+              Explore a comprehensive range of residential properties across Summerlin West
+              communities. From entry-level homes to luxury estates, discover all available options
+              in this premier master-planned community.
             </p>
-            <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
+            <RealScoutOfficeListingsWrapper
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="PRICE_LOW"
+              listingStatus="For Sale"
+              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              priceMin="400000"
               priceMax="2000000"
               maxListings={12}
               className="mt-6"

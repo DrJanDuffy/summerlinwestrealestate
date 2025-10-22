@@ -30,7 +30,7 @@ export default function RealScoutListings({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setWidgetLoaded(true);
         }
@@ -132,7 +132,7 @@ export default function RealScoutListings({
       {/* RealScout Listings Widget */}
       <div className="widget-container">
         {widgetLoaded ? (
-          // @ts-ignore - RealScout web component
+          // @ts-expect-error - RealScout web component
           <realscout-office-listings
             agent-encoded-id={agentId}
             sort-order={sortOrder}
@@ -149,7 +149,9 @@ export default function RealScoutListings({
         ) : (
           <div className="bg-orange-50 border border-orange-200 rounded-lg p-8 text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600 mx-auto mb-4"></div>
-            <h3 className="text-xl font-semibold text-orange-900 mb-2">Loading Property Listings</h3>
+            <h3 className="text-xl font-semibold text-orange-900 mb-2">
+              Loading Property Listings
+            </h3>
             <p className="text-orange-700 mb-4">Preparing MLS data for Summerlin West...</p>
             <p className="text-sm text-orange-600">Powered by RealScout</p>
           </div>

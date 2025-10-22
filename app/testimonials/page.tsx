@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'luxury home buyer testimonials',
     'real estate agent reviews',
     'Summerlin West success stories',
-    'Dr. Jan Duffy client reviews'
+    'Dr. Jan Duffy client reviews',
   ],
   alternates: {
     canonical: '/testimonials',

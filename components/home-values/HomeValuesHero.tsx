@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import styles from './HomeValuesHero.module.css'
+import { useEffect, useState } from 'react';
+import styles from './HomeValuesHero.module.css';
 
 interface HomeValuesHeroProps {
-  className?: string
+  className?: string;
 }
 
 export default function HomeValuesHero({ className }: HomeValuesHeroProps) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <section className={`${styles.hero} ${className || ''}`}>
@@ -23,8 +23,8 @@ export default function HomeValuesHero({ className }: HomeValuesHeroProps) {
         <p className={`${styles.heroSubtitle} ${isVisible ? styles.fadeInUp : ''}`}>
           Current market value • Recent neighborhood sales • Expert analysis from Dr. Jan Duffy
         </p>
-        <a 
-          href="tel:702-222-1964" 
+        <a
+          href="tel:702-222-1964"
           className={`${styles.ctaButton} ${styles.pulse} ${isVisible ? styles.fadeInUp : ''}`}
           aria-label="Call Dr. Jan Duffy for free home valuation"
         >
@@ -32,6 +32,5 @@ export default function HomeValuesHero({ className }: HomeValuesHeroProps) {
         </a>
       </div>
     </section>
-  )
+  );
 }
-

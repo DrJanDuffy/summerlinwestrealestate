@@ -6,9 +6,11 @@ export const staticBlogPosts: BlogPost[] = [
     id: '3-reasons-affordability-is-showing-signs-of-improvement-this-fall',
     slug: '3-reasons-affordability-is-showing-signs-of-improvement-this-fall',
     title: '3 Reasons Affordability is Showing Signs of Improvement This Fall',
-    excerpt: 'Discover why the Fall 2025 housing market is becoming more accessible for buyers in Summerlin West and beyond.',
+    excerpt:
+      'Discover why the Fall 2025 housing market is becoming more accessible for buyers in Summerlin West and beyond.',
     date: '2025-09-15',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: `
 # 3 Reasons Affordability is Showing Signs of Improvement This Fall
 
@@ -146,9 +148,11 @@ For more information about the Summerlin West market, explore our [market report
     id: '2026-housing-market-outlook',
     slug: '2026-housing-market-outlook',
     title: '2026 Housing Market Outlook: What Summerlin West Buyers and Sellers Need to Know',
-    excerpt: 'Get expert insights on the 2026 housing market forecast for Summerlin West and Las Vegas from Dr. Jan Duffy.',
+    excerpt:
+      'Get expert insights on the 2026 housing market forecast for Summerlin West and Las Vegas from Dr. Jan Duffy.',
     date: '2025-09-10',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: `
 # 2026 Housing Market Outlook: What Summerlin West Buyers and Sellers Need to Know
 
@@ -333,10 +337,12 @@ For more information about the Summerlin West market, explore our [home values](
   {
     id: 'what-buyers-say-they-need-most-and-how-the-markets-responding',
     slug: 'what-buyers-say-they-need-most-and-how-the-markets-responding',
-    title: 'What Buyers Say They Need Most and How the Market\'s Responding',
-    excerpt: 'Discover what Summerlin West buyers are prioritizing in 2025 and how the market is adapting to meet these needs.',
+    title: "What Buyers Say They Need Most and How the Market's Responding",
+    excerpt:
+      'Discover what Summerlin West buyers are prioritizing in 2025 and how the market is adapting to meet these needs.',
     date: '2025-09-05',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: `
 # What Buyers Say They Need Most and How the Market's Responding
 
@@ -436,9 +442,11 @@ Contact Dr. Jan Duffy's team today for expert guidance on how to succeed in toda
     id: 'why-buyers-and-sellers-face-very-different-conditions-today',
     slug: 'why-buyers-and-sellers-face-very-different-conditions-today',
     title: 'Why Buyers and Sellers Face Very Different Conditions Today',
-    excerpt: 'Understand the contrasting market conditions affecting buyers and sellers in Summerlin West and how to navigate them successfully.',
+    excerpt:
+      'Understand the contrasting market conditions affecting buyers and sellers in Summerlin West and how to navigate them successfully.',
     date: '2025-08-28',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: `
 # Why Buyers and Sellers Face Very Different Conditions Today
 
@@ -541,9 +549,11 @@ Whether you're buying or selling in Summerlin West, understanding current market
     id: 'why-october-is-the-best-time-to-buy-a-home-in-2025',
     slug: 'why-october-is-the-best-time-to-buy-a-home-in-2025',
     title: 'Why October is the Best Time to Buy a Home in 2025',
-    excerpt: 'Discover why October 2025 presents unique opportunities for home buyers in Summerlin West and how to capitalize on seasonal market conditions.',
+    excerpt:
+      'Discover why October 2025 presents unique opportunities for home buyers in Summerlin West and how to capitalize on seasonal market conditions.',
     date: '2025-08-20',
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: `
 # Why October is the Best Time to Buy a Home in 2025
 
@@ -662,9 +672,11 @@ export const additionalBlogPosts: BlogPost[] = [
     id: 'downsizing-without-debt-how-more-homeowners-are-buying-their-next-house-in-cash',
     slug: 'downsizing-without-debt-how-more-homeowners-are-buying-their-next-house-in-cash',
     title: 'Downsizing Without Debt: How More Homeowners Are Buying Their Next House in Cash',
-    excerpt: 'Learn how Summerlin West homeowners are using home equity to downsize debt-free and upgrade their lifestyle.',
+    excerpt:
+      'Learn how Summerlin West homeowners are using home equity to downsize debt-free and upgrade their lifestyle.',
     date: '2025-08-15',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Downsizing without debt',
     category: 'Home Buying',
@@ -673,9 +685,11 @@ export const additionalBlogPosts: BlogPost[] = [
     id: 'why-experts-say-mortgage-rates-should-ease-over-the-next-year',
     slug: 'why-experts-say-mortgage-rates-should-ease-over-the-next-year',
     title: 'Why Experts Say Mortgage Rates Should Ease Over the Next Year',
-    excerpt: 'Get expert insights on mortgage rate predictions and what it means for Summerlin West home buyers.',
+    excerpt:
+      'Get expert insights on mortgage rate predictions and what it means for Summerlin West home buyers.',
     date: '2025-08-10',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Mortgage rate predictions',
     category: 'Market Trends',
@@ -684,9 +698,11 @@ export const additionalBlogPosts: BlogPost[] = [
     id: 'do-you-know-how-much-your-house-is-really-worth',
     slug: 'do-you-know-how-much-your-house-is-really-worth',
     title: 'Do You Know How Much Your House is Really Worth?',
-    excerpt: 'Discover the true value of your Summerlin West home with professional market analysis from Dr. Jan Duffy.',
+    excerpt:
+      'Discover the true value of your Summerlin West home with professional market analysis from Dr. Jan Duffy.',
     date: '2025-08-05',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Home value assessment',
     category: 'Home Selling',
@@ -695,9 +711,11 @@ export const additionalBlogPosts: BlogPost[] = [
     id: 'the-280-shift-in-affordability-every-homebuyer-should-know',
     slug: 'the-280-shift-in-affordability-every-homebuyer-should-know',
     title: 'The $280 Shift in Affordability Every Homebuyer Should Know',
-    excerpt: 'Understand how a small change in mortgage rates can significantly impact your Summerlin West home buying power.',
+    excerpt:
+      'Understand how a small change in mortgage rates can significantly impact your Summerlin West home buying power.',
     date: '2025-07-30',
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Affordability shift analysis',
     category: 'Buyer Tips',
@@ -705,10 +723,12 @@ export const additionalBlogPosts: BlogPost[] = [
   {
     id: 'dont-let-unrealistic-pricing-cost-you-your-move',
     slug: 'dont-let-unrealistic-pricing-cost-you-your-move',
-    title: 'Don\'t Let Unrealistic Pricing Cost You Your Move',
-    excerpt: 'Learn how proper pricing strategy can help you sell your Summerlin West home quickly and maximize your profit.',
+    title: "Don't Let Unrealistic Pricing Cost You Your Move",
+    excerpt:
+      'Learn how proper pricing strategy can help you sell your Summerlin West home quickly and maximize your profit.',
     date: '2025-07-25',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Pricing strategy importance',
     category: 'Home Selling',
@@ -717,9 +737,11 @@ export const additionalBlogPosts: BlogPost[] = [
     id: 'why-more-buyers-are-turning-to-new-construction-this-year',
     slug: 'why-more-buyers-are-turning-to-new-construction-this-year',
     title: 'Why More Buyers Are Turning to New Construction This Year',
-    excerpt: 'Discover why new construction homes in The Vistas and Stonebridge are attracting more buyers in 2025.',
+    excerpt:
+      'Discover why new construction homes in The Vistas and Stonebridge are attracting more buyers in 2025.',
     date: '2025-07-20',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'New construction trends',
     category: 'New Construction',
@@ -727,10 +749,12 @@ export const additionalBlogPosts: BlogPost[] = [
   {
     id: 'closing-costs-unpacked-state-by-state-breakdowns-for-todays-buyers',
     slug: 'closing-costs-unpacked-state-by-state-breakdowns-for-todays-buyers',
-    title: 'Closing Costs Unpacked: State-by-State Breakdowns for Today\'s Buyers',
-    excerpt: 'Get a detailed breakdown of closing costs for Nevada home buyers and how to prepare for your Summerlin West purchase.',
+    title: "Closing Costs Unpacked: State-by-State Breakdowns for Today's Buyers",
+    excerpt:
+      'Get a detailed breakdown of closing costs for Nevada home buyers and how to prepare for your Summerlin West purchase.',
     date: '2025-07-15',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Closing costs breakdown',
     category: 'Buyer Tips',
@@ -738,10 +762,12 @@ export const additionalBlogPosts: BlogPost[] = [
   {
     id: 'why-home-prices-arent-actually-flat',
     slug: 'why-home-prices-arent-actually-flat',
-    title: 'Why Home Prices Aren\'t Actually Flat',
-    excerpt: 'Understand the real story behind home price trends in Summerlin West and what it means for buyers and sellers.',
+    title: "Why Home Prices Aren't Actually Flat",
+    excerpt:
+      'Understand the real story behind home price trends in Summerlin West and what it means for buyers and sellers.',
     date: '2025-07-10',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
     content: 'Content coming soon...',
     alt: 'Home price trends analysis',
     category: 'Market Analysis',

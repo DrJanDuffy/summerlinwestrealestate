@@ -1,16 +1,19 @@
 'use client';
 import { motion, useInView, useScroll } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import SubdivisionNavigation from '../../../components/ui/SubdivisionNavigation';
 import styles from '../page.module.css';
 import clientStyles from './client-subdivision.module.css';
-import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Enhanced Loading Skeleton
 function LoadingSkeleton() {
@@ -523,7 +526,9 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
   }
 
   // Generate enhanced content
-    const heroImage = subdivision.image || 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80';
+  const heroImage =
+    subdivision.image ||
+    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80';
   const imageAlt = subdivision.image
     ? `${subdivision.name} neighborhood view showcasing luxury homes and community amenities`
     : `${subdivision.name} luxury subdivision in The Vistas, Summerlin West`;
@@ -641,24 +646,28 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.centerTitle}>
-          Properties in {subdivision.name}
-        </h2>
+        <h2 className={styles.centerTitle}>Properties in {subdivision.name}</h2>
         <p className={styles.heroSubtitle}>
-          Discover homes available in {subdivision.name}. This {subdivision.type.toLowerCase()} community offers 
-          {subdivision.name === 'Casa Rosa' ? ' mid-range luxury living with quality construction, modern amenities, and convenient access to The Vistas\' premier facilities' : subdivision.type === 'Family' ? ' family-friendly living with modern amenities and convenient access to top-rated schools' : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}.
+          Discover homes available in {subdivision.name}. This {subdivision.type.toLowerCase()}{' '}
+          community offers
+          {subdivision.name === 'Casa Rosa'
+            ? " mid-range luxury living with quality construction, modern amenities, and convenient access to The Vistas' premier facilities"
+            : subdivision.type === 'Family'
+              ? ' family-friendly living with modern amenities and convenient access to top-rated schools'
+              : ' luxury living with modern amenities, stunning architecture, and convenient access to world-class shopping, dining, and recreational facilities'}
+          .
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="400000"
+          priceMax="2000000"
+          maxListings={12}
+          className="mt-6"
+        />
       </motion.section>
 
       {/* Advanced Property Search */}
@@ -669,12 +678,11 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.centerTitle}>
-          Advanced Property Search in {subdivision.name}
-        </h2>
+        <h2 className={styles.centerTitle}>Advanced Property Search in {subdivision.name}</h2>
         <p className={styles.heroSubtitle}>
-          Use our advanced search tool to find properties specifically in {subdivision.name}. 
-          Filter by price, features, and more to discover your perfect home in this {subdivision.type.toLowerCase()} community.
+          Use our advanced search tool to find properties specifically in {subdivision.name}. Filter
+          by price, features, and more to discover your perfect home in this{' '}
+          {subdivision.type.toLowerCase()} community.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -688,12 +696,10 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.centerTitle}>
-          Quick Property Search in {subdivision.name}
-        </h2>
+        <h2 className={styles.centerTitle}>Quick Property Search in {subdivision.name}</h2>
         <p className={styles.heroSubtitle}>
-          Browse available properties in {subdivision.name} with our simple search tool. 
-          Perfect for quick property browsing in this {subdivision.type.toLowerCase()} community.
+          Browse available properties in {subdivision.name} with our simple search tool. Perfect for
+          quick property browsing in this {subdivision.type.toLowerCase()} community.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -707,24 +713,23 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h2 className={styles.centerTitle}>
-          Broader Market Options Near {subdivision.name}
-        </h2>
+        <h2 className={styles.centerTitle}>Broader Market Options Near {subdivision.name}</h2>
         <p className={styles.heroSubtitle}>
-          Explore a wider range of residential properties in The Vistas and surrounding Summerlin West communities. 
-          From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
+          Explore a wider range of residential properties in The Vistas and surrounding Summerlin
+          West communities. From entry-level homes to luxury estates, discover all available options
+          in this premier master-planned community.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="400000"
+          priceMax="2000000"
+          maxListings={12}
+          className="mt-6"
+        />
       </motion.section>
 
       {/* Enhanced Navigation */}

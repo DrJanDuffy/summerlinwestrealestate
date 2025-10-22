@@ -25,7 +25,7 @@ export default function RealScoutWidget({
       try {
         // Wait for RealScout elements to be defined
         const elementsLoaded = await waitForRealScoutElements(10000);
-        
+
         if (elementsLoaded) {
           setLoadingState('loaded');
         } else {
@@ -43,7 +43,9 @@ export default function RealScoutWidget({
   // Loading state
   if (loadingState === 'loading') {
     return (
-      <div className={`bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center ${className}`}>
+      <div
+        className={`bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center ${className}`}
+      >
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
         <h3 className="text-lg font-medium text-gray-900 mb-2">Loading Property Listings...</h3>
         <p className="text-sm text-gray-600">Preparing MLS data for Summerlin West</p>
@@ -55,8 +57,12 @@ export default function RealScoutWidget({
   if (loadingState === 'error') {
     return (
       <div className={`bg-red-50 border border-red-200 rounded-lg p-8 text-center ${className}`}>
-        <h3 className="text-xl font-semibold text-red-900 mb-2">Property Search Temporarily Unavailable</h3>
-        <p className="text-red-700 mb-4">We're experiencing technical difficulties with our property search.</p>
+        <h3 className="text-xl font-semibold text-red-900 mb-2">
+          Property Search Temporarily Unavailable
+        </h3>
+        <p className="text-red-700 mb-4">
+          We're experiencing technical difficulties with our property search.
+        </p>
         <a
           href="/contact"
           className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors"
@@ -88,7 +94,7 @@ export default function RealScoutWidget({
           />
         </div>
       );
-    
+
     case 'search':
       return (
         <div className={`real-scout-search-container ${className}`}>
@@ -104,7 +110,7 @@ export default function RealScoutWidget({
           />
         </div>
       );
-    
+
     case 'lead-capture':
       return (
         <div className={`real-scout-lead-container ${className}`}>
@@ -118,10 +124,12 @@ export default function RealScoutWidget({
           />
         </div>
       );
-    
+
     default:
       return (
-        <div className={`bg-gray-50 border border-gray-200 rounded-lg p-8 text-center ${className}`}>
+        <div
+          className={`bg-gray-50 border border-gray-200 rounded-lg p-8 text-center ${className}`}
+        >
           <h3 className="text-xl font-semibold text-gray-900 mb-2">Invalid Widget Type</h3>
           <p className="text-gray-700">Please specify a valid widget variant.</p>
         </div>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy market insights',
     'Summerlin West home values',
     'Las Vegas real estate trends',
-    'Summerlin market conditions'
+    'Summerlin market conditions',
   ],
   alternates: {
     canonical: '/market',
@@ -76,7 +76,7 @@ export default function Market() {
       <section className={styles.sectionCard}>
         <h2>Current Market Trends</h2>
         <Image
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80"
           alt="Summerlin real estate market trends graph"
           width={800}
           height={300}

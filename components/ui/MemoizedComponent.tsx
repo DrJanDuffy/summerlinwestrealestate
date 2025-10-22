@@ -17,9 +17,9 @@ export default function MemoizedComponent({ children, name: _name }: MemoizedCom
     },
     () => true
   );
-  
+
   MemoizedChild.displayName = `MemoizedComponent(${_name || 'Anonymous'})`;
-  
+
   return <MemoizedChild />;
 }
 

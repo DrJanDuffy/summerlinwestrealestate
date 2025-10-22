@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import ServiceAreaStructuredData from '../../../components/ui/ServiceAreaStructuredData';
+import type { CommunityData } from '../../../lib/structured-data';
 import subdivisions from '../subdivisions.json';
 import ClientSubdivisionPage from './ClientSubdivisionPage';
-import ServiceAreaStructuredData from '../../../components/ui/ServiceAreaStructuredData';
-import { CommunityData } from '../../../lib/structured-data';
 
 interface PageProps {
   params: Promise<{ slug: string }>;

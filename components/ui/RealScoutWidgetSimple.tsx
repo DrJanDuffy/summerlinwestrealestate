@@ -28,33 +28,33 @@ export default function RealScoutWidgetSimple({
         // Wait for custom elements to be defined
         const maxWaitTime = 5000; // 5 seconds
         const startTime = Date.now();
-        
+
         const waitForCustomElements = () => {
           return new Promise<void>((resolve, reject) => {
             const checkElements = () => {
               const searchWidget = customElements.get('realscout-search-widget');
               const listingsWidget = customElements.get('realscout-office-listings');
               const leadWidget = customElements.get('realscout-lead-capture');
-              
+
               if (searchWidget || listingsWidget || leadWidget) {
                 resolve();
                 return;
               }
-              
+
               if (Date.now() - startTime > maxWaitTime) {
                 reject(new Error('Custom elements not defined within timeout'));
                 return;
               }
-              
+
               setTimeout(checkElements, 100);
             };
-            
+
             checkElements();
           });
         };
 
         await waitForCustomElements();
-        
+
         if (mounted) {
           setWidgetReady(true);
         }
@@ -87,7 +87,9 @@ export default function RealScoutWidgetSimple({
     return (
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
         <h3 className="text-xl font-semibold text-blue-900 mb-2">Loading RealScout Widget</h3>
-        <p className="text-blue-700 mb-4">Please wait while we initialize the RealScout functionality...</p>
+        <p className="text-blue-700 mb-4">
+          Please wait while we initialize the RealScout functionality...
+        </p>
         <div className="flex justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
         </div>
@@ -111,7 +113,7 @@ export default function RealScoutWidgetSimple({
           />
         </div>
       );
-    
+
     case 'listings':
       return (
         <div className="real-scout-listings-container">
@@ -124,7 +126,7 @@ export default function RealScoutWidgetSimple({
           />
         </div>
       );
-    
+
     case 'lead-capture':
       return (
         <div className="real-scout-lead-container">
@@ -138,7 +140,7 @@ export default function RealScoutWidgetSimple({
           />
         </div>
       );
-    
+
     default:
       return (
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 text-center">

@@ -65,7 +65,13 @@ export default function VistasListing() {
             {listings.map((listing) => (
               <div key={listing.id} className={styles.listingCard}>
                 <Image
-                  src={listing.id === 1 ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : listing.id === 2 ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'}
+                  src={
+                    listing.id === 1
+                      ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                      : listing.id === 2
+                        ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                        : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                  }
                   alt={`Vistas Summerlin home listing ${listing.id}`}
                   width={400}
                   height={220}

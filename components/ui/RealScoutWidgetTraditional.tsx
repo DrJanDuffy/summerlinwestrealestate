@@ -41,7 +41,7 @@ export default function RealScoutWidgetTraditional({
           </div>
         `;
         break;
-      
+
       case 'listings':
         widgetHTML = `
           <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
@@ -56,7 +56,7 @@ export default function RealScoutWidgetTraditional({
           </div>
         `;
         break;
-      
+
       case 'lead-capture':
         widgetHTML = `
           <div style="width: 100%; max-width: 500px; margin: 0 auto;">
@@ -124,7 +124,7 @@ export default function RealScoutWidgetTraditional({
           </div>
         `;
         break;
-      
+
       default:
         widgetHTML = `
           <div style="background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 8px; padding: 2rem; text-align: center;">
@@ -136,7 +136,6 @@ export default function RealScoutWidgetTraditional({
 
     // Insert the widget HTML
     containerRef.current.innerHTML = widgetHTML;
-
   }, [variant, agentId, priceMin, priceMax]);
 
   return (

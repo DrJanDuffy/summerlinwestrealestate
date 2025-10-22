@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy luxury homes',
     'Berkshire Hathaway HomeServices',
     'Las Vegas luxury communities',
-    'Summerlin West property search'
+    'Summerlin West property search',
   ],
   alternates: {
     canonical: '/properties',
@@ -39,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Luxury Homes for Sale in Summerlin West | Dr. Jan Duffy REALTOR®',
-    description: 'Browse exclusive luxury homes for sale in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales.',
+    description:
+      'Browse exclusive luxury homes for sale in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales.',
     images: ['/images/og-image.svg'],
   },
   robots: {

@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface HeroStats {
   value: string;
@@ -72,9 +72,7 @@ export default function ModernHeroSection({
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
           >
-            <span className="text-sm font-medium text-white">
-              🏆 #1 Summerlin West REALTOR®
-            </span>
+            <span className="text-sm font-medium text-white">🏆 #1 Summerlin West REALTOR®</span>
           </motion.div>
 
           {/* Title */}
@@ -150,16 +148,10 @@ export default function ModernHeroSection({
                 transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-lg font-medium text-white/80 mb-1">
-                  {stat.label}
-                </div>
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-lg font-medium text-white/80 mb-1">{stat.label}</div>
                 {stat.description && (
-                  <div className="text-sm text-white/60">
-                    {stat.description}
-                  </div>
+                  <div className="text-sm text-white/60">{stat.description}</div>
                 )}
               </motion.div>
             ))}
@@ -179,12 +171,12 @@ export default function ModernHeroSection({
           transition={{ duration: 2, repeat: Infinity }}
           className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
         >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white/60 rounded-full mt-2"
-              aria-hidden="true"
-            />
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1 h-3 bg-white/60 rounded-full mt-2"
+            aria-hidden="true"
+          />
         </motion.div>
       </motion.div>
     </section>

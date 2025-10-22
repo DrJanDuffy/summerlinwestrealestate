@@ -20,9 +20,7 @@ export default function RealScoutSimpleSearch({
     >
       {/* RealScout Simple Search Web Component */}
       {/* @ts-ignore - RealScout web component */}
-      <realscout-simple-search
-        agent-encoded-id={agentEncodedId}
-      />
+      <realscout-simple-search agent-encoded-id={agentEncodedId} />
     </motion.div>
   );
 }

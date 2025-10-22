@@ -8,9 +8,12 @@ import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch
 import useExpandable from '../../hooks/useExpandable';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), {
   ssr: false,
@@ -276,35 +279,32 @@ export default function MarketReportsClient() {
 
       {/* Investment Properties */}
       <section className={styles.section} aria-label="Investment Properties">
-        <h2 className={styles.sectionTitle}>
-          Investment Properties in Summerlin West
-        </h2>
+        <h2 className={styles.sectionTitle}>Investment Properties in Summerlin West</h2>
         <p className={styles.heroSubtitle}>
-          Explore investment opportunities in Summerlin West. These properties offer excellent potential 
-          for rental income, appreciation, and long-term wealth building. Perfect for investors looking 
-          to capitalize on Summerlin West's strong market fundamentals.
+          Explore investment opportunities in Summerlin West. These properties offer excellent
+          potential for rental income, appreciation, and long-term wealth building. Perfect for
+          investors looking to capitalize on Summerlin West's strong market fundamentals.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="700000" 
-              priceMax="1500000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="700000"
+          priceMax="1500000"
+          maxListings={12}
+          className="mt-6"
+        />
       </section>
 
       {/* Advanced Property Search */}
       <section className={styles.section} aria-label="Advanced Property Search">
-        <h2 className={styles.sectionTitle}>
-          Advanced Property Search
-        </h2>
+        <h2 className={styles.sectionTitle}>Advanced Property Search</h2>
         <p className={styles.heroSubtitle}>
-          Use our advanced search tool to find properties that match the latest market trends. 
-          Filter by price, location, features, and more to discover your perfect investment opportunity.
+          Use our advanced search tool to find properties that match the latest market trends.
+          Filter by price, location, features, and more to discover your perfect investment
+          opportunity.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -312,12 +312,10 @@ export default function MarketReportsClient() {
 
       {/* Simple Property Search */}
       <section className={styles.section} aria-label="Quick Property Search">
-        <h2 className={styles.sectionTitle}>
-          Quick Property Search
-        </h2>
+        <h2 className={styles.sectionTitle}>Quick Property Search</h2>
         <p className={styles.heroSubtitle}>
-          Browse available properties with our simple search tool. 
-          Perfect for quick property browsing while reviewing market reports.
+          Browse available properties with our simple search tool. Perfect for quick property
+          browsing while reviewing market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
         <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -325,24 +323,23 @@ export default function MarketReportsClient() {
 
       {/* Additional Property Search Options */}
       <section className={styles.section} aria-label="Additional Property Search">
-        <h2 className={styles.sectionTitle}>
-          Broader Market Options in Summerlin West
-        </h2>
+        <h2 className={styles.sectionTitle}>Broader Market Options in Summerlin West</h2>
         <p className={styles.heroSubtitle}>
-          Explore a comprehensive range of residential properties across Summerlin West communities. 
-          From entry-level homes to luxury estates, discover all available options while reviewing market reports.
+          Explore a comprehensive range of residential properties across Summerlin West communities.
+          From entry-level homes to luxury estates, discover all available options while reviewing
+          market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+        <RealScoutOfficeListingsWrapper
+          agentEncodedId="QWdlbnQtMjI1MDUw"
+          sortOrder="PRICE_LOW"
+          listingStatus="For Sale"
+          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+          priceMin="400000"
+          priceMax="2000000"
+          maxListings={12}
+          className="mt-6"
+        />
       </section>
 
       <RealScoutAdvancedSearch />

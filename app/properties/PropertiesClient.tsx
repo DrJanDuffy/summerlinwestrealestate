@@ -1,12 +1,15 @@
 'use client';
+import dynamic from 'next/dynamic';
 // import Image from 'next/image';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import styles from './Properties.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
 
 // Import RealScout components
 const RealScoutOfficeListings = dynamic(
@@ -34,30 +37,24 @@ const RealScoutAdvancedSearchWidget = dynamic(
 );
 
 // Import SEO Optimizer
-const RealScoutSEOOptimizer = dynamic(
-  () => import('../../components/ui/RealScoutSEOOptimizer'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+const RealScoutSEOOptimizer = dynamic(() => import('../../components/ui/RealScoutSEOOptimizer'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 // Import additional RealScout components
-const RealScoutLeadCapture = dynamic(
-  () => import('../../components/ui/RealScoutLeadCapture'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutLeadCapture'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 const RealScoutPropertyValuation = dynamic(
   () => import('../../components/ui/RealScoutPropertyValuation'),
@@ -89,8 +86,9 @@ export default function PropertiesClient() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Current Luxury Properties in Summerlin West</h2>
           <p className={styles.sectionSubtitle}>
-            Discover real-time listings from the MLS. From contemporary estates to traditional masterpieces, 
-            find your perfect home in Summerlin West with up-to-date inventory and pricing.
+            Discover real-time listings from the MLS. From contemporary estates to traditional
+            masterpieces, find your perfect home in Summerlin West with up-to-date inventory and
+            pricing.
           </p>
 
           <RealScoutOfficeListings />
@@ -214,20 +212,21 @@ export default function PropertiesClient() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>All Summerlin West Properties</h2>
           <p className={styles.sectionSubtitle}>
-            Browse our complete inventory of Summerlin West properties. From entry-level homes to luxury estates, 
-            find the perfect property that matches your budget and lifestyle requirements.
+            Browse our complete inventory of Summerlin West properties. From entry-level homes to
+            luxury estates, find the perfect property that matches your budget and lifestyle
+            requirements.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="3000000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="400000"
+            priceMax="3000000"
+            maxListings={12}
+            className="mt-6"
+          />
         </div>
       </section>
 
@@ -236,7 +235,7 @@ export default function PropertiesClient() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Advanced Property Search</h2>
           <p className={styles.sectionSubtitle}>
-            Use our comprehensive search tool to find properties that match your specific criteria. 
+            Use our comprehensive search tool to find properties that match your specific criteria.
             Filter by price, location, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
@@ -249,8 +248,8 @@ export default function PropertiesClient() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Quick Property Search</h2>
           <p className={styles.sectionSubtitle}>
-            Start your property search with our simple, user-friendly search tool. 
-            Perfect for quick browsing of available properties in Summerlin West.
+            Start your property search with our simple, user-friendly search tool. Perfect for quick
+            browsing of available properties in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -262,20 +261,21 @@ export default function PropertiesClient() {
         <div className={styles.sectionContainer}>
           <h2 className={styles.sectionTitle}>Broader Market Options in Summerlin West</h2>
           <p className={styles.sectionSubtitle}>
-            Explore additional residential properties across Summerlin West communities. 
-            From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
+            Explore additional residential properties across Summerlin West communities. From
+            entry-level homes to luxury estates, discover all available options in this premier
+            master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="400000"
+            priceMax="2000000"
+            maxListings={12}
+            className="mt-6"
+          />
         </div>
       </section>
     </div>

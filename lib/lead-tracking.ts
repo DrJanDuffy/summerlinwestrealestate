@@ -4,7 +4,14 @@
  */
 
 export interface LeadEvent {
-  event_type: 'form_submission' | 'phone_click' | 'email_click' | 'property_inquiry' | 'market_report_request' | 'valuation_request' | 'consultation_request';
+  event_type:
+    | 'form_submission'
+    | 'phone_click'
+    | 'email_click'
+    | 'property_inquiry'
+    | 'market_report_request'
+    | 'valuation_request'
+    | 'consultation_request';
   lead_source: 'organic' | 'paid' | 'social' | 'referral' | 'direct' | 'email';
   lead_type: 'buyer' | 'seller' | 'investor' | 'unknown';
   property_type?: 'single_family' | 'condo' | 'townhome' | 'luxury' | 'investment';
@@ -26,7 +33,13 @@ export interface LeadEvent {
 
 export interface ConversionGoal {
   name: string;
-  type: 'lead_form' | 'phone_call' | 'email_contact' | 'property_inquiry' | 'market_report' | 'home_valuation';
+  type:
+    | 'lead_form'
+    | 'phone_call'
+    | 'email_contact'
+    | 'property_inquiry'
+    | 'market_report'
+    | 'home_valuation';
   value: number;
   currency: 'USD';
   conversion_window: number; // days
@@ -113,7 +126,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
       agent_name: 'Dr. Jan Duffy',
       market_area: 'Summerlin West',
       conversion_value: getConversionValue(fullEvent.event_type),
-      currency: 'USD'
+      currency: 'USD',
     });
   }
 
@@ -130,7 +143,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
       page_location: fullEvent.page_url,
       business_type: 'real_estate',
       agent_name: 'Dr. Jan Duffy',
-      market_area: 'Summerlin West'
+      market_area: 'Summerlin West',
     });
 
     // Custom event for detailed tracking
@@ -149,7 +162,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
       utm_campaign: fullEvent.utm_campaign,
       business_type: 'real_estate',
       agent_name: 'Dr. Jan Duffy',
-      market_area: 'Summerlin West'
+      market_area: 'Summerlin West',
     });
   }
 
@@ -197,7 +210,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
  * Get conversion value based on event type
  */
 function getConversionValue(eventType: string): number {
-  const goal = conversionGoals.find(g => g.type === eventType);
+  const goal = conversionGoals.find((g) => g.type === eventType);
   return goal ? goal.value : 100; // Default value
 }
 
@@ -305,7 +318,9 @@ export function trackConsultationRequest(consultationType: string, leadData: Rec
 /**
  * Determine lead type from form data
  */
-function determineLeadType(formData: Record<string, any>): 'buyer' | 'seller' | 'investor' | 'unknown' {
+function determineLeadType(
+  formData: Record<string, any>
+): 'buyer' | 'seller' | 'investor' | 'unknown' {
   if (formData.intent === 'buy' || formData.buying) return 'buyer';
   if (formData.intent === 'sell' || formData.selling) return 'seller';
   if (formData.intent === 'invest' || formData.investing) return 'investor';
@@ -329,15 +344,20 @@ function determineLeadSource(): 'organic' | 'paid' | 'social' | 'referral' | 'di
   }
 
   if (!referrer) return 'direct';
-  
+
   if (referrer.includes('google') || referrer.includes('bing') || referrer.includes('yahoo')) {
     return 'organic';
   }
-  
-  if (referrer.includes('facebook') || referrer.includes('instagram') || referrer.includes('linkedin') || referrer.includes('twitter')) {
+
+  if (
+    referrer.includes('facebook') ||
+    referrer.includes('instagram') ||
+    referrer.includes('linkedin') ||
+    referrer.includes('twitter')
+  ) {
     return 'social';
   }
-  
+
   return 'referral';
 }
 
@@ -357,7 +377,8 @@ export function generateLeadTrackingSchema() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Real Estate Services - Summerlin West',
-    description: 'Professional real estate services for buying, selling, and investing in Summerlin West luxury homes',
+    description:
+      'Professional real estate services for buying, selling, and investing in Summerlin West luxury homes',
     provider: {
       '@type': 'RealEstateAgent',
       name: 'Dr. Jan Duffy',
@@ -447,7 +468,7 @@ export function initializeLeadTracking() {
 
   // Set up automatic phone click tracking
   const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
-  phoneLinks.forEach(link => {
+  phoneLinks.forEach((link) => {
     link.addEventListener('click', () => {
       const phoneNumber = (link as HTMLAnchorElement).href.replace('tel:', '');
       trackPhoneClick(phoneNumber, 'phone_link_click');
@@ -456,7 +477,7 @@ export function initializeLeadTracking() {
 
   // Set up automatic email click tracking
   const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
-  emailLinks.forEach(link => {
+  emailLinks.forEach((link) => {
     link.addEventListener('click', () => {
       const email = (link as HTMLAnchorElement).href.replace('mailto:', '');
       trackEmailClick(email, 'email_link_click');

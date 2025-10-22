@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 /**
  * V0-Generated Sitemap API Route
@@ -11,7 +11,7 @@ const baseUrl = 'https://www.summerlinwestrealestate.com';
 const staticPages = [
   '',
   '/about',
-  '/properties', 
+  '/properties',
   '/communities',
   '/contact',
   '/market-reports',
@@ -38,17 +38,17 @@ const staticPages = [
   '/linear-test',
   '/realscout-test',
   '/test-tailwind',
-  '/v0-test'
+  '/v0-test',
 ];
 
 // Dynamic pages - communities
 const communities = [
   'the-vistas',
-  'stonebridge', 
+  'stonebridge',
   'redpoint',
   'reverence',
   'the-cliffs',
-  'red-rock'
+  'red-rock',
 ];
 
 // Dynamic pages - subdivisions
@@ -58,7 +58,7 @@ const subdivisions = [
   'serenity',
   'vista-ridge',
   'sunset-hills',
-  'mountain-view'
+  'mountain-view',
 ];
 
 // Blog posts (would be dynamic in real implementation)
@@ -66,7 +66,7 @@ const blogPosts = [
   'summerlin-west-market-update-2024',
   'luxury-homes-the-vistas-guide',
   'red-rock-canyon-living',
-  'summerlin-west-schools-guide'
+  'summerlin-west-schools-guide',
 ];
 
 interface SitemapUrl {
@@ -78,82 +78,86 @@ interface SitemapUrl {
 
 function generateSitemap() {
   const urls: SitemapUrl[] = [];
-  
+
   // Add static pages
-  staticPages.forEach(page => {
+  staticPages.forEach((page) => {
     urls.push({
       loc: `${baseUrl}${page}`,
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: page === '' ? 'daily' : 'weekly',
-      priority: page === '' ? '1.0' : '0.8'
+      priority: page === '' ? '1.0' : '0.8',
     });
   });
-  
+
   // Add community pages
-  communities.forEach(community => {
+  communities.forEach((community) => {
     urls.push({
       loc: `${baseUrl}/communities/${community}`,
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'weekly',
-      priority: '0.9'
+      priority: '0.9',
     });
   });
-  
+
   // Add subdivision pages
-  subdivisions.forEach(subdivision => {
+  subdivisions.forEach((subdivision) => {
     urls.push({
       loc: `${baseUrl}/service-area/${subdivision}`,
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'weekly',
-      priority: '0.9'
+      priority: '0.9',
     });
   });
-  
+
   // Add blog posts
-  blogPosts.forEach(post => {
+  blogPosts.forEach((post) => {
     urls.push({
       loc: `${baseUrl}/blog/${post}`,
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'monthly',
-      priority: '0.7'
+      priority: '0.7',
     });
   });
-  
+
   // Generate XML
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(url => `  <url>
+${urls
+  .map(
+    (url) => `  <url>
     <loc>${url.loc}</loc>
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
-  </url>`).join('\n')}
+  </url>`
+  )
+  .join('\n')}
 </urlset>`;
-  
+
   return sitemap;
 }
 
 export async function GET(_request: NextRequest) {
   try {
     const sitemap = generateSitemap();
-    
+
     return new NextResponse(sitemap, {
       status: 200,
       headers: {
         'Content-Type': 'application/xml',
         'Cache-Control': 'public, max-age=3600, s-maxage=3600',
-        'X-Cache-Bust': 'v1'
-      }
+        'X-Cache-Bust': 'v1',
+      },
     });
   } catch (error) {
     console.error('Sitemap generation error:', error);
-    
+
     return new NextResponse('Error generating sitemap', {
       status: 500,
       headers: {
         'Content-Type': 'text/plain',
-        'Cache-Control': 'no-cache'
-      }
+        'Cache-Control': 'no-cache',
+      },
     });
   }
 }

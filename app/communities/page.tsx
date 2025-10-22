@@ -1,15 +1,17 @@
 'use client';
+import dynamicImport from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import InternalLinking from '../../components/ui/InternalLinking';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
-import InternalLinking from '../../components/ui/InternalLinking';
 import styles from '../page.module.css';
-import dynamicImport from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(() => import('../../components/ui/RealScoutOfficeListingsWrapper'));
+const RealScoutOfficeListingsWrapper = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper')
+);
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
@@ -25,7 +27,8 @@ export default function Communities() {
       maxPrice: 2500000,
       features: ['Mountain Views', 'Luxury Homes', 'Gated Community', 'Golf Course'],
       homeTypes: 'Single Family, Custom Estates',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'the-vistas',
       highlighted: true,
       yearBuilt: '2018-Present',
@@ -41,7 +44,8 @@ export default function Communities() {
       maxPrice: 1500000,
       features: ['Top Schools', 'Family-Friendly', 'Parks Nearby', 'Community Pool'],
       homeTypes: 'Single Family, Townhomes',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'the-paseos',
       highlighted: true,
       yearBuilt: '2019-Present',
@@ -57,7 +61,8 @@ export default function Communities() {
       maxPrice: 1200000,
       features: ['Resort Amenities', 'New Construction', 'Walking Trails', 'Fitness Center'],
       homeTypes: 'Single Family, Patio Homes',
-      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'stonebridge',
       highlighted: true,
       yearBuilt: '2020-Present',
@@ -73,7 +78,8 @@ export default function Communities() {
       maxPrice: 1800000,
       features: ['New Construction', 'Contemporary', 'Builder Incentives', 'Smart Homes'],
       homeTypes: 'Single Family, Modern Design',
-      image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'redpoint',
       highlighted: false,
       yearBuilt: '2021-Present',
@@ -89,7 +95,8 @@ export default function Communities() {
       maxPrice: 1100000,
       features: ['Urban Style', 'Walkable', 'Downtown Access', 'Transit Friendly'],
       homeTypes: 'Condos, Townhomes, Lofts',
-      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'redpoint-square',
       highlighted: false,
       yearBuilt: '2020-Present',
@@ -105,7 +112,8 @@ export default function Communities() {
       maxPrice: 3000000,
       features: ['Luxury Estates', 'Privacy', 'Elegant Design', 'City Views'],
       homeTypes: 'Custom Estates, Luxury Homes',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
+      image:
+        'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80',
       slug: 'reverence',
       highlighted: true,
       yearBuilt: '2017-Present',
@@ -529,31 +537,35 @@ export default function Communities() {
         </section>
 
         {/* Community-Specific Properties */}
-        <section className={styles.sectionCard} aria-label="Properties in Summerlin West Communities">
+        <section
+          className={styles.sectionCard}
+          aria-label="Properties in Summerlin West Communities"
+        >
           <h2 className={styles.centerTitle}>Properties in Summerlin West Communities</h2>
           <p className={styles.heroSubtitle}>
-            Discover homes available in The Vistas, Stonebridge, Redpoint, and other premier Summerlin West communities. 
-            Each community offers unique amenities, lifestyle options, and investment opportunities.
+            Discover homes available in The Vistas, Stonebridge, Redpoint, and other premier
+            Summerlin West communities. Each community offers unique amenities, lifestyle options,
+            and investment opportunities.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="550000" 
-              priceMax="1800000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="550000"
+            priceMax="1800000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
 
         {/* Advanced Property Search */}
         <section className={styles.sectionCard} aria-label="Advanced Property Search">
           <h2 className={styles.centerTitle}>Advanced Property Search</h2>
           <p className={styles.heroSubtitle}>
-            Use our advanced search tool to find properties in your preferred Summerlin West community. 
-            Filter by price, location, features, and more to discover your perfect home.
+            Use our advanced search tool to find properties in your preferred Summerlin West
+            community. Filter by price, location, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
@@ -563,8 +575,8 @@ export default function Communities() {
         <section className={styles.sectionCard} aria-label="Quick Property Search">
           <h2 className={styles.centerTitle}>Quick Property Search</h2>
           <p className={styles.heroSubtitle}>
-            Browse available properties with our simple search tool. 
-            Perfect for quick property browsing while exploring Summerlin West communities.
+            Browse available properties with our simple search tool. Perfect for quick property
+            browsing while exploring Summerlin West communities.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -572,22 +584,25 @@ export default function Communities() {
 
         {/* Additional Property Search Options */}
         <section className={styles.sectionCard} aria-label="Additional Property Search">
-          <h2 className={styles.centerTitle}>Broader Market Options in Summerlin West Communities</h2>
+          <h2 className={styles.centerTitle}>
+            Broader Market Options in Summerlin West Communities
+          </h2>
           <p className={styles.heroSubtitle}>
-            Explore a comprehensive range of residential properties across all Summerlin West communities. 
-            From entry-level homes to luxury estates, discover all available options in this premier master-planned community.
+            Explore a comprehensive range of residential properties across all Summerlin West
+            communities. From entry-level homes to luxury estates, discover all available options in
+            this premier master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="400000" 
-              priceMax="2000000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="400000"
+            priceMax="2000000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
 
         {/* Internal Linking Section for SEO */}

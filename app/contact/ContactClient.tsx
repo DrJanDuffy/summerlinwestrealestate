@@ -1,6 +1,6 @@
 'use client';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import {
   FaChevronDown,
   FaEnvelope,
@@ -12,49 +12,44 @@ import {
 } from 'react-icons/fa';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 
-const RealScoutOfficeListingsWrapper = dynamic(() => import('../../components/ui/RealScoutOfficeListingsWrapper'), {
-  ssr: false,
-});
+const RealScoutOfficeListingsWrapper = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+  {
+    ssr: false,
+  }
+);
+
 // import LeadCaptureFormClient from '../../components/ui/LeadCaptureFormClient';
 import styles from './contact.module.css';
 
 // Import RealScout components
-const RealScoutLeadCapture = dynamic(
-  () => import('../../components/ui/RealScoutWidgetEnhanced'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+const RealScoutLeadCapture = dynamic(() => import('../../components/ui/RealScoutWidgetEnhanced'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
-const RealScoutHomeValue = dynamic(
-  () => import('../../components/ui/RealScoutHomeValue'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+const RealScoutHomeValue = dynamic(() => import('../../components/ui/RealScoutHomeValue'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 // Import SEO Optimizer
-const RealScoutSEOOptimizer = dynamic(
-  () => import('../../components/ui/RealScoutSEOOptimizer'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+const RealScoutSEOOptimizer = dynamic(() => import('../../components/ui/RealScoutSEOOptimizer'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex items-center justify-center p-8">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+});
 
 // Import additional RealScout components
 const RealScoutPropertyValuation = dynamic(
@@ -178,7 +173,7 @@ export default function ContactClient() {
                 showLeadCapture={true}
               />
             </div>
-            
+
             <div className={styles.widgetSection}>
               <h3 className={styles.widgetTitle}>Quick Property Search</h3>
               <RealScoutAdvancedSearch
@@ -310,12 +305,11 @@ export default function ContactClient() {
 
         {/* SEO Optimized RealScout Widgets */}
         <section className={styles.sectionCard} aria-label="Complete Real Estate Solutions">
-          <h2 className={styles.sectionTitle}>
-            Complete Real Estate Solutions
-          </h2>
+          <h2 className={styles.sectionTitle}>Complete Real Estate Solutions</h2>
           <p className={styles.heroSubtitle}>
-            Access all of Dr. Jan Duffy's real estate tools and services in one place. 
-            From property search to market analysis, we provide comprehensive solutions for all your real estate needs.
+            Access all of Dr. Jan Duffy's real estate tools and services in one place. From property
+            search to market analysis, we provide comprehensive solutions for all your real estate
+            needs.
           </p>
           <RealScoutSEOOptimizer
             pageType="contact"
@@ -327,34 +321,30 @@ export default function ContactClient() {
 
         {/* Entry-Level Properties */}
         <section className={styles.sectionCard} aria-label="Entry-Level Properties">
-          <h2 className={styles.sectionTitle}>
-            Entry-Level Properties in Summerlin West
-          </h2>
+          <h2 className={styles.sectionTitle}>Entry-Level Properties in Summerlin West</h2>
           <p className={styles.heroSubtitle}>
-            Discover affordable entry-level properties in Summerlin West. Perfect for first-time homebuyers 
-            or those looking to enter the Summerlin West market. These properties offer excellent value 
-            and investment potential.
+            Discover affordable entry-level properties in Summerlin West. Perfect for first-time
+            homebuyers or those looking to enter the Summerlin West market. These properties offer
+            excellent value and investment potential.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER" 
-              priceMin="500000" 
-              priceMax="800000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
+            priceMin="500000"
+            priceMax="800000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
 
         {/* Advanced Property Search */}
         <section className={styles.sectionCard} aria-label="Advanced Property Search">
-          <h2 className={styles.sectionTitle}>
-            Advanced Property Search
-          </h2>
+          <h2 className={styles.sectionTitle}>Advanced Property Search</h2>
           <p className={styles.heroSubtitle}>
-            Start your property search directly from our contact page. Use our advanced search tool 
+            Start your property search directly from our contact page. Use our advanced search tool
             to find homes that match your specific criteria in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
@@ -363,12 +353,10 @@ export default function ContactClient() {
 
         {/* Simple Property Search */}
         <section className={styles.sectionCard} aria-label="Quick Property Search">
-          <h2 className={styles.sectionTitle}>
-            Quick Property Search
-          </h2>
+          <h2 className={styles.sectionTitle}>Quick Property Search</h2>
           <p className={styles.heroSubtitle}>
-            Browse available properties with our simple search tool. 
-            Perfect for quick property browsing while you're on our contact page.
+            Browse available properties with our simple search tool. Perfect for quick property
+            browsing while you're on our contact page.
           </p>
           {/* @ts-ignore - RealScout web component */}
           <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
@@ -376,24 +364,22 @@ export default function ContactClient() {
 
         {/* Office Listings Widget */}
         <section className={styles.sectionCard} aria-label="Office Listings">
-          <h2 className={styles.sectionTitle}>
-            Office Properties in Summerlin West
-          </h2>
+          <h2 className={styles.sectionTitle}>Office Properties in Summerlin West</h2>
           <p className={styles.heroSubtitle}>
-            Explore office properties and commercial real estate opportunities in Summerlin West. 
+            Explore office properties and commercial real estate opportunities in Summerlin West.
             Perfect for businesses looking to establish or relocate their operations.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper 
-              agentEncodedId="QWdlbnQtMjI1MDUw" 
-              sortOrder="PRICE_LOW" 
-              listingStatus="For Sale" 
-              propertyTypes=",SFR,OTHER" 
-              priceMin="500000" 
-              priceMax="600000"
-              maxListings={12}
-              className="mt-6"
-            />
+          <RealScoutOfficeListingsWrapper
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="PRICE_LOW"
+            listingStatus="For Sale"
+            propertyTypes=",SFR,OTHER"
+            priceMin="500000"
+            priceMax="600000"
+            maxListings={12}
+            className="mt-6"
+          />
         </section>
       </main>
     </div>

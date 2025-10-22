@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Red Rock Canyon homes',
     'Berkshire Hathaway HomeServices',
     'luxury real estate expert',
-    'Las Vegas REALTOR®'
+    'Las Vegas REALTOR®',
   ],
   alternates: {
     canonical: '/team',

@@ -3,7 +3,8 @@ import ServiceAreaClient from './page';
 
 export const metadata: Metadata = {
   title: 'The Vistas Service Area | Summerlin West Luxury Communities | Dr. Jan Duffy Real Estate',
-  description: 'Explore all 26 subdivisions in The Vistas village of Summerlin West, Las Vegas. Gated luxury communities, family neighborhoods, and premium homes by top builders. Red Rock Canyon views and world-class amenities.',
+  description:
+    'Explore all 26 subdivisions in The Vistas village of Summerlin West, Las Vegas. Gated luxury communities, family neighborhoods, and premium homes by top builders. Red Rock Canyon views and world-class amenities.',
   keywords: [
     'The Vistas',
     'Summerlin West',
@@ -27,11 +28,12 @@ export const metadata: Metadata = {
     'Portofino',
     'Hillstone',
     'Capri',
-    'Dr. Jan Duffy'
+    'Dr. Jan Duffy',
   ],
   openGraph: {
     title: 'The Vistas Service Area | Summerlin West Luxury Communities',
-    description: 'Discover all 26 exclusive subdivisions in The Vistas village of Summerlin West, Las Vegas. From gated luxury communities to family-friendly neighborhoods.',
+    description:
+      'Discover all 26 exclusive subdivisions in The Vistas village of Summerlin West, Las Vegas. From gated luxury communities to family-friendly neighborhoods.',
     url: 'https://www.summerlinwestrealestate.com/service-area',
     siteName: 'Summerlin West Real Estate',
     images: [

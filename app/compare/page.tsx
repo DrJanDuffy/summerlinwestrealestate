@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'luxury real estate comparison',
     'Dr. Jan Duffy home comparison',
     'Summerlin West communities',
-    'Las Vegas luxury home comparison'
+    'Las Vegas luxury home comparison',
   ],
   alternates: {
     canonical: '/compare',
@@ -114,7 +114,13 @@ export default function Compare() {
           {[1, 2, 3].map((i) => (
             <article key={i} className={styles.comparisonCard}>
               <Image
-                src={i === 1 ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : i === 2 ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80' : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'}
+                src={
+                  i === 1
+                    ? 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                    : i === 2
+                      ? 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                      : 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&h=600&fit=crop&crop=entropy&auto=format&q=80'
+                }
                 alt={`Compare Summerlin home ${i}`}
                 width={400}
                 height={220}

@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact Dr. Jan Duffy | Top Summerlin West Real Estate Expert | Call (702) 550-0112',
-  description: 'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes, market insights, and expert guidance. Call (702) 550-0112 today!',
+  description:
+    'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes, market insights, and expert guidance. Call (702) 550-0112 today!',
   keywords: [
     'contact Dr. Jan Duffy',
     'Summerlin West real estate expert',
@@ -13,14 +14,15 @@ export const metadata: Metadata = {
     'real estate consultation',
     'luxury home buying help',
     'Summerlin West market insights',
-    'real estate team contact'
+    'real estate team contact',
   ],
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'Contact Dr. Jan Duffy | Top Summerlin West Real Estate Expert | Call (702) 550-0112',
-    description: 'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes, market insights, and expert guidance.',
+    description:
+      'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes, market insights, and expert guidance.',
     url: 'https://www.summerlinwestrealestate.com/contact',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -37,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Dr. Jan Duffy | Top Summerlin West Real Estate Expert',
-    description: 'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes.',
+    description:
+      'Contact Dr. Jan Duffy, top Summerlin West real estate expert with $6B+ in sales! Get personalized help with luxury homes.',
     images: ['/images/og-image.svg'],
   },
   robots: {

@@ -9,9 +9,7 @@ export default function SimpleHomeTest() {
       <header className="bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="text-2xl font-bold text-gray-900">
-              Summerlin West Real Estate
-            </div>
+            <div className="text-2xl font-bold text-gray-900">Summerlin West Real Estate</div>
             <nav className="space-x-6">
               <Link href="/" className="text-blue-600 hover:text-blue-800 font-medium">
                 Home
@@ -27,13 +25,11 @@ export default function SimpleHomeTest() {
       {/* Test Hero Section */}
       <main className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Find Your Dream Home
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Find Your Dream Home</h1>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
             Discover luxury living in Summerlin West with Dr. Jan Duffy, REALTOR®
           </p>
-          
+
           {/* Test Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white p-6 rounded-lg shadow-xl">
@@ -52,10 +48,16 @@ export default function SimpleHomeTest() {
 
           {/* Test Buttons */}
           <div className="mt-12 space-x-4">
-            <button type="button" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+            <button
+              type="button"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            >
               Search Properties
             </button>
-            <button type="button" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            <button
+              type="button"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+            >
               Get Market Report
             </button>
           </div>
@@ -65,9 +67,7 @@ export default function SimpleHomeTest() {
       {/* Test Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-400">
-            Dr. Jan Duffy REALTOR® | Summerlin West Real Estate
-          </p>
+          <p className="text-gray-400">Dr. Jan Duffy REALTOR® | Summerlin West Real Estate</p>
         </div>
       </footer>
     </div>
