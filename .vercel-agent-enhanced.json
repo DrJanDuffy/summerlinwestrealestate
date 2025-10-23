@@ -1,0 +1,122 @@
+{
+  "vercelAgent": {
+    "enabled": true,
+    "rules": {
+      "realEstate": {
+        "enabled": true,
+        "rules": [
+          "Validate RealScout API integrations and prop types",
+          "Check lead tracking implementations and event types",
+          "Verify SEO metadata completeness and structured data",
+          "Ensure property data validation and MLS integration",
+          "Monitor performance optimizations for Core Web Vitals",
+          "Validate cron job security and authentication",
+          "Check fair housing compliance in content",
+          "Ensure mobile-first responsive design",
+          "Validate hyperlocal SEO implementation",
+          "Check Google My Business integration"
+        ]
+      },
+      "typescript": {
+        "enabled": true,
+        "strict": true,
+        "rules": [
+          "Enforce proper interface usage and prop types",
+          "Validate RealScout component prop types (string vs number)",
+          "Check for unused variables and imports",
+          "Ensure proper error handling and try-catch blocks",
+          "Validate Next.js 15 compatibility",
+          "Check for proper type imports (type NextRequest)",
+          "Ensure proper return types for API routes",
+          "Validate component prop interfaces"
+        ]
+      },
+      "security": {
+        "enabled": true,
+        "rules": [
+          "Validate cron job security with CRON_SECRET",
+          "Check API endpoint authentication",
+          "Verify environment variable usage and protection",
+          "Ensure proper input validation and sanitization",
+          "Check for XSS vulnerabilities in dangerouslySetInnerHTML",
+          "Validate CORS and security headers",
+          "Ensure proper error message handling",
+          "Check for sensitive data exposure"
+        ]
+      },
+      "performance": {
+        "enabled": true,
+        "rules": [
+          "Optimize image loading with Next.js Image component",
+          "Check bundle size and code splitting",
+          "Validate Core Web Vitals (LCP < 2.5s, CLS < 0.1, FID < 100ms)",
+          "Monitor API response times and caching",
+          "Check for unnecessary re-renders",
+          "Validate lazy loading implementation",
+          "Ensure proper memoization usage",
+          "Check for memory leaks in useEffect"
+        ]
+      },
+      "seo": {
+        "enabled": true,
+        "rules": [
+          "Validate metadata completeness (title, description, canonical)",
+          "Check structured data implementation (JSON-LD)",
+          "Ensure proper Open Graph and Twitter cards",
+          "Validate sitemap generation and robots.txt",
+          "Check for duplicate content issues",
+          "Ensure proper internal linking strategy",
+          "Validate hyperlocal keyword implementation",
+          "Check for proper alt text on images"
+        ]
+      },
+      "accessibility": {
+        "enabled": true,
+        "rules": [
+          "Check for proper ARIA labels and roles",
+          "Validate semantic HTML usage",
+          "Ensure proper heading hierarchy (h1, h2, h3)",
+          "Check for proper form labels and validation",
+          "Validate keyboard navigation support",
+          "Ensure proper color contrast ratios",
+          "Check for screen reader compatibility",
+          "Validate focus management"
+        ]
+      }
+    },
+    "exclude": [
+      "node_modules/**",
+      ".next/**",
+      "public/**",
+      "*.log",
+      "vercel-audit-report.json",
+      "vercel-optimization-report.json"
+    ],
+    "include": [
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      "components/**/*.ts",
+      "components/**/*.tsx",
+      "lib/**/*.ts",
+      "types/**/*.ts",
+      "hooks/**/*.ts"
+    ],
+    "customRules": {
+      "realScoutProps": {
+        "description": "Validate RealScout component prop types",
+        "pattern": "RealScout(OfficeListings|Widget|AdvancedSearch|Listings)",
+        "check": "priceMin and priceMax should be strings for OfficeListings, numbers for others"
+      },
+      "leadTracking": {
+        "description": "Validate lead tracking event types",
+        "pattern": "trackLeadEvent",
+        "check": "event_type must be valid enum value from LeadEvent interface"
+      },
+      "cronSecurity": {
+        "description": "Validate cron job security",
+        "pattern": "CRON_SECRET",
+        "check": "Must use Bearer token authentication"
+      }
+    }
+  }
+}
