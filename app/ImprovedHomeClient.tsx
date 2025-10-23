@@ -7,36 +7,9 @@ import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
-// Dynamically import components for performance
-const RealScoutAdvancedSearch = dynamic(
-  () => import('../components/ui/RealScoutAdvancedSearchWidget'),
-  {
-    ssr: false,
-  }
-);
-const RealScoutSimpleSearch = dynamic(() => import('../components/ui/RealScoutSimpleSearch'), {
-  ssr: false,
-});
-const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWidgetEnhanced'), {
-  ssr: false,
-});
-// const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
-//   ssr: false,
-// });
-const _RealScoutFeaturedListingsClean = dynamic(
-  () => import('../components/ui/RealScoutFeaturedListingsClean'),
-  {
-    ssr: false,
-  }
-);
+// Dynamically import RealScout office widget
 const RealScoutOfficeWidget = dynamic(
   () => import('../components/ui/RealScoutOfficeWidget'),
-  {
-    ssr: false,
-  }
-);
-const RealScoutConfigurationTester = dynamic(
-  () => import('../components/ui/RealScoutConfigurationTester'),
   {
     ssr: false,
   }
@@ -396,10 +369,6 @@ export default function ImprovedHomeClient() {
                />
              </div>
           
-          {/* Configuration Testing */}
-          <div className="mt-8">
-            <RealScoutConfigurationTester />
-          </div>
         </div>
       </section>
 
