@@ -29,8 +29,8 @@ const RealScoutFeaturedListingsClean = dynamic(
     ssr: false,
   }
 );
-const RealScoutProxy = dynamic(
-  () => import('../components/ui/RealScoutProxy'),
+const RealScoutOfficeWidget = dynamic(
+  () => import('../components/ui/RealScoutOfficeWidget'),
   {
     ssr: false,
   }
@@ -41,15 +41,6 @@ const RealScoutConfigurationTester = dynamic(
     ssr: false,
   }
 );
-const RealScoutOfficeListingsClean = dynamic(
-  () => import('../components/ui/RealScoutOfficeListingsClean'),
-  {
-    ssr: false,
-  }
-);
-const RealScoutHomeValue = dynamic(() => import('../components/ui/RealScoutHomeValue'), {
-  ssr: false,
-});
 // const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
 //   ssr: false,
 // });
@@ -393,16 +384,17 @@ export default function ImprovedHomeClient() {
             ]}
           />
 
-          {/* Featured Listings from MLS - CORS-Free Implementation */}
-          <div className="mt-16">
-            <RealScoutProxy 
-              officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
-              agentId="QWdlbnQtMjI1MDUw"
-              priceMin="500000"
-              priceMax="2000000"
-              propertyTypes="SFR"
-            />
-          </div>
+             {/* Featured Listings from MLS - RealScout Office Widget */}
+             <div className="mt-16">
+               <RealScoutOfficeWidget 
+                 agentEncodedId="QWdlbnQtMjI1MDUw"
+                 sortOrder="NEWEST"
+                 listingStatus="For Sale"
+                 propertyTypes=",SFR"
+                 priceMin="500000"
+                 priceMax="600000"
+               />
+             </div>
           
           {/* Configuration Testing */}
           <div className="mt-8">
@@ -465,13 +457,14 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-          <RealScoutProxy 
-            officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
-            agentId="QWdlbnQtMjI1MDUw"
-            priceMin="500000"
-            priceMax="2000000"
-            propertyTypes="SFR"
-          />
+             <RealScoutOfficeWidget 
+               agentEncodedId="QWdlbnQtMjI1MDUw"
+               sortOrder="NEWEST"
+               listingStatus="For Sale"
+               propertyTypes=",SFR"
+               priceMin="500000"
+               priceMax="600000"
+             />
         </div>
       </section>
 
