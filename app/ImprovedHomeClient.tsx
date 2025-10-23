@@ -23,17 +23,14 @@ const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWid
 // const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
 //   ssr: false,
 // });
-const RealScoutOfficeListings = dynamic(() => import('../components/ui/RealScoutOfficeListings'), {
-  ssr: false,
-});
-const RealScoutFeaturedListings = dynamic(
-  () => import('../components/ui/RealScoutFeaturedListings'),
+const RealScoutFeaturedListingsClean = dynamic(
+  () => import('../components/ui/RealScoutFeaturedListingsClean'),
   {
     ssr: false,
   }
 );
-const RealScoutExactPattern = dynamic(
-  () => import('../components/ui/RealScoutExactPattern'),
+const RealScoutOfficeListingsClean = dynamic(
+  () => import('../components/ui/RealScoutOfficeListingsClean'),
   {
     ssr: false,
   }
@@ -386,13 +383,11 @@ export default function ImprovedHomeClient() {
 
           {/* Featured Listings from MLS */}
           <div className="mt-16">
-            <RealScoutExactPattern 
+            <RealScoutFeaturedListingsClean 
               agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="NEWEST"
               listingStatus="For Sale"
               propertyTypes="SFR"
-              priceMin="500000"
-              priceMax="2000000"
             />
           </div>
           
@@ -462,7 +457,14 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-          <RealScoutOfficeListings />
+          <RealScoutOfficeListingsClean 
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale"
+            propertyTypes="SFR"
+            priceMin="500000"
+            priceMax="2000000"
+          />
         </div>
       </section>
 

@@ -175,19 +175,18 @@ export default function RealScoutComprehensiveDebugger() {
             </button>
             <button
               onClick={() => {
-                // Force reload RealScout script
+                // Check script status without reloading
                 const existingScript = document.querySelector('script[src*="realscout-web-components"]');
                 if (existingScript) {
-                  existingScript.remove();
+                  console.log('RealScout script found:', existingScript);
+                  alert('RealScout script is already loaded. Check console for details.');
+                } else {
+                  alert('RealScout script not found. Check layout.tsx for script loading.');
                 }
-                const script = document.createElement('script');
-                script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-                script.type = 'module';
-                document.head.appendChild(script);
               }}
               className="px-3 py-1 bg-green-600 text-white rounded text-xs hover:bg-green-700"
             >
-              Reload Script
+              Check Script Status
             </button>
             <button
               onClick={() => {

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import RealScoutScriptLoader from './RealScoutScriptLoader';
 import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 interface RealScoutFeaturedListingsProps {
