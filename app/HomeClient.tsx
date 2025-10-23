@@ -441,7 +441,6 @@ export default function HomeClient() {
               propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
               priceMin={800000}
               priceMax={2000000}
-              maxListings={12}
               className="mt-6"
             />
           </section>
