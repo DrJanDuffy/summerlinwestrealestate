@@ -162,6 +162,13 @@ export default function RealScoutOfficeListings({
       className={`realscout-office-listings-container ${className}`}
     >
       {/* RealScout Office Listings Web Component - Primary Lead Generator */}
+      <style jsx>{`
+        realscout-office-listings {
+          --rs-listing-divider-color: #0e64c8;
+          width: 100%;
+        }
+      `}</style>
+      
       {/* @ts-ignore - RealScout web component */}
       <realscout-office-listings
         agent-encoded-id={agentEncodedId}

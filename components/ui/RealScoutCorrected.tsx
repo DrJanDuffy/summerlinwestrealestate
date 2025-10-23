@@ -2,52 +2,74 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import RealScoutScriptLoader from './RealScoutScriptLoader';
-import { waitForRealScoutElements } from '../../lib/realscout-config';
 
-interface RealScoutFeaturedListingsProps {
+interface RealScoutCorrectedProps {
   agentEncodedId?: string;
   sortOrder?: string;
   listingStatus?: string;
   propertyTypes?: string;
+  priceMin?: string;
+  priceMax?: string;
   className?: string;
 }
 
-export default function RealScoutFeaturedListings({
-  agentEncodedId = 'QWdlbnQtMjI1MDUw', // Dr. Jan Duffy's Agent ID
-  sortOrder = 'STATUS_AND_SIGNIFICANT_CHANGE',
+export default function RealScoutCorrected({
+  agentEncodedId = 'QWdlbnQtMjI1MDUw',
+  sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
-  propertyTypes = 'SFR,MF,TC,LAL',
+  propertyTypes = 'SFR',
+  priceMin = '500000',
+  priceMax = '2000000',
   className = '',
-}: RealScoutFeaturedListingsProps) {
+}: RealScoutCorrectedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  const [scriptStatus, setScriptStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   useEffect(() => {
-    const checkRealScout = async () => {
+    const checkRealScout = () => {
       try {
-        // Wait for custom elements to be defined
-        const loaded = await waitForRealScoutElements(15000); // 15 second timeout
-        console.log('RealScout elements loaded:', loaded);
+        // Check if script is loaded
+        const scriptLoaded = typeof window !== 'undefined' && 
+          !!document.querySelector('script[src*="realscout-web-components"]');
         
-        setIsLoaded(loaded);
-        if (!loaded) {
+        if (!scriptLoaded) {
+          console.log('RealScout script not loaded');
           setHasError(true);
+          return;
+        }
+
+        // Check if custom elements are available
+        const customElementsAvailable = typeof window !== 'undefined' && 
+          !!customElements.get('realscout-office-listings');
+        
+        if (customElementsAvailable) {
+          setIsLoaded(true);
+          setHasError(false);
+        } else {
+          // Wait a bit more for custom elements to load
+          setTimeout(() => {
+            const elementsAvailable = typeof window !== 'undefined' && 
+              !!customElements.get('realscout-office-listings');
+            setIsLoaded(elementsAvailable);
+            if (!elementsAvailable) {
+              setHasError(true);
+            }
+          }, 2000);
         }
       } catch (error) {
-        console.error('RealScout loading error:', error);
+        console.error('RealScout check error:', error);
         setHasError(true);
       }
     };
 
-    // Only check if script is loaded
-    if (scriptStatus === 'loaded') {
-      checkRealScout();
-    } else if (scriptStatus === 'error') {
-      setHasError(true);
-    }
-  }, [scriptStatus]);
+    // Check immediately
+    checkRealScout();
+    
+    // Also check after a delay
+    const timeoutId = setTimeout(checkRealScout, 3000);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   if (hasError) {
     return (
@@ -55,7 +77,7 @@ export default function RealScoutFeaturedListings({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`realscout-featured-listings-container ${className}`}
+        className={`realscout-corrected-container ${className}`}
       >
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-8">
           <div className="text-center mb-6">
@@ -124,28 +146,15 @@ export default function RealScoutFeaturedListings({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`realscout-featured-listings-container ${className}`}
+        className={`realscout-corrected-container ${className}`}
       >
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <h3 className="text-lg font-semibold text-blue-900 mb-2">
-            Loading Featured Listings
+            Loading Property Listings
           </h3>
           <p className="text-blue-700 mb-4">Preparing MLS data for Summerlin West...</p>
           <p className="text-sm text-blue-600">Powered by RealScout</p>
-          
-          {/* Enhanced Script Loader */}
-          <div className="mt-4">
-            <RealScoutScriptLoader 
-              onLoad={() => setScriptStatus('loaded')}
-              onError={() => setScriptStatus('error')}
-            />
-          </div>
-          
-          <div className="mt-4 text-xs text-gray-500">
-            <p>Debug: Script loaded: {typeof window !== 'undefined' && document.querySelector('script[src*="realscout-web-components"]') ? 'Yes' : 'No'}</p>
-            <p>Custom elements: {typeof window !== 'undefined' && customElements.get('realscout-your-listings') ? 'Available' : 'Not available'}</p>
-          </div>
         </div>
       </motion.div>
     );
@@ -156,22 +165,24 @@ export default function RealScoutFeaturedListings({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`realscout-featured-listings-container ${className}`}
+      className={`realscout-corrected-container ${className}`}
     >
-      {/* RealScout Your Listings Web Component - Featured Properties */}
+      {/* RealScout Office Listings with proper CSS styling */}
       <style jsx>{`
-        realscout-your-listings {
+        realscout-office-listings {
           --rs-listing-divider-color: #0e64c8;
           width: 100%;
         }
       `}</style>
       
       {/* @ts-ignore - RealScout web component */}
-      <realscout-your-listings
+      <realscout-office-listings
         agent-encoded-id={agentEncodedId}
         sort-order={sortOrder}
         listing-status={listingStatus}
         property-types={propertyTypes}
+        price-min={priceMin}
+        price-max={priceMax}
       />
     </motion.div>
   );

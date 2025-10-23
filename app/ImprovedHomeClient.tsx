@@ -32,8 +32,8 @@ const RealScoutFeaturedListings = dynamic(
     ssr: false,
   }
 );
-const RealScoutAgentTester = dynamic(
-  () => import('../components/ui/RealScoutAgentTester'),
+const RealScoutExactPattern = dynamic(
+  () => import('../components/ui/RealScoutExactPattern'),
   {
     ssr: false,
   }
@@ -386,7 +386,14 @@ export default function ImprovedHomeClient() {
 
           {/* Featured Listings from MLS */}
           <div className="mt-16">
-            <StaticPropertyShowcase />
+            <RealScoutExactPattern 
+              agentEncodedId="QWdlbnQtMjI1MDUw"
+              sortOrder="NEWEST"
+              listingStatus="For Sale"
+              propertyTypes="SFR"
+              priceMin="500000"
+              priceMax="2000000"
+            />
           </div>
           
           {/* Debug Information - Temporary */}
