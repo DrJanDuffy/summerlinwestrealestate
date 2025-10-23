@@ -12,8 +12,8 @@ import {
 } from 'react-icons/fa';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -328,7 +328,7 @@ export default function ContactClient() {
             excellent value and investment potential.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -370,7 +370,7 @@ export default function ContactClient() {
             Perfect for businesses looking to establish or relocate their operations.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

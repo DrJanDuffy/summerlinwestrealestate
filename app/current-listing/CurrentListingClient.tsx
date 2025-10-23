@@ -7,8 +7,8 @@ import LeadCaptureForm from '../../components/ui/LeadCaptureForm';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -221,7 +221,7 @@ export default function CurrentListingClient() {
             while viewing our featured listing.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

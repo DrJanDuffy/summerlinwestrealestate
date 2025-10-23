@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -554,7 +554,7 @@ export default function AboutClient() {
             brings to every real estate transaction.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -603,7 +603,7 @@ export default function AboutClient() {
             available options with expert guidance.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

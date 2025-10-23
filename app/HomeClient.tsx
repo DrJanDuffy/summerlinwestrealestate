@@ -28,8 +28,8 @@ const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsights
 const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
   ssr: false,
 });
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -434,7 +434,7 @@ export default function HomeClient() {
               pinnacle of Summerlin West real estate. Each property offers exceptional quality,
               prime location, and unmatched lifestyle amenities.
             </p>
-            <RealScoutOfficeListingsWrapper
+            <RealScoutOfficeListings
               agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="PRICE_LOW"
               listingStatus="For Sale"
@@ -589,7 +589,7 @@ export default function HomeClient() {
               communities. From entry-level homes to luxury estates, discover all available options
               in this premier master-planned community.
             </p>
-            <RealScoutOfficeListingsWrapper
+            <RealScoutOfficeListings
               agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="PRICE_LOW"
               listingStatus="For Sale"

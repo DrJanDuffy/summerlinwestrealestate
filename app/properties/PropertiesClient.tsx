@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styles from './Properties.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -217,7 +217,7 @@ export default function PropertiesClient() {
             requirements.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -266,7 +266,7 @@ export default function PropertiesClient() {
             master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

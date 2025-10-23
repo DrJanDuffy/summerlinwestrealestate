@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamic(
+    () => import('../../../components/ui/RealScoutOfficeListings')
   );
 
 export const metadata: Metadata = {
@@ -238,7 +238,7 @@ export default function ZipCode89135Page() {
             Discover homes for sale in zip code 89135, home to The Vistas communities in Summerlin West. 
             These properties offer luxury living with access to top-rated schools and premium amenities.
           </p>
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

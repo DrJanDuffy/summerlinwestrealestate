@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamic(
+    () => import('../../../components/ui/RealScoutOfficeListings')
   );
 
 export const metadata: Metadata = {
@@ -299,7 +299,7 @@ export default function ParadisoMarketReportPage() {
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
             Browse the latest homes for sale in Paradiso subdivision. These properties offer luxury living with mountain views and gated community access.
           </p>
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

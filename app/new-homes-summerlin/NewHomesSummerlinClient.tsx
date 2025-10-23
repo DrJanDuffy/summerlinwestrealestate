@@ -3,8 +3,8 @@
 import dynamic from 'next/dynamic';
 import styles from './NewHomesSummerlin.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -228,7 +228,7 @@ export default function NewHomesSummerlinClient() {
             construction home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -291,7 +291,7 @@ export default function NewHomesSummerlinClient() {
             the perfect location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

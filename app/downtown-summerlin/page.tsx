@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import dynamicImport from 'next/dynamic';
 import Link from 'next/link';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListings')
 );
 
 // Disable SSR for this page to prevent prerendering issues
@@ -153,7 +153,7 @@ export default function DowntownSummerlin() {
             live in the heart of Summerlin's vibrant lifestyle.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -222,7 +222,7 @@ export default function DowntownSummerlin() {
             location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

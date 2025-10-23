@@ -2,8 +2,8 @@
 import dynamicImport from 'next/dynamic';
 import styles from '../../styles/pages/service-area.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -468,7 +468,7 @@ export default function ServiceAreaClient() {
           location for your business.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper
+        <RealScoutOfficeListings
           agentEncodedId="QWdlbnQtMjI1MDUw"
           sortOrder="PRICE_LOW"
           listingStatus="For Sale"

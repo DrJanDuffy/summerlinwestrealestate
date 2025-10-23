@@ -8,8 +8,8 @@ import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch
 import useExpandable from '../../hooks/useExpandable';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper'),
+const RealScoutOfficeListings = dynamic(
+  () => import('../../components/ui/RealScoutOfficeListings'),
   {
     ssr: false,
   }
@@ -286,7 +286,7 @@ export default function MarketReportsClient() {
           investors looking to capitalize on Summerlin West's strong market fundamentals.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper
+        <RealScoutOfficeListings
           agentEncodedId="QWdlbnQtMjI1MDUw"
           sortOrder="PRICE_LOW"
           listingStatus="For Sale"
@@ -330,7 +330,7 @@ export default function MarketReportsClient() {
           market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListingsWrapper
+        <RealScoutOfficeListings
           agentEncodedId="QWdlbnQtMjI1MDUw"
           sortOrder="PRICE_LOW"
           listingStatus="For Sale"

@@ -9,8 +9,8 @@ import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import RealScoutWidget from '../../components/ui/RealScoutWidget';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListingsWrapper = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamicImport(
+  () => import('../../components/ui/RealScoutOfficeListings')
 );
 
 // Disable SSR for this page to prevent prerendering issues
@@ -548,7 +548,7 @@ export default function Communities() {
             and investment opportunities.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
@@ -593,7 +593,7 @@ export default function Communities() {
             this premier master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

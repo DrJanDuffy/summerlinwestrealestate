@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamic(
+    () => import('../../../components/ui/RealScoutOfficeListings')
   );
 
 export const metadata: Metadata = {
@@ -236,7 +236,7 @@ export default function SkyVistaDrivePage() {
             Discover homes for sale on Sky Vista Drive and in subdivisions accessible from this main thoroughfare. 
             These properties offer convenient access to The Vistas communities and amenities.
           </p>
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

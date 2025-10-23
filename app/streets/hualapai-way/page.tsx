@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamic(
+    () => import('../../../components/ui/RealScoutOfficeListings')
   );
 
 export const metadata: Metadata = {
@@ -234,7 +234,7 @@ export default function HualapaiWayPage() {
             Discover homes for sale on Hualapai Way and in communities accessible from this major arterial road. 
             These properties offer convenient access to Red Rock Canyon and The Vistas communities.
           </p>
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

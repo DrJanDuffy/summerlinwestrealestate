@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const RealScoutOfficeListingsWrapper = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+const RealScoutOfficeListings = dynamic(
+    () => import('../../../components/ui/RealScoutOfficeListings')
   );
 
 export const metadata: Metadata = {
@@ -234,7 +234,7 @@ export default function FaithLutheranPage() {
             These properties offer convenient access to this excellent private school and are located 
             in some of Summerlin West's most desirable communities.
           </p>
-          <RealScoutOfficeListingsWrapper
+          <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"

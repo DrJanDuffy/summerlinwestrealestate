@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
@@ -9,7 +9,7 @@ import Script from 'next/script';
 import Header from '../components/layout/Header';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
-import RealScoutOfficeListingsWrapper from '../components/ui/RealScoutOfficeListingsWrapper';
+import RealScoutOfficeListings from '../components/ui/RealScoutOfficeListings';
 import { generateComprehensiveSchema } from '../lib/structured-data';
 import GoogleOptimization, { GoogleTagManagerNoScript } from '../components/analytics/GoogleOptimization';
 import styles from './page.module.css';
@@ -192,7 +192,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <RealScoutOfficeListingsWrapper
+            <RealScoutOfficeListings
               agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="PRICE_LOW"
               listingStatus="For Sale"
