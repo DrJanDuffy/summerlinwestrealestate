@@ -78,7 +78,7 @@ export default function RealScoutConfigurationTester() {
   ];
 
   useEffect(() => {
-    const testConfigurations = async () => {
+    const runTests = async () => {
       setIsTesting(true);
       const testResults: TestResult[] = [];
 
@@ -105,7 +105,7 @@ export default function RealScoutConfigurationTester() {
       setIsTesting(false);
     };
 
-    testConfigurations();
+    runTests();
   }, []);
 
   return (
