@@ -4,13 +4,6 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styles from './Properties.module.css';
 
-const RealScoutOfficeListings = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListings'),
-  {
-    ssr: false,
-  }
-);
-
 // Import RealScout components
 const RealScoutOfficeListings = dynamic(
   () => import('../../components/ui/RealScoutOfficeListings'),

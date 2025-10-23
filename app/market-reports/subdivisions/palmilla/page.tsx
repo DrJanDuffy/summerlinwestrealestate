@@ -3,7 +3,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
+    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
   );
 
 export const metadata: Metadata = {
