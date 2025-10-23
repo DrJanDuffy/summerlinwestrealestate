@@ -16,7 +16,8 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
         '@context': 'https://schema.org',
         '@type': 'RealEstateAgent',
         name: 'Dr. Jan Duffy',
-        description: 'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
+        description:
+          'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '1980 Festival Plaza Dr (One Summerlin)',
@@ -171,7 +172,7 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
           trackLeadEvent({
             event_type: 'consultation_request',
             lead_source: 'organic',
-            lead_type: 'unknown'
+            lead_type: 'unknown',
           });
         });
       }
@@ -188,7 +189,6 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
     } else {
       initializeGoogleMaps();
     }
-
   }, [businessId]);
 
   return null; // This component doesn't render anything

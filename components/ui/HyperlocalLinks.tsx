@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { FaMapMarkerAlt, FaSchool, FaHome, FaRoad, FaMailBulk } from 'react-icons/fa';
+import { FaHome, FaMailBulk, FaMapMarkerAlt, FaRoad, FaSchool } from 'react-icons/fa';
 
 interface HyperlocalLinksProps {
   currentPage?: 'subdivision' | 'school' | 'zip' | 'street' | 'community' | 'homepage';
@@ -68,12 +68,11 @@ const communities = [
   { slug: 'reverence', name: 'Reverence' },
 ];
 
-export default function HyperlocalLinks({ 
-  currentPage, 
-  currentLocation, 
-  className = '' 
+export default function HyperlocalLinks({
+  currentPage,
+  currentLocation,
+  className = '',
 }: HyperlocalLinksProps) {
-  
   const getContextualLinks = (): LinkItem[] => {
     const links: LinkItem[] = [];
 
@@ -83,7 +82,7 @@ export default function HyperlocalLinks({
         href: '/service-area',
         label: 'Browse by Subdivision',
         icon: FaHome,
-        description: 'Explore all Summerlin West subdivisions'
+        description: 'Explore all Summerlin West subdivisions',
       });
     }
 
@@ -93,7 +92,7 @@ export default function HyperlocalLinks({
         href: '/schools',
         label: 'Search by School',
         icon: FaSchool,
-        description: 'Find homes near top-rated schools'
+        description: 'Find homes near top-rated schools',
       });
     }
 
@@ -103,7 +102,7 @@ export default function HyperlocalLinks({
         href: '/zip-codes',
         label: 'Browse by Zip Code',
         icon: FaMailBulk,
-        description: 'Explore homes by zip code area'
+        description: 'Explore homes by zip code area',
       });
     }
 
@@ -113,7 +112,7 @@ export default function HyperlocalLinks({
         href: '/streets',
         label: 'Search by Street',
         icon: FaRoad,
-        description: 'Find homes on specific streets'
+        description: 'Find homes on specific streets',
       });
     }
 
@@ -123,7 +122,7 @@ export default function HyperlocalLinks({
         href: '/communities',
         label: 'Explore Communities',
         icon: FaMapMarkerAlt,
-        description: 'Discover luxury communities'
+        description: 'Discover luxury communities',
       });
     }
 
@@ -153,10 +152,8 @@ export default function HyperlocalLinks({
 
   return (
     <div className={`bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-6 ${className}`}>
-      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-        Explore Summerlin West
-      </h3>
-      
+      <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Explore Summerlin West</h3>
+
       {/* Main Navigation Links */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {contextualLinks.map((link) => (
@@ -171,16 +168,13 @@ export default function HyperlocalLinks({
                 {link.label}
               </h4>
             </div>
-            <p className="text-sm text-gray-600 group-hover:text-gray-700">
-              {link.description}
-            </p>
+            <p className="text-sm text-gray-600 group-hover:text-gray-700">{link.description}</p>
           </Link>
         ))}
       </div>
 
       {/* Quick Access Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        
         {/* Popular Subdivisions */}
         <div className="bg-white rounded-lg p-4 shadow-sm">
           <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
@@ -284,9 +278,7 @@ export default function HyperlocalLinks({
 
       {/* Call to Action */}
       <div className="mt-6 text-center">
-        <p className="text-gray-600 mb-4">
-          Need help finding the perfect home in Summerlin West?
-        </p>
+        <p className="text-gray-600 mb-4">Need help finding the perfect home in Summerlin West?</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="tel:702-550-0112"

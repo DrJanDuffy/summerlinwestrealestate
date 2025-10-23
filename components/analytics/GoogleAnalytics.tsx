@@ -9,7 +9,7 @@ interface GoogleAnalyticsProps {
 
 export default function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
   const scriptId = useId();
-  
+
   return (
     <>
       {/* Google Analytics 4 */}

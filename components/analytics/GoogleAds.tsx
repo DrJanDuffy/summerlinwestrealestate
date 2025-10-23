@@ -87,11 +87,13 @@ export default function GoogleAds({ conversionId, conversionLabel }: GoogleAdsPr
       });
 
       // Track page engagement
-      let engagementStartTime = Date.now();
+      const engagementStartTime = Date.now();
       let maxScrollDepth = 0;
 
       const trackEngagement = () => {
-        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        const scrollDepth = Math.round(
+          (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+        );
         maxScrollDepth = Math.max(maxScrollDepth, scrollDepth);
 
         // Track high engagement (75% scroll depth)
@@ -103,7 +105,7 @@ export default function GoogleAds({ conversionId, conversionLabel }: GoogleAdsPr
       // Track time on page
       const trackTimeOnPage = () => {
         const timeOnPage = Date.now() - engagementStartTime;
-        
+
         // Track significant time on page (2+ minutes)
         if (timeOnPage >= 120000) {
           trackConversion('long_engagement', 10);
@@ -131,17 +133,17 @@ export default function GoogleAds({ conversionId, conversionLabel }: GoogleAdsPr
       (window as any).trackPropertyView = trackPropertyView;
 
       // Track market report downloads
-      const reportLinks = document.querySelectorAll('a[href*="market-report"], a[href*="market-reports"]');
+      const reportLinks = document.querySelectorAll(
+        'a[href*="market-report"], a[href*="market-reports"]'
+      );
       reportLinks.forEach((link) => {
         link.addEventListener('click', () => {
           trackReportDownload();
         });
       });
-
     };
 
     initializeGoogleAds();
-
   }, [conversionId, conversionLabel]);
 
   return null; // This component doesn't render anything

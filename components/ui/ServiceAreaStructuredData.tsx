@@ -4,8 +4,8 @@ import {
   type CommunityData,
   generateBreadcrumbSchema,
   generateCommunitySchema,
-  generateRealEstateAgentSchema,
   generateLocalBusinessSchema,
+  generateRealEstateAgentSchema,
 } from '../../lib/structured-data';
 
 interface ServiceAreaStructuredDataProps {

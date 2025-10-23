@@ -27,7 +27,7 @@
       "schedule": "0 6 * * *"
     },
     {
-      "path": "/api/cron/sitemap-update", 
+      "path": "/api/cron/sitemap-update",
       "schedule": "0 2 * * 0"
     },
     {

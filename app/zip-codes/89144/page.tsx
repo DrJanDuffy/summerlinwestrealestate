@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in 89144 | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy 89144',
     'Las Vegas zip code 89144',
     'Summerlin West homes for sale',
-    '89144 subdivisions'
+    '89144 subdivisions',
   ],
   alternates: {
     canonical: '/zip-codes/89144',
@@ -63,9 +63,24 @@ export const metadata: Metadata = {
 };
 
 const subdivisionsIn89144 = [
-  { name: 'Downtown Summerlin Area', type: 'Mixed Use', priceRange: '$500K-$1.5M', slug: 'downtown-summerlin' },
-  { name: 'Palo Verde High School Area', type: 'Established', priceRange: '$600K-$1.2M', slug: 'palo-verde-area' },
-  { name: 'Summerlin West Estates', type: 'Luxury', priceRange: '$800K-$2.0M', slug: 'summerlin-west-estates' },
+  {
+    name: 'Downtown Summerlin Area',
+    type: 'Mixed Use',
+    priceRange: '$500K-$1.5M',
+    slug: 'downtown-summerlin',
+  },
+  {
+    name: 'Palo Verde High School Area',
+    type: 'Established',
+    priceRange: '$600K-$1.2M',
+    slug: 'palo-verde-area',
+  },
+  {
+    name: 'Summerlin West Estates',
+    type: 'Luxury',
+    priceRange: '$800K-$2.0M',
+    slug: 'summerlin-west-estates',
+  },
 ];
 
 const schoolsIn89144 = [
@@ -122,7 +137,9 @@ export default function ZipCode89144Page() {
       {/* Market Statistics */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Market Statistics for Zip Code 89144</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Market Statistics for Zip Code 89144
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -159,12 +176,13 @@ export default function ZipCode89144Page() {
       {/* Subdivisions in 89144 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Areas in Zip Code 89144
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Areas in Zip Code 89144</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsIn89144.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.type}</p>
                 <p className="text-blue-600 font-medium mb-4">{subdivision.priceRange}</p>
@@ -183,9 +201,7 @@ export default function ZipCode89144Page() {
       {/* Schools in 89144 */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Schools Serving Zip Code 89144
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Schools Serving Zip Code 89144</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {schoolsIn89144.map((school) => (
               <div key={school.name} className="bg-gray-50 rounded-lg p-6 text-center">
@@ -207,11 +223,9 @@ export default function ZipCode89144Page() {
       {/* Properties in 89144 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Homes for Sale in Zip Code 89144
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Homes for Sale in Zip Code 89144</h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in zip code 89144, featuring convenient Summerlin West locations 
+            Discover homes for sale in zip code 89144, featuring convenient Summerlin West locations
             with excellent school access and modern amenities.
           </p>
           <RealScoutOfficeListings
@@ -229,12 +243,10 @@ export default function ZipCode89144Page() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home in Zip Code 89144?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home in Zip Code 89144?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in Summerlin West communities in zip code 89144. 
-            Get expert guidance on properties in this convenient location.
+            Dr. Jan Duffy specializes in Summerlin West communities in zip code 89144. Get expert
+            guidance on properties in this convenient location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

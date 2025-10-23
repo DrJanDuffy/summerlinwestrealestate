@@ -1,14 +1,14 @@
 // Google Tag Manager and Facebook Pixel type definitions
 declare global {
   interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-    fbq: (...args: any[]) => void;
+    dataLayer: Record<string, unknown>[];
+    gtag: (...args: unknown[]) => void;
+    fbq: (...args: unknown[]) => void;
   }
 
   // Global functions
-  function gtag(...args: any[]): void;
-  function fbq(...args: any[]): void;
+  function gtag(...args: unknown[]): void;
+  function fbq(...args: unknown[]): void;
 }
 
 export {};

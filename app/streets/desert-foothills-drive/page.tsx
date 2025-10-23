@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale on Desert Foothills Drive | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy Desert Foothills Drive',
     'Las Vegas Desert Foothills Drive',
     'Summerlin West homes for sale',
-    'Desert Foothills Drive subdivisions'
+    'Desert Foothills Drive subdivisions',
   ],
   alternates: {
     canonical: '/streets/desert-foothills-drive',
@@ -132,18 +132,23 @@ export default function DesertFoothillsDrivePage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Desert Foothills Drive</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Desert Foothills Drive is a major arterial road running through Summerlin West, providing 
-                direct access to The Vistas communities and serving as a gateway to Red Rock Canyon. 
-                This well-maintained road offers convenient access to luxury subdivisions and natural attractions.
+                Desert Foothills Drive is a major arterial road running through Summerlin West,
+                providing direct access to The Vistas communities and serving as a gateway to Red
+                Rock Canyon. This well-maintained road offers convenient access to luxury
+                subdivisions and natural attractions.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Direct access to Red Rock Canyon National Conservation Area</span>
+                  <span className="text-gray-700">
+                    Direct access to Red Rock Canyon National Conservation Area
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Main entrance for The Vistas guard-gated communities</span>
+                  <span className="text-gray-700">
+                    Main entrance for The Vistas guard-gated communities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
@@ -192,7 +197,10 @@ export default function DesertFoothillsDrivePage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsOnDesertFoothills.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.access}</p>
                 <p className="text-blue-600 font-medium mb-4">Distance: {subdivision.distance}</p>
@@ -233,8 +241,9 @@ export default function DesertFoothillsDrivePage() {
             Homes for Sale on Desert Foothills Drive
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale on Desert Foothills Drive and in subdivisions accessible from this major arterial road. 
-            These properties offer convenient access to The Vistas communities and Red Rock Canyon.
+            Discover homes for sale on Desert Foothills Drive and in subdivisions accessible from
+            this major arterial road. These properties offer convenient access to The Vistas
+            communities and Red Rock Canyon.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -255,8 +264,8 @@ export default function DesertFoothillsDrivePage() {
             Ready to Find Your Home on Desert Foothills Drive?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in The Vistas communities accessible from Desert Foothills Drive. 
-            Get expert guidance on properties in this prime Summerlin West location.
+            Dr. Jan Duffy specializes in The Vistas communities accessible from Desert Foothills
+            Drive. Get expert guidance on properties in this prime Summerlin West location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -284,7 +293,8 @@ export default function DesertFoothillsDrivePage() {
             '@context': 'https://schema.org',
             '@type': 'Street',
             name: 'Desert Foothills Drive',
-            description: 'Major arterial road providing access to The Vistas communities and Red Rock Canyon',
+            description:
+              'Major arterial road providing access to The Vistas communities and Red Rock Canyon',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Desert Foothills Drive',

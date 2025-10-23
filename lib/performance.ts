@@ -198,19 +198,14 @@ class PerformanceMonitor {
 
     try {
       // Dynamic import to avoid bundling issues
-      const { getCLS, getFID, getFCP, getLCP, getTTFB, getINP } = await import('web-vitals');
+      const { onCLS, onINP, onFCP, onLCP, onTTFB } = await import('web-vitals');
 
       // Monitor all Core Web Vitals with real estate context
-      getCLS(this.sendToAnalytics.bind(this), { reportAllChanges: true });
-      getFID(this.sendToAnalytics.bind(this));
-      getFCP(this.sendToAnalytics.bind(this));
-      getLCP(this.sendToAnalytics.bind(this), { reportAllChanges: true });
-      getTTFB(this.sendToAnalytics.bind(this));
-
-      // Monitor Interaction to Next Paint (INP) - critical for property search
-      if (getINP) {
-        getINP(this.sendToAnalytics.bind(this), { reportAllChanges: true });
-      }
+      onCLS(this.sendToAnalytics.bind(this), { reportAllChanges: true });
+      onINP(this.sendToAnalytics.bind(this));
+      onFCP(this.sendToAnalytics.bind(this));
+      onLCP(this.sendToAnalytics.bind(this), { reportAllChanges: true });
+      onTTFB(this.sendToAnalytics.bind(this));
 
       // Initialize real estate specific monitoring
       this.initRealEstateMonitoring();

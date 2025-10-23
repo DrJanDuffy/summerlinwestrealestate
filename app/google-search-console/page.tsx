@@ -21,8 +21,10 @@ export default function GoogleSearchConsolePage() {
         </p>
         <div className="bg-gray-100 p-6 rounded-lg max-w-md mx-auto">
           <p className="text-sm text-gray-700">
-            <strong>Site:</strong> summerlinwestrealestate.com<br />
-            <strong>Verification Method:</strong> HTML Meta Tag<br />
+            <strong>Site:</strong> summerlinwestrealestate.com
+            <br />
+            <strong>Verification Method:</strong> HTML Meta Tag
+            <br />
             <strong>Status:</strong> Verified
           </p>
         </div>

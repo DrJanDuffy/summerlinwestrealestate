@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in 89135 | The Vistas Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Summerlin West real estate',
     'Dr. Jan Duffy 89135',
     'Las Vegas zip code 89135',
-    'Summerlin West homes for sale'
+    'Summerlin West homes for sale',
   ],
   alternates: {
     canonical: '/zip-codes/89135',
@@ -146,7 +146,9 @@ export default function ZipCode89135Page() {
       {/* Market Statistics */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Market Statistics for Zip Code 89135</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Market Statistics for Zip Code 89135
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -183,12 +185,13 @@ export default function ZipCode89135Page() {
       {/* Subdivisions in 89135 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Subdivisions in Zip Code 89135
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Subdivisions in Zip Code 89135</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsIn89135.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.type}</p>
                 <p className="text-blue-600 font-medium mb-4">{subdivision.priceRange}</p>
@@ -207,9 +210,7 @@ export default function ZipCode89135Page() {
       {/* Schools in 89135 */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Schools Serving Zip Code 89135
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Schools Serving Zip Code 89135</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {schoolsIn89135.map((school) => (
               <div key={school.name} className="bg-gray-50 rounded-lg p-6 text-center">
@@ -231,12 +232,11 @@ export default function ZipCode89135Page() {
       {/* Properties in 89135 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Homes for Sale in Zip Code 89135
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Homes for Sale in Zip Code 89135</h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in zip code 89135, home to The Vistas communities in Summerlin West. 
-            These properties offer luxury living with access to top-rated schools and premium amenities.
+            Discover homes for sale in zip code 89135, home to The Vistas communities in Summerlin
+            West. These properties offer luxury living with access to top-rated schools and premium
+            amenities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -253,12 +253,10 @@ export default function ZipCode89135Page() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home in Zip Code 89135?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home in Zip Code 89135?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in The Vistas communities in zip code 89135. 
-            Get expert guidance on properties in this premier Summerlin West location.
+            Dr. Jan Duffy specializes in The Vistas communities in zip code 89135. Get expert
+            guidance on properties in this premier Summerlin West location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -289,7 +287,8 @@ export default function ZipCode89135Page() {
             addressLocality: 'Las Vegas',
             addressRegion: 'NV',
             addressCountry: 'US',
-            description: 'Zip code 89135 covers The Vistas communities in Summerlin West, Las Vegas',
+            description:
+              'Zip code 89135 covers The Vistas communities in Summerlin West, Las Vegas',
             geo: {
               '@type': 'GeoCoordinates',
               latitude: 36.1865,

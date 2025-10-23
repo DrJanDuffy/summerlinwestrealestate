@@ -23,22 +23,22 @@ export async function GET(request: NextRequest) {
         name: 'Luxury Home in The Vistas',
         price: 1200000,
         location: 'Summerlin West',
-        features: ['Pool', 'Mountain Views', 'Gated Community']
+        features: ['Pool', 'Mountain Views', 'Gated Community'],
       },
       {
-        id: '2', 
+        id: '2',
         name: 'Modern Condo Downtown',
         price: 650000,
         location: 'Downtown Summerlin',
-        features: ['Walkable', 'Shopping', 'Entertainment']
-      }
+        features: ['Walkable', 'Shopping', 'Entertainment'],
+      },
     ];
 
     // Process the data (potential performance issue)
-    const processedData = testData.map(item => ({
+    const processedData = testData.map((item) => ({
       ...item,
       priceFormatted: `$${item.price.toLocaleString()}`,
-      featureCount: item.features.length
+      featureCount: item.features.length,
     }));
 
     // Add some analytics tracking
@@ -46,23 +46,25 @@ export async function GET(request: NextRequest) {
       timestamp: new Date().toISOString(),
       endpoint: '/api/test-vercel-agent',
       dataCount: processedData.length,
-      userAgent: request.headers.get('user-agent') || 'unknown'
+      userAgent: request.headers.get('user-agent') || 'unknown',
     };
 
     return NextResponse.json({
       success: true,
       data: processedData,
       analytics,
-      message: 'Test endpoint working correctly'
+      message: 'Test endpoint working correctly',
     });
-
   } catch (error) {
     console.error('Test endpoint error:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Internal server error',
-      timestamp: new Date().toISOString()
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Internal server error',
+        timestamp: new Date().toISOString(),
+      },
+      { status: 500 }
+    );
   }
 }
 
@@ -70,13 +72,16 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     // Validate required fields
     if (!body.name || !body.email) {
-      return NextResponse.json({
-        success: false,
-        error: 'Name and email are required'
-      }, { status: 400 });
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Name and email are required',
+        },
+        { status: 400 }
+      );
     }
 
     // Simulate lead capture
@@ -87,7 +92,7 @@ export async function POST(request: NextRequest) {
       phone: body.phone || null,
       message: body.message || null,
       timestamp: new Date().toISOString(),
-      source: 'test-vercel-agent'
+      source: 'test-vercel-agent',
     };
 
     // In a real implementation, you would save to database
@@ -96,14 +101,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Lead captured successfully',
-      leadId: leadData.id
+      leadId: leadData.id,
     });
-
   } catch (error) {
     console.error('POST error:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Failed to process request'
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to process request',
+      },
+      { status: 500 }
+    );
   }
 }

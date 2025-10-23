@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   // Verify cron secret for security
   const authHeader = request.headers.get('Authorization');
   const expectedAuth = `Bearer ${process.env.CRON_SECRET}`;
-  
+
   if (authHeader !== expectedAuth) {
     console.error('Unauthorized cron request - invalid auth header');
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -12,14 +12,14 @@ export async function GET(request: NextRequest) {
 
   try {
     console.log('Starting daily market data refresh...');
-    
+
     // Market data refresh tasks
     const tasks = [
       'Refreshing RealScout property listings',
       'Updating market statistics',
       'Syncing subdivision data',
       'Updating price trends',
-      'Refreshing community information'
+      'Refreshing community information',
     ];
 
     // Simulate data refresh operations
@@ -46,17 +46,19 @@ export async function GET(request: NextRequest) {
         market_stats_refreshed: true,
         subdivisions_synced: true,
         price_trends_updated: true,
-        communities_refreshed: true
-      }
+        communities_refreshed: true,
+      },
     });
-
   } catch (error) {
     console.error('Market data refresh failed:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Market data refresh failed',
-      timestamp: new Date().toISOString(),
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Market data refresh failed',
+        timestamp: new Date().toISOString(),
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    );
   }
 }

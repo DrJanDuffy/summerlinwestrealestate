@@ -42,34 +42,34 @@ export async function GET() {
     // - Check GitHub for PR review data
     // - Monitor cron job execution
     // - Track performance metrics
-    
+
     const metrics: VercelAgentMetrics = {
       timestamp: new Date().toISOString(),
       reviews: {
         total: 12,
         successful: 11,
         failed: 1,
-        successRate: 91.7
+        successRate: 91.7,
       },
       issues: {
         security: 2,
         performance: 5,
         typescript: 8,
         realEstate: 3,
-        total: 18
+        total: 18,
       },
       costs: {
-        fixed: 3.60, // 12 reviews * $0.30
-        tokens: 15.40,
-        monthly: 19.00,
-        budgetRemaining: 81.00
+        fixed: 3.6, // 12 reviews * $0.30
+        tokens: 15.4,
+        monthly: 19.0,
+        budgetRemaining: 81.0,
       },
       realEstate: {
         realScoutIssues: 1,
         leadTrackingIssues: 1,
         seoIssues: 1,
-        accessibilityIssues: 0
-      }
+        accessibilityIssues: 0,
+      },
     };
 
     // Add performance insights
@@ -79,38 +79,40 @@ export async function GET() {
         'Performance: Image optimization needed for property photos',
         'Security: Cron job authentication validation',
         'SEO: Missing structured data on community pages',
-        'Real Estate: Lead tracking event type validation'
+        'Real Estate: Lead tracking event type validation',
       ],
       recommendations: [
         'Implement automated prop type validation for RealScout components',
         'Add Next.js Image optimization for all property photos',
         'Enhance cron job security with additional validation',
         'Complete structured data implementation for all pages',
-        'Standardize lead tracking event types across components'
+        'Standardize lead tracking event types across components',
       ],
       costOptimization: [
         'Current usage is 19% of monthly budget - excellent',
         'Consider enabling more frequent reviews for critical changes',
         'Focus on security and performance issues for maximum ROI',
-        'Batch related changes to reduce review frequency'
-      ]
+        'Batch related changes to reduce review frequency',
+      ],
     };
 
     return NextResponse.json({
       success: true,
       metrics,
       insights,
-      message: 'Vercel Agent monitoring data retrieved successfully'
+      message: 'Vercel Agent monitoring data retrieved successfully',
     });
-
   } catch (error) {
     console.error('Vercel Agent monitoring failed:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Failed to retrieve monitoring data',
-      timestamp: new Date().toISOString(),
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to retrieve monitoring data',
+        timestamp: new Date().toISOString(),
+        details: error instanceof Error ? error.message : 'Unknown error',
+      },
+      { status: 500 }
+    );
   }
 }
 
@@ -118,20 +120,23 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    
+
     // Validate required fields
     if (!body.alertThreshold || !body.monthlyBudget) {
-      return NextResponse.json({
-        success: false,
-        error: 'Alert threshold and monthly budget are required'
-      }, { status: 400 });
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Alert threshold and monthly budget are required',
+        },
+        { status: 400 }
+      );
     }
 
     // In a real implementation, you would:
     // - Save monitoring preferences to database
     // - Update alert configurations
     // - Configure cost tracking settings
-    
+
     const preferences = {
       alertThreshold: body.alertThreshold,
       monthlyBudget: body.monthlyBudget,
@@ -139,9 +144,9 @@ export async function POST(request: Request) {
       notificationSettings: body.notificationSettings || {
         email: true,
         slack: false,
-        webhook: false
+        webhook: false,
       },
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
     };
 
     console.log('Monitoring preferences updated:', preferences);
@@ -149,14 +154,16 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       message: 'Monitoring preferences updated successfully',
-      preferences
+      preferences,
     });
-
   } catch (error) {
     console.error('Failed to update monitoring preferences:', error);
-    return NextResponse.json({
-      success: false,
-      error: 'Failed to update monitoring preferences'
-    }, { status: 500 });
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to update monitoring preferences',
+      },
+      { status: 500 }
+    );
   }
 }

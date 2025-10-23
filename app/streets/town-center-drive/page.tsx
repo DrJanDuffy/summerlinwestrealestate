@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale on Town Center Drive | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy Town Center Drive',
     'Las Vegas Town Center Drive',
     'Summerlin West homes for sale',
-    'Town Center Drive subdivisions'
+    'Town Center Drive subdivisions',
   ],
   alternates: {
     canonical: '/streets/town-center-drive',
@@ -63,7 +63,12 @@ export const metadata: Metadata = {
 };
 
 const subdivisionsOnTownCenter = [
-  { name: 'Downtown Summerlin', access: 'Direct access', distance: '0.0 mi', slug: 'downtown-summerlin' },
+  {
+    name: 'Downtown Summerlin',
+    access: 'Direct access',
+    distance: '0.0 mi',
+    slug: 'downtown-summerlin',
+  },
   { name: 'The Vistas', access: 'Main entrance', distance: '0.5 mi', slug: 'the-vistas' },
   { name: 'Stonebridge', access: 'Side entrance', distance: '1.0 mi', slug: 'stonebridge' },
   { name: 'Redpoint', access: 'Side entrance', distance: '1.2 mi', slug: 'redpoint' },
@@ -129,26 +134,35 @@ export default function TownCenterDrivePage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Town Center Drive</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Town Center Drive is a major commercial corridor running through Summerlin West, 
-                providing direct access to Downtown Summerlin and connecting to The Vistas communities. 
-                This well-maintained road offers convenient access to shopping, dining, and entertainment.
+                Town Center Drive is a major commercial corridor running through Summerlin West,
+                providing direct access to Downtown Summerlin and connecting to The Vistas
+                communities. This well-maintained road offers convenient access to shopping, dining,
+                and entertainment.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Direct access to Downtown Summerlin shopping and dining</span>
+                  <span className="text-gray-700">
+                    Direct access to Downtown Summerlin shopping and dining
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Convenient connection to The Vistas communities</span>
+                  <span className="text-gray-700">
+                    Convenient connection to The Vistas communities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Access to Las Vegas Ballpark and entertainment venues</span>
+                  <span className="text-gray-700">
+                    Access to Las Vegas Ballpark and entertainment venues
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Well-maintained with excellent street lighting</span>
+                  <span className="text-gray-700">
+                    Well-maintained with excellent street lighting
+                  </span>
                 </div>
               </div>
             </div>
@@ -189,7 +203,10 @@ export default function TownCenterDrivePage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {subdivisionsOnTownCenter.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.access}</p>
                 <p className="text-blue-600 font-medium mb-4">Distance: {subdivision.distance}</p>
@@ -230,8 +247,9 @@ export default function TownCenterDrivePage() {
             Homes for Sale on Town Center Drive
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale on Town Center Drive and in communities accessible from this major commercial corridor. 
-            These properties offer convenient access to Downtown Summerlin and The Vistas communities.
+            Discover homes for sale on Town Center Drive and in communities accessible from this
+            major commercial corridor. These properties offer convenient access to Downtown
+            Summerlin and The Vistas communities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -248,12 +266,10 @@ export default function TownCenterDrivePage() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home on Town Center Drive?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home on Town Center Drive?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in Summerlin West communities accessible from Town Center Drive. 
-            Get expert guidance on properties in this convenient location.
+            Dr. Jan Duffy specializes in Summerlin West communities accessible from Town Center
+            Drive. Get expert guidance on properties in this convenient location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -281,7 +297,8 @@ export default function TownCenterDrivePage() {
             '@context': 'https://schema.org',
             '@type': 'Street',
             name: 'Town Center Drive',
-            description: 'Major commercial corridor connecting Downtown Summerlin to The Vistas communities',
+            description:
+              'Major commercial corridor connecting Downtown Summerlin to The Vistas communities',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Town Center Drive',

@@ -8,7 +8,11 @@ interface GoogleRichResultsProps {
   agentData?: any;
 }
 
-export default function GoogleRichResults({ pageType = 'homepage', propertyData, agentData }: GoogleRichResultsProps) {
+export default function GoogleRichResults({
+  pageType = 'homepage',
+  propertyData,
+  agentData,
+}: GoogleRichResultsProps) {
   useEffect(() => {
     const addRichResultsSchema = () => {
       let schema = {};
@@ -20,7 +24,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             '@type': 'WebSite',
             name: 'Summerlin West Real Estate',
             url: 'https://www.summerlinwestrealestate.com',
-            description: 'Premier luxury real estate services in Summerlin West, Las Vegas. Expert guidance from Dr. Jan Duffy, REALTOR®.',
+            description:
+              'Premier luxury real estate services in Summerlin West, Las Vegas. Expert guidance from Dr. Jan Duffy, REALTOR®.',
             publisher: {
               '@type': 'Organization',
               name: 'Summerlin West Real Estate',
@@ -37,7 +42,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             mainEntity: {
               '@type': 'RealEstateAgent',
               name: 'Dr. Jan Duffy',
-              description: 'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
+              description:
+                'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: '1980 Festival Plaza Dr (One Summerlin)',
@@ -130,7 +136,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             '@context': 'https://schema.org',
             '@type': 'RealEstateAgent',
             name: 'Dr. Jan Duffy',
-            description: 'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
+            description:
+              'Top Summerlin West real estate expert with 15+ years of experience and $6B+ in sales volume',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '1980 Festival Plaza Dr (One Summerlin)',
@@ -238,7 +245,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline: document.title,
-            description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+            description:
+              document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
             url: window.location.href,
             datePublished: new Date().toISOString(),
             dateModified: new Date().toISOString(),
@@ -269,7 +277,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             '@context': 'https://schema.org',
             '@type': 'Report',
             name: document.title,
-            description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+            description:
+              document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
             url: window.location.href,
             datePublished: new Date().toISOString(),
             author: {
@@ -310,7 +319,8 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
             '@context': 'https://schema.org',
             '@type': 'WebPage',
             name: document.title,
-            description: document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
+            description:
+              document.querySelector('meta[name="description"]')?.getAttribute('content') || '',
             url: window.location.href,
             isPartOf: {
               '@type': 'WebSite',
@@ -342,7 +352,7 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
     const validateRichResults = () => {
       const currentUrl = window.location.href;
       const richResultsTestUrl = `https://search.google.com/test/rich-results?url=${encodeURIComponent(currentUrl)}`;
-      
+
       // Track validation attempt
       if ((window as any).gtag) {
         (window as any).gtag('event', 'rich_results_validation', {
@@ -355,7 +365,6 @@ export default function GoogleRichResults({ pageType = 'homepage', propertyData,
 
     // Validate after a short delay
     setTimeout(validateRichResults, 2000);
-
   }, [pageType, propertyData, agentData]);
 
   return null; // This component doesn't render anything

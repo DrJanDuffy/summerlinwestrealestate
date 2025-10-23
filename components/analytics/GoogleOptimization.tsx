@@ -1,28 +1,28 @@
 'use client';
 
 import { useEffect } from 'react';
-import GoogleAnalytics from './GoogleAnalytics';
-import GoogleTagManager, { GoogleTagManagerNoScript } from './GoogleTagManager';
 import CoreWebVitals from './CoreWebVitals';
-import GoogleMyBusiness from './GoogleMyBusiness';
 import GoogleAds from './GoogleAds';
+import GoogleAnalytics from './GoogleAnalytics';
+import GoogleMyBusiness from './GoogleMyBusiness';
 import GooglePageSpeedOptimization from './GooglePageSpeedOptimization';
 import GoogleRichResults from './GoogleRichResults';
+import GoogleTagManager, { GoogleTagManagerNoScript } from './GoogleTagManager';
 
 interface GoogleOptimizationProps {
   // Google Analytics
   gaMeasurementId?: string;
-  
+
   // Google Tag Manager
   gtmId?: string;
-  
+
   // Google Ads
   adsConversionId?: string;
   adsConversionLabel?: string;
-  
+
   // Google My Business
   gmbBusinessId?: string;
-  
+
   // Google Maps
   mapsApiKey?: string;
 }
@@ -35,7 +35,6 @@ export default function GoogleOptimization({
   gmbBusinessId,
   mapsApiKey,
 }: GoogleOptimizationProps) {
-  
   useEffect(() => {
     // Set up Google optimization
     const initializeGoogleOptimization = () => {
@@ -57,7 +56,7 @@ export default function GoogleOptimization({
         const criticalResources = [
           '/images/og-image.svg',
           '/images/logo.png',
-          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
         ];
 
         criticalResources.forEach((resource) => {
@@ -107,7 +106,8 @@ export default function GoogleOptimization({
           '@type': 'WebSite',
           name: 'Summerlin West Real Estate',
           url: 'https://www.summerlinwestrealestate.com',
-          description: 'Premier luxury real estate services in Summerlin West, Las Vegas. Expert guidance from Dr. Jan Duffy, REALTOR®.',
+          description:
+            'Premier luxury real estate services in Summerlin West, Las Vegas. Expert guidance from Dr. Jan Duffy, REALTOR®.',
           publisher: {
             '@type': 'Organization',
             name: 'Summerlin West Real Estate',
@@ -144,38 +144,33 @@ export default function GoogleOptimization({
 
       // Notify sitemap submission after page load
       setTimeout(notifySitemap, 2000);
-
     };
 
     initializeGoogleOptimization();
-
   }, []);
 
   return (
     <>
       {/* Google Tag Manager */}
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
-      
+
       {/* Google Analytics */}
       {gaMeasurementId && <GoogleAnalytics measurementId={gaMeasurementId} />}
-      
+
       {/* Core Web Vitals */}
       {gaMeasurementId && <CoreWebVitals measurementId={gaMeasurementId} />}
-      
+
       {/* Google My Business */}
       {gmbBusinessId && <GoogleMyBusiness businessId={gmbBusinessId} />}
-      
+
       {/* Google Ads */}
       {adsConversionId && adsConversionLabel && (
-        <GoogleAds 
-          conversionId={adsConversionId} 
-          conversionLabel={adsConversionLabel} 
-        />
+        <GoogleAds conversionId={adsConversionId} conversionLabel={adsConversionLabel} />
       )}
-      
+
       {/* Google PageSpeed Optimization */}
       <GooglePageSpeedOptimization />
-      
+
       {/* Google Rich Results */}
       <GoogleRichResults pageType="homepage" />
     </>

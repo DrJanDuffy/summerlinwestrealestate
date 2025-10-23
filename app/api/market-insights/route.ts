@@ -34,7 +34,7 @@ export async function GET() {
 
     // Extract articles from RSS feed
     const itemRegex = /<item>([\s\S]*?)<\/item>/g;
-    let match;
+    let match: RegExpExecArray | null;
 
     while ((match = itemRegex.exec(xmlText)) !== null && articles.length < 10) {
       const itemContent = match[1];
@@ -55,11 +55,10 @@ export async function GET() {
         const category = categoryMatch ? categoryMatch[1].trim() : 'Market News';
 
         // Extract excerpt from description (first 200 characters)
-        const excerpt =
-          description
-            .replace(/<[^>]*>/g, '') // Remove HTML tags
-            .substring(0, 200)
-            .trim() + '...';
+        const excerpt = `${description
+          .replace(/<[^>]*>/g, '') // Remove HTML tags
+          .substring(0, 200)
+          .trim()}...`;
 
         // Generate image URL based on article title
         const imageUrl = `/images/market-insights/${title

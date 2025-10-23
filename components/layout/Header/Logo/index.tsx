@@ -1,7 +1,5 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 interface LogoProps {
   className?: string;
@@ -16,46 +14,27 @@ export default function Logo({
   height = 68,
   sticky = false,
 }: LogoProps) {
-  const pathname = usePathname();
-  const isHomepage = pathname === '/';
-
+  // Add a timestamp to force re-render and avoid caching issues
+  const timestamp = Date.now();
+  
   return (
     <Link href="/" className={className}>
-      {/* Light logo - shown by default, hidden on dark mode */}
-      <Image
-        src="/images/header/logo.svg"
-        alt="Summerlin West Real Estate"
-        width={width}
-        height={height}
-        className={`transition-opacity duration-300 ${
-          isHomepage
-            ? sticky
-              ? 'block dark:hidden'
-              : 'hidden'
-            : sticky
-              ? 'block dark:hidden'
-              : 'block dark:hidden'
-        }`}
-        priority
-      />
-
-      {/* Dark logo - hidden by default, shown on dark mode */}
-      <Image
-        src="/images/header/dark-logo.svg"
-        alt="Summerlin West Real Estate"
-        width={width}
-        height={height}
-        className={`transition-opacity duration-300 ${
-          isHomepage
-            ? sticky
-              ? 'hidden dark:block'
-              : 'block'
-            : sticky
-              ? 'dark:block hidden'
-              : 'dark:block hidden'
-        }`}
-        priority
-      />
+      <div 
+        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg font-bold text-lg flex items-center hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+        style={{ 
+          width: `${width}px`, 
+          height: `${height}px`,
+          minWidth: `${width}px`,
+          minHeight: `${height}px`
+        }}
+        key={`logo-${timestamp}`}
+      >
+        <div className="flex flex-col justify-center w-full">
+          <span className="text-sm font-bold leading-tight text-center">Summerlin West</span>
+          <span className="text-xs leading-tight text-center">Real Estate</span>
+          <span className="text-xs text-blue-200 leading-tight text-center">Dr. Jan Duffy, REALTOR®</span>
+        </div>
+      </div>
     </Link>
   );
 }

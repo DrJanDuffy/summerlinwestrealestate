@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale Near Red Rock Elementary School | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Summerlin West real estate',
     'Dr. Jan Duffy school districts',
     'Las Vegas school zones',
-    'Summerlin West homes for sale'
+    'Summerlin West homes for sale',
   ],
   alternates: {
     canonical: '/schools/red-rock-elementary',
@@ -144,9 +144,9 @@ export default function RedRockElementaryPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Red Rock Elementary School</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Red Rock Elementary School is a highly-rated public elementary school serving students in grades K-5. 
-                Located in the heart of Summerlin West, this school provides excellent education for children living 
-                in The Vistas and surrounding communities.
+                Red Rock Elementary School is a highly-rated public elementary school serving
+                students in grades K-5. Located in the heart of Summerlin West, this school provides
+                excellent education for children living in The Vistas and surrounding communities.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -155,11 +155,15 @@ export default function RedRockElementaryPage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Small class sizes for personalized attention</span>
+                  <span className="text-gray-700">
+                    Small class sizes for personalized attention
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Strong academic programs and extracurricular activities</span>
+                  <span className="text-gray-700">
+                    Strong academic programs and extracurricular activities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
@@ -204,7 +208,10 @@ export default function RedRockElementaryPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsZonedToRedRock.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-4">Distance: {subdivision.distance}</p>
                 <Link
@@ -226,8 +233,8 @@ export default function RedRockElementaryPage() {
             Homes for Sale Near Red Rock Elementary School
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in subdivisions zoned to Red Rock Elementary School. 
-            These properties offer excellent school access and are located in some of Summerlin West's 
+            Discover homes for sale in subdivisions zoned to Red Rock Elementary School. These
+            properties offer excellent school access and are located in some of Summerlin West's
             most desirable communities.
           </p>
           <RealScoutOfficeListings
@@ -249,7 +256,7 @@ export default function RedRockElementaryPage() {
             Ready to Find Your Home Near Red Rock Elementary?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in helping families find homes in excellent school districts. 
+            Dr. Jan Duffy specializes in helping families find homes in excellent school districts.
             Get expert guidance on properties zoned to Red Rock Elementary School.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -278,7 +285,8 @@ export default function RedRockElementaryPage() {
             '@context': 'https://schema.org',
             '@type': 'School',
             name: 'Red Rock Elementary School',
-            description: 'Top-rated elementary school serving The Vistas communities in Summerlin West',
+            description:
+              'Top-rated elementary school serving The Vistas communities in Summerlin West',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '11501 Villa Hermosa Dr',
@@ -295,9 +303,7 @@ export default function RedRockElementaryPage() {
               longitude: -115.3432,
             },
             hasMap: 'https://maps.google.com/?q=11501+Villa+Hermosa+Dr,+Las+Vegas,+NV+89135',
-            sameAs: [
-              'https://www.ccsd.net/schools/red-rock-elementary',
-            ],
+            sameAs: ['https://www.ccsd.net/schools/red-rock-elementary'],
             schoolType: 'Public Elementary School',
             grades: 'K-5',
             studentBody: {

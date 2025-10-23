@@ -687,7 +687,9 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
             </div>
             <div className={styles.locationCard}>
               <h3>GPS Coordinates</h3>
-              <p>{subdivision.location.coordinates.lat}° N, {subdivision.location.coordinates.lng}° W</p>
+              <p>
+                {subdivision.location.coordinates.lat}° N, {subdivision.location.coordinates.lng}° W
+              </p>
             </div>
           </div>
         </motion.section>
@@ -792,10 +794,15 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
       >
         <h2 className={styles.centerTitle}>Recent Sales in {subdivision.name}</h2>
         <p className={styles.heroSubtitle}>
-          Stay informed about recent market activity in {subdivision.name}. This data helps you understand current market trends and property values in this {subdivision.type.toLowerCase()} community.
+          Stay informed about recent market activity in {subdivision.name}. This data helps you
+          understand current market trends and property values in this{' '}
+          {subdivision.type.toLowerCase()} community.
         </p>
         <div className={styles.salesPlaceholder}>
-          <p>Recent sales data will be integrated with MLS feed. Contact Dr. Jan Duffy for current market information.</p>
+          <p>
+            Recent sales data will be integrated with MLS feed. Contact Dr. Jan Duffy for current
+            market information.
+          </p>
         </div>
       </motion.section>
 
