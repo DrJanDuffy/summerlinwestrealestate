@@ -17,9 +17,9 @@ export default function RealScoutOfficeWidget({
   agentEncodedId = 'QWdlbnQtMjI1MDUw',
   sortOrder = 'NEWEST',
   listingStatus = 'For Sale',
-  propertyTypes = ',SFR',
+  propertyTypes = 'SFR',
   priceMin = '500000',
-  priceMax = '600000',
+  priceMax = '2000000',
   className = '',
 }: RealScoutOfficeWidgetProps) {
   const [isLoaded, setIsLoaded] = useState(false);
