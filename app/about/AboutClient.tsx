@@ -3,13 +3,6 @@ import dynamic from 'next/dynamic';
 import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListings = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListings'),
-  {
-    ssr: false,
-  }
-);
-
 // Import components with proper client-side only configuration
 const RealScoutOfficeListings = dynamic(
   () => import('../../components/ui/RealScoutOfficeListings'),
