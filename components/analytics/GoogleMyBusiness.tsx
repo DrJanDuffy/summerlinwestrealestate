@@ -169,9 +169,9 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
         marker.addListener('click', () => {
           infoWindow.open(map, marker);
           trackLeadEvent({
-            event_type: 'map_interaction',
-            lead_source: 'google_my_business',
-            lead_type: 'map_click',
+            event_type: 'consultation_request',
+            lead_source: 'organic',
+            lead_type: 'unknown',
             interaction_type: 'map_interaction'
           });
         });
