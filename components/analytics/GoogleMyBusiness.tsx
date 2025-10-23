@@ -171,8 +171,7 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
           trackLeadEvent({
             event_type: 'consultation_request',
             lead_source: 'organic',
-            lead_type: 'unknown',
-            interaction_type: 'map_interaction'
+            lead_type: 'unknown'
           });
         });
       }

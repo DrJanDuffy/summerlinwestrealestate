@@ -4,7 +4,20 @@
   "installCommand": "pnpm install",
   "outputDirectory": ".next",
   "regions": ["iad1"],
-  "crons": [],
+  "crons": [
+    {
+      "path": "/api/cron/market-data",
+      "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/sitemap-update", 
+      "schedule": "0 2 * * 0"
+    },
+    {
+      "path": "/api/cron/monthly-reports",
+      "schedule": "0 8 1 * *"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
