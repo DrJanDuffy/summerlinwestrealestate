@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import RealScoutScriptLoader from './RealScoutScriptLoader';
 import { waitForRealScoutElements } from '../../lib/realscout-config';
 
 interface RealScoutFeaturedListingsProps {
@@ -21,19 +22,11 @@ export default function RealScoutFeaturedListings({
 }: RealScoutFeaturedListingsProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [scriptStatus, setScriptStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   useEffect(() => {
     const checkRealScout = async () => {
       try {
-        // First check if the script is loaded
-        const scriptLoaded = typeof window !== 'undefined' && !!document.querySelector('script[src*="realscout-web-components"]');
-        
-        if (!scriptLoaded) {
-          console.log('RealScout script not loaded yet');
-          setHasError(true);
-          return;
-        }
-
         // Wait for custom elements to be defined
         const loaded = await waitForRealScoutElements(15000); // 15 second timeout
         console.log('RealScout elements loaded:', loaded);
@@ -48,14 +41,13 @@ export default function RealScoutFeaturedListings({
       }
     };
 
-    // Check immediately
-    checkRealScout();
-    
-    // Also check after a delay in case script loads later
-    const timeoutId = setTimeout(checkRealScout, 3000);
-    
-    return () => clearTimeout(timeoutId);
-  }, []);
+    // Only check if script is loaded
+    if (scriptStatus === 'loaded') {
+      checkRealScout();
+    } else if (scriptStatus === 'error') {
+      setHasError(true);
+    }
+  }, [scriptStatus]);
 
   if (hasError) {
     return (
@@ -141,6 +133,15 @@ export default function RealScoutFeaturedListings({
           </h3>
           <p className="text-blue-700 mb-4">Preparing MLS data for Summerlin West...</p>
           <p className="text-sm text-blue-600">Powered by RealScout</p>
+          
+          {/* Enhanced Script Loader */}
+          <div className="mt-4">
+            <RealScoutScriptLoader 
+              onLoad={() => setScriptStatus('loaded')}
+              onError={() => setScriptStatus('error')}
+            />
+          </div>
+          
           <div className="mt-4 text-xs text-gray-500">
             <p>Debug: Script loaded: {typeof window !== 'undefined' && document.querySelector('script[src*="realscout-web-components"]') ? 'Yes' : 'No'}</p>
             <p>Custom elements: {typeof window !== 'undefined' && customElements.get('realscout-your-listings') ? 'Available' : 'Not available'}</p>
