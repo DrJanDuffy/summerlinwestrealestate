@@ -35,8 +35,8 @@ export default function RealScoutOfficeListings({
         sort-order={sortOrder}
         listing-status={listingStatus}
         property-types={propertyTypes}
-        price-min={priceMin}
-        price-max={priceMax}
+        price-min={priceMin.toString()}
+        price-max={priceMax.toString()}
       />
     </motion.div>
   );
