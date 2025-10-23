@@ -555,7 +555,6 @@ export default function Communities() {
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
             priceMin="550000"
             priceMax="1800000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
@@ -600,7 +599,6 @@ export default function Communities() {
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
             priceMin="400000"
             priceMax="2000000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
