@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import InternalLinking from '../../../components/ui/InternalLinking';
 
 // Dynamic imports for better performance
@@ -77,9 +78,11 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
               </div>
             </div>
             <div>
-              <img
+              <Image
                 src={neighborhood.image}
                 alt={`${neighborhood.name} neighborhood`}
+                width={800}
+                height={384}
                 className="rounded-lg shadow-lg w-full h-96 object-cover"
               />
             </div>

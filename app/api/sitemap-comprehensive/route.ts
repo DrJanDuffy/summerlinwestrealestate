@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 /**
  * Comprehensive Sitemap Index for Google SEO
@@ -231,7 +231,7 @@ ${urls
   return sitemap;
 }
 
-export async function GET(_request: NextRequest) {
+export async function GET() {
   try {
     const sitemap = generateComprehensiveSitemap();
 

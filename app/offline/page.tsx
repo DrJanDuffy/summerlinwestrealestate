@@ -1,14 +1,8 @@
-import type { Metadata } from 'next';
+'use client';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Offline - Summerlin West Real Estate',
-  description: 'You are currently offline. Please check your internet connection.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+// Disable SSR for this page to prevent prerendering issues
+export const dynamic = 'force-dynamic';
 
 export default function OfflinePage() {
   return (

@@ -5,7 +5,6 @@ import dynamicImport from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import SummerlinWestOverview from '../../components/ui/SummerlinWestOverview';
 import styles from '../page.module.css';
@@ -19,68 +18,12 @@ const RealScoutOfficeListings = dynamicImport(
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';
-const _LatestMarketInsights = dynamicImport(
-  () => import('../../components/ui/LatestMarketInsights'),
-  {
-    ssr: false,
-  }
-);
 
 const VistasLeadForm = dynamicImport(() => import('../../components/ui/VistasLeadForm'), {
   ssr: false,
 });
 
 export default function TheVistas() {
-  const [name, _setName] = useState('');
-  const [email, _setEmail] = useState('');
-  const [phone, _setPhone] = useState('');
-  const [_submitted, setSubmitted] = useState(false);
-  const [_error, setError] = useState('');
-  const [_loading, setLoading] = useState(false);
-
-  const _handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name.trim()) {
-      setError('Please enter your name.');
-      return;
-    }
-    if (!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-    if (!phone.match(/^[0-9\-+()\s]{7,}$/)) {
-      setError('Please enter a valid phone number.');
-      return;
-    }
-    setError('');
-    setLoading(true);
-    try {
-      const response = await fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, phone, page: 'The Vistas' }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
-
-      setSubmitted(true);
-      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-        (window as any).gtag('event', 'lead_form_submit', {
-          event_category: 'Lead',
-          event_label: 'The Vistas',
-        });
-      }
-    } catch (_err: unknown) {
-      setError('There was a problem submitting your request. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className={styles.page}>
       <Head>

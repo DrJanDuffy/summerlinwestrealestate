@@ -10,15 +10,6 @@ const RealScoutOfficeListings = dynamic(
   }
 );
 
-// Dynamic imports for client components
-const _LatestMarketInsights = dynamic(() => import('../../components/ui/LatestMarketInsights'), {
-  ssr: false,
-});
-
-const _LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), {
-  ssr: false,
-});
-
 export default function NewHomesSummerlinClient() {
   return (
     <div className={`${styles.page} ${styles.newHomesContainer}`}>

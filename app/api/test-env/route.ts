@@ -1,8 +1,8 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-static';
 
-export async function GET(_req: NextRequest) {
+export async function GET() {
   const cloudflareToken = process.env.CLOUDFLARE_API_TOKEN;
   const fubApiKey = process.env.FUB_API_KEY;
 

@@ -1,0 +1,100 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "functions": {
+    "app/api/cron/market-data/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/cron/sitemap-update/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/cron/monthly-reports/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/test-vercel-agent/route.ts": {
+      "maxDuration": 10
+    },
+    "app/api/vercel-agent-monitoring/route.ts": {
+      "maxDuration": 10
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/market-data",
+      "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/sitemap-update", 
+      "schedule": "0 2 * * 0"
+    },
+    {
+      "path": "/api/cron/monthly-reports",
+      "schedule": "0 8 1 * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, s-maxage=300"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/market-report",
+      "destination": "/market-reports",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/api/robots"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "https://summerlinwestrealestate.com",
+    "NODE_ENV": "production"
+  }
+}

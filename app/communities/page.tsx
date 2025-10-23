@@ -303,7 +303,7 @@ export default function Communities() {
                 Special Features
               </div>
             </div>
-            {communities.slice(0, 4).map((community, _index) => (
+            {communities.slice(0, 4).map((community) => (
               <div key={community.name} className={styles.tableRow} role="row">
                 <div className={styles.tableCell} role="cell">
                   {community.name}

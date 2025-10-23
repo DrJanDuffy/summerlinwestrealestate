@@ -2,7 +2,6 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch';
 import useExpandable from '../../hooks/useExpandable';
@@ -34,8 +33,6 @@ function FAQItem({ faq, index }: { faq: { q: string; a: string }; index: number 
 }
 
 export default function MarketReportsClient() {
-  // FAQ accordion state
-  const [_openFAQ, _setOpenFAQ] = useState<number | null>(null);
   const faqs = [
     {
       q: 'What are the best neighborhoods in Summerlin West?',

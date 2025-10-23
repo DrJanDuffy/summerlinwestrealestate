@@ -58,11 +58,11 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Test endpoint error:', error);
-    return NextResponse.status(500).json({
+    return NextResponse.json({
       success: false,
       error: 'Internal server error',
       timestamp: new Date().toISOString()
-    });
+    }, { status: 500 });
   }
 }
 
@@ -73,10 +73,10 @@ export async function POST(request: NextRequest) {
     
     // Validate required fields
     if (!body.name || !body.email) {
-      return NextResponse.status(400).json({
+      return NextResponse.json({
         success: false,
         error: 'Name and email are required'
-      });
+      }, { status: 400 });
     }
 
     // Simulate lead capture
@@ -101,9 +101,9 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('POST error:', error);
-    return NextResponse.status(500).json({
+    return NextResponse.json({
       success: false,
       error: 'Failed to process request'
-    });
+    }, { status: 500 });
   }
 }

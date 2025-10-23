@@ -210,7 +210,7 @@ function SocialMediaLinks({ subdivisionName }: { subdivisionName: string }) {
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src={`/images/${icon}`} alt="" />
+          <Image src={`/images/${icon}`} alt="" width={24} height={24} />
         </motion.a>
       ))}
     </div>

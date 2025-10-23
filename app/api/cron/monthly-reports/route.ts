@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
   
   if (authHeader !== expectedAuth) {
     console.error('Unauthorized cron request - invalid auth header');
-    return NextResponse.status(401).json({ error: 'Unauthorized' });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
@@ -69,11 +69,11 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Monthly report generation failed:', error);
-    return NextResponse.status(500).json({
+    return NextResponse.json({
       success: false,
       error: 'Monthly report generation failed',
       timestamp: new Date().toISOString(),
       details: error instanceof Error ? error.message : 'Unknown error'
-    });
+    }, { status: 500 });
   }
 }

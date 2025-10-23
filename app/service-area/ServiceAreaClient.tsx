@@ -364,7 +364,7 @@ export default function ServiceAreaClient() {
           neighborhood that matches your lifestyle and preferences.
         </p>
         <div className={styles.subdivisionsGrid}>
-          {subdivisions.map((sub, _idx) => (
+          {subdivisions.map((sub) => (
             <div key={sub.name} className={styles.subdivisionCard}>
               <div className={styles.subdivisionImage}>Image</div>
               <div className={styles.subdivisionInfo}>

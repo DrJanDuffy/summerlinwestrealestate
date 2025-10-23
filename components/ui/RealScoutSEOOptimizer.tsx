@@ -139,8 +139,8 @@ export default function RealScoutSEOOptimizer({
                 subtitle="Search by neighborhood, price, or features. Real-time MLS data."
                 variant="page"
                 showFeatures={true}
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
                 communities={['The Vistas', 'Stonebridge', 'Redpoint', 'Reverence']}
               />
             </section>
@@ -152,8 +152,8 @@ export default function RealScoutSEOOptimizer({
               </h2>
               <RealScoutWidget
                 variant="office-listings"
-                priceMin="600000"
-                priceMax="2000000"
+                priceMin={600000}
+                priceMax={2000000}
                 className="mt-6"
               />
             </section>
@@ -193,8 +193,8 @@ export default function RealScoutSEOOptimizer({
                 subtitle="Use our comprehensive search tool to find properties matching your exact criteria"
                 variant="page"
                 showFeatures={true}
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
               />
             </section>
 
@@ -245,8 +245,8 @@ export default function RealScoutSEOOptimizer({
               </h2>
               <RealScoutWidget
                 variant="office-listings"
-                priceMin="500000"
-                priceMax="1500000"
+                priceMin={500000}
+                priceMax={1500000}
                 className="mt-6"
               />
             </section>
@@ -298,8 +298,8 @@ export default function RealScoutSEOOptimizer({
               </h2>
               <RealScoutWidget
                 variant="office-listings"
-                priceMin="600000"
-                priceMax="2000000"
+                priceMin={600000}
+                priceMax={2000000}
                 className="mt-6"
               />
             </section>
@@ -353,8 +353,8 @@ export default function RealScoutSEOOptimizer({
                 subtitle="Search for properties while you're here"
                 variant="sidebar"
                 showFeatures={true}
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
               />
             </section>
           </div>
@@ -383,8 +383,8 @@ export default function RealScoutSEOOptimizer({
                 subtitle="Search for properties based on current market conditions"
                 variant="page"
                 showFeatures={true}
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
               />
             </section>
 
@@ -424,8 +424,8 @@ export default function RealScoutSEOOptimizer({
                 subtitle="Find properties related to our latest market insights"
                 variant="sidebar"
                 showFeatures={true}
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
               />
             </section>
           </div>
@@ -436,8 +436,8 @@ export default function RealScoutSEOOptimizer({
           <div className={`real-scout-seo-default ${className}`}>
             <RealScoutWidget
               variant="office-listings"
-              priceMin="600000"
-              priceMax="2000000"
+              priceMin={600000}
+              priceMax={2000000}
               className="mt-6"
             />
           </div>

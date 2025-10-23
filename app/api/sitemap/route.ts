@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 /**
  * V0-Generated Sitemap API Route
@@ -206,7 +206,7 @@ ${urls
   return sitemap;
 }
 
-export async function GET(_request: NextRequest) {
+export async function GET() {
   try {
     const sitemap = generateSitemap();
 

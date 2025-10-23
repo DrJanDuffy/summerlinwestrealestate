@@ -47,8 +47,9 @@ export default function GooglePageSpeedOptimization() {
         // Add font-display: swap to existing font links
         const fontLinks = document.querySelectorAll('link[href*="fonts.googleapis.com"]');
         fontLinks.forEach((link) => {
-          if (!link.href.includes('display=swap')) {
-            link.href += (link.href.includes('?') ? '&' : '?') + 'display=swap';
+          const linkElement = link as HTMLLinkElement;
+          if (!linkElement.href.includes('display=swap')) {
+            linkElement.href += (linkElement.href.includes('?') ? '&' : '?') + 'display=swap';
           }
         });
       };
@@ -204,8 +205,9 @@ export default function GooglePageSpeedOptimization() {
       let clsValue = 0;
       const clsObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) {
-            clsValue += entry.value;
+          const layoutShiftEntry = entry as any; // LayoutShift entry type
+          if (!layoutShiftEntry.hadRecentInput) {
+            clsValue += layoutShiftEntry.value;
           }
         }
         
@@ -224,11 +226,12 @@ export default function GooglePageSpeedOptimization() {
       // FID (First Input Delay)
       const fidObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
+          const eventTimingEntry = entry as any; // Cast to access processingStart
           if ((window as any).gtag) {
             (window as any).gtag('event', 'web_vital', {
               event_category: 'Core Web Vitals',
               event_label: 'FID',
-              value: Math.round(entry.processingStart - entry.startTime),
+              value: Math.round(eventTimingEntry.processingStart - eventTimingEntry.startTime),
               non_interaction: true,
             });
           }
