@@ -29,14 +29,14 @@ const RealScoutFeaturedListingsClean = dynamic(
     ssr: false,
   }
 );
-const RealScoutComprehensiveDebugger = dynamic(
-  () => import('../components/ui/RealScoutComprehensiveDebugger'),
+const RealScoutExpert = dynamic(
+  () => import('../components/ui/RealScoutExpert'),
   {
     ssr: false,
   }
 );
-const RealScoutAgentTester = dynamic(
-  () => import('../components/ui/RealScoutAgentTester'),
+const RealScoutConfigurationTester = dynamic(
+  () => import('../components/ui/RealScoutConfigurationTester'),
   {
     ssr: false,
   }
@@ -393,24 +393,20 @@ export default function ImprovedHomeClient() {
             ]}
           />
 
-          {/* Featured Listings from MLS */}
+          {/* Featured Listings from MLS - Expert Implementation */}
           <div className="mt-16">
-            <RealScoutFeaturedListingsClean 
-              agentEncodedId="QWdlbnQtMjI1MDUw"
-              sortOrder="NEWEST"
-              listingStatus="For Sale"
+            <RealScoutExpert 
+              officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
+              agentId="QWdlbnQtMjI1MDUw"
+              priceMin="500000"
+              priceMax="2000000"
               propertyTypes="SFR"
             />
           </div>
           
-          {/* Debug Information - Temporary */}
+          {/* Configuration Testing */}
           <div className="mt-8">
-            <RealScoutComprehensiveDebugger />
-          </div>
-          
-          {/* Agent ID Testing */}
-          <div className="mt-8">
-            <RealScoutAgentTester />
+            <RealScoutConfigurationTester />
           </div>
         </div>
       </section>
@@ -469,13 +465,12 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-          <RealScoutOfficeListingsClean 
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="NEWEST"
-            listingStatus="For Sale"
-            propertyTypes="SFR"
+          <RealScoutExpert 
+            officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
+            agentId="QWdlbnQtMjI1MDUw"
             priceMin="500000"
             priceMax="2000000"
+            propertyTypes="SFR"
           />
         </div>
       </section>
