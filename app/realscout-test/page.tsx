@@ -17,6 +17,7 @@ export default function RealScoutTestPage() {
               }
             `
           }} />
+          {/* @ts-ignore - RealScout web component */}
           <realscout-office-listings
             agent-encoded-id="QWdlbnQtMjI1MDUw"
             sort-order="NEWEST"
@@ -40,6 +41,7 @@ export default function RealScoutTestPage() {
               }
             `
           }} />
+          {/* @ts-ignore - RealScout web component */}
           <realscout-office-listings
             agent-encoded-id="QWdlbnQtMjI1MDUw"
             sort-order="NEWEST"
