@@ -361,7 +361,7 @@ export default function Communities() {
             ))}
           </div>
           <div className={styles.realScoutSectionSpacer}>
-            <RealScoutWidget priceMin="600000" />
+            <RealScoutWidget priceMin={600000} />
           </div>
         </section>
         <section className={styles.sectionCard} aria-label="Summerlin West Market Overview">

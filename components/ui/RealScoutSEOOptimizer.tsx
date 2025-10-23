@@ -205,8 +205,8 @@ export default function RealScoutSEOOptimizer({
               </h2>
               <RealScoutListings
                 agentId="QWdlbnQtMjI1MDUw"
-                priceMin="400000"
-                priceMax="2000000"
+                priceMin={400000}
+                priceMax={2000000}
                 maxListings={24}
               />
             </section>
