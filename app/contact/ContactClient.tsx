@@ -335,7 +335,6 @@ export default function ContactClient() {
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
             priceMin="500000"
             priceMax="800000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
@@ -377,7 +376,6 @@ export default function ContactClient() {
             propertyTypes=",SFR,OTHER"
             priceMin="500000"
             priceMax="600000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
