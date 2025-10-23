@@ -14,6 +14,14 @@ const RealScoutOfficeWidget = dynamic(
     ssr: false,
   }
 );
+
+// Temporarily add debug component
+const RealScoutTest = dynamic(
+  () => import('../components/ui/RealScoutTest'),
+  {
+    ssr: false,
+  }
+);
 // const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
 //   ssr: false,
 // });
@@ -389,6 +397,7 @@ export default function ImprovedHomeClient() {
 
              {/* Featured Listings from MLS - RealScout Office Widget */}
              <div className="mt-16">
+               <RealScoutTest className="mb-6" />
                <RealScoutOfficeWidget 
                  agentEncodedId="QWdlbnQtMjI1MDUw"
                  sortOrder="NEWEST"

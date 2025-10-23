@@ -158,7 +158,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               'https://em.realscout.com/widgets/realscout-web-components.umd.js'
             }
             type="module"
-            strategy="beforeInteractive"
+            strategy="lazyOnload"
             id="realscout-web-components"
           />
           <script

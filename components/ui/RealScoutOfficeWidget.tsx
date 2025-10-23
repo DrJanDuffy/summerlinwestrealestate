@@ -16,10 +16,10 @@ interface RealScoutOfficeWidgetProps {
 export default function RealScoutOfficeWidget({
   agentEncodedId = 'QWdlbnQtMjI1MDUw',
   sortOrder = 'NEWEST',
-  listingStatus = 'For Sale',
-  propertyTypes = 'SFR',
-  priceMin = '500000',
-  priceMax = '2000000',
+  listingStatus = 'For Sale,For Rent,In Contract',
+  propertyTypes = 'SFR,MF,TC',
+  priceMin = '400000',
+  priceMax = '3000000',
   className = '',
 }: RealScoutOfficeWidgetProps) {
   const [isLoaded, setIsLoaded] = useState(false);
