@@ -23,7 +23,7 @@ const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutWid
 // const RealScoutYourListings = dynamic(() => import('../components/ui/RealScoutYourListings'), {
 //   ssr: false,
 // });
-const RealScoutFeaturedListingsClean = dynamic(
+const _RealScoutFeaturedListingsClean = dynamic(
   () => import('../components/ui/RealScoutFeaturedListingsClean'),
   {
     ssr: false,
@@ -281,7 +281,7 @@ export default function ImprovedHomeClient() {
             </p>
           </div>
 
-          <RealScoutHomeValue />
+          {/* RealScoutHomeValue component removed - using office widget instead */}
         </div>
       </section>
 
