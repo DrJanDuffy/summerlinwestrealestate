@@ -221,9 +221,8 @@ export default function ZipCode89134Page() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin="400000"
-            priceMax="2000000"
-            maxListings={12}
+            priceMin={400000}
+            priceMax={2000000}
             className="mt-6"
           />
         </div>
