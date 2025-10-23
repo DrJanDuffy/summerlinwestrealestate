@@ -29,8 +29,8 @@ const RealScoutFeaturedListingsClean = dynamic(
     ssr: false,
   }
 );
-const RealScoutImproved = dynamic(
-  () => import('../components/ui/RealScoutImproved'),
+const RealScoutProxy = dynamic(
+  () => import('../components/ui/RealScoutProxy'),
   {
     ssr: false,
   }
@@ -393,16 +393,14 @@ export default function ImprovedHomeClient() {
             ]}
           />
 
-          {/* Featured Listings from MLS - Improved Implementation */}
+          {/* Featured Listings from MLS - CORS-Free Implementation */}
           <div className="mt-16">
-            <RealScoutImproved 
+            <RealScoutProxy 
               officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
               agentId="QWdlbnQtMjI1MDUw"
               priceMin="500000"
               priceMax="2000000"
               propertyTypes="SFR"
-              listingStatus="For Sale"
-              sortOrder="NEWEST"
             />
           </div>
           
@@ -467,14 +465,12 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-          <RealScoutImproved 
+          <RealScoutProxy 
             officeId={process.env.NEXT_PUBLIC_REALSCOUT_OFFICE_ID}
             agentId="QWdlbnQtMjI1MDUw"
             priceMin="500000"
             priceMax="2000000"
             propertyTypes="SFR"
-            listingStatus="For Sale"
-            sortOrder="NEWEST"
           />
         </div>
       </section>
