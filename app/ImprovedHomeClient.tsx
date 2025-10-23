@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
