@@ -1,21 +1,21 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   // Verify cron secret for security
   const authHeader = request.headers.get('Authorization');
   const expectedAuth = `Bearer ${process.env.CRON_SECRET}`;
-  
+
   if (authHeader !== expectedAuth) {
     console.error('Unauthorized cron request - invalid auth header');
-    return new NextResponse(JSON.stringify({ error: 'Unauthorized' }), { 
+    return new NextResponse(JSON.stringify({ error: 'Unauthorized' }), {
       status: 401,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
   }
 
   try {
     console.log('Starting weekly sitemap update...');
-    
+
     // Sitemap update tasks
     const tasks = [
       'Regenerating main sitemap.xml',
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
       'Syncing subdivision sitemaps',
       'Updating blog post URLs',
       'Refreshing market report pages',
-      'Updating school and zip code pages'
+      'Updating school and zip code pages',
     ];
 
     // Simulate sitemap update operations
@@ -58,20 +58,22 @@ export async function GET(request: NextRequest) {
         subdivision_sitemaps_synced: true,
         blog_urls_updated: true,
         market_reports_updated: true,
-        school_zip_pages_refreshed: true
-      }
+        school_zip_pages_refreshed: true,
+      },
     });
-
   } catch (error) {
     console.error('Sitemap update failed:', error);
-    return new NextResponse(JSON.stringify({
-      success: false,
-      error: 'Sitemap update failed',
-      timestamp: new Date().toISOString(),
-      details: error instanceof Error ? error.message : 'Unknown error'
-    }), { 
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return new NextResponse(
+      JSON.stringify({
+        success: false,
+        error: 'Sitemap update failed',
+        timestamp: new Date().toISOString(),
+        details: error instanceof Error ? error.message : 'Unknown error',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
   }
 }

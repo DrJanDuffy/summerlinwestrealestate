@@ -62,33 +62,16 @@ const subdivisions = [
 ];
 
 // Dynamic pages - streets
-const streets = [
-  'sky-vista-drive',
-  'desert-foothills-drive',
-  'town-center-drive',
-  'hualapai-way',
-];
+const streets = ['sky-vista-drive', 'desert-foothills-drive', 'town-center-drive', 'hualapai-way'];
 
 // Dynamic pages - schools
-const schools = [
-  'red-rock-elementary',
-  'sig-rogich-middle',
-  'palo-verde-high',
-  'faith-lutheran',
-];
+const schools = ['red-rock-elementary', 'sig-rogich-middle', 'palo-verde-high', 'faith-lutheran'];
 
 // Dynamic pages - zip codes
-const zipCodes = [
-  '89135',
-  '89134',
-  '89144',
-];
+const zipCodes = ['89135', '89134', '89144'];
 
 // Dynamic pages - market reports
-const marketReports = [
-  'paradiso',
-  'palmilla',
-];
+const marketReports = ['paradiso', 'palmilla'];
 
 // Blog posts (would be dynamic in real implementation)
 const blogPosts = [

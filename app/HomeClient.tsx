@@ -28,12 +28,9 @@ const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsights
 const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
   ssr: false,
 });
-const RealScoutOfficeListings = dynamic(
-  () => import('../components/ui/RealScoutOfficeListings'),
-  {
-    ssr: false,
-  }
-);
+const RealScoutOfficeListings = dynamic(() => import('../components/ui/RealScoutOfficeListings'), {
+  ssr: false,
+});
 
 type Faq = {
   question: string;

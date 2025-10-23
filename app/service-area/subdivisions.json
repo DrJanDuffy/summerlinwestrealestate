@@ -15,9 +15,21 @@
       "coordinates": { "lat": 36.2651, "lng": -115.3128 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "0.8 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.2 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "2.1 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "0.8 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.2 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "2.1 mi"
+      }
     },
     "hoa": {
       "monthly": 185,
@@ -46,9 +58,21 @@
       "coordinates": { "lat": 36.2628, "lng": -115.3105 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "0.9 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.1 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "2.0 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "0.9 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.1 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "2.0 mi"
+      }
     },
     "hoa": {
       "monthly": 195,
@@ -77,9 +101,21 @@
       "coordinates": { "lat": 36.2605, "lng": -115.3082 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.0 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.0 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.9 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.0 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.0 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.9 mi"
+      }
     },
     "hoa": {
       "monthly": 175,
@@ -108,9 +144,21 @@
       "coordinates": { "lat": 36.2582, "lng": -115.3059 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.1 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.9 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.8 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.1 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.9 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.8 mi"
+      }
     },
     "hoa": {
       "monthly": 165,
@@ -139,9 +187,21 @@
       "coordinates": { "lat": 36.2559, "lng": -115.3036 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.2 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.8 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.7 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.2 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.8 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.7 mi"
+      }
     },
     "hoa": {
       "monthly": 155,
@@ -170,9 +230,21 @@
       "coordinates": { "lat": 36.2536, "lng": -115.3013 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.3 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.7 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.6 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.3 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.7 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.6 mi"
+      }
     },
     "hoa": {
       "monthly": 145,
@@ -198,12 +270,24 @@
       "gateAccess": "Sky Vista Dr & Desert Foothills Dr",
       "crossStreets": "Between Desert Foothills Dr and Town Center Dr",
       "zipCode": "89135",
-      "coordinates": { "lat": 36.2513, "lng": -115.2990 }
+      "coordinates": { "lat": 36.2513, "lng": -115.299 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.4 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.6 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.5 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.4 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.6 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.5 mi"
+      }
     },
     "hoa": {
       "monthly": 135,
@@ -229,12 +313,24 @@
       "gateAccess": "No Gate - Open Access",
       "crossStreets": "Between Desert Foothills Dr and Town Center Dr",
       "zipCode": "89135",
-      "coordinates": { "lat": 36.2490, "lng": -115.2967 }
+      "coordinates": { "lat": 36.249, "lng": -115.2967 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.5 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.5 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.4 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.5 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.5 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.4 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -263,9 +359,21 @@
       "coordinates": { "lat": 36.2467, "lng": -115.2944 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.6 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.4 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.3 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.6 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.4 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.3 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -294,9 +402,21 @@
       "coordinates": { "lat": 36.2444, "lng": -115.2921 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.7 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.3 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.2 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.7 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.3 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.2 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -325,9 +445,21 @@
       "coordinates": { "lat": 36.2421, "lng": -115.2898 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.8 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.2 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.1 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.8 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.2 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.1 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -356,9 +488,21 @@
       "coordinates": { "lat": 36.2398, "lng": -115.2875 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "1.9 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.1 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "1.0 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "1.9 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.1 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "1.0 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -387,9 +531,21 @@
       "coordinates": { "lat": 36.2375, "lng": -115.2852 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.0 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.0 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.9 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.0 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.0 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.9 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -418,9 +574,21 @@
       "coordinates": { "lat": 36.2352, "lng": -115.2829 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.1 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.1 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.8 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.1 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.1 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.8 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -449,9 +617,21 @@
       "coordinates": { "lat": 36.2329, "lng": -115.2806 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.2 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.2 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.7 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.2 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.2 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.7 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -480,9 +660,21 @@
       "coordinates": { "lat": 36.2306, "lng": -115.2783 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.3 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.3 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.6 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.3 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.3 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.6 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -508,12 +700,24 @@
       "gateAccess": "Gated Community",
       "crossStreets": "Between Desert Foothills Dr and Town Center Dr",
       "zipCode": "89135",
-      "coordinates": { "lat": 36.2283, "lng": -115.2760 }
+      "coordinates": { "lat": 36.2283, "lng": -115.276 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.4 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.4 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.5 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.4 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.4 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.5 mi"
+      }
     },
     "hoa": {
       "monthly": 125,
@@ -539,12 +743,24 @@
       "gateAccess": "No Gate - Open Access",
       "crossStreets": "Between Desert Foothills Dr and Town Center Dr",
       "zipCode": "89135",
-      "coordinates": { "lat": 36.2260, "lng": -115.2737 }
+      "coordinates": { "lat": 36.226, "lng": -115.2737 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.5 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.5 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.4 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.5 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.5 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.4 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -573,9 +789,21 @@
       "coordinates": { "lat": 36.2237, "lng": -115.2714 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.6 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.6 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.3 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.6 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.6 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.3 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -604,9 +832,21 @@
       "coordinates": { "lat": 36.2214, "lng": -115.2691 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.7 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.7 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.2 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.7 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.7 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.2 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -635,9 +875,21 @@
       "coordinates": { "lat": 36.2191, "lng": -115.2668 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.8 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.8 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.1 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.8 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.8 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.1 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -666,9 +918,21 @@
       "coordinates": { "lat": 36.2168, "lng": -115.2645 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "2.9 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "0.9 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.0 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "2.9 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "0.9 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.0 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -697,9 +961,21 @@
       "coordinates": { "lat": 36.2145, "lng": -115.2622 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "3.0 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.0 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.1 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "3.0 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.0 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.1 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -728,9 +1004,21 @@
       "coordinates": { "lat": 36.2122, "lng": -115.2599 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "3.1 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.1 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.2 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "3.1 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.1 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.2 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -759,9 +1047,21 @@
       "coordinates": { "lat": 36.2099, "lng": -115.2576 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "3.2 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.2 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.3 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "3.2 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.2 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.3 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -790,9 +1090,21 @@
       "coordinates": { "lat": 36.2076, "lng": -115.2553 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "3.3 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.3 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.4 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "3.3 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.3 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.4 mi"
+      }
     },
     "hoa": {
       "monthly": 0,
@@ -818,12 +1130,24 @@
       "gateAccess": "No Gate - Open Access",
       "crossStreets": "Between Desert Foothills Dr and Town Center Dr",
       "zipCode": "89135",
-      "coordinates": { "lat": 36.2053, "lng": -115.2530 }
+      "coordinates": { "lat": 36.2053, "lng": -115.253 }
     },
     "schools": {
-      "elementary": { "name": "Red Rock Elementary", "address": "11501 Villa Hermosa Dr", "distance": "3.4 mi" },
-      "middle": { "name": "Sig Rogich Middle School", "address": "9855 Villa Ridge Dr", "distance": "1.4 mi" },
-      "high": { "name": "Palo Verde High School", "address": "333 S Pavilion Center Dr", "distance": "0.5 mi" }
+      "elementary": {
+        "name": "Red Rock Elementary",
+        "address": "11501 Villa Hermosa Dr",
+        "distance": "3.4 mi"
+      },
+      "middle": {
+        "name": "Sig Rogich Middle School",
+        "address": "9855 Villa Ridge Dr",
+        "distance": "1.4 mi"
+      },
+      "high": {
+        "name": "Palo Verde High School",
+        "address": "333 S Pavilion Center Dr",
+        "distance": "0.5 mi"
+      }
     },
     "hoa": {
       "monthly": 0,

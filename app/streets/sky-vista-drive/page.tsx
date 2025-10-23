@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale on Sky Vista Drive | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy Sky Vista Drive',
     'Las Vegas Sky Vista Drive',
     'Summerlin West homes for sale',
-    'Sky Vista Drive subdivisions'
+    'Sky Vista Drive subdivisions',
   ],
   alternates: {
     canonical: '/streets/sky-vista-drive',
@@ -132,9 +132,9 @@ export default function SkyVistaDrivePage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Sky Vista Drive</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Sky Vista Drive is the main thoroughfare running through The Vistas communities in Summerlin West. 
-                This well-maintained street provides easy access to luxury subdivisions, community amenities, 
-                and major destinations throughout Summerlin West.
+                Sky Vista Drive is the main thoroughfare running through The Vistas communities in
+                Summerlin West. This well-maintained street provides easy access to luxury
+                subdivisions, community amenities, and major destinations throughout Summerlin West.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -143,7 +143,9 @@ export default function SkyVistaDrivePage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Easy access to Vistas Park and Community Center</span>
+                  <span className="text-gray-700">
+                    Easy access to Vistas Park and Community Center
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
@@ -151,7 +153,9 @@ export default function SkyVistaDrivePage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Well-maintained with excellent street lighting</span>
+                  <span className="text-gray-700">
+                    Well-maintained with excellent street lighting
+                  </span>
                 </div>
               </div>
             </div>
@@ -192,7 +196,10 @@ export default function SkyVistaDrivePage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsOnSkyVista.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.access}</p>
                 <p className="text-blue-600 font-medium mb-4">Distance: {subdivision.distance}</p>
@@ -233,8 +240,9 @@ export default function SkyVistaDrivePage() {
             Homes for Sale on Sky Vista Drive
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale on Sky Vista Drive and in subdivisions accessible from this main thoroughfare. 
-            These properties offer convenient access to The Vistas communities and amenities.
+            Discover homes for sale on Sky Vista Drive and in subdivisions accessible from this main
+            thoroughfare. These properties offer convenient access to The Vistas communities and
+            amenities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -251,12 +259,10 @@ export default function SkyVistaDrivePage() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home on Sky Vista Drive?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home on Sky Vista Drive?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in The Vistas communities accessible from Sky Vista Drive. 
-            Get expert guidance on properties in this prime Summerlin West location.
+            Dr. Jan Duffy specializes in The Vistas communities accessible from Sky Vista Drive. Get
+            expert guidance on properties in this prime Summerlin West location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

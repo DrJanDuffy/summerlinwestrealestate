@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale on Hualapai Way | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy Hualapai Way',
     'Las Vegas Hualapai Way',
     'Summerlin West homes for sale',
-    'Hualapai Way subdivisions'
+    'Hualapai Way subdivisions',
   ],
   alternates: {
     canonical: '/streets/hualapai-way',
@@ -106,9 +106,7 @@ export default function HualapaiWayPage() {
       <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Homes for Sale on Hualapai Way
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Homes for Sale on Hualapai Way</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               Major arterial road connecting Summerlin West to Red Rock Canyon
             </p>
@@ -129,19 +127,23 @@ export default function HualapaiWayPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Hualapai Way</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Hualapai Way is a major arterial road running through Summerlin West, 
-                providing direct access to Red Rock Canyon National Conservation Area 
-                and connecting to The Vistas communities. This scenic road offers 
-                beautiful mountain views and convenient access to outdoor recreation.
+                Hualapai Way is a major arterial road running through Summerlin West, providing
+                direct access to Red Rock Canyon National Conservation Area and connecting to The
+                Vistas communities. This scenic road offers beautiful mountain views and convenient
+                access to outdoor recreation.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Direct access to Red Rock Canyon National Conservation Area</span>
+                  <span className="text-gray-700">
+                    Direct access to Red Rock Canyon National Conservation Area
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Convenient connection to The Vistas communities</span>
+                  <span className="text-gray-700">
+                    Convenient connection to The Vistas communities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
@@ -149,7 +151,9 @@ export default function HualapaiWayPage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Well-maintained with excellent street lighting</span>
+                  <span className="text-gray-700">
+                    Well-maintained with excellent street lighting
+                  </span>
                 </div>
               </div>
             </div>
@@ -190,7 +194,10 @@ export default function HualapaiWayPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {subdivisionsOnHualapai.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.access}</p>
                 <p className="text-blue-600 font-medium mb-4">Distance: {subdivision.distance}</p>
@@ -227,12 +234,11 @@ export default function HualapaiWayPage() {
       {/* Properties on Hualapai Way */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Homes for Sale on Hualapai Way
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Homes for Sale on Hualapai Way</h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale on Hualapai Way and in communities accessible from this major arterial road. 
-            These properties offer convenient access to Red Rock Canyon and The Vistas communities.
+            Discover homes for sale on Hualapai Way and in communities accessible from this major
+            arterial road. These properties offer convenient access to Red Rock Canyon and The
+            Vistas communities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -249,11 +255,9 @@ export default function HualapaiWayPage() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home on Hualapai Way?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home on Hualapai Way?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in Summerlin West communities accessible from Hualapai Way. 
+            Dr. Jan Duffy specializes in Summerlin West communities accessible from Hualapai Way.
             Get expert guidance on properties in this scenic location.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -282,7 +286,8 @@ export default function HualapaiWayPage() {
             '@context': 'https://schema.org',
             '@type': 'Street',
             name: 'Hualapai Way',
-            description: 'Major arterial road connecting Summerlin West to Red Rock Canyon National Conservation Area',
+            description:
+              'Major arterial road connecting Summerlin West to Red Rock Canyon National Conservation Area',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Hualapai Way',

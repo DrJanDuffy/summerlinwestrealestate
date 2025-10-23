@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale Near Palo Verde High School | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Summerlin West real estate',
     'Dr. Jan Duffy school districts',
     'Las Vegas school zones',
-    'Summerlin West homes for sale'
+    'Summerlin West homes for sale',
   ],
   alternates: {
     canonical: '/schools/palo-verde-high',
@@ -145,9 +145,9 @@ export default function PaloVerdeHighPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Palo Verde High School</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Palo Verde High School is a top-rated public high school serving students in grades 9-12. 
-                Located in Summerlin West, this school provides excellent education for children living 
-                in The Vistas and surrounding communities.
+                Palo Verde High School is a top-rated public high school serving students in grades
+                9-12. Located in Summerlin West, this school provides excellent education for
+                children living in The Vistas and surrounding communities.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -156,15 +156,21 @@ export default function PaloVerdeHighPage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Strong college preparation and career readiness</span>
+                  <span className="text-gray-700">
+                    Strong college preparation and career readiness
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Excellent athletics and extracurricular activities</span>
+                  <span className="text-gray-700">
+                    Excellent athletics and extracurricular activities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">High graduation rates and college acceptance</span>
+                  <span className="text-gray-700">
+                    High graduation rates and college acceptance
+                  </span>
                 </div>
               </div>
             </div>
@@ -209,7 +215,10 @@ export default function PaloVerdeHighPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsZonedToPaloVerde.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-4">Distance: {subdivision.distance}</p>
                 <Link
@@ -231,8 +240,8 @@ export default function PaloVerdeHighPage() {
             Homes for Sale Near Palo Verde High School
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in subdivisions zoned to Palo Verde High School. 
-            These properties offer excellent school access and are located in some of Summerlin West's 
+            Discover homes for sale in subdivisions zoned to Palo Verde High School. These
+            properties offer excellent school access and are located in some of Summerlin West's
             most desirable communities.
           </p>
           <RealScoutOfficeListings
@@ -250,11 +259,9 @@ export default function PaloVerdeHighPage() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home Near Palo Verde High?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home Near Palo Verde High?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in helping families find homes in excellent school districts. 
+            Dr. Jan Duffy specializes in helping families find homes in excellent school districts.
             Get expert guidance on properties zoned to Palo Verde High School.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -300,9 +307,7 @@ export default function PaloVerdeHighPage() {
               longitude: -115.3432,
             },
             hasMap: 'https://maps.google.com/?q=333+S+Pavilion+Center+Dr,+Las+Vegas,+NV+89144',
-            sameAs: [
-              'https://www.ccsd.net/schools/palo-verde-high',
-            ],
+            sameAs: ['https://www.ccsd.net/schools/palo-verde-high'],
             schoolType: 'Public High School',
             grades: '9-12',
             studentBody: {

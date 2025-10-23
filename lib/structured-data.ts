@@ -432,7 +432,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
   // Add hyperlocal location data
   if (communityData.location) {
     schema.additionalProperty = [];
-    
+
     if (communityData.location.mainStreets) {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
@@ -440,7 +440,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
         value: communityData.location.mainStreets.join(', '),
       });
     }
-    
+
     if (communityData.location.gateAccess) {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
@@ -448,7 +448,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
         value: communityData.location.gateAccess,
       });
     }
-    
+
     if (communityData.location.crossStreets) {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
@@ -461,7 +461,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
   // Add school information
   if (communityData.schools) {
     schema.nearbySchool = [];
-    
+
     if (communityData.schools.elementary) {
       schema.nearbySchool.push({
         '@type': 'School',
@@ -479,7 +479,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
         },
       });
     }
-    
+
     if (communityData.schools.middle) {
       schema.nearbySchool.push({
         '@type': 'School',
@@ -497,7 +497,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
         },
       });
     }
-    
+
     if (communityData.schools.high) {
       schema.nearbySchool.push({
         '@type': 'School',
@@ -520,7 +520,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
   // Add HOA information
   if (communityData.hoa) {
     if (!schema.additionalProperty) schema.additionalProperty = [];
-    
+
     if (communityData.hoa.monthly) {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
@@ -528,7 +528,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
         value: `$${communityData.hoa.monthly}`,
       });
     }
-    
+
     if (communityData.hoa.additional) {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
@@ -541,11 +541,11 @@ export function generateCommunitySchema(communityData: CommunityData) {
   // Add landmark distances
   if (communityData.landmarks) {
     if (!schema.additionalProperty) schema.additionalProperty = [];
-    
+
     Object.entries(communityData.landmarks).forEach(([landmark, distance]) => {
       schema.additionalProperty.push({
         '@type': 'PropertyValue',
-        name: landmark.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+        name: landmark.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase()),
         value: distance,
       });
     });
@@ -727,21 +727,33 @@ export function generateStreetSchema(streetData: {
       },
     }),
     additionalProperty: [
-      ...(streetData.length ? [{
-        '@type': 'PropertyValue',
-        name: 'Length',
-        value: streetData.length,
-      }] : []),
-      ...(streetData.speedLimit ? [{
-        '@type': 'PropertyValue',
-        name: 'Speed Limit',
-        value: streetData.speedLimit,
-      }] : []),
-      ...(streetData.lanes ? [{
-        '@type': 'PropertyValue',
-        name: 'Lanes',
-        value: streetData.lanes,
-      }] : []),
+      ...(streetData.length
+        ? [
+            {
+              '@type': 'PropertyValue',
+              name: 'Length',
+              value: streetData.length,
+            },
+          ]
+        : []),
+      ...(streetData.speedLimit
+        ? [
+            {
+              '@type': 'PropertyValue',
+              name: 'Speed Limit',
+              value: streetData.speedLimit,
+            },
+          ]
+        : []),
+      ...(streetData.lanes
+        ? [
+            {
+              '@type': 'PropertyValue',
+              name: 'Lanes',
+              value: streetData.lanes,
+            },
+          ]
+        : []),
     ],
   };
 }

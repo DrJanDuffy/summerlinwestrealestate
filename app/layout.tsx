@@ -6,12 +6,14 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Head from 'next/head';
 import Script from 'next/script';
+import GoogleOptimization, {
+  GoogleTagManagerNoScript,
+} from '../components/analytics/GoogleOptimization';
 import Header from '../components/layout/Header';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
 import RealScoutOfficeListings from '../components/ui/RealScoutOfficeListings';
 import { generateComprehensiveSchema } from '../lib/structured-data';
-import GoogleOptimization, { GoogleTagManagerNoScript } from '../components/analytics/GoogleOptimization';
 import styles from './page.module.css';
 
 const inter = Inter({
@@ -108,7 +110,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-code-here',
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-code-here',
   },
   manifest: '/manifest.json',
 };

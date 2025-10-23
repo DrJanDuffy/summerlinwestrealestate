@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in 89134 | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Dr. Jan Duffy 89134',
     'Las Vegas zip code 89134',
     'Summerlin West homes for sale',
-    '89134 subdivisions'
+    '89134 subdivisions',
   ],
   alternates: {
     canonical: '/zip-codes/89134',
@@ -63,8 +63,18 @@ export const metadata: Metadata = {
 };
 
 const subdivisionsIn89134 = [
-  { name: 'Stonebridge Communities', type: 'Luxury/Gated', priceRange: '$850K-$2.0M', slug: 'stonebridge' },
-  { name: 'Redpoint Communities', type: 'Luxury/Gated', priceRange: '$750K-$1.8M', slug: 'redpoint' },
+  {
+    name: 'Stonebridge Communities',
+    type: 'Luxury/Gated',
+    priceRange: '$850K-$2.0M',
+    slug: 'stonebridge',
+  },
+  {
+    name: 'Redpoint Communities',
+    type: 'Luxury/Gated',
+    priceRange: '$750K-$1.8M',
+    slug: 'redpoint',
+  },
   { name: 'The Paseos', type: 'Family', priceRange: '$600K-$1.2M', slug: 'the-paseos' },
   { name: 'Reverence', type: 'Luxury/Gated', priceRange: '$900K-$2.5M', slug: 'reverence' },
 ];
@@ -124,7 +134,9 @@ export default function ZipCode89134Page() {
       {/* Market Statistics */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Market Statistics for Zip Code 89134</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Market Statistics for Zip Code 89134
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -161,12 +173,13 @@ export default function ZipCode89134Page() {
       {/* Subdivisions in 89134 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Communities in Zip Code 89134
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Communities in Zip Code 89134</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
             {subdivisionsIn89134.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-2">{subdivision.type}</p>
                 <p className="text-blue-600 font-medium mb-4">{subdivision.priceRange}</p>
@@ -185,9 +198,7 @@ export default function ZipCode89134Page() {
       {/* Schools in 89134 */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Schools Serving Zip Code 89134
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Schools Serving Zip Code 89134</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {schoolsIn89134.map((school) => (
               <div key={school.name} className="bg-gray-50 rounded-lg p-6 text-center">
@@ -209,12 +220,10 @@ export default function ZipCode89134Page() {
       {/* Properties in 89134 */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Homes for Sale in Zip Code 89134
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Homes for Sale in Zip Code 89134</h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in zip code 89134, featuring established Summerlin West communities 
-            with modern amenities and excellent school access.
+            Discover homes for sale in zip code 89134, featuring established Summerlin West
+            communities with modern amenities and excellent school access.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -231,12 +240,10 @@ export default function ZipCode89134Page() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Find Your Home in Zip Code 89134?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Find Your Home in Zip Code 89134?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in Summerlin West communities in zip code 89134. 
-            Get expert guidance on properties in this established area.
+            Dr. Jan Duffy specializes in Summerlin West communities in zip code 89134. Get expert
+            guidance on properties in this established area.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -267,7 +274,8 @@ export default function ZipCode89134Page() {
             addressLocality: 'Las Vegas',
             addressRegion: 'NV',
             addressCountry: 'US',
-            description: 'Zip code 89134 covers established Summerlin West communities in Las Vegas',
+            description:
+              'Zip code 89134 covers established Summerlin West communities in Las Vegas',
             geo: {
               '@type': 'GeoCoordinates',
               latitude: 36.1865,

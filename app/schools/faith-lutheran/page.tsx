@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale Near Faith Lutheran School | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Summerlin West real estate',
     'Dr. Jan Duffy school districts',
     'Las Vegas school zones',
-    'Summerlin West homes for sale'
+    'Summerlin West homes for sale',
   ],
   alternates: {
     canonical: '/schools/faith-lutheran',
@@ -144,26 +144,34 @@ export default function FaithLutheranPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Faith Lutheran School</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Faith Lutheran School is a private Christian school serving students from Pre-K through 12th grade. 
-                Located in Summerlin West, this school provides excellent education for children living 
-                in The Vistas and surrounding communities.
+                Faith Lutheran School is a private Christian school serving students from Pre-K
+                through 12th grade. Located in Summerlin West, this school provides excellent
+                education for children living in The Vistas and surrounding communities.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Private Christian education with small class sizes</span>
+                  <span className="text-gray-700">
+                    Private Christian education with small class sizes
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Strong academic programs and college preparation</span>
+                  <span className="text-gray-700">
+                    Strong academic programs and college preparation
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Comprehensive athletics and extracurricular activities</span>
+                  <span className="text-gray-700">
+                    Comprehensive athletics and extracurricular activities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Values-based education in a supportive environment</span>
+                  <span className="text-gray-700">
+                    Values-based education in a supportive environment
+                  </span>
                 </div>
               </div>
             </div>
@@ -208,7 +216,10 @@ export default function FaithLutheranPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsNearFaithLutheran.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-4">Distance: {subdivision.distance}</p>
                 <Link
@@ -230,9 +241,9 @@ export default function FaithLutheranPage() {
             Homes for Sale Near Faith Lutheran School
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in subdivisions near Faith Lutheran School. 
-            These properties offer convenient access to this excellent private school and are located 
-            in some of Summerlin West's most desirable communities.
+            Discover homes for sale in subdivisions near Faith Lutheran School. These properties
+            offer convenient access to this excellent private school and are located in some of
+            Summerlin West's most desirable communities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -253,8 +264,8 @@ export default function FaithLutheranPage() {
             Ready to Find Your Home Near Faith Lutheran School?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in helping families find homes near excellent schools. 
-            Get expert guidance on properties near Faith Lutheran School.
+            Dr. Jan Duffy specializes in helping families find homes near excellent schools. Get
+            expert guidance on properties near Faith Lutheran School.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -282,7 +293,8 @@ export default function FaithLutheranPage() {
             '@context': 'https://schema.org',
             '@type': 'School',
             name: 'Faith Lutheran School',
-            description: 'Private Christian school serving The Vistas communities in Summerlin West',
+            description:
+              'Private Christian school serving The Vistas communities in Summerlin West',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '2015 S Hualapai Way',
@@ -299,9 +311,7 @@ export default function FaithLutheranPage() {
               longitude: -115.3432,
             },
             hasMap: 'https://maps.google.com/?q=2015+S+Hualapai+Way,+Las+Vegas,+NV+89117',
-            sameAs: [
-              'https://www.faithlutheranlv.org',
-            ],
+            sameAs: ['https://www.faithlutheranlv.org'],
             schoolType: 'Private Christian School',
             grades: 'Pre-K-12',
             studentBody: {

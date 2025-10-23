@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../components/ui/RealScoutOfficeListings')
-  );
+  () => import('../../../components/ui/RealScoutOfficeListings')
+);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale Near Sig Rogich Middle School | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Summerlin West real estate',
     'Dr. Jan Duffy school districts',
     'Las Vegas school zones',
-    'Summerlin West homes for sale'
+    'Summerlin West homes for sale',
   ],
   alternates: {
     canonical: '/schools/sig-rogich-middle',
@@ -145,9 +145,9 @@ export default function SigRogichMiddlePage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">About Sig Rogich Middle School</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Sig Rogich Middle School is an award-winning public middle school serving students in grades 6-8. 
-                Located in the heart of Summerlin West, this school provides excellent education for children living 
-                in The Vistas and surrounding communities.
+                Sig Rogich Middle School is an award-winning public middle school serving students
+                in grades 6-8. Located in the heart of Summerlin West, this school provides
+                excellent education for children living in The Vistas and surrounding communities.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -156,7 +156,9 @@ export default function SigRogichMiddlePage() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
-                  <span className="text-gray-700">Strong STEM curriculum and extracurricular activities</span>
+                  <span className="text-gray-700">
+                    Strong STEM curriculum and extracurricular activities
+                  </span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-600 text-xl mr-3">✓</span>
@@ -205,7 +207,10 @@ export default function SigRogichMiddlePage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subdivisionsZonedToSigRogich.map((subdivision) => (
-              <div key={subdivision.slug} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div
+                key={subdivision.slug}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              >
                 <h3 className="text-xl font-semibold mb-2">{subdivision.name}</h3>
                 <p className="text-gray-600 mb-4">Distance: {subdivision.distance}</p>
                 <Link
@@ -227,8 +232,8 @@ export default function SigRogichMiddlePage() {
             Homes for Sale Near Sig Rogich Middle School
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Discover homes for sale in subdivisions zoned to Sig Rogich Middle School. 
-            These properties offer excellent school access and are located in some of Summerlin West's 
+            Discover homes for sale in subdivisions zoned to Sig Rogich Middle School. These
+            properties offer excellent school access and are located in some of Summerlin West's
             most desirable communities.
           </p>
           <RealScoutOfficeListings
@@ -250,7 +255,7 @@ export default function SigRogichMiddlePage() {
             Ready to Find Your Home Near Sig Rogich Middle?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in helping families find homes in excellent school districts. 
+            Dr. Jan Duffy specializes in helping families find homes in excellent school districts.
             Get expert guidance on properties zoned to Sig Rogich Middle School.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -279,7 +284,8 @@ export default function SigRogichMiddlePage() {
             '@context': 'https://schema.org',
             '@type': 'School',
             name: 'Sig Rogich Middle School',
-            description: 'Award-winning middle school serving The Vistas communities in Summerlin West',
+            description:
+              'Award-winning middle school serving The Vistas communities in Summerlin West',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '9855 Villa Ridge Dr',
@@ -296,9 +302,7 @@ export default function SigRogichMiddlePage() {
               longitude: -115.3432,
             },
             hasMap: 'https://maps.google.com/?q=9855+Villa+Ridge+Dr,+Las+Vegas,+NV+89134',
-            sameAs: [
-              'https://www.ccsd.net/schools/sig-rogich-middle',
-            ],
+            sameAs: ['https://www.ccsd.net/schools/sig-rogich-middle'],
             schoolType: 'Public Middle School',
             grades: '6-8',
             studentBody: {

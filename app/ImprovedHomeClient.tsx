@@ -469,7 +469,8 @@ export default function ImprovedHomeClient() {
               Explore Summerlin West by Location
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find your perfect home by exploring specific subdivisions, schools, zip codes, and streets in Summerlin West.
+              Find your perfect home by exploring specific subdivisions, schools, zip codes, and
+              streets in Summerlin West.
             </p>
           </div>
 
@@ -478,12 +479,24 @@ export default function ImprovedHomeClient() {
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Explore by Subdivision</h3>
-                <p className="text-gray-600 mb-4">Browse homes in specific subdivisions like The Vistas, Stonebridge, and more.</p>
+                <p className="text-gray-600 mb-4">
+                  Browse homes in specific subdivisions like The Vistas, Stonebridge, and more.
+                </p>
                 <Link
                   href="/service-area"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
@@ -497,13 +510,30 @@ export default function ImprovedHomeClient() {
             <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 14l9-5-9-5-9 5 9 5z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                    />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Search by School</h3>
-                <p className="text-gray-600 mb-4">Find homes near top-rated schools serving Summerlin West.</p>
+                <p className="text-gray-600 mb-4">
+                  Find homes near top-rated schools serving Summerlin West.
+                </p>
                 <a
                   href="/schools"
                   className="inline-block bg-green-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors"
@@ -517,13 +547,30 @@ export default function ImprovedHomeClient() {
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="text-center">
                 <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Browse by Zip Code</h3>
-                <p className="text-gray-600 mb-4">Explore homes by zip code areas in Summerlin West.</p>
+                <p className="text-gray-600 mb-4">
+                  Explore homes by zip code areas in Summerlin West.
+                </p>
                 <a
                   href="/zip-codes"
                   className="inline-block bg-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-purple-700 transition-colors"
@@ -537,12 +584,24 @@ export default function ImprovedHomeClient() {
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="text-center">
                 <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Search by Street</h3>
-                <p className="text-gray-600 mb-4">Find homes on specific streets in Summerlin West.</p>
+                <p className="text-gray-600 mb-4">
+                  Find homes on specific streets in Summerlin West.
+                </p>
                 <a
                   href="/streets"
                   className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
@@ -563,7 +622,8 @@ export default function ImprovedHomeClient() {
               Popular Subdivisions in Summerlin West
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the most sought-after subdivisions in Summerlin West, each offering unique amenities and lifestyle options.
+              Explore the most sought-after subdivisions in Summerlin West, each offering unique
+              amenities and lifestyle options.
             </p>
           </div>
 
@@ -571,11 +631,23 @@ export default function ImprovedHomeClient() {
             <Link href="/service-area/paradiso" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Paradiso</h3>
-                <p className="text-gray-600 mb-3">Gated luxury community with custom homes and mountain views</p>
+                <p className="text-gray-600 mb-3">
+                  Gated luxury community with custom homes and mountain views
+                </p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore Paradiso</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -587,8 +659,18 @@ export default function ImprovedHomeClient() {
                 <p className="text-gray-600 mb-3">Upscale gated community with luxury amenities</p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore Palmilla</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -597,11 +679,23 @@ export default function ImprovedHomeClient() {
             <Link href="/service-area/estancia" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Estancia</h3>
-                <p className="text-gray-600 mb-3">Luxury single-family homes with premium finishes</p>
+                <p className="text-gray-600 mb-3">
+                  Luxury single-family homes with premium finishes
+                </p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore Estancia</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -610,11 +704,23 @@ export default function ImprovedHomeClient() {
             <Link href="/service-area/talaverde" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Talaverde</h3>
-                <p className="text-gray-600 mb-3">All single-story luxury homes with modern designs</p>
+                <p className="text-gray-600 mb-3">
+                  All single-story luxury homes with modern designs
+                </p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore Talaverde</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -623,11 +729,23 @@ export default function ImprovedHomeClient() {
             <Link href="/service-area/casa-rosa" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Casa Rosa</h3>
-                <p className="text-gray-600 mb-3">Mid-range luxury homes with gated community access</p>
+                <p className="text-gray-600 mb-3">
+                  Mid-range luxury homes with gated community access
+                </p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore Casa Rosa</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>
@@ -636,11 +754,23 @@ export default function ImprovedHomeClient() {
             <Link href="/service-area/san-marcos" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">San Marcos</h3>
-                <p className="text-gray-600 mb-3">Established luxury neighborhood with mature landscaping</p>
+                <p className="text-gray-600 mb-3">
+                  Established luxury neighborhood with mature landscaping
+                </p>
                 <div className="flex items-center text-blue-600 font-medium">
                   <span>Explore San Marcos</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </div>

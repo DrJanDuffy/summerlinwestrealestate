@@ -84,7 +84,7 @@ export default function CoreWebVitals({ measurementId }: CoreWebVitalsProps) {
         if (!img.getAttribute('loading')) {
           img.setAttribute('loading', 'lazy');
         }
-        
+
         // Add decoding="async" for better performance
         if (!img.getAttribute('decoding')) {
           img.setAttribute('decoding', 'async');
@@ -95,9 +95,9 @@ export default function CoreWebVitals({ measurementId }: CoreWebVitalsProps) {
     const optimizeFonts = () => {
       // Preload critical fonts
       const criticalFonts = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
       ];
-      
+
       criticalFonts.forEach((fontUrl) => {
         const link = document.createElement('link');
         link.rel = 'preload';
@@ -109,11 +109,8 @@ export default function CoreWebVitals({ measurementId }: CoreWebVitalsProps) {
 
     const optimizeResources = () => {
       // Preload critical resources
-      const criticalResources = [
-        '/images/og-image.svg',
-        '/images/logo.png'
-      ];
-      
+      const criticalResources = ['/images/og-image.svg', '/images/logo.png'];
+
       criticalResources.forEach((resource) => {
         const link = document.createElement('link');
         link.rel = 'preload';
@@ -130,7 +127,8 @@ export default function CoreWebVitals({ measurementId }: CoreWebVitalsProps) {
 
     // Service Worker registration for caching
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker
+        .register('/sw.js')
         .then((registration) => {
           console.log('SW registered: ', registration);
         })
@@ -138,7 +136,6 @@ export default function CoreWebVitals({ measurementId }: CoreWebVitalsProps) {
           console.log('SW registration failed: ', registrationError);
         });
     }
-
   }, [measurementId]);
 
   return null; // This component doesn't render anything

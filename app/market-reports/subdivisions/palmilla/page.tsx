@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const RealScoutOfficeListings = dynamic(
-    () => import('../../../../components/ui/RealScoutOfficeListingsWrapper')
-  );
+  () => import('../../../../components/ui/RealScoutOfficeListingsWrapper')
+);
 
 export const metadata: Metadata = {
   title: 'Palmilla Market Report | January 2025 | Summerlin West Real Estate',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Palmilla home values',
     'Summerlin West market data',
     'Palmilla sales trends',
-    'Las Vegas luxury real estate market'
+    'Las Vegas luxury real estate market',
   ],
   alternates: {
     canonical: '/market-reports/subdivisions/palmilla',
@@ -73,12 +73,12 @@ const marketData = {
   pricePerSqFt: 375,
   priceChangeYoY: '+7.2%',
   inventoryChange: '-15%',
-  marketTrend: 'Seller\'s Market',
+  marketTrend: "Seller's Market",
   medianHomeSize: 3150,
   avgLotSize: '0.25 acres',
   hoaFee: '$175/month',
   yearBuilt: '2006-2007',
-  builder: 'Woodside Homes'
+  builder: 'Woodside Homes',
 };
 
 const recentSales = [
@@ -90,26 +90,29 @@ const recentSales = [
     bathrooms: 3,
     squareFeet: 3300,
     daysOnMarket: 18,
-    pricePerSqFt: 371
-  }
+    pricePerSqFt: 371,
+  },
 ];
 
 const marketInsights = [
   {
     title: 'Premium Location',
-    description: 'Palmilla\'s prime location near Desert Foothills Drive continues to attract luxury buyers seeking convenience and exclusivity.',
-    trend: 'positive'
+    description:
+      "Palmilla's prime location near Desert Foothills Drive continues to attract luxury buyers seeking convenience and exclusivity.",
+    trend: 'positive',
   },
   {
     title: 'Steady Appreciation',
-    description: 'Home values in Palmilla have shown consistent 7.2% year-over-year growth, indicating strong market fundamentals.',
-    trend: 'positive'
+    description:
+      'Home values in Palmilla have shown consistent 7.2% year-over-year growth, indicating strong market fundamentals.',
+    trend: 'positive',
   },
   {
     title: 'Limited Supply',
-    description: 'With only 2 active listings, Palmilla has one of the lowest inventory levels in Summerlin West.',
-    trend: 'neutral'
-  }
+    description:
+      'With only 2 active listings, Palmilla has one of the lowest inventory levels in Summerlin West.',
+    trend: 'neutral',
+  },
 ];
 
 export default function PalmillaMarketReportPage() {
@@ -132,7 +135,10 @@ export default function PalmillaMarketReportPage() {
             </li>
             <li className="text-gray-500">/</li>
             <li>
-              <Link href="/market-reports/subdivisions" className="text-blue-600 hover:text-blue-800">
+              <Link
+                href="/market-reports/subdivisions"
+                className="text-blue-600 hover:text-blue-800"
+              >
                 Subdivisions
               </Link>
             </li>
@@ -148,9 +154,7 @@ export default function PalmillaMarketReportPage() {
       <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Palmilla Market Report
-            </h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Palmilla Market Report</h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               January 2025 Market Analysis & Trends
             </p>
@@ -170,22 +174,30 @@ export default function PalmillaMarketReportPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Key Market Metrics</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-blue-50 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-bold text-blue-600 mb-2">${marketData.avgSalePrice.toLocaleString()}</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                ${marketData.avgSalePrice.toLocaleString()}
+              </h3>
               <p className="text-gray-700 font-semibold">Average Sale Price</p>
               <p className="text-sm text-gray-600 mt-1">{marketData.priceChangeYoY} vs last year</p>
             </div>
             <div className="bg-green-50 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-bold text-green-600 mb-2">{marketData.avgDaysOnMarket}</h3>
+              <h3 className="text-2xl font-bold text-green-600 mb-2">
+                {marketData.avgDaysOnMarket}
+              </h3>
               <p className="text-gray-700 font-semibold">Days on Market</p>
               <p className="text-sm text-gray-600 mt-1">Average time to sell</p>
             </div>
             <div className="bg-purple-50 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-bold text-purple-600 mb-2">{marketData.activeListings}</h3>
+              <h3 className="text-2xl font-bold text-purple-600 mb-2">
+                {marketData.activeListings}
+              </h3>
               <p className="text-gray-700 font-semibold">Active Listings</p>
               <p className="text-sm text-gray-600 mt-1">Currently for sale</p>
             </div>
             <div className="bg-orange-50 rounded-lg p-6 text-center">
-              <h3 className="text-2xl font-bold text-orange-600 mb-2">${marketData.pricePerSqFt}</h3>
+              <h3 className="text-2xl font-bold text-orange-600 mb-2">
+                ${marketData.pricePerSqFt}
+              </h3>
               <p className="text-gray-700 font-semibold">Price per Sq Ft</p>
               <p className="text-sm text-gray-600 mt-1">Average price per square foot</p>
             </div>
@@ -202,14 +214,20 @@ export default function PalmillaMarketReportPage() {
               <div key={index} className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{insight.title}</h3>
                 <p className="text-gray-700">{insight.description}</p>
-                <div className={`mt-4 inline-block px-3 py-1 rounded-full text-sm font-medium ${
-                  insight.trend === 'positive' ? 'bg-green-100 text-green-800' :
-                  insight.trend === 'negative' ? 'bg-red-100 text-red-800' :
-                  'bg-gray-100 text-gray-800'
-                }`}>
-                  {insight.trend === 'positive' ? 'Positive Trend' :
-                   insight.trend === 'negative' ? 'Negative Trend' :
-                   'Neutral Trend'}
+                <div
+                  className={`mt-4 inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                    insight.trend === 'positive'
+                      ? 'bg-green-100 text-green-800'
+                      : insight.trend === 'negative'
+                        ? 'bg-red-100 text-red-800'
+                        : 'bg-gray-100 text-gray-800'
+                  }`}
+                >
+                  {insight.trend === 'positive'
+                    ? 'Positive Trend'
+                    : insight.trend === 'negative'
+                      ? 'Negative Trend'
+                      : 'Neutral Trend'}
                 </div>
               </div>
             ))}
@@ -225,23 +243,47 @@ export default function PalmillaMarketReportPage() {
             <table className="w-full bg-white rounded-lg shadow-md">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Address</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sale Price</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sale Date</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Beds/Baths</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sq Ft</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Days on Market</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Address
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Sale Price
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Sale Date
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Beds/Baths
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Sq Ft
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Days on Market
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {recentSales.map((sale, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{sale.address}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${sale.salePrice.toLocaleString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{new Date(sale.saleDate).toLocaleDateString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{sale.bedrooms}/{sale.bathrooms}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{sale.squareFeet.toLocaleString()}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{sale.daysOnMarket}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      {sale.address}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      ${sale.salePrice.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {new Date(sale.saleDate).toLocaleDateString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {sale.bedrooms}/{sale.bathrooms}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {sale.squareFeet.toLocaleString()}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {sale.daysOnMarket}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -256,25 +298,39 @@ export default function PalmillaMarketReportPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-6">Expert Market Analysis</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Dr. Jan Duffy provides expert insights on the current Palmilla market conditions and what they mean for buyers and sellers.
+              Dr. Jan Duffy provides expert insights on the current Palmilla market conditions and
+              what they mean for buyers and sellers.
             </p>
           </div>
-          
+
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
             <div className="flex items-center mb-6">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold">Dr. Jan Duffy's Market Insight</h3>
             </div>
             <p className="text-lg leading-relaxed">
-              "Palmilla represents the perfect balance of luxury and convenience in Summerlin West. Woodside Homes' quality construction 
-              combined with the subdivision's prime location near Desert Foothills Drive creates exceptional value. The 7.2% year-over-year 
-              appreciation reflects strong demand for this gated community. With only 2 active listings, Palmilla has one of the tightest 
-              inventories in the area, making it a true seller's market. The average 22 days on market shows properties are moving quickly 
-              when priced correctly. For buyers, Palmilla offers excellent long-term value with its established community and premium amenities."
+              "Palmilla represents the perfect balance of luxury and convenience in Summerlin West.
+              Woodside Homes' quality construction combined with the subdivision's prime location
+              near Desert Foothills Drive creates exceptional value. The 7.2% year-over-year
+              appreciation reflects strong demand for this gated community. With only 2 active
+              listings, Palmilla has one of the tightest inventories in the area, making it a true
+              seller's market. The average 22 days on market shows properties are moving quickly
+              when priced correctly. For buyers, Palmilla offers excellent long-term value with its
+              established community and premium amenities."
             </p>
           </div>
         </div>
@@ -287,7 +343,8 @@ export default function PalmillaMarketReportPage() {
             Current Homes for Sale in Palmilla
           </h2>
           <p className="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
-            Browse the latest homes for sale in Palmilla subdivision. These properties offer luxury living with gated community access and premium amenities.
+            Browse the latest homes for sale in Palmilla subdivision. These properties offer luxury
+            living with gated community access and premium amenities.
           </p>
           <RealScoutOfficeListings
             agentEncodedId="QWdlbnQtMjI1MDUw"
@@ -304,12 +361,10 @@ export default function PalmillaMarketReportPage() {
       {/* Contact Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Buy or Sell in Palmilla?
-          </h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Buy or Sell in Palmilla?</h2>
           <p className="text-xl mb-8 text-blue-100">
-            Dr. Jan Duffy specializes in Palmilla subdivision and can provide expert guidance on market conditions, 
-            pricing strategies, and the buying/selling process.
+            Dr. Jan Duffy specializes in Palmilla subdivision and can provide expert guidance on
+            market conditions, pricing strategies, and the buying/selling process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

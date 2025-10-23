@@ -14,12 +14,12 @@ export default function GooglePageSpeedOptimization() {
           if (!img.getAttribute('loading')) {
             img.setAttribute('loading', 'lazy');
           }
-          
+
           // Add decoding="async" for better performance
           if (!img.getAttribute('decoding')) {
             img.setAttribute('decoding', 'async');
           }
-          
+
           // Add fetchpriority="high" for above-the-fold images
           const rect = img.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -33,9 +33,9 @@ export default function GooglePageSpeedOptimization() {
         // Preload critical fonts
         const criticalFonts = [
           'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-          'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap'
+          'https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap',
         ];
-        
+
         criticalFonts.forEach((fontUrl) => {
           const link = document.createElement('link');
           link.rel = 'preload';
@@ -77,11 +77,7 @@ export default function GooglePageSpeedOptimization() {
 
       // 4. Critical resource preloading
       const preloadCriticalResources = () => {
-        const criticalResources = [
-          '/images/og-image.svg',
-          '/images/logo.png',
-          '/manifest.json'
-        ];
+        const criticalResources = ['/images/og-image.svg', '/images/logo.png', '/manifest.json'];
 
         criticalResources.forEach((resource) => {
           const link = document.createElement('link');
@@ -118,7 +114,7 @@ export default function GooglePageSpeedOptimization() {
           .hero { background: linear-gradient(135deg, #1e40af, #7c3aed); }
           .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
         `;
-        
+
         const style = document.createElement('style');
         style.textContent = criticalCSS;
         document.head.appendChild(style);
@@ -129,7 +125,7 @@ export default function GooglePageSpeedOptimization() {
         // Load third-party scripts after page load
         const thirdPartyScripts = [
           'https://www.facebook.net/en_US/fbevents.js',
-          'https://www.googletagmanager.com/gtag/js'
+          'https://www.googletagmanager.com/gtag/js',
         ];
 
         thirdPartyScripts.forEach((src) => {
@@ -144,7 +140,8 @@ export default function GooglePageSpeedOptimization() {
       // 8. Service Worker for caching
       const registerServiceWorker = () => {
         if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('/sw.js')
+          navigator.serviceWorker
+            .register('/sw.js')
             .then((registration) => {
               console.log('Service Worker registered:', registration);
             })
@@ -187,7 +184,7 @@ export default function GooglePageSpeedOptimization() {
       const observer = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        
+
         if ((window as any).gtag) {
           (window as any).gtag('event', 'web_vital', {
             event_category: 'Core Web Vitals',
@@ -208,7 +205,7 @@ export default function GooglePageSpeedOptimization() {
             clsValue += entry.value;
           }
         }
-        
+
         if ((window as any).gtag) {
           (window as any).gtag('event', 'web_vital', {
             event_category: 'Core Web Vitals',
@@ -240,7 +237,6 @@ export default function GooglePageSpeedOptimization() {
 
     // Monitor Core Web Vitals after page load
     setTimeout(monitorCoreWebVitals, 1000);
-
   }, []);
 
   return null; // This component doesn't render anything

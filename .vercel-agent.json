@@ -41,12 +41,7 @@
         ]
       }
     },
-    "exclude": [
-      "node_modules/**",
-      ".next/**",
-      "public/**",
-      "*.log"
-    ],
+    "exclude": ["node_modules/**", ".next/**", "public/**", "*.log"],
     "include": [
       "app/**/*.ts",
       "app/**/*.tsx",

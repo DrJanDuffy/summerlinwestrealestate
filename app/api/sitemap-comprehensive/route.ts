@@ -8,9 +8,7 @@ import { type NextRequest, NextResponse } from 'next/server';
 const baseUrl = 'https://www.summerlinwestrealestate.com';
 
 // High priority pages (priority 1.0)
-const highPriorityPages = [
-  { path: '', priority: '1.0', changefreq: 'daily' },
-];
+const highPriorityPages = [{ path: '', priority: '1.0', changefreq: 'daily' }];
 
 // Important pages (priority 0.9)
 const importantPages = [
@@ -23,15 +21,38 @@ const importantPages = [
 
 // Subdivision pages (priority 0.9)
 const subdivisionPages = [
-  'paradiso', 'palmilla', 'estancia', 'talaverde', 'casa-rosa', 'san-marcos',
-  'sonesta', 'barrington', 'monterossa', 'kingwood', 'ashton-park', 'bella-vista',
-  'hillstone', 'portofino', 'encanto', 'somerset', 'summerfield', 'vista-verde',
-  'talega', 'canterra', 'capri', 'cara-vella'
+  'paradiso',
+  'palmilla',
+  'estancia',
+  'talaverde',
+  'casa-rosa',
+  'san-marcos',
+  'sonesta',
+  'barrington',
+  'monterossa',
+  'kingwood',
+  'ashton-park',
+  'bella-vista',
+  'hillstone',
+  'portofino',
+  'encanto',
+  'somerset',
+  'summerfield',
+  'vista-verde',
+  'talega',
+  'canterra',
+  'capri',
+  'cara-vella',
 ];
 
 // Community pages (priority 0.9)
 const communityPages = [
-  'the-vistas', 'stonebridge', 'redpoint', 'reverence', 'the-cliffs', 'red-rock'
+  'the-vistas',
+  'stonebridge',
+  'redpoint',
+  'reverence',
+  'the-cliffs',
+  'red-rock',
 ];
 
 // Secondary pages (priority 0.8)
@@ -57,21 +78,23 @@ const secondaryPages = [
 
 // Hyperlocal pages (priority 0.8)
 const schoolPages = [
-  'red-rock-elementary', 'sig-rogich-middle', 'palo-verde-high', 'faith-lutheran'
+  'red-rock-elementary',
+  'sig-rogich-middle',
+  'palo-verde-high',
+  'faith-lutheran',
 ];
 
-const zipCodePages = [
-  '89135', '89134', '89144'
-];
+const zipCodePages = ['89135', '89134', '89144'];
 
 const streetPages = [
-  'sky-vista-drive', 'desert-foothills-drive', 'town-center-drive', 'hualapai-way'
+  'sky-vista-drive',
+  'desert-foothills-drive',
+  'town-center-drive',
+  'hualapai-way',
 ];
 
 // Market report pages (priority 0.7)
-const marketReportPages = [
-  'paradiso', 'palmilla'
-];
+const marketReportPages = ['paradiso', 'palmilla'];
 
 // Blog pages (priority 0.7)
 const blogPages = [
