@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import InternalLinking from '../components/ui/InternalLinking';
 import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
@@ -410,6 +409,7 @@ export default function ImprovedHomeClient() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-label="Expert insight icon"
                   >
                     <path
                       strokeLinecap="round"

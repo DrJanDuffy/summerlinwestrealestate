@@ -3,11 +3,8 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../../components/ui/RealScoutOfficeListingsWrapper'),
-  {
-    ssr: false,
-  }
-);
+    () => import('../../../components/ui/RealScoutOfficeListingsWrapper')
+  );
 
 export const metadata: Metadata = {
   title: 'Paradiso Market Report | January 2025 | Summerlin West Real Estate',
