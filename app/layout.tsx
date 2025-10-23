@@ -197,8 +197,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               sortOrder="PRICE_LOW"
               listingStatus="For Sale"
               propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-              priceMin={600000}
-              priceMax={2000000}
+              priceMin="600000"
+              priceMax="2000000"
               className="mt-6"
             />
           </div>
