@@ -160,7 +160,6 @@ export default function DowntownSummerlin() {
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
             priceMin="500000"
             priceMax="1200000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
@@ -229,7 +228,6 @@ export default function DowntownSummerlin() {
             propertyTypes=",SFR,OTHER"
             priceMin="500000"
             priceMax="600000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
