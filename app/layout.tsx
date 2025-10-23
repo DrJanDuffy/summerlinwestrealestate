@@ -155,12 +155,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
             strategy="afterInteractive"
             id="realscout-web-components"
-            onLoad={() => {
-              console.log('RealScout script loaded successfully');
-            }}
-            onError={() => {
-              console.log('RealScout script failed to load');
-            }}
           />
           <script
             type="application/ld+json"
