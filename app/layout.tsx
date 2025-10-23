@@ -282,7 +282,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 const checkRealScout = setInterval(function() {
                   attempts++;
                   
-                  console.log(`Attempt ${attempts}: Checking RealScout...`);
+                  console.log('Attempt ' + attempts + ': Checking RealScout...');
                   
                   // Check if custom element is available
                   if (customElements.get('realscout-office-listings')) {
