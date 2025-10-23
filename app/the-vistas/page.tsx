@@ -202,8 +202,8 @@ export default function TheVistas() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin={800000}
-            priceMax={2500000}
+            priceMin="800000"
+            priceMax="2500000"
             className="mt-6"
           />
         </section>
@@ -265,8 +265,8 @@ export default function TheVistas() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,OTHER"
-            priceMin={500000}
-            priceMax={600000}
+            priceMin="500000"
+            priceMax="600000"
             className="mt-6"
           />
         </section>

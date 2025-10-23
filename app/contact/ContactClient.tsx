@@ -181,8 +181,8 @@ export default function ContactClient() {
                 subtitle="Find your dream home in Summerlin West"
                 variant="sidebar"
                 showFeatures={true}
-                priceMin={400000}
-                priceMax={2000000}
+                priceMin="400000"
+                priceMax="2000000"
               />
             </div>
           </div>
