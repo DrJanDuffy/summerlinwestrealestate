@@ -473,9 +473,8 @@ export default function ServiceAreaClient() {
           sortOrder="PRICE_LOW"
           listingStatus="For Sale"
           propertyTypes=",SFR,OTHER"
-          priceMin="500000"
-          priceMax="600000"
-          maxListings={12}
+          priceMin={500000}
+          priceMax={600000}
           className="mt-6"
         />
       </section>
