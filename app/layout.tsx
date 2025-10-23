@@ -12,7 +12,6 @@ import GoogleOptimization, {
 import Header from '../components/layout/Header';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
-import SimpleRealScoutWidget from '../components/ui/SimpleRealScoutWidget';
 import { generateComprehensiveSchema } from '../lib/structured-data';
 import styles from './page.module.css';
 
@@ -196,14 +195,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <SimpleRealScoutWidget
-              agentEncodedId="QWdlbnQtMjI1MDUw"
-              sortOrder="NEWEST"
-              listingStatus="For Sale"
-              propertyTypes=",SFR"
-              priceMin="500000"
-              priceMax="600000"
-              className="mt-6"
+            <style jsx>{`
+              realscout-office-listings {
+                --rs-listing-divider-color: #0e64c8;
+                width: 100%;
+              }
+            `}</style>
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="NEWEST"
+              listing-status="For Sale"
+              property-types=",SFR"
+              price-min="500000"
+              price-max="600000"
             />
           </div>
           <Analytics />

@@ -7,13 +7,7 @@ import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
-// Dynamically import RealScout office widget
-const SimpleRealScoutWidget = dynamic(
-  () => import('../components/ui/SimpleRealScoutWidget'),
-  {
-    ssr: false,
-  }
-);
+// RealScout widget - using pure HTML web component
 
 // const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
 //   ssr: false,
@@ -390,13 +384,19 @@ export default function ImprovedHomeClient() {
 
              {/* Featured Listings from MLS - RealScout Office Widget */}
              <div className="mt-16">
-               <SimpleRealScoutWidget 
-                 agentEncodedId="QWdlbnQtMjI1MDUw"
-                 sortOrder="NEWEST"
-                 listingStatus="For Sale"
-                 propertyTypes=",SFR"
-                 priceMin="500000"
-                 priceMax="600000"
+               <style jsx>{`
+                 realscout-office-listings {
+                   --rs-listing-divider-color: #0e64c8;
+                   width: 100%;
+                 }
+               `}</style>
+               <realscout-office-listings
+                 agent-encoded-id="QWdlbnQtMjI1MDUw"
+                 sort-order="NEWEST"
+                 listing-status="For Sale"
+                 property-types=",SFR"
+                 price-min="500000"
+                 price-max="600000"
                />
              </div>
           
@@ -457,13 +457,19 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-             <SimpleRealScoutWidget 
-               agentEncodedId="QWdlbnQtMjI1MDUw"
-               sortOrder="NEWEST"
-               listingStatus="For Sale"
-               propertyTypes=",SFR"
-               priceMin="500000"
-               priceMax="600000"
+             <style jsx>{`
+               realscout-office-listings {
+                 --rs-listing-divider-color: #0e64c8;
+                 width: 100%;
+               }
+             `}</style>
+             <realscout-office-listings
+               agent-encoded-id="QWdlbnQtMjI1MDUw"
+               sort-order="NEWEST"
+               listing-status="For Sale"
+               property-types=",SFR"
+               price-min="500000"
+               price-max="600000"
              />
         </div>
       </section>
