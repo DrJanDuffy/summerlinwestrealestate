@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { trackLeadEvent } from '../../lib/lead-tracking';
 
 interface GoogleMyBusinessProps {
   businessId?: string;
@@ -167,7 +168,12 @@ export default function GoogleMyBusiness({ businessId }: GoogleMyBusinessProps) 
 
         marker.addListener('click', () => {
           infoWindow.open(map, marker);
-          trackGMBInteraction('map_interaction');
+          trackLeadEvent({
+            event_type: 'map_interaction',
+            lead_source: 'google_my_business',
+            lead_type: 'map_click',
+            interaction_type: 'map_interaction'
+          });
         });
       }
     };
