@@ -133,14 +133,6 @@ export default function RealScoutFeaturedListings({
           <p className="text-blue-700 mb-4">Preparing MLS data for Summerlin West...</p>
           <p className="text-sm text-blue-600">Powered by RealScout</p>
           
-          {/* Enhanced Script Loader */}
-          <div className="mt-4">
-            <RealScoutScriptLoader 
-              onLoad={() => setScriptStatus('loaded')}
-              onError={() => setScriptStatus('error')}
-            />
-          </div>
-          
           <div className="mt-4 text-xs text-gray-500">
             <p>Debug: Script loaded: {typeof window !== 'undefined' && document.querySelector('script[src*="realscout-web-components"]') ? 'Yes' : 'No'}</p>
             <p>Custom elements: {typeof window !== 'undefined' && customElements.get('realscout-your-listings') ? 'Available' : 'Not available'}</p>

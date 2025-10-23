@@ -29,6 +29,18 @@ const RealScoutFeaturedListingsClean = dynamic(
     ssr: false,
   }
 );
+const RealScoutComprehensiveDebugger = dynamic(
+  () => import('../components/ui/RealScoutComprehensiveDebugger'),
+  {
+    ssr: false,
+  }
+);
+const RealScoutAgentTester = dynamic(
+  () => import('../components/ui/RealScoutAgentTester'),
+  {
+    ssr: false,
+  }
+);
 const RealScoutOfficeListingsClean = dynamic(
   () => import('../components/ui/RealScoutOfficeListingsClean'),
   {
