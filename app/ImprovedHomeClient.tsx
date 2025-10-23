@@ -32,8 +32,8 @@ const RealScoutFeaturedListings = dynamic(
     ssr: false,
   }
 );
-const RealScoutDirectAPI = dynamic(
-  () => import('../components/ui/RealScoutDirectAPI'),
+const StaticPropertyShowcase = dynamic(
+  () => import('../components/ui/StaticPropertyShowcase'),
   {
     ssr: false,
   }
@@ -386,12 +386,7 @@ export default function ImprovedHomeClient() {
 
           {/* Featured Listings from MLS */}
           <div className="mt-16">
-            <RealScoutFeaturedListings />
-          </div>
-          
-          {/* Alternative Direct API Integration */}
-          <div className="mt-8">
-            <RealScoutDirectAPI />
+            <StaticPropertyShowcase />
           </div>
           
           {/* Debug Information - Temporary */}
