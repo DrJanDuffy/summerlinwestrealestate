@@ -197,20 +197,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
             <style dangerouslySetInnerHTML={{
               __html: `
-                realscout-office-listings {
+                realscout-your-listings {
                   --rs-listing-divider-color: #0e64c8;
                   width: 100%;
                 }
               `
             }} />
             {/* @ts-ignore - RealScout web component */}
-            <realscout-office-listings
+            <realscout-your-listings
               agent-encoded-id="QWdlbnQtMjI1MDUw"
               sort-order="NEWEST"
-              listing-status="For Sale"
-              property-types=",SFR"
-              price-min="500000"
-              price-max="600000"
+              listing-status="For Sale,For Rent,In Contract"
+              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER"
+              price-min="300000"
+              price-max="3000000"
             />
           </div>
           <Analytics />
