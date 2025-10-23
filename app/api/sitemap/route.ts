@@ -61,6 +61,35 @@ const subdivisions = [
   'mountain-view',
 ];
 
+// Dynamic pages - streets
+const streets = [
+  'sky-vista-drive',
+  'desert-foothills-drive',
+  'town-center-drive',
+  'hualapai-way',
+];
+
+// Dynamic pages - schools
+const schools = [
+  'red-rock-elementary',
+  'sig-rogich-middle',
+  'palo-verde-high',
+  'faith-lutheran',
+];
+
+// Dynamic pages - zip codes
+const zipCodes = [
+  '89135',
+  '89134',
+  '89144',
+];
+
+// Dynamic pages - market reports
+const marketReports = [
+  'paradiso',
+  'palmilla',
+];
+
 // Blog posts (would be dynamic in real implementation)
 const blogPosts = [
   'summerlin-west-market-update-2024',
@@ -106,6 +135,46 @@ function generateSitemap() {
       lastmod: new Date().toISOString().split('T')[0],
       changefreq: 'weekly',
       priority: '0.9',
+    });
+  });
+
+  // Add street pages
+  streets.forEach((street) => {
+    urls.push({
+      loc: `${baseUrl}/streets/${street}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'weekly',
+      priority: '0.8',
+    });
+  });
+
+  // Add school pages
+  schools.forEach((school) => {
+    urls.push({
+      loc: `${baseUrl}/schools/${school}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'weekly',
+      priority: '0.8',
+    });
+  });
+
+  // Add zip code pages
+  zipCodes.forEach((zipCode) => {
+    urls.push({
+      loc: `${baseUrl}/zip-codes/${zipCode}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'weekly',
+      priority: '0.8',
+    });
+  });
+
+  // Add market report pages
+  marketReports.forEach((report) => {
+    urls.push({
+      loc: `${baseUrl}/market-reports/subdivisions/${report}`,
+      lastmod: new Date().toISOString().split('T')[0],
+      changefreq: 'monthly',
+      priority: '0.7',
     });
   });
 

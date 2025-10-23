@@ -46,6 +46,27 @@ export interface CommunityData {
     latitude: number;
     longitude: number;
   };
+  location?: {
+    mainStreets?: string[];
+    gateAccess?: string;
+    crossStreets?: string;
+    zipCode?: string;
+  };
+  schools?: {
+    elementary?: { name: string; address: string; distance: string };
+    middle?: { name: string; address: string; distance: string };
+    high?: { name: string; address: string; distance: string };
+  };
+  hoa?: {
+    monthly?: number;
+    additional?: string;
+  };
+  landmarks?: {
+    vistaPark?: string;
+    vistaCommunityCenter?: string;
+    downtownSummerlin?: string;
+    redRockCanyon?: string;
+  };
 }
 
 // Default agent data for Dr. Jan Duffy
@@ -378,7 +399,7 @@ export function generatePropertySchema(propertyData: PropertyData) {
  * Generate Community/ResidentialComplex structured data
  */
 export function generateCommunitySchema(communityData: CommunityData) {
-  return {
+  const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'ResidentialComplex',
     name: communityData.name,
@@ -389,6 +410,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
       addressLocality: 'Las Vegas',
       addressRegion: 'NV',
       addressCountry: 'US',
+      ...(communityData.location?.zipCode && { postalCode: communityData.location.zipCode }),
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -406,6 +428,130 @@ export function generateCommunitySchema(communityData: CommunityData) {
     ...(communityData.builder && { developer: communityData.builder }),
     ...(communityData.yearEstablished && { foundingDate: communityData.yearEstablished }),
   };
+
+  // Add hyperlocal location data
+  if (communityData.location) {
+    schema.additionalProperty = [];
+    
+    if (communityData.location.mainStreets) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Main Streets',
+        value: communityData.location.mainStreets.join(', '),
+      });
+    }
+    
+    if (communityData.location.gateAccess) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Gate Access',
+        value: communityData.location.gateAccess,
+      });
+    }
+    
+    if (communityData.location.crossStreets) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Cross Streets',
+        value: communityData.location.crossStreets,
+      });
+    }
+  }
+
+  // Add school information
+  if (communityData.schools) {
+    schema.nearbySchool = [];
+    
+    if (communityData.schools.elementary) {
+      schema.nearbySchool.push({
+        '@type': 'School',
+        name: communityData.schools.elementary.name,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: communityData.schools.elementary.address,
+          addressLocality: 'Las Vegas',
+          addressRegion: 'NV',
+        },
+        additionalProperty: {
+          '@type': 'PropertyValue',
+          name: 'Distance',
+          value: communityData.schools.elementary.distance,
+        },
+      });
+    }
+    
+    if (communityData.schools.middle) {
+      schema.nearbySchool.push({
+        '@type': 'School',
+        name: communityData.schools.middle.name,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: communityData.schools.middle.address,
+          addressLocality: 'Las Vegas',
+          addressRegion: 'NV',
+        },
+        additionalProperty: {
+          '@type': 'PropertyValue',
+          name: 'Distance',
+          value: communityData.schools.middle.distance,
+        },
+      });
+    }
+    
+    if (communityData.schools.high) {
+      schema.nearbySchool.push({
+        '@type': 'School',
+        name: communityData.schools.high.name,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: communityData.schools.high.address,
+          addressLocality: 'Las Vegas',
+          addressRegion: 'NV',
+        },
+        additionalProperty: {
+          '@type': 'PropertyValue',
+          name: 'Distance',
+          value: communityData.schools.high.distance,
+        },
+      });
+    }
+  }
+
+  // Add HOA information
+  if (communityData.hoa) {
+    if (!schema.additionalProperty) schema.additionalProperty = [];
+    
+    if (communityData.hoa.monthly) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Monthly HOA Fee',
+        value: `$${communityData.hoa.monthly}`,
+      });
+    }
+    
+    if (communityData.hoa.additional) {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: 'Additional HOA Fees',
+        value: communityData.hoa.additional,
+      });
+    }
+  }
+
+  // Add landmark distances
+  if (communityData.landmarks) {
+    if (!schema.additionalProperty) schema.additionalProperty = [];
+    
+    Object.entries(communityData.landmarks).forEach(([landmark, distance]) => {
+      schema.additionalProperty.push({
+        '@type': 'PropertyValue',
+        name: landmark.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+        value: distance,
+      });
+    });
+  }
+
+  return schema;
 }
 
 /**
@@ -459,41 +605,143 @@ export function generateFAQSchema(faqs: Array<{ question: string; answer: string
 }
 
 /**
- * Generate Review structured data
+ * Generate School structured data
  */
-export function generateReviewSchema(
-  reviews: Array<{
-    author: string;
-    rating: number;
-    reviewBody: string;
-    datePublished: string;
-  }>
-) {
+export function generateSchoolSchema(schoolData: {
+  name: string;
+  type: 'Elementary' | 'Middle' | 'High' | 'Private';
+  address: string;
+  description?: string;
+  coordinates?: { latitude: number; longitude: number };
+}) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'AggregateRating',
-    itemReviewed: {
-      '@type': 'RealEstateAgent',
-      name: 'Dr. Jan Duffy',
+    '@type': 'School',
+    name: schoolData.name,
+    description: schoolData.description || `${schoolData.type} school serving Summerlin West`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: schoolData.address,
+      addressLocality: 'Las Vegas',
+      addressRegion: 'NV',
+      addressCountry: 'US',
     },
-    ratingValue: reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length,
-    reviewCount: reviews.length,
-    bestRating: 5,
-    worstRating: 1,
-    review: reviews.map((review) => ({
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        name: review.author,
+    ...(schoolData.coordinates && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: schoolData.coordinates.latitude,
+        longitude: schoolData.coordinates.longitude,
       },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1,
+    }),
+    additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: 'School Type',
+        value: schoolData.type,
       },
-      reviewBody: review.reviewBody,
-      datePublished: review.datePublished,
-    })),
+      {
+        '@type': 'PropertyValue',
+        name: 'Serves',
+        value: 'Summerlin West',
+      },
+    ],
+  };
+}
+
+/**
+ * Generate Zip Code structured data
+ */
+export function generateZipCodeSchema(zipData: {
+  code: string;
+  name: string;
+  description: string;
+  subdivisions: string[];
+  coordinates?: { latitude: number; longitude: number };
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'PostalCode',
+    postalCode: zipData.code,
+    address: {
+      '@type': 'PostalAddress',
+      postalCode: zipData.code,
+      addressLocality: 'Las Vegas',
+      addressRegion: 'NV',
+      addressCountry: 'US',
+    },
+    ...(zipData.coordinates && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: zipData.coordinates.latitude,
+        longitude: zipData.coordinates.longitude,
+      },
+    }),
+    additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: 'Area Name',
+        value: zipData.name,
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'Description',
+        value: zipData.description,
+      },
+      {
+        '@type': 'PropertyValue',
+        name: 'Subdivisions',
+        value: zipData.subdivisions.join(', '),
+      },
+    ],
+  };
+}
+
+/**
+ * Generate Street structured data
+ */
+export function generateStreetSchema(streetData: {
+  name: string;
+  description: string;
+  coordinates?: { latitude: number; longitude: number };
+  length?: string;
+  speedLimit?: string;
+  lanes?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Street',
+    name: streetData.name,
+    description: streetData.description,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: streetData.name,
+      addressLocality: 'Las Vegas',
+      addressRegion: 'NV',
+      addressCountry: 'US',
+    },
+    ...(streetData.coordinates && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: streetData.coordinates.latitude,
+        longitude: streetData.coordinates.longitude,
+      },
+    }),
+    additionalProperty: [
+      ...(streetData.length ? [{
+        '@type': 'PropertyValue',
+        name: 'Length',
+        value: streetData.length,
+      }] : []),
+      ...(streetData.speedLimit ? [{
+        '@type': 'PropertyValue',
+        name: 'Speed Limit',
+        value: streetData.speedLimit,
+      }] : []),
+      ...(streetData.lanes ? [{
+        '@type': 'PropertyValue',
+        name: 'Lanes',
+        value: streetData.lanes,
+      }] : []),
+    ],
   };
 }

@@ -4,11 +4,14 @@ import {
   type CommunityData,
   generateBreadcrumbSchema,
   generateCommunitySchema,
+  generateRealEstateAgentSchema,
+  generateLocalBusinessSchema,
 } from '../../lib/structured-data';
 
 interface ServiceAreaStructuredDataProps {
   communityData: CommunityData;
   breadcrumbs?: Array<{ name: string; url: string }>;
+  includeAgentSchema?: boolean;
 }
 
 export default function ServiceAreaStructuredData({
@@ -21,9 +24,12 @@ export default function ServiceAreaStructuredData({
       url: `https://www.summerlinwestrealestate.com/service-area/${communityData.name.toLowerCase().replace(/\s+/g, '-')}`,
     },
   ],
+  includeAgentSchema = true,
 }: ServiceAreaStructuredDataProps) {
   const communitySchema = generateCommunitySchema(communityData);
   const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+  const agentSchema = includeAgentSchema ? generateRealEstateAgentSchema() : null;
+  const businessSchema = includeAgentSchema ? generateLocalBusinessSchema() : null;
 
   return (
     <>
@@ -44,6 +50,28 @@ export default function ServiceAreaStructuredData({
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
+
+      {/* Agent Schema */}
+      {agentSchema && (
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(agentSchema),
+          }}
+        />
+      )}
+
+      {/* Business Schema */}
+      {businessSchema && (
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(businessSchema),
+          }}
+        />
+      )}
     </>
   );
 }

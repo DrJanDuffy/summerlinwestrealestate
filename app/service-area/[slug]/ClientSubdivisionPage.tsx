@@ -476,6 +476,28 @@ interface Subdivision {
   features: string[];
   type: string;
   image?: string;
+  location?: {
+    mainStreets: string[];
+    gateAccess: string;
+    crossStreets: string;
+    zipCode: string;
+    coordinates: { lat: number; lng: number };
+  };
+  schools?: {
+    elementary: { name: string; address: string; distance: string };
+    middle: { name: string; address: string; distance: string };
+    high: { name: string; address: string; distance: string };
+  };
+  hoa?: {
+    monthly: number;
+    additional: string;
+  };
+  landmarks?: {
+    vistaPark: string;
+    vistaCommunityCenter: string;
+    downtownSummerlin: string;
+    redRockCanyon: string;
+  };
 }
 
 // Fix implicit any for sub in generateDescription
@@ -631,6 +653,151 @@ export default function ClientSubdivisionPage({ subdivision }: { subdivision: Su
 
       {/* Interactive Amenities Section */}
       <AmenitiesSection />
+
+      {/* Location & Streets Section */}
+      {subdivision.location && (
+        <motion.section
+          className={styles.sectionCard}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.centerTitle}>Location & Streets in {subdivision.name}</h2>
+          <div className={styles.locationGrid}>
+            <div className={styles.locationCard}>
+              <h3>Main Streets</h3>
+              <ul>
+                {subdivision.location.mainStreets.map((street, index) => (
+                  <li key={index}>{street}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.locationCard}>
+              <h3>Gate Access</h3>
+              <p>{subdivision.location.gateAccess}</p>
+            </div>
+            <div className={styles.locationCard}>
+              <h3>Cross Streets</h3>
+              <p>{subdivision.location.crossStreets}</p>
+            </div>
+            <div className={styles.locationCard}>
+              <h3>Zip Code</h3>
+              <p>{subdivision.location.zipCode}</p>
+            </div>
+            <div className={styles.locationCard}>
+              <h3>GPS Coordinates</h3>
+              <p>{subdivision.location.coordinates.lat}° N, {subdivision.location.coordinates.lng}° W</p>
+            </div>
+          </div>
+        </motion.section>
+      )}
+
+      {/* Schools Section */}
+      {subdivision.schools && (
+        <motion.section
+          className={styles.sectionCard}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.centerTitle}>Schools Serving {subdivision.name}</h2>
+          <div className={styles.schoolsGrid}>
+            <div className={styles.schoolCard}>
+              <h3>Elementary School</h3>
+              <h4>{subdivision.schools.elementary.name}</h4>
+              <p>{subdivision.schools.elementary.address}</p>
+              <p className={styles.distance}>Distance: {subdivision.schools.elementary.distance}</p>
+            </div>
+            <div className={styles.schoolCard}>
+              <h3>Middle School</h3>
+              <h4>{subdivision.schools.middle.name}</h4>
+              <p>{subdivision.schools.middle.address}</p>
+              <p className={styles.distance}>Distance: {subdivision.schools.middle.distance}</p>
+            </div>
+            <div className={styles.schoolCard}>
+              <h3>High School</h3>
+              <h4>{subdivision.schools.high.name}</h4>
+              <p>{subdivision.schools.high.address}</p>
+              <p className={styles.distance}>Distance: {subdivision.schools.high.distance}</p>
+            </div>
+          </div>
+        </motion.section>
+      )}
+
+      {/* HOA Details Section */}
+      {subdivision.hoa && (
+        <motion.section
+          className={styles.sectionCard}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.centerTitle}>HOA Information for {subdivision.name}</h2>
+          <div className={styles.hoaDetails}>
+            <div className={styles.hoaCard}>
+              <h3>Monthly HOA Fee</h3>
+              <p className={styles.hoaAmount}>
+                {subdivision.hoa.monthly > 0 ? `$${subdivision.hoa.monthly}/month` : 'No HOA Fee'}
+              </p>
+            </div>
+            <div className={styles.hoaCard}>
+              <h3>Additional Fees</h3>
+              <p>{subdivision.hoa.additional}</p>
+            </div>
+          </div>
+        </motion.section>
+      )}
+
+      {/* Landmarks & Proximity Section */}
+      {subdivision.landmarks && (
+        <motion.section
+          className={styles.sectionCard}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.centerTitle}>Landmarks & Proximity from {subdivision.name}</h2>
+          <div className={styles.landmarksGrid}>
+            <div className={styles.landmarkCard}>
+              <h3>Vistas Park</h3>
+              <p className={styles.distance}>{subdivision.landmarks.vistaPark}</p>
+            </div>
+            <div className={styles.landmarkCard}>
+              <h3>Vistas Community Center</h3>
+              <p className={styles.distance}>{subdivision.landmarks.vistaCommunityCenter}</p>
+            </div>
+            <div className={styles.landmarkCard}>
+              <h3>Downtown Summerlin</h3>
+              <p className={styles.distance}>{subdivision.landmarks.downtownSummerlin}</p>
+            </div>
+            <div className={styles.landmarkCard}>
+              <h3>Red Rock Canyon</h3>
+              <p className={styles.distance}>{subdivision.landmarks.redRockCanyon}</p>
+            </div>
+          </div>
+        </motion.section>
+      )}
+
+      {/* Recent Sales Section */}
+      <motion.section
+        className={styles.sectionCard}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className={styles.centerTitle}>Recent Sales in {subdivision.name}</h2>
+        <p className={styles.heroSubtitle}>
+          Stay informed about recent market activity in {subdivision.name}. This data helps you understand current market trends and property values in this {subdivision.type.toLowerCase()} community.
+        </p>
+        <div className={styles.salesPlaceholder}>
+          <p>Recent sales data will be integrated with MLS feed. Contact Dr. Jan Duffy for current market information.</p>
+        </div>
+      </motion.section>
 
       {/* Subdivision Navigation */}
       <SubdivisionNavigation currentSlug={subdivision.slug} />

@@ -37,6 +37,10 @@ Allow: /maps
 Allow: /faq
 Allow: /local-seo
 Allow: /blog/
+Allow: /streets/
+Allow: /schools/
+Allow: /zip-codes/
+Allow: /market-reports/subdivisions/
 
 # Crawl delay (optional)
 Crawl-delay: 1`;
