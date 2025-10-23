@@ -142,7 +142,6 @@ export default async function BlogIndexPage() {
           propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
           priceMin="650000"
           priceMax="1600000"
-          maxListings={12}
           className="mt-6"
         />
       </section>
@@ -185,7 +184,6 @@ export default async function BlogIndexPage() {
           propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
           priceMin="400000"
           priceMax="2000000"
-          maxListings={12}
           className="mt-6"
         />
       </section>
