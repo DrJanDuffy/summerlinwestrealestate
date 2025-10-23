@@ -195,12 +195,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <style jsx>{`
-              realscout-office-listings {
-                --rs-listing-divider-color: #0e64c8;
-                width: 100%;
-              }
-            `}</style>
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                realscout-office-listings {
+                  --rs-listing-divider-color: #0e64c8;
+                  width: 100%;
+                }
+              `
+            }} />
             <realscout-office-listings
               agent-encoded-id="QWdlbnQtMjI1MDUw"
               sort-order="NEWEST"
