@@ -152,12 +152,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
           <StickyPhoneMenu />
           <Script
-            src={
-              process.env.REALSCOUT_SCRIPT_URL ||
-              'https://em.realscout.com/widgets/realscout-web-components.umd.js'
-            }
-            type="module"
-            strategy="afterInteractive"
+            src="https://em.realscout.com/widgets/realscout-web-components.js"
+            strategy="beforeInteractive"
             id="realscout-web-components"
           />
           <script
@@ -195,26 +191,130 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <style dangerouslySetInnerHTML={{
-              __html: `
-                realscout-your-listings {
-                  --rs-listing-divider-color: #0e64c8;
-                  width: 100%;
-                }
-              `
-            }} />
-            {/* @ts-ignore - RealScout web component */}
-            <realscout-your-listings
-              agent-encoded-id="QWdlbnQtMjI1MDUw"
-              sort-order="NEWEST"
-              listing-status="For Sale,For Rent,In Contract"
-              property-types=",SFR,MF,TC,LAL,MOBILE,OTHER"
-              price-min="300000"
-              price-max="3000000"
-            />
+            
+            {/* RealScout Widget */}
+            <div id="realscout-container">
+              <style dangerouslySetInnerHTML={{
+                __html: `
+                  realscout-your-listings {
+                    --rs-listing-divider-color: #0e64c8;
+                    width: 100%;
+                    min-height: 300px;
+                  }
+                  .realscout-loading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 300px;
+                    background: #f8f9fa;
+                    border: 2px solid #e9ecef;
+                    border-radius: 8px;
+                  }
+                  .realscout-error {
+                    background: #fff3cd;
+                    border: 1px solid #ffeaa7;
+                    border-radius: 8px;
+                    padding: 20px;
+                    text-align: center;
+                  }
+                `
+              }} />
+              
+              {/* Loading State */}
+              <div className="realscout-loading" id="realscout-loading">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                  <p className="text-gray-600">Loading property listings...</p>
+                </div>
+              </div>
+              
+              {/* RealScout Widget */}
+              <div id="realscout-widget" style={{ display: 'none' }}>
+                {/* @ts-ignore - RealScout web component */}
+                <realscout-your-listings
+                  agent-encoded-id="QWdlbnQtMjI1MDUw"
+                  sort-order="NEWEST"
+                  listing-status="For Sale,For Rent,In Contract"
+                  property-types=",SFR,MF,TC,LAL,MOBILE,OTHER"
+                  price-min="300000"
+                  price-max="3000000"
+                />
+              </div>
+              
+              {/* Error State */}
+              <div className="realscout-error" id="realscout-error" style={{ display: 'none' }}>
+                <h3 className="text-lg font-semibold text-yellow-800 mb-2">Property Listings Temporarily Unavailable</h3>
+                <p className="text-yellow-700 mb-4">We're experiencing technical difficulties with our property listings. Please contact us directly for current listings.</p>
+                <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                  Contact Dr. Jan Duffy
+                </a>
+              </div>
+            </div>
           </div>
           <Analytics />
           <SpeedInsights />
+          
+          <script dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('DOMContentLoaded', function() {
+                const loadingEl = document.getElementById('realscout-loading');
+                const widgetEl = document.getElementById('realscout-widget');
+                const errorEl = document.getElementById('realscout-error');
+                
+                // Check if RealScout script loaded
+                const script = document.querySelector('script[src*="realscout-web-components"]');
+                if (!script) {
+                  console.log('RealScout script not found');
+                  showError();
+                  return;
+                }
+                
+                // Wait for RealScout to load
+                let attempts = 0;
+                const maxAttempts = 30; // 15 seconds
+                
+                const checkRealScout = setInterval(function() {
+                  attempts++;
+                  
+                  // Check if custom element is available
+                  if (customElements.get('realscout-your-listings')) {
+                    console.log('RealScout custom element found');
+                    showWidget();
+                    clearInterval(checkRealScout);
+                    return;
+                  }
+                  
+                  // Check if widget has content
+                  const widget = document.querySelector('realscout-your-listings');
+                  if (widget && widget.children.length > 0) {
+                    console.log('RealScout widget has content');
+                    showWidget();
+                    clearInterval(checkRealScout);
+                    return;
+                  }
+                  
+                  // Timeout after max attempts
+                  if (attempts >= maxAttempts) {
+                    console.log('RealScout timeout - showing error');
+                    showError();
+                    clearInterval(checkRealScout);
+                  }
+                }, 500);
+                
+                function showWidget() {
+                  loadingEl.style.display = 'none';
+                  widgetEl.style.display = 'block';
+                  errorEl.style.display = 'none';
+                }
+                
+                function showError() {
+                  loadingEl.style.display = 'none';
+                  widgetEl.style.display = 'none';
+                  errorEl.style.display = 'block';
+                }
+              });
+            `
+          }} />
         </LeadTrackingProvider>
       </body>
     </html>
