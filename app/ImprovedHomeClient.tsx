@@ -8,8 +8,8 @@ import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
 // Dynamically import RealScout office widget
-const RealScoutOfficeWidget = dynamic(
-  () => import('../components/ui/RealScoutOfficeWidget'),
+const SimpleRealScoutWidget = dynamic(
+  () => import('../components/ui/SimpleRealScoutWidget'),
   {
     ssr: false,
   }
@@ -390,7 +390,7 @@ export default function ImprovedHomeClient() {
 
              {/* Featured Listings from MLS - RealScout Office Widget */}
              <div className="mt-16">
-               <RealScoutOfficeWidget 
+               <SimpleRealScoutWidget 
                  agentEncodedId="QWdlbnQtMjI1MDUw"
                  sortOrder="NEWEST"
                  listingStatus="For Sale"
@@ -457,7 +457,7 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-             <RealScoutOfficeWidget 
+             <SimpleRealScoutWidget 
                agentEncodedId="QWdlbnQtMjI1MDUw"
                sortOrder="NEWEST"
                listingStatus="For Sale"

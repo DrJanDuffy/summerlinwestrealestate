@@ -12,7 +12,7 @@ import GoogleOptimization, {
 import Header from '../components/layout/Header';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
-import RealScoutOfficeWidget from '../components/ui/RealScoutOfficeWidget';
+import SimpleRealScoutWidget from '../components/ui/SimpleRealScoutWidget';
 import { generateComprehensiveSchema } from '../lib/structured-data';
 import styles from './page.module.css';
 
@@ -196,7 +196,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <RealScoutOfficeWidget
+            <SimpleRealScoutWidget
               agentEncodedId="QWdlbnQtMjI1MDUw"
               sortOrder="NEWEST"
               listingStatus="For Sale"
