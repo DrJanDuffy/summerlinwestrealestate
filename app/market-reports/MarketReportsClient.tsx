@@ -293,7 +293,6 @@ export default function MarketReportsClient() {
           propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
           priceMin="700000"
           priceMax="1500000"
-          maxListings={12}
           className="mt-6"
         />
       </section>
@@ -337,7 +336,6 @@ export default function MarketReportsClient() {
           propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
           priceMin="400000"
           priceMax="2000000"
-          maxListings={12}
           className="mt-6"
         />
       </section>
