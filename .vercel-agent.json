@@ -1,0 +1,59 @@
+{
+  "vercelAgent": {
+    "enabled": true,
+    "rules": {
+      "realEstate": {
+        "enabled": true,
+        "rules": [
+          "Validate RealScout API integrations",
+          "Check lead tracking implementations",
+          "Verify SEO metadata completeness",
+          "Ensure property data validation",
+          "Monitor performance optimizations"
+        ]
+      },
+      "typescript": {
+        "enabled": true,
+        "strict": true,
+        "rules": [
+          "Enforce proper interface usage",
+          "Validate prop types",
+          "Check for unused variables",
+          "Ensure proper error handling"
+        ]
+      },
+      "security": {
+        "enabled": true,
+        "rules": [
+          "Validate cron job security",
+          "Check API endpoint authentication",
+          "Verify environment variable usage",
+          "Ensure proper input validation"
+        ]
+      },
+      "performance": {
+        "enabled": true,
+        "rules": [
+          "Optimize image loading",
+          "Check bundle size",
+          "Validate Core Web Vitals",
+          "Monitor API response times"
+        ]
+      }
+    },
+    "exclude": [
+      "node_modules/**",
+      ".next/**",
+      "public/**",
+      "*.log"
+    ],
+    "include": [
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      "components/**/*.ts",
+      "components/**/*.tsx",
+      "lib/**/*.ts",
+      "types/**/*.ts"
+    ]
+  }
+}

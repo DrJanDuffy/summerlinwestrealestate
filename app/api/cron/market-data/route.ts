@@ -7,7 +7,10 @@ export async function GET(request: NextRequest) {
   
   if (authHeader !== expectedAuth) {
     console.error('Unauthorized cron request - invalid auth header');
-    return NextResponse.status(401).json({ error: 'Unauthorized' });
+    return new NextResponse(JSON.stringify({ error: 'Unauthorized' }), { 
+      status: 401,
+      headers: { 'Content-Type': 'application/json' }
+    });
   }
 
   try {
@@ -52,11 +55,14 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Market data refresh failed:', error);
-    return NextResponse.status(500).json({
+    return new NextResponse(JSON.stringify({
       success: false,
       error: 'Market data refresh failed',
       timestamp: new Date().toISOString(),
       details: error instanceof Error ? error.message : 'Unknown error'
+    }), { 
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
     });
   }
 }
