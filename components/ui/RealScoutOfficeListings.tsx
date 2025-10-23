@@ -7,8 +7,8 @@ interface RealScoutOfficeListingsProps {
   sortOrder?: string;
   listingStatus?: string;
   propertyTypes?: string;
-  priceMin?: number;
-  priceMax?: number;
+  priceMin?: string;
+  priceMax?: string;
   className?: string;
 }
 
@@ -17,8 +17,8 @@ export default function RealScoutOfficeListings({
   sortOrder = 'STATUS_AND_SIGNIFICANT_CHANGE', // Premium properties with significant changes first
   listingStatus = 'For Sale,For Rent,In Contract,Sold,Rented', // All statuses for comprehensive view
   propertyTypes = 'SFR,MF,TC,LAL', // Premium property types (removed MOBILE,OTHER for luxury focus)
-  priceMin = 800000, // Premium price range starting at $800K
-  priceMax = 2000000, // Up to $2M+ for luxury properties
+  priceMin = '800000', // Premium price range starting at $800K
+  priceMax = '2000000', // Up to $2M+ for luxury properties
   className = '',
 }: RealScoutOfficeListingsProps) {
   return (
@@ -35,8 +35,8 @@ export default function RealScoutOfficeListings({
         sort-order={sortOrder}
         listing-status={listingStatus}
         property-types={propertyTypes}
-        price-min={priceMin.toString()}
-        price-max={priceMax.toString()}
+        price-min={priceMin}
+        price-max={priceMax}
       />
     </motion.div>
   );

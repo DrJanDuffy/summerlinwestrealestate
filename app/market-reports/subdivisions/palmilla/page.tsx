@@ -294,8 +294,8 @@ export default function PalmillaMarketReportPage() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin={800000}
-            priceMax={2000000}
+            priceMin="800000"
+            priceMax="2000000"
             className="mt-6"
           />
         </div>

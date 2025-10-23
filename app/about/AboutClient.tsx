@@ -552,8 +552,8 @@ export default function AboutClient() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin={600000}
-            priceMax={1200000}
+            priceMin="600000"
+            priceMax="1200000"
             className="mt-6"
           />
         </section>
@@ -600,8 +600,8 @@ export default function AboutClient() {
             sortOrder="PRICE_LOW"
             listingStatus="For Sale"
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin={400000}
-            priceMax={2000000}
+            priceMin="400000"
+            priceMax="2000000"
             className="mt-6"
           />
         </section>
