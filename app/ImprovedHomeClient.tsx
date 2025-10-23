@@ -32,8 +32,8 @@ const RealScoutFeaturedListings = dynamic(
     ssr: false,
   }
 );
-const StaticPropertyShowcase = dynamic(
-  () => import('../components/ui/StaticPropertyShowcase'),
+const RealScoutAgentTester = dynamic(
+  () => import('../components/ui/RealScoutAgentTester'),
   {
     ssr: false,
   }
@@ -392,6 +392,11 @@ export default function ImprovedHomeClient() {
           {/* Debug Information - Temporary */}
           <div className="mt-8">
             <RealScoutComprehensiveDebugger />
+          </div>
+          
+          {/* Agent ID Testing */}
+          <div className="mt-8">
+            <RealScoutAgentTester />
           </div>
         </div>
       </section>
