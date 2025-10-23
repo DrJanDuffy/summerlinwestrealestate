@@ -483,12 +483,12 @@ export default function ImprovedHomeClient() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Explore by Subdivision</h3>
                 <p className="text-gray-600 mb-4">Browse homes in specific subdivisions like The Vistas, Stonebridge, and more.</p>
-                <a
+                <Link
                   href="/service-area"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
                 >
                   View Subdivisions
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -567,7 +567,7 @@ export default function ImprovedHomeClient() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/service-area/paradiso" className="group">
+            <Link href="/service-area/paradiso" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Paradiso</h3>
                 <p className="text-gray-600 mb-3">Gated luxury community with custom homes and mountain views</p>
@@ -578,9 +578,9 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/service-area/palmilla" className="group">
+            <Link href="/service-area/palmilla" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Palmilla</h3>
                 <p className="text-gray-600 mb-3">Upscale gated community with luxury amenities</p>
@@ -591,9 +591,9 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/service-area/estancia" className="group">
+            <Link href="/service-area/estancia" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Estancia</h3>
                 <p className="text-gray-600 mb-3">Luxury single-family homes with premium finishes</p>
@@ -604,9 +604,9 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/service-area/talaverde" className="group">
+            <Link href="/service-area/talaverde" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Talaverde</h3>
                 <p className="text-gray-600 mb-3">All single-story luxury homes with modern designs</p>
@@ -617,9 +617,9 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/service-area/casa-rosa" className="group">
+            <Link href="/service-area/casa-rosa" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Casa Rosa</h3>
                 <p className="text-gray-600 mb-3">Mid-range luxury homes with gated community access</p>
@@ -630,9 +630,9 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a href="/service-area/san-marcos" className="group">
+            <Link href="/service-area/san-marcos" className="group">
               <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">San Marcos</h3>
                 <p className="text-gray-600 mb-3">Established luxury neighborhood with mature landscaping</p>
@@ -643,16 +643,16 @@ export default function ImprovedHomeClient() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
 
           <div className="text-center mt-8">
-            <a
+            <Link
               href="/service-area"
               className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
             >
               View All Subdivisions
-            </a>
+            </Link>
           </div>
         </div>
       </section>
