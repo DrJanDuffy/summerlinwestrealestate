@@ -152,9 +152,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
           <StickyPhoneMenu />
           <Script
-            src="https://em.realscout.com/widgets/realscout-web-components.js"
-            strategy="beforeInteractive"
+            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+            strategy="afterInteractive"
             id="realscout-web-components"
+            onLoad={() => {
+              console.log('RealScout script loaded successfully');
+            }}
+            onError={() => {
+              console.log('RealScout script failed to load');
+            }}
           />
           <script
             type="application/ld+json"
@@ -196,7 +202,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div id="realscout-container">
               <style dangerouslySetInnerHTML={{
                 __html: `
-                  realscout-your-listings {
+                  realscout-office-listings {
                     --rs-listing-divider-color: #0e64c8;
                     width: 100%;
                     min-height: 300px;
@@ -231,13 +237,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* RealScout Widget */}
               <div id="realscout-widget" style={{ display: 'none' }}>
                 {/* @ts-ignore - RealScout web component */}
-                <realscout-your-listings
+                <realscout-office-listings
                   agent-encoded-id="QWdlbnQtMjI1MDUw"
                   sort-order="NEWEST"
-                  listing-status="For Sale,For Rent,In Contract"
-                  property-types=",SFR,MF,TC,LAL,MOBILE,OTHER"
-                  price-min="300000"
-                  price-max="3000000"
+                  listing-status="For Sale"
+                  property-types=",SFR"
+                  price-min="500000"
+                  price-max="600000"
                 />
               </div>
               
@@ -276,8 +282,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 const checkRealScout = setInterval(function() {
                   attempts++;
                   
+                  console.log(`Attempt ${attempts}: Checking RealScout...`);
+                  
                   // Check if custom element is available
-                  if (customElements.get('realscout-your-listings')) {
+                  if (customElements.get('realscout-office-listings')) {
                     console.log('RealScout custom element found');
                     showWidget();
                     clearInterval(checkRealScout);
@@ -285,12 +293,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   }
                   
                   // Check if widget has content
-                  const widget = document.querySelector('realscout-your-listings');
+                  const widget = document.querySelector('realscout-office-listings');
                   if (widget && widget.children.length > 0) {
                     console.log('RealScout widget has content');
                     showWidget();
                     clearInterval(checkRealScout);
                     return;
+                  }
+                  
+                  // Check if script loaded
+                  const script = document.querySelector('script[src*="realscout-web-components"]');
+                  if (script) {
+                    console.log('Script element found:', script.src);
+                  } else {
+                    console.log('Script element not found');
+                  }
+                  
+                  // Check window.RealScout
+                  if (window.RealScout) {
+                    console.log('window.RealScout found:', window.RealScout);
+                  } else {
+                    console.log('window.RealScout not found');
                   }
                   
                   // Timeout after max attempts
