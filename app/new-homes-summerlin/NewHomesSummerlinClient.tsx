@@ -235,7 +235,6 @@ export default function NewHomesSummerlinClient() {
             propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
             priceMin="600000"
             priceMax="2000000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
@@ -298,7 +297,6 @@ export default function NewHomesSummerlinClient() {
             propertyTypes=",SFR,OTHER"
             priceMin="500000"
             priceMax="600000"
-            maxListings={12}
             className="mt-6"
           />
         </section>
