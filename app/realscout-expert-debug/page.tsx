@@ -18,7 +18,7 @@ export default function RealScoutExpertDebugPage() {
     setIsRunning(true);
     setDiagnostics([]);
     
-    addDiagnostic('🔬 Starting RealScout Expert Diagnostics', 'info');
+    addDiagnostic('🔬 Starting RealScout Expert Diagnostics v2.0', 'info');
     
     // Test 1: Script Loading
     addDiagnostic('📜 Testing script loading...', 'info');
