@@ -7,7 +7,6 @@ import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
-// RealScout widget - using pure HTML web component
 
 // const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
 //   ssr: false,
@@ -264,7 +263,6 @@ export default function ImprovedHomeClient() {
             </p>
           </div>
 
-          {/* RealScoutHomeValue component removed - using office widget instead */}
         </div>
       </section>
 
@@ -382,10 +380,6 @@ export default function ImprovedHomeClient() {
             ]}
           />
 
-             {/* Featured Listings from MLS - RealScout Office Widget */}
-             <div className="mt-16">
-               {/* RealScout widget will be loaded from layout.tsx */}
-             </div>
           
         </div>
       </section>
@@ -444,7 +438,6 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-             {/* RealScout widget will be loaded from layout.tsx */}
         </div>
       </section>
 

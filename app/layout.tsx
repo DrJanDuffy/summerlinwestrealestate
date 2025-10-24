@@ -127,12 +127,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <Head>
-        <style>{`
-          realscout-office-listings {
-            --rs-listing-divider-color: #0e64c8;
-            width: 100%;
-          }
-        `}</style>
       </Head>
       <body
         className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
@@ -151,11 +145,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             mapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
           />
           <StickyPhoneMenu />
-          <Script
-            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-            strategy="afterInteractive"
-            id="realscout-web-components"
-          />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
@@ -189,15 +178,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <Header />
           <main className="pt-16">{children}</main>
-          {/* @ts-ignore - RealScout web component */}
-          <realscout-office-listings
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-            sort-order="NEWEST"
-            listing-status="For Sale"
-            property-types=",SFR"
-            price-min="500000"
-            price-max="600000"
-          />
           <Analytics />
           <SpeedInsights />
         </LeadTrackingProvider>
