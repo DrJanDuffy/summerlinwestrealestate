@@ -384,23 +384,7 @@ export default function ImprovedHomeClient() {
 
              {/* Featured Listings from MLS - RealScout Office Widget */}
              <div className="mt-16">
-               <style dangerouslySetInnerHTML={{
-                 __html: `
-                   realscout-office-listings {
-                     --rs-listing-divider-color: #0e64c8;
-                     width: 100%;
-                   }
-                 `
-               }} />
-               {/* @ts-ignore - RealScout web component */}
-               <realscout-office-listings
-                 agent-encoded-id="QWdlbnQtMjI1MDUw"
-                 sort-order="NEWEST"
-                 listing-status="For Sale"
-                 property-types=",SFR"
-                 price-min="500000"
-                 price-max="600000"
-               />
+               {/* RealScout widget will be loaded from layout.tsx */}
              </div>
           
         </div>
@@ -460,23 +444,7 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-             <style dangerouslySetInnerHTML={{
-               __html: `
-                 realscout-office-listings {
-                   --rs-listing-divider-color: #0e64c8;
-                   width: 100%;
-                 }
-               `
-             }} />
-             {/* @ts-ignore - RealScout web component */}
-             <realscout-office-listings
-               agent-encoded-id="QWdlbnQtMjI1MDUw"
-               sort-order="NEWEST"
-               listing-status="For Sale"
-               property-types=",SFR"
-               price-min="500000"
-               price-max="600000"
-             />
+             {/* RealScout widget will be loaded from layout.tsx */}
         </div>
       </section>
 
