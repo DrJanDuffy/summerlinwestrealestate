@@ -11,7 +11,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
   },
 
   // Enable experimental features for better performance
@@ -31,7 +30,7 @@ const nextConfig = {
   //   return config;
   // },
 
-  // Headers for better caching
+  // Headers for better caching and CSP
   async headers() {
     return [
       {
@@ -49,6 +48,15 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://em.realscout.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://em.realscout.com https://www.google-analytics.com; img-src 'self' data: https:; font-src 'self' data:;",
           },
         ],
       },
