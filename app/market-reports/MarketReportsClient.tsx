@@ -1,18 +1,9 @@
 'use client';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
-import RealScoutAdvancedSearch from '../../components/ui/RealScoutAdvancedSearch';
 import useExpandable from '../../hooks/useExpandable';
 import styles from '../page.module.css';
-
-const RealScoutOfficeListings = dynamic(
-  () => import('../../components/ui/RealScoutOfficeListings'),
-  {
-    ssr: false,
-  }
-);
 
 const LeadCaptureForm = dynamic(() => import('../../components/ui/LeadCaptureForm'), {
   ssr: false,
@@ -283,15 +274,19 @@ export default function MarketReportsClient() {
           investors looking to capitalize on Summerlin West's strong market fundamentals.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListings
-          agentEncodedId="QWdlbnQtMjI1MDUw"
-          sortOrder="PRICE_LOW"
-          listingStatus="For Sale"
-          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-          priceMin="700000"
-          priceMax="1500000"
-          className="mt-6"
-        />
+        
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
       </section>
 
       {/* Advanced Property Search */}
@@ -303,7 +298,19 @@ export default function MarketReportsClient() {
           opportunity.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+        
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
       </section>
 
       {/* Simple Property Search */}
@@ -314,7 +321,19 @@ export default function MarketReportsClient() {
           browsing while reviewing market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+        
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
       </section>
 
       {/* Additional Property Search Options */}
@@ -326,18 +345,34 @@ export default function MarketReportsClient() {
           market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        <RealScoutOfficeListings
-          agentEncodedId="QWdlbnQtMjI1MDUw"
-          sortOrder="PRICE_LOW"
-          listingStatus="For Sale"
-          propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-          priceMin="400000"
-          priceMax="2000000"
-          className="mt-6"
-        />
+        
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
       </section>
 
-      <RealScoutAdvancedSearch />
+      
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
     </div>
   );
 }

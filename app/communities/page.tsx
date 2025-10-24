@@ -6,7 +6,6 @@ import Link from 'next/link';
 import InternalLinking from '../../components/ui/InternalLinking';
 import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsightsClient';
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
-import RealScoutWidget from '../../components/ui/RealScoutWidget';
 import styles from '../page.module.css';
 
 const RealScoutOfficeListings = dynamicImport(
@@ -361,7 +360,19 @@ export default function Communities() {
             ))}
           </div>
           <div className={styles.realScoutSectionSpacer}>
-            <RealScoutWidget priceMin={600000} />
+            
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
           </div>
         </section>
         <section className={styles.sectionCard} aria-label="Summerlin West Market Overview">
@@ -548,15 +559,19 @@ export default function Communities() {
             and investment opportunities.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListings
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="PRICE_LOW"
-            listingStatus="For Sale"
-            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin="550000"
-            priceMax="1800000"
-            className="mt-6"
-          />
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </section>
 
         {/* Advanced Property Search */}
@@ -567,7 +582,19 @@ export default function Communities() {
             community. Filter by price, location, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </section>
 
         {/* Simple Property Search */}
@@ -578,7 +605,19 @@ export default function Communities() {
             browsing while exploring Summerlin West communities.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <realscout-simple-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-simple-search>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </section>
 
         {/* Additional Property Search Options */}
@@ -592,15 +631,19 @@ export default function Communities() {
             this premier master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          <RealScoutOfficeListings
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="PRICE_LOW"
-            listingStatus="For Sale"
-            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin="400000"
-            priceMax="2000000"
-            className="mt-6"
-          />
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </section>
 
         {/* Internal Linking Section for SEO */}

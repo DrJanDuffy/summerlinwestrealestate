@@ -1,17 +1,9 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import InternalLinking from '../../../components/ui/InternalLinking';
 
 // Dynamic imports for better performance
-const RealScoutOfficeListingsWrapper = dynamic(
-  () => import('../../../components/ui/RealScoutOfficeListingsWrapper'),
-  {
-    ssr: false,
-  }
-);
-
 interface NeighborhoodClientProps {
   neighborhood: {
     slug: string;
@@ -161,16 +153,19 @@ export default function NeighborhoodClient({ neighborhood }: NeighborhoodClientP
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Homes for Sale in {neighborhood.name}
           </h2>
-          <RealScoutOfficeListingsWrapper
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="PRICE_LOW"
-            listingStatus="For Sale"
-            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin={neighborhood.minPrice.toString()}
-            priceMax={neighborhood.maxPrice.toString()}
-            maxListings={12}
-            className="mt-6"
-          />
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </div>
       </section>
 

@@ -185,22 +185,7 @@ export function trackLeadEvent(event: Partial<LeadEvent>) {
     });
   }
 
-  // RealScout Integration (if available)
-  if (typeof window !== 'undefined' && (window as any).realscout) {
-    try {
-      (window as any).realscout.track('lead_generated', {
-        event_type: fullEvent.event_type,
-        lead_type: fullEvent.lead_type,
-        lead_source: fullEvent.lead_source,
-        property_type: fullEvent.property_type,
-        community: fullEvent.community,
-        property_id: fullEvent.property_id,
-        timestamp: fullEvent.timestamp,
-      });
-    } catch (error) {
-      console.warn('RealScout tracking error:', error);
-    }
-  }
+  // RealScout integration removed - using alternative tracking
 
   // Console log for debugging
   console.log('Lead Event Tracked:', fullEvent);

@@ -24,36 +24,7 @@ export const VistasLeadForm = dynamic(() => import('../components/ui/VistasLeadF
   ),
 });
 
-// RealScout components - heavy due to external API dependencies
-export const RealScoutAdvancedSearch = dynamic(
-  () => import('../components/ui/RealScoutAdvancedSearch'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
-
-export const RealScoutListings = dynamic(() => import('../components/ui/RealScoutListings'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center p-8">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-    </div>
-  ),
-});
-
-export const RealScoutWidget = dynamic(() => import('../components/ui/RealScoutWidget'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center p-8">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-    </div>
-  ),
-});
+// RealScout components removed - using alternative solutions
 
 // Market insights - heavy due to data processing
 export const LatestMarketInsights = dynamic(() => import('../components/ui/LatestMarketInsights'), {
@@ -119,39 +90,7 @@ export const FeaturedHomeSlider = dynamic(() => import('../components/ui/Feature
   ),
 });
 
-// RealScout Components - Primary lead generation tools
-export const RealScoutLeadCapture = dynamic(() => import('../components/ui/RealScoutLeadCapture'), {
-  ssr: false,
-  loading: () => (
-    <div className="flex items-center justify-center p-8">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-    </div>
-  ),
-});
-
-export const RealScoutMarketInsights = dynamic(
-  () => import('../components/ui/RealScoutMarketInsights'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
-
-export const RealScoutPropertyValuation = dynamic(
-  () => import('../components/ui/RealScoutPropertyValuation'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    ),
-  }
-);
+// RealScout Components removed - using alternative lead generation tools
 
 // Market Insights Feed - integrates Simplifying the Market content
 export const MarketInsightsFeed = dynamic(() => import('../components/ui/MarketInsightsFeed'), {

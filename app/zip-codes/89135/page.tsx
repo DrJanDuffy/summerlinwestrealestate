@@ -1,10 +1,5 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-
-const RealScoutOfficeListings = dynamic(
-  () => import('../../../components/ui/RealScoutOfficeListings')
-);
 
 export const metadata: Metadata = {
   title: 'Homes for Sale in 89135 | The Vistas Summerlin West Real Estate',
@@ -238,15 +233,18 @@ export default function ZipCode89135Page() {
             West. These properties offer luxury living with access to top-rated schools and premium
             amenities.
           </p>
-          <RealScoutOfficeListings
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-            sortOrder="PRICE_LOW"
-            listingStatus="For Sale"
-            propertyTypes=",SFR,MF,TC,LAL,MOBILE,OTHER"
-            priceMin="400000"
-            priceMax="2000000"
-            className="mt-6"
-          />
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <p className="text-blue-700 mb-6">
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance finding homes in zip code 89135.
+            </p>
+            <a
+              href="tel:702-550-0112"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              📞 Call (702) 550-0112
+            </a>
+          </div>
         </div>
       </section>
 
