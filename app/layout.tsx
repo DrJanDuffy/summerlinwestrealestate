@@ -189,26 +189,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <Header />
           <main className="pt-16">{children}</main>
-          <div className={styles.sectionCard}>
-            <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            <style dangerouslySetInnerHTML={{
-              __html: `
-                realscout-office-listings {
-                  --rs-listing-divider-color: #0e64c8;
-                  width: 100%;
-                }
-              `
-            }} />
-            {/* @ts-ignore - RealScout web component */}
-            <realscout-office-listings
-              agent-encoded-id="QWdlbnQtMjI1MDUw"
-              sort-order="NEWEST"
-              listing-status="For Sale"
-              property-types=",SFR"
-              price-min="500000"
-              price-max="600000"
-            />
-          </div>
+          {/* @ts-ignore - RealScout web component */}
+          <realscout-office-listings
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+            sort-order="NEWEST"
+            listing-status="For Sale"
+            property-types=",SFR"
+            price-min="500000"
+            price-max="600000"
+          />
           <Analytics />
           <SpeedInsights />
         </LeadTrackingProvider>
