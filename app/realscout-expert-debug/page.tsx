@@ -25,8 +25,9 @@ export default function RealScoutExpertDebugPage() {
     const script = document.querySelector('script[src*="realscout-web-components"]') as HTMLScriptElement;
     if (script) {
       addDiagnostic(`✅ Script found: ${script.src}`, 'success');
-      addDiagnostic(`📊 Script complete: ${script.complete}`, 'info');
       addDiagnostic(`📊 Script readyState: ${script.readyState}`, 'info');
+      addDiagnostic(`📊 Script async: ${script.async}`, 'info');
+      addDiagnostic(`📊 Script defer: ${script.defer}`, 'info');
     } else {
       addDiagnostic('❌ Script element not found', 'error');
     }
