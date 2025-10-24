@@ -2,6 +2,13 @@
 
 import { useState } from 'react';
 
+// TypeScript declarations for RealScout global object
+declare global {
+  interface Window {
+    RealScout?: any;
+  }
+}
+
 export default function RealScoutExpertDebugPage() {
   const [diagnostics, setDiagnostics] = useState<any[]>([]);
   const [isRunning, setIsRunning] = useState(false);
