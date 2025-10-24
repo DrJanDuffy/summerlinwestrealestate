@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function RealScoutExpertDebugPage() {
   const [diagnostics, setDiagnostics] = useState<any[]>([]);
@@ -22,7 +22,7 @@ export default function RealScoutExpertDebugPage() {
     
     // Test 1: Script Loading
     addDiagnostic('📜 Testing script loading...', 'info');
-    const script = document.querySelector('script[src*="realscout-web-components"]');
+    const script = document.querySelector('script[src*="realscout-web-components"]') as HTMLScriptElement;
     if (script) {
       addDiagnostic(`✅ Script found: ${script.src}`, 'success');
       addDiagnostic(`📊 Script complete: ${script.complete}`, 'info');
@@ -67,7 +67,7 @@ export default function RealScoutExpertDebugPage() {
     // Test 5: Network Test
     addDiagnostic('🌐 Testing network connectivity...', 'info');
     try {
-      const response = await fetch('https://em.realscout.com/widgets/realscout-web-components.umd.js', {
+      await fetch('https://em.realscout.com/widgets/realscout-web-components.umd.js', {
         method: 'HEAD',
         mode: 'no-cors'
       });
