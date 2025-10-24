@@ -191,189 +191,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="pt-16">{children}</main>
           <div className={styles.sectionCard}>
             <h2 className={styles.centerTitle}>Featured Summerlin Listings</h2>
-            
-            {/* RealScout Widget */}
-            <div id="realscout-container">
-              <style dangerouslySetInnerHTML={{
-                __html: `
-                  realscout-office-listings {
-                    --rs-listing-divider-color: #0e64c8;
-                    width: 100%;
-                    min-height: 300px;
-                  }
-                  .realscout-loading {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    min-height: 300px;
-                    background: #f8f9fa;
-                    border: 2px solid #e9ecef;
-                    border-radius: 8px;
-                  }
-                  .realscout-error {
-                    background: #fff3cd;
-                    border: 1px solid #ffeaa7;
-                    border-radius: 8px;
-                    padding: 20px;
-                    text-align: center;
-                  }
-                `
-              }} />
-              
-              {/* Loading State */}
-              <div className="realscout-loading" id="realscout-loading">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
-                  <p className="text-gray-600">Loading property listings...</p>
-                </div>
-              </div>
-              
-              {/* RealScout Widget */}
-              <div id="realscout-widget" style={{ display: 'none' }}>
-                {/* @ts-ignore - RealScout web component */}
-                <realscout-office-listings
-                  agent-encoded-id="QWdlbnQtMjI1MDUw"
-                  sort-order="NEWEST"
-                  listing-status="For Sale"
-                  property-types=",SFR"
-                  price-min="500000"
-                  price-max="600000"
-                />
-              </div>
-              
-              {/* Error State */}
-              <div className="realscout-error" id="realscout-error" style={{ display: 'none' }}>
-                <h3 className="text-lg font-semibold text-yellow-800 mb-2">Property Listings Temporarily Unavailable</h3>
-                <p className="text-yellow-700 mb-4">We're experiencing technical difficulties with our property listings. Please contact us directly for current listings.</p>
-                <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                  Contact Dr. Jan Duffy
-                </a>
-              </div>
-            </div>
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                realscout-office-listings {
+                  --rs-listing-divider-color: #0e64c8;
+                  width: 100%;
+                }
+              `
+            }} />
+            {/* @ts-ignore - RealScout web component */}
+            <realscout-office-listings
+              agent-encoded-id="QWdlbnQtMjI1MDUw"
+              sort-order="NEWEST"
+              listing-status="For Sale"
+              property-types=",SFR"
+              price-min="500000"
+              price-max="600000"
+            />
           </div>
           <Analytics />
           <SpeedInsights />
-          
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                  // Expert-level RealScout monitoring
-                  console.log('🔬 REALSOUT EXPERT DIAGNOSTICS INITIALIZED');
-                  
-                  // Monitor script loading errors
-                  window.addEventListener('error', function(e) {
-                    if (e.target && e.target.src && e.target.src.includes('realscout')) {
-                      console.log('❌ REALSOUT SCRIPT ERROR:', e.message);
-                      console.log('❌ Failed URL:', e.target.src);
-                    }
-                  });
-                  
-                  // Monitor network requests
-                  const originalFetch = window.fetch;
-                  window.fetch = function(...args) {
-                    if (args[0] && args[0].includes && args[0].includes('realscout')) {
-                      console.log('🌐 RealScout API call detected:', args[0]);
-                    }
-                    return originalFetch.apply(this, args);
-                  };
-                  
-                  document.addEventListener('DOMContentLoaded', function() {
-                const loadingEl = document.getElementById('realscout-loading');
-                const widgetEl = document.getElementById('realscout-widget');
-                const errorEl = document.getElementById('realscout-error');
-                
-                // Check if RealScout script loaded
-                const script = document.querySelector('script[src*="realscout-web-components"]');
-                if (!script) {
-                  console.log('RealScout script not found');
-                  showError();
-                  return;
-                }
-                
-                // Wait for RealScout to load
-                let attempts = 0;
-                const maxAttempts = 30; // 15 seconds
-                
-                const checkRealScout = setInterval(function() {
-                  attempts++;
-                  
-                  console.log('=== REALSOUT EXPERT DIAGNOSIS ATTEMPT ' + attempts + ' ===');
-                  
-                  // Check if custom element is available
-                  if (customElements.get('realscout-office-listings')) {
-                    console.log('✅ SUCCESS: RealScout custom element registered');
-                    showWidget();
-                    clearInterval(checkRealScout);
-                    return;
-                  }
-                  
-                  // Check if widget has content
-                  const widget = document.querySelector('realscout-office-listings');
-                  if (widget && widget.children.length > 0) {
-                    console.log('✅ SUCCESS: RealScout widget has content');
-                    showWidget();
-                    clearInterval(checkRealScout);
-                    return;
-                  }
-                  
-                  // Expert-level script analysis
-                  const script = document.querySelector('script[src*="realscout-web-components"]');
-                  if (script) {
-                    console.log('📜 Script element found:', script.src);
-                    console.log('📜 Script loaded:', script.complete);
-                    console.log('📜 Script readyState:', script.readyState);
-                  } else {
-                    console.log('❌ CRITICAL: Script element not found');
-                  }
-                  
-                  // Check window.RealScout object
-                  if (window.RealScout) {
-                    console.log('🌐 window.RealScout found:', typeof window.RealScout);
-                    console.log('🌐 RealScout methods:', Object.keys(window.RealScout));
-                  } else {
-                    console.log('❌ window.RealScout not available');
-                  }
-                  
-                  // Check for network errors
-                  const networkErrors = document.querySelectorAll('script[src*="realscout"]');
-                  networkErrors.forEach((script, index) => {
-                    console.log('🌐 Script ' + index + ' status:', script.getAttribute('data-status') || 'unknown');
-                  });
-                  
-                  // Check DOM ready state
-                  console.log('📄 Document ready state:', document.readyState);
-                  console.log('📄 Custom elements registry size:', customElements.get ? 'available' : 'not available');
-                  
-                  // Check for any RealScout elements in DOM
-                  const allRealScoutElements = document.querySelectorAll('[class*="realscout"], [id*="realscout"]');
-                  console.log('🔍 RealScout DOM elements found:', allRealScoutElements.length);
-                  
-                  // Timeout after max attempts
-                  if (attempts >= maxAttempts) {
-                    console.log('⏰ EXPERT DIAGNOSIS COMPLETE: RealScout failed to load after ' + maxAttempts + ' attempts');
-                    console.log('📊 FINAL STATUS:');
-                    console.log('   - Script loaded:', !!document.querySelector('script[src*="realscout-web-components"]'));
-                    console.log('   - Custom element registered:', !!customElements.get('realscout-office-listings'));
-                    console.log('   - Window object available:', !!window.RealScout);
-                    console.log('   - Widget in DOM:', !!document.querySelector('realscout-office-listings'));
-                    showError();
-                    clearInterval(checkRealScout);
-                  }
-                }, 500);
-                
-                function showWidget() {
-                  loadingEl.style.display = 'none';
-                  widgetEl.style.display = 'block';
-                  errorEl.style.display = 'none';
-                }
-                
-                function showError() {
-                  loadingEl.style.display = 'none';
-                  widgetEl.style.display = 'none';
-                  errorEl.style.display = 'block';
-                }
-              });
-            `
-          }} />
         </LeadTrackingProvider>
       </body>
     </html>

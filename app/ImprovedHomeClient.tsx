@@ -384,12 +384,14 @@ export default function ImprovedHomeClient() {
 
              {/* Featured Listings from MLS - RealScout Office Widget */}
              <div className="mt-16">
-               <style jsx>{`
-                 realscout-office-listings {
-                   --rs-listing-divider-color: #0e64c8;
-                   width: 100%;
-                 }
-               `}</style>
+               <style dangerouslySetInnerHTML={{
+                 __html: `
+                   realscout-office-listings {
+                     --rs-listing-divider-color: #0e64c8;
+                     width: 100%;
+                   }
+                 `
+               }} />
                {/* @ts-ignore - RealScout web component */}
                <realscout-office-listings
                  agent-encoded-id="QWdlbnQtMjI1MDUw"
@@ -458,12 +460,14 @@ export default function ImprovedHomeClient() {
             </div>
           </div>
 
-             <style jsx>{`
-               realscout-office-listings {
-                 --rs-listing-divider-color: #0e64c8;
-                 width: 100%;
-               }
-             `}</style>
+             <style dangerouslySetInnerHTML={{
+               __html: `
+                 realscout-office-listings {
+                   --rs-listing-divider-color: #0e64c8;
+                   width: 100%;
+                 }
+               `
+             }} />
              {/* @ts-ignore - RealScout web component */}
              <realscout-office-listings
                agent-encoded-id="QWdlbnQtMjI1MDUw"
