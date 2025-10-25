@@ -8,9 +8,9 @@ import LatestMarketInsightsClient from '../../components/ui/LatestMarketInsights
 import NeighborhoodHero from '../../components/ui/NeighborhoodHero';
 import styles from '../page.module.css';
 
-const RealScoutOfficeListings = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListings')
-);
+// const RealScoutOfficeListings = dynamicImport(
+//   () => import('../../components/ui/RealScoutOfficeListings')
+// );
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

@@ -2,12 +2,12 @@
 import dynamicImport from 'next/dynamic';
 import styles from '../../styles/pages/service-area.module.css';
 
-const RealScoutOfficeListings = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListings'),
-  {
-    ssr: false,
-  }
-);
+// const RealScoutOfficeListings = dynamicImport(
+//   () => import('../../components/ui/RealScoutOfficeListings'),
+//   {
+//     ssr: false,
+//   }
+// );
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

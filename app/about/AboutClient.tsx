@@ -1,4 +1,5 @@
 'use client';
+import dynamic from 'next/dynamic';
 import { MapMarkerIcon, UserTieIcon } from '../../lib/icons';
 import styles from '../page.module.css';
 

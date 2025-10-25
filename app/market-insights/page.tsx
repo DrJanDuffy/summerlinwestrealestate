@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import MarketInsightsFeed from '../../components/ui/MarketInsightsFeed';
-import RealScoutMarketInsights from '../../components/ui/RealScoutMarketInsights';
+// import RealScoutMarketInsights from '../../components/ui/RealScoutMarketInsights';
 
 export const metadata: Metadata = {
   title: 'Market Insights & Real Estate News | Summerlin West Real Estate',
@@ -93,14 +93,14 @@ export default function MarketInsightsPage() {
       {/* RealScout Market Data */}
       <section id="market-data" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RealScoutMarketInsights
+          {/* <RealScoutMarketInsights
             title="Live Summerlin West Market Data"
             subtitle="Real-time MLS data, price trends, and market analytics"
             variant="full"
             showCharts={true}
             showTrends={true}
             showComparisons={true}
-          />
+          /> */}
         </div>
       </section>
 

@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import dynamicImport from 'next/dynamic';
 import Link from 'next/link';
 
-const RealScoutOfficeListings = dynamicImport(
-  () => import('../../components/ui/RealScoutOfficeListings')
-);
+// const RealScoutOfficeListings = dynamicImport(
+//   () => import('../../components/ui/RealScoutOfficeListings')
+// );
 
 // Disable SSR for this page to prevent prerendering issues
 export const dynamic = 'force-dynamic';

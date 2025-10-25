@@ -1,0 +1,94 @@
+{
+  "currentDesign": {
+    "colors": {
+      "primary": "#0084ff",
+      "secondary": "#79adff",
+      "accent": "#9cc2dd",
+      "dark": "#172023",
+      "neutral": "Gray scale from 50-950"
+    },
+    "typography": {
+      "primary": "Inter (--font-inter)",
+      "secondary": "Outfit (--font-outfit)",
+      "display": "Bricolage Grotesque (--font-bricolage-grotesque)",
+      "mono": "Geist Mono (--font-geist-mono)"
+    },
+    "spacing": "Consistent 4px base unit system",
+    "components": "Tailwind CSS with custom CSS variables",
+    "layout": "Mobile-first responsive design"
+  },
+  "enhancements": [
+    {
+      "component": "PropertyCard",
+      "improvements": [
+        "Enhanced visual hierarchy",
+        "Better image handling with Next.js Image",
+        "Improved hover effects",
+        "Better mobile responsiveness",
+        "Enhanced accessibility"
+      ]
+    },
+    {
+      "component": "HeroSection",
+      "improvements": [
+        "More dynamic gradients",
+        "Better typography scaling",
+        "Enhanced CTA buttons",
+        "Improved mobile layout",
+        "Better visual balance"
+      ]
+    },
+    {
+      "component": "ContactForm",
+      "improvements": [
+        "Modern form styling",
+        "Better validation states",
+        "Enhanced accessibility",
+        "Improved mobile experience",
+        "Professional branding"
+      ]
+    },
+    {
+      "component": "PageLayout",
+      "improvements": [
+        "Consistent spacing system",
+        "Better section transitions",
+        "Enhanced visual hierarchy",
+        "Improved mobile navigation",
+        "Better content organization"
+      ]
+    },
+    {
+      "component": "PropertySearchPlaceholder",
+      "improvements": [
+        "More engaging placeholder design",
+        "Better call-to-action",
+        "Professional appearance",
+        "Consistent branding",
+        "Mobile optimization"
+      ]
+    }
+  ],
+  "v0Prompts": [
+    {
+      "name": "EnhancedPropertyCard",
+      "prompt": "Create a modern, responsive property card component for a luxury real estate website using Next.js 15, TypeScript, and Tailwind CSS 4. \n\nRequirements:\n- Professional blue color scheme (#0084ff primary, #79adff secondary)\n- Next.js Image component for optimization\n- Hover effects with smooth transitions\n- Mobile-first responsive design\n- Accessibility features (ARIA labels, keyboard navigation)\n- Property details: address, price, bedrooms, bathrooms, square feet, community, features\n- Status badges (For Sale, Sold, etc.)\n- Professional real estate branding\n- Framer Motion animations\n- Clean, modern design with proper spacing\n\nInclude proper TypeScript interfaces and make it production-ready."
+    },
+    {
+      "name": "EnhancedHeroSection",
+      "prompt": "Create a stunning hero section for a luxury real estate website using Next.js 15, TypeScript, and Tailwind CSS 4.\n\nRequirements:\n- Dynamic gradient backgrounds (blue to purple)\n- Professional typography hierarchy\n- Responsive design (mobile-first)\n- Call-to-action buttons with hover effects\n- Backdrop blur effects\n- Professional real estate branding\n- Accessibility features\n- Smooth animations with Framer Motion\n- Clean, modern design\n- Proper spacing and visual balance\n\nMake it visually impressive while maintaining professionalism for Dr. Jan Duffy's real estate business."
+    },
+    {
+      "name": "EnhancedContactForm",
+      "prompt": "Create a professional contact form component for a real estate website using Next.js 15, TypeScript, and Tailwind CSS 4.\n\nRequirements:\n- Modern form styling with proper validation states\n- Professional blue color scheme (#0084ff)\n- Mobile-responsive design\n- Accessibility features (ARIA labels, error messages)\n- Form fields: name, email, phone, message, property interest\n- Validation with proper error handling\n- Professional real estate branding\n- Smooth animations and transitions\n- Clean, modern design\n- Proper TypeScript interfaces\n\nMake it conversion-focused for lead generation."
+    },
+    {
+      "name": "EnhancedPropertySearchPlaceholder",
+      "prompt": "Create an engaging property search placeholder component for a real estate website using Next.js 15, TypeScript, and Tailwind CSS 4.\n\nRequirements:\n- Professional blue color scheme (#0084ff)\n- Engaging \"Coming Soon\" design\n- Clear call-to-action to contact Dr. Jan Duffy\n- Professional real estate branding\n- Mobile-responsive design\n- Accessibility features\n- Smooth animations\n- Clean, modern design\n- Contact information prominently displayed\n- Professional appearance that maintains user trust\n\nReplace generic \"No listings available\" with this engaging placeholder."
+    },
+    {
+      "name": "EnhancedPageLayout",
+      "prompt": "Create a comprehensive page layout system for a real estate website using Next.js 15, TypeScript, and Tailwind CSS 4.\n\nRequirements:\n- Consistent spacing system\n- Professional blue color scheme\n- Mobile-first responsive design\n- Breadcrumb navigation\n- Section transitions and visual hierarchy\n- Professional real estate branding\n- Accessibility features\n- Clean, modern design\n- Proper content organization\n- Smooth animations\n\nMake it work for all page types: property listings, community pages, school pages, etc."
+    }
+  ]
+}

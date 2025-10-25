@@ -24,7 +24,7 @@ import {
   FaUsers,
 } from 'react-icons/fa';
 import InternalLinking from './InternalLinking';
-import RealScoutIntegration from './RealScoutIntegration';
+// import RealScoutIntegration from './RealScoutIntegration';
 
 interface ModernAboutPageProps {
   className?: string;
@@ -554,7 +554,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
               </p>
             </div>
             {/* RealScout Lead Capture Widget */}
-            <RealScoutIntegration type="lead-capture" />
+            {/* <RealScoutIntegration type="lead-capture" /> */}
           </motion.div>
         </div>
       </section>
@@ -584,7 +584,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <RealScoutIntegration type="listings" />
+            {/* <RealScoutIntegration type="listings" /> */}
           </motion.div>
         </div>
       </section>

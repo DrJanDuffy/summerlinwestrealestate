@@ -26,8 +26,8 @@ export const v0 = {
       model = 'v0-1.5-md',
     } = options;
 
-    if (!process.env.V0_API_KEY) {
-      throw new Error('V0_API_KEY is not configured');
+    if (!process.env.V0_API_KEY && !process.env.VERCEL_API_KEY) {
+      throw new Error('V0_API_KEY or VERCEL_API_KEY is not configured');
     }
 
     try {
@@ -221,12 +221,14 @@ Generate only the requested content, no explanations.`;
  * @returns boolean - Whether the API is properly configured
  */
 export function validateV0Config(): boolean {
-  if (!process.env.V0_API_KEY) {
-    console.error('V0_API_KEY is not set in environment variables');
+  const apiKey = process.env.V0_API_KEY || process.env.VERCEL_API_KEY;
+  
+  if (!apiKey) {
+    console.error('V0_API_KEY or VERCEL_API_KEY is not set in environment variables');
     return false;
   }
 
-  if (process.env.V0_API_KEY === 'your_api_key_here') {
+  if (apiKey === 'your_api_key_here' || apiKey === 'your_actual_v0_api_key_here') {
     console.error('Please replace the placeholder API key with your actual V0 API key');
     return false;
   }

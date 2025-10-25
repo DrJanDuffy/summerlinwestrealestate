@@ -4,7 +4,6 @@ import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Head from 'next/head';
 import Script from 'next/script';
 import GoogleOptimization, {
   GoogleTagManagerNoScript,
@@ -126,8 +125,6 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Head>
-      </Head>
       <body
         className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
       >
