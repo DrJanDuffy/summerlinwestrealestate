@@ -174,7 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </noscript>
 
           {/* RealScout Script - Loaded once globally with type="module" */}
-          <Script strategy="afterInteractive">
+          <Script id="realscout-loader" strategy="afterInteractive">
             {`
               (function() {
                 if (!document.getElementById('realscout-web-components')) {
