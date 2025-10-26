@@ -54,6 +54,22 @@ export default function SEOResumePage() {
         </div>
       </header>
 
+      {/* RealScout Listings Widget */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              realscout-office-listings {
+                --rs-listing-divider-color: #0e64c8;
+                width: 100%;
+              }
+            `
+          }} />
+          <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>
+        </div>
+      </section>
+
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Professional Summary with Keywords */}
         <section className="bg-white rounded-2xl shadow-xl p-8 mb-8">
