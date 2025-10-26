@@ -12,8 +12,8 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: '/resume', label: 'Resume' },
-  { href: '/team', label: 'Team' },
+  { href: '/resume', label: 'About Dr. Jan Duffy' },
+  { href: '/team', label: 'Our Team' },
   {
     href: '/properties',
     label: 'Properties',
@@ -29,7 +29,7 @@ const navLinks: NavLink[] = [
   },
   {
     href: '/communities',
-    label: 'Communities',
+    label: 'Neighborhoods',
     submenu: [
       { href: '/the-vistas', label: 'The Vistas' },
       { href: '/service-area', label: 'Service Area' },
@@ -41,8 +41,8 @@ const navLinks: NavLink[] = [
       { href: '/communities/palmilla', label: 'Palmilla' },
     ],
   },
-  { href: '/press', label: 'Press' },
-  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/press', label: 'Latest News' },
+  { href: '/testimonials', label: 'Success Stories' },
   { href: '/contact', label: 'Contact' },
 ];
 
