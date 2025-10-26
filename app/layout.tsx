@@ -125,6 +125,26 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* RealScout Script - Required in head per RealScout documentation */}
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+        />
+        {/* RealScout Widget Styles */}
+        <style>{`
+          realscout-office-listings {
+            --rs-listing-divider-color: #0e64c8;
+            width: 100%;
+          }
+          realscout-advanced-search {
+            --rs-as-button-text-color: #ffffff;
+            --rs-as-background-color: #000000;
+            --rs-as-button-color: #d0021b;
+            --rs-as-widget-width: 100% !important;
+          }
+        `}</style>
+      </head>
       <body
         className={`${inter.variable} ${outfit.variable} ${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.variable} antialiased`}
       >
@@ -172,26 +192,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               alt="Facebook Pixel"
             />
           </noscript>
-
-          {/* RealScout Script - Loaded once globally with type="module" as required by RealScout */}
-          <script
-            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-            type="module"
-          />
-
-          {/* RealScout Widget Styles - Global styles */}
-          <style>{`
-            realscout-office-listings {
-              --rs-listing-divider-color: #0e64c8;
-              width: 100%;
-            }
-            realscout-advanced-search {
-              --rs-as-button-text-color: #ffffff;
-              --rs-as-background-color: #000000;
-              --rs-as-button-color: #d0021b;
-              --rs-as-widget-width: 100% !important;
-            }
-          `}</style>
 
           <Header />
           <main className="pt-16">{children}</main>
