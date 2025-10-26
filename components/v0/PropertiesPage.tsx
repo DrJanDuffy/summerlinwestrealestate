@@ -4,10 +4,11 @@
  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useId } from 'react';
 
 export default function PropertiesPage() {
   const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
+  const searchPlaceholderId = useId();
 
   useEffect(() => {
     // Add structured data for SEO
@@ -24,6 +25,18 @@ export default function PropertiesPage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Add widget styles
+    const style = document.createElement('style');
+    style.textContent = `
+      realscout-advanced-search {
+        --rs-as-button-text-color: #ffffff;
+        --rs-as-background-color: #000000;
+        --rs-as-button-color: #d0021b;
+        --rs-as-widget-width: 100% !important;
+      }
+    `;
+    document.head.appendChild(style);
+
     // Load RealScout widget with improved error handling
     const existingScript = document.getElementById('realscout-script');
     
@@ -36,7 +49,7 @@ export default function PropertiesPage() {
       realscoutScript.onload = () => {
         // Add longer delay to ensure widget is fully ready
         setTimeout(() => {
-          const container = document.getElementById('realscout-search-placeholder');
+          const container = document.getElementById(searchPlaceholderId);
           if (container) {
             container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
             setWidgetState('ready');
@@ -66,7 +79,7 @@ export default function PropertiesPage() {
         document.head.removeChild(script);
       }
     };
-  }, []);
+  }, [searchPlaceholderId]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
@@ -89,17 +102,7 @@ export default function PropertiesPage() {
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <style dangerouslySetInnerHTML={{
-            __html: `
-              realscout-advanced-search {
-                --rs-as-button-text-color: #ffffff;
-                --rs-as-background-color: #000000;
-                --rs-as-button-color: #d0021b;
-                --rs-as-widget-width: 100% !important;
-              }
-            `
-          }} />
-          <div id="realscout-search-placeholder">
+          <div id={searchPlaceholderId}>
             {widgetState === 'loading' && (
               <p className="text-center text-gray-600">Loading property search...</p>
             )}
@@ -120,7 +123,7 @@ export default function PropertiesPage() {
                 <p className="text-gray-600 mb-4">
                   Explore luxury homes in Summerlin West's most prestigious communities
                 </p>
-                <a href="#" className="text-blue-600 font-semibold hover:text-blue-700">
+                <a href="/properties" className="text-blue-600 font-semibold hover:text-blue-700">
                   View Listings →
                 </a>
               </div>
@@ -133,7 +136,7 @@ export default function PropertiesPage() {
                 <p className="text-gray-600 mb-4">
                   Income-producing properties in prime Summerlin West locations
                 </p>
-                <a href="#" className="text-green-600 font-semibold hover:text-green-700">
+                <a href="/properties" className="text-green-600 font-semibold hover:text-green-700">
                   View Listings →
                 </a>
               </div>
@@ -146,7 +149,7 @@ export default function PropertiesPage() {
                 <p className="text-gray-600 mb-4">
                   Exclusive estates with premium amenities and Red Rock Canyon views
                 </p>
-                <a href="#" className="text-purple-600 font-semibold hover:text-purple-700">
+                <a href="/properties" className="text-purple-600 font-semibold hover:text-purple-700">
                   View Listings →
                 </a>
               </div>

@@ -4,10 +4,11 @@
  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useId } from 'react';
 
 export default function SEOResumePage() {
   const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
+  const listingsPlaceholderId = useId();
 
   useEffect(() => {
     // Add structured data for SEO
@@ -37,6 +38,16 @@ export default function SEOResumePage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Add widget styles
+    const style = document.createElement('style');
+    style.textContent = `
+      realscout-office-listings {
+        --rs-listing-divider-color: #0e64c8;
+        width: 100%;
+      }
+    `;
+    document.head.appendChild(style);
+
     // Load RealScout widget with improved error handling
     const existingScript = document.getElementById('realscout-script');
     
@@ -49,7 +60,7 @@ export default function SEOResumePage() {
       realscoutScript.onload = () => {
         // Add longer delay to ensure widget is fully ready
         setTimeout(() => {
-          const container = document.getElementById('realscout-listings-placeholder');
+          const container = document.getElementById(listingsPlaceholderId);
           if (container) {
             // Start with no filters to test
             container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
@@ -81,7 +92,7 @@ export default function SEOResumePage() {
         document.head.removeChild(script);
       }
     };
-  }, []);
+  }, [listingsPlaceholderId]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
@@ -99,16 +110,8 @@ export default function SEOResumePage() {
 
       {/* RealScout Listings Widget */}
       <section className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4" id="realscout-listings-container">
-          <style dangerouslySetInnerHTML={{
-            __html: `
-              realscout-office-listings {
-                --rs-listing-divider-color: #0e64c8;
-                width: 100%;
-              }
-            `
-          }} />
-          <div id="realscout-listings-placeholder">
+        <div className="max-w-7xl mx-auto px-4">
+          <div id={listingsPlaceholderId}>
             {widgetState === 'loading' && (
               <p className="text-center text-gray-600">Loading property listings...</p>
             )}
