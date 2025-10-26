@@ -4,11 +4,11 @@
  */
 'use client';
 
-import { useEffect, useState, useId } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function PropertiesPage() {
   const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
-  const searchPlaceholderId = useId();
+  const searchPlaceholderId = useRef('realscout-search-placeholder');
 
   useEffect(() => {
     // Add structured data for SEO
@@ -49,7 +49,7 @@ export default function PropertiesPage() {
       realscoutScript.onload = () => {
         // Add longer delay to ensure widget is fully ready
         setTimeout(() => {
-          const container = document.getElementById(searchPlaceholderId);
+          const container = document.getElementById(searchPlaceholderId.current);
           if (container) {
             container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
             setWidgetState('ready');
@@ -79,7 +79,7 @@ export default function PropertiesPage() {
         document.head.removeChild(script);
       }
     };
-  }, [searchPlaceholderId]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
@@ -102,7 +102,7 @@ export default function PropertiesPage() {
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <div id={searchPlaceholderId}>
+          <div id={searchPlaceholderId.current}>
             {widgetState === 'loading' && (
               <p className="text-center text-gray-600">Loading property search...</p>
             )}
