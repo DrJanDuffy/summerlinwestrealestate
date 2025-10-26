@@ -12,8 +12,7 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: '/resume', label: 'About Dr. Jan Duffy' },
-  { href: '/team', label: 'Our Team' },
+  // 1. Properties (PRIMARY ACTION)
   {
     href: '/properties',
     label: 'Properties',
@@ -27,6 +26,7 @@ const navLinks: NavLink[] = [
       },
     ],
   },
+  // 2. Neighborhoods (LOCATION FOCUS)
   {
     href: '/communities',
     label: 'Neighborhoods',
@@ -41,8 +41,15 @@ const navLinks: NavLink[] = [
       { href: '/communities/palmilla', label: 'Palmilla' },
     ],
   },
-  { href: '/press', label: 'Latest News' },
+  // 3. Success Stories (SOCIAL PROOF - TRUST BUILDER)
   { href: '/testimonials', label: 'Success Stories' },
+  // 4. Latest News (CREDIBILITY & MARKET INSIGHTS)
+  { href: '/press', label: 'Latest News' },
+  // 5. Our Team (EXPERTISE)
+  { href: '/team', label: 'Our Team' },
+  // 6. About Dr. Jan Duffy (PERSONAL CONNECTION)
+  { href: '/resume', label: 'About Dr. Jan Duffy' },
+  // 7. Contact (CLEAR CTA)
   { href: '/contact', label: 'Contact' },
 ];
 
