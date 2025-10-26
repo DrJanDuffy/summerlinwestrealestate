@@ -4,6 +4,7 @@
  */
 'use client';
 
+import Script from 'next/script';
 import { useEffect } from 'react';
 
 export default function SEOResumePage() {
@@ -56,6 +57,29 @@ export default function SEOResumePage() {
         </div>
       </header>
 
+      {/* RealScout Script */}
+      <Script
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+        strategy="afterInteractive"
+      />
+
+      {/* RealScout Widget Styles */}
+      <style jsx>{`
+        realscout-office-listings {
+          --rs-listing-divider-color: #0e64c8;
+          width: 100%;
+        }
+      `}</style>
+
+      {/* RealScout Listings Widget */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <realscout-office-listings
+            agent-encoded-id="QWdlbnQtMjI1MDUw"
+            sort-order="NEWEST"
+          />
+        </div>
+      </section>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Professional Summary with Keywords */}

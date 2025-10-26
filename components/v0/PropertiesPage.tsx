@@ -4,11 +4,10 @@
  */
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function PropertiesPage() {
-  const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
-  const searchPlaceholderId = useRef('realscout-search-placeholder');
 
   useEffect(() => {
     // Add structured data for SEO
@@ -24,55 +23,6 @@ export default function PropertiesPage() {
     script.type = 'application/ld+json';
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
-
-    // Add widget styles
-    const style = document.createElement('style');
-    style.textContent = `
-      realscout-advanced-search {
-        --rs-as-button-text-color: #ffffff;
-        --rs-as-background-color: #000000;
-        --rs-as-button-color: #d0021b;
-        --rs-as-widget-width: 100% !important;
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Load RealScout widget with improved error handling
-    const existingScript = document.getElementById('realscout-script');
-    
-    if (!existingScript) {
-      const realscoutScript = document.createElement('script');
-      realscoutScript.id = 'realscout-script';
-      realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      realscoutScript.type = 'module';
-      
-      realscoutScript.onload = () => {
-        // Add longer delay to ensure widget is fully ready
-        setTimeout(() => {
-          const container = document.getElementById(searchPlaceholderId.current);
-          if (container) {
-            container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
-            setWidgetState('ready');
-          }
-        }, 1000);
-      };
-      
-      realscoutScript.onerror = () => {
-        console.error('Failed to load RealScout widget');
-        setWidgetState('error');
-      };
-      
-      document.head.appendChild(realscoutScript);
-    } else {
-      // Script already loaded, just inject widget
-      setTimeout(() => {
-        const container = document.getElementById(searchPlaceholderId.current);
-        if (container) {
-          container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
-          setWidgetState('ready');
-        }
-      }, 100);
-    }
 
     return () => {
       if (document.head.contains(script)) {
@@ -98,18 +48,27 @@ export default function PropertiesPage() {
         </div>
       </header>
 
+      {/* RealScout Script */}
+      <Script
+        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+        strategy="afterInteractive"
+      />
+
+      {/* RealScout Widget Styles */}
+      <style jsx>{`
+        realscout-advanced-search {
+          --rs-as-button-text-color: #ffffff;
+          --rs-as-background-color: #000000;
+          --rs-as-button-color: #d0021b;
+          --rs-as-widget-width: 100% !important;
+        }
+      `}</style>
+
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <div id={searchPlaceholderId.current}>
-            {widgetState === 'loading' && (
-              <p className="text-center text-gray-600">Loading property search...</p>
-            )}
-            {widgetState === 'error' && (
-              <p className="text-center text-red-600">Unable to load property search. Please contact us for assistance.</p>
-            )}
-          </div>
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw" />
         </section>
 
         {/* Property Types */}
