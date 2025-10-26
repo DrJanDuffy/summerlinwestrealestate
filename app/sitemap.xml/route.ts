@@ -4,22 +4,30 @@ export async function GET() {
   const baseUrl = 'https://www.summerlinwestrealestate.com';
   const today = new Date().toISOString().split('T')[0];
 
-  // Main pages with proper priorities
+  // Main pages ordered by user journey priority
   const mainPages = [
     { path: '', priority: '1.0', changefreq: 'daily' },
-    { path: 'resume', priority: '0.9', changefreq: 'monthly' },
-    { path: 'team', priority: '0.9', changefreq: 'weekly' },
+    // 1. Properties (PRIMARY ACTION)
     { path: 'properties', priority: '0.9', changefreq: 'weekly' },
+    // 2. Neighborhoods (LOCATION FOCUS)
     { path: 'communities', priority: '0.9', changefreq: 'weekly' },
     { path: 'the-vistas', priority: '0.9', changefreq: 'weekly' },
     { path: 'service-area', priority: '0.8', changefreq: 'weekly' },
+    // 3. Success Stories (SOCIAL PROOF)
+    { path: 'testimonials', priority: '0.9', changefreq: 'weekly' },
+    // 4. Latest News (MARKET INSIGHTS)
     { path: 'press', priority: '0.8', changefreq: 'weekly' },
-    { path: 'testimonials', priority: '0.8', changefreq: 'weekly' },
-    { path: 'contact', priority: '0.9', changefreq: 'monthly' },
     { path: 'market', priority: '0.8', changefreq: 'weekly' },
     { path: 'market-reports', priority: '0.8', changefreq: 'weekly' },
     { path: 'home-values', priority: '0.9', changefreq: 'weekly' },
     { path: 'maps', priority: '0.9', changefreq: 'weekly' },
+    // 5. Our Team (EXPERTISE)
+    { path: 'team', priority: '0.9', changefreq: 'weekly' },
+    // 6. About Dr. Jan Duffy (PERSONAL CONNECTION)
+    { path: 'resume', priority: '0.9', changefreq: 'monthly' },
+    // 7. Contact (CLEAR CTA)
+    { path: 'contact', priority: '0.9', changefreq: 'monthly' },
+    // Secondary pages
     { path: 'sold', priority: '0.7', changefreq: 'weekly' },
     { path: 'new-homes-summerlin', priority: '0.8', changefreq: 'weekly' },
     { path: 'downtown-summerlin', priority: '0.7', changefreq: 'monthly' },

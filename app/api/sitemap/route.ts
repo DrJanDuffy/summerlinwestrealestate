@@ -7,32 +7,40 @@ import { NextResponse } from 'next/server';
 
 const baseUrl = 'https://www.summerlinwestrealestate.com';
 
-// Static pages
+// Static pages ordered by user journey priority
 const staticPages = [
   '',
-  '/resume',
-  '/team',
+  // 1. Properties (PRIMARY ACTION)
   '/properties',
+  // 2. Neighborhoods (LOCATION FOCUS)
   '/communities',
-  '/contact',
   '/the-vistas',
   '/service-area',
-  '/press',
+  // 3. Success Stories (SOCIAL PROOF)
   '/testimonials',
+  // 4. Latest News (MARKET INSIGHTS)
+  '/press',
+  '/market',
   '/market-reports',
   '/home-values',
+  '/maps',
+  '/market-insights',
+  '/blog',
+  // 5. Our Team (EXPERTISE)
+  '/team',
+  // 6. About Dr. Jan Duffy (PERSONAL CONNECTION)
+  '/resume',
+  // 7. Contact (CLEAR CTA)
+  '/contact',
+  // Secondary pages
   '/current-listing',
   '/new-homes-summerlin',
   '/downtown-summerlin',
   '/vistas-listing',
-  '/compare',
   '/sold',
-  '/market',
-  '/market-insights',
-  '/blog',
+  '/compare',
   '/google-places',
   '/hidden-home-equity-tax',
-  '/maps',
   '/faq',
   '/local-seo',
 ];
