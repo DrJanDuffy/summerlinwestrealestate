@@ -1,7 +1,7 @@
 /**
  * RealScout Widget Component
  * Reusable component for RealScout listings and search widgets
- * 
+ *
  * Note: The RealScout script is loaded globally in app/layout.tsx
  * This component only renders the web component tags
  */
@@ -31,25 +31,26 @@ export default function RealScoutWidget({
   return (
     <div className={className}>
       {type === 'listings' && (
-        <>
-          {/* @ts-expect-error - Web component from RealScout */}
-          <realscout-office-listings
-            agent-encoded-id={agentEncodedId}
-            sort-order={sortOrder}
-            listing-status={listingStatus}
-            property-types={propertyTypes}
-            price-min={priceMin}
-            price-max={priceMax}
-          />
-        </>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<realscout-office-listings 
+              agent-encoded-id="${agentEncodedId}" 
+              sort-order="${sortOrder}" 
+              ${listingStatus ? `listing-status="${listingStatus}"` : ''} 
+              ${propertyTypes ? `property-types="${propertyTypes}"` : ''} 
+              ${priceMin ? `price-min="${priceMin}"` : ''} 
+              ${priceMax ? `price-max="${priceMax}"` : ''}
+            ></realscout-office-listings>`,
+          }}
+        />
       )}
       {type === 'search' && (
-        <>
-          {/* @ts-expect-error - Web component from RealScout */}
-          <realscout-advanced-search agent-encoded-id={agentEncodedId} />
-        </>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<realscout-advanced-search agent-encoded-id="${agentEncodedId}"></realscout-advanced-search>`,
+          }}
+        />
       )}
     </div>
   );
 }
-
