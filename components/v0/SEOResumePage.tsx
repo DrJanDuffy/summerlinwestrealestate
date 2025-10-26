@@ -47,14 +47,15 @@ export default function SEOResumePage() {
       realscoutScript.type = 'module';
       
       realscoutScript.onload = () => {
-        // Add small delay to ensure widget is ready
+        // Add longer delay to ensure widget is fully ready
         setTimeout(() => {
           const container = document.getElementById('realscout-listings-placeholder');
           if (container) {
-            container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
+            // Start with no filters to test
+            container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
             setWidgetState('ready');
           }
-        }, 500);
+        }, 1000);
       };
       
       realscoutScript.onerror = () => {
@@ -65,11 +66,14 @@ export default function SEOResumePage() {
       document.head.appendChild(realscoutScript);
     } else {
       // Script already loaded, just inject widget
-      const container = document.getElementById('realscout-listings-placeholder');
-      if (container) {
-        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
-        setWidgetState('ready');
-      }
+      setTimeout(() => {
+        const container = document.getElementById('realscout-listings-placeholder');
+        if (container) {
+          // Start with no filters to test
+          container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
+          setWidgetState('ready');
+        }
+      }, 100);
     }
 
     return () => {
