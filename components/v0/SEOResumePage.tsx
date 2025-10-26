@@ -42,7 +42,8 @@ export default function SEOResumePage() {
     realscoutScript.onload = () => {
       const container = document.getElementById('realscout-listings-placeholder');
       if (container) {
-        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR"></realscout-office-listings>';
+        // Remove all filters to show all listings
+        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
       }
     };
     document.head.appendChild(realscoutScript);
