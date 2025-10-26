@@ -4,12 +4,9 @@
  */
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function SEOResumePage() {
-  const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
-  const listingsPlaceholderId = useRef('realscout-listings-placeholder');
-
   useEffect(() => {
     // Add structured data for SEO
     const schema = {
@@ -38,55 +35,6 @@ export default function SEOResumePage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
-    // Add widget styles
-    const style = document.createElement('style');
-    style.textContent = `
-      realscout-office-listings {
-        --rs-listing-divider-color: #0e64c8;
-        width: 100%;
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Load RealScout widget with improved error handling
-    const existingScript = document.getElementById('realscout-script');
-    
-    if (!existingScript) {
-      const realscoutScript = document.createElement('script');
-      realscoutScript.id = 'realscout-script';
-      realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-      realscoutScript.type = 'module';
-      
-      realscoutScript.onload = () => {
-        // Add longer delay to ensure widget is fully ready
-        setTimeout(() => {
-          const container = document.getElementById(listingsPlaceholderId.current);
-          if (container) {
-            // Start with no filters to test
-            container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
-            setWidgetState('ready');
-          }
-        }, 1000);
-      };
-      
-      realscoutScript.onerror = () => {
-        console.error('Failed to load RealScout widget');
-        setWidgetState('error');
-      };
-      
-      document.head.appendChild(realscoutScript);
-    } else {
-      // Script already loaded, just inject widget
-      setTimeout(() => {
-        const container = document.getElementById(listingsPlaceholderId.current);
-        if (container) {
-          // Start with no filters to test
-          container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
-          setWidgetState('ready');
-        }
-      }, 100);
-    }
-
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
@@ -108,19 +56,6 @@ export default function SEOResumePage() {
         </div>
       </header>
 
-      {/* RealScout Listings Widget */}
-      <section className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <div id={listingsPlaceholderId.current}>
-            {widgetState === 'loading' && (
-              <p className="text-center text-gray-600">Loading property listings...</p>
-            )}
-            {widgetState === 'error' && (
-              <p className="text-center text-red-600">Unable to load property listings. Please contact us for assistance.</p>
-            )}
-          </div>
-        </div>
-      </section>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Professional Summary with Keywords */}
