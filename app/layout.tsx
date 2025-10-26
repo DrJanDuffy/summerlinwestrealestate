@@ -174,10 +174,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </noscript>
 
           {/* RealScout Script - Loaded once globally with type="module" */}
-          <Script
-            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-            strategy="afterInteractive"
-          />
+          <Script strategy="afterInteractive">
+            {`
+              (function() {
+                if (!document.getElementById('realscout-web-components')) {
+                  const script = document.createElement('script');
+                  script.id = 'realscout-web-components';
+                  script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+                  script.type = 'module';
+                  document.head.appendChild(script);
+                }
+              })();
+            `}
+          </Script>
 
           {/* RealScout Widget Styles - Global styles */}
           <style>{`
