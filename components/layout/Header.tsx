@@ -12,7 +12,7 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: '/about', label: 'Resume' },
+  { href: '/resume', label: 'Resume' },
   { href: '/team', label: 'Team' },
   {
     href: '/properties',
@@ -31,13 +31,14 @@ const navLinks: NavLink[] = [
     href: '/communities',
     label: 'Communities',
     submenu: [
-      { href: '/service-area', label: 'The Vistas Service Area' },
-      { href: '/service-area/san-marcos', label: 'San Marcos' },
-      { href: '/service-area/casa-rosa', label: 'Casa Rosa' },
-      { href: '/service-area/solano', label: 'Solano' },
-      { href: '/service-area/encanto', label: 'Encanto' },
-      { href: '/service-area/paradiso', label: 'Paradiso' },
-      { href: '/service-area/palmilla', label: 'Palmilla' },
+      { href: '/the-vistas', label: 'The Vistas' },
+      { href: '/service-area', label: 'Service Area' },
+      { href: '/communities/san-marcos', label: 'San Marcos' },
+      { href: '/communities/casa-rosa', label: 'Casa Rosa' },
+      { href: '/communities/solano', label: 'Solano' },
+      { href: '/communities/encanto', label: 'Encanto' },
+      { href: '/communities/paradiso', label: 'Paradiso' },
+      { href: '/communities/palmilla', label: 'Palmilla' },
     ],
   },
   { href: '/press', label: 'Press' },
