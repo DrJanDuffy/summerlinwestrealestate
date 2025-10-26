@@ -173,6 +173,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
           </noscript>
 
+          {/* RealScout Script - Loaded once globally */}
+          <Script
+            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+            strategy="lazyOnload"
+          />
+
+          {/* RealScout Widget Styles - Global styles */}
+          <style>{`
+            realscout-office-listings {
+              --rs-listing-divider-color: #0e64c8;
+              width: 100%;
+            }
+            realscout-advanced-search {
+              --rs-as-button-text-color: #ffffff;
+              --rs-as-background-color: #000000;
+              --rs-as-button-color: #d0021b;
+              --rs-as-widget-width: 100% !important;
+            }
+          `}</style>
+
           <Header />
           <main className="pt-16">{children}</main>
           <Analytics />
