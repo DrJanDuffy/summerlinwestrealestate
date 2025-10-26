@@ -173,10 +173,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
           </noscript>
 
-          {/* RealScout Script - Loaded once globally */}
-          <Script
+          {/* RealScout Script - Loaded once globally with type="module" */}
+          <script
             src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-            strategy="lazyOnload"
+            type="module"
           />
 
           {/* RealScout Widget Styles - Global styles */}
