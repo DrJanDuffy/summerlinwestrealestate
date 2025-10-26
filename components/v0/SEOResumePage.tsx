@@ -4,9 +4,11 @@
  */
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SEOResumePage() {
+  const [widgetState, setWidgetState] = useState<'loading' | 'ready' | 'error'>('loading');
+
   useEffect(() => {
     // Add structured data for SEO
     const schema = {
@@ -35,25 +37,44 @@ export default function SEOResumePage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
-    // Load RealScout widget
-    const realscoutScript = document.createElement('script');
-    realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-    realscoutScript.type = 'module';
-    realscoutScript.onload = () => {
+    // Load RealScout widget with improved error handling
+    const existingScript = document.getElementById('realscout-script');
+    
+    if (!existingScript) {
+      const realscoutScript = document.createElement('script');
+      realscoutScript.id = 'realscout-script';
+      realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+      realscoutScript.type = 'module';
+      
+      realscoutScript.onload = () => {
+        // Add small delay to ensure widget is ready
+        setTimeout(() => {
+          const container = document.getElementById('realscout-listings-placeholder');
+          if (container) {
+            container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
+            setWidgetState('ready');
+          }
+        }, 500);
+      };
+      
+      realscoutScript.onerror = () => {
+        console.error('Failed to load RealScout widget');
+        setWidgetState('error');
+      };
+      
+      document.head.appendChild(realscoutScript);
+    } else {
+      // Script already loaded, just inject widget
       const container = document.getElementById('realscout-listings-placeholder');
       if (container) {
-        // Remove all filters to show all listings
-        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';
+        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
+        setWidgetState('ready');
       }
-    };
-    document.head.appendChild(realscoutScript);
+    }
 
     return () => {
       if (document.head.contains(script)) {
         document.head.removeChild(script);
-      }
-      if (document.head.contains(realscoutScript)) {
-        document.head.removeChild(realscoutScript);
       }
     };
   }, []);
@@ -84,7 +105,12 @@ export default function SEOResumePage() {
             `
           }} />
           <div id="realscout-listings-placeholder">
-            <p className="text-center text-gray-600">Loading property listings...</p>
+            {widgetState === 'loading' && (
+              <p className="text-center text-gray-600">Loading property listings...</p>
+            )}
+            {widgetState === 'error' && (
+              <p className="text-center text-red-600">Unable to load property listings. Please contact us for assistance.</p>
+            )}
           </div>
         </div>
       </section>
