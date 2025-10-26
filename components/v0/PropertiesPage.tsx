@@ -45,29 +45,21 @@ export default function PropertiesPage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
-        {/* Search Section */}
+        {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <input
-              type="text"
-              placeholder="Location (e.g., The Vistas)"
-              className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Min Price"
-              className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none"
-            />
-            <input
-              type="text"
-              placeholder="Max Price"
-              className="border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none"
-            />
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Search Properties
-            </button>
-          </div>
+          <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              realscout-advanced-search {
+                --rs-as-button-text-color: #ffffff;
+                --rs-as-background-color: #000000;
+                --rs-as-button-color: #d0021b;
+                --rs-as-widget-width: 100% !important;
+              }
+            `
+          }} />
+          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
         </section>
 
         {/* Property Types */}
