@@ -64,6 +64,10 @@ export default function SEOResumePage() {
             type="listings"
             agentEncodedId="QWdlbnQtMjI1MDUw"
             sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
           />
         </div>
       </section>

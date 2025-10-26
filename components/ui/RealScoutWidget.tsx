@@ -12,6 +12,10 @@ interface RealScoutWidgetProps {
   agentEncodedId: string;
   className?: string;
   sortOrder?: 'NEWEST' | 'OLDEST' | 'PRICE_ASC' | 'PRICE_DESC';
+  listingStatus?: string;
+  propertyTypes?: string;
+  priceMin?: string;
+  priceMax?: string;
 }
 
 export default function RealScoutWidget({
@@ -19,6 +23,10 @@ export default function RealScoutWidget({
   agentEncodedId,
   className = '',
   sortOrder = 'NEWEST',
+  listingStatus,
+  propertyTypes,
+  priceMin,
+  priceMax,
 }: RealScoutWidgetProps) {
   return (
     <div className={className}>
@@ -28,6 +36,10 @@ export default function RealScoutWidget({
           <realscout-office-listings
             agent-encoded-id={agentEncodedId}
             sort-order={sortOrder}
+            listing-status={listingStatus}
+            property-types={propertyTypes}
+            price-min={priceMin}
+            price-max={priceMax}
           />
         </>
       )}
