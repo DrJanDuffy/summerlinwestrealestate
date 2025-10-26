@@ -1,14 +1,14 @@
 'use client';
 
+import { ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 interface EnhancedFooterProps {
   className?: string;
 }
 
-export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) {
+export default function EnhancedFooter({ className = '' }: EnhancedFooterProps) {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
@@ -17,7 +17,7 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
     { name: 'Communities', href: '/communities' },
     { name: 'Current Listings', href: '/current-listing' },
     { name: 'Market Reports', href: '/market-reports' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact', href: '/contact' },
   ];
 
   const services = [
@@ -26,7 +26,7 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
     { name: 'Market Analysis', href: '/services/market-analysis' },
     { name: 'Investment Properties', href: '/services/investment' },
     { name: 'Relocation Services', href: '/services/relocation' },
-    { name: 'Luxury Homes', href: '/services/luxury' }
+    { name: 'Luxury Homes', href: '/services/luxury' },
   ];
 
   const communities = [
@@ -34,7 +34,7 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
     { name: 'Red Rock Country Club', href: '/communities/red-rock-country-club' },
     { name: 'The Ridges', href: '/communities/the-ridges' },
     { name: 'Summerlin West', href: '/communities/summerlin-west' },
-    { name: 'View All Communities', href: '/communities' }
+    { name: 'View All Communities', href: '/communities' },
   ];
 
   const contactInfo = [
@@ -42,26 +42,26 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
       icon: PhoneIcon,
       title: 'Phone',
       value: '(702) 555-0123',
-      href: 'tel:+17025550123'
+      href: 'tel:+17025550123',
     },
     {
       icon: EnvelopeIcon,
       title: 'Email',
-      value: 'jan@summerlinwestrealestate.com',
-      href: 'mailto:jan@summerlinwestrealestate.com'
+      value: 'DrJanSells@SummerlinWestRealEstate.com',
+      href: 'mailto:DrJanSells@SummerlinWestRealEstate.com',
     },
     {
       icon: MapPinIcon,
       title: 'Office',
       value: '123 Summerlin Center Dr, Las Vegas, NV 89134',
-      href: 'https://maps.google.com/?q=123+Summerlin+Center+Dr+Las+Vegas+NV+89134'
+      href: 'https://maps.google.com/?q=123+Summerlin+Center+Dr+Las+Vegas+NV+89134',
     },
     {
       icon: ClockIcon,
       title: 'Hours',
       value: 'Mon-Fri: 9AM-6PM, Sat: 10AM-4PM',
-      href: null
-    }
+      href: null,
+    },
   ];
 
   return (
@@ -77,14 +77,12 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
             className="lg:col-span-1"
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Dr. Jan Duffy
-              </h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Dr. Jan Duffy</h3>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Your trusted REALTOR® in Summerlin West. With over 15 years of experience, 
-                I help families find their dream homes in Las Vegas's most desirable communities.
+                Your trusted REALTOR® in Summerlin West. With over 15 years of experience, I help
+                families find their dream homes in Las Vegas's most desirable communities.
               </p>
-              
+
               {/* Contact Info */}
               <div className="space-y-3">
                 {contactInfo.map((item, index) => (
@@ -186,16 +184,14 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl"></div>
-            
+
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Find Your Dream Home?
-              </h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Ready to Find Your Dream Home?</h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Let Dr. Jan Duffy guide you through the Summerlin West real estate market. 
-                Get expert advice, personalized service, and results that exceed your expectations.
+                Let Dr. Jan Duffy guide you through the Summerlin West real estate market. Get
+                expert advice, personalized service, and results that exceed your expectations.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
@@ -222,7 +218,7 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
             <div className="text-sm text-gray-400">
               © {currentYear} Dr. Jan Duffy, REALTOR®. All rights reserved.
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link href="/privacy" className="hover:text-blue-400 transition-colors duration-200">
                 Privacy Policy
@@ -230,11 +226,14 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
               <Link href="/terms" className="hover:text-blue-400 transition-colors duration-200">
                 Terms of Service
               </Link>
-              <Link href="/disclaimer" className="hover:text-blue-400 transition-colors duration-200">
+              <Link
+                href="/disclaimer"
+                className="hover:text-blue-400 transition-colors duration-200"
+              >
                 Disclaimer
               </Link>
             </div>
-            
+
             <div className="text-sm text-gray-400">
               Licensed in Nevada • Equal Housing Opportunity
             </div>
@@ -244,6 +243,3 @@ export default function EnhancedFooter({ className = "" }: EnhancedFooterProps) 
     </footer>
   );
 }
-
-
-

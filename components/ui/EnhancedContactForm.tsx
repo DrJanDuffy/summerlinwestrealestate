@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { ClockIcon, EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 interface ContactFormData {
   name: string;
@@ -20,41 +20,43 @@ interface EnhancedContactFormProps {
 }
 
 export default function EnhancedContactForm({
-  title = "Get Your Free Market Analysis",
+  title = 'Get Your Free Market Analysis',
   subtitle = "Discover your home's true value with Dr. Jan Duffy's expert market analysis",
   showContactInfo = true,
-  className = "",
+  className = '',
 }: EnhancedContactFormProps) {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
     message: '',
-    inquiryType: 'market-analysis'
+    inquiryType: 'market-analysis',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitStatus('success');
       setFormData({
         name: '',
         email: '',
         phone: '',
         message: '',
-        inquiryType: 'market-analysis'
+        inquiryType: 'market-analysis',
       });
     } catch (error) {
       setSubmitStatus('error');
@@ -66,28 +68,28 @@ export default function EnhancedContactForm({
   const contactInfo = [
     {
       icon: PhoneIcon,
-      title: "Call Dr. Jan Duffy",
-      value: "(702) 555-0123",
-      href: "tel:+17025550123"
+      title: 'Call Dr. Jan Duffy',
+      value: '(702) 555-0123',
+      href: 'tel:+17025550123',
     },
     {
       icon: EnvelopeIcon,
-      title: "Email Us",
-      value: "jan@summerlinwestrealestate.com",
-      href: "mailto:jan@summerlinwestrealestate.com"
+      title: 'Email Us',
+      value: 'DrJanSells@SummerlinWestRealEstate.com',
+      href: 'mailto:DrJanSells@SummerlinWestRealEstate.com',
     },
     {
       icon: MapPinIcon,
-      title: "Visit Our Office",
-      value: "123 Summerlin Center Dr, Las Vegas, NV 89134",
-      href: "https://maps.google.com/?q=123+Summerlin+Center+Dr+Las+Vegas+NV+89134"
+      title: 'Visit Our Office',
+      value: '123 Summerlin Center Dr, Las Vegas, NV 89134',
+      href: 'https://maps.google.com/?q=123+Summerlin+Center+Dr+Las+Vegas+NV+89134',
     },
     {
       icon: ClockIcon,
-      title: "Office Hours",
-      value: "Mon-Fri: 9AM-6PM, Sat: 10AM-4PM",
-      href: null
-    }
+      title: 'Office Hours',
+      value: 'Mon-Fri: 9AM-6PM, Sat: 10AM-4PM',
+      href: null,
+    },
   ];
 
   return (
@@ -114,7 +116,11 @@ export default function EnhancedContactForm({
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <div className="ml-3">
@@ -135,7 +141,11 @@ export default function EnhancedContactForm({
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <div className="ml-3">
@@ -199,7 +209,10 @@ export default function EnhancedContactForm({
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="inquiryType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Inquiry Type
                   </label>
                   <select
@@ -242,14 +255,30 @@ export default function EnhancedContactForm({
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                     Submitting...
                   </div>
                 ) : (
-                  "Get My Free Market Analysis"
+                  'Get My Free Market Analysis'
                 )}
               </motion.button>
             </form>
@@ -262,7 +291,7 @@ export default function EnhancedContactForm({
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-2xl"></div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -271,7 +300,8 @@ export default function EnhancedContactForm({
             >
               <h3 className="text-2xl font-bold mb-8">Contact Dr. Jan Duffy</h3>
               <p className="text-blue-100 mb-8 text-lg leading-relaxed">
-                Ready to make your real estate dreams a reality? Let's discuss your goals and create a personalized strategy for success.
+                Ready to make your real estate dreams a reality? Let's discuss your goals and create
+                a personalized strategy for success.
               </p>
 
               <div className="space-y-6">

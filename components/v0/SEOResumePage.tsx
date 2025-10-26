@@ -15,20 +15,21 @@ export default function SEOResumePage() {
       '@type': 'RealEstateAgent',
       name: 'Dr. Jan Duffy',
       jobTitle: 'REALTOR®',
-      description: 'Licensed Summerlin West real estate agent specializing in luxury homes. $6+ billion in sales.',
+      description:
+        'Licensed Summerlin West real estate agent specializing in luxury homes. $6+ billion in sales.',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Summerlin West',
         addressRegion: 'Nevada',
-        addressCountry: 'United States'
+        addressCountry: 'United States',
       },
       telephone: '+1-702-550-0112',
-      email: 'jan@summerlinwestrealestate.com',
+      email: 'DrJanSells@SummerlinWestRealEstate.com',
       aggregatesaled: '6,000,000,000',
       memberOf: {
         '@type': 'Organization',
-        name: 'Summerlin West Real Estate'
-      }
+        name: 'Summerlin West Real Estate',
+      },
     };
 
     const script = document.createElement('script');
@@ -78,22 +79,25 @@ export default function SEOResumePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Professional Summary</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              <strong>Dr. Jan Duffy</strong> is a premier <strong>Summerlin West real estate agent</strong> 
-              specializing in luxury properties and high-end real estate transactions. With over a decade 
-              of experience as a <strong>licensed real estate agent</strong> in Las Vegas, Dr. Duffy has 
-              established herself as one of the top agents in the Summerlin West luxury real estate market.
+              <strong>Dr. Jan Duffy</strong> is a premier{' '}
+              <strong>Summerlin West real estate agent</strong>
+              specializing in luxury properties and high-end real estate transactions. With over a
+              decade of experience as a <strong>licensed real estate agent</strong> in Las Vegas,
+              Dr. Duffy has established herself as one of the top agents in the Summerlin West
+              luxury real estate market.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              As a dedicated <strong>REALTOR®</strong>, Dr. Duffy's expertise encompasses luxury home sales, 
-              investment real estate, and high-end property transactions. Her deep knowledge of the Summerlin West 
-              luxury market, combined with exceptional client service, has resulted in over $6 billion in total 
-              sales volume throughout her career.
+              As a dedicated <strong>REALTOR®</strong>, Dr. Duffy's expertise encompasses luxury
+              home sales, investment real estate, and high-end property transactions. Her deep
+              knowledge of the Summerlin West luxury market, combined with exceptional client
+              service, has resulted in over $6 billion in total sales volume throughout her career.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Dr. Duffy is particularly renowned for her work with luxury properties in The Vistas, an exclusive 
-              gated community in Summerlin West featuring luxury homes with spectacular Red Rock Canyon views and 
-              resort-style amenities. Her commitment to excellence and personalized service has earned her a 
-              reputation as a trusted <strong>Summerlin West real estate professional</strong>.
+              Dr. Duffy is particularly renowned for her work with luxury properties in The Vistas,
+              an exclusive gated community in Summerlin West featuring luxury homes with spectacular
+              Red Rock Canyon views and resort-style amenities. Her commitment to excellence and
+              personalized service has earned her a reputation as a trusted{' '}
+              <strong>Summerlin West real estate professional</strong>.
             </p>
           </div>
         </section>
@@ -103,15 +107,24 @@ export default function SEOResumePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Education & Credentials</h2>
           <div className="space-y-6">
             <div className="border-l-4 border-blue-600 pl-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Doctoral Degree - Real Estate Expertise</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                Doctoral Degree - Real Estate Expertise
+              </h3>
               <p className="text-gray-700 mb-2 font-semibold">University of Arizona</p>
-              <p className="text-gray-600">Advanced research in consumer behavior, market analysis, and luxury real estate dynamics</p>
-              <p className="text-gray-600">Strong foundation in data-driven market insights and strategic property valuation</p>
+              <p className="text-gray-600">
+                Advanced research in consumer behavior, market analysis, and luxury real estate
+                dynamics
+              </p>
+              <p className="text-gray-600">
+                Strong foundation in data-driven market insights and strategic property valuation
+              </p>
             </div>
             <div className="border-l-4 border-green-600 pl-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Nevada Real Estate License</h3>
               <p className="text-gray-700">Licensed to serve as a real estate agent in Nevada</p>
-              <p className="text-gray-600">Commitment to ongoing professional development and continuing education</p>
+              <p className="text-gray-600">
+                Commitment to ongoing professional development and continuing education
+              </p>
             </div>
             <div className="border-l-4 border-yellow-600 pl-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Professional Certifications</h3>
@@ -132,26 +145,56 @@ export default function SEOResumePage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 REALTOR® - Summerlin West Luxury Real Estate Agent
               </h3>
-              <p className="text-lg text-blue-600 font-semibold mb-4">Las Vegas, Nevada | 2013 - Present</p>
+              <p className="text-lg text-blue-600 font-semibold mb-4">
+                Las Vegas, Nevada | 2013 - Present
+              </p>
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Key Achievements:</h4>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
-                    <li>Consistently ranked in the <strong>top 1% of Las Vegas real estate agents</strong></li>
-                    <li>Managed over <strong>$6 billion in total sales volume</strong> throughout career</li>
-                    <li>Specialized in <strong>luxury properties in The Vistas</strong> and surrounding Summerlin West communities</li>
-                    <li>Maintained <strong>95%+ client satisfaction rating</strong> across all transactions</li>
-                    <li>Expert in <strong>luxury home marketing, staging, and virtual tours</strong></li>
+                    <li>
+                      Consistently ranked in the{' '}
+                      <strong>top 1% of Las Vegas real estate agents</strong>
+                    </li>
+                    <li>
+                      Managed over <strong>$6 billion in total sales volume</strong> throughout
+                      career
+                    </li>
+                    <li>
+                      Specialized in <strong>luxury properties in The Vistas</strong> and
+                      surrounding Summerlin West communities
+                    </li>
+                    <li>
+                      Maintained <strong>95%+ client satisfaction rating</strong> across all
+                      transactions
+                    </li>
+                    <li>
+                      Expert in <strong>luxury home marketing, staging, and virtual tours</strong>
+                    </li>
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Specializations:</h4>
                   <ul className="list-disc list-inside space-y-2 text-gray-700">
-                    <li><strong>Luxury home sales</strong> in Summerlin West's most prestigious neighborhoods</li>
-                    <li><strong>Investment real estate</strong> for high-net-worth clients and portfolio builders</li>
-                    <li><strong>Luxury home marketing</strong> utilizing cutting-edge digital strategies</li>
-                    <li><strong>Relocation services</strong> for corporate executives and luxury lifestyle clients</li>
-                    <li><strong>Estate planning</strong> and wealth preservation through real estate</li>
+                    <li>
+                      <strong>Luxury home sales</strong> in Summerlin West's most prestigious
+                      neighborhoods
+                    </li>
+                    <li>
+                      <strong>Investment real estate</strong> for high-net-worth clients and
+                      portfolio builders
+                    </li>
+                    <li>
+                      <strong>Luxury home marketing</strong> utilizing cutting-edge digital
+                      strategies
+                    </li>
+                    <li>
+                      <strong>Relocation services</strong> for corporate executives and luxury
+                      lifestyle clients
+                    </li>
+                    <li>
+                      <strong>Estate planning</strong> and wealth preservation through real estate
+                    </li>
                   </ul>
                 </div>
               </div>

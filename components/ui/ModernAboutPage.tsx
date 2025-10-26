@@ -24,6 +24,7 @@ import {
   FaUsers,
 } from 'react-icons/fa';
 import InternalLinking from './InternalLinking';
+
 // import RealScoutIntegration from './RealScoutIntegration';
 
 interface ModernAboutPageProps {
@@ -459,7 +460,7 @@ export default function ModernAboutPage({ className = '' }: ModernAboutPageProps
                   <FaEnvelope className="w-6 h-6 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-blue-100">jan@summerlinwestrealestate.com</div>
+                    <div className="text-blue-100">DrJanSells@SummerlinWestRealEstate.com</div>
                   </div>
                 </div>
               </div>
