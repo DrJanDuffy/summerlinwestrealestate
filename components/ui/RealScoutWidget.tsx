@@ -28,28 +28,34 @@ export default function RealScoutWidget({
   priceMin,
   priceMax,
 }: RealScoutWidgetProps) {
+  // Create props object for web components
+  const listingProps: Record<string, string> = {
+    'agent-encoded-id': agentEncodedId,
+    'sort-order': sortOrder,
+  };
+  
+  if (listingStatus) listingProps['listing-status'] = listingStatus;
+  if (propertyTypes) listingProps['property-types'] = propertyTypes;
+  if (priceMin) listingProps['price-min'] = priceMin;
+  if (priceMax) listingProps['price-max'] = priceMax;
+
+  const searchProps: Record<string, string> = {
+    'agent-encoded-id': agentEncodedId,
+  };
+
   return (
     <div className={className}>
       {type === 'listings' && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<realscout-office-listings 
-              agent-encoded-id="${agentEncodedId}" 
-              sort-order="${sortOrder}" 
-              ${listingStatus ? `listing-status="${listingStatus}"` : ''} 
-              ${propertyTypes ? `property-types="${propertyTypes}"` : ''} 
-              ${priceMin ? `price-min="${priceMin}"` : ''} 
-              ${priceMax ? `price-max="${priceMax}"` : ''}
-            ></realscout-office-listings>`,
-          }}
-        />
+        <>
+          {/* @ts-expect-error - Web component from RealScout */}
+          <realscout-office-listings {...listingProps} />
+        </>
       )}
       {type === 'search' && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<realscout-advanced-search agent-encoded-id="${agentEncodedId}"></realscout-advanced-search>`,
-          }}
-        />
+        <>
+          {/* @ts-expect-error - Web component from RealScout */}
+          <realscout-advanced-search {...searchProps} />
+        </>
       )}
     </div>
   );
