@@ -48,7 +48,9 @@ export default function PropertiesPage() {
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+          <div id="realscout-search-placeholder">
+            <p className="text-center text-gray-600">Loading property search...</p>
+          </div>
           <style dangerouslySetInnerHTML={{
             __html: `
               realscout-advanced-search {
@@ -59,7 +61,24 @@ export default function PropertiesPage() {
               }
             `
           }} />
-          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                if (typeof window !== 'undefined') {
+                  const script = document.createElement('script');
+                  script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+                  script.type = 'module';
+                  script.onload = () => {
+                    const container = document.getElementById('realscout-search-placeholder');
+                    if (container) {
+                      container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
+                    }
+                  };
+                  document.head.appendChild(script);
+                }
+              `
+            }}
+          />
         </section>
 
         {/* Property Types */}

@@ -56,8 +56,7 @@ export default function SEOResumePage() {
 
       {/* RealScout Listings Widget */}
       <section className="bg-white py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <script src="https://em.realscout.com/widgets/realscout-web-components.umd.js" type="module"></script>
+        <div className="max-w-7xl mx-auto px-4" id="realscout-listings-container">
           <style dangerouslySetInnerHTML={{
             __html: `
               realscout-office-listings {
@@ -66,9 +65,30 @@ export default function SEOResumePage() {
               }
             `
           }} />
-          <realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>
+          <div id="realscout-listings-placeholder">
+            <p className="text-center text-gray-600">Loading property listings...</p>
+          </div>
         </div>
       </section>
+      
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (typeof window !== 'undefined') {
+              const script = document.createElement('script');
+              script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+              script.type = 'module';
+              script.onload = () => {
+                const container = document.getElementById('realscout-listings-placeholder');
+                if (container) {
+                  container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
+                }
+              };
+              document.head.appendChild(script);
+            }
+          `
+        }}
+      />
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Professional Summary with Keywords */}
