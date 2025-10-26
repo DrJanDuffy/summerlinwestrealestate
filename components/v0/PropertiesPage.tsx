@@ -4,11 +4,10 @@
  */
 'use client';
 
-import Script from 'next/script';
 import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function PropertiesPage() {
-
   useEffect(() => {
     // Add structured data for SEO
     const schema = {
@@ -48,27 +47,14 @@ export default function PropertiesPage() {
         </div>
       </header>
 
-      {/* RealScout Script */}
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        strategy="afterInteractive"
-      />
-
-      {/* RealScout Widget Styles */}
-      <style jsx>{`
-        realscout-advanced-search {
-          --rs-as-button-text-color: #ffffff;
-          --rs-as-background-color: #000000;
-          --rs-as-button-color: #d0021b;
-          --rs-as-widget-width: 100% !important;
-        }
-      `}</style>
-
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw" />
+          <RealScoutWidget
+            type="search"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+          />
         </section>
 
         {/* Property Types */}

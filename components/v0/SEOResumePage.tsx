@@ -4,8 +4,8 @@
  */
 'use client';
 
-import Script from 'next/script';
 import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function SEOResumePage() {
   useEffect(() => {
@@ -57,26 +57,13 @@ export default function SEOResumePage() {
         </div>
       </header>
 
-      {/* RealScout Script */}
-      <Script
-        src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-        strategy="afterInteractive"
-      />
-
-      {/* RealScout Widget Styles */}
-      <style jsx>{`
-        realscout-office-listings {
-          --rs-listing-divider-color: #0e64c8;
-          width: 100%;
-        }
-      `}</style>
-
       {/* RealScout Listings Widget */}
       <section className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4">
-          <realscout-office-listings
-            agent-encoded-id="QWdlbnQtMjI1MDUw"
-            sort-order="NEWEST"
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
           />
         </div>
       </section>
