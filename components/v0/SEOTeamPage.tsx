@@ -5,6 +5,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function SEOTeamPage() {
   useEffect(() => {
@@ -13,18 +14,19 @@ export default function SEOTeamPage() {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Summerlin West Real Estate Team',
-      description: 'Professional team of luxury real estate agents specializing in Summerlin West properties',
+      description:
+        'Professional team of luxury real estate agents specializing in Summerlin West properties',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Summerlin West',
-        addressRegion: 'Nevada'
+        addressRegion: 'Nevada',
       },
       telephone: '+1-702-550-0112',
       member: {
         '@type': 'RealEstateAgent',
         name: 'Dr. Jan Duffy',
-        jobTitle: 'REALTOR®'
-      }
+        jobTitle: 'REALTOR®',
+      },
     };
 
     const script = document.createElement('script');
@@ -48,13 +50,14 @@ export default function SEOTeamPage() {
         'Luxury Home Marketing',
         'The Vistas Expert',
         'Relocation Services',
-        'Estate Planning'
+        'Estate Planning',
       ],
       achievements: '$6+ Billion in Sales | Top 1% Agent | 95%+ Satisfaction',
-      quote: 'Dedicated to delivering exceptional results and personalized service for every luxury real estate client in Summerlin West.',
+      quote:
+        'Dedicated to delivering exceptional results and personalized service for every luxury real estate client in Summerlin West.',
       experience: '10+ Years',
-      image: '👩‍💼'
-    }
+      image: '👩‍💼',
+    },
   ];
 
   return (
@@ -74,12 +77,30 @@ export default function SEOTeamPage() {
         </div>
       </header>
 
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
+        </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 pb-12">
         {/* Team Member Cards */}
         <section className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <article key={index} className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+              <article
+                key={index}
+                className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow"
+              >
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-8">
                   <div className="w-24 h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center text-5xl">
                     {member.image}
@@ -89,7 +110,7 @@ export default function SEOTeamPage() {
                 <div className="p-6">
                   <p className="text-lg font-semibold text-gray-900 mb-2">{member.title}</p>
                   <p className="text-sm text-gray-600 mb-4">{member.credentials}</p>
-                  
+
                   {/* Specializations */}
                   <div className="mb-4">
                     <h3 className="text-sm font-semibold text-gray-900 mb-3">Specializations</h3>
@@ -128,37 +149,70 @@ export default function SEOTeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-10 h-10 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Proven Results</h3>
               <p className="text-gray-600">
-                Over $6 billion in sales volume across thousands of successful luxury real estate transactions in Summerlin West
+                Over $6 billion in sales volume across thousands of successful luxury real estate
+                transactions in Summerlin West
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                <svg
+                  className="w-10 h-10 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Market Expertise</h3>
               <p className="text-gray-600">
-                Deep knowledge of The Vistas and all Summerlin West luxury communities, pricing trends, and market dynamics
+                Deep knowledge of The Vistas and all Summerlin West luxury communities, pricing
+                trends, and market dynamics
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                <svg
+                  className="w-10 h-10 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Personalized Service</h3>
               <p className="text-gray-600">
-                Tailored approach for each luxury real estate client, ensuring every transaction meets their unique needs
+                Tailored approach for each luxury real estate client, ensuring every transaction
+                meets their unique needs
               </p>
             </div>
           </div>

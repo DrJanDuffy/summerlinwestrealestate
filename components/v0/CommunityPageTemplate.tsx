@@ -33,7 +33,7 @@ export default function CommunityPage({
   schools,
   marketInsights,
   notableFeatures,
-  whyChoose
+  whyChoose,
 }: CommunityPageProps) {
   useEffect(() => {
     // Add structured data for SEO
@@ -46,13 +46,13 @@ export default function CommunityPage({
         '@type': 'PostalAddress',
         addressLocality: 'Summerlin West',
         addressRegion: 'Nevada',
-        addressCountry: 'United States'
+        addressCountry: 'United States',
       },
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '5',
-        ratingCount: '50+'
-      }
+        ratingCount: '50+',
+      },
     };
 
     const script = document.createElement('script');
@@ -76,7 +76,10 @@ export default function CommunityPage({
           <p className="text-xl text-gray-600 mb-2">{description}</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {locationKeywords.map((keyword, i) => (
-              <span key={i} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+              <span
+                key={i}
+                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold"
+              >
                 {keyword}
               </span>
             ))}
@@ -90,17 +93,17 @@ export default function CommunityPage({
           <h2 className="text-3xl font-bold text-gray-900 mb-6">About {name}</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              {name} is one of the most sought-after communities in Summerlin West, Las Vegas. 
-              This prestigious neighborhood offers {homeTypes.join(', ')} with luxury features 
-              and resort-style amenities.
+              {name} is one of the most sought-after communities in Summerlin West, Las Vegas. This
+              prestigious neighborhood offers {homeTypes.join(', ')} with luxury features and
+              resort-style amenities.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Located in the heart of Summerlin West, {name} provides residents with exclusive 
-              access to premium amenities, top-rated schools, and convenient access to major 
+              Located in the heart of Summerlin West, {name} provides residents with exclusive
+              access to premium amenities, top-rated schools, and convenient access to major
               shopping, dining, and entertainment destinations.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Whether you're looking for a luxury estate or an investment property, {name} 
+              Whether you're looking for a luxury estate or an investment property, {name}
               offers exceptional value in the Summerlin West luxury real estate market.
             </p>
           </div>
@@ -111,11 +114,12 @@ export default function CommunityPage({
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Available Home Types</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {homeTypes.map((type, i) => (
-              <div key={i} className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border-2 border-blue-200">
+              <div
+                key={i}
+                className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border-2 border-blue-200"
+              >
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{type}</h3>
-                <p className="text-gray-600 text-sm">
-                  {priceRange}
-                </p>
+                <p className="text-gray-600 text-sm">{priceRange}</p>
               </div>
             ))}
           </div>
@@ -146,8 +150,18 @@ export default function CommunityPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {amenities.map((amenity, i) => (
               <div key={i} className="flex items-start">
-                <svg className="w-6 h-6 text-blue-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  className="w-6 h-6 text-blue-600 mr-3 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
                 <span className="text-gray-700">{amenity}</span>
               </div>
@@ -172,9 +186,7 @@ export default function CommunityPage({
 
         {/* CTA */}
         <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Interested in {name} Homes?
-          </h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Interested in {name} Homes?</h2>
           <p className="text-xl text-blue-100 mb-8">
             Contact Dr. Jan Duffy, your Summerlin West real estate expert
           </p>

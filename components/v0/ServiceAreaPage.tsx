@@ -4,8 +4,9 @@
  */
 'use client';
 
-import { useEffect } from 'react';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function ServiceAreaPage() {
   useEffect(() => {
@@ -16,14 +17,14 @@ export default function ServiceAreaPage() {
       name: 'Dr. Jan Duffy',
       serviceArea: {
         '@type': 'City',
-        name: 'Las Vegas, Nevada'
+        name: 'Las Vegas, Nevada',
       },
       areaServed: [
         { '@type': 'City', name: 'Summerlin West' },
         { '@type': 'City', name: 'Summerlin East' },
         { '@type': 'City', name: 'North Las Vegas' },
-        { '@type': 'City', name: 'Henderson' }
-      ]
+        { '@type': 'City', name: 'Henderson' },
+      ],
     };
 
     const script = document.createElement('script');
@@ -39,21 +40,32 @@ export default function ServiceAreaPage() {
   const serviceAreas = [
     {
       area: 'Summerlin West',
-      communities: ['The Vistas', 'San Marcos', 'Casa Rosa', 'Solano', 'Encanto', 'Paradiso', 'Palmilla', 'Stonebridge'],
-      description: 'Premier luxury communities with Red Rock Canyon views and world-class amenities',
+      communities: [
+        'The Vistas',
+        'San Marcos',
+        'Casa Rosa',
+        'Solano',
+        'Encanto',
+        'Paradiso',
+        'Palmilla',
+        'Stonebridge',
+      ],
+      description:
+        'Premier luxury communities with Red Rock Canyon views and world-class amenities',
       homes: 'Luxury Estates',
       priceRange: '$750K - $10M+',
       icon: '🏔️',
-      color: 'blue'
+      color: 'blue',
     },
     {
       area: 'Summerlin East',
       communities: ['The Cliffs', 'Redpoint', 'Reverence', 'Artavia'],
-      description: 'Established luxury neighborhoods with mature landscaping and community amenities',
+      description:
+        'Established luxury neighborhoods with mature landscaping and community amenities',
       homes: 'Single-Family',
       priceRange: '$650K - $5M',
       icon: '🏡',
-      color: 'green'
+      color: 'green',
     },
     {
       area: 'North Las Vegas',
@@ -62,7 +74,7 @@ export default function ServiceAreaPage() {
       homes: 'New Construction',
       priceRange: '$450K - $1.5M',
       icon: '🏗️',
-      color: 'purple'
+      color: 'purple',
     },
     {
       area: 'Henderson',
@@ -71,8 +83,8 @@ export default function ServiceAreaPage() {
       homes: 'Luxury Residences',
       priceRange: '$500K - $8M',
       icon: '🏖️',
-      color: 'orange'
-    }
+      color: 'orange',
+    },
   ];
 
   return (
@@ -80,9 +92,7 @@ export default function ServiceAreaPage() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Service Area
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Service Area</h1>
           <p className="text-xl text-gray-600 mb-2">
             Serving All of Las Vegas Valley with Expert Real Estate Services
           </p>
@@ -92,14 +102,34 @@ export default function ServiceAreaPage() {
         </div>
       </header>
 
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
+        </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* Service Areas Grid */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Areas We Serve</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {serviceAreas.map((area, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-                <div className={`bg-gradient-to-r from-${area.color}-600 to-${area.color}-700 p-8 text-white`}>
+              <div
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+              >
+                <div
+                  className={`bg-gradient-to-r from-${area.color}-600 to-${area.color}-700 p-8 text-white`}
+                >
                   <div className="text-5xl mb-4">{area.icon}</div>
                   <h3 className="text-3xl font-bold mb-2">{area.area}</h3>
                   <p className="text-lg">{area.description}</p>
@@ -109,15 +139,22 @@ export default function ServiceAreaPage() {
                     <h4 className="font-semibold text-gray-900 mb-2">Communities:</h4>
                     <div className="flex flex-wrap gap-2">
                       {area.communities.map((community, idx) => (
-                        <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                        <span
+                          key={idx}
+                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                        >
                           {community}
                         </span>
                       ))}
                     </div>
                   </div>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <div><span className="font-semibold">Homes:</span> {area.homes}</div>
-                    <div><span className="font-semibold">Price Range:</span> {area.priceRange}</div>
+                    <div>
+                      <span className="font-semibold">Homes:</span> {area.homes}
+                    </div>
+                    <div>
+                      <span className="font-semibold">Price Range:</span> {area.priceRange}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,9 +237,7 @@ export default function ServiceAreaPage() {
 
         {/* CTA */}
         <section className="bg-white rounded-xl shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Get Started?
-          </h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">
             Contact Dr. Jan Duffy for expert real estate services in your area
           </p>

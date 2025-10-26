@@ -15,7 +15,7 @@ export default function PropertiesPage() {
       '@type': 'RealEstateAgent',
       name: 'Dr. Jan Duffy',
       jobTitle: 'REALTOR®',
-      telephone: '+1-702-550-0112'
+      telephone: '+1-702-550-0112',
     };
 
     const script = document.createElement('script');
@@ -51,10 +51,7 @@ export default function PropertiesPage() {
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <RealScoutWidget
-            type="search"
-            agentEncodedId="QWdlbnQtMjI1MDUw"
-          />
+          <RealScoutWidget type="search" agentEncodedId="QWdlbnQtMjI1MDUw" />
         </section>
 
         {/* Property Types */}
@@ -94,7 +91,10 @@ export default function PropertiesPage() {
                 <p className="text-gray-600 mb-4">
                   Exclusive estates with premium amenities and Red Rock Canyon views
                 </p>
-                <a href="/properties" className="text-purple-600 font-semibold hover:text-purple-700">
+                <a
+                  href="/properties"
+                  className="text-purple-600 font-semibold hover:text-purple-700"
+                >
                   View Listings →
                 </a>
               </div>

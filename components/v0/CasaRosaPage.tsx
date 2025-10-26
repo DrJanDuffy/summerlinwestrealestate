@@ -12,12 +12,13 @@ export default function CasaRosaPage() {
       '@context': 'https://schema.org',
       '@type': 'Residence',
       name: 'Casa Rosa Community',
-      description: 'Beautiful community in The Vistas with elegant homes and family-friendly amenities',
+      description:
+        'Beautiful community in The Vistas with elegant homes and family-friendly amenities',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Summerlin West',
-        addressRegion: 'Nevada'
-      }
+        addressRegion: 'Nevada',
+      },
     };
 
     const script = document.createElement('script');
@@ -43,11 +44,11 @@ export default function CasaRosaPage() {
         <div className="bg-white rounded-xl shadow-xl p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">About Casa Rosa</h2>
           <p className="text-lg text-gray-700 mb-6">
-            Casa Rosa is a beautiful community in The Vistas featuring elegant homes and family-friendly 
-            amenities. Residents enjoy Spanish-inspired architecture, resort-style amenities, and proximity 
-            to Downtown Summerlin.
+            Casa Rosa is a beautiful community in The Vistas featuring elegant homes and
+            family-friendly amenities. Residents enjoy Spanish-inspired architecture, resort-style
+            amenities, and proximity to Downtown Summerlin.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Home Types</h3>

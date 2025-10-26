@@ -10,15 +10,11 @@ export default function EnhancedResumePage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Dr. Jan Duffy, REALTOR®
-          </h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">Dr. Jan Duffy, REALTOR®</h1>
           <p className="text-2xl text-gray-600 mb-2">
             Licensed Real Estate Agent | Summerlin West Expert
           </p>
-          <p className="text-lg text-gray-500">
-            Proven Track Record of $6+ Billion in Sales
-          </p>
+          <p className="text-lg text-gray-500">Proven Track Record of $6+ Billion in Sales</p>
         </div>
 
         {/* Professional Summary */}
@@ -26,10 +22,10 @@ export default function EnhancedResumePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Professional Summary</h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Dr. Jan Duffy is a highly accomplished REALTOR® specializing in luxury real estate
-              in Summerlin West, Las Vegas. With over a decade of experience and $6+ billion in
-              total sales, Dr. Duffy combines exceptional market knowledge, personalized service,
-              and cutting-edge digital marketing to deliver outstanding results for clients.
+              Dr. Jan Duffy is a highly accomplished REALTOR® specializing in luxury real estate in
+              Summerlin West, Las Vegas. With over a decade of experience and $6+ billion in total
+              sales, Dr. Duffy combines exceptional market knowledge, personalized service, and
+              cutting-edge digital marketing to deliver outstanding results for clients.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Her expertise spans luxury properties, investment real estate, luxury home marketing,
@@ -47,7 +43,9 @@ export default function EnhancedResumePage() {
             <div className="border-l-4 border-blue-600 pl-6">
               <h3 className="text-xl font-bold text-gray-900">Doctoral Degree</h3>
               <p className="text-gray-600 mb-2">University of Arizona</p>
-              <p className="text-gray-500 text-sm">Relevant research in consumer behavior and market analysis</p>
+              <p className="text-gray-500 text-sm">
+                Relevant research in consumer behavior and market analysis
+              </p>
             </div>
           </div>
         </section>
@@ -123,12 +121,8 @@ export default function EnhancedResumePage() {
 
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Work with a Top Agent?
-          </h2>
-          <p className="text-xl text-blue-100 mb-6">
-            Let Dr. Jan Duffy's expertise work for you
-          </p>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Work with a Top Agent?</h2>
+          <p className="text-xl text-blue-100 mb-6">Let Dr. Jan Duffy's expertise work for you</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"

@@ -5,6 +5,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function TestimonialsPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,8 +21,8 @@ export default function TestimonialsPage() {
         ratingValue: '5',
         ratingCount: '150+',
         bestRating: '5',
-        worstRating: '1'
-      }
+        worstRating: '1',
+      },
     };
 
     const script = document.createElement('script');
@@ -41,7 +42,7 @@ export default function TestimonialsPage() {
       property: 'Luxury Estate with Red Rock Views',
       rating: 5,
       text: 'Dr. Jan Duffy made our home purchase seamless. Her expertise in The Vistas market was invaluable. We found our dream home and closed quickly thanks to her professionalism.',
-      avatar: '👨‍👩‍👧‍👦'
+      avatar: '👨‍👩‍👧‍👦',
     },
     {
       name: 'Robert Chen',
@@ -49,7 +50,7 @@ export default function TestimonialsPage() {
       property: 'Modern Luxury Home',
       rating: 5,
       text: 'As a first-time luxury homebuyer, I was nervous. Dr. Duffy guided me through every step with patience and expertise. Her knowledge of the San Marcos community is unmatched.',
-      avatar: '👤'
+      avatar: '👤',
     },
     {
       name: 'Jennifer Martinez',
@@ -57,7 +58,7 @@ export default function TestimonialsPage() {
       property: 'Spanish-Inspired Villa',
       rating: 5,
       text: 'Dr. Jan Duffy is simply the best! She understood exactly what we were looking for and found the perfect home in Casa Rosa. Her attention to detail and negotiation skills are incredible.',
-      avatar: '👩'
+      avatar: '👩',
     },
     {
       name: 'David & Lisa Anderson',
@@ -65,24 +66,24 @@ export default function TestimonialsPage() {
       property: 'Contemporary Estate',
       rating: 5,
       text: 'We interviewed several agents, but Dr. Duffy stood out immediately. Her $6+ billion in sales speaks volumes. She made selling our home effortless and maximized our return.',
-      avatar: '👨‍👩‍👦'
+      avatar: '👨‍👩‍👦',
     },
     {
       name: 'Patricia Thompson',
       location: 'Paradiso',
       property: 'Mediterranean Villa',
       rating: 5,
-      text: 'Dr. Duffy\'s market knowledge is extraordinary. She found properties we didn\'t even know existed. Her network and expertise made all the difference in our purchase.',
-      avatar: '👵'
+      text: "Dr. Duffy's market knowledge is extraordinary. She found properties we didn't even know existed. Her network and expertise made all the difference in our purchase.",
+      avatar: '👵',
     },
     {
       name: 'James Wilson',
       location: 'Encanto',
       property: 'Luxury Villa',
       rating: 5,
-      text: 'Top 1% agent? Absolutely! Dr. Duffy\'s professionalism, market insights, and dedication to client satisfaction are unmatched. Highly recommend her services.',
-      avatar: '👨'
-    }
+      text: "Top 1% agent? Absolutely! Dr. Duffy's professionalism, market insights, and dedication to client satisfaction are unmatched. Highly recommend her services.",
+      avatar: '👨',
+    },
   ];
 
   const nextTestimonial = () => {
@@ -109,7 +110,9 @@ export default function TestimonialsPage() {
           <div className="flex items-center gap-2 mt-4">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-yellow-400 text-2xl">★</span>
+                <span key={i} className="text-yellow-400 text-2xl">
+                  ★
+                </span>
               ))}
             </div>
             <span className="text-lg text-gray-700 font-semibold">5.0 Rating</span>
@@ -117,6 +120,21 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </header>
+
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
+        </div>
+      </section>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* Featured Testimonial Carousel */}
@@ -143,7 +161,9 @@ export default function TestimonialsPage() {
               <div className="text-6xl mb-6">{currentTestimonial.avatar}</div>
               <div className="flex justify-center gap-1 mb-6">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-2xl">★</span>
+                  <span key={i} className="text-yellow-400 text-2xl">
+                    ★
+                  </span>
                 ))}
               </div>
               <blockquote className="text-2xl text-gray-700 italic mb-8">
@@ -177,7 +197,10 @@ export default function TestimonialsPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">More Client Success Stories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <article key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+              <article
+                key={index}
+                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow"
+              >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="text-4xl">{testimonial.avatar}</div>
                   <div>
@@ -187,7 +210,9 @@ export default function TestimonialsPage() {
                 </div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
+                    <span key={i} className="text-yellow-400">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-gray-700 italic">"{testimonial.text}"</p>

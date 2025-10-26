@@ -5,6 +5,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -60,6 +61,21 @@ export default function ContactPage() {
           </p>
         </div>
       </header>
+
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
+        </div>
+      </section>
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

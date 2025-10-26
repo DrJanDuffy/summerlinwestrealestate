@@ -4,8 +4,9 @@
  */
 'use client';
 
-import { useEffect } from 'react';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function VistasPage() {
   useEffect(() => {
@@ -19,8 +20,8 @@ export default function VistasPage() {
         '@type': 'PostalAddress',
         addressLocality: 'Summerlin West',
         addressRegion: 'NV',
-        postalCode: '89138'
-      }
+        postalCode: '89138',
+      },
     };
 
     const script = document.createElement('script');
@@ -34,12 +35,42 @@ export default function VistasPage() {
   }, []);
 
   const communities = [
-    { name: 'Paradiso', description: 'Mediterranean-inspired homes with resort amenities', price: '$900K - $3M', image: 'bg-gradient-to-br from-teal-600 to-teal-800' },
-    { name: 'Palmilla', description: 'Resort-style living with luxury amenities', price: '$950K - $2.8M', image: 'bg-gradient-to-br from-indigo-600 to-indigo-800' },
-    { name: 'San Marcos', description: 'Spanish-inspired architecture with modern luxury', price: '$800K - $2.5M', image: 'bg-gradient-to-br from-green-600 to-green-800' },
-    { name: 'Casa Rosa', description: 'Elegant homes in family-friendly community', price: '$750K - $2M', image: 'bg-gradient-to-br from-purple-600 to-purple-800' },
-    { name: 'Solano', description: 'Contemporary luxury with mountain views', price: '$850K - $2.2M', image: 'bg-gradient-to-br from-yellow-600 to-orange-700' },
-    { name: 'Encanto', description: 'Spanish-inspired villas with resort amenities', price: '$700K - $1.8M', image: 'bg-gradient-to-br from-pink-600 to-pink-800' }
+    {
+      name: 'Paradiso',
+      description: 'Mediterranean-inspired homes with resort amenities',
+      price: '$900K - $3M',
+      image: 'bg-gradient-to-br from-teal-600 to-teal-800',
+    },
+    {
+      name: 'Palmilla',
+      description: 'Resort-style living with luxury amenities',
+      price: '$950K - $2.8M',
+      image: 'bg-gradient-to-br from-indigo-600 to-indigo-800',
+    },
+    {
+      name: 'San Marcos',
+      description: 'Spanish-inspired architecture with modern luxury',
+      price: '$800K - $2.5M',
+      image: 'bg-gradient-to-br from-green-600 to-green-800',
+    },
+    {
+      name: 'Casa Rosa',
+      description: 'Elegant homes in family-friendly community',
+      price: '$750K - $2M',
+      image: 'bg-gradient-to-br from-purple-600 to-purple-800',
+    },
+    {
+      name: 'Solano',
+      description: 'Contemporary luxury with mountain views',
+      price: '$850K - $2.2M',
+      image: 'bg-gradient-to-br from-yellow-600 to-orange-700',
+    },
+    {
+      name: 'Encanto',
+      description: 'Spanish-inspired villas with resort amenities',
+      price: '$700K - $1.8M',
+      image: 'bg-gradient-to-br from-pink-600 to-pink-800',
+    },
   ];
 
   return (
@@ -47,15 +78,26 @@ export default function VistasPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            The Vistas in Summerlin West
-          </h1>
-          <p className="text-2xl mb-2">
-            Premier Luxury Living with Red Rock Canyon Views
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">The Vistas in Summerlin West</h1>
+          <p className="text-2xl mb-2">Premier Luxury Living with Red Rock Canyon Views</p>
           <p className="text-xl text-blue-100">
             Master-planned community featuring resort-style amenities and world-class homes
           </p>
+        </div>
+      </section>
+
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
         </div>
       </section>
 
@@ -67,13 +109,13 @@ export default function VistasPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <p className="text-lg text-gray-700 mb-4">
-                  The Vistas represents the pinnacle of luxury living in Summerlin West, Las Vegas. 
-                  This master-planned community offers stunning Red Rock Canyon views, resort-style 
+                  The Vistas represents the pinnacle of luxury living in Summerlin West, Las Vegas.
+                  This master-planned community offers stunning Red Rock Canyon views, resort-style
                   amenities, and world-class homes designed for the most discerning buyers.
                 </p>
                 <p className="text-lg text-gray-700 mb-4">
-                  As a gated community with 26 distinct subdivisions, The Vistas provides an 
-                  unparalleled living experience with top-rated schools, premium shopping at 
+                  As a gated community with 26 distinct subdivisions, The Vistas provides an
+                  unparalleled living experience with top-rated schools, premium shopping at
                   Downtown Summerlin, and proximity to outdoor recreation.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -107,7 +149,10 @@ export default function VistasPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Explore Our Communities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {communities.map((community, index) => (
-              <Link key={index} href={`/communities/${community.name.toLowerCase().replace(/\s+/g, '-')}`}>
+              <Link
+                key={index}
+                href={`/communities/${community.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
                   <div className={`${community.image} h-48`}></div>
                   <div className="p-6">
@@ -156,9 +201,7 @@ export default function VistasPage() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="text-5xl mb-4">🏊</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Resort Amenities</h3>
-              <p className="text-gray-600 mb-4">
-                Pools, fitness centers, and luxury clubhouses
-              </p>
+              <p className="text-gray-600 mb-4">Pools, fitness centers, and luxury clubhouses</p>
               <ul className="text-left text-gray-600 space-y-2">
                 <li>• Swimming pools & spas</li>
                 <li>• Fitness centers</li>
@@ -169,9 +212,7 @@ export default function VistasPage() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="text-5xl mb-4">🎓</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Top Schools</h3>
-              <p className="text-gray-600 mb-4">
-                Highly-rated public and private schools
-              </p>
+              <p className="text-gray-600 mb-4">Highly-rated public and private schools</p>
               <ul className="text-left text-gray-600 space-y-2">
                 <li>• Clark County School District</li>
                 <li>• Private school options</li>
@@ -182,9 +223,7 @@ export default function VistasPage() {
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="text-5xl mb-4">🏞️</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Outdoor Recreation</h3>
-              <p className="text-gray-600 mb-4">
-                Beautiful parks and natural attractions
-              </p>
+              <p className="text-gray-600 mb-4">Beautiful parks and natural attractions</p>
               <ul className="text-left text-gray-600 space-y-2">
                 <li>• Red Rock Canyon views</li>
                 <li>• Walking trails</li>
@@ -197,9 +236,7 @@ export default function VistasPage() {
 
         {/* CTA */}
         <section className="bg-white rounded-xl shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Explore The Vistas?
-          </h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Explore The Vistas?</h2>
           <p className="text-xl text-gray-600 mb-8">
             Contact Dr. Jan Duffy for a personalized tour and market insights
           </p>

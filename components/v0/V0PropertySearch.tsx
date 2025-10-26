@@ -13,7 +13,7 @@ export default function V0PropertySearch() {
     bedrooms: '',
     bathrooms: '',
     propertyType: '',
-    community: ''
+    community: '',
   });
 
   return (
@@ -21,9 +21,7 @@ export default function V0PropertySearch() {
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            AI-Powered Property Search
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">AI-Powered Property Search</h1>
           <p className="text-lg text-gray-600">
             Find your dream luxury home in Summerlin West with intelligent search
           </p>
@@ -55,9 +53,7 @@ export default function V0PropertySearch() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Smart Filters</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Price Range
-              </label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Price Range</label>
               <div className="flex gap-2">
                 <input
                   type="number"
@@ -73,9 +69,7 @@ export default function V0PropertySearch() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Bedrooms
-              </label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Bedrooms</label>
               <select className="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none">
                 <option>Any</option>
                 <option>1+</option>
@@ -86,9 +80,7 @@ export default function V0PropertySearch() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Bathrooms
-              </label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Bathrooms</label>
               <select className="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none">
                 <option>Any</option>
                 <option>2+</option>
@@ -98,9 +90,7 @@ export default function V0PropertySearch() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">
-                Community
-              </label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">Community</label>
               <select className="w-full border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-blue-600 focus:outline-none">
                 <option>All Communities</option>
                 <option>The Vistas</option>
@@ -134,7 +124,10 @@ export default function V0PropertySearch() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Sample Property Cards */}
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+              <div
+                key={item}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+              >
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 h-48 relative">
                   <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-blue-600">
                     New Listing

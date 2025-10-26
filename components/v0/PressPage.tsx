@@ -5,6 +5,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function PressPage() {
   useEffect(() => {
@@ -16,8 +17,8 @@ export default function PressPage() {
       description: 'Latest news and press coverage about Summerlin West real estate market',
       publisher: {
         '@type': 'Organization',
-        name: 'Summerlin West Real Estate'
-      }
+        name: 'Summerlin West Real Estate',
+      },
     };
 
     const script = document.createElement('script');
@@ -35,44 +36,50 @@ export default function PressPage() {
       title: 'Summerlin West Luxury Market Reaches New Heights',
       date: 'October 15, 2025',
       category: 'Market Report',
-      description: 'The Summerlin West luxury real estate market continues to thrive with record-breaking sales in The Vistas and surrounding communities.',
-      image: 'bg-gradient-to-br from-blue-600 to-blue-800'
+      description:
+        'The Summerlin West luxury real estate market continues to thrive with record-breaking sales in The Vistas and surrounding communities.',
+      image: 'bg-gradient-to-br from-blue-600 to-blue-800',
     },
     {
       title: 'Dr. Jan Duffy Named Top Agent by Las Vegas Review-Journal',
       date: 'September 28, 2025',
       category: 'Awards',
-      description: 'Dr. Jan Duffy recognized as one of Las Vegas\' top real estate agents for exceptional service and $6+ billion in sales.',
-      image: 'bg-gradient-to-br from-green-600 to-green-800'
+      description:
+        "Dr. Jan Duffy recognized as one of Las Vegas' top real estate agents for exceptional service and $6+ billion in sales.",
+      image: 'bg-gradient-to-br from-green-600 to-green-800',
     },
     {
       title: 'The Vistas Community Featured in Luxury Living Magazine',
       date: 'September 12, 2025',
       category: 'Features',
-      description: 'Luxury Living Magazine highlights The Vistas as one of the premier luxury communities in Summerlin West.',
-      image: 'bg-gradient-to-br from-purple-600 to-purple-800'
+      description:
+        'Luxury Living Magazine highlights The Vistas as one of the premier luxury communities in Summerlin West.',
+      image: 'bg-gradient-to-br from-purple-600 to-purple-800',
     },
     {
       title: 'Red Rock Canyon Views Drive Premium Pricing',
       date: 'August 25, 2025',
       category: 'Market Insights',
-      description: 'Properties with Red Rock Canyon views command premium prices in Summerlin West luxury market.',
-      image: 'bg-gradient-to-br from-yellow-600 to-orange-700'
+      description:
+        'Properties with Red Rock Canyon views command premium prices in Summerlin West luxury market.',
+      image: 'bg-gradient-to-br from-yellow-600 to-orange-700',
     },
     {
       title: 'New Amenities Added to San Marcos Community',
       date: 'August 10, 2025',
       category: 'Community News',
-      description: 'San Marcos community announces new resort-style amenities including enhanced pool area and fitness center.',
-      image: 'bg-gradient-to-br from-teal-600 to-teal-800'
+      description:
+        'San Marcos community announces new resort-style amenities including enhanced pool area and fitness center.',
+      image: 'bg-gradient-to-br from-teal-600 to-teal-800',
     },
     {
       title: 'Investment Interest in Summerlin West Grows',
       date: 'July 22, 2025',
       category: 'Market Trends',
-      description: 'Investors increasingly drawn to Summerlin West luxury properties with strong rental yields.',
-      image: 'bg-gradient-to-br from-pink-600 to-pink-800'
-    }
+      description:
+        'Investors increasingly drawn to Summerlin West luxury properties with strong rental yields.',
+      image: 'bg-gradient-to-br from-pink-600 to-pink-800',
+    },
   ];
 
   return (
@@ -80,9 +87,7 @@ export default function PressPage() {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Press & News
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Press & News</h1>
           <p className="text-xl text-gray-600 mb-2">
             Latest Updates on Summerlin West Real Estate Market
           </p>
@@ -92,13 +97,31 @@ export default function PressPage() {
         </div>
       </header>
 
+      {/* RealScout Listings */}
+      <section className="bg-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <RealScoutWidget
+            type="listings"
+            agentEncodedId="QWdlbnQtMjI1MDUw"
+            sortOrder="NEWEST"
+            listingStatus="For Sale,In Contract"
+            propertyTypes=",SFR"
+            priceMin="500000"
+            priceMax="600000"
+          />
+        </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 py-12">
         {/* News Grid */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest News</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsItems.map((item, index) => (
-              <article key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+              <article
+                key={index}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+              >
                 <div className={`${item.image} h-48`}></div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
@@ -154,9 +177,7 @@ export default function PressPage() {
 
         {/* CTA */}
         <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Media Inquiries Welcome
-          </h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Media Inquiries Welcome</h2>
           <p className="text-xl text-blue-100 mb-8">
             Contact Dr. Jan Duffy for expert commentary on Summerlin West real estate market
           </p>
