@@ -78,7 +78,7 @@ export default function SEOResumePage() {
     } else {
       // Script already loaded, just inject widget
       setTimeout(() => {
-        const container = document.getElementById('realscout-listings-placeholder');
+        const container = document.getElementById(listingsPlaceholderId.current);
         if (container) {
           // Start with no filters to test
           container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST"></realscout-office-listings>';

@@ -66,7 +66,7 @@ export default function PropertiesPage() {
     } else {
       // Script already loaded, just inject widget
       setTimeout(() => {
-        const container = document.getElementById('realscout-search-placeholder');
+        const container = document.getElementById(searchPlaceholderId.current);
         if (container) {
           container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
           setWidgetState('ready');
