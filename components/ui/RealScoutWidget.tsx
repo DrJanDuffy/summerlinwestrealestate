@@ -6,6 +6,21 @@
 
 import Script from 'next/script';
 
+// Declare web components for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'realscout-office-listings': {
+        'agent-encoded-id': string;
+        'sort-order'?: string;
+      };
+      'realscout-advanced-search': {
+        'agent-encoded-id': string;
+      };
+    }
+  }
+}
+
 interface RealScoutWidgetProps {
   type: 'listings' | 'search';
   agentEncodedId: string;
