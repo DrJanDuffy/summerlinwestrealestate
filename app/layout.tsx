@@ -12,7 +12,6 @@ import Header from '../components/layout/Header';
 import StickyPhoneMenu from '../components/layout/StickyPhoneMenu';
 import LeadTrackingProvider from '../components/ui/LeadTrackingProvider';
 import { generateComprehensiveSchema } from '../lib/structured-data';
-import styles from './page.module.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -126,11 +125,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* RealScout Script - Required in head per RealScout documentation */}
-        <script
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
-        />
         {/* RealScout Widget Styles */}
         <style>{`
           realscout-office-listings {
@@ -192,6 +186,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               alt="Facebook Pixel"
             />
           </noscript>
+
+          {/* RealScout Script */}
+          <Script
+            id="realscout-loader"
+            src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+            strategy="afterInteractive"
+          />
 
           <Header />
           <main className="pt-16">{children}</main>
