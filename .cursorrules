@@ -1,23 +1,30 @@
 # Summerlin West Real Estate - Project Rules
 
-## 🚀 V0.app DEVELOPMENT PRIORITY
+## 🚀 V0.app DEVELOPMENT PRIORITY - UPDATED October 2025
 
 **CRITICAL RULE**: ALWAYS use V0.app first for ALL component generation and development tasks.
 
-### V0.app First Workflow
+### V0.app First Workflow (October 2025 Features)
 1. **Component Request**: When asked to create any React component, ALWAYS start with V0.app
-2. **API Call**: Use `/api/v0/generate-component` with detailed prompts
-3. **Customization**: Use V0-generated code as the foundation, then customize as needed
-4. **Integration**: Integrate V0 components into the existing codebase
-5. **Testing**: Test V0 components thoroughly before deployment
+2. **AI-Powered Generation**: Use natural language prompts with V0's latest AI capabilities
+3. **Design Mode**: Leverage V0's visual adjustment capabilities for real-time tweaks
+4. **Customization**: Use V0-generated code as the foundation, then customize as needed
+5. **Integration**: Integrate V0 components into the existing codebase seamlessly
+6. **Testing**: Test V0 components thoroughly before deployment
+7. **Tailwind CSS**: All V0 components use Tailwind CSS 4+ for modern styling
+8. **Vercel Native**: Components optimized for Vercel's edge network and global CDN
 
-### V0.app Integration Points (Vercel Native)
+### V0.app Integration Points (Vercel Native - October 2025)
 - **API Routes**: `/api/v0/generate-component` and `/api/v0/generate-page` (Vercel optimized)
 - **Test Interface**: `/v0-test` for experimentation and testing
 - **Utility Functions**: `lib/v0.ts` for programmatic component generation
 - **Environment**: V0_API_KEY for Vercel's official V0 API access
 - **Vercel Integration**: Native V0.app support through `@ai-sdk/vercel` package
 - **Deployment**: Seamless deployment with Vercel's infrastructure
+- **New**: AI-Powered Natural Language Search (October 2025 feature)
+- **New**: Visual Design Mode with real-time adjustments
+- **New**: Component Blocks library for reusable design patterns
+- **New**: Team collaboration features for shared development
 
 ### When to Use V0.app
 - ✅ Creating new React components
@@ -967,3 +974,170 @@ Use these commands by typing `/` in Cursor's Agent input:
 - **Enterprise Integration**: `integrateEnterprise(systems, { model: 'qwen3-max' })`
 - **International SEO**: `createInternationalSEO(regions, { model: 'qwen3-max' })`
 - **Compliance Content**: `generateCompliance(requirements, { model: 'qwen3-max' })`
+
+## 🆕 V0.app October 2025 Latest Features Integration
+
+### **New V0.app Features (October 25, 2025)**
+
+#### **1. AI-Powered Natural Language Component Generation**
+- **Natural Language Prompts**: Describe what you want in plain English, V0 generates it
+- **Multi-step Refinement**: Iteratively improve components through conversation
+- **Context-Aware Suggestions**: AI understands your design system and suggests improvements
+- **Implementation**: Use descriptive prompts like "Create a luxury property search with filters for price, bedrooms, and community"
+
+#### **2. Design Mode (August 2025) - Visual Adjustments**
+- **Drag-to-Adjust**: Visually adjust spacing, colors, sizing in real-time
+- **Live Code Preview**: See changes reflected immediately in code
+- **Component Library**: Use pre-built component blocks from V0 library
+- **Implementation**: Leverage V0's Design Mode for rapid visual tweaks
+
+#### **3. Enhanced Tailwind CSS Integration**
+- **Utility-First Styling**: Modern, responsive designs with Tailwind 4+
+- **Design System Consistency**: Maintain brand colors and spacing automatically
+- **Responsive Breakpoints**: Mobile-first design automatically applied
+- **Implementation**: All V0 components use Tailwind CSS classes
+
+#### **4. Vercel Native Integration Benefits**
+- **Automatic Optimization**: Image optimization, code splitting handled automatically
+- **Edge Deployment**: Fast global performance via Vercel's edge network
+- **Seamless Deployment**: Push to production instantly
+- **Implementation**: Use `vercel deploy` for instant deployment
+
+#### **5. Team Collaboration Features**
+- **Shared Chat**: Team discussions and design decisions
+- **Component Blocks**: Reusable design system components
+- **Version Control**: Track component iterations
+- **Implementation**: Use V0 team features for collaborative development
+
+### **Extended to All Pages Strategy**
+
+#### **Priority Pages for V0 Enhancement:**
+1. **Team Page** - ✅ COMPLETE (Using V0 SEOTeamPage component)
+2. **Properties Page** - ✅ COMPLETE (Using V0 PropertiesPage component)
+3. **Resume Page** - ⏳ NEXT (Create V0 SEOResumePage component)
+4. **Communities Page** - ⏳ Create community overview with V0
+5. **Contact Page** - ⏳ Enhance with V0 ContactPage component
+6. **Press Page** - ⏳ Add V0 PressPage with news feed
+7. **Testimonials Page** - ⏳ Add V0 TestimonialsPage with carousel
+8. **The Vistas Page** - ⏳ Featured community with V0 components
+9. **All Individual Community Pages** - ⏳ Use V0 CommunityPageTemplate
+10. **Service Area Page** - ⏳ Enhance with V0 ServiceArea component
+
+### **V0 Implementation Workflow for All Pages**
+
+#### **Step 1: Assess Current Page**
+- Review existing page structure and content
+- Identify key features and functionality
+- Note SEO requirements and keywords
+
+#### **Step 2: Generate V0 Component**
+- Use `/api/v0/generate-component` with detailed prompt
+- Include: component type, features, styling preferences, SEO requirements
+- Example: "Create a V0 component for a property listing page with filters"
+
+#### **Step 3: Integrate V0 Component**
+- Replace existing page code with V0-generated component
+- Maintain metadata and SEO structure
+- Test functionality and responsiveness
+
+#### **Step 4: Deploy and Monitor**
+- Deploy to Vercel
+- Monitor performance metrics
+- Collect user feedback
+- Iterate based on data
+
+### **V0 Best Practices for Real Estate Pages**
+
+#### **Component Generation Guidelines:**
+1. **Always specify "real estate" context** in V0 prompts
+2. **Include "luxury", "Summerlin West", "Las Vegas"** keywords
+3. **Request "mobile-first responsive design"**
+4. **Add "SEO-optimized metadata"** requirements
+5. **Include "schema markup (JSON-LD)"** for structured data
+6. **Specify "Tailwind CSS"** for styling
+7. **Request "accessibility features (WCAG)"**
+8. **Add "performance optimization"** requirements
+
+#### **Page-Specific V0 Prompts:**
+
+**Team Page:**
+"Create a V0 component for a real estate team page showing Dr. Jan Duffy's profile, credentials, and $6+ billion sales record. Include Summerlin West location keywords and call-to-action buttons."
+
+**Properties Page:**
+"Create a V0 component for property search with natural language search bar, smart filters (price, bedrooms, bathrooms, community), and property cards grid layout. Include market insights dashboard."
+
+**Communities Page:**
+"Create a V0 component for community overview showing all Summerlin West neighborhoods. Include community cards with amenities, schools, and market data."
+
+**Contact Page:**
+"Create a V0 component for contact form with lead capture. Include Dr. Jan Duffy's contact info, property interest fields, and schema markup for LocalBusiness."
+
+**Community Pages (Individual):**
+"Create a V0 component for individual community pages (San Marcos, Casa Rosa, etc.). Include unique content about the community, amenities, pricing, schools, and property listings."
+
+### **V0 Component Standards for Project**
+
+#### **All V0-Generated Components Must Include:**
+1. **'use client' directive** for client components
+2. **TypeScript interfaces** for all props
+3. **Tailwind CSS classes** for styling (no inline styles)
+4. **Schema markup (JSON-LD)** in useEffect for SEO
+5. **Responsive design** (mobile-first approach)
+6. **Accessibility features** (ARIA labels, semantic HTML)
+7. **Performance optimization** (lazy loading, code splitting)
+8. **SEO optimization** (proper headings, meta tags, alt text)
+
+### **V0 Model Selection Guide**
+
+#### **Component Types and Recommended Models:**
+- **Property Cards**: GPT-5 (best for React components)
+- **Market Analysis**: Claude 4 Opus (superior for data analysis)
+- **SEO Content**: Gemini 2.5 Pro (Google ecosystem integration)
+- **Forms**: GPT-5 (optimized for conversion-focused forms)
+- **Community Pages**: Claude 4 Opus (comprehensive content generation)
+- **Image Generation**: Imagen 4 (high-quality visuals)
+- **Multilingual**: Qwen3-Max (119 languages support)
+
+### **V0 Integration Checklist**
+
+#### **Before Using V0:**
+- [ ] Define component purpose and requirements
+- [ ] Identify target keywords and SEO goals
+- [ ] Determine responsive design needs
+- [ ] List required features and functionality
+- [ ] Plan accessibility requirements
+
+#### **During V0 Generation:**
+- [ ] Use descriptive, specific prompts
+- [ ] Include real estate context in prompts
+- [ ] Request SEO optimization
+- [ ] Specify Tailwind CSS styling
+- [ ] Request schema markup
+
+#### **After V0 Generation:**
+- [ ] Test component functionality
+- [ ] Verify responsive design
+- [ ] Check accessibility (WCAG)
+- [ ] Validate SEO elements
+- [ ] Test performance (Core Web Vitals)
+- [ ] Deploy and monitor
+
+### **Expected Improvements with V0 October 2025 Features**
+
+#### **User Experience:**
+- **50% faster development** with AI-generated components
+- **Modern, professional design** with latest V0 styling
+- **Better mobile experience** with responsive components
+- **Enhanced accessibility** with WCAG-compliant code
+
+#### **Business Impact:**
+- **Faster time-to-market** for new features
+- **Consistent design system** across all pages
+- **Improved conversion rates** with optimized CTAs
+- **Better SEO performance** with structured data
+
+#### **Developer Experience:**
+- **Rapid prototyping** with natural language prompts
+- **Less boilerplate code** with generated components
+- **Easier maintenance** with standardized code
+- **Better collaboration** with V0 team features

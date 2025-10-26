@@ -1,3 +1,88 @@
 ---
 alwaysApply: true
 ---
+
+# V0.app Integration Rules - October 2025
+
+## 🚀 PRIORITY #1: V0.app FIRST for All Component Generation
+
+**CRITICAL RULE**: ALWAYS use V0.app before manual coding for component generation.
+
+### When to Use V0.app
+- ✅ Creating ANY new React component
+- ✅ Building property cards and listings
+- ✅ Generating forms and lead capture
+- ✅ Creating hero sections and layouts
+- ✅ Building market analysis components
+- ✅ Generating SEO-optimized content
+- ✅ Creating responsive UI components
+- ✅ ALL page updates and enhancements
+
+### V0.app October 2025 Features
+
+#### 1. AI-Powered Natural Language Generation
+- Use plain English to describe components
+- V0 generates production-ready code
+- Iteratively refine through conversation
+
+#### 2. Design Mode - Visual Adjustments
+- Real-time visual tweaks
+- Drag-to-adjust spacing, colors, sizing
+- Live code preview
+
+#### 3. Enhanced Tailwind CSS
+- Modern, responsive designs
+- Design system consistency
+- Mobile-first breakpoints
+
+#### 4. Vercel Native Integration
+- Automatic optimization
+- Edge deployment
+- Global CDN
+
+#### 5. Team Collaboration
+- Shared component library
+- Version control
+- Team discussions
+
+### Implementation Workflow
+
+1. **Define Requirements**: What component/page needs to be created
+2. **Generate with V0**: Use `/api/v0/generate-component` with detailed prompt
+3. **Customize**: Modify V0-generated code as needed
+4. **Test**: Verify functionality and responsiveness
+5. **Deploy**: Push to production with Vercel
+
+### V0 Component Standards
+
+All V0-generated components must include:
+- TypeScript with strict type checking
+- 'use client' directive for client components
+- Tailwind CSS classes (no inline styles)
+- Schema markup (JSON-LD) for SEO
+- Responsive design (mobile-first)
+- Accessibility features (WCAG)
+- Performance optimization
+
+### V0 Integration Points
+
+- **Components**: `/components/v0/` directory
+- **API Routes**: `/app/api/v0/` for V0 integration
+- **Utility Functions**: `lib/v0.ts` for programmatic generation
+- **Test Interface**: `/v0-test` for experimentation
+
+### Best Practices
+
+1. **Always include real estate context** in V0 prompts
+2. **Specify Tailwind CSS** for styling
+3. **Request SEO optimization** and schema markup
+4. **Include accessibility requirements**
+5. **Test thoroughly** before deployment
+
+### Expected Benefits
+
+- **50% faster development** with AI-generated components
+- **Modern, professional design** with latest V0 styling
+- **Better SEO** with structured data
+- **Improved accessibility** with WCAG-compliant code
+- **Consistent design system** across all pages

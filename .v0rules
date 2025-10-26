@@ -1,0 +1,147 @@
+# Summerlin West Real Estate - Local V0.app Rules (October 2025)
+
+## 🚀 V0.app EXTENDED TO ALL PAGES
+
+### Current V0 Implementation Status
+
+#### ✅ **Completed:**
+1. Team Page - Using SEOTeamPage component
+2. Properties Page - Using PropertiesPage component
+3. V0 Integration Tests - API routes established
+4. SEO Audit System - Complete with V0 components
+
+#### ⏳ **In Progress (Next):**
+5. Resume Page - Create SEOResumePage component
+6. Contact Page - Create ContactPage component
+7. Communities Overview - Create community listing page
+8. The Vistas Featured Page - Enhance with V0 components
+9. Individual Community Pages - San Marcos, Casa Rosa, Solano, Encanto, Paradiso, Palmilla
+10. Press & News Page - Create V0 PressPage component
+11. Testimonials Page - Create V0 TestimonialsPage with carousel
+12. Service Area Page - Enhance with V0 components
+
+### V0 Best Practices for This Project
+
+#### **Component Generation:**
+```
+When generating V0 components, ALWAYS include:
+1. "Real estate" or "luxury real estate" context
+2. "Summerlin West" or "Las Vegas" location keywords
+3. "Dr. Jan Duffy" or "REALTOR®" branding
+4. "Schema markup (JSON-LD)" for SEO
+5. "Tailwind CSS" for styling
+6. "Mobile-first responsive design"
+7. "Accessibility (WCAG)" requirements
+8. "Performance optimization"
+```
+
+#### **Example V0 Prompts:**
+```
+Team Page: "Create a V0 component for a real estate team page featuring Dr. Jan Duffy with credentials, $6+ billion sales record, Summerlin West focus, CTA buttons"
+
+Property Search: "Create a V0 component for property search with natural language input, filters for price/bedrooms/bathrooms/community, responsive grid layout"
+
+Community Page: "Create a V0 component for individual community page (San Marcos) with amenities, schools, pricing, market data, and property listings"
+```
+
+### V0 Integration Strategy
+
+#### **Step-by-Step Implementation:**
+
+1. **Identify Page** → Review existing page structure
+2. **Generate V0 Component** → Use `/api/v0/generate-component` with detailed prompt
+3. **Save to `/components/v0/`** → Organize by purpose
+4. **Update Page** → Replace or enhance existing page code
+5. **Test & Deploy** → Verify functionality, deploy to Vercel
+
+#### **Component Organization:**
+```
+components/v0/
+├── SEOTeamPage.tsx (✅ Complete)
+├── PropertiesPage.tsx (✅ Complete)
+├── ContactPage.tsx (✅ Created, need to integrate)
+├── CommunityPageTemplate.tsx (✅ Created, use for all communities)
+├── SanMarcosPage.tsx (✅ Created)
+├── V0PropertySearch.tsx (✅ Created - AI-powered search)
+└── ... (more to come)
+```
+
+### V0 Features to Leverage
+
+#### **1. Natural Language Search** (October 2025)
+- Property search understands plain English
+- "Show me luxury homes in The Vistas under $2M"
+- AI interprets intent and filters accordingly
+
+#### **2. Design Mode**
+- Real-time visual adjustments
+- Drag to adjust spacing, colors, layouts
+- Instant code generation
+
+#### **3. Component Blocks**
+- Reusable design patterns
+- Consistent UI across pages
+- Shared component library
+
+#### **4. Tailwind Integration**
+- Modern, utility-first styling
+- Responsive by default
+- Design system consistency
+
+#### **5. Vercel Native**
+- Automatic optimization
+- Edge network deployment
+- Global CDN for fast loading
+
+### Implementation Priority
+
+#### **This Week:**
+1. Complete Contact page integration
+2. Create Resume page with V0
+3. Create Communities overview page
+4. Enhance The Vistas featured page
+
+#### **Next Week:**
+5. Create individual community pages
+6. Add Press & News page
+7. Create Testimonials carousel
+8. Enhance Service Area page
+
+#### **Following Week:**
+9. Add market insights dashboard
+10. Create investment property showcase
+11. Add luxury homes featured section
+12. Implement AI-powered search
+
+### Quality Standards
+
+#### **All V0 Components Must:**
+- ✅ Include TypeScript interfaces
+- ✅ Use Tailwind CSS only (no inline styles)
+- ✅ Add schema markup (JSON-LD)
+- ✅ Be mobile-responsive
+- ✅ Meet WCAG accessibility standards
+- ✅ Optimize for Core Web Vitals
+- ✅ Include SEO metadata
+- ✅ Test thoroughly before deployment
+
+### Deployment Process
+
+1. Generate component with V0
+2. Save to `/components/v0/` directory
+3. Update page to use new component
+4. Test locally with `vercel dev`
+5. Build and verify with `vercel build`
+6. Deploy with `vercel --prod`
+7. Monitor performance and user feedback
+
+### Success Metrics
+
+Track improvements from V0 implementation:
+- Development speed (target: 50% faster)
+- Code quality (consistent patterns)
+- SEO performance (better rankings)
+- User experience (mobile-first design)
+- Conversion rates (optimized CTAs)
+- Accessibility scores (WCAG compliance)
+- Performance scores (Core Web Vitals)
