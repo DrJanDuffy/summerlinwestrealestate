@@ -22,8 +22,25 @@ export default function PropertiesPage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Load RealScout widget
+    const realscoutScript = document.createElement('script');
+    realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+    realscoutScript.type = 'module';
+    realscoutScript.onload = () => {
+      const container = document.getElementById('realscout-search-placeholder');
+      if (container) {
+        container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
+      }
+    };
+    document.head.appendChild(realscoutScript);
+
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+      if (document.head.contains(realscoutScript)) {
+        document.head.removeChild(realscoutScript);
+      }
     };
   }, []);
 
@@ -48,9 +65,6 @@ export default function PropertiesPage() {
         {/* RealScout Advanced Search Widget */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Find Your Dream Home</h2>
-          <div id="realscout-search-placeholder">
-            <p className="text-center text-gray-600">Loading property search...</p>
-          </div>
           <style dangerouslySetInnerHTML={{
             __html: `
               realscout-advanced-search {
@@ -61,24 +75,9 @@ export default function PropertiesPage() {
               }
             `
           }} />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                if (typeof window !== 'undefined') {
-                  const script = document.createElement('script');
-                  script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-                  script.type = 'module';
-                  script.onload = () => {
-                    const container = document.getElementById('realscout-search-placeholder');
-                    if (container) {
-                      container.innerHTML = '<realscout-advanced-search agent-encoded-id="QWdlbnQtMjI1MDUw"></realscout-advanced-search>';
-                    }
-                  };
-                  document.head.appendChild(script);
-                }
-              `
-            }}
-          />
+          <div id="realscout-search-placeholder">
+            <p className="text-center text-gray-600">Loading property search...</p>
+          </div>
         </section>
 
         {/* Property Types */}

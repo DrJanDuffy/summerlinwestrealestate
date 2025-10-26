@@ -35,8 +35,25 @@ export default function SEOResumePage() {
     script.text = JSON.stringify(schema);
     document.head.appendChild(script);
 
+    // Load RealScout widget
+    const realscoutScript = document.createElement('script');
+    realscoutScript.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
+    realscoutScript.type = 'module';
+    realscoutScript.onload = () => {
+      const container = document.getElementById('realscout-listings-placeholder');
+      if (container) {
+        container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
+      }
+    };
+    document.head.appendChild(realscoutScript);
+
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+      if (document.head.contains(realscoutScript)) {
+        document.head.removeChild(realscoutScript);
+      }
     };
   }, []);
 
@@ -70,25 +87,6 @@ export default function SEOResumePage() {
           </div>
         </div>
       </section>
-      
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            if (typeof window !== 'undefined') {
-              const script = document.createElement('script');
-              script.src = 'https://em.realscout.com/widgets/realscout-web-components.umd.js';
-              script.type = 'module';
-              script.onload = () => {
-                const container = document.getElementById('realscout-listings-placeholder');
-                if (container) {
-                  container.innerHTML = '<realscout-office-listings agent-encoded-id="QWdlbnQtMjI1MDUw" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR" price-min="500000" price-max="600000"></realscout-office-listings>';
-                }
-              };
-              document.head.appendChild(script);
-            }
-          `
-        }}
-      />
 
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Professional Summary with Keywords */}
