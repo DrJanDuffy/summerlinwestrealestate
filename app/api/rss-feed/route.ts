@@ -1,20 +1,15 @@
 import { NextResponse } from 'next/server';
 
-interface RSSItem {
-  title: string;
-  link: string;
-  description: string;
-  pubDate: string;
-  guid: string;
-  content?: string;
-}
-
 export async function GET() {
+  // Use Vercel serverless to proxy the RSS feed
   try {
     const rssUrl = 'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
     
     const response = await fetch(rssUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
+      headers: {
+        'User-Agent': 'Mozilla/5.0',
+      },
     });
 
     if (!response.ok) {
@@ -23,37 +18,27 @@ export async function GET() {
 
     const xmlText = await response.text();
     
-    // Parse RSS XML
-    const items: RSSItem[] = [];
-    const titleRegex = /<title><!\[CDATA\[(.*?)\]\]><\/title>/g;
-    const linkRegex = /<link>(.*?)<\/link>/g;
-    const descriptionRegex = /<description><!\[CDATA\[(.*?)\]\]><\/description>/gs;
-    const pubDateRegex = /<pubDate>(.*?)<\/pubDate>/g;
-    const guidRegex = /<guid>(.*?)<\/guid>/g;
-
-    const titles = Array.from(xmlText.matchAll(titleRegex), (m) => m[1]);
-    const links = Array.from(xmlText.matchAll(linkRegex), (m) => m[1]);
-    const descriptions = Array.from(xmlText.matchAll(descriptionRegex), (m) => m[1]);
-    const pubDates = Array.from(xmlText.matchAll(pubDateRegex), (m) => m[1]);
-    const guids = Array.from(xmlText.matchAll(guidRegex), (m) => m[1]);
-
-    // Skip first title (feed title)
-    const itemCount = Math.min(titles.length - 1, 10);
-
-    for (let i = 0; i < itemCount; i++) {
-      const title = titles[i + 1];
-      const link = links[i];
-      const description = descriptions[i];
-      const pubDate = pubDates[i];
-      const guid = guids[i] || link;
-
-      if (title && link && description) {
+    // Simple XML parsing without advanced regex
+    const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+    const items = [];
+    
+    let match;
+    while ((match = itemRegex.exec(xmlText)) !== null && items.length < 10) {
+      const itemContent = match[1];
+      
+      const titleMatch = itemContent.match(/<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>/);
+      const linkMatch = itemContent.match(/<link>(.*?)<\/link>/);
+      const descMatch = itemContent.match(/<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/);
+      const dateMatch = itemContent.match(/<pubDate>(.*?)<\/pubDate>/);
+      const guidMatch = itemContent.match(/<guid>(.*?)<\/guid>/);
+      
+      if (titleMatch && linkMatch && descMatch) {
         items.push({
-          title,
-          link,
-          description,
-          pubDate: pubDate || new Date().toISOString(),
-          guid,
+          title: titleMatch[1],
+          link: linkMatch[1],
+          description: descMatch[1],
+          pubDate: dateMatch ? dateMatch[1] : new Date().toISOString(),
+          guid: guidMatch ? guidMatch[1] : linkMatch[1],
         });
       }
     }
@@ -61,10 +46,7 @@ export async function GET() {
     return NextResponse.json({ items });
   } catch (error) {
     console.error('Error fetching RSS feed:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch RSS feed' },
-      { status: 500 }
-    );
+    return NextResponse.json({ items: [] });
   }
 }
 
