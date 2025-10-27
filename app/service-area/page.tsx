@@ -19,7 +19,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Service Area | Las Vegas & Summerlin West Real Estate Coverage',
-    description: 'Dr. Jan Duffy serves all Las Vegas Valley communities with expert real estate services.',
+    description:
+      'Dr. Jan Duffy serves all Las Vegas Valley communities with expert real estate services.',
     url: 'https://www.summerlinwestrealestate.com/service-area',
     siteName: 'Summerlin West Real Estate',
     images: [

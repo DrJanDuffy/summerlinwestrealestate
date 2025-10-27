@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ['/images/las-vegas-home-values-2025.jpg'],
   },
   alternates: {
-    canonical: 'https://summerlinwestrealestate.com/home-values',
+    canonical: 'https://www.summerlinwestrealestate.com/home-values',
   },
   robots: {
     index: true,

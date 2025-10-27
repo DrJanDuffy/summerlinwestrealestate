@@ -10,10 +10,19 @@ export const metadata: Metadata = {
     'Integrate Google Places API for enhanced real estate search and property discovery. Autocomplete, place details, and location services for luxury real estate websites.',
   keywords:
     'Google Places API, real estate search, property discovery, autocomplete, location services, Summerlin West',
+  alternates: {
+    canonical: 'https://www.summerlinwestrealestate.com/google-places',
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: 'Google Places UI Kit for Real Estate | Summerlin West Real Estate',
     description:
       'Integrate Google Places API for enhanced real estate search and property discovery.',
+    url: 'https://www.summerlinwestrealestate.com/google-places',
+    siteName: 'Summerlin West Real Estate',
     type: 'website',
   },
 };

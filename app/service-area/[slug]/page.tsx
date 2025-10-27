@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: ['/images/og-image.svg'],
     },
     alternates: {
-      canonical: `/service-area/${slug}`,
+      canonical: `https://www.summerlinwestrealestate.com/service-area/${slug}`,
     },
     robots: {
       index: true,
