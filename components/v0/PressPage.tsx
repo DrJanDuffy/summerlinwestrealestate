@@ -171,6 +171,28 @@ export default function PressPage() {
           </div>
         </section>
 
+        {/* RSS Feed / KCM Blog Posts */}
+        <section className="bg-white rounded-xl shadow-xl p-8 mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Market Insights & Blog Posts</h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Stay updated with the latest real estate market insights and industry news
+          </p>
+          <div className="w-full overflow-hidden rounded-lg">
+            <iframe
+              src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
+              scrolling="yes"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              height="800px"
+              width="100%"
+              allowFullScreen
+              className="w-full border-0"
+              title="Real Estate Market Insights"
+            />
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Media Inquiries Welcome</h2>
