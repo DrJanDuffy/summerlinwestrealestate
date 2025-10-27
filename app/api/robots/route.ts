@@ -5,11 +5,11 @@ export async function GET() {
 Allow: /
 
 # Sitemap Index
-Sitemap: https://summerlinwestrealestate.com/sitemap-index.xml
+Sitemap: https://www.summerlinwestrealestate.com/sitemap-index.xml
 
 # Individual Sitemaps
-Sitemap: https://summerlinwestrealestate.com/sitemap.xml
-Sitemap: https://summerlinwestrealestate.com/sitemap-images.xml
+Sitemap: https://www.summerlinwestrealestate.com/sitemap.xml
+Sitemap: https://www.summerlinwestrealestate.com/sitemap-images.xml
 
 # Disallow duplicate content
 Disallow: /market-report
