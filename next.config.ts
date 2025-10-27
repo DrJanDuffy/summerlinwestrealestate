@@ -97,16 +97,16 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      // Redirect www to non-www for consistent domain
+      // Redirect non-www to www for consistent domain
       {
         source: '/:path*',
         has: [
           {
             type: 'host',
-            value: 'www.summerlinwestrealestate.com',
+            value: 'summerlinwestrealestate.com',
           },
         ],
-        destination: 'https://summerlinwestrealestate.com/:path*',
+        destination: 'https://www.summerlinwestrealestate.com/:path*',
         permanent: true,
       },
     ];
