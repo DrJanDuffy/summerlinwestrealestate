@@ -9,16 +9,80 @@ import RealScoutWidget from '@/components/ui/RealScoutWidget';
 
 export default function PressPage() {
   useEffect(() => {
-    // Add structured data for SEO
+    // Enhanced structured data for SEO
     const schema = {
       '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      headline: 'Summerlin West Real Estate News & Press',
-      description: 'Latest news and press coverage about Summerlin West real estate market',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Summerlin West Real Estate',
-      },
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.summerlinwestrealestate.com/press',
+          name: 'Press & News - Market Insights by Dr. Jan Duffy',
+          description: 'Expert real estate market analysis and press coverage from Dr. Jan Duffy, top 1% Summerlin West REALTOR®',
+          url: 'https://www.summerlinwestrealestate.com/press',
+          inLanguage: 'en-US',
+          about: {
+            '@type': 'Thing',
+            name: 'Summerlin West Real Estate',
+          },
+        },
+        {
+          '@type': 'Person',
+          '@id': 'https://www.summerlinwestrealestate.com/#person',
+          name: 'Dr. Jan Duffy',
+          jobTitle: 'REALTOR®',
+          description: 'Top 1% luxury real estate agent with $6+ billion in sales',
+          telephone: '+1-702-550-0112',
+          email: 'DrJanSells@SummerlinWestRealEstate.com',
+          worksFor: {
+            '@type': 'RealEstateAgent',
+            name: 'Summerlin West Real Estate',
+          },
+        },
+        {
+          '@type': 'NewsMediaOrganization',
+          '@id': 'https://www.summerlinwestrealestate.com/#media',
+          name: 'Summerlin West Real Estate News',
+          description: 'Real estate market insights and press coverage for Summerlin West',
+          url: 'https://www.summerlinwestrealestate.com/press',
+          publisher: {
+            '@type': 'Person',
+            name: 'Dr. Jan Duffy',
+          },
+          areaServed: {
+            '@type': 'Place',
+            name: 'Summerlin West',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Summerlin West',
+              addressRegion: 'NV',
+              addressCountry: 'US',
+            },
+          },
+        },
+        {
+          '@type': 'Article',
+          headline: 'Summerlin West Real Estate Market Insights',
+          description: 'Latest market analysis and press coverage for Summerlin West luxury real estate',
+          author: {
+            '@type': 'Person',
+            name: 'Dr. Jan Duffy',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Summerlin West Real Estate',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://www.summerlinwestrealestate.com/images/logo.png',
+            },
+          },
+          datePublished: '2024-01-01',
+          dateModified: new Date().toISOString().split('T')[0],
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': 'https://www.summerlinwestrealestate.com/press',
+          },
+        },
+      ],
     };
 
     const script = document.createElement('script');
@@ -27,7 +91,9 @@ export default function PressPage() {
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 

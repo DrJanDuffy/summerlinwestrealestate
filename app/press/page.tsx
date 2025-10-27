@@ -2,24 +2,34 @@ import type { Metadata } from 'next';
 import PressPage from '@/components/v0/PressPage';
 
 export const metadata: Metadata = {
-  title: 'Press & News | Summerlin West Real Estate Market Coverage',
+  title: 'Press & News - Real Estate Market Insights by Dr. Jan Duffy | Summerlin West',
   description:
-    'Latest news, press coverage, and media insights about Summerlin West real estate market from Dr. Jan Duffy, luxury real estate expert.',
+    'Expert real estate market analysis, press coverage, and industry insights from Dr. Jan Duffy. Stay informed on Summerlin West luxury properties, market trends, and The Vistas community updates.',
   keywords: [
-    'Summerlin West news',
-    'real estate press',
-    'Dr. Jan Duffy media',
-    'Las Vegas luxury real estate news',
-    'The Vistas press coverage',
-    'Summerlin West market news',
-    'real estate market coverage',
+    'Summerlin West real estate news',
+    'Las Vegas luxury real estate press',
+    'Dr. Jan Duffy media coverage',
+    'Summerlin West market insights',
+    'The Vistas community news',
+    'Luxury real estate market analysis',
+    'Las Vegas property trends',
+    'Summerlin West press releases',
+    'real estate expert commentary',
+    'luxury home market updates',
+    'Red Rock Canyon real estate',
+    'Summerlin West investment news',
+    'real estate media kit',
+    'property market trends Las Vegas',
+    'REALTOR® press coverage',
   ],
+  authors: [{ name: 'Dr. Jan Duffy', url: 'https://www.summerlinwestrealestate.com' }],
   alternates: {
-    canonical: '/press',
+    canonical: 'https://www.summerlinwestrealestate.com/press',
   },
   openGraph: {
-    title: 'Press & News | Summerlin West Real Estate Market Coverage',
-    description: 'Latest news, press coverage, and media insights about Summerlin West real estate market.',
+    title: 'Press & News - Market Insights by Dr. Jan Duffy | Summerlin West Real Estate',
+    description:
+      'Expert real estate market analysis, luxury property insights, and press coverage from Dr. Jan Duffy. Top 1% REALTOR® with $6+ billion in sales.',
     url: 'https://www.summerlinwestrealestate.com/press',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -27,7 +37,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'Summerlin West Real Estate Press & News',
+        alt: 'Dr. Jan Duffy - Summerlin West Real Estate Press & Market Insights',
       },
     ],
     locale: 'en_US',
@@ -35,8 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Press & News | Summerlin West Real Estate Market Coverage',
-    description: 'Latest news, press coverage, and media insights about Summerlin West real estate market.',
+    title: 'Press & News - Market Insights by Dr. Jan Duffy',
+    description:
+      'Expert real estate market analysis and luxury property insights from Summerlin West\'s top REALTOR®',
     images: ['/images/og-image.svg'],
   },
   robots: {
@@ -49,6 +60,10 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    'article:author': 'Dr. Jan Duffy',
+    'article:published_time': '2024-01-01',
   },
 };
 
