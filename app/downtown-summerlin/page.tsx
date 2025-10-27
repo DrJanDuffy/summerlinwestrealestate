@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     'Las Vegas walkable community',
   ],
   alternates: {
-    canonical: '/downtown-summerlin',
+    canonical: 'https://www.summerlinwestrealestate.com/downtown-summerlin',
   },
   openGraph: {
     title: 'Downtown Summerlin Real Estate Guide | Shopping, Dining, Homes & Market',
@@ -153,11 +153,14 @@ export default function DowntownSummerlin() {
             live in the heart of Summerlin's vibrant lifestyle.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -202,11 +205,14 @@ export default function DowntownSummerlin() {
             features, and more to discover your perfect home in this walkable community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -225,11 +231,14 @@ export default function DowntownSummerlin() {
             for quick property browsing in this walkable community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -249,11 +258,14 @@ export default function DowntownSummerlin() {
             location for your business.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
