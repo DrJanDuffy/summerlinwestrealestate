@@ -6,6 +6,7 @@
 
 import { useEffect } from 'react';
 import RealScoutWidget from '@/components/ui/RealScoutWidget';
+import RSSFeedDisplay from '@/components/ui/RSSFeedDisplay';
 
 export default function PressPage() {
   useEffect(() => {
@@ -175,21 +176,34 @@ export default function PressPage() {
         <section className="bg-white rounded-xl shadow-xl p-8 mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Market Insights & Blog Posts</h2>
           <p className="text-lg text-gray-600 mb-8">
-            Stay updated with the latest real estate market insights and industry news
+            Stay updated with the latest real estate market insights and industry news from Dr. Jan Duffy
           </p>
-          <div className="w-full overflow-hidden rounded-lg">
-            <iframe
-              src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
-              scrolling="yes"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              height="800px"
-              width="100%"
-              allowFullScreen
-              className="w-full border-0"
-              title="Real Estate Market Insights"
-            />
+          
+          {/* RSS Feed Display */}
+          <div className="mb-8">
+            <RSSFeedDisplay />
+          </div>
+
+          {/* Alternative iframe for full KCM blog page */}
+          <div className="border-t border-gray-200 pt-8 mt-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">View All Blog Posts</h3>
+            <p className="text-gray-600 mb-4">
+              Explore the complete collection of real estate insights and market updates
+            </p>
+            <div className="w-full overflow-hidden rounded-lg border-2 border-gray-200">
+              <iframe
+                src="https://www.simplifyingthemarket.com/en/?a=956758-ef2edda2f940e018328655620ea05f18"
+                scrolling="yes"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                height="800px"
+                width="100%"
+                allowFullScreen
+                className="w-full border-0"
+                title="KCM Blog Posts - Complete Collection"
+              />
+            </div>
           </div>
         </section>
 
