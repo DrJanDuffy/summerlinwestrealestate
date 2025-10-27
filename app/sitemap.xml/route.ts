@@ -19,22 +19,33 @@ export async function GET() {
     { path: 'press', priority: '0.8', changefreq: 'weekly' },
     { path: 'market', priority: '0.8', changefreq: 'weekly' },
     { path: 'market-reports', priority: '0.8', changefreq: 'weekly' },
+    { path: 'market-reports/monthly-reports', priority: '0.7', changefreq: 'monthly' },
+    { path: 'market-insights', priority: '0.8', changefreq: 'weekly' },
     { path: 'home-values', priority: '0.9', changefreq: 'weekly' },
     { path: 'maps', priority: '0.9', changefreq: 'weekly' },
-    // 5. Our Team (EXPERTISE)
+    { path: 'local-seo', priority: '0.7', changefreq: 'monthly' },
+    // 5. About Pages
+    { path: 'about', priority: '0.8', changefreq: 'monthly' },
+    // 6. Our Team (EXPERTISE)
     { path: 'team', priority: '0.9', changefreq: 'weekly' },
-    // 6. About Dr. Jan Duffy (PERSONAL CONNECTION)
+    // 7. About Dr. Jan Duffy (PERSONAL CONNECTION)
     { path: 'resume', priority: '0.9', changefreq: 'monthly' },
-    // 7. Contact (CLEAR CTA)
+    // 8. Contact (CLEAR CTA)
     { path: 'contact', priority: '0.9', changefreq: 'monthly' },
-    // Secondary pages
+    // 9. Property Search & Results
     { path: 'sold', priority: '0.7', changefreq: 'weekly' },
     { path: 'new-homes-summerlin', priority: '0.8', changefreq: 'weekly' },
-    { path: 'downtown-summerlin', priority: '0.7', changefreq: 'monthly' },
-    { path: 'vistas-listing', priority: '0.7', changefreq: 'weekly' },
     { path: 'current-listing', priority: '0.7', changefreq: 'weekly' },
+    { path: 'vistas-listing', priority: '0.7', changefreq: 'weekly' },
     { path: 'compare', priority: '0.6', changefreq: 'monthly' },
-    { path: 'google-places', priority: '0.5', changefreq: 'monthly' },
+    // 10. Location Pages
+    { path: 'downtown-summerlin', priority: '0.7', changefreq: 'monthly' },
+    // 11. Resources
+    { path: 'faq', priority: '0.7', changefreq: 'monthly' },
+    { path: 'hidden-home-equity-tax', priority: '0.6', changefreq: 'monthly' },
+    // 12. Market Reports - Subdivisions
+    { path: 'market-reports/subdivisions/paradiso', priority: '0.7', changefreq: 'monthly' },
+    { path: 'market-reports/subdivisions/palmilla', priority: '0.7', changefreq: 'monthly' },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
