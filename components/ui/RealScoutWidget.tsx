@@ -3,9 +3,11 @@
  * Reusable component for RealScout listings and search widgets
  *
  * Note: The RealScout script is loaded globally in app/layout.tsx
- * This component only renders the web component tags
+ * This component uses useEffect to render web components after mount
  */
 'use client';
+
+import { useEffect, useRef } from 'react';
 
 interface RealScoutWidgetProps {
   type: 'listings' | 'search';
@@ -28,26 +30,33 @@ export default function RealScoutWidget({
   priceMin,
   priceMax,
 }: RealScoutWidgetProps) {
-  // Build attribute string for listings widget
-  let listingAttrs = `agent-encoded-id="${agentEncodedId}" sort-order="${sortOrder}"`;
-  if (listingStatus) listingAttrs += ` listing-status="${listingStatus}"`;
-  if (propertyTypes) listingAttrs += ` property-types="${propertyTypes}"`;
-  if (priceMin) listingAttrs += ` price-min="${priceMin}"`;
-  if (priceMax) listingAttrs += ` price-max="${priceMax}"`;
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Build attribute string for search widget
-  const searchAttrs = `agent-encoded-id="${agentEncodedId}"`;
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-  // Render HTML for web components
-  const listingHtml = `<realscout-office-listings ${listingAttrs}></realscout-office-listings>`;
-  const searchHtml = `<realscout-advanced-search ${searchAttrs}></realscout-advanced-search>`;
+    // Clear any existing content
+    containerRef.current.innerHTML = '';
 
-  return (
-    <div
-      className={className}
-      dangerouslySetInnerHTML={{
-        __html: type === 'listings' ? listingHtml : searchHtml,
-      }}
-    />
-  );
+    // Create the web component element
+    const element = document.createElement(
+      type === 'listings' ? 'realscout-office-listings' : 'realscout-advanced-search'
+    );
+
+    // Set attributes
+    element.setAttribute('agent-encoded-id', agentEncodedId);
+    
+    if (type === 'listings') {
+      element.setAttribute('sort-order', sortOrder);
+      if (listingStatus) element.setAttribute('listing-status', listingStatus);
+      if (propertyTypes) element.setAttribute('property-types', propertyTypes);
+      if (priceMin) element.setAttribute('price-min', priceMin);
+      if (priceMax) element.setAttribute('price-max', priceMax);
+    }
+
+    // Append to container
+    containerRef.current.appendChild(element);
+  }, [type, agentEncodedId, sortOrder, listingStatus, propertyTypes, priceMin, priceMax]);
+
+  return <div ref={containerRef} className={className} />;
 }
