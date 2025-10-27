@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Summerlin West property search',
   ],
   alternates: {
-    canonical: '/properties',
+    canonical: 'https://www.summerlinwestrealestate.com/properties',
   },
   openGraph: {
     title: 'Luxury Homes for Sale in Summerlin West | Dr. Jan Duffy REALTOR® | $6B+ Sales',

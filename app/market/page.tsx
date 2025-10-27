@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'Summerlin market conditions',
   ],
   alternates: {
-    canonical: '/market',
+    canonical: 'https://www.summerlinwestrealestate.com/market',
   },
   openGraph: {
     title: 'Summerlin Real Estate Market | Trends & Analysis | Dr. Jan Duffy',

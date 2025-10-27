@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ['/images/og-image.svg'],
   },
   alternates: {
-    canonical: '/service-area',
+    canonical: 'https://www.summerlinwestrealestate.com/service-area',
   },
   robots: {
     index: true,

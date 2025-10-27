@@ -406,11 +406,14 @@ export default function AboutClient() {
             luxury estates in The Vistas to modern homes in Stonebridge, discover exceptional
             properties that represent the best of Summerlin West real estate.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -434,7 +437,8 @@ export default function AboutClient() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
             <h3 className="text-xl font-semibold text-blue-900 mb-4">Contact Dr. Jan Duffy</h3>
             <p className="text-blue-700 mb-6">
-              Ready to work with Summerlin West's premier real estate expert? Contact Dr. Jan Duffy for personalized assistance.
+              Ready to work with Summerlin West's premier real estate expert? Contact Dr. Jan Duffy
+              for personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -455,11 +459,14 @@ export default function AboutClient() {
             advanced valuation tool provides accurate estimates based on current market conditions
             and comparable sales in your neighborhood.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -480,11 +487,14 @@ export default function AboutClient() {
             Duffy provides expert analysis of market data, pricing trends, and investment
             opportunities.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -505,11 +515,14 @@ export default function AboutClient() {
             search to market analysis, we provide comprehensive solutions for all your real estate
             needs.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -531,11 +544,14 @@ export default function AboutClient() {
             brings to every real estate transaction.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -556,11 +572,14 @@ export default function AboutClient() {
             properties that match your specific criteria and preferences in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -581,11 +600,14 @@ export default function AboutClient() {
             for first-time visitors exploring Summerlin West real estate.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -607,11 +629,14 @@ export default function AboutClient() {
             available options with expert guidance.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"

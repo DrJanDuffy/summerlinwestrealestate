@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Las Vegas Valley service area',
   ],
   alternates: {
-    canonical: '/service-area',
+    canonical: 'https://www.summerlinwestrealestate.com/service-area',
   },
   openGraph: {
     title: 'Service Area | Las Vegas & Summerlin West Real Estate Coverage',

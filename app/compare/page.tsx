@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'Las Vegas luxury home comparison',
   ],
   alternates: {
-    canonical: '/compare',
+    canonical: 'https://www.summerlinwestrealestate.com/compare',
   },
   openGraph: {
     title: 'Compare Summerlin Homes | Summerlin West Real Estate',

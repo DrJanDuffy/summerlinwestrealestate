@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'luxury home experts',
   ],
   alternates: {
-    canonical: '/team',
+    canonical: 'https://www.summerlinwestrealestate.com/team',
   },
   openGraph: {
     title: 'Meet Our Summerlin West Real Estate Team | Expert Luxury Agents',

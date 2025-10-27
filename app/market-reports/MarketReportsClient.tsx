@@ -275,19 +275,20 @@ export default function MarketReportsClient() {
           investors looking to capitalize on Summerlin West's strong market fundamentals.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+          <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+          <p className="text-blue-700 mb-6">
+            We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+            personalized assistance.
+          </p>
+          <a
+            href="tel:702-550-0112"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+          >
+            📞 Call (702) 550-0112
+          </a>
+        </div>
       </section>
 
       {/* Advanced Property Search */}
@@ -299,19 +300,20 @@ export default function MarketReportsClient() {
           opportunity.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+          <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+          <p className="text-blue-700 mb-6">
+            We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+            personalized assistance.
+          </p>
+          <a
+            href="tel:702-550-0112"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+          >
+            📞 Call (702) 550-0112
+          </a>
+        </div>
       </section>
 
       {/* Simple Property Search */}
@@ -322,19 +324,20 @@ export default function MarketReportsClient() {
           browsing while reviewing market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+          <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+          <p className="text-blue-700 mb-6">
+            We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+            personalized assistance.
+          </p>
+          <a
+            href="tel:702-550-0112"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+          >
+            📞 Call (702) 550-0112
+          </a>
+        </div>
       </section>
 
       {/* Additional Property Search Options */}
@@ -346,34 +349,35 @@ export default function MarketReportsClient() {
           market reports.
         </p>
         {/* @ts-ignore - RealScout web component */}
-        
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+          <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+          <p className="text-blue-700 mb-6">
+            We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+            personalized assistance.
+          </p>
+          <a
+            href="tel:702-550-0112"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+          >
+            📞 Call (702) 550-0112
+          </a>
+        </div>
       </section>
 
-      
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+        <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+        <p className="text-blue-700 mb-6">
+          We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+          personalized assistance.
+        </p>
+        <a
+          href="tel:702-550-0112"
+          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+        >
+          📞 Call (702) 550-0112
+        </a>
+      </div>
     </div>
   );
 }

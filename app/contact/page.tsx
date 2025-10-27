@@ -15,11 +15,12 @@ export const metadata: Metadata = {
     'buy sell Summerlin West homes',
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://www.summerlinwestrealestate.com/contact',
   },
   openGraph: {
     title: 'Contact Dr. Jan Duffy | Summerlin West Real Estate Agent',
-    description: 'Contact Dr. Jan Duffy for expert Summerlin West real estate services. Licensed REALTOR® with $6+ billion in sales.',
+    description:
+      'Contact Dr. Jan Duffy for expert Summerlin West real estate services. Licensed REALTOR® with $6+ billion in sales.',
     url: 'https://www.summerlinwestrealestate.com/contact',
     siteName: 'Summerlin West Real Estate',
     images: [

@@ -29,11 +29,13 @@ export default function PropertiesClient() {
             pricing.
           </p>
 
-          
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -76,19 +78,21 @@ export default function PropertiesClient() {
                 Use our comprehensive search tool to find properties matching your exact criteria
               </p>
               <div className={styles.realscoutWidget}>
-                
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                    Property Search Coming Soon
+                  </h3>
+                  <p className="text-blue-700 mb-6">
+                    We're updating our property search system. In the meantime, contact Dr. Jan
+                    Duffy for personalized assistance.
+                  </p>
+                  <a
+                    href="tel:702-550-0112"
+                    className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                  >
+                    📞 Call (702) 550-0112
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -127,19 +131,22 @@ export default function PropertiesClient() {
             <p className={styles.newsletterSubtitle}>
               Get exclusive access to new luxury properties before they hit the market
             </p>
-            
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
-            <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
-            </p>
-            <a
-              href="tel:702-550-0112"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              📞 Call (702) 550-0112
-            </a>
-          </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                Property Search Coming Soon
+              </h3>
+              <p className="text-blue-700 mb-6">
+                We're updating our property search system. In the meantime, contact Dr. Jan Duffy
+                for personalized assistance.
+              </p>
+              <a
+                href="tel:702-550-0112"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              >
+                📞 Call (702) 550-0112
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -151,11 +158,14 @@ export default function PropertiesClient() {
           <p className={styles.sectionSubtitle}>
             Discover your home's current market value with our advanced analysis
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -170,11 +180,13 @@ export default function PropertiesClient() {
       {/* SEO Optimized RealScout Widgets */}
       <section className={styles.marketInsights}>
         <div className={styles.sectionContainer}>
-          
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -196,11 +208,14 @@ export default function PropertiesClient() {
             requirements.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -221,11 +236,14 @@ export default function PropertiesClient() {
             Filter by price, location, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -246,11 +264,14 @@ export default function PropertiesClient() {
             browsing of available properties in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -272,11 +293,14 @@ export default function PropertiesClient() {
             master-planned community.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"

@@ -3,9 +3,7 @@ export default function SimpleSEOAuditPage() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            SEO Audit Dashboard
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">SEO Audit Dashboard</h1>
           <p className="text-lg text-gray-600">
             Comprehensive SEO analysis for Summerlin West Real Estate using V0.app
           </p>
@@ -26,31 +24,31 @@ export default function SimpleSEOAuditPage() {
             <div className="text-3xl font-bold text-green-600 mb-2">87/100</div>
             <p className="text-sm text-gray-600">Strong foundation with good Core Web Vitals</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">About Page</h3>
             <div className="text-3xl font-bold text-green-600 mb-2">92/100</div>
             <p className="text-sm text-gray-600">Excellent professional branding</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Properties</h3>
             <div className="text-3xl font-bold text-green-600 mb-2">89/100</div>
             <p className="text-sm text-gray-600">Strong property listings optimization</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Communities</h3>
             <div className="text-3xl font-bold text-green-600 mb-2">94/100</div>
             <p className="text-sm text-gray-600">Outstanding local SEO implementation</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Market Reports</h3>
             <div className="text-3xl font-bold text-green-600 mb-2">91/100</div>
             <p className="text-sm text-gray-600">Excellent data presentation</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-lg p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Contact</h3>
             <div className="text-3xl font-bold text-green-600 mb-2">88/100</div>

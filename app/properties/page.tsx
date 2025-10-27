@@ -15,11 +15,12 @@ export const metadata: Metadata = {
     'luxury property search',
   ],
   alternates: {
-    canonical: '/properties',
+    canonical: 'https://www.summerlinwestrealestate.com/properties',
   },
   openGraph: {
     title: 'Summerlin West Homes for Sale | Luxury Real Estate Listings',
-    description: 'Browse luxury homes for sale in Summerlin West with expert real estate agent Dr. Jan Duffy.',
+    description:
+      'Browse luxury homes for sale in Summerlin West with expert real estate agent Dr. Jan Duffy.',
     url: 'https://www.summerlinwestrealestate.com/properties',
     siteName: 'Summerlin West Real Estate',
     images: [

@@ -3,7 +3,7 @@ import CommunitiesOverviewPage from '@/components/v0/CommunitiesOverviewPage';
 
 export const metadata: Metadata = {
   title: 'Summerlin West Communities | Luxury Neighborhoods & The Vistas',
-      description:
+  description:
     'Explore luxury communities in Summerlin West including The Vistas, San Marcos, Casa Rosa, Solano, Encanto, Paradiso, and Palmilla. Amenities, schools, pricing.',
   keywords: [
     'Summerlin West communities',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Summerlin West homes',
   ],
   alternates: {
-    canonical: '/communities',
+    canonical: 'https://www.summerlinwestrealestate.com/communities',
   },
   openGraph: {
     title: 'Summerlin West Communities | Luxury Neighborhoods',

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: '/market-reports/monthly-reports',
+    canonical: 'https://www.summerlinwestrealestate.com/market-reports/monthly-reports',
   },
 };
 

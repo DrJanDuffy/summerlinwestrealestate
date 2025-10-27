@@ -167,11 +167,14 @@ export default function CurrentListingClient() {
             Explore additional luxury properties currently available in Summerlin West. Each
             property is hand-selected to showcase the finest in luxury real estate.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -190,11 +193,14 @@ export default function CurrentListingClient() {
             by price, features, and more to discover your perfect home.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -213,11 +219,14 @@ export default function CurrentListingClient() {
             property browsing of similar homes in Summerlin West.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"
@@ -237,11 +246,14 @@ export default function CurrentListingClient() {
             while viewing our featured listing.
           </p>
           {/* @ts-ignore - RealScout web component */}
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-4">Property Search Coming Soon</h3>
+            <h3 className="text-xl font-semibold text-blue-900 mb-4">
+              Property Search Coming Soon
+            </h3>
             <p className="text-blue-700 mb-6">
-              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for personalized assistance.
+              We're updating our property search system. In the meantime, contact Dr. Jan Duffy for
+              personalized assistance.
             </p>
             <a
               href="tel:702-550-0112"

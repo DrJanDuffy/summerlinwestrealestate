@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { CheckCircleIcon, ExclamationTriangleIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 export default function SEOAuditSummaryPage() {
   const pageAudits = [
@@ -8,68 +8,145 @@ export default function SEOAuditSummaryPage() {
       score: 87,
       status: 'excellent',
       url: '/seo-audit',
-      strengths: ['Page title optimization', 'Meta description with CTA', 'Structured data implemented', 'Good Core Web Vitals'],
-      improvements: ['Increase image alt text to 100%', 'Add more location keywords', 'Optimize keyword density']
+      strengths: [
+        'Page title optimization',
+        'Meta description with CTA',
+        'Structured data implemented',
+        'Good Core Web Vitals',
+      ],
+      improvements: [
+        'Increase image alt text to 100%',
+        'Add more location keywords',
+        'Optimize keyword density',
+      ],
     },
     {
       page: 'About Page',
       score: 92,
       status: 'excellent',
       url: '/seo-audit/about',
-      strengths: ['Professional branding', 'Agent credentials highlighted', 'Sales statistics included', 'Clear call-to-action'],
-      improvements: ['Add Person schema markup', 'Include more testimonials', 'Add professional headshot']
+      strengths: [
+        'Professional branding',
+        'Agent credentials highlighted',
+        'Sales statistics included',
+        'Clear call-to-action',
+      ],
+      improvements: [
+        'Add Person schema markup',
+        'Include more testimonials',
+        'Add professional headshot',
+      ],
     },
     {
       page: 'Properties Page',
       score: 89,
       status: 'excellent',
       url: '/seo-audit/properties',
-      strengths: ['Luxury positioning', 'Community names included', 'Strong CTA', 'Comprehensive keywords'],
-      improvements: ['Add RealEstateListing schema', 'Include price ranges', 'Add property search filters']
+      strengths: [
+        'Luxury positioning',
+        'Community names included',
+        'Strong CTA',
+        'Comprehensive keywords',
+      ],
+      improvements: [
+        'Add RealEstateListing schema',
+        'Include price ranges',
+        'Add property search filters',
+      ],
     },
     {
       page: 'Communities Page',
       score: 94,
       status: 'excellent',
       url: '/seo-audit/communities',
-      strengths: ['Rich structured data', 'Comprehensive community info', 'Strong internal linking', 'Agent expertise highlighted'],
-      improvements: ['Create individual community pages', 'Add LocalBusiness schema', 'Include more local keywords']
+      strengths: [
+        'Rich structured data',
+        'Comprehensive community info',
+        'Strong internal linking',
+        'Agent expertise highlighted',
+      ],
+      improvements: [
+        'Create individual community pages',
+        'Add LocalBusiness schema',
+        'Include more local keywords',
+      ],
     },
     {
       page: 'Market Reports',
       score: 91,
       status: 'excellent',
       url: '/seo-audit/market-reports',
-      strengths: ['Expert analysis highlighted', 'Downloadable reports', 'Professional data presentation', 'Strong engagement'],
-      improvements: ['Add Dataset schema', 'Include interactive charts', 'Add neighborhood-specific reports']
+      strengths: [
+        'Expert analysis highlighted',
+        'Downloadable reports',
+        'Professional data presentation',
+        'Strong engagement',
+      ],
+      improvements: [
+        'Add Dataset schema',
+        'Include interactive charts',
+        'Add neighborhood-specific reports',
+      ],
     },
     {
       page: 'Contact Page',
       score: 88,
       status: 'excellent',
       url: '/seo-audit/contact',
-      strengths: ['Clear contact info', 'Professional branding', 'Multiple contact methods', 'Strong CTA'],
-      improvements: ['Add ContactPage schema', 'Include response times', 'Add testimonials', 'Include office hours']
+      strengths: [
+        'Clear contact info',
+        'Professional branding',
+        'Multiple contact methods',
+        'Strong CTA',
+      ],
+      improvements: [
+        'Add ContactPage schema',
+        'Include response times',
+        'Add testimonials',
+        'Include office hours',
+      ],
     },
     {
       page: 'Blog Page',
       score: 85,
       status: 'excellent',
       url: '/seo-audit/blog',
-      strengths: ['RSS feed integration', 'Hyperlocal targeting', 'Expert positioning', 'Community focus'],
-      improvements: ['Add Blog schema', 'Create more original content', 'Add video content', 'Include success stories']
+      strengths: [
+        'RSS feed integration',
+        'Hyperlocal targeting',
+        'Expert positioning',
+        'Community focus',
+      ],
+      improvements: [
+        'Add Blog schema',
+        'Create more original content',
+        'Add video content',
+        'Include success stories',
+      ],
     },
     {
       page: 'Service Area',
       score: 96,
       status: 'excellent',
       url: '/seo-audit/service-area',
-      strengths: ['Comprehensive coverage', 'Detailed community info', 'Strong local SEO', 'Builder information'],
-      improvements: ['Add LocalBusiness schema', 'Include zip codes', 'Add local events', 'Include community reviews']
-    }
+      strengths: [
+        'Comprehensive coverage',
+        'Detailed community info',
+        'Strong local SEO',
+        'Builder information',
+      ],
+      improvements: [
+        'Add LocalBusiness schema',
+        'Include zip codes',
+        'Add local events',
+        'Include community reviews',
+      ],
+    },
   ];
 
-  const overallScore = Math.round(pageAudits.reduce((sum, audit) => sum + audit.score, 0) / pageAudits.length);
+  const overallScore = Math.round(
+    pageAudits.reduce((sum, audit) => sum + audit.score, 0) / pageAudits.length
+  );
 
   const getScoreColor = (score: number) => {
     if (score >= 90) return 'text-green-600';
@@ -101,16 +178,14 @@ export default function SEOAuditSummaryPage() {
     'Include interactive data visualizations and charts',
     'Add client testimonials and success stories',
     'Implement video content and multimedia elements',
-    'Include local events and community activities'
+    'Include local events and community activities',
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive SEO Audit Summary
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Comprehensive SEO Audit Summary</h1>
           <p className="text-lg text-gray-600">
             Complete analysis of Summerlin West Real Estate website using V0.app
           </p>
@@ -156,7 +231,7 @@ export default function SEOAuditSummaryPage() {
                     ))}
                   </ul>
                 </div>
-                <Link 
+                <Link
                   href={audit.url}
                   className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                 >
@@ -224,7 +299,9 @@ export default function SEOAuditSummaryPage() {
           <h2 className="text-2xl font-bold text-blue-900 mb-4">Next Steps</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-blue-800 mb-3">Immediate Actions (This Week)</h3>
+              <h3 className="text-lg font-semibold text-blue-800 mb-3">
+                Immediate Actions (This Week)
+              </h3>
               <ul className="space-y-2 text-blue-700">
                 <li>• Add missing image alt text to reach 100% coverage</li>
                 <li>• Implement Person schema markup on About page</li>
@@ -233,7 +310,9 @@ export default function SEOAuditSummaryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-blue-800 mb-3">Medium-term Goals (This Month)</h3>
+              <h3 className="text-lg font-semibold text-blue-800 mb-3">
+                Medium-term Goals (This Month)
+              </h3>
               <ul className="space-y-2 text-blue-700">
                 <li>• Create individual community landing pages</li>
                 <li>• Add interactive data visualizations</li>

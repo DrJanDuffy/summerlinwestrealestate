@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'real estate team leader',
   ],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://www.summerlinwestrealestate.com/about',
   },
   openGraph: {
     title: 'Meet Dr. Jan Duffy | Top Summerlin REALTOR® with $6B+ Sales | Expert Guide',

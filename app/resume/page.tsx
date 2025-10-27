@@ -16,11 +16,12 @@ export const metadata: Metadata = {
     'The Vistas specialist',
   ],
   alternates: {
-    canonical: '/resume',
+    canonical: 'https://www.summerlinwestrealestate.com/resume',
   },
   openGraph: {
     title: 'Dr. Jan Duffy - Professional Resume | Summerlin West Real Estate Agent',
-    description: 'Dr. Jan Duffy REALTOR® with $6+ billion in sales specializing in Summerlin West luxury homes.',
+    description:
+      'Dr. Jan Duffy REALTOR® with $6+ billion in sales specializing in Summerlin West luxury homes.',
     url: 'https://www.summerlinwestrealestate.com/resume',
     siteName: 'Summerlin West Real Estate',
     images: [
@@ -37,7 +38,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Dr. Jan Duffy - Professional Resume | Summerlin West Real Estate Agent',
-    description: 'Dr. Jan Duffy REALTOR® with $6+ billion in sales specializing in Summerlin West luxury homes.',
+    description:
+      'Dr. Jan Duffy REALTOR® with $6+ billion in sales specializing in Summerlin West luxury homes.',
     images: ['/images/og-image.svg'],
   },
   robots: {

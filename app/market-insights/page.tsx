@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'real estate market analysis',
   ],
   alternates: {
-    canonical: '/market-insights',
+    canonical: 'https://www.summerlinwestrealestate.com/market-insights',
   },
   openGraph: {
     title: 'Market Insights & Real Estate News | Summerlin West Real Estate',

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'client success stories',
   ],
   alternates: {
-    canonical: '/testimonials',
+    canonical: 'https://www.summerlinwestrealestate.com/testimonials',
   },
   openGraph: {
     title: 'Client Testimonials & Reviews | Dr. Jan Duffy | Summerlin West',

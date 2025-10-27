@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Get answers to common questions about buying and selling homes in Summerlin West. Expert insights from Dr. Jan Duffy, top REALTOR® with $6B+ in sales.',
   alternates: {
-    canonical: '/faq',
+    canonical: 'https://www.summerlinwestrealestate.com/faq',
   },
   openGraph: {
     title: 'Frequently Asked Questions | Summerlin West Real Estate | Dr. Jan Duffy',

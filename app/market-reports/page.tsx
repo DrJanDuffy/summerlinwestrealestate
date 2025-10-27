@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'Get the latest Summerlin real estate market reports, trends, and expert analysis. Download detailed reports and sign up for the Summerlin market newsletter.',
   alternates: {
-    canonical: '/market-reports',
+    canonical: 'https://www.summerlinwestrealestate.com/market-reports',
   },
   openGraph: {
     title: 'Summerlin Market Reports & Trends | Summerlin West Real Estate',

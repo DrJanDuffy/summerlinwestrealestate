@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'real estate team contact',
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://www.summerlinwestrealestate.com/contact',
   },
   openGraph: {
     title: 'Contact Dr. Jan Duffy | Top Summerlin West Real Estate Expert | Call (702) 550-0112',

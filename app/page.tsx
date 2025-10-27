@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Find your dream home in Summerlin West! Dr. Jan Duffy, REALTOR® with $6B+ sales. Luxury properties, market insights, and expert guidance. Call (702) 550-0112 today!',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.summerlinwestrealestate.com/',
   },
   openGraph: {
     title: 'Summerlin West Homes for Sale | Dr. Jan Duffy REALTOR® | The Vistas',

@@ -7,7 +7,6 @@ import ModernHeroSection from '../components/ui/ModernHeroSection';
 import ModernPropertyCard from '../components/ui/ModernPropertyCard';
 import ModernStatsSection from '../components/ui/ModernStatsSection';
 
-
 // const HomebotWidget = dynamic(() => import('../components/ui/HomebotWidget'), {
 //   ssr: false,
 // });
@@ -226,7 +225,9 @@ export default function ImprovedHomeClient() {
           {/* Quick Property Search */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Quick Property Search</h3>
-            <p className="text-gray-600 mb-6">Use our advanced search to find your perfect home in Summerlin West.</p>
+            <p className="text-gray-600 mb-6">
+              Use our advanced search to find your perfect home in Summerlin West.
+            </p>
             <div className="text-center">
               <Link
                 href="/properties"
@@ -234,7 +235,12 @@ export default function ImprovedHomeClient() {
               >
                 Search Properties
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
                 </svg>
               </Link>
             </div>
@@ -262,7 +268,6 @@ export default function ImprovedHomeClient() {
               market trends.
             </p>
           </div>
-
         </div>
       </section>
 
@@ -322,7 +327,9 @@ export default function ImprovedHomeClient() {
           {/* Advanced Property Search */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Advanced Property Search</h3>
-            <p className="text-gray-600 mb-6">Find your perfect home with our comprehensive search filters.</p>
+            <p className="text-gray-600 mb-6">
+              Find your perfect home with our comprehensive search filters.
+            </p>
             <div className="text-center">
               <Link
                 href="/properties"
@@ -330,7 +337,12 @@ export default function ImprovedHomeClient() {
               >
                 Advanced Search
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </Link>
             </div>
@@ -379,8 +391,6 @@ export default function ImprovedHomeClient() {
               },
             ]}
           />
-
-          
         </div>
       </section>
 
@@ -437,7 +447,6 @@ export default function ImprovedHomeClient() {
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -458,7 +467,9 @@ export default function ImprovedHomeClient() {
           {/* Lead Capture Form */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">Get Expert Guidance</h3>
-            <p className="text-gray-600 mb-6">Ready to buy or sell? Contact Dr. Jan Duffy for personalized assistance.</p>
+            <p className="text-gray-600 mb-6">
+              Ready to buy or sell? Contact Dr. Jan Duffy for personalized assistance.
+            </p>
             <div className="text-center">
               <Link
                 href="/contact"
@@ -466,7 +477,12 @@ export default function ImprovedHomeClient() {
               >
                 Contact Dr. Jan Duffy
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
                 </svg>
               </Link>
             </div>

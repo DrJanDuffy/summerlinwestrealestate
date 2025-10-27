@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Summerlin West community',
   ],
   alternates: {
-    canonical: '/the-vistas',
+    canonical: 'https://www.summerlinwestrealestate.com/the-vistas',
   },
   openGraph: {
     title: 'The Vistas | Luxury Homes in Summerlin West | Dr. Jan Duffy',

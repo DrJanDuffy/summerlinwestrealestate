@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'Las Vegas luxury home maps',
   ],
   alternates: {
-    canonical: '/maps',
+    canonical: 'https://www.summerlinwestrealestate.com/maps',
   },
   openGraph: {
     title: 'Interactive Maps & Property Search | Summerlin West Real Estate',

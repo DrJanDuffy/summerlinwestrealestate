@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'Las Vegas real estate sales',
   ],
   alternates: {
-    canonical: '/sold',
+    canonical: 'https://www.summerlinwestrealestate.com/sold',
   },
   openGraph: {
     title: 'Recently Sold Homes in Summerlin | Summerlin West Real Estate',

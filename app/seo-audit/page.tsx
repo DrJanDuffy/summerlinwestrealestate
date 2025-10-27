@@ -1,5 +1,15 @@
+import {
+  ArrowRightIcon,
+  BuildingOfficeIcon,
+  ChartBarIcon,
+  GlobeAltIcon,
+  HomeIcon,
+  MapIcon,
+  NewspaperIcon,
+  PhoneIcon,
+  UserIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { ArrowRightIcon, ChartBarIcon, HomeIcon, UserIcon, BuildingOfficeIcon, MapIcon, PhoneIcon, NewspaperIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default function SEOAuditNavigationPage() {
   const auditPages = [
@@ -9,7 +19,7 @@ export default function SEOAuditNavigationPage() {
       icon: HomeIcon,
       href: '/seo-audit',
       score: 87,
-      color: 'bg-blue-500'
+      color: 'bg-blue-500',
     },
     {
       title: 'About Page Audit',
@@ -17,7 +27,7 @@ export default function SEOAuditNavigationPage() {
       icon: UserIcon,
       href: '/seo-audit/about',
       score: 92,
-      color: 'bg-green-500'
+      color: 'bg-green-500',
     },
     {
       title: 'Properties Page Audit',
@@ -25,7 +35,7 @@ export default function SEOAuditNavigationPage() {
       icon: BuildingOfficeIcon,
       href: '/seo-audit/properties',
       score: 89,
-      color: 'bg-purple-500'
+      color: 'bg-purple-500',
     },
     {
       title: 'Communities Page Audit',
@@ -33,7 +43,7 @@ export default function SEOAuditNavigationPage() {
       icon: MapIcon,
       href: '/seo-audit/communities',
       score: 94,
-      color: 'bg-indigo-500'
+      color: 'bg-indigo-500',
     },
     {
       title: 'Market Reports Audit',
@@ -41,7 +51,7 @@ export default function SEOAuditNavigationPage() {
       icon: ChartBarIcon,
       href: '/seo-audit/market-reports',
       score: 91,
-      color: 'bg-orange-500'
+      color: 'bg-orange-500',
     },
     {
       title: 'Contact Page Audit',
@@ -49,7 +59,7 @@ export default function SEOAuditNavigationPage() {
       icon: PhoneIcon,
       href: '/seo-audit/contact',
       score: 88,
-      color: 'bg-red-500'
+      color: 'bg-red-500',
     },
     {
       title: 'Blog Page Audit',
@@ -57,7 +67,7 @@ export default function SEOAuditNavigationPage() {
       icon: NewspaperIcon,
       href: '/seo-audit/blog',
       score: 85,
-      color: 'bg-teal-500'
+      color: 'bg-teal-500',
     },
     {
       title: 'Service Area Audit',
@@ -65,8 +75,8 @@ export default function SEOAuditNavigationPage() {
       icon: GlobeAltIcon,
       href: '/seo-audit/service-area',
       score: 96,
-      color: 'bg-pink-500'
-    }
+      color: 'bg-pink-500',
+    },
   ];
 
   const getScoreColor = (score: number) => {
@@ -80,20 +90,18 @@ export default function SEOAuditNavigationPage() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            SEO Audit Dashboard
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">SEO Audit Dashboard</h1>
           <p className="text-lg text-gray-600 mb-6">
             Comprehensive SEO analysis for Summerlin West Real Estate using V0.app
           </p>
           <div className="flex justify-center space-x-4">
-            <Link 
+            <Link
               href="/seo-audit/summary"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               View Summary Report
             </Link>
-            <Link 
+            <Link
               href="/seo-audit"
               className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors font-semibold"
             >
@@ -106,7 +114,7 @@ export default function SEOAuditNavigationPage() {
           {auditPages.map((page) => {
             const IconComponent = page.icon;
             return (
-              <Link 
+              <Link
                 key={page.href}
                 href={page.href}
                 className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group"
@@ -124,9 +132,7 @@ export default function SEOAuditNavigationPage() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
-                  {page.description}
-                </p>
+                <p className="text-gray-600 text-sm mb-4">{page.description}</p>
                 <div className="flex items-center text-blue-600 group-hover:text-blue-800 transition-colors">
                   <span className="text-sm font-medium">View Audit</span>
                   <ArrowRightIcon className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />

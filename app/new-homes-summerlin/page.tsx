@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Discover luxury new construction homes in Summerlin West. Expert guidance from Dr. Jan Duffy, REALTOR® with exclusive access to premier builders and pre-construction pricing.',
   alternates: {
-    canonical: '/new-homes-summerlin',
+    canonical: 'https://www.summerlinwestrealestate.com/new-homes-summerlin',
   },
   openGraph: {
     title: 'New Construction Homes in Summerlin West | Dr. Jan Duffy REALTOR®',

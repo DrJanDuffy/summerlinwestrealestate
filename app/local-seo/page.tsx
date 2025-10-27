@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: '/local-seo',
+    canonical: 'https://www.summerlinwestrealestate.com/local-seo',
   },
 };
 
