@@ -558,6 +558,7 @@ export function generateCommunitySchema(communityData: CommunityData) {
  * Generate comprehensive schema markup for the entire site
  */
 export function generateComprehensiveSchema() {
+  // Return just the graph array for proper JSON-LD @graph structure
   return {
     '@context': 'https://schema.org',
     '@graph': [
