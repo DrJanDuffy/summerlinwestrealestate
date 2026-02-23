@@ -1,0 +1,8 @@
+name = "realscout-global-injector"
+main = "worker/index.ts"
+compatibility_date = "2024-11-01"
+account_id = "2cc579c1ec9e426ed585e933ebf4753b"
+
+[[routes]]
+pattern = "skyecanyonhomesforsale.com/realscout*"
+zone_name = "skyecanyonhomesforsale.com"
