@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Fix: Remove ghost submodule & push",
+      "type": "shell",
+      "command": "git config user.name 'DrJanDuffy' && git config user.email 'DrDuffy@bhhsnv.com' && git rm -rf --cached vercel-reference; git commit -m 'fix: remove ghost submodule vercel-reference' && git push origin main",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "focus": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
