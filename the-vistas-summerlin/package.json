@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cerebras/cerebras_cloud_sdk": "^1.91.0",
+    "@drjanduffy/cerebras-service": "github:DrJanDuffy/cerebras-service#main",
     "autoprefixer": "^10.4.21",
     "framer-motion": "^12.23.0",
     "next": "15.3.5",
